@@ -1,0 +1,25 @@
+[project]
+name = "bikefinder-rag"
+version = "0.1.0"
+description = "Agentic RAG over motorcycle specs and owner reviews, scraped from bikez.com"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    "python-dotenv>=1.0",
+    "psycopg[binary]>=3.2",
+    "pgvector>=0.3",
+    "anthropic>=0.40",
+    "sentence-transformers>=3.3",
+    "gradio>=5.9",
+    "ragas>=0.2",
+    "datasets>=3.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
