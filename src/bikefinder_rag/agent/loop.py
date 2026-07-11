@@ -2,13 +2,40 @@
 
 The loop is intentionally explicit (not hidden behind LangChain/LlamaIndex)
 so the whole tool-call round-trip is visible and easy to reason about.
+
+Two backends are supported, picked via the AGENT_BACKEND env var:
+- "anthropic" (default): the hosted Gradio demo path, visitor's own key.
+- "ollama": local models (e.g. Mistral Small) for free/offline dev and
+  testing, via Ollama's OpenAI-style function-calling API.
 """
 
+import json
+import os
+
+import requests
 from anthropic import Anthropic
 
 from bikefinder_rag.agent.tools import TOOLS, execute_tool
 
+BACKEND = os.environ.get("AGENT_BACKEND", "anthropic")
 MODEL = "claude-sonnet-5"
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small")
+
+# Ollama's tool-calling API takes OpenAI-style function schemas
+# ({"type": "function", "function": {...}}), not Anthropic's
+# {"name", "input_schema"} — convert once at import time.
+OLLAMA_TOOLS = [
+    {
+        "type": "function",
+        "function": {
+            "name": tool["name"],
+            "description": tool["description"],
+            "parameters": tool["input_schema"],
+        },
+    }
+    for tool in TOOLS
+]
 
 SYSTEM_PROMPT = """You are a motorcycle expert assistant backed by a database \
 scraped from bikez.com (specs) and its owner discussion forums (reviews).
@@ -45,12 +72,19 @@ def _tool_results_to_content(tool_use_id: str, results: list[dict]) -> dict:
     }
 
 
-def run_agent(conn, client: Anthropic, user_message: str, history: list[dict] | None = None) -> tuple[str, list[dict]]:
+def run_agent(conn, client: Anthropic | None, user_message: str, history: list[dict] | None = None) -> tuple[str, list[dict]]:
     """Run one user turn through the agent loop.
 
     Returns (final_text, updated_history) so a caller (e.g. Gradio) can
-    keep the conversation going across turns.
+    keep the conversation going across turns. `client` is ignored when
+    AGENT_BACKEND=ollama (no Anthropic client needed for that path).
     """
+    if BACKEND == "ollama":
+        return _run_agent_ollama(conn, user_message, history)
+    return _run_agent_anthropic(conn, client, user_message, history)
+
+
+def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
 
@@ -77,3 +111,38 @@ def run_agent(conn, client: Anthropic, user_message: str, history: list[dict] | 
             tool_results.append(_tool_results_to_content(block.id, results))
 
         messages.append({"role": "user", "content": tool_results})
+
+
+def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
+    messages = list(history or [])
+    messages.append({"role": "user", "content": user_message})
+
+    while True:
+        response = requests.post(
+            f"{OLLAMA_HOST}/api/chat",
+            json={
+                "model": OLLAMA_MODEL,
+                "messages": [{"role": "system", "content": SYSTEM_PROMPT}, *messages],
+                "tools": OLLAMA_TOOLS,
+                "stream": False,
+            },
+            timeout=120,
+        )
+        response.raise_for_status()
+        message = response.json()["message"]
+        messages.append(message)
+
+        tool_calls = message.get("tool_calls") or []
+        if not tool_calls:
+            return message.get("content", ""), messages
+
+        for call in tool_calls:
+            name = call["function"]["name"]
+            arguments = call["function"]["arguments"]
+            if isinstance(arguments, str):
+                arguments = json.loads(arguments)
+            results = execute_tool(conn, name, arguments)
+            messages.append({
+                "role": "tool",
+                "content": str(results) if results else "No matching rows.",
+            })

@@ -23,49 +23,39 @@ from ragas.metrics import answer_relevancy, faithfulness
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 load_dotenv()
 
-from bikefinder_rag.agent.loop import SYSTEM_PROMPT, MODEL
-from bikefinder_rag.agent.tools import TOOLS, execute_tool
+from bikefinder_rag.agent.loop import BACKEND, run_agent
 from bikefinder_rag.db.client import get_connection
 
 GOLDEN_PATH = Path(__file__).resolve().parent / "golden_questions.json"
 
 
-def run_one(conn, client: Anthropic, question: str) -> tuple[str, list[str]]:
-    """Like agent.loop.run_agent, but also collects raw tool outputs as
-    RAGAS 'contexts' instead of just the final answer."""
-    messages = [{"role": "user", "content": question}]
+def _extract_contexts(messages: list[dict]) -> list[str]:
+    """Pull raw tool outputs back out of the message history run_agent
+    returns, so RAGAS has 'contexts' to check the answer's faithfulness
+    against. Handles both backends' tool-result message shapes."""
     contexts: list[str] = []
-
-    while True:
-        response = client.messages.create(
-            model=MODEL, max_tokens=1024, system=SYSTEM_PROMPT, tools=TOOLS, messages=messages
-        )
-        messages.append({"role": "assistant", "content": response.content})
-
-        if response.stop_reason != "tool_use":
-            answer = "".join(b.text for b in response.content if b.type == "text")
-            return answer, contexts
-
-        tool_results = []
-        for block in response.content:
-            if block.type != "tool_use":
-                continue
-            results = execute_tool(conn, block.name, block.input)
-            contexts.append(str(results) if results else "No matching rows.")
-            tool_results.append(
-                {"type": "tool_result", "tool_use_id": block.id, "content": str(results) if results else "No matching rows."}
-            )
-        messages.append({"role": "user", "content": tool_results})
+    for msg in messages:
+        if not isinstance(msg, dict):
+            continue
+        role, content = msg.get("role"), msg.get("content")
+        if role == "tool" and isinstance(content, str):  # Ollama
+            contexts.append(content)
+        elif role == "user" and isinstance(content, list):  # Anthropic
+            for block in content:
+                if isinstance(block, dict) and block.get("type") == "tool_result":
+                    contexts.append(block.get("content", ""))
+    return contexts
 
 
 def main() -> None:
     questions = json.loads(GOLDEN_PATH.read_text())
-    client = Anthropic()
+    client = None if BACKEND == "ollama" else Anthropic()
     conn = get_connection()
 
     rows = []
     for item in questions:
-        answer, contexts = run_one(conn, client, item["question"])
+        answer, messages = run_agent(conn, client, item["question"])
+        contexts = _extract_contexts(messages)
         rows.append(
             {
                 "question": item["question"],

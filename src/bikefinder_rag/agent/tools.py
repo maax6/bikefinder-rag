@@ -140,11 +140,11 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
 
     sql = f"""
         SELECT m.brand, m.model, m.year, rc.comment_text, rc.author, rc.posted_at,
-               rc.embedding <=> %s AS distance
+               rc.embedding <=> %s::vector AS distance
         FROM review_chunks rc
         JOIN motorcycles m ON m.id = rc.motorcycle_id
         WHERE {' AND '.join(clauses)}
-        ORDER BY rc.embedding <=> %s
+        ORDER BY rc.embedding <=> %s::vector
         LIMIT %s
     """
     params_with_vector = [query_vector, *params, query_vector, limit]
@@ -156,8 +156,22 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
 
 
 def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
+    # Tool-calling LLMs (local models especially) sometimes emit argument
+    # names that drift from the schema (e.g. "models" instead of "model", or
+    # drop a required one like "query" entirely). Drop anything unrecognized,
+    # and turn a resulting TypeError into a tool_result the model can see
+    # and self-correct on next turn, instead of crashing the whole loop.
     if tool_name == "filter_specs":
-        return filter_specs(conn, **tool_input)
-    if tool_name == "search_reviews":
-        return search_reviews(conn, **tool_input)
-    raise ValueError(f"Unknown tool: {tool_name}")
+        known = FILTER_SPECS_SCHEMA["input_schema"]["properties"]
+        call = filter_specs
+    elif tool_name == "search_reviews":
+        known = SEARCH_REVIEWS_SCHEMA["input_schema"]["properties"]
+        call = search_reviews
+    else:
+        raise ValueError(f"Unknown tool: {tool_name}")
+
+    filtered_input = {k: v for k, v in tool_input.items() if k in known}
+    try:
+        return call(conn, **filtered_input)
+    except TypeError as e:
+        return [{"error": f"Invalid arguments for {tool_name}: {e}"}]

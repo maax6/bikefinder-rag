@@ -9,20 +9,20 @@ import gradio as gr
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-from bikefinder_rag.agent.loop import run_agent
+from bikefinder_rag.agent.loop import BACKEND, run_agent
 from bikefinder_rag.db.client import get_connection
 
 load_dotenv()
 
 
 def chat(message: str, chat_history: list, api_key: str, agent_history: list):
-    if not api_key:
+    if BACKEND != "ollama" and not api_key:
         chat_history = chat_history + [
             (message, "Please enter your Anthropic API key above first (get one at console.anthropic.com).")
         ]
         return chat_history, agent_history
 
-    client = Anthropic(api_key=api_key)
+    client = None if BACKEND == "ollama" else Anthropic(api_key=api_key)
     conn = get_connection()
     try:
         final_text, updated_history = run_agent(conn, client, message, agent_history)
@@ -34,18 +34,26 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
 
 
 with gr.Blocks(title="Bikefinder RAG") as demo:
-    gr.Markdown(
-        "# 🏍️ Bikefinder RAG\n"
-        "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
-        "Bring your own [Anthropic API key](https://console.anthropic.com/) — "
-        "it's used only for your session and never stored."
-    )
-
-    api_key_input = gr.Textbox(
-        label="Anthropic API key",
-        type="password",
-        placeholder="sk-ant-...",
-    )
+    if BACKEND == "ollama":
+        gr.Markdown(
+            "# 🏍️ Bikefinder RAG (local model)\n"
+            "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
+            f"Running on a local Ollama model (`{os.environ.get('OLLAMA_MODEL', 'mistral-small')}`) — "
+            "no API key needed, but expect slower responses."
+        )
+        api_key_input = gr.Textbox(visible=False)
+    else:
+        gr.Markdown(
+            "# 🏍️ Bikefinder RAG\n"
+            "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
+            "Bring your own [Anthropic API key](https://console.anthropic.com/) — "
+            "it's used only for your session and never stored."
+        )
+        api_key_input = gr.Textbox(
+            label="Anthropic API key",
+            type="password",
+            placeholder="sk-ant-...",
+        )
     chatbot = gr.Chatbot(label="Chat")
     msg = gr.Textbox(label="Your question", placeholder="A light naked bike under 600cc, and what do owners say about it?")
     agent_state = gr.State([])
