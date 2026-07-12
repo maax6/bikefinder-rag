@@ -98,9 +98,15 @@ def main() -> None:
                 seen_urls.add(listing.url)
                 total_motorcycles += 1
 
+                print(f"  [{year} {i}/{len(listings)}] + {listing.brand} {listing.model}",
+                      file=sys.stderr, flush=True)
+
                 discussion_url = detail.discussion_url
                 if discussion_url and discussion_url not in seen_discussions:
                     if discussion_url not in discussion_cache:
+                        # Deep forums take a while (up to 60 threads at 1.5s
+                        # each) — announce the crawl so the pause is explained.
+                        print("        forum found, crawling threads...", file=sys.stderr, flush=True)
                         try:
                             discussion_cache[discussion_url] = fetch_discussion_comments(
                                 discussion_url, max_threads=MAX_THREADS_PER_FORUM
@@ -121,10 +127,8 @@ def main() -> None:
                             )
                             total_comments += 1
                         comments_file.flush()
-
-                if i % 25 == 0 or i == len(listings):
-                    print(f"  [{year}] {i}/{len(listings)} done ({total_comments} comments so far)",
-                          file=sys.stderr)
+                        print(f"        forum: {len(comments)} comments kept "
+                              f"({total_comments} total)", file=sys.stderr, flush=True)
 
     print(f"\nDone. {total_motorcycles} motorcycles, {total_comments} comments -> {OUT_DIR}",
           file=sys.stderr)
