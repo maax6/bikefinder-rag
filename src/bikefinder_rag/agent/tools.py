@@ -41,6 +41,15 @@ FILTER_SPECS_SCHEMA = {
                 "type": "number",
                 "description": "MSRP is sparsely populated (bikez.com has no price field; see README) — treat absence of results as 'unknown', not 'too expensive'.",
             },
+            "order_by": {
+                "type": "string",
+                "description": (
+                    "Sort column: year, displacement_ccm, weight_kg, power_hp, "
+                    "torque_nm, seat_height_mm or msrp_eur. Prefix with '-' for "
+                    "descending. Default '-year'. Required for superlatives: "
+                    "'the lightest X' needs order_by='weight_kg' with a small limit."
+                ),
+            },
             "limit": {"type": "integer", "description": "Max rows to return, default 10."},
         },
     },
@@ -107,13 +116,22 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
             clauses.append(f"{column} {operator} %s")
             params.append(value)
 
+    # Column names come from this whitelist, never from the LLM's string.
+    sortable = {"year", "displacement_ccm", "weight_kg", "power_hp",
+                "torque_nm", "seat_height_mm", "msrp_eur"}
+    order_by = str(kwargs.get("order_by") or "-year")
+    direction = "DESC" if order_by.startswith("-") else "ASC"
+    column = order_by.lstrip("-")
+    if column not in sortable:
+        column, direction = "year", "DESC"
+
     limit = int(kwargs.get("limit") or 10)
     query = f"""
         SELECT brand, model, year, category, displacement_ccm, weight_kg,
                power_hp, torque_nm, seat_height_mm, msrp_eur, url
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
-        ORDER BY year DESC
+        ORDER BY {column} {direction} NULLS LAST
         LIMIT %s
     """
     params.append(limit)
@@ -189,6 +207,17 @@ def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
         raise ValueError(f"Unknown tool: {tool_name}")
 
     filtered_input = {k: v for k, v in tool_input.items() if k in known}
+
+    # Weak tool-callers (local models especially) sometimes drop the required
+    # query even when the rest of the call is fine. Searching for general
+    # owner impressions of the requested bike beats erroring out — models
+    # read the error as "this bike has no reviews" and give up.
+    if tool_name == "search_reviews" and not filtered_input.get("query"):
+        topic = " ".join(
+            str(filtered_input[k]) for k in ("brand", "model", "category") if filtered_input.get(k)
+        )
+        filtered_input["query"] = f"owner opinions experiences known issues {topic}".strip()
+
     try:
         return call(conn, **filtered_input)
     except TypeError as e:

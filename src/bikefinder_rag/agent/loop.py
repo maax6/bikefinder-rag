@@ -12,6 +12,7 @@ Two backends are supported, picked via the AGENT_BACKEND env var:
 import json
 import os
 
+import anthropic
 import requests
 from anthropic import Anthropic
 
@@ -21,6 +22,15 @@ BACKEND = os.environ.get("AGENT_BACKEND", "anthropic")
 MODEL = "claude-sonnet-5"
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small")
+
+# Hard cap on tool-call round-trips per user turn: a model stuck re-calling
+# tools would otherwise loop forever on the visitor's API key.
+MAX_TOOL_TURNS = 8
+
+TURN_LIMIT_MESSAGE = (
+    "I hit my tool-call limit for this question without reaching a final "
+    "answer — try rephrasing or narrowing the question."
+)
 
 # Ollama's tool-calling API takes OpenAI-style function schemas
 # ({"type": "function", "function": {...}}), not Anthropic's
@@ -94,14 +104,19 @@ def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: li
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
 
-    while True:
-        response = client.messages.create(
-            model=MODEL,
-            max_tokens=1024,
-            system=SYSTEM_PROMPT,
-            tools=TOOLS,
-            messages=messages,
-        )
+    for _ in range(MAX_TOOL_TURNS):
+        try:
+            response = client.messages.create(
+                model=MODEL,
+                max_tokens=2048,
+                system=SYSTEM_PROMPT,
+                tools=TOOLS,
+                messages=messages,
+            )
+        except anthropic.AuthenticationError:
+            return ("That Anthropic API key was rejected — check it at console.anthropic.com.", messages)
+        except anthropic.APIError as exc:
+            return (f"The Anthropic API returned an error ({type(exc).__name__}) — please try again.", messages)
 
         messages.append({"role": "assistant", "content": response.content})
 
@@ -118,23 +133,28 @@ def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: li
 
         messages.append({"role": "user", "content": tool_results})
 
+    return TURN_LIMIT_MESSAGE, messages
+
 
 def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
 
-    while True:
-        response = requests.post(
-            f"{OLLAMA_HOST}/api/chat",
-            json={
-                "model": OLLAMA_MODEL,
-                "messages": [{"role": "system", "content": SYSTEM_PROMPT}, *messages],
-                "tools": OLLAMA_TOOLS,
-                "stream": False,
-            },
-            timeout=120,
-        )
-        response.raise_for_status()
+    for _ in range(MAX_TOOL_TURNS):
+        try:
+            response = requests.post(
+                f"{OLLAMA_HOST}/api/chat",
+                json={
+                    "model": OLLAMA_MODEL,
+                    "messages": [{"role": "system", "content": SYSTEM_PROMPT}, *messages],
+                    "tools": OLLAMA_TOOLS,
+                    "stream": False,
+                },
+                timeout=120,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            return (f"Could not reach the local Ollama server ({type(exc).__name__}) — is it running?", messages)
         message = response.json()["message"]
         messages.append(message)
 
@@ -152,3 +172,5 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
                 "role": "tool",
                 "content": str(results) if results else "No matching rows.",
             })
+
+    return TURN_LIMIT_MESSAGE, messages
