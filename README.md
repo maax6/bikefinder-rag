@@ -39,17 +39,19 @@ that got reversed) is in the [project's Notion doc] — the short version:
 - **Evaluation**: two layers, both with published results.
   [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
   retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
-  22-67x over corpus base rate, negative controls rejected — see
+  21-82x over corpus base rate, negative controls rejected — see
   `eval_retrieval_report.json`). [RAGAS](https://github.com/explodinggpt/ragas)
   (faithfulness, answer relevancy) then scores the full agent over a golden
-  question set: first fully-local run (mistral-small generation, qwen3.6
-  judge) lands at **faithfulness 0.55 / answer_relevancy 0.62**
-  (`src/bikefinder_rag/eval/ragas_results.json`). The per-question detail is
-  the honest story: structured-filter questions score 0.88-1.0 faithfulness,
-  and the losses are concentrated where the *local generator* drops the
-  required `query` argument from its search_reviews calls (narrative
-  questions), plus RAGAS's known penalty for honest "no data on record"
-  refusals. Same harness, Claude backend: pending an API key.
+  question set, fully local (mistral-small generation, qwen3.6 judge):
+  **faithfulness 0.78 / answer_relevancy 0.87**
+  (`src/bikefinder_rag/eval/ragas_results.json`), up from 0.55/0.62 on the
+  first run — the eval caught two real retrieval bugs (substring-only
+  model matching, dropped `query` arguments) whose fixes account for the
+  jump. Per-question detail: every structured-filter question scores 1.0
+  faithfulness; the remaining low scores are the *local generator*
+  contradicting its own tool results (answering "no owner reviews" while
+  real comments sit in its context) — exactly what faithfulness is meant
+  to flag. Same harness, Claude backend: pending an API key.
 - **Interface**: Gradio, deployable on Hugging Face Spaces for free — visitors
   paste their own Anthropic API key (used only for their session, never
   stored server-side).
