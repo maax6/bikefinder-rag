@@ -36,9 +36,20 @@ that got reversed) is in the [project's Notion doc] — the short version:
   specific model-year.
 - **Local, multilingual embeddings** (`BAAI/bge-m3`) — no embeddings API key
   needed, and queries in French retrieve English-language forum comments.
-- **Evaluation**: [RAGAS](https://github.com/explodinggpt/ragas) (faithfulness,
-  answer relevancy) over a golden question set, not a hand-rolled evaluator —
-  a deliberate choice to learn the ecosystem-standard tooling.
+- **Evaluation**: two layers, both with published results.
+  [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
+  retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
+  22-67x over corpus base rate, negative controls rejected — see
+  `eval_retrieval_report.json`). [RAGAS](https://github.com/explodinggpt/ragas)
+  (faithfulness, answer relevancy) then scores the full agent over a golden
+  question set: first fully-local run (mistral-small generation, qwen3.6
+  judge) lands at **faithfulness 0.55 / answer_relevancy 0.62**
+  (`src/bikefinder_rag/eval/ragas_results.json`). The per-question detail is
+  the honest story: structured-filter questions score 0.88-1.0 faithfulness,
+  and the losses are concentrated where the *local generator* drops the
+  required `query` argument from its search_reviews calls (narrative
+  questions), plus RAGAS's known penalty for honest "no data on record"
+  refusals. Same harness, Claude backend: pending an API key.
 - **Interface**: Gradio, deployable on Hugging Face Spaces for free — visitors
   paste their own Anthropic API key (used only for their session, never
   stored server-side).

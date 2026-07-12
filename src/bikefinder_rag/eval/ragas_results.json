@@ -1,0 +1,131 @@
+{
+  "generation_backend": "ollama",
+  "judge_model": "qwen3.6",
+  "faithfulness_mean": 0.5527,
+  "answer_relevancy_mean": 0.6163,
+  "per_question": [
+    {
+      "id": "struct-1",
+      "user_input": "What naked bikes are there between 600cc and 900cc?",
+      "retrieved_contexts": [
+        "[{'brand': 'Aprilia', 'model': 'Mana 850', 'year': 2012, 'category': 'Naked bike', 'displacement_ccm': 839.3, 'weight_kg': None, 'power_hp': None, 'torque_nm': 73.0, 'seat_height_mm': 800.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/aprilia_mana_850_2012.php'}, {'brand': 'BMW', 'model': 'R65 (reduced effect)', 'year': 1985, 'category': 'Naked bike', 'displacement_ccm': 649.0, 'weight_kg': 205.0, 'power_hp': 27.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/bmw_r65_reduced_effect_1985.php'}]"
+      ],
+      "response": "Here are some naked bikes between 600cc and 900cc:\n\n- **Aprilia Mana 850 (2012)**: This bike has an 839.3 cc engine and a seat height of 800 mm.\n- **BMW R65 (reduced effect) (1985)**: This classic naked bike has a 649 cc engine and weighs 205 kg.\n\nYou can find more details about these models on their respective pages:\n\n- [Aprilia Mana 850](https://bikez.com/motorcycles/aprilia_mana_850_2012.php)\n- [BMW R65 (reduced effect)](https://bikez.com/motorcycles/bmw_r65_reduced_effect_1985.php)",
+      "faithfulness": 0.875,
+      "answer_relevancy": 0.9255786281
+    },
+    {
+      "id": "struct-2",
+      "user_input": "Show me Harley-Davidson custom/cruiser motorcycles from the 1980s.",
+      "retrieved_contexts": [
+        "[{'brand': 'Harley-Davidson', 'model': 'FXSB 1340 Low Rider', 'year': 1985, 'category': 'Custom/cruiser', 'displacement_ccm': 1337.0, 'weight_kg': 277.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_fxsb_1340_low_rider_1985.php'}]"
+      ],
+      "response": "Here are the Harley-Davidson custom/cruiser motorcycles from the 1980s:\n\n- **Harley-Davidson FXSB 1340 Low Rider (1985)**\n  - Displacement: 1337.0 ccm\n  - Weight: 277.0 kg\n  - Category: Custom/cruiser\n\nYou can find more details [here](https://bikez.com/motorcycles/harley-davidson_fxsb_1340_low_rider_1985.php).",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9253250069
+    },
+    {
+      "id": "struct-3",
+      "user_input": "List enduro/offroad bikes that weigh under 130 kg.",
+      "retrieved_contexts": [
+        "[{'brand': 'Aprilia', 'model': 'ETX 125', 'year': 2000, 'category': 'Enduro/offroad', 'displacement_ccm': 124.8, 'weight_kg': 129.0, 'power_hp': 12.1, 'torque_nm': 14.0, 'seat_height_mm': 915.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/aprilia_etx_125_2000.php'}, {'brand': 'Jawa', 'model': '90', 'year': 1970, 'category': 'Enduro/offroad', 'displacement_ccm': 89.0, 'weight_kg': 90.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/jawa_90_1970.php'}]"
+      ],
+      "response": "Here are some enduro/offroad bikes that weigh under 130 kg:\n\n- **Aprilia ETX 125 (2000)**: This bike has a displacement of 124.8 ccm, weight of 129.0 kg, and power of 12.1 hp.\n- **Jawa 90 (1970)**: This bike has a displacement of 89.0 ccm and weighs 90.0 kg.\n\nYou can find more details about these bikes on their respective pages:\n- [Aprilia ETX 125](https://bikez.com/motorcycles/aprilia_etx_125_2000.php)\n- [Jawa 90](https://bikez.com/motorcycles/jawa_90_1970.php)",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8407414339
+    },
+    {
+      "id": "struct-4",
+      "user_input": "List sport motorcycles with a seat height under 800mm.",
+      "retrieved_contexts": [
+        "[{'brand': 'Di', 'model': 'Blasi Express 50', 'year': 2023, 'category': 'Minibike, sport', 'displacement_ccm': 49.9, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 762.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/di_blasi_express_50_2023.php'}, {'brand': 'CF', 'model': 'Moto Papio', 'year': 2023, 'category': 'Minibike, sport', 'displacement_ccm': 126.0, 'weight_kg': 114.0, 'power_hp': None, 'torque_nm': 8.3, 'seat_height_mm': 775.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/cf_moto_papio_2023.php'}, {'brand': 'Benelli', 'model': 'TNT 135', 'year': 2023, 'category': 'Minibike, sport', 'displacement_ccm': 134.7, 'weight_kg': None, 'power_hp': 12.5, 'torque_nm': 10.8, 'seat_height_mm': 780.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/benelli_tnt_135_2023.php'}, {'brand': 'Arch', 'model': 'KRGT-1', 'year': 2023, 'category': 'Sport', 'displacement_ccm': 2032.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': 156.4, 'seat_height_mm': 706.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/arch_krgt-1_2023.php'}, {'brand': 'AJS', 'model': 'Cadwell 125', 'year': 2023, 'category': 'Sport', 'displacement_ccm': 124.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': 9.5, 'seat_height_mm': 740.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/ajs_cadwell_125_2023.php'}, {'brand': 'Husqvarna', 'model': 'SM50', 'year': 2012, 'category': 'Minibike, sport', 'displacement_ccm': 49.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 680.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/husqvarna_sm50_2012.php'}, {'brand': 'Honda', 'model': 'CBR 1000 F', 'year': 2000, 'category': 'Sport touring', 'displacement_ccm': 998.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': 104.0, 'seat_height_mm': 780.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/honda_cbr_1000_f_2000.php'}, {'brand': 'BMW', 'model': 'K 1200 RS', 'year': 2000, 'category': 'Sport touring', 'displacement_ccm': 1171.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': 117.0, 'seat_height_mm': 770.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/bmw_k_1200_rs_2000.php'}, {'brand': 'Cagiva', 'model': 'Mito 125', 'year': 2000, 'category': 'Sport', 'displacement_ccm': 124.6, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 760.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/cagiva_mito_125_2000.php'}, {'brand': 'Ducati', 'model': '350 Desmo', 'year': 1970, 'category': 'Sport', 'displacement_ccm': 340.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 735.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/ducati_350_desmo_1970.php'}]"
+      ],
+      "response": "Here are some sport motorcycles with a seat height under 800mm:\n\n- Di Blasi Express 50 (2023) - Seat Height: 762 mm\n- CF Moto Papio (2023) - Seat Height: 775 mm\n- Benelli TNT 135 (2023) - Seat Height: 780 mm\n- Arch KRGT-1 (2023) - Seat Height: 706 mm\n- AJS Cadwell 125 (2023) - Seat Height: 740 mm\n- Husqvarna SM50 (2012) - Seat Height: 680 mm\n- Honda CBR 1000 F (2000) - Seat Height: 780 mm\n- BMW K 1200 RS (2000) - Seat Height: 770 mm\n- Cagiva Mito 125 (2000) - Seat Height: 760 mm\n- Ducati 350 Desmo (1970) - Seat Height: 735 mm",
+      "faithfulness": null,
+      "answer_relevancy": 0.8857177713
+    },
+    {
+      "id": "struct-5",
+      "user_input": "Quelles motos custom/cruiser des annees 1950 sont dans la base ?",
+      "retrieved_contexts": [
+        "[{'brand': 'Indian', 'model': 'Chief', 'year': 1950, 'category': 'Custom/cruiser', 'displacement_ccm': 1300.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/indian_chief_1950.php'}, {'brand': 'Harley-Davidson', 'model': 'EL', 'year': 1950, 'category': 'Custom/cruiser', 'displacement_ccm': 1000.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_el_1950.php'}, {'brand': 'Indian', 'model': 'Chief', 'year': 1930, 'category': 'Custom/cruiser', 'displacement_ccm': 1210.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/indian_chief_1930.php'}, {'brand': 'Harley-Davidson', 'model': 'Model V', 'year': 1930, 'category': 'Custom/cruiser', 'displacement_ccm': 1213.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_model_v_1930.php'}, {'brand': 'BMW', 'model': 'R 16', 'year': 1930, 'category': 'Custom/cruiser', 'displacement_ccm': 736.0, 'weight_kg': 165.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/bmw_r_16_1930.php'}]"
+      ],
+      "response": "Voici les motos custom/cruiser des années 1950 dans la base de données:\n\n- **Indian Chief (1950)**\n  - Cylindrée: 1300 cm³\n  - Catégorie: Custom/Cruiser\n\n- **Harley-Davidson EL (1950)**\n  - Cylindrée: 1000 cm³\n  - Catégorie: Custom/Cruiser\n\nIl y a également des modèles de la catégorie custom/cruiser des années 1930:\n\n- **Indian Chief (1930)**\n  - Cylindrée: 1210 cm³\n  - Catégorie: Custom/Cruiser\n\n- **Harley-Davidson Model V (1930)**\n  - Cylindrée: 1213 cm³\n  - Catégorie: Custom/Cruiser\n\n- **BMW R 16 (1930)**\n  - Cylindrée: 736 cm³\n  - Poids: 165 kg\n  - Catégorie: Custom/Cruiser",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8211282575
+    },
+    {
+      "id": "narrative-1",
+      "user_input": "What do owners say about the Harley-Davidson Electra Glide Classic?",
+      "retrieved_contexts": [
+        "[{'error': \"Invalid arguments for search_reviews: search_reviews() missing 1 required positional argument: 'query'\"}]"
+      ],
+      "response": "I'm sorry, I can't find any owner discussion on record for the Harley-Davidson Electra Glide Classic. Would you like to know something else?",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0
+    },
+    {
+      "id": "narrative-2",
+      "user_input": "Are there any known issues discussed for the BMW F 650?",
+      "retrieved_contexts": [
+        "[{'error': \"Invalid arguments for search_reviews: search_reviews() missing 1 required positional argument: 'query'\"}]"
+      ],
+      "response": "I'm sorry, I need a query to perform the search. Could you please specify what kind of issues or topics you are interested in regarding the BMW F 650? For example, are you looking for information on reliability, maintenance, performance, or something else?",
+      "faithfulness": 0.3333333333,
+      "answer_relevancy": 0.8275926604
+    },
+    {
+      "id": "narrative-3",
+      "user_input": "Quels sont les retours des proprietaires sur l'Aprilia RS 125 ?",
+      "retrieved_contexts": [
+        "[{'error': \"Invalid arguments for search_reviews: search_reviews() missing 1 required positional argument: 'query'\"}]"
+      ],
+      "response": "Je suis désolé, mais il semble que nous n'ayons pas de discussions d'utilisateurs enregistrées pour l'Aprilia RS 125. Si vous avez d'autres questions ou si vous souhaitez des informations sur un autre modèle, n'hésitez pas à demander !",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0
+    },
+    {
+      "id": "hybrid-1",
+      "user_input": "A light beginner naked bike under 600cc, and what do owners say about reliability?",
+      "retrieved_contexts": [
+        "[{'brand': 'Aprilia', 'model': 'Tuono 125', 'year': 2023, 'category': 'Naked bike', 'displacement_ccm': 124.2, 'weight_kg': 144.0, 'power_hp': None, 'torque_nm': 11.2, 'seat_height_mm': 810.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/aprilia_tuono_125_2023.php'}, {'brand': 'Bajaj', 'model': 'Pulsar N250', 'year': 2023, 'category': 'Naked bike', 'displacement_ccm': 249.7, 'weight_kg': 162.0, 'power_hp': None, 'torque_nm': 21.5, 'seat_height_mm': 795.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/bajaj_pulsar_n250_2023.php'}, {'brand': 'Honda', 'model': 'CB 450 N', 'year': 1985, 'category': 'Naked bike', 'displacement_ccm': 447.0, 'weight_kg': 189.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/honda_cb_450_n_1985.php'}, {'brand': 'IZH', 'model': 'Jupiter 4', 'year': 1985, 'category': 'Naked bike', 'displacement_ccm': 350.0, 'weight_kg': 180.0, 'power_hp': 27.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/izh_jupiter_4_1985.php'}, {'brand': 'Suzuki', 'model': 'T 500', 'year': 1970, 'category': 'Naked bike', 'displacement_ccm': 492.0, 'weight_kg': 187.0, 'power_hp': 47.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/suzuki_t_500_1970.php'}, {'brand': 'Yamaha', 'model': 'R 5', 'year': 1970, 'category': 'Naked bike', 'displacement_ccm': 347.0, 'weight_kg': 148.0, 'power_hp': None, 'torque_nm': 37.9, 'seat_height_mm': 790.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/yamaha_r_5_1970.php'}, {'brand': 'Ducati', 'model': '350 Mark 3 D', 'year': 1970, 'category': 'Naked bike', 'displacement_ccm': 340.0, 'weight_kg': 137.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/ducati_350_mark_3_d_1970.php'}]",
+        "[{'error': \"Invalid arguments for search_reviews: search_reviews() missing 1 required positional argument: 'query'\"}]",
+        "[{'error': \"Invalid arguments for search_reviews: search_reviews() missing 1 required positional argument: 'query'\"}]"
+      ],
+      "response": "I couldn't find any owner discussions on record for the Aprilia Tuono 125 or Bajaj Pulsar N250.\n\nHere are some light naked bikes under 600cc:\n\n- **Aprilia Tuono 125 (2023)**: This bike has a displacement of 124.2 ccm and weighs 144 kg.\n- **Bajaj Pulsar N250 (2023)**: With a displacement of 249.7 ccm, this model weighs 162 kg.\n\nUnfortunately, the price data is sparse for these models, so I can't provide MSRP information.",
+      "faithfulness": 0.8181818182,
+      "answer_relevancy": 0.4420492478
+    },
+    {
+      "id": "hybrid-2",
+      "user_input": "Compare the Honda CBR 1000 F and the Suzuki GSF 1200 Bandit based on owner feedback.",
+      "retrieved_contexts": [
+        "[{'brand': 'Honda', 'model_family': 'CBR 1000 F', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'hi, m a rookie owner of a used pb1', 'author': 'jefrox', 'posted_at': '2011-09-27 00:30', 'distance': 0.33618303106032965}, {'brand': 'Honda', 'model_family': 'CBR 1000 F', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'Need info', 'author': 'Motospec', 'posted_at': '2010-11-10 18:03', 'distance': 0.3662225008010864}, {'brand': 'Honda', 'model_family': 'CBR 1000 F', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'Im thinking of buying  cbf1000f & id like some idea if what to look for with 2nd hand bikes, also some feedback on what owners think of their bikes', 'author': 'bruce_callaway', 'posted_at': '2010-11-28 15:43', 'distance': 0.3920817737530594}, {'brand': 'Honda', 'model_family': 'CBR 1000 F', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'please write your comment about the cbr 1000', 'author': 'ian', 'posted_at': '2010-09-04 13:10', 'distance': 0.3944401741027832}, {'brand': 'Honda', 'model_family': 'CBR 1000 F', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'I would love to join this group as I´m a proud owner of this fine bike for the last 20 years. I would love to read others views and tips on this bike as well....Thanks Tommy C', 'author': 'tom colang', 'posted_at': '2011-09-03 08:25', 'distance': 0.4134412233066921}]",
+        "[{'brand': 'Suzuki', 'model_family': 'GSF 1200 N Bandit', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'I´m a 57 year old retired probation officer and owner of a GL 1500 Goldwing. I wanted something more nimble to ride in town since I´m 5´10\\\\', 'author': 'DH', 'posted_at': '2006-11-22 02:11', 'distance': 0.4305397354913033}, {'brand': 'Suzuki', 'model_family': 'GSF 1200 N Bandit', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'Greetings folks.. I just bought a 2000 Bandit 1200S. I´ve owned it for about a week now and so far I love it! It has 7700 miles, new Bridgestone tires, and a new battery.  It has a few minor issues I need to work on. I´m an experienced mechanic but I could use some advise. It seems to have a \\\\', 'author': 'MikeC51', 'posted_at': '2013-06-01 11:14', 'distance': 0.43853509426116943}, {'brand': 'Suzuki', 'model_family': 'GSF 1200 N Bandit', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'Hi just bought a new old stock 06 1200s and waiting for spring (live in Canada)', 'author': 'Zaph', 'posted_at': '2008-01-19 21:34', 'distance': 0.44583038824291166}, {'brand': 'Suzuki', 'model_family': 'GSF 1200 N Bandit', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'Hi, Just bought a bandit 1200s 98 model, never had one before always been a yamaha rider, all´s good so far, bike´s quick despite the weight, bit heavy on fuel, but all round handles well,just need a clear day now to see what the top ends like, any tip´s tricks from you seasond owners will be most welcome, DINZ', 'author': 'Kev', 'posted_at': '2010-02-03 12:39', 'distance': 0.4497921198730388}, {'brand': 'Suzuki', 'model_family': 'GSF 1200 N Bandit', 'family_year_min': 2000, 'family_year_max': 2000, 'comment_text': 'hola mi nombre es axl y tengo mil y un dudas de la suzuki 1200 2001 ya que soy el ogulloso poseedor de un ejemplar y adecir verdad estoy muy conforme con su desempeÃ±o soy del d.f y me gustaria me aseptarn en su foro gracias....', 'author': 'axl', 'posted_at': '2011-05-03 10:14', 'distance': 0.45260071754455566}]"
+      ],
+      "response": "There are no owner discussions on record for the Honda CBR 1000 F.\n\nOwners of the Suzuki GSF 1200 Bandit line have mixed feelings about their bikes. Some owners appreciate the bike's performance and handling, describing it as quick despite its weight and noting that it handles well overall. However, there are also mentions of minor issues and concerns about fuel consumption. One owner highlighted the need for advice on addressing some problems with the bike.\n\nOverall, while there are positive aspects to owning a Suzuki GSF 1200 Bandit, potential buyers should be aware of the potential issues and maintenance needs reported by owners.",
+      "faithfulness": null,
+      "answer_relevancy": 0.9295956319
+    },
+    {
+      "id": "honesty-1",
+      "user_input": "What's the cheapest motorcycle under 3000 EUR in the database?",
+      "retrieved_contexts": [
+        "No matching rows."
+      ],
+      "response": "The price data is sparse, so I can't provide a specific answer.",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.0
+    },
+    {
+      "id": "honesty-2",
+      "user_input": "What do owners say about the 1930 BMW R 16?",
+      "retrieved_contexts": [
+        "[{'error': \"Invalid arguments for search_reviews: search_reviews() missing 1 required positional argument: 'query'\"}]"
+      ],
+      "response": "I'm sorry, I can't find any owner discussions on record for the BMW R 16. This could be because there are no reviews available or the model is too old to have any recorded comments.\n\nIf you have any other questions about motorcycles, feel free to ask!",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7978678073
+    }
+  ]
+}
