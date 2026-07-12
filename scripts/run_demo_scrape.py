@@ -150,7 +150,10 @@ def main() -> None:
                       file=sys.stderr, flush=True)
 
                 forum_comments = 0
-                for thread_url in todo:
+                for n, thread_url in enumerate(todo, start=1):
+                    if n % 10 == 0:
+                        print(f"        thread {n}/{len(todo)} ({forum_comments} comments)...",
+                              file=sys.stderr, flush=True)
                     try:
                         comments = fetch_thread_comments(thread_url)
                     except Exception as exc:  # noqa: BLE001
