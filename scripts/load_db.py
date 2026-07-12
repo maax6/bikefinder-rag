@@ -30,6 +30,11 @@ _ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = _ROOT / (sys.argv[1] if len(sys.argv) > 1 else "data/pilot")
 EMBED_BATCH = 256
 
+# A family only gets a narrative layer with at least this many unique
+# comments (the README's curation rule — enforced here since the scraper
+# streams threads to disk without knowing the final family totals).
+MIN_SUBSTANTIVE_COMMENTS = 3
+
 
 def read_jsonl(path: Path) -> list[dict]:
     with path.open(encoding="utf-8") as f:
@@ -150,10 +155,13 @@ def load_comments(conn, moto_to_discussion: dict[str, str | None], url_to_family
         key = (family_id, comment["author"], comment["posted_at"], comment["text"])
         unique.setdefault(key, comment)
 
-    keys = list(unique)
+    per_family = Counter(key[0] for key in unique)
+    keys = [key for key in unique if per_family[key[0]] >= MIN_SUBSTANTIVE_COMMENTS]
+    thin = len(unique) - len(keys)
     print(
         f"{len(keys)} unique comments to embed (deduplicated from the per-model-year scrape"
         + (f", {skipped_no_family} skipped without family" if skipped_no_family else "")
+        + (f", {thin} in families under the {MIN_SUBSTANTIVE_COMMENTS}-comment threshold" if thin else "")
         + ").",
         file=sys.stderr,
     )

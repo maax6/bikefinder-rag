@@ -149,6 +149,19 @@ def _comments_from_thread(thread_html: bytes) -> list[Comment]:
     return comments
 
 
+def list_thread_urls(discussion_url: str) -> list[str]:
+    """Fetch a model family's discussion page and return its thread URLs,
+    newest first — one request. Lets callers resume at thread granularity."""
+    response = http.get(discussion_url)
+    return _thread_urls(response.content)
+
+
+def fetch_thread_comments(thread_url: str) -> list[Comment]:
+    """Fetch one thread's comments — one request."""
+    response = http.get(thread_url)
+    return _comments_from_thread(response.content)
+
+
 def fetch_discussion_comments(discussion_url: str, max_threads: int | None = None) -> list[Comment]:
     """Fetch every comment across every thread linked from a model's
     discussion page. Callers should cache by discussion_url since it's
