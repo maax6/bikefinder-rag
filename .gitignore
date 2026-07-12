@@ -10,3 +10,6 @@ data/*.json
 .DS_Store
 pgdata/
 .ragas_cache/
+
+# RAGAS answer cache (regenerated on each eval run; results are committed, the cache is not)
+src/bikefinder_rag/eval/generated_answers.json

@@ -12,7 +12,10 @@ dependencies = [
     "anthropic>=0.40",
     "sentence-transformers>=3.3",
     "gradio>=5.9",
-    "ragas>=0.2",
+    "ragas>=0.4",
+    # ragas 0.4.3 still imports langchain_community.chat_models.vertexai,
+    # which langchain-community 0.4.2 removed — pin until ragas catches up.
+    "langchain-community==0.4.1",
     "datasets>=3.2",
 ]
 

@@ -5,6 +5,7 @@ comments without a second translation step, and so nobody running this
 project needs an embeddings API key — only the agent's Claude key.
 """
 
+import os
 from functools import lru_cache
 
 MODEL_NAME = "BAAI/bge-m3"
@@ -15,7 +16,10 @@ EMBEDDING_DIM = 1024
 def _get_model():
     from sentence_transformers import SentenceTransformer
 
-    return SentenceTransformer(MODEL_NAME)
+    # EMBEDDER_DEVICE=cpu keeps BGE-M3 off the GPU when something bigger
+    # (e.g. a local Ollama judge during eval) already fills unified memory;
+    # unset, sentence-transformers picks the best device as usual.
+    return SentenceTransformer(MODEL_NAME, device=os.environ.get("EMBEDDER_DEVICE") or None)
 
 
 def embed_texts(texts: list[str]) -> list[list[float]]:

@@ -7,26 +7,58 @@ grounded in those contexts?) and answer_relevancy (does it address the
 question?) — the two RAGAS metrics that don't require hand-authored
 ground-truth answers, which we don't have yet at pilot scale.
 
+Fully local by default: generation uses AGENT_BACKEND (ollama for the
+free path), the judge is an Ollama model (RAGAS_JUDGE_MODEL, default
+qwen3.6 — deliberately a different model than the mistral-small
+generator, to avoid a model grading its own writing style), and
+answer_relevancy's embeddings are the project's own BGE-M3.
+
+Note: ragas 0.4.3 requires langchain-community==0.4.1 (0.4.2 removed a
+module ragas still imports) — pinned in pyproject.toml.
+
 Run: PYTHONPATH=src .venv/bin/python -m bikefinder_rag.eval.run_ragas
 """
 
 import json
+import os
 import sys
+import warnings
 from pathlib import Path
 
-from anthropic import Anthropic
-from datasets import Dataset
 from dotenv import load_dotenv
-from ragas import evaluate
-from ragas.metrics import answer_relevancy, faithfulness
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 load_dotenv()
 
-from bikefinder_rag.agent.loop import BACKEND, run_agent
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+from datasets import Dataset
+from langchain_community.chat_models import ChatOllama
+from langchain_core.embeddings import Embeddings
+from ragas import evaluate
+from ragas.embeddings import LangchainEmbeddingsWrapper
+from ragas.llms import LangchainLLMWrapper
+from ragas.metrics import answer_relevancy, faithfulness
+from ragas.run_config import RunConfig
+
+from bikefinder_rag.agent.loop import BACKEND, OLLAMA_HOST, run_agent
 from bikefinder_rag.db.client import get_connection
+from bikefinder_rag.embeddings.embedder import embed_texts
 
 GOLDEN_PATH = Path(__file__).resolve().parent / "golden_questions.json"
+ANSWERS_CACHE = Path(__file__).resolve().parent / "generated_answers.json"
+JUDGE_MODEL = os.environ.get("RAGAS_JUDGE_MODEL", "qwen3.6")
+
+
+class BgeM3Embeddings(Embeddings):
+    """The project's own BGE-M3, exposed through langchain's interface so
+    answer_relevancy scores with the same embedding space the RAG uses."""
+
+    def embed_documents(self, texts: list[str]) -> list[list[float]]:
+        return embed_texts(texts)
+
+    def embed_query(self, text: str) -> list[float]:
+        return embed_texts([text])[0]
 
 
 def _extract_contexts(messages: list[dict]) -> list[str]:
@@ -47,31 +79,82 @@ def _extract_contexts(messages: list[dict]) -> list[str]:
     return contexts
 
 
+def generate_answers(questions: list[dict]) -> list[dict]:
+    client = None
+    if BACKEND != "ollama":
+        from anthropic import Anthropic
+
+        client = Anthropic()
+
+    conn = get_connection()
+    rows = []
+    try:
+        for item in questions:
+            answer, messages = run_agent(conn, client, item["question"])
+            contexts = _extract_contexts(messages)
+            rows.append(
+                {
+                    "question": item["question"],
+                    "answer": answer,
+                    "contexts": contexts or ["(no tool call was made)"],
+                }
+            )
+            print(f"[{item['id']}] {item['question']}\n  -> {answer[:200]}\n", file=sys.stderr)
+    finally:
+        conn.close()
+    return rows
+
+
 def main() -> None:
     questions = json.loads(GOLDEN_PATH.read_text())
-    client = None if BACKEND == "ollama" else Anthropic()
-    conn = get_connection()
 
-    rows = []
-    for item in questions:
-        answer, messages = run_agent(conn, client, item["question"])
-        contexts = _extract_contexts(messages)
-        rows.append(
-            {
-                "question": item["question"],
-                "answer": answer,
-                "contexts": contexts or ["(no tool call was made)"],
-            }
-        )
-        print(f"[{item['id']}] {item['question']}\n  -> {answer[:200]}\n", file=sys.stderr)
+    # Generation is the expensive half (12 agent runs); cache it so a crash
+    # during scoring — or a judge/config change — doesn't force a redo.
+    # Delete generated_answers.json (or pass --regenerate) for fresh answers.
+    if ANSWERS_CACHE.exists() and "--regenerate" not in sys.argv:
+        cached = json.loads(ANSWERS_CACHE.read_text())
+        if [r["question"] for r in cached] == [q["question"] for q in questions]:
+            print(f"Reusing generated answers from {ANSWERS_CACHE}", file=sys.stderr)
+            rows = cached
+        else:
+            print("Answer cache is stale (questions changed), regenerating...", file=sys.stderr)
+            rows = None
+    else:
+        rows = None
 
-    conn.close()
+    if rows is None:
+        print(f"Generating answers (backend={BACKEND})...", file=sys.stderr)
+        rows = generate_answers(questions)
+        ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
+
+    print(f"Scoring with judge={JUDGE_MODEL} (local Ollama)...", file=sys.stderr)
+    judge = LangchainLLMWrapper(
+        ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=8192)
+    )
+    embeddings = LangchainEmbeddingsWrapper(BgeM3Embeddings())
 
     dataset = Dataset.from_list(rows)
-    result = evaluate(dataset, metrics=[faithfulness, answer_relevancy])
+    result = evaluate(
+        dataset,
+        metrics=[faithfulness, answer_relevancy],
+        llm=judge,
+        embeddings=embeddings,
+        run_config=RunConfig(timeout=600, max_workers=1),
+    )
+
+    df = result.to_pandas()
+    df.insert(0, "id", [q["id"] for q in questions])
 
     out_path = Path(__file__).resolve().parent / "ragas_results.json"
-    result.to_pandas().to_json(out_path, orient="records", indent=2)
+    records = json.loads(df.to_json(orient="records"))
+    summary = {
+        "generation_backend": BACKEND,
+        "judge_model": JUDGE_MODEL,
+        "faithfulness_mean": round(float(df["faithfulness"].mean()), 4),
+        "answer_relevancy_mean": round(float(df["answer_relevancy"].mean()), 4),
+        "per_question": records,
+    }
+    out_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False))
     print(f"\nRAGAS results written to {out_path}", file=sys.stderr)
     print(result, file=sys.stderr)
 

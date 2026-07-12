@@ -1,14 +1,14 @@
 [
   {"id": "struct-1", "type": "structured", "question": "What naked bikes are there between 600cc and 900cc?"},
-  {"id": "struct-2", "type": "structured", "question": "Show me touring motorcycles from Harley-Davidson before 1960."},
-  {"id": "struct-3", "type": "structured", "question": "What's the lightest enduro/offroad bike in the database?"},
+  {"id": "struct-2", "type": "structured", "question": "Show me Harley-Davidson custom/cruiser motorcycles from the 1980s."},
+  {"id": "struct-3", "type": "structured", "question": "List enduro/offroad bikes that weigh under 130 kg."},
   {"id": "struct-4", "type": "structured", "question": "List sport motorcycles with a seat height under 800mm."},
   {"id": "struct-5", "type": "structured", "question": "Quelles motos custom/cruiser des annees 1950 sont dans la base ?"},
-  {"id": "narrative-1", "type": "narrative", "question": "What do owners say about the Honda X-ADV?"},
-  {"id": "narrative-2", "type": "narrative", "question": "Are there any known issues discussed for the BMW R24?"},
-  {"id": "narrative-3", "type": "narrative", "question": "Quels sont les retours des proprietaires sur la Yamaha TMAX ?"},
+  {"id": "narrative-1", "type": "narrative", "question": "What do owners say about the Harley-Davidson Electra Glide Classic?"},
+  {"id": "narrative-2", "type": "narrative", "question": "Are there any known issues discussed for the BMW F 650?"},
+  {"id": "narrative-3", "type": "narrative", "question": "Quels sont les retours des proprietaires sur l'Aprilia RS 125 ?"},
   {"id": "hybrid-1", "type": "hybrid", "question": "A light beginner naked bike under 600cc, and what do owners say about reliability?"},
-  {"id": "hybrid-2", "type": "hybrid", "question": "Compare the Honda X-ADV and the Yamaha TMAX for a commuter who wants something over 500cc."},
+  {"id": "hybrid-2", "type": "hybrid", "question": "Compare the Honda CBR 1000 F and the Suzuki GSF 1200 Bandit based on owner feedback."},
   {"id": "honesty-1", "type": "honesty-check", "question": "What's the cheapest motorcycle under 3000 EUR in the database?"},
-  {"id": "honesty-2", "type": "honesty-check", "question": "What do owners say about a completely obscure 1930s prototype with no forum activity?"}
+  {"id": "honesty-2", "type": "honesty-check", "question": "What do owners say about the 1930 BMW R 16?"}
 ]
