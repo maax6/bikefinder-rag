@@ -83,6 +83,7 @@ marketplaces block that outright:
 | Leboncoin | `robots.txt`: *"forbidden to use search robots... access only with special permission"* |
 | La Centrale | DataDome anti-bot (CAPTCHA-gated) |
 | ParuVendu | `robots.txt` disallows exactly the `/auto-moto/*` paths |
+| **Motoplanete** | ✅ **viable** (verified 2026-07-12): `robots.txt` allows the spec pages and publishes a moto sitemap (~12k pages); CGU has no database-extraction clause (non-commercial use only); fiches carry French MSRP ("Tarifs France"), full specs *and* explicit A2-version info. Hard constraint: `Crawl-delay: 10` → targeted enrichment of our existing models, not a catalog clone. |
 
 We don't scrape against an explicit prohibition or bypass anti-bot protection.
 **Current state: `msrp_eur` is a placeholder column, populated from a
@@ -140,8 +141,14 @@ PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
 
 ## Roadmap
 
-1. Legitimate real-market price source (see limitation above)
-2. Scale scraping from the pilot sample to the full filtered catalog
+1. Price + missing-field enrichment from **motoplanete.com** (verified
+   scrapable, see the price table above): match our models against its moto
+   sitemap, fetch `Tarifs France` into `msrp_eur`/`msrp_source`, and pick up
+   A2-version info (35 kW bridage) along the way — feeds a future "permis A2"
+   filter. 10s crawl-delay → enrichment of our own catalog only.
+2. Scale scraping beyond the 2024 demo year (the demo scrape covers the
+   full 2024 lineup of 16 major street brands; family-level forums mean the
+   narrative layer already reaches back years)
 3. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
 4. Hugging Face Spaces deployment
