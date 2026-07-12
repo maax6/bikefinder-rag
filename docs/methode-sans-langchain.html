@@ -1,0 +1,317 @@
+<title>Un agent RAG sans framework — la méthode Bikefinder</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --panel: #ffffff;
+    --ink: #16191c;
+    --ink-2: #555c63;
+    --ink-3: #8a9198;
+    --line: #dcdfe3;
+    --accent: #c8431d;
+    --accent-soft: #f7e3db;
+    --code-bg: #1d2126;
+    --code-ink: #d7dce1;
+    --code-dim: #7d8790;
+    --code-key: #7fb2e5;
+    --code-str: #a8c98a;
+    --good: #21714c;
+    --good-soft: #dfeee6;
+  }
+  :root[data-theme="dark"] {
+    --bg: #121417;
+    --panel: #1a1d21;
+    --ink: #e8eaec;
+    --ink-2: #a6adb4;
+    --ink-3: #6d757d;
+    --line: #2a2e33;
+    --accent: #ff6f42;
+    --accent-soft: #35251e;
+    --code-bg: #16191d;
+    --code-ink: #d7dce1;
+    --good: #5cbd8f;
+    --good-soft: #1b3229;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121417;
+      --panel: #1a1d21;
+      --ink: #e8eaec;
+      --ink-2: #a6adb4;
+      --ink-3: #6d757d;
+      --line: #2a2e33;
+      --accent: #ff6f42;
+      --accent-soft: #35251e;
+      --code-bg: #16191d;
+      --code-ink: #d7dce1;
+      --good: #5cbd8f;
+      --good-soft: #1b3229;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16.5px; line-height: 1.6;
+  }
+  .page { max-width: 1000px; margin: 0 auto; padding: 3.2rem 1.4rem 5rem; }
+  .prose { max-width: 700px; }
+
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;
+  }
+  h1 {
+    font-family: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", system-ui, sans-serif;
+    font-weight: 700; font-stretch: condensed;
+    font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.04;
+    margin: 0 0 1rem; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  .dek { font-size: 1.12rem; color: var(--ink-2); margin: 0 0 3rem; max-width: 62ch; }
+  .dek b { color: var(--ink); }
+
+  h2 {
+    font-family: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", system-ui, sans-serif;
+    font-weight: 700; font-size: 1.45rem; margin: 3.2rem 0 0.8rem;
+    letter-spacing: 0.005em;
+  }
+  p { margin: 0 0 1rem; }
+  .prose p { max-width: 68ch; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em; background: var(--accent-soft); border-radius: 4px; padding: 0.08em 0.35em;
+  }
+
+  /* ---- Diagramme de la boucle ---- */
+  .loop-wrap { margin: 2.2rem 0 0.4rem; }
+  .loop {
+    display: grid;
+    grid-template-columns: 1fr auto 1.4fr auto 1fr;
+    gap: 0; align-items: stretch;
+  }
+  .node {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.25rem; justify-content: center;
+  }
+  .node .t { font-weight: 650; font-size: 0.95rem; }
+  .node .d { color: var(--ink-2); font-size: 0.8rem; line-height: 1.45; }
+  .node.model { border-width: 2px; border-color: var(--accent); }
+  .node.model .t { color: var(--accent); }
+  .arrow {
+    align-self: center; padding: 0 0.65rem; color: var(--ink-3);
+    font-size: 0.72rem; text-align: center; line-height: 1.3; white-space: nowrap;
+  }
+  .arrow .glyph { display: block; font-size: 1.25rem; color: var(--accent); }
+  .loopback {
+    margin: 0.55rem 8% 0; border: 2px dashed var(--accent); border-top: none;
+    border-radius: 0 0 12px 12px; height: 34px; position: relative;
+  }
+  .loopback span {
+    position: absolute; left: 50%; transform: translate(-50%, 60%);
+    background: var(--bg); padding: 0 0.7rem; color: var(--accent);
+    font-size: 0.78rem; font-weight: 650;
+  }
+  .loop-caption { color: var(--ink-3); font-size: 0.82rem; margin-top: 2rem; max-width: 70ch; }
+  @media (max-width: 720px) {
+    .loop { grid-template-columns: 1fr; gap: 0.4rem; }
+    .arrow { padding: 0.15rem 0; }
+    .arrow .glyph { transform: rotate(90deg); display: inline-block; }
+    .loopback { display: none; }
+  }
+
+  /* ---- Comparaison côte à côte ---- */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.6rem 0 0.7rem; }
+  @media (max-width: 860px) { .compare { grid-template-columns: 1fr; } }
+  .codecard { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .codecard.ours { border-color: var(--accent); border-width: 2px; }
+  .codecard header {
+    padding: 0.6rem 1rem; font-size: 0.8rem; font-weight: 650;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .codecard header .tag { color: var(--ink-3); font-weight: 500; font-size: 0.74rem; }
+  .codecard.ours header .tag { color: var(--accent); font-weight: 650; }
+  .codecard pre {
+    margin: 0; padding: 1rem; overflow-x: auto;
+    background: var(--code-bg); color: var(--code-ink);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.78rem; line-height: 1.55;
+  }
+  .codecard pre .c { color: var(--code-dim); }
+  .codecard pre .k { color: var(--code-key); }
+  .codecard pre .s { color: var(--code-str); }
+
+  /* ---- Histoires ---- */
+  .stories { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.4rem; }
+  @media (max-width: 760px) { .stories { grid-template-columns: 1fr; } }
+  .story {
+    background: var(--panel); border: 1px solid var(--line);
+    border-left: 3px solid var(--good); border-radius: 8px; padding: 1rem 1.1rem;
+  }
+  .story .t { font-weight: 650; margin-bottom: 0.3rem; font-size: 0.95rem; }
+  .story p { font-size: 0.88rem; color: var(--ink-2); margin: 0; }
+  .story .metric {
+    display: inline-block; background: var(--good-soft); color: var(--good);
+    font-weight: 650; font-size: 0.78rem; border-radius: 999px; padding: 0.05rem 0.6rem;
+    margin-top: 0.55rem;
+  }
+
+  /* ---- Pipeline ---- */
+  .pipeline { display: flex; gap: 0.5rem; align-items: stretch; flex-wrap: wrap; margin-top: 1.4rem; }
+  .step {
+    flex: 1 1 150px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 0.7rem 0.85rem;
+  }
+  .step .n { color: var(--accent); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.08em; }
+  .step .t { font-weight: 650; font-size: 0.88rem; margin: 0.15rem 0; }
+  .step .d { color: var(--ink-2); font-size: 0.76rem; line-height: 1.45; }
+
+  .honest {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 1.2rem 1.4rem; margin-top: 1.4rem; max-width: 760px;
+  }
+  .honest ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+  .honest li { margin-bottom: 0.45rem; color: var(--ink-2); font-size: 0.93rem; }
+  .honest li b { color: var(--ink); }
+
+  footer.colophon {
+    margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+    color: var(--ink-3); font-size: 0.8rem;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+</style>
+
+<div class="page">
+
+  <div class="eyebrow">Bikefinder RAG · note d'ingénierie</div>
+  <h1>Un agent RAG sans framework&nbsp;: la boucle est le produit</h1>
+  <p class="dek">Bikefinder répond à «&nbsp;un roadster léger en A2, et qu'en disent les propriétaires&nbsp;?&nbsp;» en interrogeant 14&nbsp;000 fiches techniques et des dizaines de milliers d'avis de forums. Le cœur de l'agent tient en <b>une boucle de ~40 lignes écrite à la main</b> — pas de LangChain, pas de LlamaIndex. Cette page montre la différence, et ce que la transparence a rapporté concrètement.</p>
+
+  <h2>Le processus, sans magie</h2>
+  <div class="prose"><p>Un «&nbsp;agent&nbsp;» n'est rien d'autre que ceci&nbsp;: un modèle qui reçoit des schémas d'outils, décide d'appeler un outil ou de répondre, et revoit passer le résultat de l'outil comme un message. Tout le reste est de l'emballage.</p></div>
+
+  <div class="loop-wrap">
+    <div class="loop">
+      <div class="node">
+        <span class="t">Question utilisateur</span>
+        <span class="d">« Une sportive de moins de 800&nbsp;mm de selle&nbsp;? »</span>
+      </div>
+      <div class="arrow"><span class="glyph">→</span>messages +<br>schémas d'outils</div>
+      <div class="node model">
+        <span class="t">Modèle (Claude ou Ollama local)</span>
+        <span class="d">Décide : réponse finale (<code>stop_reason ≠ tool_use</code>) → on sort de la boucle — ou appel d'outil typé → étape suivante. Plafond : 8 tours.</span>
+      </div>
+      <div class="arrow"><span class="glyph">→</span><code>tool_use</code><br>nom + arguments JSON</div>
+      <div class="node">
+        <span class="t">Exécution contrôlée</span>
+        <span class="d"><code>filter_specs</code> → SQL paramétré ; <code>search_reviews</code> → similarité pgvector. Le LLM n'écrit jamais de SQL.</span>
+      </div>
+    </div>
+    <div class="loopback"><span>tool_result (données ou erreur lisible) → retour au modèle</span></div>
+    <p class="loop-caption">La boucle réelle de <code>agent/loop.py</code>. Chaque flèche est une ligne de code visible — quand quelque chose déraille, le point de rupture est dans <em>notre</em> fichier, pas dans une pile d'abstractions.</p>
+  </div>
+
+  <h2>Le même agent, deux écritures</h2>
+  <div class="compare">
+    <div class="codecard">
+      <header>Avec LangChain <span class="tag">l'équivalent framework</span></header>
+      <pre><span class="k">from</span> langchain.agents <span class="k">import</span> AgentExecutor, create_tool_calling_agent
+<span class="k">from</span> langchain_anthropic <span class="k">import</span> ChatAnthropic
+<span class="k">from</span> langchain_core.prompts <span class="k">import</span> ChatPromptTemplate
+
+llm = ChatAnthropic(model=<span class="s">"claude-sonnet-5"</span>)
+prompt = ChatPromptTemplate.from_messages([
+    (<span class="s">"system"</span>, SYSTEM_PROMPT),
+    (<span class="s">"placeholder"</span>, <span class="s">"{chat_history}"</span>),
+    (<span class="s">"human"</span>, <span class="s">"{input}"</span>),
+    (<span class="s">"placeholder"</span>, <span class="s">"{agent_scratchpad}"</span>),  <span class="c"># ← ?</span>
+])
+agent = create_tool_calling_agent(llm, tools, prompt)
+executor = AgentExecutor(agent=agent, tools=tools)
+result = executor.invoke({<span class="s">"input"</span>: question})
+
+<span class="c"># Court. Mais : que contient agent_scratchpad ?</span>
+<span class="c"># Où intercepter un tool_result pour l'éval RAGAS ?</span>
+<span class="c"># Que se passe-t-il si l'outil lève TypeError ?</span>
+<span class="c"># → réponse : lire le code source du framework.</span></pre>
+    </div>
+    <div class="codecard ours">
+      <header>Bikefinder <span class="tag">agent/loop.py — le vrai code</span></header>
+      <pre>messages.append({<span class="s">"role"</span>: <span class="s">"user"</span>, <span class="s">"content"</span>: user_message})
+
+<span class="k">for</span> _ <span class="k">in</span> range(MAX_TOOL_TURNS):          <span class="c"># jamais de boucle infinie</span>
+    response = client.messages.create(
+        model=MODEL, max_tokens=<span class="s">2048</span>,
+        system=SYSTEM_PROMPT, tools=TOOLS,
+        messages=messages,
+    )
+    messages.append({<span class="s">"role"</span>: <span class="s">"assistant"</span>,
+                     <span class="s">"content"</span>: response.content})
+
+    <span class="k">if</span> response.stop_reason != <span class="s">"tool_use"</span>:  <span class="c"># réponse finale</span>
+        <span class="k">return</span> final_text(response), messages
+
+    tool_results = []
+    <span class="k">for</span> block <span class="k">in</span> response.content:
+        <span class="k">if</span> block.type == <span class="s">"tool_use"</span>:
+            results = execute_tool(conn, block.name, block.input)
+            tool_results.append(as_tool_result(block.id, results))
+
+    messages.append({<span class="s">"role"</span>: <span class="s">"user"</span>, <span class="s">"content"</span>: tool_results})
+
+<span class="c"># L'état complet = `messages`. Inspectable, sérialisable,</span>
+<span class="c"># rejouable — c'est la matière première de l'éval.</span></pre>
+    </div>
+  </div>
+  <div class="prose"><p>Même longueur, ou presque. La différence n'est pas le nombre de lignes — c'est <b>qui possède l'état</b>. Ici, l'historique <code>messages</code> est une liste Python qu'on peut lire, logger, tronquer et rejouer. Avec un framework, il vit dans un <code>agent_scratchpad</code> dont le format est un détail d'implémentation.</p></div>
+
+  <h2>Ce que la transparence a payé — quatre cas réels du projet</h2>
+  <div class="stories">
+    <div class="story">
+      <div class="t">Les modèles locaux dérivent du schéma d'outils</div>
+      <p>mistral-small envoie parfois <code>models</code> au lieu de <code>model</code>, ou oublie l'argument requis <code>query</code>. Comme <code>execute_tool</code> est à nous, l'erreur devient un <code>tool_result</code> lisible que le modèle corrige au tour suivant — et un query manquant est synthétisé depuis marque/modèle au lieu d'échouer.</p>
+      <span class="metric">faithfulness narratives : 0.0 → 0.83–1.0</span>
+    </div>
+    <div class="story">
+      <div class="t">L'éval lit les messages bruts</div>
+      <p>RAGAS a besoin des « contexts » (ce que le retrieval a vraiment renvoyé). Ici, on les extrait de l'historique <code>messages</code> en 15 lignes — les <code>tool_result</code> y sont en clair. C'est en lisant ces messages qu'on a vu que « GSF 1200 Bandit » ne matchait pas « GSF 1200 N Bandit ».</p>
+      <span class="metric">2 bugs de retrieval trouvés par l'éval</span>
+    </div>
+    <div class="story">
+      <div class="t">Un second backend en 30 lignes</div>
+      <p>Pas de clé API ? La même boucle tourne sur Ollama (Mistral local) : seule la forme des messages change. Le dev, les tests et l'éval RAGAS complète tournent gratuitement en local — le juge aussi (qwen3.6).</p>
+      <span class="metric">éval 100 % locale, 0 € d'API</span>
+    </div>
+    <div class="story">
+      <div class="t">Des garde-fous exacts, pas génériques</div>
+      <p>Plafond de 8 tours d'outils (un modèle qui boucle brûlerait la clé du visiteur), messages d'erreur métier pour clé rejetée ou serveur local éteint, <code>max_tokens</code> choisi en connaissance de cause. Chaque garde-fou est une ligne qu'on voit, pas une option de config à deviner.</p>
+      <span class="metric">démo publique BYOK sans stacktrace</span>
+    </div>
+  </div>
+
+  <h2>Le process complet, de la page web à la réponse évaluée</h2>
+  <div class="pipeline">
+    <div class="step"><span class="n">01</span><div class="t">Scraping poli</div><div class="d">bikez.com, délai configurable, backoff auto sur 429/5xx, reprise au thread près. ~14 000 fiches + forums complets.</div></div>
+    <div class="step"><span class="n">02</span><div class="t">Modèle de données</div><div class="d">Postgres + pgvector. Les avis appartiennent aux <em>familles</em> de modèles (le forum bikez est partagé entre millésimes), dédupliqués par hash.</div></div>
+    <div class="step"><span class="n">03</span><div class="t">Embeddings locaux</div><div class="d">BGE-M3 (multilingue) : une question en français retrouve des avis en anglais. Aucune clé d'API d'embeddings.</div></div>
+    <div class="step"><span class="n">04</span><div class="t">Deux outils typés</div><div class="d"><code>filter_specs</code> (SQL paramétré, tri whitelisté) et <code>search_reviews</code> (cosinus pgvector + filtres mot-à-mot).</div></div>
+    <div class="step"><span class="n">05</span><div class="t">La boucle</div><div class="d">Celle du schéma ci-dessus. Claude en prod, Ollama en dev — même code, même historique inspectable.</div></div>
+    <div class="step"><span class="n">06</span><div class="t">Éval à deux étages</div><div class="d">Retrieval seul sans LLM (lifts 21-82×), puis RAGAS sur l'agent complet : faithfulness 0.78 / relevancy 0.87 en full local.</div></div>
+  </div>
+
+  <h2>Ce qu'on perd, honnêtement</h2>
+  <div class="honest">
+    <p style="margin:0; font-size:0.93rem;">Écrire la boucle soi-même n'est pas toujours le bon choix. Un framework se justifie quand :</p>
+    <ul>
+      <li><b>le streaming, les retries, le tracing</b> doivent exister dès le premier jour — ici ils sont ajoutés au besoin, à la main ;</li>
+      <li><b>on branche beaucoup de connecteurs</b> (30 sources de données, 10 vector stores) — l'écosystème LangChain les a déjà écrits ;</li>
+      <li><b>l'équipe vit déjà dans LangSmith/LangGraph</b> et son outillage d'observabilité.</li>
+    </ul>
+    <p style="margin:0.8rem 0 0; font-size:0.93rem;">Pour un système à <b>2 outils et 1 base</b>, dont l'objectif est de comprendre et de démontrer chaque maillon, l'abstraction coûtait plus qu'elle ne rapportait. Ironie vérifiable : la seule dépendance LangChain du projet est arrivée <em>via RAGAS</em> — et c'est elle qui a cassé l'éval (conflit de versions, épinglé dans <code>pyproject.toml</code>).</p>
+  </div>
+
+  <footer class="colophon">
+    Code : agent/loop.py · agent/tools.py · eval/run_ragas.py · scripts/eval_retrieval.py — repo bikefinder-rag (maax6), juillet 2026.
+  </footer>
+
+</div>
