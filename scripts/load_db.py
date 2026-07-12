@@ -14,7 +14,6 @@ Run: PYTHONPATH=src .venv/bin/python scripts/load_db.py [data_dir]
 """
 
 import json
-import os
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -38,13 +37,20 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def family_display_name(member_models: list[str]) -> str:
-    """One name for the whole family: the longest common prefix of member
-    model names ('CB 250 K 1' + 'CB 250 N' -> 'CB 250'), falling back to the
-    most common member name when the prefix is too short to mean anything."""
-    prefix = os.path.commonprefix(member_models).strip(" -/")
-    if len(prefix) >= 3:
-        return prefix
-    return Counter(member_models).most_common(1)[0][0]
+    """One name for the whole family: the words every member model name
+    shares, in the first member's order ('FLHR Road King' + 'Road King
+    Special' -> 'Road King'; 'CB 250 K 1' + 'CB 250 N' -> 'CB 250').
+    Falls back to the shortest most-common member name when nothing is
+    shared — variant names ('CB1000R Black Edition') would otherwise
+    mislabel every comment in the family."""
+    word_sets = [set(m.split()) for m in member_models]
+    common = set.intersection(*word_sets)
+    shared = [w for w in member_models[0].split() if w in common]
+    if shared:
+        return " ".join(shared)
+    counts = Counter(member_models)
+    top = max(counts.values())
+    return min((m for m, c in counts.items() if c == top), key=len)
 
 
 def load_families(conn, motorcycles: list[dict]) -> dict[str, int]:
