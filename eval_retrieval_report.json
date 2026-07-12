@@ -1,0 +1,270 @@
+{
+  "data_integrity": {
+    "motorcycles": 206,
+    "model_families": 174,
+    "review_chunks": 8810,
+    "families_with_reviews": 103,
+    "motos_with_reviews": 112,
+    "very_short": 91,
+    "avg_len": 225,
+    "null_embeddings": 0,
+    "orphan_chunks": 0,
+    "exact_duplicate_groups": 0
+  },
+  "self_retrieval": {
+    "sample_size": 30,
+    "rank1_hits": 30,
+    "rank1_hit_rate": 1.0,
+    "avg_self_distance": 0.0
+  },
+  "keyword_lift": [
+    {
+      "theme": "fuel economy / mileage",
+      "query": "how good is the fuel economy and mileage",
+      "base_count": 198,
+      "base_rate": 0.0225,
+      "top_k": 30,
+      "hits_in_top_k": 20,
+      "hit_rate": 0.6667,
+      "lift": 29.66,
+      "example_hits": [
+        {
+          "brand": "Atlas",
+          "model": "Honda Pridor",
+          "distance": 0.2662,
+          "text": "What is average fuel consumption per km"
+        },
+        {
+          "brand": "Bajaj",
+          "model": "Pulsar N250",
+          "distance": 0.3231,
+          "text": "i want to know its mileage"
+        },
+        {
+          "brand": "Cagiva",
+          "model": "Mito 125",
+          "distance": 0.3244,
+          "text": "how many miles to the gallon"
+        }
+      ]
+    },
+    {
+      "theme": "vibration at speed",
+      "query": "does the engine vibrate a lot at speed",
+      "base_count": 70,
+      "base_rate": 0.0079,
+      "top_k": 30,
+      "hits_in_top_k": 16,
+      "hit_rate": 0.5333,
+      "lift": 67.12,
+      "example_hits": [
+        {
+          "brand": "Aprilia",
+          "model": "Moto 6.5",
+          "distance": 0.2856,
+          "text": "qualcuno ha avuto problemi di vibrazioni con la motò?"
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 250",
+          "distance": 0.2978,
+          "text": "When going full throttle in 5th my max speed is barely 140kmh with a hell of a lot of vibrating...i must have a lemmon i suppose..."
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "XLH 1000 Sportster",
+          "distance": 0.322,
+          "text": "I´m getting vibration at 60 MPH and over on my ´73 Ironhead .  Has anyone got a cure for this."
+        }
+      ]
+    },
+    {
+      "theme": "reliability problems",
+      "query": "is this bike reliable or does it break down",
+      "base_count": 986,
+      "base_rate": 0.1119,
+      "top_k": 30,
+      "hits_in_top_k": 4,
+      "hit_rate": 0.1333,
+      "lift": 1.19,
+      "example_hits": [
+        {
+          "brand": "BMW",
+          "model": "F 650",
+          "distance": 0.2074,
+          "text": "What is the strengths and weaknesses of this bike?"
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RS 125",
+          "distance": 0.2265,
+          "text": "is it worth buying this bike? what makes it good and whats bad about it?"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "FLHTC 1340 Electra Glide Classic",
+          "distance": 0.2474,
+          "text": "This bike will rattle itself apart.  I´ve had mine a couple of years and it´s a good bike.  Check every nut and bolt before each ride...no kidding."
+        }
+      ]
+    },
+    {
+      "theme": "seat comfort",
+      "query": "is the seat comfortable for long rides",
+      "base_count": 17,
+      "base_rate": 0.0019,
+      "top_k": 30,
+      "hits_in_top_k": 3,
+      "hit_rate": 0.1,
+      "lift": 51.82,
+      "example_hits": [
+        {
+          "brand": "Harley-Davidson",
+          "model": "FXSB 1340 Low Rider",
+          "distance": 0.2655,
+          "text": "seat height?"
+        },
+        {
+          "brand": "BMW",
+          "model": "F 800 ST",
+          "distance": 0.2832,
+          "text": "is this bike comfortable to ride two up? not only for me but my passenger?"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "XLH 900 Sportster",
+          "distance": 0.3162,
+          "text": "Nice ride"
+        }
+      ]
+    },
+    {
+      "theme": "beginner friendly",
+      "query": "is this a good first bike for a beginner",
+      "base_count": 86,
+      "base_rate": 0.0098,
+      "top_k": 30,
+      "hits_in_top_k": 7,
+      "hit_rate": 0.2333,
+      "lift": 23.9,
+      "example_hits": [
+        {
+          "brand": "Honda",
+          "model": "CBR 1000 F",
+          "distance": 0.0776,
+          "text": "Is this a good bike to start out on?"
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 250",
+          "distance": 0.185,
+          "text": "this seems like it´d be a good starter bike for a chick who´s wanting to learn...would you say so?"
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RS 125",
+          "distance": 0.2216,
+          "text": "is it worth buying this bike? what makes it good and whats bad about it?"
+        }
+      ]
+    },
+    {
+      "theme": "brakes",
+      "query": "how good are the brakes",
+      "base_count": 246,
+      "base_rate": 0.0279,
+      "top_k": 30,
+      "hits_in_top_k": 23,
+      "hit_rate": 0.7667,
+      "lift": 27.46,
+      "example_hits": [
+        {
+          "brand": "Honda",
+          "model": "CB 450 N",
+          "distance": 0.3069,
+          "text": "uhh, the brakes"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "FLHR Road King",
+          "distance": 0.3322,
+          "text": "why do my brakes constantly squeek?"
+        },
+        {
+          "brand": "BMW",
+          "model": "K 1200 RS",
+          "distance": 0.3615,
+          "text": "brake light is on"
+        }
+      ]
+    }
+  ],
+  "negative_control": [
+    {
+      "query": "recette de gâteau au chocolat sans four",
+      "top1_distance": 0.5751,
+      "worse_than_on_topic_avg": true,
+      "top_hits": [
+        {
+          "brand": "Harley-Davidson",
+          "model": "XLH 1000 Sportster",
+          "distance": 0.5751,
+          "text": "I´m looking for the same thing, it´s not in the manual"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "FXWG 1340 Wide Glide",
+          "distance": 0.5775,
+          "text": "Does anyone know where to find an aircleaner for these carbs that is not round? Maybe a tear drop."
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "FLHR Road King",
+          "distance": 0.5796,
+          "text": "Is there anyway to reflash the ECM without going to dealer"
+        }
+      ]
+    },
+    {
+      "query": "best python web framework for a REST API",
+      "top1_distance": 0.5761,
+      "worse_than_on_topic_avg": true,
+      "top_hits": [
+        {
+          "brand": "Enfield",
+          "model": "Lightning 500",
+          "distance": 0.5761,
+          "text": "plz make me available"
+        },
+        {
+          "brand": "Cagiva",
+          "model": "Mito 125",
+          "distance": 0.5771,
+          "text": "Choose the one you like"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "FLHTC 1340 Electra Glide Classic",
+          "distance": 0.5776,
+          "text": "Also - is there a good download manual I can buy or download"
+        }
+      ]
+    }
+  ],
+  "cross_lingual": [
+    {
+      "english_query": "is this bike reliable or does it break down",
+      "french_query": "est-ce que cette moto est fiable ou tombe-t-elle souvent en panne",
+      "top_k": 10,
+      "overlap_count": 3,
+      "jaccard": 0.176
+    },
+    {
+      "english_query": "how good is the fuel economy and mileage",
+      "french_query": "quelle est la consommation d'essence de cette moto",
+      "top_k": 10,
+      "overlap_count": 2,
+      "jaccard": 0.111
+    }
+  ]
+}

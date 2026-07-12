@@ -27,6 +27,13 @@ that got reversed) is in the [project's Notion doc] — the short version:
   fuzzy/`ILIKE` metadata filters).
 - **PostgreSQL + pgvector**, one database for both structured specs and
   review embeddings.
+- **Comments belong to model families, not model-years.** bikez.com shares
+  one discussion forum across every year and variant of a model (the same
+  threads back the CB 250 K 1 1970 and the CB 250 N 1985), so comments are
+  stored once per family (`model_families`), deduplicated, and every
+  retrieval result carries the family's year range plus the comment's own
+  post date — the agent is instructed never to attribute a comment to one
+  specific model-year.
 - **Local, multilingual embeddings** (`BAAI/bge-m3`) — no embeddings API key
   needed, and queries in French retrieve English-language forum comments.
 - **Evaluation**: [RAGAS](https://github.com/explodinggpt/ragas) (faithfulness,

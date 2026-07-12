@@ -52,7 +52,11 @@ SEARCH_REVIEWS_SCHEMA = {
         "Semantic search over owner/forum comments about specific motorcycles "
         "(known issues, ride impressions, maintenance tips). Use for qualitative "
         "questions. Optional filters narrow the search to a brand/model/category "
-        "before ranking by similarity."
+        "before ranking by similarity. Comments are attached to a model FAMILY "
+        "(bikez.com shares one forum across every year and variant of a model), "
+        "so each result carries the family name, the year range it covers, and "
+        "the comment's own post date — attribute opinions to the family and its "
+        "comment date, never to one specific model-year."
     ),
     "input_schema": {
         "type": "object",
@@ -126,23 +130,31 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
     params: list[Any] = []
 
     if brand:
-        clauses.append("m.brand ILIKE %s")
+        clauses.append("f.brand ILIKE %s")
         params.append(f"%{brand}%")
     if model:
-        clauses.append("m.model ILIKE %s")
+        # Match against the member model-years, so 'CB 250 N' finds the
+        # 'CB 250' family the comment actually belongs to.
+        clauses.append(
+            "EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND m.model ILIKE %s)"
+        )
         params.append(f"%{model}%")
     if category:
-        clauses.append("m.category ILIKE %s")
+        clauses.append(
+            "EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND m.category ILIKE %s)"
+        )
         params.append(f"%{category}%")
 
     query_vector = embed_text(query)
     limit = int(limit or 5)
 
     sql = f"""
-        SELECT m.brand, m.model, m.year, rc.comment_text, rc.author, rc.posted_at,
+        SELECT f.brand, f.family_name AS model_family,
+               f.year_min AS family_year_min, f.year_max AS family_year_max,
+               rc.comment_text, rc.author, rc.posted_at,
                rc.embedding <=> %s::vector AS distance
         FROM review_chunks rc
-        JOIN motorcycles m ON m.id = rc.motorcycle_id
+        JOIN model_families f ON f.id = rc.family_id
         WHERE {' AND '.join(clauses)}
         ORDER BY rc.embedding <=> %s::vector
         LIMIT %s
