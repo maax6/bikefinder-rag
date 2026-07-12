@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """Scrape bikez.com: spec pages by year, plus every family forum thread.
 
-Two levels of resume, so the script can be interrupted and re-run freely:
+Three levels of resume, so the script can be interrupted and re-run freely:
 - Motorcycles: URLs already present in any data/*/motorcycles.jsonl are
   skipped.
-- Forum threads: every fetched thread URL is journaled in the output dir's
-  threads_done.txt; re-running re-lists a forum (one request) and fetches
-  only the missing threads. Forums capped in older runs get topped up the
-  next time any of their bikes' model-years is encountered.
+- Forum threads: every fetched thread URL is journaled in threads_done.txt;
+  only missing threads are ever fetched.
+- Forums: a forum is journaled in forums_done.txt once its thread list has
+  been fully walked. On startup, forums referenced by this output dir's
+  motorcycles but not journaled as done (i.e. interrupted mid-crawl, since
+  the bike row is written before its forum) are completed first. Delete
+  forums_done.txt to force a full re-list (new threads) later.
 
-The >=3-substantive-comments curation rule moved to load_db.py (families
-with fewer unique comments are skipped at load time), since threads now
-stream to disk as they arrive.
+The >=3-substantive-comments curation rule lives in load_db.py (families
+with fewer unique comments are skipped at load time), since threads stream
+to disk as they arrive.
 
 Run: PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py
      # defaults: 2024, core street brands, data/demo
@@ -66,12 +69,28 @@ def known_motorcycle_urls() -> set[str]:
     return urls
 
 
-def known_done_threads() -> set[str]:
-    done: set[str] = set()
-    for journal in sorted(DATA_DIR.glob("*/threads_done.txt")):
+def read_journal(pattern: str) -> set[str]:
+    entries: set[str] = set()
+    for journal in sorted(DATA_DIR.glob(pattern)):
         with journal.open(encoding="utf-8") as f:
-            done.update(line.strip() for line in f if line.strip())
-    return done
+            entries.update(line.strip() for line in f if line.strip())
+    return entries
+
+
+def interrupted_forums(out_dir: Path, forums_done: set[str]) -> list[tuple[str, str]]:
+    """(discussion_url, motorcycle_url) pairs for forums this output dir's
+    bikes reference but whose crawl never completed — the bike row is
+    written before its forum is walked, so an interrupt strands them."""
+    pending: dict[str, str] = {}
+    jsonl = out_dir / "motorcycles.jsonl"
+    if jsonl.exists():
+        with jsonl.open(encoding="utf-8") as f:
+            for line in f:
+                row = json.loads(line)
+                discussion_url = row.get("discussion_url")
+                if discussion_url and discussion_url not in forums_done:
+                    pending.setdefault(discussion_url, row["url"])
+    return list(pending.items())
 
 
 def main() -> None:
@@ -89,20 +108,79 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     seen_urls = known_motorcycle_urls()
-    done_threads = known_done_threads()
+    done_threads = read_journal("*/threads_done.txt")
+    forums_done = read_journal("*/forums_done.txt")
     print(f"{len(seen_urls)} motorcycles already scraped, "
-          f"{len(done_threads)} forum threads already captured.", file=sys.stderr)
+          f"{len(done_threads)} forum threads already captured, "
+          f"{len(forums_done)} forums fully walked.", file=sys.stderr)
     print(f"Years: {years[0]}..{years[-1]} ({len(years)}), brands={args.brands}, out={args.out}",
           file=sys.stderr)
 
-    # Forums re-listed at most once per run: threads rarely appear mid-run.
-    listed_forums: set[str] = set()
-    total_motorcycles = 0
-    total_comments = 0
+    totals = {"motorcycles": 0, "comments": 0}
 
     with (out_dir / "motorcycles.jsonl").open("a", encoding="utf-8") as moto_file, \
          (out_dir / "comments.jsonl").open("a", encoding="utf-8") as comments_file, \
-         (out_dir / "threads_done.txt").open("a", encoding="utf-8") as done_file:
+         (out_dir / "threads_done.txt").open("a", encoding="utf-8") as threads_journal, \
+         (out_dir / "forums_done.txt").open("a", encoding="utf-8") as forums_journal:
+
+        def crawl_forum(discussion_url: str, motorcycle_url: str) -> None:
+            try:
+                thread_urls = list_thread_urls(discussion_url)
+            except Exception as exc:  # noqa: BLE001 - retried via next bike/run
+                print(f"  ! failed forum listing {discussion_url}: {exc}", file=sys.stderr)
+                return
+
+            todo = [t for t in thread_urls if t not in done_threads]
+            if todo:
+                print(f"        forum: {len(todo)}/{len(thread_urls)} threads to fetch...",
+                      file=sys.stderr, flush=True)
+
+            forum_comments = 0
+            for n, thread_url in enumerate(todo, start=1):
+                if n % 10 == 0:
+                    print(f"        thread {n}/{len(todo)} ({forum_comments} comments)...",
+                          file=sys.stderr, flush=True)
+                try:
+                    comments = fetch_thread_comments(thread_url)
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  ! failed thread fetch {thread_url}: {exc}", file=sys.stderr)
+                    continue
+                for comment in comments:
+                    comments_file.write(
+                        json.dumps(
+                            {
+                                "motorcycle_url": motorcycle_url,
+                                "thread_url": thread_url,
+                                **dataclasses.asdict(comment),
+                            },
+                            ensure_ascii=False,
+                        )
+                        + "\n"
+                    )
+                    forum_comments += 1
+                    totals["comments"] += 1
+                comments_file.flush()
+                # Journal the thread only after its comments are on disk —
+                # an interrupt between the two refetches, never loses.
+                threads_journal.write(thread_url + "\n")
+                threads_journal.flush()
+                done_threads.add(thread_url)
+
+            if forum_comments:
+                print(f"        forum: {forum_comments} comments "
+                      f"({totals['comments']} total)", file=sys.stderr, flush=True)
+
+            # Only now is the forum complete — journaled after every thread.
+            forums_journal.write(discussion_url + "\n")
+            forums_journal.flush()
+            forums_done.add(discussion_url)
+
+        pending = interrupted_forums(out_dir, forums_done)
+        if pending:
+            print(f"Resuming {len(pending)} forums whose crawl was interrupted...", file=sys.stderr)
+            for discussion_url, motorcycle_url in pending:
+                crawl_forum(discussion_url, motorcycle_url)
+
         for year in years:
             listings = [
                 listing for listing in list_motorcycles_for_year(year)
@@ -127,64 +205,16 @@ def main() -> None:
                 moto_file.write(json.dumps(record, ensure_ascii=False) + "\n")
                 moto_file.flush()
                 seen_urls.add(listing.url)
-                total_motorcycles += 1
+                totals["motorcycles"] += 1
 
                 print(f"  [{year} {i}/{len(listings)}] + {listing.brand} {listing.model}",
                       file=sys.stderr, flush=True)
 
                 discussion_url = detail.discussion_url
-                if not discussion_url or discussion_url in listed_forums:
-                    continue
-                listed_forums.add(discussion_url)
+                if discussion_url and discussion_url not in forums_done:
+                    crawl_forum(discussion_url, listing.url)
 
-                try:
-                    thread_urls = list_thread_urls(discussion_url)
-                except Exception as exc:  # noqa: BLE001
-                    print(f"  ! failed forum listing {discussion_url}: {exc}", file=sys.stderr)
-                    continue
-
-                todo = [t for t in thread_urls if t not in done_threads]
-                if not todo:
-                    continue
-                print(f"        forum: {len(todo)}/{len(thread_urls)} threads to fetch...",
-                      file=sys.stderr, flush=True)
-
-                forum_comments = 0
-                for n, thread_url in enumerate(todo, start=1):
-                    if n % 10 == 0:
-                        print(f"        thread {n}/{len(todo)} ({forum_comments} comments)...",
-                              file=sys.stderr, flush=True)
-                    try:
-                        comments = fetch_thread_comments(thread_url)
-                    except Exception as exc:  # noqa: BLE001
-                        print(f"  ! failed thread fetch {thread_url}: {exc}", file=sys.stderr)
-                        continue
-                    for comment in comments:
-                        comments_file.write(
-                            json.dumps(
-                                {
-                                    "motorcycle_url": listing.url,
-                                    "thread_url": thread_url,
-                                    **dataclasses.asdict(comment),
-                                },
-                                ensure_ascii=False,
-                            )
-                            + "\n"
-                        )
-                        forum_comments += 1
-                        total_comments += 1
-                    comments_file.flush()
-                    # Journal the thread only after its comments are on disk —
-                    # an interrupt between the two refetches, never loses.
-                    done_file.write(thread_url + "\n")
-                    done_file.flush()
-                    done_threads.add(thread_url)
-
-                if forum_comments:
-                    print(f"        forum: {forum_comments} comments "
-                          f"({total_comments} total)", file=sys.stderr, flush=True)
-
-    print(f"\nDone. {total_motorcycles} motorcycles, {total_comments} comments -> {out_dir}",
+    print(f"\nDone. {totals['motorcycles']} motorcycles, {totals['comments']} comments -> {out_dir}",
           file=sys.stderr)
 
 
