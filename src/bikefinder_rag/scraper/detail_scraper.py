@@ -131,11 +131,21 @@ def _comments_from_thread(thread_html: bytes) -> list[Comment]:
         if not match:
             continue
 
+        # The body is usually the very next row, but ad rows and empty rows
+        # sometimes sit in between — look a little further, stopping at
+        # navigation ("<< Previous ...") or the next message header.
         body = ""
-        if i + 1 < len(rows):
-            body_row = rows[i + 1]
-            if not body_row.find(["script", "ins"]):
-                body = body_row.get_text(" ", strip=True)
+        for j in range(i + 1, min(i + 4, len(rows))):
+            candidate_row = rows[j]
+            if candidate_row.find(["script", "ins"]):
+                continue
+            candidate = candidate_row.get_text(" ", strip=True)
+            if not candidate:
+                continue
+            if candidate.startswith("<< Previous") or _SAID_RE.match(candidate):
+                break
+            body = candidate
+            break
 
         if body:
             comments.append(
