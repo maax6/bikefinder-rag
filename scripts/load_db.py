@@ -9,7 +9,8 @@ model-year. Here they collapse back to one row per family, which both removes
 the duplicates and stops attributing decade-old comments to a specific recent
 model-year.
 
-Run: PYTHONPATH=src .venv/bin/python scripts/load_db.py
+Run: PYTHONPATH=src .venv/bin/python scripts/load_db.py [data_dir]
+(data_dir defaults to data/pilot; pass data/demo for the demo scrape.)
 """
 
 import json
@@ -26,7 +27,8 @@ load_dotenv()
 from bikefinder_rag.db.client import get_connection
 from bikefinder_rag.embeddings.embedder import embed_texts
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "pilot"
+_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = _ROOT / (sys.argv[1] if len(sys.argv) > 1 else "data/pilot")
 EMBED_BATCH = 256
 
 

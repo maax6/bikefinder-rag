@@ -149,14 +149,21 @@ def _comments_from_thread(thread_html: bytes) -> list[Comment]:
     return comments
 
 
-def fetch_discussion_comments(discussion_url: str) -> list[Comment]:
+def fetch_discussion_comments(discussion_url: str, max_threads: int | None = None) -> list[Comment]:
     """Fetch every comment across every thread linked from a model's
     discussion page. Callers should cache by discussion_url since it's
-    shared across all model-years of the same model."""
+    shared across all model-years of the same model. max_threads caps the
+    crawl on very deep forums (hundreds of threads on Gold Wing-class
+    models) — threads are listed newest-first, so the cap keeps the most
+    recent discussion."""
     discussion_response = http.get(discussion_url)
     comments: list[Comment] = []
 
-    for thread_url in _thread_urls(discussion_response.content):
+    thread_urls = _thread_urls(discussion_response.content)
+    if max_threads is not None:
+        thread_urls = thread_urls[:max_threads]
+
+    for thread_url in thread_urls:
         thread_response = http.get(thread_url)
         comments.extend(_comments_from_thread(thread_response.content))
 
