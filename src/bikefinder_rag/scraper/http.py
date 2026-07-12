@@ -30,6 +30,12 @@ def _delay_seconds() -> float:
     return float(os.environ.get("SCRAPER_DELAY_SECONDS", "1.5"))
 
 
+# If the server signals stress (429/5xx), back off hard before one retry —
+# this is what makes running with a low SCRAPER_DELAY_SECONDS responsible.
+BACKOFF_SECONDS = 30.0
+_BACKOFF_STATUSES = {429, 500, 502, 503, 504}
+
+
 def get(path_or_url: str) -> requests.Response:
     """GET a bikez.com path (or full URL), enforcing a minimum delay since
     the previous request across the whole process."""
@@ -44,5 +50,11 @@ def get(path_or_url: str) -> requests.Response:
 
     response = _session.get(url, timeout=20)
     _last_request_at = time.monotonic()
+
+    if response.status_code in _BACKOFF_STATUSES:
+        time.sleep(BACKOFF_SECONDS)
+        response = _session.get(url, timeout=20)
+        _last_request_at = time.monotonic()
+
     response.raise_for_status()
     return response
