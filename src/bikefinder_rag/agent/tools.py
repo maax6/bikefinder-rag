@@ -133,12 +133,18 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
         clauses.append("f.brand ILIKE %s")
         params.append(f"%{brand}%")
     if model:
-        # Match against the member model-years, so 'CB 250 N' finds the
-        # 'CB 250' family the comment actually belongs to.
+        # Word-by-word match against brand+model of the member model-years:
+        # LLMs phrase the model loosely ('GSF 1200 Bandit' for the DB's
+        # 'GSF 1200 N Bandit', or 'Harley-Davidson Electra Glide' with the
+        # brand folded in), so a whole-string substring match silently
+        # returns nothing. Each word must appear somewhere in the member's
+        # 'Brand Model' string instead.
+        words = model.split() or [model]
+        member_match = " AND ".join(["(m.brand || ' ' || m.model) ILIKE %s"] * len(words))
         clauses.append(
-            "EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND m.model ILIKE %s)"
+            f"EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND {member_match})"
         )
-        params.append(f"%{model}%")
+        params.extend(f"%{word}%" for word in words)
     if category:
         clauses.append(
             "EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND m.category ILIKE %s)"
