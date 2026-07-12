@@ -25,6 +25,7 @@ load_dotenv()
 
 from bikefinder_rag.db.client import get_connection
 from bikefinder_rag.embeddings.embedder import embed_texts
+from bikefinder_rag.scraper.detail_scraper import extract_typed_fields
 
 _ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = _ROOT / (sys.argv[1] if len(sys.argv) > 1 else "data/pilot")
@@ -97,7 +98,11 @@ def load_motorcycles(conn, motorcycles: list[dict], url_to_family: dict[str, int
 
     with conn.cursor() as cur:
         for row in motorcycles:
-            typed = row.get("typed_fields", {})
+            # Re-derive typed fields from raw_specs with the current label
+            # map — heals older scrapes when the map learns new labels
+            # ('Power', 'Output', 'Effect'...) without re-scraping. Values
+            # typed at scrape time win over the re-derivation.
+            typed = {**extract_typed_fields(row.get("raw_specs", {})), **row.get("typed_fields", {})}
             discussion_url = row.get("discussion_url")
             cur.execute(
                 """
@@ -152,7 +157,10 @@ def load_comments(conn, moto_to_discussion: dict[str, str | None], url_to_family
         if family_id is None:
             skipped_no_family += 1
             continue
-        key = (family_id, comment["author"], comment["posted_at"], comment["text"])
+        # bikez stores apostrophes as acute accents ("it´s") — 28% of
+        # comments carry them; normalize so embeddings see natural text.
+        text = comment["text"].replace("´", "'")
+        key = (family_id, comment["author"], comment["posted_at"], text)
         unique.setdefault(key, comment)
 
     per_family = Counter(key[0] for key in unique)

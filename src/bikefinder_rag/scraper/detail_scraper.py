@@ -32,9 +32,17 @@ _NUMERIC_FIELD_PATTERNS: dict[str, re.Pattern] = {
 
 _SPEC_LABEL_TO_FIELD = {
     "displacement": "displacement_ccm",
+    "engine size": "displacement_ccm",
     "weight incl. oil, gas, etc": "weight_kg",
     "weight": "weight_kg",
+    # Dry weight is a different measure, but better than nothing when no
+    # wet weight exists — first label wins, page order decides.
+    "dry weight": "weight_kg",
+    # bikez's power label drifted across page generations.
     "power output": "power_hp",
+    "power": "power_hp",
+    "output": "power_hp",
+    "effect": "power_hp",
     "torque": "torque_nm",
     "seat height": "seat_height_mm",
 }
@@ -67,6 +75,20 @@ def _extract_numeric(field_name: str, raw_value: str) -> float | None:
         return None
 
 
+def extract_typed_fields(raw_specs: dict[str, str]) -> dict[str, float]:
+    """Derive typed numeric fields from a raw spec-label dict. Shared with
+    load_db so already-scraped raw_specs can be re-derived when the label
+    map improves, without re-scraping."""
+    typed: dict[str, float] = {}
+    for label, value in raw_specs.items():
+        field_name = _SPEC_LABEL_TO_FIELD.get(label.lower())
+        if field_name and field_name not in typed:
+            numeric = _extract_numeric(field_name, value)
+            if numeric is not None:
+                typed[field_name] = numeric
+    return typed
+
+
 def parse_spec_page(html: bytes) -> MotorcycleDetail:
     soup = BeautifulSoup(html, "html.parser")
     detail = MotorcycleDetail()
@@ -87,11 +109,7 @@ def parse_spec_page(html: bytes) -> MotorcycleDetail:
 
             detail.raw_specs[label] = value
 
-            field_name = _SPEC_LABEL_TO_FIELD.get(label.lower())
-            if field_name and field_name not in detail.typed_fields:
-                numeric = _extract_numeric(field_name, value)
-                if numeric is not None:
-                    detail.typed_fields[field_name] = numeric
+    detail.typed_fields = extract_typed_fields(detail.raw_specs)
 
     discuss_link = soup.find("a", href=re.compile(r"-discussions\.php"))
     if discuss_link:
