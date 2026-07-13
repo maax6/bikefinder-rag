@@ -32,8 +32,13 @@ load_dotenv()
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
+import subprocess
+
 from datasets import Dataset
 from langchain_core.embeddings import Embeddings
+from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_core.messages import AIMessage
+from langchain_core.outputs import ChatGeneration, ChatResult
 from langchain_ollama import ChatOllama
 from ragas import evaluate
 from ragas.embeddings import LangchainEmbeddingsWrapper
@@ -59,6 +64,32 @@ class BgeM3Embeddings(Embeddings):
 
     def embed_query(self, text: str) -> list[float]:
         return embed_texts([text])[0]
+
+
+class ClaudeCliChat(BaseChatModel):
+    """Judge via the Claude Code CLI (`claude -p`), i.e. the user's Claude
+    subscription — no API key. RAGAS_JUDGE_MODEL='claude-cli' or
+    'claude-cli:opus' picks it; only sensible for occasional eval runs
+    (each call re-pays ~2-3s of CLI startup)."""
+
+    model: str = "sonnet"
+
+    @property
+    def _llm_type(self) -> str:
+        return "claude-cli"
+
+    def _generate(self, messages, stop=None, run_manager=None, **kwargs):
+        prompt = "\n\n".join(
+            m.content for m in messages if isinstance(m.content, str) and m.content
+        )
+        proc = subprocess.run(
+            ["claude", "-p", "--model", self.model],
+            input=prompt, capture_output=True, text=True, timeout=600,
+        )
+        if proc.returncode != 0:
+            raise RuntimeError(f"claude -p failed: {proc.stderr.strip()[:400]}")
+        message = AIMessage(content=proc.stdout.strip())
+        return ChatResult(generations=[ChatGeneration(message=message)])
 
 
 def _extract_contexts(messages: list[dict]) -> list[str]:
@@ -127,15 +158,21 @@ def main() -> None:
         rows = generate_answers(questions)
         ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
 
-    print(f"Scoring with judge={JUDGE_MODEL} (local Ollama)...", file=sys.stderr)
-    # 16k context: on the full corpus, tool outputs make faithfulness
-    # prompts overflow 8k and the judge silently loses the tail.
-    judge_chat = ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=16384)
-    # Warm the judge up before scoring: loading a 20GB+ model into GPU
-    # memory takes minutes and would otherwise be billed to the first
-    # item's RunConfig timeout (observed: Job[0] TimeoutError at 600s).
-    print("  warming up the judge (model load)...", file=sys.stderr)
-    judge_chat.invoke("ping")
+    if JUDGE_MODEL.startswith("claude-cli"):
+        _, _, cli_model = JUDGE_MODEL.partition(":")
+        judge_chat = ClaudeCliChat(model=cli_model or "sonnet")
+        print(f"Scoring with judge=claude -p --model {judge_chat.model} "
+              "(subscription, no API key)...", file=sys.stderr)
+    else:
+        print(f"Scoring with judge={JUDGE_MODEL} (local Ollama)...", file=sys.stderr)
+        # 16k context: on the full corpus, tool outputs make faithfulness
+        # prompts overflow 8k and the judge silently loses the tail.
+        judge_chat = ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=16384)
+        # Warm the judge up before scoring: loading a 20GB+ model into GPU
+        # memory takes minutes and would otherwise be billed to the first
+        # item's RunConfig timeout (observed: Job[0] TimeoutError at 600s).
+        print("  warming up the judge (model load)...", file=sys.stderr)
+        judge_chat.invoke("ping")
     judge = LangchainLLMWrapper(judge_chat)
     embeddings = LangchainEmbeddingsWrapper(BgeM3Embeddings())
 
