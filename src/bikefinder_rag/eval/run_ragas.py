@@ -128,9 +128,13 @@ def main() -> None:
         ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
 
     print(f"Scoring with judge={JUDGE_MODEL} (local Ollama)...", file=sys.stderr)
-    judge = LangchainLLMWrapper(
-        ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=8192)
-    )
+    judge_chat = ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=8192)
+    # Warm the judge up before scoring: loading a 20GB+ model into GPU
+    # memory takes minutes and would otherwise be billed to the first
+    # item's RunConfig timeout (observed: Job[0] TimeoutError at 600s).
+    print("  warming up the judge (model load)...", file=sys.stderr)
+    judge_chat.invoke("ping")
+    judge = LangchainLLMWrapper(judge_chat)
     embeddings = LangchainEmbeddingsWrapper(BgeM3Embeddings())
 
     dataset = Dataset.from_list(rows)
