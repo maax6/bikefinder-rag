@@ -22,6 +22,7 @@ Run: PYTHONPATH=src .venv/bin/python -m bikefinder_rag.eval.run_ragas
 import json
 import os
 import sys
+import time
 import warnings
 from pathlib import Path
 
@@ -82,14 +83,25 @@ class ClaudeCliChat(BaseChatModel):
         prompt = "\n\n".join(
             m.content for m in messages if isinstance(m.content, str) and m.content
         )
-        proc = subprocess.run(
-            ["claude", "-p", "--model", self.model],
-            input=prompt, capture_output=True, text=True, timeout=600,
-        )
-        if proc.returncode != 0:
-            raise RuntimeError(f"claude -p failed: {proc.stderr.strip()[:400]}")
-        message = AIMessage(content=proc.stdout.strip())
-        return ChatResult(generations=[ChatGeneration(message=message)])
+        last_error = ""
+        for attempt in range(3):
+            if attempt:
+                time.sleep(60 * attempt)
+            proc = subprocess.run(
+                ["claude", "-p", "--model", self.model],
+                input=prompt, capture_output=True, text=True, timeout=600,
+            )
+            output = proc.stdout.strip()
+            # During a subscription usage limit, the CLI prints the limit
+            # banner on stdout with exit 0 — returning it as a judge verdict
+            # made every item silently NaN. Fail loudly and retry instead.
+            looks_limited = any(
+                s in output.lower() for s in ("usage limit", "rate limit", "limit reached")
+            )
+            if proc.returncode == 0 and output and not looks_limited:
+                return ChatResult(generations=[ChatGeneration(message=AIMessage(content=output))])
+            last_error = (proc.stderr.strip() or output)[:400]
+        raise RuntimeError(f"claude -p failed after 3 attempts: {last_error}")
 
 
 def _extract_contexts(messages: list[dict]) -> list[str]:
