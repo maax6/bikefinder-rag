@@ -42,16 +42,19 @@ that got reversed) is in the [project's Notion doc] — the short version:
   21-82x over corpus base rate, negative controls rejected — see
   `eval_retrieval_report.json`). [RAGAS](https://github.com/explodinggpt/ragas)
   (faithfulness, answer relevancy) then scores the full agent over a golden
-  question set, fully local (mistral-small generation, qwen3.6 judge):
-  **faithfulness 0.78 / answer_relevancy 0.87**
-  (`src/bikefinder_rag/eval/ragas_results.json`), up from 0.55/0.62 on the
-  first run — the eval caught two real retrieval bugs (substring-only
-  model matching, dropped `query` arguments) whose fixes account for the
-  jump. Per-question detail: every structured-filter question scores 1.0
-  faithfulness; the remaining low scores are the *local generator*
-  contradicting its own tool results (answering "no owner reviews" while
-  real comments sit in its context) — exactly what faithfulness is meant
-  to flag. Same harness, Claude backend: pending an API key.
+  question set — generation by mistral-small (local), and the same answers
+  graded by **two independent judges**: qwen3.6 (local) gives
+  **0.61 / 0.76**, Haiku via `claude -p` gives **0.71 / 0.77**
+  (`eval/ragas_results{,_qwen-judge,_haiku-judge}.json`). The judges
+  converge per-question: structured-filter questions 0.9-1.0 for both,
+  and both give 0.0 to the same answer where the *local generator*
+  contradicts its own tool results (answering "no owner reviews" while
+  real comments sit in its context) — a confirmed generation defect, not
+  judge noise. Both also flag the honesty checks' correct "no data on
+  record" answers, RAGAS's known penalty on refusals. An earlier pass
+  caught two real retrieval bugs (substring-only model matching, dropped
+  `query` arguments) whose fixes lifted narratives from 0.0 to 1.0.
+  Same harness, Claude backend as *generator*: pending an API key.
 - **Interface**: Gradio, deployable on Hugging Face Spaces for free — visitors
   paste their own Anthropic API key (used only for their session, never
   stored server-side).

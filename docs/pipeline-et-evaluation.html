@@ -206,6 +206,11 @@
     <p>La moyenne de 0.61 est donc <b>bornée par le générateur local, pas par le RAG</b>&nbsp;: chaque zéro correspond soit à mistral-small qui contredit ses propres résultats d'outils, soit au biais anti-refus de la métrique. La preuve par l'histoire du projet&nbsp;: la <em>première</em> passe RAGAS (0.55) avait révélé deux vrais bugs de retrieval — matching de modèle en sous-chaîne exacte, argument <code>query</code> omis par les petits modèles — et leur correction a fait bondir les narratives de 0.0 à 1.0. L'éval a payé pour elle-même. La prochaine marche est connue&nbsp;: brancher la génération sur Claude (le harnais est prêt, <code>AGENT_BACKEND=anthropic</code>) et re-mesurer.</p>
   </div>
 
+  <h3>Contre-expertise&nbsp;: les mêmes réponses, notées par un second juge</h3>
+  <div class="prose">
+    <p>Pour mesurer la part de bruit du juge local, les <em>mêmes</em> réponses (figées en cache) ont été re-notées par <b>Haiku via <code>claude -p</code></b> — le CLI Claude Code en mode headless, sur abonnement, sans clé d'API. Verdict&nbsp;: <b>0.71 / 0.77</b> contre 0.61 / 0.76 pour qwen3.6, et surtout une <b>convergence par question</b>&nbsp;: les deux juges donnent 0.9-1.0 aux structurées, et tous deux donnent <b>0.0 à la même hallucination</b> (l'Electra Glide) — le défaut de génération est confirmé par deux correcteurs indépendants, ce n'est pas du bruit de notation. Les écarts résiduels (Haiku accorde 0.5 au refus honnête sur les prix, qwen 0.0) mesurent la sévérité relative des juges, pas le système.</p>
+  </div>
+
   <div class="callout"><b class="a">Ce qu'il faut retenir&nbsp;:</b> un score d'éval n'est pas une note de vitrine, c'est un instrument de diagnostic. Publier 0.61 <em>avec son autopsie</em> dit plus sur la santé du système — et sur la méthode de travail — qu'un 0.9 sans détail par question.</div>
 
   <footer class="colophon">
