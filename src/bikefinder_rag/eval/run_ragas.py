@@ -33,8 +33,8 @@ load_dotenv()
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 from datasets import Dataset
-from langchain_community.chat_models import ChatOllama
 from langchain_core.embeddings import Embeddings
+from langchain_ollama import ChatOllama
 from ragas import evaluate
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.llms import LangchainLLMWrapper

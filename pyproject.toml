@@ -16,6 +16,9 @@ dependencies = [
     # ragas 0.4.3 still imports langchain_community.chat_models.vertexai,
     # which langchain-community 0.4.2 removed — pin until ragas catches up.
     "langchain-community==0.4.1",
+    # Local judge for the eval (dedicated package; the community ChatOllama
+    # is deprecated and warns on every run).
+    "langchain-ollama>=1.1",
     "datasets>=3.2",
 ]
 
