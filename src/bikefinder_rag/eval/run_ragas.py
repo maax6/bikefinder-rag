@@ -47,7 +47,7 @@ from ragas.llms import LangchainLLMWrapper
 from ragas.metrics import answer_relevancy, faithfulness
 from ragas.run_config import RunConfig
 
-from bikefinder_rag.agent.loop import BACKEND, OLLAMA_HOST, run_agent
+from bikefinder_rag.agent.loop import BACKEND, OLLAMA_HOST, OLLAMA_MODEL, run_agent
 from bikefinder_rag.db.client import get_connection
 from bikefinder_rag.embeddings.embedder import embed_texts
 
@@ -206,6 +206,7 @@ def main() -> None:
     records = json.loads(df.to_json(orient="records"))
     summary = {
         "generation_backend": BACKEND,
+        "generation_model": OLLAMA_MODEL if BACKEND == "ollama" else "claude",
         "judge_model": JUDGE_MODEL,
         "faithfulness_mean": round(float(df["faithfulness"].mean()), 4),
         "answer_relevancy_mean": round(float(df["answer_relevancy"].mean()), 4),
