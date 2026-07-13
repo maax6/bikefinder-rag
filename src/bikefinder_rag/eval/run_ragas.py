@@ -122,17 +122,29 @@ def _extract_contexts(messages: list[dict]) -> list[str]:
     return contexts
 
 
-def generate_answers(questions: list[dict]) -> list[dict]:
+def generate_answers(questions: list[dict], cached_rows: list[dict]) -> list[dict]:
+    """Generate the missing answers, reusing any cached ones. The cache is
+    rewritten after every answer, so an interrupted generation resumes at
+    the first unanswered question instead of redoing the run."""
+    answered = {row["question"]: row for row in cached_rows}
+    rows: list[dict] = []
     client = None
-    if BACKEND != "ollama":
-        from anthropic import Anthropic
+    conn = None
 
-        client = Anthropic()
-
-    conn = get_connection()
-    rows = []
     try:
         for item in questions:
+            if item["question"] in answered:
+                rows.append(answered[item["question"]])
+                print(f"[{item['id']}] (cached)", file=sys.stderr)
+                continue
+
+            if conn is None:
+                if BACKEND != "ollama":
+                    from anthropic import Anthropic
+
+                    client = Anthropic()
+                conn = get_connection()
+
             answer, messages = run_agent(conn, client, item["question"])
             contexts = _extract_contexts(messages)
             rows.append(
@@ -142,33 +154,28 @@ def generate_answers(questions: list[dict]) -> list[dict]:
                     "contexts": contexts or ["(no tool call was made)"],
                 }
             )
+            ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
             print(f"[{item['id']}] {item['question']}\n  -> {answer[:200]}\n", file=sys.stderr)
     finally:
-        conn.close()
+        if conn is not None:
+            conn.close()
     return rows
 
 
 def main() -> None:
     questions = json.loads(GOLDEN_PATH.read_text())
 
-    # Generation is the expensive half (12 agent runs); cache it so a crash
-    # during scoring — or a judge/config change — doesn't force a redo.
+    # Generation is the expensive half (12 agent runs); cache it so a crash,
+    # an interrupt, or a judge/config change doesn't force a redo. Answers
+    # are matched per question, so a partial cache resumes where it stopped.
     # Delete generated_answers.json (or pass --regenerate) for fresh answers.
+    cached_rows: list[dict] = []
     if ANSWERS_CACHE.exists() and "--regenerate" not in sys.argv:
-        cached = json.loads(ANSWERS_CACHE.read_text())
-        if [r["question"] for r in cached] == [q["question"] for q in questions]:
-            print(f"Reusing generated answers from {ANSWERS_CACHE}", file=sys.stderr)
-            rows = cached
-        else:
-            print("Answer cache is stale (questions changed), regenerating...", file=sys.stderr)
-            rows = None
-    else:
-        rows = None
+        cached_rows = json.loads(ANSWERS_CACHE.read_text())
 
-    if rows is None:
-        print(f"Generating answers (backend={BACKEND})...", file=sys.stderr)
-        rows = generate_answers(questions)
-        ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
+    print(f"Generating answers (backend={BACKEND}, {len(cached_rows)} cached)...", file=sys.stderr)
+    rows = generate_answers(questions, cached_rows)
+    ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
 
     if JUDGE_MODEL.startswith("claude-cli"):
         _, _, cli_model = JUDGE_MODEL.partition(":")
