@@ -128,7 +128,9 @@ def main() -> None:
         ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
 
     print(f"Scoring with judge={JUDGE_MODEL} (local Ollama)...", file=sys.stderr)
-    judge_chat = ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=8192)
+    # 16k context: on the full corpus, tool outputs make faithfulness
+    # prompts overflow 8k and the judge silently loses the tail.
+    judge_chat = ChatOllama(model=JUDGE_MODEL, base_url=OLLAMA_HOST, temperature=0.0, num_ctx=16384)
     # Warm the judge up before scoring: loading a 20GB+ model into GPU
     # memory takes minutes and would otherwise be billed to the first
     # item's RunConfig timeout (observed: Job[0] TimeoutError at 600s).
@@ -143,7 +145,9 @@ def main() -> None:
         metrics=[faithfulness, answer_relevancy],
         llm=judge,
         embeddings=embeddings,
-        run_config=RunConfig(timeout=600, max_workers=1),
+        # 20 min/item: long-context faithfulness jobs on a local judge
+        # were blowing the 10 min default and returning NaN.
+        run_config=RunConfig(timeout=1200, max_workers=1),
     )
 
     df = result.to_pandas()
