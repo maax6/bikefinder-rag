@@ -13,6 +13,9 @@ that got reversed) is in the [project's Notion doc] — the short version:
 
 - **Corpus**: self-scraped from [bikez.com](https://bikez.com) (specs + owner
   discussion forums), not a pre-packaged Kaggle dump — see [Data source](#data-source--why-self-scrape).
+  Currently **9,702 motorcycles (1894–2024), 1,657 model families, 82,589
+  embedded owner comments** — the full last century plus the 2024 lineup of
+  the major street brands, datasets shipped in `data/`.
 - **Category filter**: `Scooter` is excluded *unless* displacement ≥ 500cc
   (keeps crossovers like the Honda X-ADV or Yamaha TMAX, drops twist-and-go
   commuters), `ATV` is always excluded, everything else — including
@@ -131,7 +134,7 @@ scripts/
 
 ```bash
 python3.11 -m venv .venv && .venv/bin/pip install -e .
-cp .env.example .env   # fill in ANTHROPIC_API_KEY for scripts/eval
+cp .env.example .env   # AGENT_BACKEND=ollama for the free local path
 
 docker run -d --name bikefinder-pg \
   -e POSTGRES_USER=bikefinder -e POSTGRES_PASSWORD=bikefinder -e POSTGRES_DB=bikefinder \
@@ -139,9 +142,38 @@ docker run -d --name bikefinder-pg \
   -v "$(pwd)/src/bikefinder_rag/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql" \
   pgvector/pgvector:pg17
 
-PYTHONPATH=src .venv/bin/python scripts/run_pilot_scrape.py
-PYTHONPATH=src .venv/bin/python scripts/load_db.py
+# The scraped datasets ship with the repo (data/pilot, data/demo,
+# data/century — 1894-2024). Load them (deduplicates + embeds, GPU-hours
+# at century scale):
+PYTHONPATH=src .venv/bin/python scripts/load_db.py data/pilot
+PYTHONPATH=src .venv/bin/python scripts/load_db.py data/demo
+PYTHONPATH=src .venv/bin/python scripts/load_db.py data/century
+
+# Re-scrape / extend (resumable at bike, thread and forum level):
+PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
+    --years 2000-2023 --brands all --out data/2000s
+
+# Chat (Gradio, or scripts/chat_cli.py for the terminal):
 PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
+```
+
+## Evaluating
+
+```bash
+# Layer 1 — retrieval alone, no LLM (writes eval_retrieval_report.json):
+PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
+
+# Layer 2 — RAGAS over the full agent. Generation model via OLLAMA_MODEL;
+# judge via RAGAS_JUDGE_MODEL: an Ollama model name (local), or
+# "claude-cli[:model]" to judge through `claude -p` on a Claude
+# subscription (no API key). Answers are cached per question and resume
+# after an interrupt; --regenerate forces fresh ones.
+OLLAMA_MODEL=qwen3.6 RAGAS_JUDGE_MODEL=claude-cli:haiku \
+  EMBEDDER_DEVICE=cpu AGENT_BACKEND=ollama \
+  PYTHONPATH=src .venv/bin/python -m bikefinder_rag.eval.run_ragas
+
+# Data-coverage dashboard (self-contained HTML, spot what to fill next):
+PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
 ```
 
 ## Roadmap
