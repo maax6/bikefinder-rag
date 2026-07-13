@@ -1,0 +1,215 @@
+<title>De la page web au score RAGAS — le pipeline Bikefinder</title>
+<style>
+  :root {
+    --bg: #f4f5f7; --panel: #ffffff;
+    --ink: #16191c; --ink-2: #555c63; --ink-3: #8a9198;
+    --line: #dcdfe3;
+    --accent: #c8431d; --accent-soft: #f7e3db;
+    --code-bg: #1d2126; --code-ink: #d7dce1; --code-dim: #7d8790;
+    --good: #21714c; --good-soft: #dfeee6;
+    --warn: #9a6a08; --warn-soft: #f5ead0;
+    --bad: #a5382f; --bad-soft: #f5ddd9;
+  }
+  :root[data-theme="dark"] {
+    --bg: #121417; --panel: #1a1d21;
+    --ink: #e8eaec; --ink-2: #a6adb4; --ink-3: #6d757d;
+    --line: #2a2e33;
+    --accent: #ff6f42; --accent-soft: #35251e;
+    --code-bg: #16191d;
+    --good: #5cbd8f; --good-soft: #1b3229;
+    --warn: #d9b34c; --warn-soft: #332d18;
+    --bad: #e07468; --bad-soft: #3a2320;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121417; --panel: #1a1d21;
+      --ink: #e8eaec; --ink-2: #a6adb4; --ink-3: #6d757d;
+      --line: #2a2e33;
+      --accent: #ff6f42; --accent-soft: #35251e;
+      --code-bg: #16191d;
+      --good: #5cbd8f; --good-soft: #1b3229;
+      --warn: #d9b34c; --warn-soft: #332d18;
+      --bad: #e07468; --bad-soft: #3a2320;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16.5px; line-height: 1.6;
+  }
+  .page { max-width: 980px; margin: 0 auto; padding: 3.2rem 1.4rem 5rem; }
+  .prose { max-width: 700px; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;
+  }
+  h1 {
+    font-family: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", system-ui, sans-serif;
+    font-weight: 700; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05;
+    margin: 0 0 1rem; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  .dek { font-size: 1.1rem; color: var(--ink-2); margin: 0 0 2.4rem; max-width: 64ch; }
+  .dek b { color: var(--ink); }
+  h2 {
+    font-family: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", system-ui, sans-serif;
+    font-weight: 700; font-size: 1.4rem; margin: 3rem 0 0.7rem;
+    display: flex; align-items: baseline; gap: 0.6rem;
+  }
+  h2 .num {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.85rem; color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 1.02rem; margin: 1.6rem 0 0.5rem; }
+  p { margin: 0 0 1rem; }
+  .prose p { max-width: 68ch; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.87em; background: var(--accent-soft); border-radius: 4px; padding: 0.08em 0.35em;
+  }
+  pre {
+    background: var(--code-bg); color: var(--code-ink); border-radius: 8px;
+    padding: 0.9rem 1.1rem; overflow-x: auto;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.78rem; line-height: 1.55; margin: 0.8rem 0 1.2rem;
+  }
+  pre .c { color: var(--code-dim); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.7rem; margin: 1.2rem 0; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.75rem 0.9rem; }
+  .stat .v { font-size: 1.45rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .stat .l { color: var(--ink-3); font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .flow { display: flex; gap: 0.45rem; flex-wrap: wrap; margin: 1.2rem 0; align-items: stretch; }
+  .fstep { flex: 1 1 140px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.65rem 0.8rem; }
+  .fstep .n { color: var(--accent); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.08em; }
+  .fstep .t { font-weight: 650; font-size: 0.86rem; margin: 0.1rem 0; }
+  .fstep .d { color: var(--ink-2); font-size: 0.75rem; line-height: 1.45; }
+
+  .callout {
+    background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; max-width: 740px;
+    font-size: 0.94rem;
+  }
+  .callout.good { border-left-color: var(--good); }
+  .callout b.g { color: var(--good); }
+  .callout b.a { color: var(--accent); }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; margin: 1rem 0; background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+  th, td { padding: 0.45rem 0.75rem; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { color: var(--ink-3); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  tr:last-child td { border-bottom: none; }
+  td.wrap { white-space: normal; }
+  td.num { font-variant-numeric: tabular-nums; }
+  .pill { display: inline-block; font-size: 0.74rem; font-weight: 650; border-radius: 999px; padding: 0.06rem 0.55rem; }
+  .pill.g { background: var(--good-soft); color: var(--good); }
+  .pill.w { background: var(--warn-soft); color: var(--warn); }
+  .pill.b { background: var(--bad-soft); color: var(--bad); }
+
+  .scorebar { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.2rem 0; }
+  .score {
+    background: var(--panel); border: 2px solid var(--accent); border-radius: 10px;
+    padding: 1rem 1.4rem; text-align: center; flex: 0 1 220px;
+  }
+  .score .v { font-size: 2.3rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .score .l { color: var(--ink-2); font-size: 0.85rem; }
+
+  footer.colophon {
+    margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+    color: var(--ink-3); font-size: 0.8rem;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+</style>
+
+<div class="page">
+
+  <div class="eyebrow">Bikefinder RAG · note d'ingénierie n°2</div>
+  <h1>De la page web au score RAGAS&nbsp;: le pipeline, étape par étape</h1>
+  <p class="dek">Comment 130 ans de catalogue moto et leurs forums deviennent un agent interrogeable — et comment on <b>mesure</b> qu'il fonctionne, plutôt que de le croire sur parole. Chaque chiffre de cette page sort d'un script du repo, reproductible.</p>
+
+  <div class="flow">
+    <div class="fstep"><span class="n">01</span><div class="t">Scraping</div><div class="d">bikez.com, 1894–2024, reprise au thread près</div></div>
+    <div class="fstep"><span class="n">02</span><div class="t">Modèle de données</div><div class="d">familles de modèles, déduplication</div></div>
+    <div class="fstep"><span class="n">03</span><div class="t">Embeddings</div><div class="d">BGE-M3 local, 82&nbsp;589 vecteurs</div></div>
+    <div class="fstep"><span class="n">04</span><div class="t">Agent</div><div class="d">2 outils typés, boucle à la main</div></div>
+    <div class="fstep"><span class="n">05</span><div class="t">Éval retrieval</div><div class="d">4 tests sans LLM</div></div>
+    <div class="fstep"><span class="n">06</span><div class="t">Éval RAGAS</div><div class="d">l'agent complet, jugé par un LLM</div></div>
+  </div>
+
+  <h2><span class="num">01</span>Le scraping — poli, mesuré, interruptible</h2>
+  <div class="prose">
+    <p>La donnée est auto-scrapée depuis bikez.com (fiches techniques + forums de propriétaires), pas un dump Kaggle figé en 2022. Trois principes&nbsp;:</p>
+    <p><b>Politesse vérifiée, pas supposée.</b> Le robots.txt n'interdit que les endpoints fonctionnels (notation, formulaires) — les fiches et forums sont libres, et un sitemap est publié. Le délai entre requêtes est configurable&nbsp;; avant de l'abaisser, un test de charge mesuré a montré que le serveur encaisse ~18&nbsp;req/s sans broncher — on tourne à ~10, avec <b>backoff automatique de 30&nbsp;s</b> au premier signe de stress (429/5xx).</p>
+    <p><b>Reprise à trois niveaux.</b> Moto (URL déjà vue), thread de forum (journal <code>threads_done.txt</code>, écrit <em>après</em> que les commentaires sont sur disque), et forum entier (<code>forums_done.txt</code>, complété au démarrage si un crawl a été interrompu). On peut couper le run n'importe quand — chaque niveau de reprise a été ajouté après qu'une interruption réelle a montré le trou.</p>
+    <p><b>Le parseur apprend de la donnée.</b> Le label de la puissance a dérivé selon les générations de pages («&nbsp;Power output&nbsp;», «&nbsp;Power&nbsp;», «&nbsp;Output&nbsp;», «&nbsp;Effect&nbsp;») — détecté par le dashboard de couverture, corrigé, puis <b>re-dérivé depuis les <code>raw_specs</code> déjà scrapés sans re-télécharger une page</b>&nbsp;: couverture puissance 24&nbsp;%&nbsp;→&nbsp;82&nbsp;%.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="v">9 702</div><div class="l">motos (1894–2024)</div></div>
+    <div class="stat"><div class="v">~50 000</div><div class="l">pages téléchargées</div></div>
+    <div class="stat"><div class="v">85 000+</div><div class="l">messages de forums</div></div>
+    <div class="stat"><div class="v">~2 h</div><div class="l">pour le siècle complet</div></div>
+  </div>
+
+  <h2><span class="num">02</span>Le modèle de données — les avis appartiennent aux familles</h2>
+  <div class="prose">
+    <p>Découverte structurante&nbsp;: bikez partage <b>un seul forum par famille de modèle</b> — la CB 250 K1 de 1970 et la CB 250 N de 1985 pointent vers les mêmes discussions. Stocker les avis par moto-année dupliquait chaque commentaire sur toutes les variantes et faisait passer un avis de 2008 pour un retour sur un millésime 2023.</p>
+    <p>D'où la table <code>model_families</code>&nbsp;: un commentaire existe <b>une fois</b> par famille (dédupliqué par hash), chaque résultat de recherche porte la plage d'années de la famille <em>et</em> la date du commentaire, et le prompt interdit à l'agent d'attribuer un avis à une année précise. 1&nbsp;657 familles, dont 967 avec au moins 3 avis substantiels — la couche narrative émerge de ce qui a réellement été discuté, pas d'un top-N deviné.</p>
+  </div>
+
+  <h2><span class="num">03</span>Les embeddings — locaux, multilingues, et lourds</h2>
+  <div class="prose">
+    <p>Chaque commentaire est vectorisé par <b>BGE-M3</b> (1024 dimensions), un modèle local et multilingue&nbsp;: une question en français retrouve des avis rédigés en anglais, sans étape de traduction ni clé d'API. La recherche est un plus-proche-voisin cosinus dans <b>pgvector</b> (index HNSW), dans la même base Postgres que les specs.</p>
+    <p>L'ordre de grandeur à retenir&nbsp;: un commentaire médian fait ~200 octets de texte, son vecteur en pèse ~4&nbsp;000 — <b>l'embedding pèse 20&nbsp;fois le texte qu'il représente</b>. Les 82&nbsp;589 vecteurs portent la base à 1,1&nbsp;Go, et la vectorisation du corpus complet a coûté ~2&nbsp;h de GPU. C'est le vrai coût du RAG&nbsp;: pas le stockage du texte, la géométrie qu'on construit autour.</p>
+  </div>
+
+  <h2><span class="num">04</span>L'agent — deux outils typés, une boucle visible</h2>
+  <div class="prose">
+    <p>Le LLM n'écrit jamais de SQL. Il dispose de deux outils aux paramètres typés&nbsp;: <code>filter_specs</code> (filtres numériques et catégoriels, tri whitelisté, requêtes paramétrées) et <code>search_reviews</code> (similarité pgvector + filtres mot-à-mot sur marque/modèle). La boucle d'orchestration fait ~40 lignes, sans framework — le pourquoi et le comment ont leur propre note&nbsp;: <em>«&nbsp;Un agent RAG sans framework&nbsp;»</em>. Même code pour Claude (démo publique) et pour un modèle local via Ollama (dev et éval gratuites).</p>
+  </div>
+
+  <h2><span class="num">05</span>Éval couche 1 — prouver le retrieval sans aucun LLM</h2>
+  <div class="prose">
+    <p>Avant de juger les réponses rédigées, on isole la question «&nbsp;la recherche retrouve-t-elle les bons avis&nbsp;?&nbsp;» — sinon impossible de savoir si un échec vient du retrieval ou du modèle qui rédige. Quatre tests, zéro appel LLM (<code>scripts/eval_retrieval.py</code>)&nbsp;:</p>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>Test</th><th class="wrap">Principe</th><th>Résultat (corpus complet)</th></tr>
+    <tr><td>Intégrité</td><td class="wrap">comptages, orphelins, doublons, embeddings nuls</td><td><span class="pill g">0 doublon, 0 orphelin</span></td></tr>
+    <tr><td>Self-retrieval</td><td class="wrap">un texte ré-embeddé doit se retrouver lui-même en 1er</td><td><span class="pill g">30/30, distance 0.0</span></td></tr>
+    <tr><td>Lift thématique</td><td class="wrap">top-30 sémantique vs taux de base du mot-clé dans le corpus</td><td><span class="pill g">21× à 212× selon le thème</span></td></tr>
+    <tr><td>Contrôles négatifs</td><td class="wrap">une recette de cuisine doit scorer nettement plus loin</td><td><span class="pill g">rejetés (d≈0.43-0.50 vs 0.08-0.36)</span></td></tr>
+  </table></div>
+  <div class="callout good"><b class="g">Point clé&nbsp;:</b> les lifts se <b>renforcent</b> quand le corpus grossit (freins&nbsp;: 30/30 hits à 82&nbsp;k avis). Le retrieval est prouvé sain — tout échec en aval est donc imputable à la génération.</div>
+
+  <h2><span class="num">06</span>Éval couche 2 — RAGAS, comment ça marche vraiment</h2>
+  <div class="prose">
+    <p>RAGAS note l'agent <em>complet</em> sur 12 questions dorées (structurées, narratives, hybrides, et deux pièges d'honnêteté). Pour chaque question, on capture la réponse finale <b>et</b> les résultats bruts des outils («&nbsp;contexts&nbsp;») — extraits directement de l'historique de messages de la boucle. Deux métriques, chacune calculée par un LLM juge&nbsp;:</p>
+    <p><b>Faithfulness</b> — le juge découpe la réponse en affirmations atomiques, puis vérifie chacune contre les contexts&nbsp;: est-elle déductible de ce que les outils ont renvoyé&nbsp;? Score = part d'affirmations fondées. C'est le détecteur d'hallucinations.</p>
+    <p><b>Answer relevancy</b> — le juge génère des questions dont la réponse serait une réponse naturelle, et on mesure leur similarité d'embedding avec la question réelle. Une réponse à côté de la plaque (ou vide) produit des questions qui ne ressemblent pas à l'originale.</p>
+    <p>Configuration 100&nbsp;% locale, zéro clé d'API&nbsp;: génération par <b>mistral-small</b> (le «&nbsp;système sous test&nbsp;»), juge <b>qwen3.6</b> — délibérément un modèle différent, pour ne pas noter sa propre copie — et les embeddings du projet pour la relevancy.</p>
+  </div>
+
+  <h3>Le score obtenu, sans maquillage</h3>
+  <div class="scorebar">
+    <div class="score"><div class="v">0.61</div><div class="l">faithfulness (moyenne, 12 questions)</div></div>
+    <div class="score"><div class="v">0.76</div><div class="l">answer relevancy</div></div>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>Type de question</th><th>Faithfulness</th><th class="wrap">Lecture</th></tr>
+    <tr><td>5 structurées (specs, FR/EN)</td><td><span class="pill g">0.91 – 1.0</span></td><td class="wrap">Le chemin SQL est solide à pleine échelle.</td></tr>
+    <tr><td>Narratives F 650, RS 125</td><td><span class="pill g">1.0</span></td><td class="wrap">Le retrieval d'avis fonctionne aussi en génération.</td></tr>
+    <tr><td>Narrative Electra Glide, hybrides</td><td><span class="pill b">0.0 – 0.25</span></td><td class="wrap">Hallucinations du <em>générateur local</em>&nbsp;: il répond «&nbsp;aucun avis disponible&nbsp;» alors que de vrais commentaires sont dans son contexte. Exactement ce que faithfulness doit détecter.</td></tr>
+    <tr><td>Honnêteté (prix, moto sans avis)</td><td><span class="pill w">0.0*</span></td><td class="wrap">Réponses <em>correctes</em> («&nbsp;les données de prix sont éparses&nbsp;») mais RAGAS pénalise les refus&nbsp;: une limite connue de la métrique, documentée plutôt que contournée.</td></tr>
+  </table></div>
+  <div class="prose">
+    <p>La moyenne de 0.61 est donc <b>bornée par le générateur local, pas par le RAG</b>&nbsp;: chaque zéro correspond soit à mistral-small qui contredit ses propres résultats d'outils, soit au biais anti-refus de la métrique. La preuve par l'histoire du projet&nbsp;: la <em>première</em> passe RAGAS (0.55) avait révélé deux vrais bugs de retrieval — matching de modèle en sous-chaîne exacte, argument <code>query</code> omis par les petits modèles — et leur correction a fait bondir les narratives de 0.0 à 1.0. L'éval a payé pour elle-même. La prochaine marche est connue&nbsp;: brancher la génération sur Claude (le harnais est prêt, <code>AGENT_BACKEND=anthropic</code>) et re-mesurer.</p>
+  </div>
+
+  <div class="callout"><b class="a">Ce qu'il faut retenir&nbsp;:</b> un score d'éval n'est pas une note de vitrine, c'est un instrument de diagnostic. Publier 0.61 <em>avec son autopsie</em> dit plus sur la santé du système — et sur la méthode de travail — qu'un 0.9 sans détail par question.</div>
+
+  <footer class="colophon">
+    Scripts : run_demo_scrape.py · load_db.py · eval_retrieval.py · eval/run_ragas.py — repo bikefinder-rag (maax6), juillet 2026. Voir aussi : « Un agent RAG sans framework » et le dashboard de couverture des données.
+  </footer>
+
+</div>
