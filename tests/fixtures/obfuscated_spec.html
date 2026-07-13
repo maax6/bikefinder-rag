@@ -1,0 +1,1798 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--meta http-equiv="X-UA-Compatible" content="IE=edge" -->
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net"  crossorigin>
+    <link rel="preconnect" href="https://d.pub.network"  crossorigin>
+            <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preload" as="image" href="../image/motorcycle-specs-2.avif">
+
+    <!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+    <script>
+          (function() {
+              var host = window.location.hostname;
+              var element = document.createElement('script');
+              var firstScript = document.getElementsByTagName('script')[0];
+              var url = 'https://cmp.inmobi.com'
+                  .concat('/choice/', 'paKtYzR9-WCTC', '/', host, '/choice.js?tag_version=V3');
+              var uspTries = 0;
+              var uspTriesLimit = 3;
+              element.async = true;
+              element.type = 'text/javascript';
+              element.src = url;
+
+              firstScript.parentNode.insertBefore(element, firstScript);
+
+              function makeStub() {
+                  var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                  var queue = [];
+                  var win = window;
+                  var cmpFrame;
+
+                  function addFrame() {
+                      var doc = win.document;
+                      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                      if (!otherCMP) {
+                          if (doc.body) {
+                              var iframe = doc.createElement('iframe');
+
+                              iframe.style.cssText = 'display:none';
+                              iframe.name = TCF_LOCATOR_NAME;
+                              doc.body.appendChild(iframe);
+                          } else {
+                              setTimeout(addFrame, 5);
+                          }
+                      }
+                      return !otherCMP;
+                  }
+
+                  function tcfAPIHandler() {
+                      var gdprApplies;
+                      var args = arguments;
+
+                      if (!args.length) {
+                          return queue;
+                      } else if (args[0] === 'setGdprApplies') {
+                          if (
+                              args.length > 3 &&
+                              args[2] === 2 &&
+                              typeof args[3] === 'boolean'
+                          ) {
+                              gdprApplies = args[3];
+                              if (typeof args[2] === 'function') {
+                                  args[2]('set', true);
+                              }
+                          }
+                      } else if (args[0] === 'ping') {
+                          var retr = {
+                              gdprApplies: gdprApplies,
+                              cmpLoaded: false,
+                              cmpStatus: 'stub'
+                          };
+
+                          if (typeof args[2] === 'function') {
+                              args[2](retr);
+                          }
+                      } else {
+                          if(args[0] === 'init' && typeof args[3] === 'object') {
+                              args[3] = Object.assign(args[3], { tag_version: 'V3' });
+                          }
+                          queue.push(args);
+                      }
+                  }
+
+                  function postMessageEventHandler(event) {
+                      var msgIsString = typeof event.data === 'string';
+                      var json = {};
+
+                      try {
+                          if (msgIsString) {
+                              json = JSON.parse(event.data);
+                          } else {
+                              json = event.data;
+                          }
+                      } catch (ignore) {}
+
+                      var payload = json.__tcfapiCall;
+
+                      if (payload) {
+                          window.__tcfapi(
+                              payload.command,
+                              payload.version,
+                              function(retValue, success) {
+                                  var returnMsg = {
+                                      __tcfapiReturn: {
+                                          returnValue: retValue,
+                                          success: success,
+                                          callId: payload.callId
+                                      }
+                                  };
+                                  if (msgIsString) {
+                                      returnMsg = JSON.stringify(returnMsg);
+                                  }
+                                  if (event && event.source && event.source.postMessage) {
+                                      event.source.postMessage(returnMsg, '*');
+                                  }
+                              },
+                              payload.parameter
+                          );
+                      }
+                  }
+
+                  while (win) {
+                      try {
+                          if (win.frames[TCF_LOCATOR_NAME]) {
+                              cmpFrame = win;
+                              break;
+                          }
+                      } catch (ignore) {}
+
+                      if (win === window.top) {
+                          break;
+                      }
+                      win = win.parent;
+                  }
+                  if (!cmpFrame) {
+                      addFrame();
+                      win.__tcfapi = tcfAPIHandler;
+                      win.addEventListener('message', postMessageEventHandler, false);
+                  }
+              };
+
+              makeStub();
+
+              function makeGppStub() {
+                  const CMP_ID = 10;
+                  const SUPPORTED_APIS = [
+                      '2:tcfeuv2',
+                      '6:uspv1',
+                      '7:usnatv1',
+                      '8:usca',
+                      '9:usvav1',
+                      '10:uscov1',
+                      '11:usutv1',
+                      '12:usctv1'
+                  ];
+
+                  window.__gpp_addFrame = function (n) {
+                      if (!window.frames[n]) {
+                          if (document.body) {
+                              var i = document.createElement("iframe");
+                              i.style.cssText = "display:none";
+                              i.name = n;
+                              document.body.appendChild(i);
+                          } else {
+                              window.setTimeout(window.__gpp_addFrame, 10, n);
+                          }
+                      }
+                  };
+                  window.__gpp_stub = function () {
+                      var b = arguments;
+                      __gpp.queue = __gpp.queue || [];
+                      __gpp.events = __gpp.events || [];
+
+                      if (!b.length || (b.length == 1 && b[0] == "queue")) {
+                          return __gpp.queue;
+                      }
+
+                      if (b.length == 1 && b[0] == "events") {
+                          return __gpp.events;
+                      }
+
+                      var cmd = b[0];
+                      var clb = b.length > 1 ? b[1] : null;
+                      var par = b.length > 2 ? b[2] : null;
+                      if (cmd === "ping") {
+                          clb(
+                              {
+                                  gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                                  cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                                  cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                                  signalStatus: "not ready", // possible values: not ready, ready
+                                  supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                                  cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+                                  sectionList: [],
+                                  applicableSections: [-1],
+                                  gppString: "",
+                                  parsedSections: {},
+                              },
+                              true
+                          );
+                      } else if (cmd === "addEventListener") {
+                          if (!("lastId" in __gpp)) {
+                              __gpp.lastId = 0;
+                          }
+                          __gpp.lastId++;
+                          var lnr = __gpp.lastId;
+                          __gpp.events.push({
+                              id: lnr,
+                              callback: clb,
+                              parameter: par,
+                          });
+                          clb(
+                              {
+                                  eventName: "listenerRegistered",
+                                  listenerId: lnr, // Registered ID of the listener
+                                  data: true, // positive signal
+                                  pingData: {
+                                      gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                                      cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                                      cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                                      signalStatus: "not ready", // possible values: not ready, ready
+                                      supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                                      cmpId: CMP_ID, // list of supported APIs
+                                      sectionList: [],
+                                      applicableSections: [-1],
+                                      gppString: "",
+                                      parsedSections: {},
+                                  },
+                              },
+                              true
+                          );
+                      } else if (cmd === "removeEventListener") {
+                          var success = false;
+                          for (var i = 0; i < __gpp.events.length; i++) {
+                              if (__gpp.events[i].id == par) {
+                                  __gpp.events.splice(i, 1);
+                                  success = true;
+                                  break;
+                              }
+                          }
+                          clb(
+                              {
+                                  eventName: "listenerRemoved",
+                                  listenerId: par, // Registered ID of the listener
+                                  data: success, // status info
+                                  pingData: {
+                                      gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                                      cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                                      cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                                      signalStatus: "not ready", // possible values: not ready, ready
+                                      supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                                      cmpId: CMP_ID, // CMP ID
+                                      sectionList: [],
+                                      applicableSections: [-1],
+                                      gppString: "",
+                                      parsedSections: {},
+                                  },
+                              },
+                              true
+                          );
+                      } else if (cmd === "hasSection") {
+                          clb(false, true);
+                      } else if (cmd === "getSection" || cmd === "getField") {
+                          clb(null, true);
+                      }
+                      //queue all other commands
+                      else {
+                          __gpp.queue.push([].slice.apply(b));
+                      }
+                  };
+                  window.__gpp_msghandler = function (event) {
+                      var msgIsString = typeof event.data === "string";
+                      try {
+                          var json = msgIsString ? JSON.parse(event.data) : event.data;
+                      } catch (e) {
+                          var json = null;
+                      }
+                      if (typeof json === "object" && json !== null && "__gppCall" in json) {
+                          var i = json.__gppCall;
+                          window.__gpp(
+                              i.command,
+                              function (retValue, success) {
+                                  var returnMsg = {
+                                      __gppReturn: {
+                                          returnValue: retValue,
+                                          success: success,
+                                          callId: i.callId,
+                                      },
+                                  };
+                                  event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+                              },
+                              "parameter" in i ? i.parameter : null,
+                              "version" in i ? i.version : "1.1"
+                          );
+                      }
+                  };
+                  if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+                      window.__gpp = window.__gpp_stub;
+                      window.addEventListener("message", window.__gpp_msghandler, false);
+                      window.__gpp_addFrame("__gppLocator");
+                  }
+              };
+
+              makeGppStub();
+
+              var uspStubFunction = function() {
+                  var arg = arguments;
+                  if (typeof window.__uspapi !== uspStubFunction) {
+                      setTimeout(function() {
+                          if (typeof window.__uspapi !== 'undefined') {
+                              window.__uspapi.apply(window.__uspapi, arg);
+                          }
+                      }, 500);
+                  }
+              };
+
+              var checkIfUspIsReady = function() {
+                  uspTries++;
+                  if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                      console.warn('USP is not accessible');
+                  } else {
+                      clearInterval(uspInterval);
+                  }
+              };
+
+              if (typeof window.__uspapi === 'undefined') {
+                  window.__uspapi = uspStubFunction;
+                  var uspInterval = setInterval(checkIfUspIsReady, 6000);
+              }
+          })();
+    </script>
+    <!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+
+    <link href="../assets/mainV3.css" rel="stylesheet">
+    <link href="../assets/responsiveV3.css" rel="stylesheet">
+
+    
+      <title>2024 Yamaha MT-07 specifications and pictures</title>
+      <meta name="keywords" content="2024 Yamaha MT-07, motorcycle, specifications, pictures, specs. Price.  Rating.">
+      <meta name="description" content="The 2024 Yamaha MT-07 and all other motorcycles made 1894-2025. Specifications. Pictures. Rating. Discussions. Price.">
+          
+      <meta name="twitter:card" content="2024 Yamaha MT-07. Pictures. Specs. Rating. Discussions. All other motorcycles made 1894-2025 described.">
+      <meta property="og:title" content="2024 Yamaha MT-07">
+      <meta property="og:type" content="article">
+      <meta property="og:url" content="//bikez.com/motorcycles/yamaha_mt-07_2024.php">
+      <meta property="og:image" content="//bikez.com/pictures/yamaha/2024/mt-07.jpg">
+      <meta property="og:description" content="The 2024 Yamaha MT-07 and all other motorcycles made 1894-2025. Specifications. Pictures. Rating. Discussions. Price."> 
+      <link rel="canonical" href="https://bikez.com/motorcycles/yamaha_mt-07_2024.php"> 
+
+<script type="application/ld+json"> 
+{"@type":"WebPage",
+"name":"2024 Yamaha MT-07 specifications and pictures",
+"description":"The 2024 Yamaha MT-07 and all other motorcycles made 1894-2025. Specifications. Pictures. Rating. Discussions. Price.",
+"keywords":"2024 Yamaha MT-07, motorcycle, specifications, pictures, specs. Price.  Rating.",
+"url":"https://bikez.com/motorcycles/yamaha_mt-07_2024.php",
+"@context":"http://schema.org",
+"review":{"@type":"Product","name":"2024 Yamaha MT-07","brand": {"@type":"Thing", "name":"Yamaha"},"description": "From the open roads to the urban sprawl, refined electronic fuel injection settings deliver a smooth throttle response for enhanced riding enjoyment. The system delivers outstanding torque in the low- and mid-rpm range, exciting acceleration in the upper rpm range, along with linear and seamless throttle response across the entire rev range.
+
+", "image":{"@type":"ImageObject","url":"//bikez.com/pictures/yamaha/2024/mt-07.jpg","width":"400","height":"225"},
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"3","ratingCount":"3","worstRating":"0","bestRating":"5"}, "review":{"@type":"Review","author":{"name":"Michelle, Bikez.com","@type":"Organization","legalName":"Bikez.com"}} },
+"reviewedBy": {"@type":"Organization","legalName":"Bikez.com"}}
+</script> 
+
+
+<script type="application/ld+json"> 
+{"@type":"Motorcycle", 
+"additionalType": "http://www.productontology.org/id/Motorcycle",
+"review":{"@type":"Review","author":{"name":"Michelle, Bikez.com","@type":"Organization","legalName":"Bikez.com"}},
+"brand": {"@type":"Brand", "name":"Yamaha"}, 
+"name":"2024 Yamaha MT-07", 
+"model":"2024 Yamaha MT-07",
+"category": "Sport", 
+"bodyType":  "Sport",
+"description": "From the open roads to the urban sprawl, refined electronic fuel injection settings deliver a smooth throttle response for enhanced riding enjoyment. The system delivers outstanding torque in the low- and mid-rpm range, exciting acceleration in the upper rpm range, along with linear and seamless throttle response across the entire rev range.
+
+",
+"vehicleEngine": {"engineType":"enginespecs" , "engineDisplacement": {"value":"689.00","unitCode":"CMQ"}, "enginePower": {"value":"73.40","unitCode":"BHP"}, "torque": {"value":"67.00","unitCode":"NU"}},
+"fuelConsumption": {"value":"4.20","unitCode":"L/100 km"},
+"fuelCapacity": {"value":"14.00","unitText":"LTR"},
+"wheelbase": {"value":"140","unitCode":"CMT"},
+"weight": {"value":"184.16","unitCode":"KGM"},
+"emissionsCO2": "97.4 g/km",
+"color": "
+Matte Raven Black, Midnight Cyan, Team Yamaha Blue",
+"image":{"@type":"ImageObject","url":"//bikez.com/pictures/yamaha/2024/mt-07.jpg","width":"400","height":"225"},
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"3","ratingCount":"3","worstRating":"0","bestRating":"5"},
+"url": "https://bikez.com/motorcycles/yamaha_mt-07_2024.php",
+"@context":"http://schema.org" 
+} 
+</script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-08K128NE07"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-08K128NE07');
+    </script>
+
+    <link rel="stylesheet" href="../assets/fontello-4c768412/css/bar.css">
+
+    <!-- Insurance ads -->
+    <style>
+      .inline_ad {
+          display: flex;
+      }
+      .tagline {
+
+      }
+      .powered-by {
+          margin: 0 10px;
+          font-size: 12px;
+      }
+      #single_ad button {
+          display: none;
+      }
+      #single_ad img {
+          width: 60px;
+          height: 30px;
+      }
+    </style>
+
+    
+  <style>
+   .grid-container-bikez {
+      display: grid; 
+      grid-template-columns: 1fr 240px; 
+      margin: 10px 2px 20px 0px;;
+      padding: 0;
+      max-width: 1000px;
+      width: 100%;
+      height:100%;
+      background-color:transparent;
+    }
+   .grid-box-bikez {
+      background-color:transparent; 
+      height:100%; 
+      text-align:left; 
+    }
+    .rightmenubox {
+	    width: 240px;
+	    float: right;
+	    text-align: left;
+	    background: #ffffff;
+	    background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#eeeeee));
+	    background: -moz-linear-gradient(top, #cccccc, #eeeeee);
+	    background: -o-linear-gradient(#cccccc, #eeeeee);
+	    background: -ms-linear-gradient(#cccccc, #eeeeee); /* For IE10 */
+	    background: linear-gradient(#cccccc, #eeeeee);
+	    -webkit-box-shadow: 2px 2px 3px 2px #7D7D7D;
+	    box-shadow: 2px 2px 3px 2px #7D7D7D;
+	    font-size: 12px;
+	    line-height: 160%;
+	    letter-spacing: 1px;
+	    font-weight: bold;
+    }
+    .rightmenubox ul {  /* Strip the ul of padding and list styling */
+	    list-style-type: none;
+      padding: 0px 20px 0px 20px;
+    }
+	  .show-menu-right {  /* Display right hand 'show menu' link */
+	    text-decoration: none;
+	    color: #fff;
+	    background: #888888;
+	    background: -webkit-gradient(linear, left top, left bottom, from(#aaaaaa), to(#444444));
+	    background: -moz-linear-gradient(top, #aaaaaa, #444444);
+	    background: -o-linear-gradient(#aaaaaa, #444444);
+	    background: -ms-linear-gradient(#aaaaaa, #444444); /* For IE10 */
+	    background: linear-gradient(#aaaaaa, #444444);
+	    text-align: center;
+	    padding: 10px 0;
+		  display:block;
+	  }
+    input[type=checkbox]:checked ~ #rightmenu{  /* Show menu when invisible checkbox is checked */
+      display: block;
+    }
+    @media (max-width: 1200px) {
+      .grid-container-bikez {
+        grid-template-columns: 1fr 188px; 
+        margin-top:22px;
+        margin-bottom:20px;
+      }
+      .rightmenubox {
+	      width: 188px;
+      }
+    }
+    @media (max-width: 920px) {
+      .grid-container-bikez {
+      }
+      .rightmenubox {
+        box-shadow: none;
+      }
+    }
+    @media screen and (max-width: 676px) {
+      .grid-container-bikez {
+        grid-template-columns: 1fr;
+        width: 400px;
+      }
+      .grid-box-bikez {
+        text-align:left;
+        float:left;      
+      }
+      .menubox {
+        float:left;  
+
+      }
+      .rightmenubox {
+	      width: 400px;
+        margin-top: 20px;
+      }
+      .rightmenubox ul {  /* Strip the ul of padding and list styling */
+        padding: 0px 0px 0px 0px;
+		    position: static;
+		    display: none; /* Pre-expand menu items off */
+	    }
+	    .rightmenubox li {  /* Optional vertical spacing */
+		    margin-bottom: 0px;
+        height: 32px;
+        padding-top: 10px;
+        text-align: center;
+	    }
+      .rightmenubox li:hover {  /* Hover state for menu links */
+	      color: #fff;
+	      background: #888888;
+      }
+	    .rightmenubox ul li, li a { /* Make all menu links full width */
+		    width: 100%;
+        display: block;
+	    }
+      #menu {
+        margin: 0px;
+      }
+    }
+  </style>
+  </head>
+  <body>
+	  <div id="frameset">
+		  <div id="content">
+		  	<div id="headerbackground">
+		      <div id="adbannermobile">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9776397801837061"
+     crossorigin="anonymous"></script>
+<!-- AdGo468x60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="8396128771"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>		      </div> <!-- end id=adbannermobile -->
+		      <div id="adbanner">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9776397801837061"
+     crossorigin="anonymous"></script>
+<!-- AdGo728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="9872861974"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>		      </div> <!-- end id=adbanner -->
+		  	<div class="simpleclearfix"></div>
+		    <div id="centerheaderwrapper">
+			    <div id="bikezlogo">
+				    <a href="/main/index.php">
+				    	<img src="/image/bikez.png" alt="Bikez.com Motorcycle Catalog" width="174" height="40">
+			    	</a>
+		    	</div>
+		    	<div id="bsearch" style="width:242px;height:40px;padding-top: 0px;" >
+						<form id="bsearchform" enctype="multipart/form-data" method="post" action="../search/index.php">
+			        <input type="text" class="bsearchbox"  name="searchstring" placeholder="Search 40 000 motorcycles" size="21" maxlength="60"><button type="submit" name="submit" title="Find motorcycle" class="bsearchbutton" ><i class="demo-icon icon-search"></i></button>
+						</form>
+						<div class="bsearchclear"></div>
+					</div>
+		    	<div id="headertext">
+		    		SPECS &middot; PICS &middot; RATING &middot; REVIEWS
+		    	</div>
+		    	<div id="headertextmobile">
+		    		SPECS &middot; RATING
+		    	</div>
+				</div> <!-- end id=centerheaderwrapper -->
+				<div id="bikezmenu" class="bmenu">
+		    	<label for="show-menu" class="show-menu"><i class="demo-icon icon-menu"></i> Menu</label>
+					<input type="checkbox" id="show-menu" role="button"  aria-pressed="true">
+						<ul id="menu">
+						<li>
+							<a href="#"><i class="demo-icon icon-motorcycle"></i> Browse bikes</a>
+							<ul class="hidden">
+								<li><a href="/brands/index.php">&nbsp;&nbsp;by Brand</a></li>
+								<li><a href="/years/index.php">&nbsp;&nbsp;by Year</a></li>
+								<li><a href="/categories/index.php">&nbsp;&nbsp;by Category</a></li>
+								<li><a href="/year/2025-motorcycle-models.php">New 2025 models</a></li>
+								<li><a href="/year/2024-motorcycle-models.php">All 2024 models</a></li>
+								<li><a href="/newmodels/index.php">Newest additions</a></li>
+								<li><a href="/mopeds/index.php">50cc motorcycles</a></li>
+								<li><a href="/125cc/index.php">125cc motorcycles</a></li>
+								<li><a href="/150cc/index.php">150cc motorcycles</a></li>
+								<li><a href="/electric/motorcycles.php">Electric motorcycles</a></li>
+								<li><a href="/1960s/motorcycles.php">1960s motorcycles</a></li>
+								<li><a href="/1950s/motorcycles.php">1950s motorcycles</a></li>
+								<li><a href="/1940s/motorcycles.php">1940s motorcycles</a></li>
+								<li><a href="/1930s/motorcycles.php">1930s motorcycles</a></li>
+								<li><a href="/submit/index.php">Contribute your specs / pics</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"> Top bikes</a>
+							<ul class="hidden">
+								<li><a href="/statistics/index.php">Top Charts</a></li>
+								<li><a href="/motorcycleoftheyear/index.php">MC of the Year</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"> Tools</a>
+							<ul class="hidden">
+								<li><a href="/search/advanced.php">Advanced search</a></li>
+								<li><a href="/bike/compare-motorcycle-specs.php">Compare specs</a></li>
+								<li><a href="/bike/compare-motorcycle-ratings.php">Compare ratings</a></li>
+								<li><a href="/newsletter/index.php">Our newsletter</a></li>
+								<li><a href="/conv/index.php">Unit converters</a></li>
+								<li><a href="/jargon/index.php">Words & terms</a></li>
+								<li><a href="/news/motorcyclesafety.php">Riding safety</a></li>
+								<li><a href="https://www.insurifinder.com/motorcycle/?ci=1&ho=1&ms=1&ma=0&ag=30&pc=&ab=1004" target="_blank">Insurance quotes</a></li>
+							</ul>
+						</li>
+						<li><a href="/news/index.php"> News & reviews</a></li>
+						<li>
+							<a href="#"><!-- <i class="fa fa-comment-o"></i> --> Forums</a>
+							<ul class="hidden">
+								<li><a href="/msgboard/index.php">General topics</a></li>
+								<li><a href="/msgboard/indexbrand.php">Motorcycle brands</a></li>
+								<li><a href="/msgboard/indexcategory.php">Motorcycle categories</a></li>
+								<li><a href="/msgboard/findbikeforum.php">Best forum for your bike</a></li>
+								<li><a href="/msgboard/motorcycle-discussion.php">Latest discussion posts</a></li>
+							</ul>
+						</li>
+						<li><a href="https://bikez.biz/index.php"> Free classifieds</a></li>
+					</ul>
+				</div> <!-- end id=bikezmenu -->
+			</div> <!-- end id=headerbackground -->
+			<div class="clearfix"></div>
+			<div id="pagecontent">
+
+
+<table class="headertable">
+<tr><td class="headerimg">
+<img src="../image/headingwings.gif" alt="2024 Yamaha MT-07" title="2024 Yamaha MT-07" width="38" height="34">
+</td><td>
+<h1><a href="../brand/yamaha_motorcycles.php">Yamaha</a> MT-07 <a href="../year/2024-motorcycle-models.php">2024</a></h1><br>
+<h3>2024 Yamaha MT-07 specifications, pictures, reviews and rating</h3>
+</td></tr></table>
+
+
+
+<div class="grid-container-bikez">
+  <div class="grid-box-bikez">
+ 
+    
+          <a href="https://bikez.com/gallery/yamaha_mt-07_2024_poster.php?pictno=1" target="_blank" > 
+
+          <picture>
+            <source srcset="https://bikez.com/pictures/yamaha/2024/yamaha%20mt-07.jpg" media="(min-width: 1200px)">
+            <img src="https://bikez.com/pictures/yamaha/2024/mt-07.jpg" alt="2024 Yamaha MT-07" title="2024 Yamaha MT-07">
+          </picture><br></a>
+<span style="font-size:12px"><i>2024 Yamaha MT-07. Picture credits - Yamaha. </i></span> 
+<a href="https://bikez.com/submit/submitpic.php?idbike=60486&m=y"><span style="font-size:12px"><i>Submit more pictures</i></span></a>. 
+  
+
+
+  </div>
+  <div class="grid-box-bikez">
+		<div class="rightmenubox">
+		  <label for="show-menu-right" class="show-menu-right"><i class="demo-icon icon-menu" style="font-size:16px"></i> 2024 Yamaha MT-07</label>
+			<input type="checkbox" id="show-menu-right" role="button"  aria-pressed="true">
+			<ul id="rightmenu">
+        <li><a href="../gallery/yamaha_mt-07_2024_picture.php?pictno=2">More pictures...</a></li><li><a href="../gallery/yamaha_mt-07_2024_poster.php?pictno=1" target="_blank" rel="noopener">Larger picture...</a></li><li><a href="../models/yamaha-mt-07-discussions.php">Discuss this bike</a></li>
+
+                <li><a href="https://bikez.biz/interaction/getcountry.php?idbike=60486">Rate this motorbike</a></li> 
+
+                <li><a href="../rating/yamaha_mt-07_2024.php">This bike's rating</a></li> 
+<li><a href="../bike/add_review.php?bike=60486">Write a review</a></li>
+
+	              <li><a href="https://bikez.biz/ads/index.php?idyear=2024&amp;idbrand=4&amp;idmodel=60486">Sell this motorcycle</a></li> 
+
+                <li><a href="https://bikez.biz/ads/listmodel.php?Year=2024&amp;Brand=Yamaha&amp;Model=MT-07&amp;BikeId=60486&amp;BrandId=4">Such bikes for sale</a></li>
+                <li><a href="https://www.insurifinder.com/motorcycle/zip/?submitted=1&ab=1004" target="_blank">Insurance quotes</a></li>
+	              
+                <li><a href="#CompTab">Compare specs</a></li> 
+
+                <li><a href="../bike/listrelated.php?idbike=60486&amp;idcat=1&amp;yearno=2024&amp;idbrand=4&amp;ccm=689.00&amp;model=MT-07&amp;brand=Yamaha">List related bikes</a></li> 
+			</ul>
+		</div> <!-- end id=rightmenu -->
+  </div>
+</div>
+
+
+<table style="width:100%" class="Grid"><tr><td style="background-color:#CCCCCC;text-align:center"><b>Yamaha's profilation of this bike</b></td></tr>
+  <tr><td>From the open roads to the urban sprawl, refined electronic fuel injection settings deliver a smooth throttle response for enhanced riding enjoyment. The system delivers outstanding torque in the low- and mid-rpm range, exciting acceleration in the upper rpm range, along with linear and seamless throttle response across the entire rev range.
+
+</td></tr></table><br><table style="width:100%" class="Grid">    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="GENERAL"></div>
+            General information        </th>
+    </tr>
+  
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Model                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    Yamaha MT-07                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Model year                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    2024                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Category                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="SosQvftvZjfZWxPiqzTY">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+<tr><td style="vertical-align:top;width:25%"><b>Price as new</b></td><td>US$ 8199.   MSRP depends on country, taxes, accessories, etc.</td></tr>
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Rating                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                    <i class="demo-icon icon-star" style="color:orange;margin-right: -5px"></i><i class="demo-icon icon-star" style="color:orange;margin-right: -5px"></i><i class="demo-icon icon-star" style="color:orange;margin-right: -5px"></i><i class="demo-icon icon-star-empty" style="color:orange;margin-right: -5px"></i><i class="demo-icon icon-star-empty" style="color:orange;margin-right: -5px"></i> 3.0  &nbsp;Check out the <a href="../rating/yamaha_mt-07_2024.php">detailed rating</a> of racing track capabilities, engine performance, accident risk, etc. Compare with any other bike.            </td>
+</tr>
+
+    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="ENGINE"></div>
+            Engine and transmission        </th>
+    </tr>
+  
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            <a href="../jargon/index.php#Displacement">Displacement</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="lWqXIruTIFUKfhNIYmdcG">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Engine type                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="NeicTifNdwPPFmnQYego">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Power output                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="zRPhjiFKgaUd">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            <a href="../jargon/index.php#Torque">Torque</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="sLjUVYHmYygJIUauHARL">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            <a href="../jargon/index.php#Compression">Compression</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="iNfpBJBuqZlthECSkAbL">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            <a href="../jargon/index.php#Bore">Bore</a> x <a href="../jargon/index.php#Stroke">stroke</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="qCWutZIkQHpxkfv">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            <a href="../jargon/index.php#Valve">Valves</a> per cylinder                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="GEZbybevTvxBYnWcxHl">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Fuel system                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="khEvlwVAmwMgAEoUfW">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Fuel control                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="NPzhygIeMSrSDBWDhF">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Ignition                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="ZNItrQqSQALHxHCBaM">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Lubrication system                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="XSVdCoTDdgnmuXIXVtOwJtG">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Cooling system                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="XMuxBwNazJSFkfkniYUyhuGj">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Gearbox                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="YhDDSJpIMUESXwGvQV">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Transmission type                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="cDytPxuepX">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Clutch                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="fYQVfwqoNAGsYiJMnP">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Driveline                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="dqxCExLJKcJTFOMEKZkIJJ">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Fuel consumption                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="ruIkwxvHrrdYFXJD">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Greenhouse gases                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="FlmJiEicuKXZQAOH">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Emission details                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="hcOXLIvSsufxbXENWFSmdkWSr">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Exhaust system                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="UMzXocAsbQKPSPyiECVpq">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="CHASSIS"></div>
+            Chassis, suspension, brakes and wheels        </th>
+    </tr>
+  
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Frame type                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="QypvpKIsgiCBlOlPooR">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Rake (fork angle)                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    24.5&deg;                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Trail                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="snJebVpQCYDsWSBdX">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Front <a href="../jargon/index.php#Suspension">suspension</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="OrYvegNvDRCxIww">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Front wheel travel                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="eNiAHyVdpCWJGqxqCKsiQBn">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Rear <a href="../jargon/index.php#Suspension">suspension</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="aZPHMkYopdgUssNyvWcvEr">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Rear wheel travel                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="wEjGaOuDOW">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Front tire                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="fJCeDQkvctMsPCfTqflETrD">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Rear tire                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="nREMuEJRdujQOU">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Front brakes                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="zGxHXjWNcxzjpv">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Diameter                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="lGkbjFTrmOsKPooklqRlRZftN">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Rear brakes                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="hkJgEkkSzyZooNULjjcs">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Diameter                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="XKHiPxlREqqBdhhdbwKHIU">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Wheels                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="pUvmFthaVpECVzlf">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="PHYSICAL"></div>
+            Physical measures and capacities        </th>
+    </tr>
+  
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Weight incl. oil, gas, etc                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="aPPHpCYGFDW">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Seat height                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="gUYWDlollrPjXW">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Overall height                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="JkoIfVninmkfAulidDlW">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Overall length                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="OCKlEGYcfplgfRObt">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Overall width                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="VRDkBsTvRbxCdfVyHajFpovA">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Ground clearance                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="jwQddSZdqsVQyxyypbIQ">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            <a href="../jargon/index.php#Wheelbase">Wheelbase</a>                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="mvsKlggNBpRzhRJKe">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Fuel capacity                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="eNcXzCDBmjSgOlyoyQDArtOqH">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Oil capacity                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="wVfBqtXukgR">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="OTHER"></div>
+            Other specifications        </th>
+    </tr>
+  
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Color options                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="fhKCdzAnnZZBLlVYSDj">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Starter                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="qMFccVhEKVjpBLqwUUThIoa">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Instruments                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="AXEovKucRr">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Light                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="WFVPgzgADoHMijIKbrvdZxv">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Factory warranty                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="InjMPWeDcDQZIEugrMdBauTm">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Comments                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="dLlUIpQtFUEy">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+<tr><td style="vertical-align:top;width:25%"><b>Update specs</b></td><td>Report <a href="../bike/updatespecs.php?bike=60486">missing specs or required updates</a>.</td></tr>    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="MAINTENANCE"></div>
+            Maintenance and service specs *        </th>
+    </tr>
+  
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Engine oil                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="nznWhmCAcZ">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Brake fluid                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="JtcHHENXNV">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Coolant                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="GJghvaaPXrnOJCjGQwR">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Battery                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="YOkjrokVnSFnTqtoEcTAgy">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Spark plugs                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="sRHjrTYsNyPuhjawS">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Idle speed                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="pLkjViqhlBcnjiRb">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Chain size                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="QVVpNaXIOr">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Chain links                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="nnKTGmSZLwGkRPQXWgZeJn">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Sprockets                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="VwcAfHwgvHcombJxTFByssTL">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Tire pressure front                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="WwxybaZfmMYagKyQimPWeCYUJ">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Tire pressure rear                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="wUlvZosBqwiPArh">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+
+<tr>
+    <td style="vertical-align:top;width:25%;">
+        <b>
+                            Fork tube size                    </b>
+    </td>
+    <td style="vertical-align:top;">
+                                    <span class="gPnZRlbgLzdXGnmrMj">
+                    Loading...
+                </span>
+                        </td>
+</tr>
+
+<tr><td colspan="2">*) Always verify maintenance and service data with the bike owner's manual.</td></tr>    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="FURTHER"></div>
+            Further information        </th>
+    </tr>
+  <tr><td style="vertical-align:top;width:25%"><b>Insurance costs</b></td><td>Compare US <a href="https://www.insurifinder.com/motorcycle/zip/?submitted=1&ab=1004" target="_blank">insurance quotes</a> from the nation's top providers.</td></tr><tr><td style="vertical-align:top;width:25%"><b>Maintenance</b></td><td>Find <a target="_blank" rel="noopener" href="https://www.amazon.com/b/ref=as_li_qf_br_sr_tl?ie=UTF8&node=404702011&tag=bikezcom-20&camp=1789&creative=9325&linkCode=ur2&linkId=595f4a4e9bd1cda83a1edbf0910fe519">parts, fluids. filters, maintenance tools</a> and <a target="_blank" rel="noopener" href="https://www.amazon.com/gp/search/ref=as_li_qf_sp_sr_tl?ie=UTF8&tag=bikezcom-20&keywords=Yamaha+MT-07+service+manual&index=aps&camp=1789&creative=9325&linkCode=ur2&linkId=fec62bea82ba013e24a767b302a656b8">service manuals</a> at Amazon.com.</td></tr><tr><td style="vertical-align:top;width:25%"><b>Ask questions</b></td><td>Join the <a href="../models/yamaha-mt-07-discussions.php">24 Yamaha MT-07 discussion</a> group or the general <a href="../msgboard/msg.php?id=4&amp;type=brand">Yamaha discussion</a> group.</td></tr><tr><td style="vertical-align:top;width:25%"><b>Related bikes</b></td><td>List <a href="../bike/listrelated.php?idbike=60486&amp;idcat=1&amp;yearno=2024&amp;idbrand=4&amp;ccm=689.00&amp;model=MT-07&amp;brand=Yamaha">related bikes</a> for comparison of specs.</td></tr>    <tr>
+        <th colspan="2" style="background-color:#CCCCCC;text-align:center">
+            <div id="CompTab"></div>
+            Compare with another motorcycle        </th>
+    </tr>
+  <tr><td colspan="2">
+<form name="Compare" enctype="multipart/form-data" method="post" action="../bike/compare.php">  
+<table style="padding:6px;width:100%" class="InpForm"><tr><td style="width:20%; text-align:center;">Year
+<input type="hidden" id="MainBike" name="MainBike" value="60486">
+
+
+<select id='CompYear' name='CompYear'>
+<option>2025</option><option selected>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option><option>1996</option><option>1995</option><option>1994</option><option>1993</option><option>1992</option><option>1991</option><option>1990</option><option>1989</option><option>1988</option><option>1987</option><option>1986</option><option>1985</option><option>1984</option><option>1983</option><option>1982</option><option>1981</option><option>1980</option><option>1979</option><option>1978</option><option>1977</option><option>1976</option><option>1975</option><option>1974</option><option>1973</option><option>1972</option><option>1971</option><option>1970</option><option>1969</option><option>1968</option><option>1967</option><option>1966</option><option>1965</option><option>1964</option><option>1963</option><option>1962</option><option>1961</option><option>1960</option><option>1959</option><option>1958</option><option>1957</option><option>1956</option><option>1955</option><option>1954</option><option>1953</option><option>1952</option><option>1951</option><option>1950</option><option>1949</option><option>1948</option><option>1947</option><option>1946</option><option>1945</option><option>1944</option><option>1943</option><option>1942</option><option>1941</option><option>1940</option><option>1939</option><option>1938</option><option>1937</option><option>1936</option><option>1935</option><option>1934</option><option>1933</option><option>1932</option><option>1931</option><option>1930</option><option>1929</option><option>1928</option><option>1927</option><option>1926</option><option>1925</option><option>1924</option><option>1923</option><option>1922</option><option>1921</option><option>1920</option><option>1919</option><option>1918</option><option>1917</option><option>1916</option><option>1915</option><option>1914</option><option>1913</option><option>1912</option><option>1911</option><option>1910</option><option>1909</option><option>1908</option><option>1907</option><option>1906</option><option>1905</option><option>1904</option><option>1903</option><option>1902</option><option>1901</option><option>1900</option><option>1899</option><option>1898</option><option>1897</option><option>1896</option><option>1895</option><option>1894</option>
+</select>
+ <br>
+<td style="width:40%; text-align:center;">Brand 
+
+<select id='CompBrand' name='CompBrand'>
+ <option value=164>Acabion</option> <option value=471>Access</option> <option value=433>Ace</option> <option value=203>Adiva</option> <option value=432>Adler</option> <option value=113>Adly</option> <option value=170>Aeon</option> <option value=98>Aermacchi</option> <option value=449>Agrati</option> <option value=106>AJP</option> <option value=188>AJS</option> <option value=56>Alfer</option> <option value=318>Alligator</option> <option value=431>Allstate</option> <option value=226>AlphaSports</option> <option value=503>Alta</option> <option value=55>Amazonas</option> <option value=227>American Eagle</option> <option value=167>American IronHorse</option> <option value=228>APC</option> <option value=617>Apollino</option> <option value=608>Apollo</option> <option value=7>Aprilia</option> <option value=551>Apsonic</option> <option value=502>Arch</option> <option value=610>Archive</option> <option value=255>Arctic Cat</option> <option value=460>Ardie</option> <option value=388>Ariel</option> <option value=365>Arlen Ness</option> <option value=263>Arqin</option> <option value=619>Ascend</option> <option value=513>Askoll</option> <option value=313>Aspes</option> <option value=521>Ather</option> <option value=57>ATK</option> <option value=150>Atlas Honda</option> <option value=446>Aurora</option> <option value=522>Avanturaa Choppers</option> <option value=360>Avinton</option> <option value=335>Avon</option> <option value=194>Azel</option> <option value=44>Bajaj</option> <option value=269>Balkan</option> <option value=583>Baltmotors</option> <option value=235>BamX</option> <option value=499>Baotian</option> <option value=254>Barossa</option> <option value=459>Batavus</option> <option value=474>Beeline</option> <option value=614>Benda</option> <option value=8>Benelli</option> <option value=305>Bennche</option> <option value=58>Beta</option> <option value=267>Better</option> <option value=229>Big Bear Choppers</option> <option value=199>Big Dog</option> <option value=9>Bimota</option> <option value=476>Bintelli</option> <option value=442>Black Douglas</option> <option value=417>Blackburne</option> <option value=133>Blata</option> <option value=590>Bluroc</option> <option value=230>BMC Choppers</option> <option value=12>BMW</option> <option value=258>Boom Trikes</option> <option value=59>Borile</option> <option value=104>Boss Hoss</option> <option value=231>Bourget</option> <option value=336>BPG</option> <option value=377>BPG Werks</option> <option value=270>Brammo</option> <option value=453>Bridgestone</option> <option value=538>Britten</option> <option value=492>Brixton</option> <option value=461>Brockhouse</option> <option value=404>Brough Superior</option> <option value=222>Brudeli</option> <option value=99>BSA</option> <option value=332>BSA Motors</option> <option value=184>BucciMoto</option> <option value=15>Buell</option> <option value=579>Bullit</option> <option value=91>Bultaco</option> <option value=17>Cagiva</option> <option value=316>California Scooter</option> <option value=168>Can-Am</option> <option value=576>Capirelli</option> <option value=195>Cargobike</option> <option value=530>Casal</option> <option value=385>Caterham</option> <option value=26>CCM</option> <option value=247>Cectek</option> <option value=153>CF Moto</option> <option value=196>CH Racing</option> <option value=76>Chang-Jiang</option> <option value=293>Cheetah</option> <option value=531>Cheney</option> <option value=564>Christini</option> <option value=490>Clarke</option> <option value=434>Cleveland</option> <option value=200>Clipic</option> <option value=405>Clyno</option> <option value=317>CMC</option> <option value=232>Cobra</option> <option value=589>Combat Motors</option> <option value=160>Confederate</option> <option value=275>Cosmos Muscle Bikes</option> <option value=424>Cotton</option> <option value=414>Coventry Eagle</option> <option value=327>Covingtons</option> <option value=114>CPI</option> <option value=142>CR&S</option> <option value=435>Crocker</option> <option value=348>CRP</option> <option value=563>CSC Motorcycles</option> <option value=173>CSR</option> <option value=349>Current Motor</option> <option value=504>Curtiss</option> <option value=455>Cushman</option> <option value=27>CZ</option> <option value=20>Daelim</option> <option value=198>Dafier</option> <option value=297>Dafra</option> <option value=271>Dam</option> <option value=557>Damon</option> <option value=48>Dandy</option> <option value=602>Davinci</option> <option value=213>Dayang</option> <option value=436>Dayton</option> <option value=212>Dayun</option> <option value=134>DB Motors</option> <option value=488>De Dion-Bouton</option> <option value=587>Delfast</option> <option value=337>Demak</option> <option value=107>Derbi</option> <option value=272>Derringer</option> <option value=159>DF Motor</option> <option value=214>Dfang</option> <option value=115>Di Blasi</option> <option value=137>Diamo</option> <option value=361>Dihao</option> <option value=544>Dinamo</option> <option value=248>Dinli</option> <option value=286>Dirico</option> <option value=97>DKW</option> <option value=54>Dnepr</option> <option value=577>Docker</option> <option value=103>Dodge</option> <option value=419>Dollar</option> <option value=81>Donghai</option> <option value=415>Douglas</option> <option value=452>Drysdale</option> <option value=13>Ducati</option> <option value=457>Dürkopp</option> <option value=174>E-max</option> <option value=514>E-Racer</option> <option value=290>E-Ton</option> <option value=289>E-Tropolis</option> <option value=306>Eagle-Wing</option> <option value=371>Ebretti</option> <option value=445>Eccity</option> <option value=605>Ecooter</option> <option value=141>Ecosse</option> <option value=359>eCRP</option> <option value=345>EKO</option> <option value=350>Electric City</option> <option value=585>Electric Motion</option> <option value=391>Emblem</option> <option value=387>emco</option> <option value=507>Energica</option> <option value=28>Enfield</option> <option value=314>Erik Buell Racing</option> <option value=558>Evader</option> <option value=523>Evolet</option> <option value=351>Evolve</option> <option value=392>Excelsior</option> <option value=294>Exile Cycles</option> <option value=124>Factory Bike</option> <option value=467>Falcon</option> <option value=45>Fantic</option> <option value=466>FB Mondial</option> <option value=601>Felo</option> <option value=328>FGR</option> <option value=161>Fischer</option> <option value=437>Flying Merkel</option> <option value=233>Flyrite Choppers</option> <option value=296>Fokamo</option> <option value=108>Fosti</option> <option value=554>Fuego</option> <option value=444>FX Bikes</option> <option value=75>G&G</option> <option value=148>Garelli</option> <option value=21>GAS GAS</option> <option value=372>Geely</option> <option value=464>Genata</option> <option value=156>Generic</option> <option value=215>Genuine Scooter</option> <option value=595>Geon</option> <option value=346>GG</option> <option value=73>Ghezzi-Brian</option> <option value=256>Giantco</option> <option value=370>Gibbs</option> <option value=71>Gilera</option> <option value=260>Goes</option> <option value=383>Gogo Moto</option> <option value=500>Gogoro</option> <option value=274>Govecs</option> <option value=606>GPX Moto</option> <option value=321>GRC Moto</option> <option value=311>GreenTrans</option> <option value=401>Greeves</option> <option value=584>Gymotor</option> <option value=508>Hadin</option> <option value=547>Hamachi</option> <option value=472>Hanway</option> <option value=299>Haojin</option> <option value=545>Haojue</option> <option value=11>Harley-Davidson</option> <option value=105>Hartford</option> <option value=301>HDM</option> <option value=276>Headbanger</option> <option value=454>Heinkel</option> <option value=458>Henderson</option> <option value=477>Herald</option> <option value=77>Hercules</option> <option value=357>Hero</option> <option value=334>Hero Electric</option> <option value=136>Hero Honda</option> <option value=277>Hesketh</option> <option value=29>Highland</option> <option value=484>Hildebrand-Wolfmüll</option> <option value=304>HM</option> <option value=546>Hodaka</option> <option value=1>Honda</option> <option value=39>Horex</option> <option value=578>Horwin</option> <option value=312>HP Power</option> <option value=535>Hunter</option> <option value=30>Husaberg</option> <option value=18>Husqvarna</option> <option value=22>Hyosung</option> <option value=469>Ice Bear</option> <option value=53>Indian</option> <option value=219>Innoscooter</option> <option value=234>Intrepid</option> <option value=512>Irbis</option> <option value=529>Italika</option> <option value=31>Italjet</option> <option value=559>Italmoto</option> <option value=72>IZH</option> <option value=209>Izuka</option> <option value=416>James</option> <option value=532>Janus</option> <option value=32>Jawa</option> <option value=52>Jawa-CZ</option> <option value=220>Jialing</option> <option value=221>Jianshe</option> <option value=116>Jincheng</option> <option value=300>Jinhao</option> <option value=125>Jinlun</option> <option value=396>Joerns Motor</option> <option value=555>Johammer</option> <option value=204>Johnny Pag</option> <option value=216>Jonway</option> <option value=307>Jordan</option> <option value=470>Jotagas</option> <option value=201>JRL</option> <option value=482>Junak</option> <option value=331>K2O</option> <option value=338>Kabirdass</option> <option value=109>Kangda</option> <option value=123>Kanuni</option> <option value=302>Kasinski</option> <option value=2>Kawasaki</option> <option value=505>Kayo</option> <option value=143>Keeway</option> <option value=553>Kenbo</option> <option value=552>Kentoya</option> <option value=283>Kikker 5150</option> <option value=344>Kinetic</option> <option value=284>Kinroad</option> <option value=581>Kollter</option> <option value=615>Kove</option> <option value=60>Kramit</option> <option value=463>KRC</option> <option value=84>Kreidler</option> <option value=465>KSR</option> <option value=19>KTM</option> <option value=561>Kuba</option> <option value=382>Kuberg</option> <option value=364>Kumpan</option> <option value=588>Kurazai</option> <option value=23>Kymco</option> <option value=208>Lambretta</option> <option value=596>Lance</option> <option value=282>Lauge Jensen</option> <option value=33>Laverda</option> <option value=425>Lea Francis</option> <option value=339>Lectrix</option> <option value=303>Lehman Trikes</option> <option value=135>Lem</option> <option value=356>Leonart</option> <option value=281>Leonhardt</option> <option value=380>Lexmoto</option> <option value=151>Lifan</option> <option value=451>Lightning</option> <option value=249>Ligier</option> <option value=117>Linhai</option> <option value=352>Lintex</option> <option value=386>Lit Motors</option> <option value=389>Lito</option> <option value=592>LiveWire</option> <option value=250>LML</option> <option value=340>Lohia</option> <option value=154>Loncin</option> <option value=358>Longjia</option> <option value=375>LSL</option> <option value=607>Luojia</option> <option value=473>Luxxon</option> <option value=126>Macbor</option> <option value=421>Magnat Debon</option> <option value=74>Magni</option> <option value=315>Mahindra</option> <option value=61>Maico</option> <option value=70>Malaguti</option> <option value=86>Malanca</option> <option value=101>Marine Turbine Techn</option> <option value=491>Marks</option> <option value=390>Marsh</option> <option value=406>Marusho</option> <option value=480>Mash</option> <option value=82>Matchless</option> <option value=295>Mavizen</option> <option value=46>MBK</option> <option value=62>MBS</option> <option value=171>Megelli</option> <option value=278>Metisse</option> <option value=118>MGB</option> <option value=496>MH</option> <option value=34>Midual</option> <option value=175>Mikilon</option> <option value=486>Millet</option> <option value=347>Mini</option> <option value=49>Minsk</option> <option value=259>Mission</option> <option value=566>Mitt</option> <option value=94>MM</option> <option value=329>Modenas</option> <option value=611>Mojo</option> <option value=407>Monark</option> <option value=63>Mondial</option> <option value=64>Montesa</option> <option value=343>Monto Motors</option> <option value=273>Moto Gima</option> <option value=16>Moto Guzzi</option> <option value=80>Moto Morini</option> <option value=41>Moto Union/OMV</option> <option value=87>Motobi</option> <option value=211>MotoCzysz</option> <option value=42>Motolevo</option> <option value=193>Motom</option> <option value=536>Motomel</option> <option value=582>Motoposh</option> <option value=119>Motorhispania</option> <option value=468>Motorino</option> <option value=483>Motors Europe</option> <option value=90>Mototrans</option> <option value=475>Motowell</option> <option value=609>Motron</option> <option value=362>Motus</option> <option value=65>Münch</option> <option value=447>Mustang</option> <option value=14>MuZ</option> <option value=10>MV Agusta</option> <option value=43>MZ</option> <option value=236>NCR</option> <option value=191>Neander</option> <option value=556>Neco</option> <option value=506>Nembo</option> <option value=420>New Hudson</option> <option value=418>Nimbus</option> <option value=542>Nimota</option> <option value=224>Nipponia</option> <option value=511>Niu</option> <option value=5>Norton</option> <option value=291>NOX</option> <option value=400>NSU</option> <option value=501>Nuuk</option> <option value=515>Ohvale</option> <option value=524>Okinawa</option> <option value=616>Ola</option> <option value=537>Opel</option> <option value=443>Orcal</option> <option value=487>Orient</option> <option value=190>Orion</option> <option value=478>Oset</option> <option value=92>OSSA</option> <option value=516>Otto Bike</option> <option value=376>Over</option> <option value=355>Oxygen</option> <option value=237>Pagsta</option> <option value=251>Palmo</option> <option value=96>Pannonia</option> <option value=456>Panther</option> <option value=528>Paton</option> <option value=543>Peda</option> <option value=411>Penton</option> <option value=205>Peraves</option> <option value=489>Perks and Birch</option> <option value=110>Peugeot</option> <option value=128>PGO</option> <option value=47>Piaggio</option> <option value=408>Pierce</option> <option value=264>Pitster Pro</option> <option value=252>Polaris</option> <option value=127>Polini</option> <option value=438>Pope</option> <option value=268>Power Chief</option> <option value=120>Praga</option> <option value=145>PRC (Pro Racing Cycl</option> <option value=238>Precision Cycle Work</option> <option value=207>Pro-One</option> <option value=369>proEco</option> <option value=83>Puch</option> <option value=285>Puma</option> <option value=189>Qingqi</option> <option value=570>QJmotor</option> <option value=158>Qlink</option> <option value=519>Qooder</option> <option value=320>Quadro</option> <option value=279>Quantya</option> <option value=166>R-bike</option> <option value=448>Raleigh</option> <option value=262>Ravi Piaggio</option> <option value=560>Raybar</option> <option value=393>Reading Standard</option> <option value=183>Red Wing</option> <option value=287>Redneck</option> <option value=525>Revolt</option> <option value=366>Rewaco</option> <option value=613>RGNT</option> <option value=157>Rhino</option> <option value=403>Rickman</option> <option value=140>Ridley</option> <option value=429>Riedel</option> <option value=111>Rieju</option> <option value=410>Rikuo</option> <option value=253>Road Hopper</option> <option value=265>Rockford</option> <option value=165>Roehr</option> <option value=246>Rokon</option> <option value=381>Romet</option> <option value=412>Roper</option> <option value=132>Roxon</option> <option value=520>Royal Alloy</option> <option value=413>Royal Pioneer</option> <option value=239>Rucker Performance</option> <option value=430>Rudge</option> <option value=598>Ryvid</option> <option value=24>Sachs</option> <option value=225>Samurai Chopper</option> <option value=88>Sanglas</option> <option value=591>Sanya</option> <option value=426>Sarolea</option> <option value=603>Savic</option> <option value=210>Saxon</option> <option value=575>Saxxx</option> <option value=394>Schickel</option> <option value=240>Schwinn</option> <option value=493>Scomadi</option> <option value=176>Scorpa</option> <option value=409>Scott</option> <option value=395>Sears</option> <option value=573>Seat</option> <option value=177>Senke</option> <option value=550>Serpento</option> <option value=373>Shanyang</option> <option value=618>Sharmax</option> <option value=66>Sherco</option> <option value=187>Shineray</option> <option value=186>ShineTime</option> <option value=112>Siamoto</option> <option value=574>Silence</option> <option value=541>Silk</option> <option value=398>Simplex</option> <option value=51>Simson</option> <option value=494>Sinnis</option> <option value=548>Skygo</option> <option value=144>Skyteam</option> <option value=185>Sommer</option> <option value=379>Sonik</option> <option value=481>Sora</option> <option value=568>Soriano</option> <option value=422>Sparta</option> <option value=280>Standbike</option> <option value=599>Stark</option> <option value=40>Starway/Chu Lan</option> <option value=586>Stealth</option> <option value=580>Stels</option> <option value=292>Sucker Punch Sallys</option> <option value=322>Sukida</option> <option value=427>Sunbeam</option> <option value=121>Sundiro</option> <option value=594>Super Gato</option> <option value=323>Super Motor</option> <option value=509>Super Soco</option> <option value=597>Surron</option> <option value=3>Suzuki</option> <option value=149>Suzuko</option> <option value=85>SVM</option> <option value=353>Swaygo</option> <option value=241>Swift</option> <option value=462>SWM</option> <option value=25>Sym</option> <option value=565>Tacita</option> <option value=138>Tank Sports</option> <option value=572>Tao Motor</option> <option value=319>Tauris</option> <option value=298>Tayo</option> <option value=526>Techo Electra</option> <option value=330>Terra Modena</option> <option value=533>Terrot</option> <option value=147>TGB</option> <option value=534>Thumpstar</option> <option value=324>Tiger</option> <option value=35>Titan</option> <option value=129>TM Racing</option> <option value=367>Tohqi</option> <option value=169>Tomberlin</option> <option value=122>Tomos</option> <option value=527>Tork</option> <option value=441>Torrot</option> <option value=257>Track</option> <option value=223>Travertson</option> <option value=325>Triton</option> <option value=6>Triumph</option> <option value=67>Troll</option> <option value=497>TRS</option> <option value=540>Tunturi</option> <option value=162>TVS</option> <option value=242>Ultra</option> <option value=342>Ultra Motor</option> <option value=139>UM</option> <option value=450>Unu</option> <option value=36>Ural</option> <option value=178>Vahrenkamp</option> <option value=363>Valenti</option> <option value=93>Van Veen</option> <option value=569>Vastro</option> <option value=172>Vectrix</option> <option value=131>Veli</option> <option value=399>Velocette</option> <option value=567>Veloci</option> <option value=600>Velocifero</option> <option value=517>Vent</option> <option value=152>Vento</option> <option value=612>Verge</option> <option value=68>Vertemati</option> <option value=440>Vertigo</option> <option value=498>Vervemoto</option> <option value=50>Vespa</option> <option value=539>Vetter</option> <option value=562>Viarelli</option> <option value=341>Vibgyor</option> <option value=423>Victoria</option> <option value=37>Victory</option> <option value=402>Vincent</option> <option value=397>Vincent HRD</option> <option value=518>Vins</option> <option value=206>Viper</option> <option value=354>Vmoto</option> <option value=549>Voge</option> <option value=571>Volta</option> <option value=243>Von Dutch</option> <option value=69>VOR</option> <option value=95>Voskhod</option> <option value=38>Voxan</option> <option value=308>Vuka</option> <option value=130>Vyrus</option> <option value=163>Wakan</option> <option value=485>Werner</option> <option value=310>West Coast Choppers</option> <option value=428>Whizzer</option> <option value=495>WK</option> <option value=182>WRM</option> <option value=155>WSK</option> <option value=245>WT Motors</option> <option value=78>Xingfu</option> <option value=181>Xingyue</option> <option value=180>Xispa</option> <option value=179>Xmotos</option> <option value=326>XOR</option> <option value=510>Yadea</option> <option value=439>Yale</option><option selected value=4>Yamaha</option>
+ <option value=604>Yamasaki</option> <option value=79>Yangtze</option> <option value=197>Yiben</option> <option value=333>YObykes</option> <option value=266>Yuki</option> <option value=261>Zanella</option> <option value=384>Zero</option> <option value=378>Zero Engineering</option> <option value=309>Zest</option> <option value=479>ZEV</option> <option value=288>Znen</option> <option value=146>Zongshen</option> <option value=368>Zontes</option> <option value=89>Zündapp</option> <option value=100>Zweirad-Union</option>
+</select>
+ <br>
+<td style="width:40%; text-align:center;">Model 
+<div id="selmod" style="display:inline"> 
+<select id='Model' name='Model' style='width:160px'>
+ <option value=60676>AG200F</option> <option value=60511>Bolt R-Spec</option> <option value=60770>Crux</option> <option value=60654>Delight 125</option> <option value=60930>Fazer</option> <option value=60516>FJR1300ES</option> <option value=60529>Grizzly 90</option> <option value=60528>Grizzly EPS</option> <option value=60527>Grizzly EPS SE</option> <option value=60526>Grizzly EPS XT-R</option> <option value=60531>Kodiak 450</option> <option value=60530>Kodiak 700 EPS SE</option> <option value=60487>MT-03</option> <option value=60486>MT-07</option> <option value=60843>MT-07-Pure</option> <option value=60485>MT-09</option> <option value=60484>MT-09 SP</option> <option value=60483>MT-10</option> <option value=60482>MT-10 SP</option> <option value=60660>MT-125</option> <option value=60662>Niken GT</option> <option value=60652>NMAX 125</option> <option value=60509>PW50</option> <option value=60644>R1</option> <option value=60645>R1 GYTR</option> <option value=60657>R125</option> <option value=60643>R1M</option> <option value=60656>R3</option> <option value=60655>R6 GYTR</option> <option value=60647>R6 Race</option> <option value=60646>R7</option> <option value=60658>R7  World GP 60th Anniversa</option> <option value=60675>R7-R7LA</option> <option value=60523>Raptor 700</option> <option value=60522>Raptor 700R</option> <option value=60510>Raptor 700R SE</option> <option value=60653>RayZR</option> <option value=60672>Super Tenere ES</option> <option value=60515>Tenere 700</option> <option value=60664>Tenere 700 Explore</option> <option value=60663>Tenere 700 Extreme</option> <option value=60533>Tenere 700 World Raid</option> <option value=60665>Tenere 700 World Rally</option> <option value=60532>TMAX Tech Max</option> <option value=60517>Tracer 9 GT Plus</option> <option value=60651>Tricity 125</option> <option value=60650>Tricity 300</option> <option value=60670>TT-R110</option> <option value=60507>TT-R110E</option> <option value=60669>TT-R125</option> <option value=60506>TT-R125LE</option> <option value=60505>TT-R230</option> <option value=60671>TT-R50</option> <option value=60508>TT-R50E</option> <option value=60519>TW200</option> <option value=60514>V Star 250</option> <option value=60504>WR250F</option> <option value=60503>WR450F</option> <option value=60649>X-MAX 125 Tech Max</option> <option value=60520>X-MAX 300</option> <option value=60648>X-MAX 300 Tech Max</option> <option value=60668>XMAX 125</option> <option value=60667>XSR125</option> <option value=60666>XSR125 Legacy</option> <option value=60513>XSR700</option> <option value=60512>XSR900</option> <option value=60661>XSR900 GP</option> <option value=60518>XT250</option> <option value=60525>YFZ450R</option> <option value=60524>YFZ450R SE</option> <option value=60495>YZ125</option> <option value=60494>YZ125 50th Anniversary Edit</option> <option value=60502>YZ125X</option> <option value=60491>YZ250</option> <option value=60493>YZ250 50th Anniversary Edit</option> <option value=60492>YZ250F</option> <option value=60490>YZ250F 50th Anniversary Edi</option> <option value=60500>YZ250FX</option> <option value=60501>YZ250X</option> <option value=60489>YZ450F</option> <option value=60488>YZ450F 50th Anniversary Edi</option> <option value=60499>YZ450FX</option> <option value=60498>YZ65</option> <option value=60497>YZ85</option> <option value=60496>YZ85LW</option> <option value=60479>YZF-R1</option> <option value=60776>YZF-R15</option> <option value=60478>YZF-R1M</option> <option value=60481>YZF-R3</option> <option value=60480>YZF-R7</option> <option value=60673>YZF-R7HO</option> <option value=60674>YZF-R7LA</option> <option value=60521>Zuma 125</option></select></div> <br>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $('select').on('change', function() {
+    if($(this).attr("id")!="Model") {
+      $("#selmod").load("/partials/getmodels.php?idbrand=" + $("#CompBrand").val() + "&year=" + $("#CompYear").val() + "&idbikeomit=60486&ro=0", function(responseTxt, statusTxt, xhr){
+          //if(statusTxt == "success")
+          //  alert("External content loaded successfully!");
+          //if(statusTxt == "error")
+          //  alert("Error: " + xhr.status + ": " + xhr.statusText);
+        });
+      }
+  });  
+</script>
+</td></tr>
+<tr><td colspan="3" style="text-align:center;">
+  <br>&nbsp;<input type="submit" name="CompBtn" value="Compare specs">
+</td></tr>
+</table>
+</form>
+
+
+<tr><td colspan="2" style="text-align:center;" ><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9776397801837061" crossorigin="anonymous"></script>
+<!-- Tst468x60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="7460478697"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</td></tr>
+</table><br><div style="font-size:16px;padding:1px 1px;text-align:center;" >
+  <form style="display:inline" action="https://bikez.com/newsletter/index.php" method="get">
+	<button style="background-color:#620623;color:white;font-size:16px;border-radius:8px;padding:2px 12px 0px 12px">Get weekly lists of new motorcycles on Bikez!</button>
+  </form>
+</div>
+
+
+<br><form action="../models/yamaha-mt-07-discussions.php?type=serie&amp;id=60486" method="post">
+<input type="hidden" name="form_parent" value="" ><input type="hidden" name="ACTION" value="POST" ><table style="padding:6px;width:100%;"  class="InpForm">
+<tr><td colspan="2">Add a comment or question about the bike:<br></td><tr><td style="width:20%;text-align:right">&nbsp;<br><b>Title </b></td><td>&nbsp;<br><input type="text" name="form_title" size="55" maxlength="64" value=""></td></tr>
+<tr><td style="text-align:right"><b>Signature </b></td><td><input type="text" name="form_poster" size="55" maxlength="16"></td></tr>
+<tr><td style="text-align:right"><b>Optional e-mail </b></td><td><input type="text" name="form_posteremail" size="55" maxlength="64"></td></tr>
+<tr><td colspan="2"><span style="font-size:12px;color:#666666" >
+	Enter your e-mail to join the forum and get notification of answers and new messages. You can unsubscribe with a single 
+	click. Bikez does not display, sell	or misuse e-mail addresses. 
+  </span></td></tr>
+<tr><td colspan="2"><b>Message text</b></td></tr><tr><td style="text-align:center" colspan="2"><textarea name="form_body" rows="6" style="width:98%"></textarea><br><span style="font-size:12px;color:#666666;" >
+  Describe technical issues in detail to get quality answers. You can offer or request second-hand parts and equipment as a privat person. Bikez 
+  reserves the right to remove any improper or commercial content. 
+  </span></td></tr>
+<tr><td style="text-align:center" colspan="2"><input type="checkbox" id="PrivacyCheck" name="PrivacyCheck" style="display:inline" ><span style="font-size:14px;display:inline;color:#666666;display:inline-block;padding-top: 8px;padding-bottom: 8px" ><b>Accept that we store and display the message. </b></span>&nbsp; <input type="submit" value="Post forum message" onclick="javascript: return CheckPost();"></td></tr>
+</table></form><br>&nbsp;
+<script>
+    function CheckPost()
+    {
+      if(!document.getElementById("PrivacyCheck").checked)
+      {
+        alert("You have to check that we are allowed to store this information.");
+        return false;
+      }
+    }
+  </script>
+<div class="ingress-container">
+  <div class="ingress-left-box"><h2>Buying a bike starts at Bikez</h2>
+     Get a list of <a href="../bike/listrelated.php?idbike=60486&amp;idcat=1&amp;yearno=2024&amp;idbrand=4&amp;ccm=689.00&amp;model=MT-07&amp;brand=Yamaha">related motorbikes</a>
+		 before you buy this Yamaha. Inspect technical data. Look at photos.
+     Read the riders' comments at the bike's <a href="../models/yamaha-mt-07-discussions.php">discussion group</a>. 
+		 And check out the bike's <a href="../rating/yamaha_mt-07_2024.php">reliability, repair costs, etc.</a> Show any <a href="https://bikez.biz/ads/listmodel.php?Year=2024&amp;Brand=Yamaha&amp;Model=MT-07&amp;BikeId=60486&amp;BrandId=4">2024 Yamaha MT-07 for sale</a>
+		 on our Bikez.biz Motorcycle Classifieds. You can also sign up for e-mail notification when such bikes are 
+		 advertised in the future. And <a href="https://bikez.biz/ads/index.php">advertise</a> your old MC for sale. 
+		 Our efficient ads are free. You are also welcome to read and submit motorcycle reviews. 
+  </div>
+  <div class="ingress-right-box"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- AdGo300x250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="6559468773"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	
+  </div>
+</div>
+<br> <br>
+	  <table style="width:100%;height:160px" class="Grid">
+	  <tr>
+	    <td style="background-color:#CCCCCC;text-align:center" colspan="2">
+		    <b>Rating sample for this Yamaha bike</b>
+		  </td>
+		</tr>
+	  <tr>
+	    <td style="width:400px">
+		Value for money for the 2024 Yamaha MT-07:<br><br><img src="../image/VoteHeadSmall.gif" alt="Vote scale"><br><img src="../image/VoteBarSmall.gif" alt="bar" style="width:154.622px;height:8px;"> (62.6 out of 100)<br><br><a href="../rating/yamaha_mt-07_2024.php"><b>Click here for complete rating.</b></a> 
+	  </td>
+		<td>&nbsp;</td>
+ 	</tr></table><br><br><script>
+    function rot13(str) {
+        return str.replace(/[a-zA-Z]/g, function(c) {
+            var base = c <= "Z" ? 65 : 97;
+            return String.fromCharCode((c.charCodeAt(0) - base + 13) % 26 + base);
+        });
+    }
+
+    function descrambleAndDisplay(dataArray) {
+        for (var i = 0; i < dataArray.length; i++) {
+            var obj = dataArray[i];
+
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    var element = document.querySelector('.' + key);
+
+                    if (element) {
+                        element.innerHTML = rot13(JSON.parse(atob(obj[key])));
+                    }
+                }
+            }
+        }
+    }
+
+    var dataArray = [{"jjApKUXSlCSqNuYCvTaLfeOtq":"IlBuZ3J0YmVsIg=="},{"SosQvftvZjfZWxPiqzTY":"IkZjYjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPmVqUmo0ZXFQZ0xoZUF6TDxcL2ZjbmE+PCEtLSB5WkFkbEgyVW5iaiAtLT5lZyI="},{"zhRCAkDTBebKGbDAAJ":"IkVuZ3ZhdCI="},{"mgVwHLyNQEjNZVpoVvFoTNLMK":""},{"AwYAqUxGvhHlDTHYHI":"IjxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjUXZmY3lucHJ6cmFnXCI+UXZmY3lucHJ6cmFnPFwvbj4i"},{"lWqXIruTIFUKfhNIYmdcG":"IjY4OS4wIHBweiAoNDIuMDQgcGg8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5TSDFhMGE2PFwvZmNuYT5vdnAgPCEtLSB1dnY3eDZsdmNXayAtLT52YXB1cmYpIg=="},{"XPTAJovRmHAGAMPLitmI":"IlJhdHZhciBnbGNyIg=="},{"NeicTifNdwPPFmnQYego":"IkdqdmEsIHNiaGU8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5vOE1UWVUxRTxcL2ZjbmE+LTwhLS0gUmhUdkdPMzhXQUIgLS0+ZmdlYnhyIg=="},{"VHIdyLOBJZUkGBcgG":"IkNianJlIGJoZ2NoZyI="},{"zRPhjiFKgaUd":"IjczLjQgPG4gdWVycz1cIi4uXC93bmV0YmFcL3ZhcXJrLmN1YyNVYmVmcmNianJlXCI+VUM8XC9uPiAoNTMuNiAgPG4gdWVycz1cIi4uXC93bmV0YmFcL3ZhcXJrLmN1YyNYdnliam5nZ1wiPnhKPFwvbj4pKSBAIDg3NTAgPG4gdWVycz1cIi4uXC93bmV0YmFcL3ZhcXJrLmN1YyNFcmlieWhndmJhZlwiPkVDWjxcL24+Ig=="},{"qrDYRrlanrJyMpFjkVygD":"IjxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjR2JlZGhyXCI+R2JlZGhyPFwvbj4i"},{"sLjUVYHmYygJIUauHARL":"IjY3LjAgQXogKDYuOCB4dHMteiBiZSA0OS40IHNnLnlvZikgQCA2NTAwIDxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjRXJpYnloZ3ZiYWZcIj5FQ1o8XC9uPiI="},{"nPFMWCfJeoHSPvDwCOUXHL":"IjxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjUGJ6Y2VyZmZ2YmFcIj5QYnpjZXJmZnZiYTxcL24+Ig=="},{"iNfpBJBuqZlthECSkAbL":"IjE8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5zR3BVZ3l5cVVWOUhpOTE8XC9mY25hPjEuNTo8IS0tIGlJSUxLbkVuZUpSaEsgLS0+MSI="},{"HGYiOGbWueoPYoFKxLJl":"IjxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjT2JlclwiPk9iZXI8XC9uPiBrIDxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjRmdlYnhyXCI+ZmdlYnhyPFwvbj4i"},{"qCWutZIkQHpxkfv":"IjgwLjAgayA2OC42IHp6ICg8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5za0M0bzgyPFwvZmNuYT4zLjEgayAyPCEtLSBacDdocyAtLT4uNyB2YXB1cmYpIg=="},{"zUvgobPvNHbHzxQMDoZzJjU":"IjxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjSW55aXJcIj5JbnlpcmY8XC9uPiBjcmUgcGx5dmFxcmUi"},{"GEZbybevTvxBYnWcxHl":"IjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPmVsQjAwZHYwUEFSVDxcL2ZjbmE+PCEtLSBFNmFCcld2cCAtLT40Ig=="},{"lQgDrqlVfbOaHjRtJIVuOHS":"IlNocnkgZmxmZ3J6Ig=="},{"khEvlwVAmwMgAEoUfW":"IlZhd3JwZ3ZiYS4gWnZ4PGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+UkxrdEE2MHE8XC9mY25hPmhhdiwgMzggPCEtLSBRdExZRHZJTUhHTVp3MyAtLT56eiI="},{"BqrwhHVYYzJbUWyWIqYiNbkB":"IlNocnkgcGJhZ2VieSI="},{"NPzhygIeMSrSDBWDhF":"IlFiaG88ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5qcTFLU3ZLb29MbXA8XC9mY25hPnlyIEJpcmV1cm5xIDwhLS0gTkprc1UgLS0+UG56ZlwvR2p2YSBQbnogKFFCVVApIg=="},{"DkFlciaKSHkzQaKSZTBtEEJr":"IlZ0YXZndmJhIg=="},{"ZNItrQqSQALHxHCBaM":"Ikc8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5XRjA0Q2ZEN2Y8XC9mY25hPlBWPCEtLSBRU3RjWGU3TDljZUwgLS0+Ig=="},{"fBtvmtiFZDolPFcyvPqjg":"Illob2V2cG5ndmJhIGZsZmdyeiI="},{"XSVdCoTDdgnmuXIXVtOwJtG":"Iko8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj40U05jQTM8XC9mY25hPnJnIGZoejwhLS0gbWI4d1dLWXdYIC0tPmMi"},{"lDdQUPuYtZhJmv":"IlBiYnl2YXQgZmxmZ3J6Ig=="},{"XMuxBwNazJSFkfkniYUyhuGj":"Ill2ZGh2PGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+NG5NM0gwcDxcL2ZjbmE+PCEtLSBMR3NRaXlaTWxGeGYgLS0+cSI="},{"ArLkTpjNYludgdUTLMyuoy":"IlRybmVvYmsi"},{"YhDDSJpIMUESXwGvQV":"IjYtZmNycnE8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5PZzk5MjhBSUVBYzJ5RzxcL2ZjbmE+PCEtLSBhUmZvbWNqN2JHZSAtLT4i"},{"wMwrgIZdjxmfZLfXmDCU":"IkdlbmFmenZmZnZiYSBnbGNyIg=="},{"cDytPxuepX":"IlB1bnZhIDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPnhkV1NnTHIwV3dUMGY8XC9mY25hPiAoc3ZhbnkgcWV2PCEtLSBYZ0ZuckMgLS0+aXIpIg=="},{"zyHdwHiXkYuE":"IlB5aGdwdSI="},{"fYQVfwqoNAGsYiJMnP":"IkpyZywgWmh5Z3ZjeXIgUXZmcDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPmhraFc0cTNOZVBINEp6PFwvZmNuYT48IS0tIHJXQkZpeiAtLT4i"},{"BVbRAsymbGbkTZnJAUyWkfcBg":"IlFldmlyeXZhciI="},{"dqxCExLJKcJTFOMEKZkIJJ":"IlBiYWZnbmFnPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+M2FuWFdKejxcL2ZjbmE+IHo8IS0tIFg0TURLYUtmb09HNUFlIC0tPnJmdSI="},{"wNBvLOHSEmXNVP":"IlNocnkgcGJhZmh6Y2d2YmEi"},{"ruIkwxvHrrdYFXJD":"IjQuMjAgeXZnZXJmXC8xMDAgeDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPjZJN2h2RzdrcEQ8XC9mY25hPnogKDIzLjg8IS0tIHVDWldXQm42T01pRm9CIC0tPiB4elwveSBiZSA1Ni4wMCB6Y3QpIg=="},{"OSudfCicEB":"IlRlcnJhdWJoZnIgdG5mcmYi"},{"FlmJiEicuKXZQAOH":"Ijk3LjQgUEI8ZmhvPjI8XC9maG8+IHRcL3h6LiAoUEIyIC0gUG5lb2JhIHF2Ymt2cXIgcnp2ZmZ2YmEpICI="},{"ULkfuwMMUQmVKUtOONLRS":"IlJ6dmZmdmJhIHFyZ252eWYi"},{"hcOXLIvSsufxbXENWFSmdkWSr":"IlBuZ255bGd2cCBQYmFpcmVncmU8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj4ycUxtQkI8XC9mY25hPiwgPCEtLSBBSHViYU1LIC0tPlJINSI="},{"IUQowBhYKixylTsqvrmgXRpzi":"IlJrdW5oZmcgZmxmZ3J6Ig=="},{"UMzXocAsbQKPSPyiECVpq":"IlZhZ3J0ZW5ncnEgMi12YWdiLTEgcmt1bmhmZyBjdmNyZiBuYXE8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5XUUdqRU88XC9mY25hPiB6aDwhLS0gWEhXa1AgLS0+c3N5cmUi"},{"WOjoZrWpHqjvgzheni":"IlNlbnpyIGdsY3Ii"},{"QypvpKIsgiCBlOlPooR":"IlF2bno8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5RNU81cG84TDxcL2ZjbmE+YjwhLS0gRXk0aVJHcSAtLT5hcSI="},{"dhGFPCJWQwmuDCmO":"IkdlbnZ5Ig=="},{"snJebVpQCYDsWSBdX":"IjkwIHp6ICg8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj41NnkwU0E3aFhPV0o8XC9mY25hPjMuNSA8IS0tIDdWMVEyM29icm9jT2IgLS0+dmFwdXJmKSI="},{"fGIhTcZZcwzoaBCpBcUqzuOiN":"IlNlYmFnIDxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjRmhmY3JhZnZiYVwiPmZoZmNyYWZ2YmE8XC9uPiI="},{"OrYvegNvDRCxIww":"IjQxPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+aTBmbkFYQVlxemN3ZlA8XC9mY25hPnp6IFhMTyBncnlyZnBiY3ZwPCEtLSBLZHNuZEFkcSAtLT4gc2JleCAi"},{"SyhxlXGDVF":"IlNlYmFnIGp1cnJ5IGdlbmlyeSI="},{"eNiAHyVdpCWJGqxqCKsiQBn":"IjE8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj44S2lvbzxcL2ZjbmE+MzAgejwhLS0gZVdoTFVza0J6dCAtLT56ICg1LjEgdmFwdXJmKSI="},{"ppPpfBIgdOglWHRmzULM":"IkVybmUgPG4gdWVycz1cIi4uXC93bmV0YmFcL3ZhcXJrLmN1YyNGaGZjcmFmdmJhXCI+ZmhmY3JhZnZiYTxcL24+Ig=="},{"aZPHMkYopdgUssNyvWcvEr":"IlhMTyBGdmF0eXIgZnVicDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPlhYVU5DYWVVTml1PFwvZmNuYT54LCBucXdoZjwhLS0gV0laTFFSdkFuYXVlIC0tPmdub3lyIGNlcnlibnEgbmFxIGVyb2JoYXEgcW56Y3ZhdCI="},{"fRPSqMNBLMfHSWYupNhKJSX":"IkVybmUganVycnkgZ2VuaXJ5Ig=="},{"wEjGaOuDOW":"IjEzMCB6eiAoNS4xIHY8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj40NFlvUDxcL2ZjbmE+YXB1PCEtLSBudlJEQjA0d1JDYSAtLT5yZiki"},{"ZPaYivEyfY":"IlNlYmFnIGd2ZXIi"},{"fJCeDQkvctMsPCfTqflETrD":"IjEyPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+ODJSTmlSWE41MFU8XC9mY25hPjBcLzwhLS0gSVFiUDdrS1kgLS0+NzAtTUUxNyAi"},{"XXSKxzRMSCchYrxNWctwdc":"IkVybmUgZ3ZlciI="},{"nREMuEJRdujQOU":"IjE4MDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPmY1RmlSUW5oMXpGRmpRcDxcL2ZjbmE+XC81NTwhLS0gMTNJUUpsdmV5UHo3WjYgLS0+LU1FMTcgIg=="},{"vzbYCdozcDEMuFPtXr":"IlNlYmFnIG9lbnhyZiI="},{"zGxHXjWNcxzjpv":"IlFiaG95ciBxdmZwLiBVbHFlbmh5dnAuNC1jdmZnYmEgcG55dmNyPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+U0wxaGs1WDlVdXZ4PFwvZmNuYT48IS0tIEhUSnlSN2lGaDdPcHogLS0+ZWYuIE5PRi4i"},{"PbUjNJErRbMwurpCZqvqopbH":"IlF2bnpyZ3JlIg=="},{"lGkbjFTrmOsKPooklqRlRZftN":"IjI5OCB6PGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+dTJneW5aUWZ4NDxcL2ZjbmE+eiAoMTwhLS0gTG9zakhQb1EgLS0+MS43IHZhcHVyZiki"},{"HCaYHEZaarrjpyc":"IkVybmUgb2VueHJmIg=="},{"hkJgEkkSzyZooNULjjcs":"IkZ2PGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+UnVITHlzN0tRd0htdzxcL2ZjbmE+YXR5ciBxdmZwLiBVbHFlbmh5dnAgZnZhdHlyIHF2ZnAuIE5PPCEtLSBkamtDOGJFajkzVSAtLT5GLiI="},{"OQJzNewgdMS":"IlF2bnpyZ3JlIg=="},{"XKHiPxlREqqBdhhdbwKHIU":"IjI0NSA8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj4ycXNDN1haelhFNHhLRlA8XC9mY25hPnp6PCEtLSBGR1h6ZFNsQ0g5T2ggLS0+ICg5LjYgdmFwdXJmKSI="},{"gpJHlSmhBHI":"Ikp1cnJ5ZiI="},{"pUvmFthaVpECVzlf":"IjEwLWZjYnhyIDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPkFkSnhSaFAzVzI8XC9mY25hPnBuZmcgbjwhLS0gYnF6cUFNTzU2d1ByUElSIC0tPnloenZhaHouIFp2cHVyeXZhIEVibnEgNSBnbGVyZi4i"},{"VHJuydhoGvlAWgHOnBKVLuIS":"IkpydnR1ZyB2YXB5LiBidnksIHRuZiwgcmdwIg=="},{"aPPHpCYGFDW":"IjE4NC4yIHh0ICg0MDYuMCBjPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+VDlUTkduPFwvZmNuYT5iaGFxZik8IS0tIGt6T1NuRkd4cjROTnExIC0tPiI="},{"jvsOKJxILWCsX":"IkZybmcgdXJ2dHVnIg=="},{"gUYWDlollrPjXW":"IjgwNSA8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj43dnpITVR3U3k8XC9mY25hPnp6ICgzMS43IHZhcHVyZikgVnMgbnF3aGZnPCEtLSBGcjRqQld3amtia042IC0tPm5veXIsIHlianJmZyBmcmdndmF0LiI="},{"KMmpgiVDcvlAQJrbyfnpwz":"IkJpcmVueXkgdXJ2dHVnIg=="},{"JkoIfVninmkfAulidDlW":"IjExMDUgenogKDQzLjUgPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+MU9zTUo8XC9mY25hPjwhLS0gdjBtSVRWRUQgLS0+dmFwdXJmKSI="},{"uINLVPoCJdJmeCNEuIGit":"IkJpcmVueXkgeXJhdGd1Ig=="},{"OCKlEGYcfplgfRObt":"IjIwODUgenogKDgyLjEgdjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPjRaTUpUVDxcL2ZjbmE+YXB1cmYpPCEtLSBvWE83QyAtLT4i"},{"YRRjkdCfTMoJ":"IkJpcmVueXkganZxZ3Ui"},{"VRDkBsTvRbxCdfVyHajFpovA":"Ijc4MCB6eiAoMzAuNyB2YXB1cjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPkQ0Z2ozQ254UWxSNjxcL2ZjbmE+ZjwhLS0gWmZtcGIwMHByYlQxaTEgLS0+KSI="},{"uRocdwXCaqv":"IlRlYmhhcSBweXJuZW5hcHIi"},{"jwQddSZdqsVQyxyypbIQ":"IjE0MCB6eiAoNS41IHZhcHVyZik8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5JWnV2ZWVZPFwvZmNuYT48IS0tIGxxZmttd2tRTDlWIC0tPiI="},{"ZhGVSuBYkkNyCHv":"IjxuIHVlcnM9XCIuLlwvd25ldGJhXC92YXFyay5jdWMjSnVycnlvbmZyXCI+SnVycnlvbmZyPFwvbj4i"},{"mvsKlggNBpRzhRJKe":"IjE0MDAgPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+Z3JwVlBQNDxcL2ZjbmE+enogKDU1LjEgdmE8IS0tIHBUaTBNQkVoWiAtLT5wdXJmKSI="},{"jRCAphdiwaajUEQidIYEb":"IlNocnkgcG5jbnB2Z2wi"},{"eNcXzCDBmjSgOlyoyQDArtOqH":"IjE0LjAwIHl2Z2VyZiAoMy43MCBIPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+RGdxQ05EQUJrWjNjPFwvZmNuYT5GIHRueTwhLS0gbGxsQ1cgLS0+eWJhZiki"},{"qgwOGsPvEmJAfEEPAahSBbOlV":"IkJ2eSBwbmNucHZnbCI="},{"wVfBqtXukgR":"IjMuMDAgeXZnZXJmICgzLjE3IEhGIGRobmVnPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+WGg3eGV2ck1LU3NMPFwvZmNuYT5mKTwhLS0galVManc2YnlHIC0tPiI="},{"nkWlrzCHXOsU":"IlBieWJlIGJjZ3ZiYWYi"},{"fhKCdzAnnZZBLlVYSDj":"IlxyXG5abmdnciBFbmlyYSA8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5sWVlYcTVVVkxMNXY8XC9mY25hPk95bnB4LCBadnFhdnR1ZyA8IS0tIHBlMjV1YklRM0F0WCAtLT5QbG5hLCBHcm56IExuem51biBPeWhyIg=="},{"ivUKLTaigvpfUoLT":"IkZnbmVncmUi"},{"qMFccVhEKVjpBLqwUUThIoa":"IjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPmhHa0dQejxcL2ZjbmE+UnlycDwhLS0gTnEwOGRGanJyMSAtLT5nZXZwIg=="},{"mzzCAOelWpl":"IlZhZmdlaHpyYWdmIg=="},{"AXEovKucRr":"IjUgdmFwPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+bG90Q2dCak48XC9mY25hPnUgR1NHIHBieWJoZSBxdmZjPCEtLSB6YjR1cjd5RVIgLS0+eW5sIg=="},{"OemzfPgVzFWPEnprExDQqYgFg":"Ill2dHVnIg=="},{"WFVPgzgADoHMijIKbrvdZxv":"IllSPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+T0ZWbmpobzxcL2ZjbmE+USB5dnR1ZzwhLS0gRWpWZ0UgLS0+ZiI="},{"IRthUUhqPXisEzOXw":"IlNucGdiZWwgam5lZW5hZ2wi"},{"InjMPWeDcDQZIEugrMdBauTm":"IjEgTHJuZSBZdjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPm1GV1d4PFwvZmNuYT56dmdyPCEtLSBTN0ZpdGpnUXVCTEwgLS0+cSAi"},{"LQkuSKJFNAs":"IlBienpyYWdmIg=="},{"dLlUIpQtFUEy":"IlBiYWFycGd2aXZnbC4gPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+SGtUZXE8XC9mY25hPjwhLS0gUzkwM2VtWUFxUCAtLT4i"},{"kGircSLhEbukPzcXmYN":"IlJhdHZhciBidnki"},{"nznWhmCAcZ":"IkZOUiA8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5pekpQS3dpdW95RTxcL2ZjbmE+MTBKLTQ8IS0tIG9ZYnd4eHdwYlE5RHV4RCAtLT4wIg=="},{"RfnDZHQRduDh":"Ik9lbnhyIHN5aHZxIg=="},{"JtcHHENXNV":"IlFCPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+ZHo2Z3RXaTVkTEs8XC9mY25hPkcgPCEtLSBMY21SY1pRSEVVcWcwbjIgLS0+NCI="},{"cCjMMBvuvgwYx":"IlBiYnluYWci"},{"GJghvaaPXrnOJCjGQwR":"IjIuMDAgeXZnZXJmICgwLjUzIEhGIHRueTxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPm1mNzllZnhrPFwvZmNuYT48IS0tIDZjR2RkT255ViAtLT55YmFmKSI="},{"lHDjZeRNeBuMxSBiHGpTTTG":"Ik9uZ2dyZWwi"},{"YOkjrokVnSFnTqtoEcTAgy":"Ikw8ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj4wYU50bU88XC9mY25hPkdNPCEtLSBJdVBvRDEzRUFTS3BPIC0tPjEwRiI="},{"iIKilDSbDX":"IkZjbmV4IGN5aHRmIg=="},{"sRHjrTYsNyPuhjawS":"IkFUWCBZWk5FOE48ZmNuYSBmZ2x5cj1cInF2ZmN5bmw6YWJhcjtcIj5WbllaNUx3PFwvZmNuYT4tOTwhLS0gdlNBTDlUaERjeGN6bCAtLT4i"},{"AbeuvJAIsVH":"IlZxeXIgZmNycnEi"},{"pLkjViqhlBcnjiRb":"IjEyMDAgICtcLy0gMTAwIDxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPjlReml4Q0FvbTM8XC9mY25hPiA8IS0tIFdMWkZJNyAtLT5FQ1oi"},{"VzpncAxswInQXydCubqPi":"IlB1bnZhIGZ2bXIi"},{"QVVpNaXIOr":"IjxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPk5rNmJXPFwvZmNuYT41MjU8IS0tIG9CYklNRmMwTldnSWhRIC0tPiI="},{"STqXQCPFQzlq":"IlB1bnZhIHl2YXhmIg=="},{"nnKTGmSZLwGkRPQXWgZeJn":"IjEwPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+c1J5NlhxdWtwPFwvZmNuYT48IS0tIFNFUjVCR241T0RySTFOMiAtLT44Ig=="},{"hFfSNrhDLFeMhVRmhZmvVm":"IkZjZWJweHJnZiI="},{"VwcAfHwgvHcombJxTFByssTL":"IjE2XC80MyAoc2ViPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+aFNTOXRFQTxcL2ZjbmE+YWdcL2U8IS0tIDQwM1Bsa20gLS0+cm5lKSI="},{"EwWdrSkZcObvucEupEbwed":"Ikd2ZXIgY2VyZmZoZXIgc2ViYWci"},{"WwxybaZfmMYagKyQimPWeCYUJ":"IjMzIENGPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+SEwzVUJnY2hiPFwvZmNuYT5WICgyLjMgT25lIGJlIDIzMCA8IS0tIGppdmxnd3BPayAtLT54Q24pIg=="},{"BMmwnrePTxkPD":"Ikd2ZXIgY2VyZmZoZXIgZXJuZSI="},{"wUlvZosBqwiPArh":"IjM2IENGPGZjbmEgZmdseXI9XCJxdmZjeW5sOmFiYXI7XCI+cGp1QmtpMHhyd3U8XC9mY25hPlYgKDIuPCEtLSBvYnNLdiAtLT41IE9uZSBiZSAyNTAgeENuKSI="},{"LAFdZHHadBoBOqW":"IlNiZXggZ2hvciBmdm1yIg=="},{"gPnZRlbgLzdXGnmrMj":"IjQxIHp6ICgxLjYgdmFwdTxmY25hIGZnbHlyPVwicXZmY3lubDphYmFyO1wiPk9kN0V6MFc0SzxcL2ZjbmE+cmYpPCEtLSBVbUN5cXpRMzBLbWUgLS0+Ig=="}];
+    descrambleAndDisplay(dataArray);
+</script>
+<table style="width:100%"><tr><td style="text-align:center" ><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9776397801837061"
+     crossorigin="anonymous"></script>
+<!-- AdGoResponsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="2497117176"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></td></tr></table><br><div style="font-size:13px;color:#999999;text-align:center;width:100%">Pictures, trademarks and logos of third parties are the exclusive 
+   property of the respective owners. Technical specifications are subject to change without notice. 
+   </div><br>
+        </div> <!-- end id=pagecontent -->
+		    <div id="footer">
+          <a href="../brand/bmw_motorcycles.php">BMW</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/ducati_motorcycles.php">Ducati</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/harley-davidson_motorcycles.php">Harley-Davidson</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/honda_motorcycles.php">Honda</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/kawasaki_motorcycles.php">Kawasaki</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/ktm_motorcycles.php">KTM</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/suzuki_motorcycles.php">Suzuki</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/triumph_motorcycles.php">Triumph</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+          <a href="../brand/yamaha_motorcycles.php">Yamaha</a>
+          <hr style="width:95%; height:2px;">
+          Specs, rating and the best motorcycle picture  collection on the net. Copyright &copy; 1999-2025 Bikez.com. <br>
+          <table style="width:100%"><tr><td style="padding:4px">
+          <a href="../about/index.php">About Bikez.com</a>. 
+          </td><td style="padding:4px">
+          <a href="../about/contact.php">Contact Bikez.com</a> 
+          </td><td style="padding:4px">
+          <a href="../main/index.php">Motorcycle catalogue</a>
+          </td></tr><tr><td style="padding:4px">
+          <a href="../about/privacy.php">Our privacy policy</a>  
+          </td><td style="padding:4px">
+          <a href="javascript:void(0)" onclick="window.__uspapi('displayUspUi');">Do not sell my data</a>  
+          </td><td style="padding:4px">
+          <a href="https://bikez.biz">Motorcycle classifieds</a> 
+          </td></tr></table>
+		    </div> <!-- end id=footer --> 
+		  </div> <!-- end id=content -->
+		  <div id="adskyscraper">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9776397801837061"
+     crossorigin="anonymous"></script>
+<!-- AdGo160x600 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="7696310975"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>Get US motorcycle<br/>
+insurance quotes
+<br/>
+<div style="width:160px; height:600px; border:none;text-align:center">
+  <a href="https://www.insurifinder.com/motorcycle/zip/?submitted=1&ab=1004"><img src="//www.bikez.com/include/AdQuinstreet160x600.png" alt="Motorcycle Insurance Quotes" width="160" height="600" /></a> 
+</div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9776397801837061"
+     crossorigin="anonymous"></script>
+<!-- AdGo160x600 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-9776397801837061"
+     data-ad-slot="7696310975"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>      </div> <!-- end id=skyscraper -->
+    </div> <!-- end id=frameset -->
+  <div style="width:0px;height:0px"><script src="https://bikez.com/assets/HitCountHuman.php?bident=60486&rident=" async></script></div>  </body>
+</html>
+
+
+<!-- CR  -->
+<!-- Cached -->

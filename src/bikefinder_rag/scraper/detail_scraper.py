@@ -7,12 +7,21 @@ Page shape, reverse-engineered from https://bikez.com/motorcycles/*.php :
   - A "Discuss this bike" link to /models/{brand}-{model}-discussions.php,
     shared by every model-year of that model (not year-specific).
 
+Recent pages obfuscate spec cells against scrapers: values render as
+"Loading..." and are filled client-side from an inline `dataArray`
+(base64 -> JSON -> rot13), keyed by CSS class, with junk hidden in
+display:none spans and HTML comments. _deobfuscate() replays that in
+Python so parsing is identical for old and new pages, no browser needed.
+
 Discussion page shape:
   - A list of thread links: /msgboard/msg.php?str_id=...&type=serie&id=...
   - Each thread page has one <table class="Grid"> per message: a title
     row, an "<b>Author</b> said YYYY-MM-DD ..." row, then the message text.
 """
 
+import base64
+import codecs
+import json
 import re
 from dataclasses import dataclass, field
 
@@ -21,6 +30,50 @@ from bs4 import BeautifulSoup
 from bikefinder_rag.scraper import http
 
 _SAID_RE = re.compile(r"^(?P<author>.+?)\s+said\s+(?P<date>\d{4}-\d{2}-\d{2}.*)$")
+
+_DATA_ARRAY_RE = re.compile(r"var dataArray = (\[.*?\]);", re.S)
+# Junk injected into obfuscated values: hidden spans and HTML comments.
+_HIDDEN_SPAN_RE = re.compile(r'<span style="display:\s*none;?">.*?</span>', re.S)
+_HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
+
+
+def _decode_value(b64: str) -> str:
+    """One obfuscated cell: base64 -> JSON string -> rot13, with the
+    anti-scraper junk (display:none spans, HTML comments) stripped."""
+    if not b64:
+        return ""
+    decoded = codecs.decode(json.loads(base64.b64decode(b64).decode()), "rot13")
+    decoded = _HIDDEN_SPAN_RE.sub("", decoded)
+    return _HTML_COMMENT_RE.sub("", decoded)
+
+
+def _deobfuscate(html: bytes) -> bytes:
+    """Fill "Loading..." spec cells the way the page's own JS would: read
+    the inline dataArray, decode each value, and substitute it into the
+    span carrying the matching CSS class. Pages without a dataArray (older
+    ones, already plain) pass through untouched."""
+    text = html.decode("utf-8", errors="replace")
+    match = _DATA_ARRAY_RE.search(text)
+    if not match:
+        return html
+
+    try:
+        entries = json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return html
+
+    for entry in entries:
+        for css_class, b64 in entry.items():
+            value = _decode_value(b64)
+            # Replace the inner content of <span class="css_class">…</span>.
+            # A function replacement avoids re-interpreting backreferences in
+            # the decoded value (which can contain its own HTML).
+            pattern = re.compile(
+                r'(<span class="' + re.escape(css_class) + r'"[^>]*>).*?(</span>)', re.S
+            )
+            text = pattern.sub(lambda m, v=value: m.group(1) + v + m.group(2), text, count=1)
+
+    return text.encode("utf-8")
 
 _NUMERIC_FIELD_PATTERNS: dict[str, re.Pattern] = {
     "displacement_ccm": re.compile(r"([\d.]+)\s*ccm", re.IGNORECASE),
@@ -90,7 +143,7 @@ def extract_typed_fields(raw_specs: dict[str, str]) -> dict[str, float]:
 
 
 def parse_spec_page(html: bytes) -> MotorcycleDetail:
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(_deobfuscate(html), "html.parser")
     detail = MotorcycleDetail()
 
     for table in soup.find_all("table", class_="Grid"):
