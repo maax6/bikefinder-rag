@@ -9,9 +9,20 @@ casing mismatch from the LLM doesn't silently return zero rows), and
 get_bike_details returns one bike's full spec sheet including raw_specs.
 """
 
+import re
 from typing import Any
 
 from bikefinder_rag.embeddings.embedder import embed_text
+
+# Brand/category matching ignores spacing, case and punctuation on both
+# sides: bikez writes 'Super motard' and 'Harley-Davidson', LLMs (and
+# users) write 'supermotard' and 'Harley Davidson' — a plain ILIKE would
+# silently return zero rows on those.
+_NORM_SQL = "regexp_replace(lower({column}), '[^a-z0-9]', '', 'g') LIKE %s"
+
+
+def _norm_pattern(value: str) -> str:
+    return "%" + re.sub(r"[^a-z0-9]", "", value.lower()) + "%"
 
 FILTER_SPECS_SCHEMA = {
     "name": "filter_specs",
@@ -26,7 +37,13 @@ FILTER_SPECS_SCHEMA = {
             "brand": {"type": "string", "description": "Exact or partial brand name, e.g. 'Honda'."},
             "category": {
                 "type": "string",
-                "description": "bikez.com category, e.g. 'Naked bike', 'Sport', 'Touring', 'Enduro/offroad'.",
+                "description": (
+                    "bikez.com category, one of: Sport, Enduro/offroad, "
+                    "Custom/cruiser, Naked bike, Allround, Classic, Super motard, "
+                    "Touring, Sport touring, Cross/motocross, Trial, Minibike, "
+                    "Scooter, Speedway, Prototype/concept model. Matching is "
+                    "fuzzy (case/spacing-insensitive)."
+                ),
             },
             "min_year": {
                 "type": "integer",
@@ -144,12 +161,12 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
     params: list[Any] = []
 
     if kwargs.get("brand"):
-        clauses.append("brand ILIKE %s")
-        params.append(f"%{kwargs['brand']}%")
+        clauses.append(_NORM_SQL.format(column="brand"))
+        params.append(_norm_pattern(kwargs["brand"]))
 
     if kwargs.get("category"):
-        clauses.append("category ILIKE %s")
-        params.append(f"%{kwargs['category']}%")
+        clauses.append(_NORM_SQL.format(column="category"))
+        params.append(_norm_pattern(kwargs["category"]))
 
     for arg_name, column, operator in _FILTER_COLUMNS:
         value = kwargs.get(arg_name)
@@ -194,8 +211,8 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
     params: list[Any] = []
 
     if brand:
-        clauses.append("f.brand ILIKE %s")
-        params.append(f"%{brand}%")
+        clauses.append(_NORM_SQL.format(column="f.brand"))
+        params.append(_norm_pattern(brand))
     if model:
         # Word-by-word match against brand+model of the member model-years:
         # LLMs phrase the model loosely ('GSF 1200 Bandit' for the DB's
@@ -211,9 +228,11 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
         params.extend(f"%{word}%" for word in words)
     if category:
         clauses.append(
-            "EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND m.category ILIKE %s)"
+            "EXISTS (SELECT 1 FROM motorcycles m WHERE m.family_id = f.id AND "
+            + _NORM_SQL.format(column="m.category")
+            + ")"
         )
-        params.append(f"%{category}%")
+        params.append(_norm_pattern(category))
 
     query_vector = embed_text(query)
     limit = int(limit or 5)
@@ -251,8 +270,8 @@ def get_bike_details(conn, model: str, brand: str | None = None, year: int | Non
     params: list[Any] = [f"%{word}%" for word in words]
 
     if brand:
-        clauses.append("brand ILIKE %s")
-        params.append(f"%{brand}%")
+        clauses.append(_NORM_SQL.format(column="brand"))
+        params.append(_norm_pattern(brand))
     if year is not None:
         clauses.append("year = %s")
         params.append(int(year))
