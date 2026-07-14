@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preuve de fonctionnement — recherche sémantique Bikefinder</title>
+<style>
+  :root {
+    --bg: #eef1f2;
+    --bg-raised: #ffffff;
+    --ink: #171b1d;
+    --ink-soft: #565f63;
+    --ink-faint: #8b9297;
+    --line: #d7dcde;
+    --accent: #b1520f;
+    --accent-soft: #f0e0d2;
+    --pass: #1f7a54;
+    --pass-soft: #dcefe5;
+    --caveat: #a3760a;
+    --caveat-soft: #f3e8cd;
+    --fail: #a5382f;
+    --fail-soft: #f5ddd9;
+    --mono-bg: #e4e8e9;
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161a;
+    --bg-raised: #1a2024;
+    --ink: #e7ebec;
+    --ink-soft: #a6afb3;
+    --ink-faint: #6d777c;
+    --line: #2b3338;
+    --accent: #e08a49;
+    --accent-soft: #362720;
+    --pass: #56c799;
+    --pass-soft: #17322a;
+    --caveat: #d9b34c;
+    --caveat-soft: #35301a;
+    --fail: #e07468;
+    --fail-soft: #3a2320;
+    --mono-bg: #202830;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161a;
+      --bg-raised: #1a2024;
+      --ink: #e7ebec;
+      --ink-soft: #a6afb3;
+      --ink-faint: #6d777c;
+      --line: #2b3338;
+      --accent: #e08a49;
+      --accent-soft: #362720;
+      --pass: #56c799;
+      --pass-soft: #17322a;
+      --caveat: #d9b34c;
+      --caveat-soft: #35301a;
+      --fail: #e07468;
+      --fail-soft: #3a2320;
+      --mono-bg: #202830;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Charter", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 6rem;
+  }
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 2.4rem;
+  }
+  .eyebrow {
+    font-family: "Bahnschrift", "SF Compact Text", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: "Bahnschrift", "SF Compact Text", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+    line-height: 1.12;
+    margin: 0;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .dek {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    max-width: 62ch;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin-top: 0.3rem;
+  }
+  .meta-row b { color: var(--ink-soft); font-weight: 600; }
+
+  h2 {
+    font-family: "Bahnschrift", "SF Compact Text", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 1.3rem;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 0 0 0.9rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  h2 .num {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  section { margin-bottom: 2.8rem; }
+  p { margin: 0 0 1rem; max-width: 68ch; }
+  p:last-child { margin-bottom: 0; }
+  .prose { color: var(--ink); }
+  .prose.soft { color: var(--ink-soft); }
+
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+  }
+  .stat {
+    background: var(--bg-raised);
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .stat .v {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .stat .l {
+    font-family: "Bahnschrift", "SF Compact Text", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .card {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+  th, td {
+    text-align: left;
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  td.wrap, th.wrap { white-space: normal; }
+  th {
+    font-family: "Bahnschrift", "SF Compact Text", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    background: var(--bg);
+  }
+  tr:last-child td { border-bottom: none; }
+  .num-cell {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+  }
+  .pill.pass { background: var(--pass-soft); color: var(--pass); }
+  .pill.caveat { background: var(--caveat-soft); color: var(--caveat); }
+  .pill.fail { background: var(--fail-soft); color: var(--fail); }
+
+  .bars { display: flex; flex-direction: column; gap: 0.7rem; }
+  .bar-row { display: grid; grid-template-columns: 150px 1fr 64px; align-items: center; gap: 0.7rem; }
+  .bar-label { font-size: 0.85rem; color: var(--ink-soft); }
+  .bar-track {
+    position: relative;
+    height: 20px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    position: absolute; inset: 0 auto 0 0;
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .bar-val {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    text-align: right;
+  }
+
+  .quote {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.82rem;
+    background: var(--mono-bg);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    color: var(--ink-soft);
+    margin: 0.3rem 0;
+    line-height: 1.4;
+  }
+  .quote .d {
+    color: var(--ink-faint);
+    display: block;
+    font-size: 0.72rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .callout {
+    border-left: 3px solid var(--caveat);
+    background: var(--caveat-soft);
+    padding: 0.85rem 1rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  .callout b { color: var(--caveat); }
+
+  .conclusion {
+    border-left: 3px solid var(--pass);
+    background: var(--pass-soft);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .conclusion b { color: var(--pass); }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 560px) {
+    .bar-row { grid-template-columns: 92px 1fr 50px; }
+    .bar-label { font-size: 0.76rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="head">
+    <div class="eyebrow">Bikefinder RAG · évaluation de la couche retrieval</div>
+    <h1>La recherche sémantique retrouve les bons avis — sans qu'aucun LLM soit impliqué</h1>
+    <p class="dek">Quatre tests exécutés directement contre pgvector (embeddings BGE-M3), pour juger la qualité du retrieval isolément de la qualité de rédaction du modèle qui lit ensuite ces résultats.</p>
+    <div class="meta-row">
+      <span><b>Corpus</b> 206 motos · 9 594 commentaires</span>
+      <span><b>Script</b> scripts/eval_retrieval.py</span>
+      <span><b>LLM utilisé</b> aucun</span>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="num">00</span>Pourquoi ce test</h2>
+    <p class="prose">Quand l'agent répond mal, la cause peut être soit une mauvaise recherche (les avis récupérés ne sont pas pertinents), soit un modèle qui rédige mal à partir de bons avis. Les quatre tests ci-dessous n'appellent jamais l'agent ni un LLM : ils interrogent directement <code>review_chunks</code> via pgvector, pour isoler la première cause de la seconde.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">01</span>Intégrité des données</h2>
+    <div class="stat-strip">
+      <div class="stat"><span class="v">9 594</span><span class="l">Avis (chunks)</span></div>
+      <div class="stat"><span class="v">206</span><span class="l">Motos</span></div>
+      <div class="stat"><span class="v">112</span><span class="l">Motos avec avis</span></div>
+      <div class="stat"><span class="v">0</span><span class="l">Embeddings nuls</span></div>
+      <div class="stat"><span class="v">0</span><span class="l">Chunks orphelins</span></div>
+    </div>
+    <p class="prose soft">Aucun chunk n'est orphelin (jointure <code>motorcycle_id → motorcycles.id</code> intacte pour les 9 594 lignes) et aucun embedding n'est nul — la contrainte <code>NOT NULL</code> du schéma tient. 103 groupes de commentaires strictement identiques existent, mais ce sont des doublons <i>source</i>, pas un bug d'ingestion : bikez.com réutilise le même fil de discussion sur plusieurs fiches (variantes d'années, ou même moto sous deux noms de modèle — ex. <i>CB 250 K1</i> / <i>CB 250 N</i>).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>La plumbing fonctionne</h2>
+    <p class="prose">Sanity check : on ré-embedde le texte brut de 30 avis choisis au hasard et on cherche — le chunk devrait se retrouver lui-même en premier, à distance quasi nulle. Ça ne prouve rien sur la qualité sémantique, seulement que l'index et le pipeline d'embedding sont branchés correctement.</p>
+    <div class="stat-strip">
+      <div class="stat"><span class="v">27 / 30</span><span class="l">Rang 1 exact</span></div>
+      <div class="stat"><span class="v">0.013</span><span class="l">Distance moy. à soi-même</span></div>
+    </div>
+    <p class="prose soft">Les 3 ratés viennent de doublons exacts (un autre chunk identique existe ailleurs et gagne l'égalité) — pas d'un défaut du pipeline.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>La recherche discrimine par thème</h2>
+    <p class="prose">Pour 6 thèmes, on compare le taux de correspondance mot-clé dans le <b>top-30 sémantique</b> au taux de base du mot-clé dans tout le corpus. Un lift proche de 1× voudrait dire que la recherche ne fait pas mieux que le hasard.</p>
+    <div class="bars">
+      <div class="bar-row"><span class="bar-label">Vibrations</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><span class="bar-val">71×</span></div>
+      <div class="bar-row"><span class="bar-label">Confort de selle</span><div class="bar-track"><div class="bar-fill" style="width:63%"></div></div><span class="bar-val">50×</span></div>
+      <div class="bar-row"><span class="bar-label">Consommation</span><div class="bar-track"><div class="bar-fill" style="width:40%"></div></div><span class="bar-val">32×</span></div>
+      <div class="bar-row"><span class="bar-label">Freins</span><div class="bar-track"><div class="bar-fill" style="width:31%"></div></div><span class="bar-val">25×</span></div>
+      <div class="bar-row"><span class="bar-label">Débutant</span><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div><span class="bar-val">22×</span></div>
+      <div class="bar-row"><span class="bar-label">Fiabilité</span><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><span class="bar-val">1.2×</span></div>
+    </div>
+    <p class="prose soft" style="margin-top:0.9rem;">Échelle proportionnelle au lift (max 71×). Détail des exemples remontés :</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Thème</th><th class="wrap">Requête</th><th>Base</th><th>Top-30</th><th>Lift</th><th>Statut</th></tr></thead>
+        <tbody>
+          <tr><td>Vibrations</td><td class="wrap">does the engine vibrate a lot at speed</td><td class="num-cell">0.75%</td><td class="num-cell">53%</td><td class="num-cell">71×</td><td><span class="pill pass">fort</span></td></tr>
+          <tr><td>Confort de selle</td><td class="wrap">is the seat comfortable for long rides</td><td class="num-cell">0.20%</td><td class="num-cell">10%</td><td class="num-cell">50×</td><td><span class="pill pass">fort</span></td></tr>
+          <tr><td>Consommation</td><td class="wrap">how good is the fuel economy and mileage</td><td class="num-cell">2.19%</td><td class="num-cell">70%</td><td class="num-cell">32×</td><td><span class="pill pass">fort</span></td></tr>
+          <tr><td>Freins</td><td class="wrap">how good are the brakes</td><td class="num-cell">2.77%</td><td class="num-cell">70%</td><td class="num-cell">25×</td><td><span class="pill pass">fort</span></td></tr>
+          <tr><td>Débutant</td><td class="wrap">is this a good first bike for a beginner</td><td class="num-cell">1.04%</td><td class="num-cell">23%</td><td class="num-cell">22×</td><td><span class="pill pass">fort</span></td></tr>
+          <tr><td>Fiabilité</td><td class="wrap">is this bike reliable or does it break down</td><td class="num-cell">11.1%</td><td class="num-cell">13%</td><td class="num-cell">1.2×</td><td><span class="pill caveat">à lire</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="prose soft" style="margin-top:0.9rem;">Exemples remontés en tête pour « consommation » et « débutant » :</p>
+    <div class="quote"><span class="d">Atlas · Honda Pridor — distance 0.266</span>What is average fuel consumption per km</div>
+    <div class="quote"><span class="d">Honda · CBR 1000 F — distance 0.078</span>Is this a good bike to start out on?</div>
+
+    <div class="callout" style="margin-top:1rem;">
+      <b>Sur « fiabilité » :</b> le lift de 1.2× n'est pas un échec du retrieval, c'est un artefact de la mesure. Le mot-clé (<code>reliab|breakdown|problem|issue</code>) a un taux de base déjà très élevé (11%, car « problem »/« issue » apparaissent dans plein de questions sans rapport), donc il ne reste presque plus de marge de progression pour le lift. Et les résultats réellement remontés sont pertinents mais ne contiennent pas le mot-clé littéral — ex. <i>« What are the strengths and weaknesses of this bike? »</i>, <i>« is it worth buying this bike? what makes it good and whats bad about it? »</i>. C'est exactement le comportement attendu d'une recherche sémantique : elle retrouve le sens, pas la chaîne de caractères — mais ça rend ce thème-là invérifiable par ce protocole de mesure.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Contrôle négatif</h2>
+    <p class="prose">Deux requêtes hors-sujet (une recette de cuisine en français, une question de dev Python) — si la recherche est aveugle au sens, elles devraient remonter des résultats à une distance comparable aux requêtes pertinentes.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="wrap">Requête</th><th>Distance top-1</th><th>Statut</th></tr></thead>
+        <tbody>
+          <tr><td class="wrap">« recette de gâteau au chocolat sans four »</td><td class="num-cell">0.575</td><td><span class="pill pass">rejetée</span></td></tr>
+          <tr><td class="wrap">« best python web framework for a REST API »</td><td class="num-cell">0.576</td><td><span class="pill pass">rejetée</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose soft">À comparer aux distances top-1 des requêtes pertinentes de la section 03, entre <b>0.078 et 0.36</b>. Les deux requêtes hors-sujet atterrissent nettement plus loin (0.575–0.576) — le kNN retourne toujours quelque chose par construction, mais ce quelque chose est mesurablement moins bon, pas juste du bruit aléatoire.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Multilingue (raison d'être de BGE-M3)</h2>
+    <p class="prose">Le projet a choisi un embedder multilingue précisément pour qu'une question posée en français retrouve des avis anglophones. Comparaison du top-10 d'une requête FR vs son équivalent EN :</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="wrap">EN / FR</th><th>Recouvrement</th><th>Jaccard</th></tr></thead>
+        <tbody>
+          <tr><td class="wrap">is this bike reliable… / est-ce que cette moto est fiable…</td><td class="num-cell">4 / 10</td><td class="num-cell">0.25</td></tr>
+          <tr><td class="wrap">fuel economy and mileage / consommation d'essence</td><td class="num-cell">3 / 10</td><td class="num-cell">0.18</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose soft">Baseline aléatoire attendue pour deux top-10 tirés au hasard dans 9 594 chunks : ≈ 0.01. Un recouvrement observé de 0.18–0.25 est <b>20 à 25 fois</b> au-dessus du hasard — la requête française retrouve substantiellement les mêmes avis anglophones que son équivalent anglais.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">—</span>Ce que ça prouve, ce que ça ne prouve pas</h2>
+    <div class="conclusion">
+      <p class="prose" style="margin-bottom:0.6rem;"><b>Prouvé :</b> le pipeline est branché correctement (test 02), la recherche sémantique discrimine fortement par thème sur 5 des 6 thèmes testés (lifts de 22× à 71×, test 03), rejette le hors-sujet (test 04), et fonctionne comme prévu en multilingue (test 05). Ce n'est pas de la coïncidence : à effectifs égaux, ces écarts n'apparaîtraient pas si la recherche renvoyait des résultats aléatoires.</p>
+      <p class="prose" style="margin-bottom:0;"><b>Non prouvé ici :</b> la qualité de la réponse finale rédigée par le LLM à partir de ces avis — c'est le rôle de <code>eval/run_ragas.py</code> (faithfulness / answer relevancy), qui reste le bon outil pour juger le modèle une fois qu'on sait, comme ici, que ce qu'il reçoit en entrée est pertinent.</p>
+    </div>
+  </section>
+
+  <footer>
+    Généré via <code>PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py</code> — sortie brute dans <code>eval_retrieval_report.json</code>. Reproductible, aucun appel LLM.
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bikefinder RAG — documents</title>
+<style>
+  :root { --bg: #eef1f2; --panel: #ffffff; --ink: #171b1d; --ink-soft: #565f63; --line: #dcdfe3; --accent: #1d5fc8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16191b; --panel: #1e2225; --ink: #e8eaec; --ink-soft: #9aa2a8; --line: #33393d; --accent: #6ea3f0; }
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 3rem 1.25rem; }
+  main { max-width: 40rem; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: .35rem; }
+  p.sub { color: var(--ink-soft); margin-bottom: 2rem; }
+  a.card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: .9rem; text-decoration: none; color: inherit; }
+  a.card:hover { border-color: var(--accent); }
+  a.card strong { color: var(--accent); }
+  a.card span { display: block; color: var(--ink-soft); font-size: .9rem; margin-top: .2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Bikefinder RAG</h1>
+  <p class="sub">Documents du projet — agent RAG moto (pgvector + BGE-M3, sans framework).</p>
+  <a class="card" href="preuve-retrieval.html">
+    <strong>Preuve de fonctionnement — recherche sémantique</strong>
+    <span>L'évaluation du retrieval seul, sans LLM : intégrité, self-retrieval, lift par thème, contrôles négatifs, cross-lingue.</span>
+  </a>
+  <a class="card" href="pipeline-et-evaluation.html">
+    <strong>De la page web au score RAGAS — le pipeline</strong>
+    <span>Le chemin complet : scraping bikez.com, familles de modèles, embeddings, agent, évaluation à deux couches.</span>
+  </a>
+  <a class="card" href="methode-sans-langchain.html">
+    <strong>Un agent RAG sans framework — la méthode</strong>
+    <span>Pourquoi et comment le projet se passe de LangChain : boucle d'agent, outils typés, SQL paramétré.</span>
+  </a>
+</main>
+</body>
+</html>
