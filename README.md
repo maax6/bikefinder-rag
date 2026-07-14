@@ -24,10 +24,12 @@ that got reversed) is in the [project's Notion doc] — the short version:
   is checked; a motorcycle only gets a narrative/review layer if it has ≥3
   substantive comments. The narrative subset emerges from what actually has
   discussion, not from a guessed popularity ranking.
-- **Agentic RAG, raw Anthropic SDK** — no LangChain/LlamaIndex. Two tools:
+- **Agentic RAG, raw Anthropic SDK** — no LangChain/LlamaIndex. Three tools:
   `filter_specs` (typed parameters only, parameterized SQL, the LLM never
-  writes SQL) and `search_reviews` (pgvector cosine search with optional
-  fuzzy/`ILIKE` metadata filters).
+  writes SQL — plus a `count_only` mode for "how many" questions),
+  `search_reviews` (pgvector cosine search with optional fuzzy/`ILIKE`
+  metadata filters) and `get_bike_details` (one bike's full factory spec
+  sheet, `raw_specs` included).
 - **PostgreSQL + pgvector**, one database for both structured specs and
   review embeddings.
 - **Comments belong to model families, not model-years.** bikez.com shares
@@ -39,11 +41,17 @@ that got reversed) is in the [project's Notion doc] — the short version:
   specific model-year.
 - **Local, multilingual embeddings** (`BAAI/bge-m3`) — no embeddings API key
   needed, and queries in French retrieve English-language forum comments.
-- **Evaluation**: two layers, both with published results.
+- **Evaluation**: three layers, all with published results.
   [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
   retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
   21-82x over corpus base rate, negative controls rejected — see
   [`eval_results/retrieval/`](eval_results/retrieval/)).
+  [`scripts/eval_tool_trajectory.py`](scripts/eval_tool_trajectory.py)
+  scores how a model calls the tools — deterministic predicates over the
+  recorded calls, no LLM judge; its findings drove the few-shot prompt,
+  the Ollama options and the visible argument repair, taking mistral-small
+  from 9/12 to 15/15 golden questions
+  ([`eval_results/trajectory/`](eval_results/trajectory/)).
   [RAGAS](https://github.com/explodinggpt/ragas)
   (faithfulness, answer relevancy) then scores the full agent over a golden
   question set — generation by mistral-small (local), and the same answers
@@ -110,10 +118,13 @@ Gradio UI (visitor's own Anthropic key)
         ▼
 Agent loop (raw Anthropic SDK, tool-use)
         │
-        ├── filter_specs ──► PostgreSQL (typed columns, parameterized SQL)
+        ├── filter_specs ────► PostgreSQL (typed columns, parameterized SQL)
         │
-        └── search_reviews ─► PostgreSQL + pgvector (BGE-M3 embeddings,
-                               optional ILIKE metadata pre-filter)
+        ├── search_reviews ──► PostgreSQL + pgvector (BGE-M3 embeddings,
+        │                       optional ILIKE metadata pre-filter)
+        │
+        └── get_bike_details ► PostgreSQL (one bike's full spec sheet,
+                                raw_specs included)
 ```
 
 ## Project layout
@@ -163,6 +174,11 @@ PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
 ```bash
 # Layer 1 — retrieval alone, no LLM (writes eval_results/retrieval/retrieval_report.json):
 PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
+
+# Layer 1.5 — tool-call trajectories, deterministic checks, no LLM judge
+# (one model per run; writes eval_results/trajectory/trajectory_<model>.json):
+AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small EMBEDDER_DEVICE=cpu \
+  PYTHONPATH=src .venv/bin/python scripts/eval_tool_trajectory.py
 
 # Layer 2 — RAGAS over the full agent. Generation model via OLLAMA_MODEL;
 # judge via RAGAS_JUDGE_MODEL: an Ollama model name (local), or

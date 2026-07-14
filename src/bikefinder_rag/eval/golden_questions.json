@@ -10,5 +10,8 @@
   {"id": "hybrid-1", "type": "hybrid", "question": "A light beginner naked bike under 600cc, and what do owners say about reliability?"},
   {"id": "hybrid-2", "type": "hybrid", "question": "Compare the Honda CBR 1000 F and the Suzuki GSF 1200 Bandit based on owner feedback."},
   {"id": "honesty-1", "type": "honesty-check", "question": "What's the cheapest motorcycle under 3000 EUR in the database?"},
-  {"id": "honesty-2", "type": "honesty-check", "question": "What do owners say about the 1930 BMW R 16?"}
+  {"id": "honesty-2", "type": "honesty-check", "question": "What do owners say about the 1930 BMW R 16?"},
+  {"id": "details-1", "type": "details", "question": "What is the fuel capacity of the Suzuki GSF 1200 Bandit?"},
+  {"id": "details-2", "type": "details", "question": "Quel type de refroidissement a l'Aprilia RS 125 ?"},
+  {"id": "count-1", "type": "structured", "question": "How many Kawasaki motorcycles are in the database?"}
 ]

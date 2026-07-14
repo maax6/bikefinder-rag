@@ -1,0 +1,510 @@
+{
+  "backend": "ollama",
+  "model": "mistral-small3.2",
+  "questions_ok": 15,
+  "questions_total": 15,
+  "checks_ok": 40,
+  "checks_total": 40,
+  "per_question": [
+    {
+      "id": "struct-1",
+      "type": "structured",
+      "question": "What naked bikes are there between 600cc and 900cc?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "min_displacement_ccm": 600,
+            "max_displacement_ccm": 900,
+            "category": "Naked bike"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "min displacement ~600",
+          "ok": true
+        },
+        {
+          "label": "max displacement ~900",
+          "ok": true
+        },
+        {
+          "label": "category naked",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Here are some naked bikes between 600cc and 900cc:\n\n- **MV Agusta Dragster R** (798cc)\n- **Kawasaki Z650** (649cc)\n- **KTM 890 Duke R** (889cc)\n- **Benelli 752S** (754cc)\n- **Benelli Leoncino 800** (754cc)\n- **Benelli TNT 600i** (600cc)\n- **MV Agusta Dragster RC Racing** (798cc)\n- **KTM 790 Duke** ("
+    },
+    {
+      "id": "struct-2",
+      "type": "structured",
+      "question": "Show me Harley-Davidson custom/cruiser motorcycles from the 1980s.",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "min_year": 1980,
+            "max_year": 1989,
+            "brand": "Harley-Davidson",
+            "category": "Custom/Cruiser"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "brand Harley",
+          "ok": true
+        },
+        {
+          "label": "years bounded to the 1980s",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Here are some Harley-Davidson custom/cruiser motorcycles from the 1980s:\n\n- **Harley-Davidson 1340 Electra Glide Ultra Classic (reduced effect)** (1989)\n  - Displacement: 1337 ccm\n  - Weight: 356 kg\n  - Power: 50 hp\n\n- **Harley-Davidson 1340 Springer Softail (reduced effect)** (1989)\n  - Displacemen"
+    },
+    {
+      "id": "struct-3",
+      "type": "structured",
+      "question": "List enduro/offroad bikes that weigh under 130 kg.",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "category": "Enduro/offroad",
+            "max_weight_kg": 130
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "max weight ~130 kg",
+          "ok": true
+        },
+        {
+          "label": "category enduro/offroad",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Voici les motos tout-terrain/enduros qui pèsent moins de 130 kg :\n\n- GAS EC 250 (2023) - Poids : 105,8 kg\n- GAS EC 300 (2023) - Poids : 105,8 kg\n- GAS EC 350F (2023) - Poids : 106,4 kg\n- GAS EC 250F (2023) - Poids : 105,6 kg\n- GAS EX 250F (2023) - Poids : 100,0 kg\n- GAS EX 300 (2023) - Poids : 101,3"
+    },
+    {
+      "id": "struct-4",
+      "type": "structured",
+      "question": "List sport motorcycles with a seat height under 800mm.",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "category": "Sport",
+            "max_seat_height_mm": 800
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "max seat height ~800 mm",
+          "ok": true
+        },
+        {
+          "label": "category sport",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Here are some sport motorcycles with a seat height under 800mm:\n\n- **Harley-Davidson Sportster S** (2023) - Seat Height: 734mm\n- **Harley-Davidson Nightster Special** (2023) - Seat Height: 688mm\n- **Harley-Davidson Nightster** (2023) - Seat Height: 688mm\n- **AJS Cadwell 125** (2023) - Seat Height: 7"
+    },
+    {
+      "id": "struct-5",
+      "type": "structured",
+      "question": "Quelles motos custom/cruiser des annees 1950 sont dans la base ?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "category": "Custom/Cruiser",
+            "min_year": 1950,
+            "max_year": 1959
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "years bounded to the 1950s",
+          "ok": true
+        },
+        {
+          "label": "category custom/cruiser",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Voici les motos custom/cruiser des années 1950 présentes dans la base de données :\n\n- **Harley-Davidson XLCH Sportster** (1957, 1958, 1959)\n  - Displacement: 883 ccm\n  - Weight: 205 kg\n  - Power: 50 hp\n\n- **Adler M 250** (1952, 1953, 1954)\n  - Displacement: 250 ccm\n  - Weight: 135 kg\n  - Power: 16 h"
+    },
+    {
+      "id": "narrative-1",
+      "type": "narrative",
+      "question": "What do owners say about the Harley-Davidson Electra Glide Classic?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "brand": "Harley Davidson",
+            "model": "Electra Glide Classic",
+            "query": "owners reviews"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "targets the Electra Glide",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "There is no owner discussion on record for the Harley-Davidson Electra Glide Classic."
+    },
+    {
+      "id": "narrative-2",
+      "type": "narrative",
+      "question": "Are there any known issues discussed for the BMW F 650?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "model": "F 650",
+            "query": "known issues"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "targets the BMW F 650",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "There are no owner discussions on record about the BMW F 650."
+    },
+    {
+      "id": "narrative-3",
+      "type": "narrative",
+      "question": "Quels sont les retours des proprietaires sur l'Aprilia RS 125 ?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "brand": "Aprilia",
+            "model": "RS 125"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "targets the Aprilia RS 125",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Les retours des propriétaires sur l'Aprilia RS 125 sont limités, mais voici quelques points soulevés par les utilisateurs :\n\n1. **Entretien et coûts** : Un propriétaire a mentionné que l'Aprilia RS 125 peut être difficile à entretenir et que les pièces peuvent être coûteuses. Cela pourrait être un f"
+    },
+    {
+      "id": "hybrid-1",
+      "type": "hybrid",
+      "question": "A light beginner naked bike under 600cc, and what do owners say about reliability?",
+      "n_tool_calls": 2,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "category": "Naked bike",
+            "max_displacement_ccm": 600,
+            "min_year": 2010,
+            "order_by": "weight_kg"
+          }
+        },
+        {
+          "name": "search_reviews",
+          "args": {
+            "query": "reliability problems breakdowns",
+            "model": "Z125 Pro"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "calls search_reviews too",
+          "ok": true
+        },
+        {
+          "label": "max displacement ~600",
+          "ok": true
+        },
+        {
+          "label": "asks reviews about reliability",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Here are some light beginner naked bikes under 600cc:\n\n- Tomos Racing TT (2017)\n- Rieju RS3 125 NKD (2013)\n- Lexmoto Aspire 50 (2021)\n- Senke X6 (2012)\n- Kymco K-Pipe 125 (2022)\n- Fosti F21 (2021)\n- Kawasaki Z125 Pro (2016, 2021, 2022, 2023)\n\nUnfortunately there's no owner discussion on record for a"
+    },
+    {
+      "id": "hybrid-2",
+      "type": "hybrid",
+      "question": "Compare the Honda CBR 1000 F and the Suzuki GSF 1200 Bandit based on owner feedback.",
+      "n_tool_calls": 2,
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "query": "owner feedback",
+            "brand": "Honda",
+            "model": "CBR 1000 F"
+          }
+        },
+        {
+          "name": "search_reviews",
+          "args": {
+            "brand": "Suzuki",
+            "model": "GSF 1200 Bandit",
+            "query": "owner feedback"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "covers the CBR 1000",
+          "ok": true
+        },
+        {
+          "label": "covers the GSF 1200 Bandit",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "### Owner Feedback Comparison\n\n#### Honda CBR 1000 F\nOwners of the **Honda CBR 1000 F** have shared various experiences and insights:\n- A rookie owner mentioned being a new owner of a used PB1 model, indicating satisfaction with their purchase.\n- Another potential buyer sought guidance and owners' v"
+    },
+    {
+      "id": "honesty-1",
+      "type": "honesty-check",
+      "question": "What's the cheapest motorcycle under 3000 EUR in the database?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "max_msrp_eur": 3000,
+            "order_by": "msrp_eur",
+            "limit": 5
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "filters on MSRP <= 3000",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "The price data is sparse, so I can't answer that question."
+    },
+    {
+      "id": "honesty-2",
+      "type": "honesty-check",
+      "question": "What do owners say about the 1930 BMW R 16?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "brand": "BMW",
+            "model": "R 16",
+            "query": "owner reviews"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "targets the BMW R 16",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "There are no owner discussions on record for the 1930 BMW R 16."
+    },
+    {
+      "id": "details-1",
+      "type": "details",
+      "question": "What is the fuel capacity of the Suzuki GSF 1200 Bandit?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "get_bike_details",
+          "args": {
+            "brand": "Suzuki",
+            "model": "GSF 1200 Bandit"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls get_bike_details",
+          "ok": true
+        },
+        {
+          "label": "targets the GSF 1200 Bandit",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "The Suzuki GSF 1200 Bandit has a fuel capacity of **20 litres**."
+    },
+    {
+      "id": "details-2",
+      "type": "details",
+      "question": "Quel type de refroidissement a l'Aprilia RS 125 ?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "get_bike_details",
+          "args": {
+            "brand": "Aprilia",
+            "model": "RS 125"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls get_bike_details",
+          "ok": true
+        },
+        {
+          "label": "targets the RS 125",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "L'Aprilia RS 125 a un système de refroidissement liquide."
+    },
+    {
+      "id": "count-1",
+      "type": "structured",
+      "question": "How many Kawasaki motorcycles are in the database?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "count_only": true,
+            "brand": "Kawasaki"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "brand Kawasaki",
+          "ok": true
+        },
+        {
+          "label": "asks for a count",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "There are 2,353 Kawasaki motorcycles in the database. What would you like to know about them?"
+    }
+  ]
+}
