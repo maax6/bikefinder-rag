@@ -16,3 +16,4 @@ src/bikefinder_rag/eval/generated_answers.json
 
 # Generated dashboard (regenerate with scripts/coverage_dashboard.py)
 coverage_dashboard.html
+.claude/settings.local.json
