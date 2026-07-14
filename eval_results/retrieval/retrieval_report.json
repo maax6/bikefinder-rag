@@ -1,12 +1,12 @@
 {
   "data_integrity": {
-    "motorcycles": 9702,
-    "model_families": 1657,
-    "review_chunks": 82589,
-    "families_with_reviews": 967,
-    "motos_with_reviews": 6448,
-    "very_short": 745,
-    "avg_len": 225,
+    "motorcycles": 32395,
+    "model_families": 4335,
+    "review_chunks": 107952,
+    "families_with_reviews": 1785,
+    "motos_with_reviews": 19532,
+    "very_short": 1021,
+    "avg_len": 224,
     "null_embeddings": 0,
     "orphan_chunks": 0,
     "exact_duplicate_groups": 0
@@ -21,13 +21,19 @@
     {
       "theme": "fuel economy / mileage",
       "query": "how good is the fuel economy and mileage",
-      "base_count": 1300,
-      "base_rate": 0.0157,
+      "base_count": 1910,
+      "base_rate": 0.0177,
       "top_k": 30,
       "hits_in_top_k": 19,
       "hit_rate": 0.6333,
-      "lift": 40.24,
+      "lift": 35.8,
       "example_hits": [
+        {
+          "brand": "Kawasaki",
+          "model": "Vulcan 2000",
+          "distance": 0.2277,
+          "text": "What kind of fuel mileage do they average?"
+        },
         {
           "brand": "Honda",
           "model": "VF 750",
@@ -39,58 +45,52 @@
           "model": "Honda Pridor",
           "distance": 0.2662,
           "text": "What is average fuel consumption per km"
-        },
-        {
-          "brand": "Suzuki",
-          "model": "RM 125",
-          "distance": 0.2794,
-          "text": "what is the bike's top speed?  what about its fuel economy data?"
         }
       ]
     },
     {
       "theme": "vibration at speed",
       "query": "does the engine vibrate a lot at speed",
-      "base_count": 476,
-      "base_rate": 0.0058,
+      "base_count": 709,
+      "base_rate": 0.0066,
       "top_k": 30,
       "hits_in_top_k": 24,
       "hit_rate": 0.8,
-      "lift": 138.81,
+      "lift": 121.81,
       "example_hits": [
         {
           "brand": "Suzuki",
-          "model": "LS 650 Savage",
-          "distance": 0.2289,
-          "text": "How bad does the engine vibrate being only one cylinder?"
+          "model": "Boulevard S83",
+          "distance": 0.1825,
+          "text": "motor cycle vibrates at highway speed. is this normal or do I have a problem?"
         },
         {
-          "brand": "Harley-Davidson",
-          "model": "Sportster 1200",
-          "distance": 0.2435,
-          "text": "around 70 mph, it vibrates more than usual for a sportster"
+          "brand": "BMW",
+          "model": "R 1200 GS",
+          "distance": 0.207,
+          "text": "Steering vibrates at high speed, 150 ro 180 klms"
         },
         {
-          "brand": "Harley-Davidson",
-          "model": "Springer Softail",
-          "distance": 0.2584,
-          "text": "THE MOTOR HAS ENGINE KNOCK SOMETIMES ?"
+          "brand": "Kymco",
+          "model": "Stryker",
+          "distance": 0.2145,
+          "text": "my striker has a huge vibration from the engine when i rev it up"
         }
       ]
     },
     {
       "theme": "reliability problems",
       "query": "is this bike reliable or does it break down",
-      "base_count": 9687,
-      "base_rate": 0.1173,
+      "base_count": 12761,
+      "base_rate": 0.1182,
       "top_k": 30,
-      "hits_in_top_k": 7,
-      "hit_rate": 0.2333,
-      "lift": 1.99,
+      "hits_in_top_k": 8,
+      "hit_rate": 0.2667,
+      "lift": 2.26,
       "example_hits": [
         {
           "brand": "Husaberg",
-          "model": "FE",
+          "model": "FE 501",
           "distance": 0.0979,
           "text": "is this a reliable bike"
         },
@@ -102,7 +102,7 @@
         },
         {
           "brand": "Harley-Davidson",
-          "model": "Dyna Super Glide",
+          "model": "Dyna",
           "distance": 0.1739,
           "text": "Is this bike any good?"
         }
@@ -111,12 +111,12 @@
     {
       "theme": "seat comfort",
       "query": "is the seat comfortable for long rides",
-      "base_count": 91,
-      "base_rate": 0.0011,
+      "base_count": 148,
+      "base_rate": 0.0014,
       "top_k": 30,
-      "hits_in_top_k": 7,
-      "hit_rate": 0.2333,
-      "lift": 211.77,
+      "hits_in_top_k": 4,
+      "hit_rate": 0.1333,
+      "lift": 97.25,
       "example_hits": [
         {
           "brand": "Harley-Davidson",
@@ -126,13 +126,13 @@
         },
         {
           "brand": "Honda",
-          "model": "CBR 600",
+          "model": "CBR600RR",
           "distance": 0.1918,
           "text": "find riders seat very uncomfortable on long drives any solutions?"
         },
         {
           "brand": "KTM",
-          "model": "LC4 640 Enduro",
+          "model": "640 Enduro",
           "distance": 0.2168,
           "text": "I want one but are they comfortable for riding long distances on the road?"
         }
@@ -141,43 +141,49 @@
     {
       "theme": "beginner friendly",
       "query": "is this a good first bike for a beginner",
-      "base_count": 1226,
-      "base_rate": 0.0148,
+      "base_count": 1560,
+      "base_rate": 0.0145,
       "top_k": 30,
-      "hits_in_top_k": 12,
-      "hit_rate": 0.4,
-      "lift": 26.95,
+      "hits_in_top_k": 14,
+      "hit_rate": 0.4667,
+      "lift": 32.29,
       "example_hits": [
         {
           "brand": "Suzuki",
-          "model": "VS 1400 Intruder",
+          "model": "VS 1400 GLP Intruder",
           "distance": 0.0388,
           "text": "is this a good bike for a first time rider?"
         },
         {
           "brand": "Kawasaki",
-          "model": "Ninja ZX-6R",
+          "model": "Ninja",
           "distance": 0.0473,
           "text": "is this a good beginers bike?"
         },
         {
-          "brand": "Suzuki",
-          "model": "VZ 800 Marauder",
-          "distance": 0.0515,
-          "text": "would this be a good beginners bike?"
+          "brand": "Victory",
+          "model": "Vegas",
+          "distance": 0.0495,
+          "text": "new to riding is this a good 1st bike?"
         }
       ]
     },
     {
       "theme": "brakes",
       "query": "how good are the brakes",
-      "base_count": 2172,
-      "base_rate": 0.0263,
+      "base_count": 2774,
+      "base_rate": 0.0257,
       "top_k": 30,
-      "hits_in_top_k": 30,
-      "hit_rate": 1.0,
-      "lift": 38.02,
+      "hits_in_top_k": 17,
+      "hit_rate": 0.5667,
+      "lift": 22.05,
       "example_hits": [
+        {
+          "brand": "Suzuki",
+          "model": "VS 800 Intruder",
+          "distance": 0.284,
+          "text": "how good are these bikes?"
+        },
         {
           "brand": "Yamaha",
           "model": "RD 500 LC",
@@ -185,16 +191,10 @@
           "text": "Poor front brakes how can I improve them?"
         },
         {
-          "brand": "Honda",
-          "model": "CB 450 S",
-          "distance": 0.3069,
-          "text": "uhh, the brakes"
-        },
-        {
-          "brand": "Harley-Davidson",
-          "model": "Road King",
-          "distance": 0.3322,
-          "text": "why do my brakes constantly squeek?"
+          "brand": "Kymco",
+          "model": "Active 110",
+          "distance": 0.3023,
+          "text": "poor brake system"
         }
       ]
     }
@@ -212,16 +212,16 @@
           "text": "I am looking for a compleat block (no carb)"
         },
         {
-          "brand": "Harley-Davidson",
-          "model": "Super Glide",
-          "distance": 0.4945,
-          "text": "can make these almost maintenace free"
+          "brand": "KTM",
+          "model": "1190 RC8",
+          "distance": 0.4631,
+          "text": "How can I started without the key"
         },
         {
-          "brand": "Yamaha",
-          "model": "DT 50",
-          "distance": 0.5028,
-          "text": "how long would the bike be with no front tire on it and then again hw long with no tires"
+          "brand": "Harley-Davidson",
+          "model": "Super Glide Custom 110th Anniversary",
+          "distance": 0.4945,
+          "text": "can make these almost maintenace free"
         }
       ]
     },
@@ -232,7 +232,7 @@
       "top_hits": [
         {
           "brand": "Honda",
-          "model": "XRV Africa Twin",
+          "model": "Africa Twin",
           "distance": 0.4976,
           "text": "the best"
         },
@@ -243,10 +243,10 @@
           "text": "Just wondering what pipe is the best to run?"
         },
         {
-          "brand": "Yamaha",
-          "model": "XT 600",
-          "distance": 0.5135,
-          "text": "what's the best mods for more performance"
+          "brand": "CPI",
+          "model": "GTR",
+          "distance": 0.5105,
+          "text": "what is the best pipe"
         }
       ]
     }
@@ -256,8 +256,8 @@
       "english_query": "is this bike reliable or does it break down",
       "french_query": "est-ce que cette moto est fiable ou tombe-t-elle souvent en panne",
       "top_k": 10,
-      "overlap_count": 4,
-      "jaccard": 0.25
+      "overlap_count": 3,
+      "jaccard": 0.176
     },
     {
       "english_query": "how good is the fuel economy and mileage",

@@ -209,7 +209,7 @@ def main() -> None:
     df = result.to_pandas()
     df.insert(0, "id", [q["id"] for q in questions])
 
-    out_path = Path(__file__).resolve().parent / "ragas_results.json"
+    out_path = Path(__file__).resolve().parents[3] / "eval_results/ragas/ragas_results.json"
     records = json.loads(df.to_json(orient="records"))
     summary = {
         "generation_backend": BACKEND,

@@ -43,12 +43,13 @@ that got reversed) is in the [project's Notion doc] — the short version:
   [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
   retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
   21-82x over corpus base rate, negative controls rejected — see
-  `eval_retrieval_report.json`). [RAGAS](https://github.com/explodinggpt/ragas)
+  [`eval_results/retrieval/`](eval_results/retrieval/)).
+  [RAGAS](https://github.com/explodinggpt/ragas)
   (faithfulness, answer relevancy) then scores the full agent over a golden
   question set — generation by mistral-small (local), and the same answers
   graded by **two independent judges**: qwen3.6 (local) gives
   **0.61 / 0.76**, Haiku via `claude -p` gives **0.71 / 0.77**
-  (`eval/ragas_results{,_qwen-judge,_haiku-judge}.json`). The judges
+  ([`eval_results/ragas/`](eval_results/ragas/)). The judges
   converge per-question: structured-filter questions 0.9-1.0 for both,
   and both give 0.0 to the same answer where the *local generator*
   contradicts its own tool results (answering "no owner reviews" while
@@ -160,7 +161,7 @@ PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
 ## Evaluating
 
 ```bash
-# Layer 1 — retrieval alone, no LLM (writes eval_retrieval_report.json):
+# Layer 1 — retrieval alone, no LLM (writes eval_results/retrieval/retrieval_report.json):
 PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
 
 # Layer 2 — RAGAS over the full agent. Generation model via OLLAMA_MODEL;

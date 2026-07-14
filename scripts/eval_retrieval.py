@@ -216,7 +216,7 @@ def main() -> None:
             "negative_control": negatives,
             "cross_lingual": cross_lingual,
         }
-        out_path = Path(__file__).resolve().parent.parent / "eval_retrieval_report.json"
+        out_path = Path(__file__).resolve().parent.parent / "eval_results/retrieval/retrieval_report.json"
         out_path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
         print(json.dumps(report, indent=2, ensure_ascii=False))
         print(f"\nWritten to {out_path}", file=sys.stderr)
