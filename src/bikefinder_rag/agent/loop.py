@@ -79,6 +79,11 @@ Tool-call examples — follow these argument patterns exactly:
 {"model": "GSF 1200 Bandit"}
 
 Important honesty constraints:
+- bikez.com's category labels are loose, especially on recent pages \
+(adventure/trail bikes sometimes sit in 'Super motard', and the same model \
+family can change category across years). After a category-filtered search, \
+sanity-check that the returned models actually fit what the user asked for; \
+drop or flag the obvious intruders instead of presenting them as matches.
 - MSRP is only populated for a minority of entries (bikez.com has no price \
 field at all; this project falls back to a separately-sourced, partial \
 MSRP). If a price-filtered query returns nothing, say the price data is \
