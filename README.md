@@ -178,7 +178,7 @@ PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
 
 # Layer 1.5 — tool-call trajectories, deterministic checks, no LLM judge
 # (one model per run; writes eval_results/trajectory/trajectory_<model>.json):
-AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small EMBEDDER_DEVICE=cpu \
+AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \
   PYTHONPATH=src .venv/bin/python scripts/eval_tool_trajectory.py
 
 # Layer 2 — RAGAS over the full agent. Generation model via OLLAMA_MODEL;

@@ -9,7 +9,7 @@ import gradio as gr
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-from bikefinder_rag.agent.loop import BACKEND, run_agent
+from bikefinder_rag.agent.loop import BACKEND, OLLAMA_MODEL, run_agent
 from bikefinder_rag.db.client import get_connection
 
 load_dotenv()
@@ -38,7 +38,7 @@ with gr.Blocks(title="Bikefinder RAG") as demo:
         gr.Markdown(
             "# 🏍️ Bikefinder RAG (local model)\n"
             "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
-            f"Running on a local Ollama model (`{os.environ.get('OLLAMA_MODEL', 'mistral-small')}`) — "
+            f"Running on a local Ollama model (`{OLLAMA_MODEL}`) — "
             "no API key needed, but expect slower responses."
         )
         api_key_input = gr.Textbox(visible=False)

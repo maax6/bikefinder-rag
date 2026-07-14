@@ -12,7 +12,7 @@ RAGAS but passes here writes badly from good data; one that fails here
 never gave the retrieval layer a chance.
 
 Run (one model per run; the report is named after the model):
-    AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small EMBEDDER_DEVICE=cpu \\
+    AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \\
       PYTHONPATH=src .venv/bin/python scripts/eval_tool_trajectory.py
 
 Writes eval_results/trajectory/trajectory_<model>.json

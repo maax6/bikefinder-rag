@@ -21,7 +21,7 @@ from bikefinder_rag.agent.tools import TOOLS, execute_tool
 BACKEND = os.environ.get("AGENT_BACKEND", "anthropic")
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small3.2")
 
 # Hard cap on tool-call round-trips per user turn: a model stuck re-calling
 # tools would otherwise loop forever on the visitor's API key.
