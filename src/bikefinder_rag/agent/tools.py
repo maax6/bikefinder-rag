@@ -1,11 +1,12 @@
-"""The agent's two tools.
+"""The agent's three tools.
 
-Both are typed-parameter function calls, never raw SQL from the LLM —
+All are typed-parameter function calls, never raw SQL from the LLM —
 filter_specs builds a parameterized query from a fixed set of known
 columns (column names are hardcoded in this file, values are always bound,
-never interpolated), and search_reviews runs a pgvector similarity search
+never interpolated), search_reviews runs a pgvector similarity search
 with optional case-insensitive metadata filters (ILIKE, not `=`, so a
-casing mismatch from the LLM doesn't silently return zero rows).
+casing mismatch from the LLM doesn't silently return zero rows), and
+get_bike_details returns one bike's full spec sheet including raw_specs.
 """
 
 from typing import Any
@@ -27,8 +28,15 @@ FILTER_SPECS_SCHEMA = {
                 "type": "string",
                 "description": "bikez.com category, e.g. 'Naked bike', 'Sport', 'Touring', 'Enduro/offroad'.",
             },
-            "min_year": {"type": "integer"},
-            "max_year": {"type": "integer"},
+            "min_year": {
+                "type": "integer",
+                "description": (
+                    "Lower bound on model year, inclusive. A decade always needs BOTH bounds: "
+                    "'the 1980s' / 'les années 1950' means min_year=1980 AND max_year=1989 "
+                    "(resp. 1950 and 1959)."
+                ),
+            },
+            "max_year": {"type": "integer", "description": "Upper bound on model year, inclusive."},
             "min_displacement_ccm": {"type": "number"},
             "max_displacement_ccm": {"type": "number"},
             "min_weight_kg": {"type": "number"},
@@ -48,6 +56,13 @@ FILTER_SPECS_SCHEMA = {
                     "torque_nm, seat_height_mm or msrp_eur. Prefix with '-' for "
                     "descending. Default '-year'. Required for superlatives: "
                     "'the lightest X' needs order_by='weight_kg' with a small limit."
+                ),
+            },
+            "count_only": {
+                "type": "boolean",
+                "description": (
+                    "Return only how many motorcycles match the filters, instead of "
+                    "listing them. Use for 'how many...' questions."
                 ),
             },
             "limit": {"type": "integer", "description": "Max rows to return, default 10."},
@@ -70,7 +85,13 @@ SEARCH_REVIEWS_SCHEMA = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "query": {"type": "string", "description": "The question or topic to search for, in any language."},
+            "query": {
+                "type": "string",
+                "description": (
+                    "REQUIRED — the topic to search for, in plain words and any "
+                    "language, e.g. 'reliability problems breakdowns'."
+                ),
+            },
             "brand": {"type": "string"},
             "model": {"type": "string"},
             "category": {"type": "string"},
@@ -80,7 +101,27 @@ SEARCH_REVIEWS_SCHEMA = {
     },
 }
 
-TOOLS = [FILTER_SPECS_SCHEMA, SEARCH_REVIEWS_SCHEMA]
+GET_BIKE_DETAILS_SCHEMA = {
+    "name": "get_bike_details",
+    "description": (
+        "Full factory spec sheet for ONE specific motorcycle: fuel capacity, "
+        "cooling system, transmission, tires, brakes, suspension, bore x "
+        "stroke, and every other spec bikez.com lists. Use when the user asks "
+        "about a spec of a specific bike that filter_specs doesn't return. "
+        "Returns the most recent model-years unless a year is given."
+    ),
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "model": {"type": "string", "description": "Model name, e.g. 'GSF 1200 Bandit'."},
+            "brand": {"type": "string"},
+            "year": {"type": "integer", "description": "Exact model year, if the user named one."},
+        },
+        "required": ["model"],
+    },
+}
+
+TOOLS = [FILTER_SPECS_SCHEMA, SEARCH_REVIEWS_SCHEMA, GET_BIKE_DETAILS_SCHEMA]
 
 _FILTER_COLUMNS: list[tuple[str, str, str]] = [
     # (input arg, sql column, sql operator)
@@ -115,6 +156,11 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
         if value is not None:
             clauses.append(f"{column} {operator} %s")
             params.append(value)
+
+    if kwargs.get("count_only"):
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT count(*) FROM motorcycles WHERE {' AND '.join(clauses)}", params)
+            return [{"matching_motorcycles": cur.fetchone()[0]}]
 
     # Column names come from this whitelist, never from the LLM's string.
     sortable = {"year", "displacement_ccm", "weight_kg", "power_hp",
@@ -191,22 +237,93 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
         return [dict(zip(columns, row)) for row in cur.fetchall()]
 
 
+# bikez spec pages carry navigation/ad rows in the same table as real specs;
+# they'd only pad the tool result and tempt the model into offering features
+# (insurance quotes, parts shopping) this assistant doesn't have.
+_RAW_SPECS_NOISE = {"Rating", "Ask questions", "Update specs", "Related bikes",
+                    "Maintenance", "Insurance costs"}
+
+
+def get_bike_details(conn, model: str, brand: str | None = None, year: int | None = None) -> list[dict]:
+    # Same word-by-word matching rationale as search_reviews' model filter.
+    words = model.split() or [model]
+    clauses = ["(brand || ' ' || model) ILIKE %s"] * len(words)
+    params: list[Any] = [f"%{word}%" for word in words]
+
+    if brand:
+        clauses.append("brand ILIKE %s")
+        params.append(f"%{brand}%")
+    if year is not None:
+        clauses.append("year = %s")
+        params.append(int(year))
+
+    sql = f"""
+        SELECT brand, model, year, category, displacement_ccm, weight_kg,
+               power_hp, torque_nm, seat_height_mm, msrp_eur, url, raw_specs
+        FROM motorcycles
+        WHERE {' AND '.join(clauses)}
+        ORDER BY year DESC
+        LIMIT 3
+    """
+    with conn.cursor() as cur:
+        cur.execute(sql, params)
+        columns = [desc.name for desc in cur.description]
+        rows = [dict(zip(columns, row)) for row in cur.fetchall()]
+
+    for row in rows:
+        specs = row.pop("raw_specs", None) or {}
+        # "Loading..." is bikez's client-side placeholder — some scraped
+        # cells still carry it; a blank is more honest than echoing it.
+        row["specs"] = {
+            k: v for k, v in specs.items()
+            if k not in _RAW_SPECS_NOISE and v and v.strip() and v.strip() != "Loading..."
+        }
+    return rows
+
+
+# Near-miss argument names observed from local models: remap instead of
+# dropping, so e.g. 'model_family: Aprilia Tuono 125' still reaches the
+# search instead of silently widening it to the whole corpus.
+_ARG_ALIASES = {
+    "model_family": "model",
+    "models": "model",
+    "bike": "model",
+    "motorcycle": "model",
+    "brands": "brand",
+    "categories": "category",
+}
+
+
 def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
     # Tool-calling LLMs (local models especially) sometimes emit argument
     # names that drift from the schema (e.g. "models" instead of "model", or
-    # drop a required one like "query" entirely). Drop anything unrecognized,
-    # and turn a resulting TypeError into a tool_result the model can see
-    # and self-correct on next turn, instead of crashing the whole loop.
+    # drop a required one like "query" entirely). Remap the known near-misses,
+    # drop the rest, and say so in the tool result — a silent repair hides the
+    # mistake from the model, so it never self-corrects; a TypeError likewise
+    # becomes a tool_result instead of crashing the whole loop.
     if tool_name == "filter_specs":
         known = FILTER_SPECS_SCHEMA["input_schema"]["properties"]
         call = filter_specs
     elif tool_name == "search_reviews":
         known = SEARCH_REVIEWS_SCHEMA["input_schema"]["properties"]
         call = search_reviews
+    elif tool_name == "get_bike_details":
+        known = GET_BIKE_DETAILS_SCHEMA["input_schema"]["properties"]
+        call = get_bike_details
     else:
         raise ValueError(f"Unknown tool: {tool_name}")
 
-    filtered_input = {k: v for k, v in tool_input.items() if k in known}
+    filtered_input: dict[str, Any] = {}
+    notes = []
+    for key, value in tool_input.items():
+        alias = _ARG_ALIASES.get(key)
+        if key in known:
+            filtered_input[key] = value
+        elif alias in known and alias not in tool_input:
+            filtered_input[alias] = value
+            notes.append(f"interpreted unknown argument '{key}' as '{alias}'")
+        else:
+            notes.append(f"ignored unknown argument '{key}'")
 
     # Weak tool-callers (local models especially) sometimes drop the required
     # query even when the rest of the call is fine. Searching for general
@@ -217,8 +334,13 @@ def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
             str(filtered_input[k]) for k in ("brand", "model", "category") if filtered_input.get(k)
         )
         filtered_input["query"] = f"owner opinions experiences known issues {topic}".strip()
+        notes.append("required argument 'query' was missing; searched for general owner impressions")
 
     try:
-        return call(conn, **filtered_input)
+        results = call(conn, **filtered_input)
     except TypeError as e:
-        return [{"error": f"Invalid arguments for {tool_name}: {e}"}]
+        results = [{"error": f"Invalid arguments for {tool_name}: {e}"}]
+
+    if notes:
+        return [{"notes": notes}, *(results or [{"info": "No matching rows."}])]
+    return results

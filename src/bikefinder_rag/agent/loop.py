@@ -19,7 +19,7 @@ from anthropic import Anthropic
 from bikefinder_rag.agent.tools import TOOLS, execute_tool
 
 BACKEND = os.environ.get("AGENT_BACKEND", "anthropic")
-MODEL = "claude-sonnet-5"
+MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small")
 
@@ -50,15 +50,33 @@ OLLAMA_TOOLS = [
 SYSTEM_PROMPT = """You are a motorcycle expert assistant backed by a database \
 scraped from bikez.com (specs) and its owner discussion forums (reviews).
 
-You have two tools:
+You have three tools:
 - filter_specs: precise structured filtering (displacement, weight, power, \
 seat height, category, brand, year, price).
 - search_reviews: semantic search over real owner comments, for qualitative \
 questions (known issues, ride impressions, comparisons).
+- get_bike_details: the full factory spec sheet of ONE specific motorcycle \
+(fuel capacity, cooling system, transmission, tires, brakes...), for specs \
+filter_specs doesn't return.
 
-Use both when a question needs it (e.g. "a light beginner naked bike under \
-600cc, and what do owners say about reliability" needs filter_specs first, \
-then search_reviews scoped to the results).
+Use several when a question needs it (e.g. "a light beginner naked bike \
+under 600cc, and what do owners say about reliability" needs filter_specs \
+first, then search_reviews scoped to the results).
+
+Tool-call examples — follow these argument patterns exactly:
+- "Show me custom/cruiser bikes from the 1980s" -> filter_specs \
+{"category": "Custom/Cruiser", "min_year": 1980, "max_year": 1989} \
+(a decade always sets BOTH min_year and max_year)
+- "Quelles motos custom des annees 1950 ?" -> filter_specs \
+{"category": "Custom/Cruiser", "min_year": 1950, "max_year": 1959}
+- "What's the cheapest bike under 3000 EUR?" -> filter_specs \
+{"max_msrp_eur": 3000, "order_by": "msrp_eur", "limit": 5}
+- "How many Kawasaki bikes are in the database?" -> filter_specs \
+{"brand": "Kawasaki", "count_only": true}
+- "...and what do owners say about its reliability?" -> search_reviews \
+{"query": "reliability problems breakdowns", "model": "<the bike being discussed>"}
+- "What is the fuel capacity of the GSF 1200 Bandit?" -> get_bike_details \
+{"model": "GSF 1200 Bandit"}
 
 Important honesty constraints:
 - MSRP is only populated for a minority of entries (bikez.com has no price \
@@ -149,6 +167,12 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
                     "messages": [{"role": "system", "content": SYSTEM_PROMPT}, *messages],
                     "tools": OLLAMA_TOOLS,
                     "stream": False,
+                    # temperature 0: tool arguments shouldn't be sampled with
+                    # noise. num_ctx: Ollama's default is small and it
+                    # truncates silently — with this system prompt + tool
+                    # schemas + spec-table results, the head of the context
+                    # (the instructions) would fall off mid-loop.
+                    "options": {"temperature": 0, "num_ctx": 16384},
                 },
                 timeout=120,
             )
