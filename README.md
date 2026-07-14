@@ -155,11 +155,12 @@ docker run -d --name bikefinder-pg \
   pgvector/pgvector:pg17
 
 # The scraped datasets ship with the repo (data/pilot, data/demo,
-# data/century — 1894-2024). Load them (deduplicates + embeds, GPU-hours
-# at century scale):
+# data/century — 1894-1999 + the 2024 lineup, data/2000s — 2000-2023).
+# Load them (deduplicates + embeds, GPU-hours at full scale):
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/pilot
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/demo
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/century
+PYTHONPATH=src .venv/bin/python scripts/load_db.py data/2000s
 
 # Re-scrape / extend (resumable at bike, thread and forum level):
 PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
