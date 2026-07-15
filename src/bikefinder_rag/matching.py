@@ -36,9 +36,13 @@ class MotorcycleMatcher:
         for payload, brand, model, year in rows:
             self._by_year[year].append((payload, set(tokens(f"{brand} {model}"))))
 
-    def match_year(self, source_tokens: list[str], year: int) -> list:
-        for required in (source_tokens,
-                         [t for t in source_tokens if not (t.isdigit() and int(t) >= 50)]):
+    def match_year(self, source_tokens: list[str], year: int) -> tuple[list, str | None]:
+        """(payloads, pass name) — pass is 'forward', 'no-suffix' or
+        'reverse', useful for auditing which rule produced a match."""
+        for pass_name, required in (
+            ("forward", source_tokens),
+            ("no-suffix", [t for t in source_tokens if not (t.isdigit() and int(t) >= 50)]),
+        ):
             if not required:
                 continue
             best_extra, best = None, []
@@ -51,7 +55,7 @@ class MotorcycleMatcher:
                 elif extra == best_extra:
                     best.append(payload)
             if best:
-                return best
+                return best, pass_name
 
         # Reverse direction: the source is the verbose side.
         source_set = set(source_tokens)
@@ -63,15 +67,21 @@ class MotorcycleMatcher:
                 best_size, best = len(row_tokens), [payload]
             elif len(row_tokens) == best_size:
                 best.append(payload)
-        return best
+        return best, ("reverse" if best else None)
 
     def match(self, brand: str, model: str, year: int,
               year_offsets: tuple[int, ...] = (0, -1, 1)) -> tuple[list, int | None]:
         """(payloads, year offset used) — offsets tried in order, since
         sources disagree on launch year vs model year by one either way."""
+        payloads, dy, _ = self.match_explained(brand, model, year, year_offsets)
+        return payloads, dy
+
+    def match_explained(self, brand: str, model: str, year: int,
+                        year_offsets: tuple[int, ...] = (0, -1, 1)) -> tuple[list, int | None, str | None]:
+        """(payloads, year offset, pass name) — the audit-friendly variant."""
         source_tokens = tokens(f"{brand} {model}")
         for dy in year_offsets:
-            payloads = self.match_year(source_tokens, year + dy)
+            payloads, how = self.match_year(source_tokens, year + dy)
             if payloads:
-                return payloads, dy
-        return [], None
+                return payloads, dy, how
+        return [], None, None
