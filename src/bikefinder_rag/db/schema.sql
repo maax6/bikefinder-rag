@@ -70,3 +70,24 @@ CREATE UNIQUE INDEX IF NOT EXISTS uq_review_chunks_family_comment
 -- params / ivfflat lists) once the full catalog is loaded.
 CREATE INDEX IF NOT EXISTS idx_review_chunks_embedding
     ON review_chunks USING hnsw (embedding vector_cosine_ops);
+
+-- NHTSA safety recalls (scripts/load_nhtsa_recalls.py), attached at family
+-- level like review_chunks: a campaign names (make, model, year) and can
+-- legitimately cover several of our families. The project's only objective
+-- reliability signal — see the loader's docstring for the matching rules.
+CREATE TABLE IF NOT EXISTS recalls (
+    id              SERIAL PRIMARY KEY,
+    family_id       INTEGER NOT NULL REFERENCES model_families(id),
+    campno          TEXT NOT NULL,
+    nhtsa_make      TEXT NOT NULL,
+    nhtsa_model     TEXT NOT NULL,
+    model_year      INTEGER,
+    component       TEXT,
+    defect          TEXT,
+    consequence     TEXT,
+    corrective      TEXT,
+    units_affected  INTEGER,
+    report_date     DATE,
+    UNIQUE NULLS NOT DISTINCT (campno, family_id, model_year)
+);
+CREATE INDEX IF NOT EXISTS recalls_family_idx ON recalls (family_id);
