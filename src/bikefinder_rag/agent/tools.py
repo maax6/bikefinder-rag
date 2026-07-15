@@ -38,11 +38,12 @@ FILTER_SPECS_SCHEMA = {
             "category": {
                 "type": "string",
                 "description": (
-                    "bikez.com category, one of: Sport, Enduro/offroad, "
+                    "Category. Matches bikez labels (Sport, Enduro/offroad, "
                     "Custom/cruiser, Naked bike, Allround, Classic, Super motard, "
                     "Touring, Sport touring, Cross/motocross, Trial, Minibike, "
-                    "Scooter, Speedway, Prototype/concept model. Matching is "
-                    "fuzzy (case/spacing-insensitive)."
+                    "Scooter, Speedway) and French ones (Roadster, Sportive, "
+                    "Trail, Custom, Routière & GT, Supermotard, Enduro). Fuzzy, "
+                    "case/spacing-insensitive."
                 ),
             },
             "min_year": {
@@ -165,8 +166,15 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
         params.append(_norm_pattern(kwargs["brand"]))
 
     if kwargs.get("category"):
-        clauses.append(_NORM_SQL.format(column="category"))
-        params.append(_norm_pattern(kwargs["category"]))
+        # Match bikez's Category OR motoplanete's curated category_fr: bikez
+        # mislabels recent bikes ('Super motard' Transalps), the French badge
+        # is the reliable one where present.
+        pattern = _norm_pattern(kwargs["category"])
+        clauses.append(
+            "(" + _NORM_SQL.format(column="category")
+            + " OR " + _NORM_SQL.format(column="coalesce(category_fr, '')") + ")"
+        )
+        params.extend([pattern, pattern])
 
     for arg_name, column, operator in _FILTER_COLUMNS:
         value = kwargs.get(arg_name)
@@ -190,8 +198,8 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
 
     limit = int(kwargs.get("limit") or 10)
     query = f"""
-        SELECT brand, model, year, category, displacement_ccm, weight_kg,
-               power_hp, torque_nm, seat_height_mm, msrp_eur, url
+        SELECT brand, model, year, category, category_fr, displacement_ccm,
+               weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
         ORDER BY {column} {direction} NULLS LAST
@@ -277,8 +285,9 @@ def get_bike_details(conn, model: str, brand: str | None = None, year: int | Non
         params.append(int(year))
 
     sql = f"""
-        SELECT brand, model, year, category, displacement_ccm, weight_kg,
-               power_hp, torque_nm, seat_height_mm, msrp_eur, url, raw_specs
+        SELECT brand, model, year, category, category_fr, displacement_ccm,
+               weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url,
+               raw_specs
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
         ORDER BY year DESC
