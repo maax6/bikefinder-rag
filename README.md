@@ -132,7 +132,7 @@ Two more data layers ride along (loaded by their own idempotent scripts):
   `get_bike_details` with an explicit "US market only" caveat.
 - **Indicative used prices** (`scripts/load_used_prices.py`): median and
   quartiles per (family, registration year) aggregated from a 2022
-  European marketplace snapshot (Kaggle, ~22k matched listings, 626
+  European marketplace snapshot (Kaggle, ~18k deduplicated listings, 598
   families) — a dated cote indicative, presented as such, never as
   today's market value.
 

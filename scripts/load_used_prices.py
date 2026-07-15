@@ -80,8 +80,11 @@ def main() -> None:
     df["text"] = df.make_model.fillna("") + " " + df.version.fillna("")
     df["reg_year"] = pd.to_numeric(df.date.str.extract(r"/(\d{4})")[0], errors="coerce")
 
+    # The ZenRows sample carries ~17% duplicated listing links — drop them
+    # before aggregating or a twice-listed bike counts twice in the median.
+    df = df.drop_duplicates("link")
     df = df[df.price.between(PRICE_MIN, PRICE_MAX) & (df.offer_type == "Used") & df.reg_year.notna()]
-    print(f"{len(df)} plausible used listings after filtering.", file=sys.stderr)
+    print(f"{len(df)} plausible used listings after filtering (link-deduplicated).", file=sys.stderr)
 
     conn = get_connection()
     try:
