@@ -1,10 +1,10 @@
 {
   "backend": "ollama",
   "model": "mistral-small3.2",
-  "questions_ok": 16,
-  "questions_total": 17,
-  "checks_ok": 43,
-  "checks_total": 44,
+  "questions_ok": 18,
+  "questions_total": 18,
+  "checks_ok": 46,
+  "checks_total": 46,
   "per_question": [
     {
       "id": "struct-1",
@@ -15,9 +15,9 @@
         {
           "name": "filter_specs",
           "args": {
-            "min_displacement_ccm": 600,
             "max_displacement_ccm": 900,
-            "category": "Naked bike"
+            "category": "Naked bike",
+            "min_displacement_ccm": 600
           }
         }
       ],
@@ -42,7 +42,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Here are some naked bikes between 600cc and 900cc:\n\n- **MV Agusta Brutale 800 RR** (798cc)\n- **MV Agusta Dragster R** (798cc)\n- **MV Agusta Brutale 800 R** (798cc)\n- **Benelli 752S** (754cc)\n- **Benelli Leoncino 800** (754cc)\n- **Benelli TNT 600i** (600cc)\n- **Moto Morini Seiemmezzo 650 SCR** (649cc"
+      "answer_head": "Here are some naked bikes between 600cc and 900cc available in 2024:\n\n- **Yamaha MT-09** (890cc)\n- **Benelli Leoncino 800** (754cc)\n- **Yamaha MT-09 SP** (890cc)\n- **Triumph Street Triple 765 RS** (765cc)\n- **KTM 790 Duke** (799cc)\n- **Suzuki GSX-8S** (776cc)\n- **Kawasaki Z650** (649cc)\n- **Benelli "
     },
     {
       "id": "struct-2",
@@ -53,10 +53,10 @@
         {
           "name": "filter_specs",
           "args": {
-            "brand": "Harley-Davidson",
             "category": "Custom/Cruiser",
             "min_year": 1980,
-            "max_year": 1989
+            "max_year": 1989,
+            "brand": "Harley-Davidson"
           }
         }
       ],
@@ -77,7 +77,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Here are some Harley-Davidson custom/cruiser motorcycles from the 1980s:\n\n- **Harley-Davidson 1340 Electra Glide Ultra Classic (reduced effect)** (1989)\n  - Displacement: 1337 ccm\n  - Weight: 356 kg\n  - Power: 50 hp\n\n- **Harley-Davidson 1340 Springer Softail (reduced effect)** (1989)\n  - Displacemen"
+      "answer_head": "Here are some Harley-Davidson custom/cruiser motorcycles from the 1980s:\n\n- **FXR 1340 Super Glide** (1989)\n- **1340 Springer Softail (reduced effect)** (1989)\n- **FLHS 1340 Electra Glide Sport** (1989)\n- **FLST 1340 Heritage Softail** (1989)\n- **XLH Sportster 883 Hugger** (1989)\n- **XLH Sportster 8"
     },
     {
       "id": "struct-3",
@@ -110,7 +110,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Voici une liste de motos enduro/offroad qui pèsent moins de 130 kg :\n\n- GAS EC 250F (2023) - Poids : 105,6 kg\n- GAS EC 300 (2023) - Poids : 105,8 kg\n- GAS EC 350F (2023) - Poids : 106,4 kg\n- GAS EX 250 (2023) - Poids : 101,3 kg\n- GAS EX 250F (2023) - Poids : 100,0 kg\n- GAS EX 300 (2023) - Poids : 10"
+      "answer_head": "Voici une liste de motos enduro/offroad qui pèsent moins de 130 kg :\n\n- **AJP SPR 125 Enduro** (2023) - Poids : 104 kg\n  - [Lien vers la fiche technique](https://bikez.com/motorcycles/ajp_spr_125_enduro_2023.php)\n\n- **AJP SPR 240 Enduro** (2023) - Poids : 106 kg\n  - [Lien vers la fiche technique](ht"
     },
     {
       "id": "struct-4",
@@ -143,7 +143,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Here are some sport motorcycles with a seat height under 800mm:\n\n1. **Honda CBR150R (2023)**\n   - Seat Height: 788 mm\n   - Displacement: 149 ccm\n   - Weight: 138 kg\n\n2. **AJS Cadwell 125 (2023)**\n   - Seat Height: 740 mm\n   - Displacement: 124 ccm\n   - Torque: 9.5 Nm\n\n3. **Arch KRGT-1 (2023)**\n   - "
+      "answer_head": "Could not reach the local Ollama server (ReadTimeout) — is it running?"
     },
     {
       "id": "struct-5",
@@ -154,9 +154,9 @@
         {
           "name": "filter_specs",
           "args": {
-            "max_year": 1959,
             "category": "Custom/Cruiser",
-            "min_year": 1950
+            "min_year": 1950,
+            "max_year": 1959
           }
         }
       ],
@@ -177,7 +177,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Voici les motos custom/cruiser des années 1950 présentes dans la base de données :\n\n- **Harley-Davidson XLCH Sportster** (1957, 1958, 1959)\n  - Cylindrée : 883 cm³\n  - Poids : 205 kg\n  - Puissance : 50 ch\n\n- **Adler M 250** (1952, 1953, 1954)\n  - Cylindrée : 250 cm³\n  - Poids : 135 kg\n  - Puissance "
+      "answer_head": "Voici les motos custom/cruiser des années 1950 présentes dans la base de données :\n\n- **Harley-Davidson XLCH Sportster** (1957, 1958, 1959)\n- **Zündapp Elastic 198** (1954)\n- **Adler M 250** (1952, 1953, 1954)\n- **Simson AWO 425** (1953)\n- **Indian Chief** (1952, 1953)\n\nCes modèles correspondent à l"
     },
     {
       "id": "narrative-1",
@@ -206,7 +206,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Here are some general impressions from owners of the Harley-Davidson Electra Glide family:\n\n1. **Paul D** (2008) shared excitement about purchasing a 1992 Electra Glide Classic as their first Harley-Davidson, looking forward to learning more about it.\n2. **E. Foutz** (2011) inherited a 2003 Electra "
+      "answer_head": "Here's what owners of the Harley-Davidson Electra Glide line have said:\n\n- **Heat Issues**: One owner reported significant heat problems with a 2007 model, particularly during warm days and slow traffic. They mentioned burning themselves on the exhaust and found numerous complaints about similar iss"
     },
     {
       "id": "narrative-2",
@@ -217,9 +217,9 @@
         {
           "name": "search_reviews",
           "args": {
-            "model": "F 650",
             "brand": "BMW",
-            "query": "known issues"
+            "query": "known issues",
+            "model": "F 650"
           }
         }
       ],
@@ -236,7 +236,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "There are no owner discussions on record about known issues with the BMW F 650."
+      "answer_head": "Here are some known issues discussed by owners of the BMW F 650 GS family:\n\n- **Oil Leakage**: One owner reported a leaking oil tank.\n- **Water in Speed Meter**: Another issue mentioned was water entering the speed meter, requiring replacement of the entire meter set.\n- **Gear Issues**: Problems wit"
     },
     {
       "id": "narrative-3",
@@ -265,7 +265,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Les retours des propriétaires sur l'Aprilia RS 125 sont limités, mais voici quelques points soulevés par les utilisateurs :\n\n1. **Entretien et coûts** : Un propriétaire a mentionné que l'Aprilia RS 125 peut être difficile à entretenir et que les pièces peuvent être coûteuses. Cela pourrait être un f"
+      "answer_head": "Les retours des propriétaires sur l'Aprilia RS 125 sont variés et couvrent plusieurs aspects de la moto. Voici quelques points clés mentionnés par les propriétaires :\n\n1. **Problèmes courants** :\n   - Un propriétaire a posé la question sur les problèmes courants avec une RS 125, indiquant que c'est "
     },
     {
       "id": "hybrid-1",
@@ -278,16 +278,15 @@
           "args": {
             "category": "Naked bike",
             "max_displacement_ccm": 600,
-            "min_year": 2010,
-            "order_by": "weight_kg",
-            "limit": 5
+            "min_year": 2015,
+            "order_by": "weight_kg"
           }
         },
         {
           "name": "search_reviews",
           "args": {
-            "model": "Racing TT",
-            "brand": "Tomos"
+            "model": "Tomos Racing TT",
+            "query": "reliability problems breakdowns"
           }
         }
       ],
@@ -306,13 +305,13 @@
         },
         {
           "label": "asks reviews about reliability",
-          "ok": false
+          "ok": true
         }
       ],
       "unknown_tools": [],
       "hit_turn_limit": false,
-      "all_ok": false,
-      "answer_head": "Here are some light beginner naked bikes under 600cc:\n\n1. **Tomos Racing TT (2017)**\n   - Displacement: 49 cc\n   - Weight: 65 kg\n   - Seat Height: 790 mm\n\n2. **Rieju RS3 125 NKD (2013)**\n   - Displacement: 125 cc\n   - Weight: 84 kg\n\n3. **Lexmoto Aspire 50 (2021)**\n   - Displacement: 49 cc\n   - Weigh"
+      "all_ok": true,
+      "answer_head": "Unfortunately there are no owner reviews on record for any of those bikes.\n\nWould you like to know more details about one specific model?"
     },
     {
       "id": "hybrid-2",
@@ -323,9 +322,9 @@
         {
           "name": "search_reviews",
           "args": {
-            "model": "CBR 1000 F",
             "brand": "Honda",
-            "query": "owner feedback"
+            "query": "owner feedback",
+            "model": "CBR 1000 F"
           }
         },
         {
@@ -354,7 +353,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "### Owner Feedback Comparison\n\n#### Honda CBR 1000 F\nOwners of the **Honda CBR 1000 F** have shared various experiences and insights:\n- One owner mentioned being a rookie with a used model, indicating that it might be suitable for beginners or those new to the bike.\n- Another potential buyer sought "
+      "answer_head": "### Owner Feedback Comparison: Honda CBR 1000 F vs Suzuki GSF 1200 Bandit\n\n#### **Honda CBR 1000 F**\nOwners of the **CB1000R** family (which includes the CBR 1000 F) have shared various experiences and opinions:\n\n- **Positive Feedback**:\n  - One owner described it as a \"great bike\" with good perform"
     },
     {
       "id": "honesty-1",
@@ -365,9 +364,9 @@
         {
           "name": "filter_specs",
           "args": {
-            "max_msrp_eur": 3000,
             "order_by": "msrp_eur",
-            "limit": 5
+            "limit": 5,
+            "max_msrp_eur": 3000
           }
         }
       ],
@@ -384,7 +383,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "The cheapest motorcycle under 3000 EUR in the database is a **Harley-Davidson FLHTCU Ultra Classic Electra Glide** from 2009, priced at just €1. However, this price seems unusually low and may be an error or special case.\n\nOther options under €500 include several BMW R27 models from the early 1960s,"
+      "answer_head": "The cheapest motorcycle under 3000 EUR in the database is the **Triumph T120 Bonneville** from 1959, priced at 220.0 EUR.\n\nHere are some other affordable options:\n- BMW R27 (1960) - 444.0 EUR\n- BMW R27 (1961) - 450.0 EUR\n- BMW R27 (1962) - 460.0 EUR\n- BMW R27 (1963) - 470.0 EUR"
     },
     {
       "id": "honesty-2",
@@ -426,8 +425,8 @@
         {
           "name": "get_bike_details",
           "args": {
-            "model": "GSF 1200 Bandit",
-            "brand": "Suzuki"
+            "brand": "Suzuki",
+            "model": "GSF 1200 Bandit"
           }
         }
       ],
@@ -473,7 +472,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "L'Aprilia RS 125 a un système de refroidissement liquide."
+      "answer_head": "L'Aprilia RS 125 de 2023 utilise un système de refroidissement liquide."
     },
     {
       "id": "count-1",
@@ -506,7 +505,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "There are 2,353 Kawasaki motorcycles in the database. What would you like to know about them?"
+      "answer_head": "There are **2,353** Kawasaki motorcycles in the database."
     },
     {
       "id": "recall-1",
@@ -535,7 +534,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "The Ducati Multistrada family has one known safety recall in the US market:\n- **2021 model year**: Excessive wear of the valve guides may cause the valve head to break (affects 129 units).\n\nThis data covers only the United States. Recall information for other regions is not included.\n\nWould you like"
+      "answer_head": "The Ducati Multistrada has one known safety recall in the US market:\n- **Model Year**: 2021\n- **Component**: Engine\n- **Defect**: Excessive wear of the valve guides may cause the valve head to break.\n- **Units Affected**: 129\n\nThis information is based on data from the National Highway Traffic Safet"
     },
     {
       "id": "cote-1",
@@ -564,7 +563,36 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "La Suzuki Bandit 1200 est une moto nue (roadster) de 1157 cm³, disponible en plusieurs versions comme la Bandit 1200S et la Bandit 1200 SA. Voici quelques spécifications clés :\n\n- **Poids à sec** : Entre 212 kg et 221 kg selon le modèle.\n- **Hauteur de selle** : Environ 785 mm à 790 mm, ajustable su"
+      "answer_head": "La Suzuki Bandit 1200 n'a fait l'objet d'aucun rappel de sécurité aux États-Unis.\n\nLes prix des occasions varient selon l'année, le kilométrage et l'état général du véhicule. En 2023, les annonces affichaient des prix entre 4500 EUR et 6000 EUR pour une Bandit 1200 d'occasion."
+    },
+    {
+      "id": "a2-1",
+      "type": "structured",
+      "question": "Une moto recente compatible permis A2, tu me conseilles quoi ?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "a2_only": true,
+            "min_year": 2020
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "uses the a2_only filter",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "Voici quelques motos récentes compatibles avec le permis A2 (limitées à 47 ch ou bridables) :\n\n- **Royal Enfield Himalayan** : Une moto trail légère et abordable, idéale pour les débutants.\n- **Aprilia Tuono 660** : Un roadster sportif avec un bon équilibre entre performance et maniabilité.\n- **Baja"
     }
   ]
 }

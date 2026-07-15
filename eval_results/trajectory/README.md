@@ -59,7 +59,8 @@ correctement routé et ne cannibalise pas la sélection des deux autres.
 | `mistral-small` (avant corrections, 12 questions) | 9/12 | 30/33 | 3 échecs d'arguments, 0 échec de sélection |
 | `mistral-small` (après corrections, 15 questions) | 15/15 | 40/40 | trajectoires parfaites ; une fuite `[TOOL_CALLS]` dans le *texte* final de hybrid-1 (problème de rédaction → couche RAGAS) |
 | `mistral-small3.2` (15 questions) | 15/15 | 40/40 | texte final propre ; sur hybrid-1 il trie même par `weight_kg` parce que la question demandait une moto *légère* |
-| [`mistral-small3.2`](trajectory_mistral-small3.2.json) (17 questions, outils enrichis rappels + cote) | **16/17** | **43/44** | `recall-1` et `cote-1` routées parfaitement vers `get_bike_details` ; hybrid-1 a re-omis le `query` fiabilité ce run-ci (sa faiblesse récurrente — la réparation d'arguments visible rattrape l'appel, le check reste strict) |
+| `mistral-small3.2` (17 questions, outils enrichis rappels + cote) | 16/17 | 43/44 | `recall-1` et `cote-1` routées parfaitement vers `get_bike_details` ; hybrid-1 a re-omis le `query` fiabilité ce run-ci (sa faiblesse récurrente — la réparation d'arguments visible rattrape l'appel, le check reste strict) |
+| [`mistral-small3.2`](trajectory_mistral-small3.2.json) (18 questions, + filtre permis A2) | **18/18** | **46/46** | `a2-1` route directement vers `filter_specs(a2_only=true)` ; hybrid-1 repasse ce run-ci |
 
 Sur `hybrid-1`, la trajectoire après corrections est notablement meilleure
 que le minimum demandé : le modèle filtre 5 naked ≤ 600 cm³ puis interroge

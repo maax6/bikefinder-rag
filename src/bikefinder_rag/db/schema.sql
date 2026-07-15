@@ -109,3 +109,11 @@ CREATE TABLE IF NOT EXISTS used_price_estimates (
     UNIQUE NULLS NOT DISTINCT (family_id, reg_year)
 );
 CREATE INDEX IF NOT EXISTS used_price_family_idx ON used_price_estimates (family_id);
+
+-- Sparse leg of the hybrid search: English full-text over the comments,
+-- fused with the dense ranking (RRF) in search_reviews. The corpus is
+-- English, so the 'english' config is the right one; French queries ride
+-- on the dense leg (and the agent is told to query in English).
+ALTER TABLE review_chunks ADD COLUMN IF NOT EXISTS comment_tsv tsvector
+    GENERATED ALWAYS AS (to_tsvector('english', comment_text)) STORED;
+CREATE INDEX IF NOT EXISTS idx_review_chunks_tsv ON review_chunks USING gin (comment_tsv);

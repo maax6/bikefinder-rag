@@ -80,6 +80,8 @@ Tool-call examples — follow these argument patterns exactly:
 {"max_msrp_eur": 3000, "order_by": "msrp_eur", "limit": 5}
 - "How many Kawasaki bikes are in the database?" -> filter_specs \
 {"brand": "Kawasaki", "count_only": true}
+- "Une moto recente compatible permis A2 ?" -> filter_specs \
+{"a2_only": true, "min_year": 2020}
 - "...and what do owners say about its reliability?" -> search_reviews \
 {"query": "reliability problems breakdowns", "model": "<the bike being discussed>"}
 - "What is the fuel capacity of the GSF 1200 Bandit?" -> get_bike_details \

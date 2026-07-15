@@ -15,5 +15,6 @@
   {"id": "details-2", "type": "details", "question": "Quel type de refroidissement a l'Aprilia RS 125 ?"},
   {"id": "count-1", "type": "structured", "question": "How many Kawasaki motorcycles are in the database?"},
   {"id": "recall-1", "type": "details", "question": "Are there any known safety recalls for the Ducati Multistrada?"},
-  {"id": "cote-1", "type": "details", "question": "Quel est le prix d'une Suzuki Bandit 1200 d'occasion ?"}
+  {"id": "cote-1", "type": "details", "question": "Quel est le prix d'une Suzuki Bandit 1200 d'occasion ?"},
+  {"id": "a2-1", "type": "structured", "question": "Une moto recente compatible permis A2, tu me conseilles quoi ?"}
 ]

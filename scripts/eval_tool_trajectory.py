@@ -201,6 +201,10 @@ EXPECTATIONS = {
         ("calls get_bike_details", used("get_bike_details")),
         ("targets the Bandit 1200", call_mentions("get_bike_details", r"bandit|gsf")),
     ],
+    "a2-1": [
+        ("calls filter_specs", used("filter_specs")),
+        ("uses the a2_only filter", arg_truthy("filter_specs", "a2_only")),
+    ],
 }
 
 

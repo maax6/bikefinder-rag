@@ -77,6 +77,15 @@ FILTER_SPECS_SCHEMA = {
                     "'the lightest X' needs order_by='weight_kg' with a small limit."
                 ),
             },
+            "a2_only": {
+                "type": "boolean",
+                "description": (
+                    "Keep only bikes compatible with the French A2 licence: "
+                    "either directly (<=35 kW and <=0.2 kW/kg) or restrictable "
+                    "(unrestricted version <=70 kW). Results carry an 'a2' "
+                    "column saying which ('A2' or 'A2 bridable')."
+                ),
+            },
             "count_only": {
                 "type": "boolean",
                 "description": (
@@ -107,8 +116,9 @@ SEARCH_REVIEWS_SCHEMA = {
             "query": {
                 "type": "string",
                 "description": (
-                    "REQUIRED — the topic to search for, in plain words and any "
-                    "language, e.g. 'reliability problems breakdowns'."
+                    "REQUIRED — the topic to search for, in plain ENGLISH words "
+                    "(the review corpus is English — translate the user's topic), "
+                    "e.g. 'reliability problems breakdowns'."
                 ),
             },
             "brand": {"type": "string"},
@@ -185,6 +195,20 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
             clauses.append(f"{column} {operator} %s")
             params.append(value)
 
+    # French A2 licence, derived from specs (1 hp = 0.7355 kW): direct
+    # eligibility is <=35 kW AND <=0.2 kW/kg; a bike whose unrestricted
+    # power is <=70 kW can be sold restricted ('bridable'). weight_kg mixes
+    # wet and dry figures (dry is a fallback in the scraper), so the ratio
+    # test is an approximation — the a2 column says which case applies and
+    # rows without power data are excluded rather than guessed.
+    _A2_DIRECT = ("(power_hp * 0.7355 <= 35 AND weight_kg IS NOT NULL "
+                  "AND power_hp * 0.7355 / weight_kg <= 0.2)")
+    _A2_BRIDABLE = "(power_hp * 0.7355 > 35 AND power_hp * 0.7355 <= 70)"
+    a2_select = (f"CASE WHEN {_A2_DIRECT} THEN 'A2' "
+                 f"WHEN {_A2_BRIDABLE} THEN 'A2 bridable' END AS a2")
+    if kwargs.get("a2_only"):
+        clauses.append(f"power_hp IS NOT NULL AND ({_A2_DIRECT} OR {_A2_BRIDABLE})")
+
     if kwargs.get("count_only"):
         with conn.cursor() as cur:
             cur.execute(f"SELECT count(*) FROM motorcycles WHERE {' AND '.join(clauses)}", params)
@@ -202,7 +226,8 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
     limit = int(kwargs.get("limit") or 10)
     query = f"""
         SELECT brand, model, year, category, category_fr, displacement_ccm,
-               weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url
+               weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url,
+               {a2_select}
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
         ORDER BY {column} {direction} NULLS LAST
@@ -247,36 +272,66 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
 
     query_vector = embed_text(query)
     limit = int(limit or 5)
-    # Two-stage retrieval: the dense index shortlists cheaply, the
-    # cross-encoder (which reads query and comment together) reorders the
-    # shortlist — that's what fixes the hard cross-lingual cases the
-    # layer-1 eval caught, at a cost only viable on ~dozens of candidates.
-    fetch = min(max(limit * 6, 20), 50) if reranker.enabled() else limit
+    # Hybrid, three stages: (1) a dense shortlist (HNSW) and a sparse
+    # full-text shortlist (GIN) run as two separately-indexed queries;
+    # (2) reciprocal rank fusion merges them — sparse catches the exact
+    # terms dense blurs (model codes, 'brakes'), dense catches the
+    # paraphrases sparse can't see; (3) the cross-encoder reranks the
+    # fused pool when enabled. The corpus is English, so the sparse leg
+    # only fires on English query words — French rides on dense+rerank.
+    fetch = min(max(limit * 6, 20), 50) if reranker.enabled() else max(limit * 3, 15)
 
-    sql = f"""
-        SELECT f.brand, f.family_name AS model_family,
+    select = """
+        SELECT rc.id, f.brand, f.family_name AS model_family,
                f.year_min AS family_year_min, f.year_max AS family_year_max,
                rc.comment_text, rc.author, rc.posted_at,
                rc.embedding <=> %s::vector AS distance
         FROM review_chunks rc
         JOIN model_families f ON f.id = rc.family_id
-        WHERE {' AND '.join(clauses)}
-        ORDER BY rc.embedding <=> %s::vector
-        LIMIT %s
     """
-    params_with_vector = [query_vector, *params, query_vector, fetch]
+    where = " WHERE " + " AND ".join(clauses)
 
     with conn.cursor() as cur:
-        cur.execute(sql, params_with_vector)
+        cur.execute(select + where + " ORDER BY rc.embedding <=> %s::vector LIMIT %s",
+                    [query_vector, *params, query_vector, fetch])
         columns = [desc.name for desc in cur.description]
-        rows = [dict(zip(columns, row)) for row in cur.fetchall()]
+        dense = [dict(zip(columns, row)) for row in cur.fetchall()]
 
-    if reranker.enabled() and len(rows) > limit:
-        scores = reranker.rerank(query, [r["comment_text"] for r in rows])
-        for row, score in zip(rows, scores):
+        # websearch_to_tsquery ANDs the words, which is right when it hits
+        # ('brake noise') and returns nothing on longer phrasings ('KTM SMC
+        # supermoto opinions'); fall back to OR so the rare exact term
+        # still gets its shot — ts_rank_cd favors multi-word matches anyway.
+        # NULL distance: computing the 1024-dim cosine for every full-text
+        # candidate before the sort costs seconds on common words.
+        sparse_select = select.replace("rc.embedding <=> %s::vector AS distance",
+                                       "NULL::float AS distance")
+        sparse = []
+        for ts_query in (query, " or ".join(query.split())):
+            cur.execute(
+                sparse_select + where
+                + " AND rc.comment_tsv @@ websearch_to_tsquery('english', %s)"
+                + " ORDER BY ts_rank_cd(rc.comment_tsv, websearch_to_tsquery('english', %s)) DESC LIMIT %s",
+                [*params, ts_query, ts_query, fetch])
+            sparse = [dict(zip(columns, row)) for row in cur.fetchall()]
+            if sparse:
+                break
+
+    fused: dict[int, dict] = {}
+    for rows_ in (dense, sparse):
+        for rank, row in enumerate(rows_):
+            entry = fused.setdefault(row["id"], {**row, "rrf": 0.0})
+            entry["rrf"] = round(entry["rrf"] + 1.0 / (60 + rank), 5)
+    pool = sorted(fused.values(), key=lambda r: r["rrf"], reverse=True)[:fetch]
+
+    if reranker.enabled() and len(pool) > limit:
+        scores = reranker.rerank(query, [r["comment_text"] for r in pool])
+        for row, score in zip(pool, scores):
             row["rerank_score"] = round(score, 4)
-        rows.sort(key=lambda r: r["rerank_score"], reverse=True)
-    return rows[:limit]
+        pool.sort(key=lambda r: r["rerank_score"], reverse=True)
+
+    for row in pool:
+        row.pop("id", None)
+    return pool[:limit]
 
 
 # bikez spec pages carry navigation/ad rows in the same table as real specs;

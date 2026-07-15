@@ -236,8 +236,10 @@ PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
 ## Roadmap
 
 1. ~~Price enrichment from motoplanete.com~~ **done** (7,137 bikes priced,
-   plus `category_fr`); A2-version info (35 kW bridage) from the same fiches
-   remains to harvest — feeds a future "permis A2" filter.
+   plus `category_fr`); ~~"permis A2" filter~~ **done** — derived from the
+   specs already in base (<=35 kW and <=0.2 kW/kg direct, <=70 kW
+   restrictable): `filter_specs(a2_only=true)`, 15,593 eligible bikes,
+   results carry an `a2` column saying 'A2' or 'A2 bridable'.
 2. ~~Scale scraping beyond the 2024 demo year~~ **done** (century +
    2000-2023 crawls: 32,395 bikes, 107,952 embedded comments)
 3. ~~Better entity resolution across sources~~ **done**
@@ -246,11 +248,15 @@ PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
    through concrete model-year rows instead of family names.
 4. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
-5. ~~Cross-lingual retrieval hardening~~ **partially done**:
-   `search_reviews` now reranks its dense top-50 with `bge-reranker-v2-m3`
+5. ~~Cross-lingual retrieval hardening~~ **done**:
+   `search_reviews` is now three-stage — dense HNSW shortlist + English
+   full-text shortlist (GIN, websearch with OR fallback) fused by
+   reciprocal rank fusion, then `bge-reranker-v2-m3` reranks the pool
    (+57% on-topic results in French queries' top-10, see
-   [`eval_results/retrieval/`](eval_results/retrieval/)). Dense recall
-   remains the bound — hybrid dense+sparse is the remaining lever.
+   [`eval_results/retrieval/`](eval_results/retrieval/)); the agent is
+   instructed to phrase `query` in English (the corpus's language),
+   which its models translate natively. ~3s per search on Apple
+   Silicon, reranker skippable via RERANKER_ENABLED=0.
 6. ~~Hugging Face Spaces deployment~~ **shipped as a static showcase**:
    [huggingface.co/spaces/masonpaint/bikefinder-rag](https://huggingface.co/spaces/masonpaint/bikefinder-rag)
    (proof documents, eval results, a real captured session). The full

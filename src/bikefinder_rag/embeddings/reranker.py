@@ -29,7 +29,11 @@ def enabled() -> bool:
 def _get_model():
     from sentence_transformers import CrossEncoder
 
-    return CrossEncoder(MODEL_NAME, device=os.environ.get("EMBEDDER_DEVICE") or None)
+    # max_length 512: forum comments run up to 65 KB and the M3 backbone
+    # would happily attend over 8k tokens — seconds per pair for signal
+    # that lives in the first paragraphs anyway.
+    return CrossEncoder(MODEL_NAME, max_length=512,
+                        device=os.environ.get("EMBEDDER_DEVICE") or None)
 
 
 def rerank(query: str, texts: list[str]) -> list[float]:
