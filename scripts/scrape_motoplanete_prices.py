@@ -149,6 +149,13 @@ def main() -> None:
                 done_out.write(url + "\n")
                 done_out.flush()
                 continue
+            except requests.RequestException as exc:
+                # Transient network trouble (read timeout, reset...) must not
+                # kill a 32h crawl: back off and move on, leaving the URL
+                # undone so the next run retries it.
+                print(f"  network error, will retry next run: {url}: {exc}", file=sys.stderr)
+                time.sleep(BACKOFF_SECONDS)
+                continue
             row = parse_fiche(url, page)
             out.write(json.dumps(row, ensure_ascii=False) + "\n")
             out.flush()
