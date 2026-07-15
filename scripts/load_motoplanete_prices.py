@@ -27,9 +27,7 @@ Run:
 """
 
 import json
-import re
 import sys
-from collections import defaultdict
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -38,17 +36,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 load_dotenv()
 
 from bikefinder_rag.db.client import get_connection
+from bikefinder_rag.matching import MotorcycleMatcher
 
 PRICES_PATH = Path(__file__).resolve().parent.parent / "data/motoplanete/prices.jsonl"
 
 ALTER = "ALTER TABLE motorcycles ADD COLUMN IF NOT EXISTS category_fr TEXT"
-
-
-def _tokens(s: str) -> list[str]:
-    """Alternating alpha/digit tokens: 'ZX-10R 1000' -> ['zx','10','r','1000'].
-    Token-level (not substring) matching is what keeps '1098 R' from
-    matching 'Superbike 1098 S' via the 'r' inside 'Superbike'."""
-    return re.findall(r"[a-z]+|\d+", str(s).lower())
 
 
 # motoplanete brand slugs vs how our bikez scrape (mis)split multi-word
@@ -74,65 +66,21 @@ def main() -> None:
         with conn.cursor() as cur:
             cur.execute(ALTER)
 
-        by_year: dict[int, list] = defaultdict(list)
         with conn.cursor() as cur:
             cur.execute("SELECT id, brand, model, year FROM motorcycles")
-            for mid, brand, model, year in cur.fetchall():
-                by_year[year].append((mid, set(_tokens(f"{brand} {model}"))))
-
-        def match_year(fiche_tokens: list[str], year: int) -> list[int]:
-            """Rows of `year` whose brand+model tokens contain every fiche
-            token; tightest (fewest extra tokens) wins. Second pass drops the
-            fiche's displacement-suffix tokens ('YZF-R1 1000') if the strict
-            pass found nothing."""
-            for required in (fiche_tokens,
-                             [t for t in fiche_tokens if not (t.isdigit() and int(t) >= 50)]):
-                if not required:
-                    continue
-                best_extra, best_ids = None, []
-                for mid, row_tokens in by_year.get(year, []):
-                    if not all(t in row_tokens for t in required):
-                        continue
-                    extra = len(row_tokens - set(required))
-                    if best_extra is None or extra < best_extra:
-                        best_extra, best_ids = extra, [mid]
-                    elif extra == best_extra:
-                        best_ids.append(mid)
-                if best_ids:
-                    return best_ids
-
-            # Reverse direction: the fiche is the verbose side ('CBR 1000 RR
-            # Fireblade' vs our 'CBR 1000 RR') — every row token must appear
-            # in the fiche, most-specific (most tokens) row wins. Two tokens
-            # minimum, otherwise a bare brand row would match anything.
-            fiche_set = set(fiche_tokens)
-            best_size, best_ids = 0, []
-            for mid, row_tokens in by_year.get(year, []):
-                if len(row_tokens) < 3 or not row_tokens <= fiche_set:
-                    continue
-                if len(row_tokens) > best_size:
-                    best_size, best_ids = len(row_tokens), [mid]
-                elif len(row_tokens) == best_size:
-                    best_ids.append(mid)
-            return best_ids
+            matcher = MotorcycleMatcher(cur.fetchall())
 
         priced = categorized = matched_fiches = year_shifted = 0
         with conn.cursor() as cur:
             for fiche in fiches:
                 brand = _BRAND_ALIASES.get(fiche["brand"], fiche["brand"])
-                fiche_tokens = _tokens(f"{brand} {fiche['model']}")
-
-                best_ids = match_year(fiche_tokens, fiche["year"])
                 # Launch year vs model year is often off by one between the
-                # two sites; a ±1 fallback keeps the price representative.
-                if not best_ids:
-                    for dy in (-1, 1):
-                        best_ids = match_year(fiche_tokens, fiche["year"] + dy)
-                        if best_ids:
-                            year_shifted += 1
-                            break
+                # two sites, hence the ±1 fallback inside the matcher.
+                best_ids, dy = matcher.match(brand, fiche["model"], fiche["year"])
                 if not best_ids:
                     continue
+                if dy:
+                    year_shifted += 1
                 matched_fiches += 1
                 if fiche["price_eur"]:
                     cur.execute(

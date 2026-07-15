@@ -19,7 +19,6 @@ Run (downloads the dataset via kagglehub on first use, ~2 MB):
     PYTHONPATH=src .venv/bin/python scripts/load_used_prices.py
 """
 
-import re
 import sys
 from pathlib import Path
 
@@ -31,6 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 load_dotenv()
 
 from bikefinder_rag.db.client import get_connection
+from bikefinder_rag.matching import MotorcycleMatcher
 
 KAGGLE_DATASET = "mexwell/motorbike-marketplace"
 SNAPSHOT_YEAR = 2022
@@ -54,41 +54,22 @@ CREATE INDEX IF NOT EXISTS used_price_family_idx ON used_price_estimates (family
 """
 
 
-def _norm(s: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", str(s).lower())
-
-
-def load_families(conn):
-    by_brand: dict[str, list] = {}
+def match_listings(df: pd.DataFrame, conn) -> pd.Series:
+    """family_id per listing (NaN when unmatched). Listings are matched
+    against concrete model-year rows with the shared token matcher, then
+    rolled up to the row's family — precise by construction, and immune to
+    bikez's family split ('Bandit' vs 'GSF 1200 Bandit' are different
+    forums, but their bikes carry the right family_id). Registration year
+    lags model year, hence the backward-leaning offsets. A listing whose
+    tightest matches straddle several families is ambiguous and dropped."""
     with conn.cursor() as cur:
-        cur.execute("SELECT id, brand, family_name, year_min, year_max FROM model_families")
-        for fid, brand, name, ymin, ymax in cur.fetchall():
-            words = re.sub(r"[^a-z0-9 ]", "", name.lower()).split()
-            if len("".join(words)) < 3:
-                continue
-            by_brand.setdefault(_norm(brand), []).append((fid, words, ymin, ymax))
-    return by_brand
-
-
-def match_listings(df: pd.DataFrame, by_brand) -> pd.Series:
-    """family_id per listing (NaN when unmatched). Longest family name wins
-    so 'GSF 1200 Bandit' beats a shorter sibling that also fits."""
-    brands = sorted(by_brand, key=len, reverse=True)
+        cur.execute("SELECT family_id, brand, model, year FROM motorcycles WHERE family_id IS NOT NULL")
+        matcher = MotorcycleMatcher((fid, b, m, y) for fid, b, m, y in cur.fetchall())
 
     def match(text: str, reg_year: float):
-        brand = next((b for b in brands if text.startswith(b)), None)
-        if not brand:
-            return None
-        rest = text[len(brand):]
-        best = None
-        for fid, words, ymin, ymax in by_brand[brand]:
-            if not all(w in rest for w in words):
-                continue
-            if pd.notna(reg_year) and not (ymin - 1 <= reg_year <= ymax + 2):
-                continue
-            if best is None or len("".join(words)) > best[1]:
-                best = (fid, len("".join(words)))
-        return best[0] if best else None
+        fids, _ = matcher.match("", text, int(reg_year), year_offsets=(0, -1, -2, -3, 1))
+        distinct = set(fids)
+        return fids[0] if len(distinct) == 1 else None
 
     return df.apply(lambda r: match(r["text"], r["reg_year"]), axis=1)
 
@@ -96,7 +77,7 @@ def match_listings(df: pd.DataFrame, by_brand) -> pd.Series:
 def main() -> None:
     path = Path(kagglehub.dataset_download(KAGGLE_DATASET)) / "europe-motorbikes-zenrows.csv"
     df = pd.read_csv(path)
-    df["text"] = (df.make_model.fillna("") + " " + df.version.fillna("")).map(_norm)
+    df["text"] = df.make_model.fillna("") + " " + df.version.fillna("")
     df["reg_year"] = pd.to_numeric(df.date.str.extract(r"/(\d{4})")[0], errors="coerce")
 
     df = df[df.price.between(PRICE_MIN, PRICE_MAX) & (df.offer_type == "Used") & df.reg_year.notna()]
@@ -107,7 +88,7 @@ def main() -> None:
         with conn.cursor() as cur:
             cur.execute(SCHEMA)
 
-        df = df.assign(family_id=match_listings(df, load_families(conn)))
+        df = df.assign(family_id=match_listings(df, conn))
         matched = df[df.family_id.notna()]
         print(f"{len(matched)} listings matched to a model family.", file=sys.stderr)
 
