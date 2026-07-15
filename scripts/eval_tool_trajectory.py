@@ -193,6 +193,14 @@ EXPECTATIONS = {
         ("brand Kawasaki", call_mentions("filter_specs", r"kawasaki")),
         ("asks for a count", arg_truthy("filter_specs", "count_only")),
     ],
+    "recall-1": [
+        ("calls get_bike_details", used("get_bike_details")),
+        ("targets the Multistrada", call_mentions("get_bike_details", r"multistrada")),
+    ],
+    "cote-1": [
+        ("calls get_bike_details", used("get_bike_details")),
+        ("targets the Bandit 1200", call_mentions("get_bike_details", r"bandit|gsf")),
+    ],
 }
 
 

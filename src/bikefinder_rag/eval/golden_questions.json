@@ -13,5 +13,7 @@
   {"id": "honesty-2", "type": "honesty-check", "question": "What do owners say about the 1930 BMW R 16?"},
   {"id": "details-1", "type": "details", "question": "What is the fuel capacity of the Suzuki GSF 1200 Bandit?"},
   {"id": "details-2", "type": "details", "question": "Quel type de refroidissement a l'Aprilia RS 125 ?"},
-  {"id": "count-1", "type": "structured", "question": "How many Kawasaki motorcycles are in the database?"}
+  {"id": "count-1", "type": "structured", "question": "How many Kawasaki motorcycles are in the database?"},
+  {"id": "recall-1", "type": "details", "question": "Are there any known safety recalls for the Ducati Multistrada?"},
+  {"id": "cote-1", "type": "details", "question": "Quel est le prix d'une Suzuki Bandit 1200 d'occasion ?"}
 ]

@@ -1,10 +1,10 @@
 {
   "backend": "ollama",
   "model": "mistral-small3.2",
-  "questions_ok": 15,
-  "questions_total": 15,
-  "checks_ok": 40,
-  "checks_total": 40,
+  "questions_ok": 16,
+  "questions_total": 17,
+  "checks_ok": 43,
+  "checks_total": 44,
   "per_question": [
     {
       "id": "struct-1",
@@ -42,7 +42,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Here are some naked bikes between 600cc and 900cc:\n\n- **MV Agusta Dragster R** (798cc)\n- **Kawasaki Z650** (649cc)\n- **KTM 890 Duke R** (889cc)\n- **Benelli 752S** (754cc)\n- **Benelli Leoncino 800** (754cc)\n- **Benelli TNT 600i** (600cc)\n- **MV Agusta Dragster RC Racing** (798cc)\n- **KTM 790 Duke** ("
+      "answer_head": "Here are some naked bikes between 600cc and 900cc:\n\n- **MV Agusta Brutale 800 RR** (798cc)\n- **MV Agusta Dragster R** (798cc)\n- **MV Agusta Brutale 800 R** (798cc)\n- **Benelli 752S** (754cc)\n- **Benelli Leoncino 800** (754cc)\n- **Benelli TNT 600i** (600cc)\n- **Moto Morini Seiemmezzo 650 SCR** (649cc"
     },
     {
       "id": "struct-2",
@@ -53,10 +53,10 @@
         {
           "name": "filter_specs",
           "args": {
-            "min_year": 1980,
-            "max_year": 1989,
             "brand": "Harley-Davidson",
-            "category": "Custom/Cruiser"
+            "category": "Custom/Cruiser",
+            "min_year": 1980,
+            "max_year": 1989
           }
         }
       ],
@@ -110,7 +110,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Voici les motos tout-terrain/enduros qui pèsent moins de 130 kg :\n\n- GAS EC 250 (2023) - Poids : 105,8 kg\n- GAS EC 300 (2023) - Poids : 105,8 kg\n- GAS EC 350F (2023) - Poids : 106,4 kg\n- GAS EC 250F (2023) - Poids : 105,6 kg\n- GAS EX 250F (2023) - Poids : 100,0 kg\n- GAS EX 300 (2023) - Poids : 101,3"
+      "answer_head": "Voici une liste de motos enduro/offroad qui pèsent moins de 130 kg :\n\n- GAS EC 250F (2023) - Poids : 105,6 kg\n- GAS EC 300 (2023) - Poids : 105,8 kg\n- GAS EC 350F (2023) - Poids : 106,4 kg\n- GAS EX 250 (2023) - Poids : 101,3 kg\n- GAS EX 250F (2023) - Poids : 100,0 kg\n- GAS EX 300 (2023) - Poids : 10"
     },
     {
       "id": "struct-4",
@@ -143,7 +143,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Here are some sport motorcycles with a seat height under 800mm:\n\n- **Harley-Davidson Sportster S** (2023) - Seat Height: 734mm\n- **Harley-Davidson Nightster Special** (2023) - Seat Height: 688mm\n- **Harley-Davidson Nightster** (2023) - Seat Height: 688mm\n- **AJS Cadwell 125** (2023) - Seat Height: 7"
+      "answer_head": "Here are some sport motorcycles with a seat height under 800mm:\n\n1. **Honda CBR150R (2023)**\n   - Seat Height: 788 mm\n   - Displacement: 149 ccm\n   - Weight: 138 kg\n\n2. **AJS Cadwell 125 (2023)**\n   - Seat Height: 740 mm\n   - Displacement: 124 ccm\n   - Torque: 9.5 Nm\n\n3. **Arch KRGT-1 (2023)**\n   - "
     },
     {
       "id": "struct-5",
@@ -154,9 +154,9 @@
         {
           "name": "filter_specs",
           "args": {
+            "max_year": 1959,
             "category": "Custom/Cruiser",
-            "min_year": 1950,
-            "max_year": 1959
+            "min_year": 1950
           }
         }
       ],
@@ -177,7 +177,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "Voici les motos custom/cruiser des années 1950 présentes dans la base de données :\n\n- **Harley-Davidson XLCH Sportster** (1957, 1958, 1959)\n  - Displacement: 883 ccm\n  - Weight: 205 kg\n  - Power: 50 hp\n\n- **Adler M 250** (1952, 1953, 1954)\n  - Displacement: 250 ccm\n  - Weight: 135 kg\n  - Power: 16 h"
+      "answer_head": "Voici les motos custom/cruiser des années 1950 présentes dans la base de données :\n\n- **Harley-Davidson XLCH Sportster** (1957, 1958, 1959)\n  - Cylindrée : 883 cm³\n  - Poids : 205 kg\n  - Puissance : 50 ch\n\n- **Adler M 250** (1952, 1953, 1954)\n  - Cylindrée : 250 cm³\n  - Poids : 135 kg\n  - Puissance "
     },
     {
       "id": "narrative-1",
@@ -188,9 +188,8 @@
         {
           "name": "search_reviews",
           "args": {
-            "brand": "Harley Davidson",
             "model": "Electra Glide Classic",
-            "query": "owners reviews"
+            "brand": "Harley-Davidson"
           }
         }
       ],
@@ -207,7 +206,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "There is no owner discussion on record for the Harley-Davidson Electra Glide Classic."
+      "answer_head": "Here are some general impressions from owners of the Harley-Davidson Electra Glide family:\n\n1. **Paul D** (2008) shared excitement about purchasing a 1992 Electra Glide Classic as their first Harley-Davidson, looking forward to learning more about it.\n2. **E. Foutz** (2011) inherited a 2003 Electra "
     },
     {
       "id": "narrative-2",
@@ -219,6 +218,7 @@
           "name": "search_reviews",
           "args": {
             "model": "F 650",
+            "brand": "BMW",
             "query": "known issues"
           }
         }
@@ -236,7 +236,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "There are no owner discussions on record about the BMW F 650."
+      "answer_head": "There are no owner discussions on record about known issues with the BMW F 650."
     },
     {
       "id": "narrative-3",
@@ -247,8 +247,8 @@
         {
           "name": "search_reviews",
           "args": {
-            "brand": "Aprilia",
-            "model": "RS 125"
+            "model": "RS 125",
+            "brand": "Aprilia"
           }
         }
       ],
@@ -279,14 +279,15 @@
             "category": "Naked bike",
             "max_displacement_ccm": 600,
             "min_year": 2010,
-            "order_by": "weight_kg"
+            "order_by": "weight_kg",
+            "limit": 5
           }
         },
         {
           "name": "search_reviews",
           "args": {
-            "query": "reliability problems breakdowns",
-            "model": "Z125 Pro"
+            "model": "Racing TT",
+            "brand": "Tomos"
           }
         }
       ],
@@ -305,13 +306,13 @@
         },
         {
           "label": "asks reviews about reliability",
-          "ok": true
+          "ok": false
         }
       ],
       "unknown_tools": [],
       "hit_turn_limit": false,
-      "all_ok": true,
-      "answer_head": "Here are some light beginner naked bikes under 600cc:\n\n- Tomos Racing TT (2017)\n- Rieju RS3 125 NKD (2013)\n- Lexmoto Aspire 50 (2021)\n- Senke X6 (2012)\n- Kymco K-Pipe 125 (2022)\n- Fosti F21 (2021)\n- Kawasaki Z125 Pro (2016, 2021, 2022, 2023)\n\nUnfortunately there's no owner discussion on record for a"
+      "all_ok": false,
+      "answer_head": "Here are some light beginner naked bikes under 600cc:\n\n1. **Tomos Racing TT (2017)**\n   - Displacement: 49 cc\n   - Weight: 65 kg\n   - Seat Height: 790 mm\n\n2. **Rieju RS3 125 NKD (2013)**\n   - Displacement: 125 cc\n   - Weight: 84 kg\n\n3. **Lexmoto Aspire 50 (2021)**\n   - Displacement: 49 cc\n   - Weigh"
     },
     {
       "id": "hybrid-2",
@@ -322,16 +323,16 @@
         {
           "name": "search_reviews",
           "args": {
-            "query": "owner feedback",
+            "model": "CBR 1000 F",
             "brand": "Honda",
-            "model": "CBR 1000 F"
+            "query": "owner feedback"
           }
         },
         {
           "name": "search_reviews",
           "args": {
-            "brand": "Suzuki",
             "model": "GSF 1200 Bandit",
+            "brand": "Suzuki",
             "query": "owner feedback"
           }
         }
@@ -353,7 +354,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "### Owner Feedback Comparison\n\n#### Honda CBR 1000 F\nOwners of the **Honda CBR 1000 F** have shared various experiences and insights:\n- A rookie owner mentioned being a new owner of a used PB1 model, indicating satisfaction with their purchase.\n- Another potential buyer sought guidance and owners' v"
+      "answer_head": "### Owner Feedback Comparison\n\n#### Honda CBR 1000 F\nOwners of the **Honda CBR 1000 F** have shared various experiences and insights:\n- One owner mentioned being a rookie with a used model, indicating that it might be suitable for beginners or those new to the bike.\n- Another potential buyer sought "
     },
     {
       "id": "honesty-1",
@@ -383,7 +384,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "The price data is sparse, so I can't answer that question."
+      "answer_head": "The cheapest motorcycle under 3000 EUR in the database is a **Harley-Davidson FLHTCU Ultra Classic Electra Glide** from 2009, priced at just €1. However, this price seems unusually low and may be an error or special case.\n\nOther options under €500 include several BMW R27 models from the early 1960s,"
     },
     {
       "id": "honesty-2",
@@ -394,9 +395,10 @@
         {
           "name": "search_reviews",
           "args": {
-            "brand": "BMW",
             "model": "R 16",
-            "query": "owner reviews"
+            "brand": "BMW",
+            "min_year": 1930,
+            "max_year": 1930
           }
         }
       ],
@@ -413,7 +415,7 @@
       "unknown_tools": [],
       "hit_turn_limit": false,
       "all_ok": true,
-      "answer_head": "There are no owner discussions on record for the 1930 BMW R 16."
+      "answer_head": "I couldn't find any owner discussions about the 1930 BMW R 16. The database doesn't have forum comments for every motorcycle model, especially older ones like this.\n\nIf you're interested in general information or specifications about the 1930 BMW R 16, I can try to help with that instead."
     },
     {
       "id": "details-1",
@@ -424,8 +426,8 @@
         {
           "name": "get_bike_details",
           "args": {
-            "brand": "Suzuki",
-            "model": "GSF 1200 Bandit"
+            "model": "GSF 1200 Bandit",
+            "brand": "Suzuki"
           }
         }
       ],
@@ -482,8 +484,8 @@
         {
           "name": "filter_specs",
           "args": {
-            "count_only": true,
-            "brand": "Kawasaki"
+            "brand": "Kawasaki",
+            "count_only": true
           }
         }
       ],
@@ -505,6 +507,64 @@
       "hit_turn_limit": false,
       "all_ok": true,
       "answer_head": "There are 2,353 Kawasaki motorcycles in the database. What would you like to know about them?"
+    },
+    {
+      "id": "recall-1",
+      "type": "details",
+      "question": "Are there any known safety recalls for the Ducati Multistrada?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "get_bike_details",
+          "args": {
+            "model": "Multistrada",
+            "brand": "Ducati"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls get_bike_details",
+          "ok": true
+        },
+        {
+          "label": "targets the Multistrada",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "The Ducati Multistrada family has one known safety recall in the US market:\n- **2021 model year**: Excessive wear of the valve guides may cause the valve head to break (affects 129 units).\n\nThis data covers only the United States. Recall information for other regions is not included.\n\nWould you like"
+    },
+    {
+      "id": "cote-1",
+      "type": "details",
+      "question": "Quel est le prix d'une Suzuki Bandit 1200 d'occasion ?",
+      "n_tool_calls": 1,
+      "calls": [
+        {
+          "name": "get_bike_details",
+          "args": {
+            "model": "Bandit 1200",
+            "brand": "Suzuki"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "label": "calls get_bike_details",
+          "ok": true
+        },
+        {
+          "label": "targets the Bandit 1200",
+          "ok": true
+        }
+      ],
+      "unknown_tools": [],
+      "hit_turn_limit": false,
+      "all_ok": true,
+      "answer_head": "La Suzuki Bandit 1200 est une moto nue (roadster) de 1157 cm³, disponible en plusieurs versions comme la Bandit 1200S et la Bandit 1200 SA. Voici quelques spécifications clés :\n\n- **Poids à sec** : Entre 212 kg et 221 kg selon le modèle.\n- **Hauteur de selle** : Environ 785 mm à 790 mm, ajustable su"
     }
   ]
 }

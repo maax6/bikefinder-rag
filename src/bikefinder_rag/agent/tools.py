@@ -124,9 +124,11 @@ GET_BIKE_DETAILS_SCHEMA = {
     "description": (
         "Full factory spec sheet for ONE specific motorcycle: fuel capacity, "
         "cooling system, transmission, tires, brakes, suspension, bore x "
-        "stroke, and every other spec bikez.com lists. Use when the user asks "
-        "about a spec of a specific bike that filter_specs doesn't return. "
-        "Returns the most recent model-years unless a year is given."
+        "stroke, and every other spec bikez.com lists — plus, for the model "
+        "family: known US safety recalls (NHTSA) and an indicative used-market "
+        "price estimate. Use for questions about a specific bike's specs, its "
+        "recalls/reliability record, or its used price. Returns the most "
+        "recent model-years unless a year is given."
     ),
     "input_schema": {
         "type": "object",
@@ -287,7 +289,7 @@ def get_bike_details(conn, model: str, brand: str | None = None, year: int | Non
     sql = f"""
         SELECT brand, model, year, category, category_fr, displacement_ccm,
                weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url,
-               raw_specs
+               raw_specs, family_id
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
         ORDER BY year DESC
@@ -298,6 +300,7 @@ def get_bike_details(conn, model: str, brand: str | None = None, year: int | Non
         columns = [desc.name for desc in cur.description]
         rows = [dict(zip(columns, row)) for row in cur.fetchall()]
 
+    family_ids = {row.pop("family_id") for row in rows} - {None}
     for row in rows:
         specs = row.pop("raw_specs", None) or {}
         # "Loading..." is bikez's client-side placeholder — some scraped
@@ -306,7 +309,53 @@ def get_bike_details(conn, model: str, brand: str | None = None, year: int | Non
             k: v for k, v in specs.items()
             if k not in _RAW_SPECS_NOISE and v and v.strip() and v.strip() != "Loading..."
         }
+    if family_ids:
+        rows.append(_family_context(conn, sorted(family_ids)))
     return rows
+
+
+def _family_context(conn, family_ids: list[int]) -> dict:
+    """Recalls and used-price estimates for the matched families, appended
+    as one extra dict so the spec rows stay clean."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            SELECT model_year, component, left(defect, 180), units_affected
+            FROM recalls WHERE family_id = ANY(%s)
+            ORDER BY model_year DESC NULLS LAST LIMIT 5
+            """,
+            (family_ids,),
+        )
+        recalls = [
+            {"model_year": y, "component": c, "defect": d, "units_affected": u}
+            for y, c, d, u in cur.fetchall()
+        ]
+        cur.execute("SELECT count(*) FROM recalls WHERE family_id = ANY(%s)", (family_ids,))
+        recall_count = cur.fetchone()[0]
+
+        cur.execute(
+            """
+            SELECT n_listings, price_median, price_p25, price_p75,
+                   mileage_median, snapshot_year
+            FROM used_price_estimates
+            WHERE family_id = ANY(%s) AND reg_year IS NULL
+            ORDER BY n_listings DESC LIMIT 1
+            """,
+            (family_ids,),
+        )
+        cote = cur.fetchone()
+
+    context: dict[str, Any] = {"known_us_recalls_total": recall_count}
+    if recalls:
+        context["recent_recalls"] = recalls
+    if cote:
+        context["used_price_estimate"] = {
+            "n_listings": cote[0], "price_median_eur": cote[1],
+            "price_p25_eur": cote[2], "price_p75_eur": cote[3],
+            "mileage_median_km": cote[4],
+            "note": f"asking prices from a {cote[5]} European marketplace snapshot",
+        }
+    return context
 
 
 # Near-miss argument names observed from local models: remap instead of
