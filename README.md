@@ -13,9 +13,9 @@ that got reversed) is in the [project's Notion doc] — the short version:
 
 - **Corpus**: self-scraped from [bikez.com](https://bikez.com) (specs + owner
   discussion forums), not a pre-packaged Kaggle dump — see [Data source](#data-source--why-self-scrape).
-  Currently **9,702 motorcycles (1894–2024), 1,657 model families, 82,589
-  embedded owner comments** — the full last century plus the 2024 lineup of
-  the major street brands, datasets shipped in `data/`.
+  Currently **32,395 motorcycles (1894–2024), 4,335 model families, 107,952
+  embedded owner comments** — the full last century, the 2000-2023 catalog
+  and the 2024 lineup, datasets shipped in `data/`.
 - **Category filter**: `Scooter` is excluded *unless* displacement ≥ 500cc
   (keeps crossovers like the Honda X-ADV or Yamaha TMAX, drops twist-and-go
   commuters), `ATV` is always excluded, everything else — including
@@ -58,20 +58,14 @@ that got reversed) is in the [project's Notion doc] — the short version:
   constraints — **0.0% violation rate** over 41 verified mentions
   ([`eval_results/constraints/`](eval_results/constraints/)).
   [RAGAS](https://github.com/explodinggpt/ragas)
-  (faithfulness, answer relevancy) then scores the full agent over a golden
-  question set — generation by mistral-small (local), and the same answers
-  graded by **two independent judges**: qwen3.6 (local) gives
-  **0.61 / 0.76**, Haiku via `claude -p` gives **0.71 / 0.77**
-  ([`eval_results/ragas/`](eval_results/ragas/)). The judges
-  converge per-question: structured-filter questions 0.9-1.0 for both,
-  and both give 0.0 to the same answer where the *local generator*
-  contradicts its own tool results (answering "no owner reviews" while
-  real comments sit in its context) — a confirmed generation defect, not
-  judge noise. Both also flag the honesty checks' correct "no data on
-  record" answers, RAGAS's known penalty on refusals. An earlier pass
-  caught two real retrieval bugs (substring-only model matching, dropped
-  `query` arguments) whose fixes lifted narratives from 0.0 to 1.0.
-  Same harness, Claude backend as *generator*: pending an API key.
+  (faithfulness, answer relevancy) then scores the full agent over the
+  golden set: **0.76 / 0.87** (generation mistral-small3.2, judge Haiku
+  via `claude -p`, 17 questions on the full corpus) — up from 0.71/0.77
+  before the enrichment layers. An earlier two-judge pass (qwen3.6 local
+  + Haiku) converged per-question, caught two real retrieval bugs whose
+  fixes lifted narratives from 0.0 to 1.0, and documented RAGAS's known
+  penalty on honest "no data on record" refusals
+  ([`eval_results/ragas/`](eval_results/ragas/)).
 - **Interface**: Gradio, deployable on Hugging Face Spaces for free — visitors
   paste their own Anthropic API key (used only for their session, never
   stored server-side).
