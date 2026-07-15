@@ -91,3 +91,21 @@ CREATE TABLE IF NOT EXISTS recalls (
     UNIQUE NULLS NOT DISTINCT (campno, family_id, model_year)
 );
 CREATE INDEX IF NOT EXISTS recalls_family_idx ON recalls (family_id);
+
+-- Indicative used-market prices (scripts/load_used_prices.py): aggregates
+-- of a 2022 European marketplace snapshot, per family and registration
+-- year (reg_year NULL = whole-family rollup). Asking prices from one
+-- point in time — a cote indicative, not a pricing service.
+CREATE TABLE IF NOT EXISTS used_price_estimates (
+    id              SERIAL PRIMARY KEY,
+    family_id       INTEGER NOT NULL REFERENCES model_families(id),
+    reg_year        INTEGER,
+    n_listings      INTEGER NOT NULL,
+    price_median    INTEGER NOT NULL,
+    price_p25       INTEGER NOT NULL,
+    price_p75       INTEGER NOT NULL,
+    mileage_median  INTEGER,
+    snapshot_year   INTEGER NOT NULL,
+    UNIQUE NULLS NOT DISTINCT (family_id, reg_year)
+);
+CREATE INDEX IF NOT EXISTS used_price_family_idx ON used_price_estimates (family_id);
