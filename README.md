@@ -41,7 +41,7 @@ that got reversed) is in the [project's Notion doc] — the short version:
   specific model-year.
 - **Local, multilingual embeddings** (`BAAI/bge-m3`) — no embeddings API key
   needed, and queries in French retrieve English-language forum comments.
-- **Evaluation**: three layers, all with published results.
+- **Evaluation**: four layers, all with published results.
   [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
   retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
   21-82x over corpus base rate, negative controls rejected — see
@@ -52,6 +52,11 @@ that got reversed) is in the [project's Notion doc] — the short version:
   the Ollama options and the visible argument repair, taking mistral-small
   from 9/12 to 15/15 golden questions
   ([`eval_results/trajectory/`](eval_results/trajectory/)).
+  [`scripts/eval_constraints.py`](scripts/eval_constraints.py) then checks
+  the final answers themselves: every motorcycle named in a reply is
+  resolved against the database and verified against the question's hard
+  constraints — **0.0% violation rate** over 41 verified mentions
+  ([`eval_results/constraints/`](eval_results/constraints/)).
   [RAGAS](https://github.com/explodinggpt/ragas)
   (faithfulness, answer relevancy) then scores the full agent over a golden
   question set — generation by mistral-small (local), and the same answers
@@ -212,6 +217,11 @@ PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
 # (one model per run; writes eval_results/trajectory/trajectory_<model>.json):
 AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \
   PYTHONPATH=src .venv/bin/python scripts/eval_tool_trajectory.py
+
+# Layer 1.75 — hard-constraint violation rate of the final answers
+# (writes eval_results/constraints/constraints_<model>.json):
+AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \
+  PYTHONPATH=src .venv/bin/python scripts/eval_constraints.py
 
 # Layer 2 — RAGAS over the full agent. Generation model via OLLAMA_MODEL;
 # judge via RAGAS_JUDGE_MODEL: an Ollama model name (local), or

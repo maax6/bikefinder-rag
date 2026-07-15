@@ -7,6 +7,7 @@ du repo est « les résultats sont commités, les caches ne le sont pas ».
 |---|---|---|
 | [`retrieval/`](retrieval/) | 1 — retrieval seul, **aucun LLM** | La recherche sémantique pgvector + BGE-M3 fonctionne-t-elle vraiment ? |
 | [`trajectory/`](trajectory/) | 1,5 — tool calls, **aucun juge LLM** | Le modèle choisit-il les bons outils avec les bons arguments ? (prédicats déterministes sur les appels enregistrés) |
+| [`constraints/`](constraints/) | 1,75 — réponses finales, **aucun juge LLM** | Les motos recommandées violent-elles les contraintes dures (budget, cylindrée, poids…) ? Métrique primaire : taux de violation |
 | [`ragas/`](ragas/) | 2 — agent complet | Qualité des réponses finales (faithfulness, answer relevancy) notée par deux juges indépendants |
 
 Chaque dossier contient un README qui publie les chiffres et pointe vers le

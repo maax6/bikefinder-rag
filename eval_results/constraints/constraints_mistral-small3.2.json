@@ -1,0 +1,431 @@
+{
+  "backend": "ollama",
+  "model": "mistral-small3.2",
+  "mentions_total": 54,
+  "satisfied": 41,
+  "violated": 0,
+  "unverifiable": 13,
+  "violation_rate": 0.0,
+  "unverifiable_rate": 0.2407,
+  "per_question": [
+    {
+      "id": "cc-bracket",
+      "question": "What naked bikes are there between 600cc and 900cc?",
+      "constraints": {
+        "min_displacement_ccm": 600,
+        "max_displacement_ccm": 900,
+        "category": "naked"
+      },
+      "mentions": [
+        {
+          "mention": "**Benelli Leoncino 800**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Benelli TNT 600i**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Kawasaki Z650**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Yamaha MT-09 SP**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**KTM 790 Duke**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Triumph Trident 660**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Triumph Street Triple 765 RS**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Yamaha MT-09**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Suzuki GSX-8S**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Honda CB750 Hornet**",
+          "year": null,
+          "status": "satisfied",
+          "violations": []
+        }
+      ],
+      "satisfied": 10,
+      "violated": 0,
+      "unverifiable": 0,
+      "answer_head": "Here are some naked bikes between 600cc and 900cc available in 2024:\n\n- **Benelli Leoncino 800** (754cc)\n- **Benelli TNT 600i** (600cc)\n- **Kawasaki Z650** (649cc)\n- **Yamaha MT-09 SP** (890cc)\n- **KTM 790 Duke** (799cc)\n- **Triumph Trident 660** (660cc)\n- **Triumph Street Triple 765 RS** (765cc)\n- "
+    },
+    {
+      "id": "weight",
+      "question": "List enduro/offroad bikes that weigh under 130 kg.",
+      "constraints": {
+        "max_weight_kg": 130
+      },
+      "mentions": [
+        {
+          "mention": "**AJP SPR 125 Enduro**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**AJP SPR 240 Enduro**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Rieju MRT 50**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**AJP SPR 240X Enduro**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**GAS GAS EC 250**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Vent Baja RR 125 4T**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**GAS GAS EC 250F**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**GAS GAS EC 300**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**GAS GAS EC 350F**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Yamaha YZ65**",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        }
+      ],
+      "satisfied": 10,
+      "violated": 0,
+      "unverifiable": 0,
+      "answer_head": "Voici une liste de motos enduro/offroad qui pèsent moins de 130 kg :\n\n- **AJP SPR 125 Enduro** (2023) - Poids : 104 kg\n  - Displacement: 124 ccm\n  - Power: 12.5 hp\n  - Seat height: 890 mm\n\n- **AJP SPR 240 Enduro** (2023) - Poids : 106 kg\n  - Displacement: 233 ccm\n  - Power: 20.0 hp\n  - Seat height: "
+    },
+    {
+      "id": "seat",
+      "question": "List sport motorcycles with a seat height under 800mm.",
+      "constraints": {
+        "max_seat_height_mm": 800
+      },
+      "mentions": [
+        {
+          "mention": "**Benelli TNT 135",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "- Seat Height: 780 mm\n   - Displacement: 134.7 ccm\n\n2",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 790 mm\n   - Displacement: 149.7 ccm\n\n3",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 740 mm\n   - Displacement: 124.0 ccm\n\n4",
+          "year": 2023,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 706 mm\n   - Displacement: 2032.0 ccm\n\n5",
+          "year": 2023,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 788 mm\n   - Displacement: 149.0 ccm\n\n6",
+          "year": 2023,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 780 mm\n   - Displacement: 286.0 ccm\n\n7",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 800 mm\n   - Displacement: 1222.0 ccm\n\n8",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 690 mm\n   - Displacement: 471.0 ccm\n\n9",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Seat Height: 688 mm\n   - Displacement: 975.1 ccm\n\n10",
+          "year": 2023,
+          "status": "unverifiable"
+        }
+      ],
+      "satisfied": 1,
+      "violated": 0,
+      "unverifiable": 9,
+      "answer_head": "Here are some sport motorcycles with a seat height under 800mm:\n\n1. **Benelli TNT 135 (2023)**\n   - Seat Height: 780 mm\n   - Displacement: 134.7 ccm\n\n2. **Bajaj Pulsar P150 (2023)**\n   - Seat Height: 790 mm\n   - Displacement: 149.7 ccm\n\n3. **AJS Cadwell 125 (2023)**\n   - Seat Height: 740 mm\n   - Dis"
+    },
+    {
+      "id": "decade-fr",
+      "question": "Quelles motos custom/cruiser des annees 1950 sont dans la base ?",
+      "constraints": {
+        "min_year": 1950,
+        "max_year": 1959
+      },
+      "mentions": [
+        {
+          "mention": "**Harley-Davidson XLCH Sportster**",
+          "year": 1957,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Zündapp Elastic 198**",
+          "year": 1954,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Adler M 250**",
+          "year": 1952,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Simson AWO 425**",
+          "year": 1953,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Indian Chief**",
+          "year": 1952,
+          "status": "satisfied",
+          "violations": []
+        }
+      ],
+      "satisfied": 5,
+      "violated": 0,
+      "unverifiable": 0,
+      "answer_head": "Voici les motos custom/cruiser des années 1950 présentes dans la base de données :\n\n- **Harley-Davidson XLCH Sportster** (1957, 1958, 1959)\n- **Zündapp Elastic 198** (1954)\n- **Adler M 250** (1952, 1953, 1954)\n- **Simson AWO 425** (1953)\n- **Indian Chief** (1952, 1953)\n\nCes modèles correspondent à l"
+    },
+    {
+      "id": "budget",
+      "question": "What's the cheapest motorcycle under 3000 EUR in the database?",
+      "constraints": {
+        "max_msrp_eur": 3000
+      },
+      "mentions": [
+        {
+          "mention": "Triumph T120 Bonneville",
+          "year": 1959,
+          "status": "satisfied",
+          "violations": []
+        }
+      ],
+      "satisfied": 1,
+      "violated": 0,
+      "unverifiable": 0,
+      "answer_head": "The cheapest motorcycle under 3000 EUR in the database is the **Triumph T120 Bonneville** from 1959, priced at 220 EUR."
+    },
+    {
+      "id": "beginner-cc",
+      "question": "A light beginner naked bike under 600cc, and what do owners say about reliability?",
+      "constraints": {
+        "max_displacement_ccm": 600
+      },
+      "mentions": [
+        {
+          "mention": "**Tomos Racing TT",
+          "year": 2017,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "- Displacement: 49 cc\n   - Weight: 65 kg\n   - Seat Height: 790 mm\n\n2",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Displacement: 125 cc\n   - Weight: 84 kg\n\n3",
+          "year": null,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Displacement: 49 cc\n   - Weight: 96 kg\n   - Power: 3 hp\n\n4",
+          "year": 2012,
+          "status": "unverifiable"
+        },
+        {
+          "mention": "- Displacement: 108 cc\n   - Weight: 100 kg\n\n5",
+          "year": null,
+          "status": "unverifiable"
+        }
+      ],
+      "satisfied": 1,
+      "violated": 0,
+      "unverifiable": 4,
+      "answer_head": "Here are some light beginner naked bikes under 600cc:\n\n1. **Tomos Racing TT (2017)**\n   - Displacement: 49 cc\n   - Weight: 65 kg\n   - Seat Height: 790 mm\n\n2. **Rieju RS3 125 NKD (2013)**\n   - Displacement: 125 cc\n   - Weight: 84 kg\n\n3. **Lexmoto Aspire 50 (2021)**\n   - Displacement: 49 cc\n   - Weigh"
+    },
+    {
+      "id": "supermoto-fr",
+      "question": "Quelle moto supermotard de plus de 600 cm3 me conseilles-tu, et a quel prix ?",
+      "constraints": {
+        "min_displacement_ccm": 600
+      },
+      "mentions": [
+        {
+          "mention": "**Ducati Hypermotard 698 Mono RWE**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Ducati Hypermotard 950 RWE**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Ducati Hypermotard 698 Mono**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Suzuki V-Strom 800**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Aprilia Tuareg 660**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Suzuki V-Strom 1050DE**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Suzuki V-Strom 1050**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Honda NC750X DCT**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Ducati Hypermotard 950 SP**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Ducati Hypermotard 950**",
+          "year": 2024,
+          "status": "satisfied",
+          "violations": []
+        }
+      ],
+      "satisfied": 10,
+      "violated": 0,
+      "unverifiable": 0,
+      "answer_head": "Voici quelques motos supermotard de plus de 600 cm³ disponibles en 2024 :\n\n1. **Ducati Hypermotard 698 Mono RWE** (2024)\n   - Cylindrée : 659 cm³\n   - Prix : Non disponible\n\n2. **Ducati Hypermotard 950 RWE** (2024)\n   - Cylindrée : 937 cm³\n   - Prix : Non disponible\n\n3. **Ducati Hypermotard 698 Mono"
+    },
+    {
+      "id": "a2-weight-fr",
+      "question": "Une moto de moins de 500 cm3 et moins de 170 kg pour debuter, tu as quoi ?",
+      "constraints": {
+        "max_displacement_ccm": 500,
+        "max_weight_kg": 170
+      },
+      "mentions": [
+        {
+          "mention": "**Bajaj Pulsar RS200",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Orcal NK01 125",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        },
+        {
+          "mention": "**Orcal SK01 125",
+          "year": 2023,
+          "status": "satisfied",
+          "violations": []
+        }
+      ],
+      "satisfied": 3,
+      "violated": 0,
+      "unverifiable": 0,
+      "answer_head": "Voici quelques motos de moins de 500 cm³ et moins de 170 kg qui pourraient convenir pour débuter :\n\n1. **Bajaj Pulsar RS200 (2023)**\n   - Catégorie : Sport\n   - Displacement : 199.5 cm³\n   - Poids : 166 kg\n   - Puissance : 24.1 hp\n   - Couple : 18.6 Nm\n\n2. **Orcal NK01 125 (2023)**\n   - Catégorie : "
+    }
+  ]
+}
