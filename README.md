@@ -100,6 +100,8 @@ marketplaces block that outright:
 | La Centrale | DataDome anti-bot (CAPTCHA-gated) |
 | ParuVendu | `robots.txt` disallows exactly the `/auto-moto/*` paths |
 | **Motoplanete** | ✅ **viable** (verified 2026-07-12): `robots.txt` allows the spec pages and publishes a moto sitemap (~12k pages); CGU has no database-extraction clause (non-commercial use only); fiches carry French MSRP ("Tarifs France"), full specs *and* explicit A2-version info. Hard constraint: `Crawl-delay: 10` → targeted enrichment of our existing models, not a catalog clone. |
+| Le Parking Moto | `robots.txt` permissive, **but** CGU (checked 2026-07-16) explicitly forbid robots/spiders and any reuse "à des fins commerciales ou non" without express authorization — dropped; asking for authorization remains possible. |
+| AutoScout24 | search pages (`/lst-moto?`), GraphQL APIs and AI crawlers all disallowed, no offer sitemap — no clean discovery path. The 2022 used-price snapshot in `data/` is a ZenRows *sample* of this site, used as a dated cote only. |
 
 We don't scrape against an explicit prohibition or bypass anti-bot protection
 (Le Repaire des Motards was probed for French owner reviews and serves an
