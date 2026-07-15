@@ -20,3 +20,6 @@ coverage_dashboard.html
 
 # NHTSA flat-file download cache (load_nhtsa_recalls.py refetches if absent)
 data/nhtsa/
+
+# Space data artifact (pushed to HF via LFS, not to GitHub)
+deploy/pgdata.tar.gz

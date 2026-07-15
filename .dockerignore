@@ -1,0 +1,14 @@
+# Build context = repo root (docker build -f deploy/Dockerfile .).
+# Only pyproject.toml, src/ and deploy/{pgdata.tar.gz,entrypoint.sh} are
+# COPYed — keep everything heavy or irrelevant out of the context.
+.git
+.venv
+data
+eval_results
+scripts
+docs
+pgdata
+*.md
+!deploy/space-README.md
+.env
+.claude
