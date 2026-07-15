@@ -1,0 +1,26 @@
+{
+  "audited": 50,
+  "ok": 50,
+  "ko": 0,
+  "precision": 1.0,
+  "per_bucket": {
+    "forward+0": {
+      "ok": 20,
+      "ko": 0,
+      "pending": 0,
+      "precision": 1.0
+    },
+    "shifted": {
+      "ok": 15,
+      "ko": 0,
+      "pending": 0,
+      "precision": 1.0
+    },
+    "reverse": {
+      "ok": 15,
+      "ko": 0,
+      "pending": 0,
+      "precision": 1.0
+    }
+  }
+}
