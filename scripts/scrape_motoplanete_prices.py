@@ -16,10 +16,11 @@ Resumable at page level via urls_done.txt, same pattern as the bikez
 scrapers. Output: one JSONL row per fiche, matched to our DB later by a
 separate loader (brand/model/year fuzzy matching).
 
-Run (full crawl is ~32h at the robots.txt-mandated 10s/page; use --limit
-for a pilot):
+Run (~6.5h at the default 2s/page — robots.txt asks for 10s (~32h), the
+lower default is the operator's call and the 429/5xx backoff keeps it
+honest; use --limit for a pilot):
     PYTHONPATH=src .venv/bin/python scripts/scrape_motoplanete_prices.py \\
-        --out data/motoplanete --limit 20
+        --out data/motoplanete [--delay 10] [--limit 20]
 """
 
 import argparse
@@ -41,8 +42,12 @@ USER_AGENT = (
     "https://github.com/maax6/Bikefinder)"
 )
 
-# robots.txt says `Crawl-delay: 10` — that is the floor, not a suggestion.
-DELAY_SECONDS = 10.0
+# robots.txt asks for `Crawl-delay: 10` (~32h for the full crawl). The
+# --delay flag defaults lower at the operator's responsibility; the hard
+# backoff below on 429/5xx is what keeps a low delay honest — if the
+# server signals stress, we stop pushing.
+DEFAULT_DELAY_SECONDS = 2.0
+DELAY_SECONDS = DEFAULT_DELAY_SECONDS
 BACKOFF_SECONDS = 60.0
 _BACKOFF_STATUSES = {429, 500, 502, 503, 504}
 
@@ -78,14 +83,28 @@ def get(url: str) -> requests.Response:
     return response
 
 
-def fiche_urls() -> list[str]:
-    """Every fiche URL from the sitemap_moto index, deduplicated, in order."""
+def fiche_urls(cache_path: Path) -> list[str]:
+    """Every fiche URL from the sitemap_moto index, deduplicated, in order.
+    Cached on disk so a resumed crawl doesn't refetch 14 sitemaps; delete
+    the cache file (or pass --refresh-sitemaps) to pick up new fiches."""
+    if cache_path.exists():
+        urls = cache_path.read_text().splitlines()
+        print(f"{len(urls)} fiche URLs from cache ({cache_path.name}); "
+              "use --refresh-sitemaps to refetch.", file=sys.stderr)
+        return urls
+
     index = get(SITEMAP_INDEX).text
+    sitemap_urls = re.findall(r"<loc>(.*?)</loc>", index)
     urls: list[str] = []
-    for sitemap_url in re.findall(r"<loc>(.*?)</loc>", index):
+    for i, sitemap_url in enumerate(sitemap_urls, 1):
         body = get(sitemap_url).text
-        urls.extend(u for u in re.findall(r"<loc>(.*?)</loc>", body) if _FICHE_URL_RE.search(u))
-    return list(dict.fromkeys(urls))
+        found = [u for u in re.findall(r"<loc>(.*?)</loc>", body) if _FICHE_URL_RE.search(u)]
+        urls.extend(found)
+        print(f"  sitemap {i}/{len(sitemap_urls)}: {len(found)} fiches "
+              f"({len(urls)} total)", file=sys.stderr)
+    urls = list(dict.fromkeys(urls))
+    cache_path.write_text("\n".join(urls) + "\n")
+    return urls
 
 
 def parse_fiche(url: str, page: str) -> dict:
@@ -118,25 +137,38 @@ def parse_fiche(url: str, page: str) -> dict:
 
 
 def main() -> None:
+    global DELAY_SECONDS
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default="data/motoplanete")
     parser.add_argument("--limit", type=int, default=None,
                         help="Stop after N new pages (pilot runs).")
+    parser.add_argument("--delay", type=float, default=DEFAULT_DELAY_SECONDS,
+                        help="Seconds between requests (robots.txt asks for 10; "
+                             f"default {DEFAULT_DELAY_SECONDS} at your own responsibility).")
+    parser.add_argument("--refresh-sitemaps", action="store_true",
+                        help="Refetch the sitemaps instead of using the cached URL list.")
     args = parser.parse_args()
+    DELAY_SECONDS = args.delay
 
     out_dir = Path(__file__).resolve().parent.parent / args.out
     out_dir.mkdir(parents=True, exist_ok=True)
     prices_path = out_dir / "prices.jsonl"
     done_path = out_dir / "urls_done.txt"
+    sitemap_cache = out_dir / "fiche_urls.txt"
 
     done = set(done_path.read_text().splitlines()) if done_path.exists() else set()
 
-    urls = fiche_urls()
+    if args.refresh_sitemaps and sitemap_cache.exists():
+        sitemap_cache.unlink()
+    urls = fiche_urls(sitemap_cache)
     todo = [u for u in urls if u not in done]
+    eta_h = len(todo) * args.delay / 3600
     print(f"{len(urls)} fiches in sitemaps, {len(done)} already done, "
-          f"{len(todo)} to fetch.", file=sys.stderr)
+          f"{len(todo)} to fetch at {args.delay}s/page (~{eta_h:.1f}h).", file=sys.stderr)
 
     scraped = 0
+    started = time.monotonic()
     with prices_path.open("a", encoding="utf-8") as out, done_path.open("a") as done_out:
         for url in todo:
             if args.limit is not None and scraped >= args.limit:
@@ -162,8 +194,13 @@ def main() -> None:
             done_out.write(url + "\n")
             done_out.flush()
             scraped += 1
-            if scraped % 25 == 0:
-                print(f"  {scraped}/{len(todo)} fetched", file=sys.stderr)
+            price = f"{row['price_eur']} €" if row["price_eur"] else "prix absent"
+            print(f"[{scraped}/{len(todo)}] {row['brand']} {row['model']} "
+                  f"{row['year']} — {price} ({row['category_fr'] or '?'})", file=sys.stderr)
+            if scraped % 50 == 0:
+                rate = scraped / (time.monotonic() - started)
+                remaining_h = (len(todo) - scraped) / rate / 3600 if rate else 0
+                print(f"  --- {rate:.2f} pages/s, ~{remaining_h:.1f}h restantes", file=sys.stderr)
 
     print(f"Done: {scraped} fiches scraped this run -> {prices_path}", file=sys.stderr)
 
