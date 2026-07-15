@@ -50,6 +50,32 @@ partage 3 de son top-10 avec la requête anglaise équivalente (~25× le
 hasard) ; la paire consommation ne se recouvre pas sur ce run — le hybride
 dense+sparse ou un reranker (`bge-reranker-v2-m3`) est la piste identifiée.
 
+## Reranker cross-encoder (ajouté le 15 juillet 2026)
+
+`search_reviews` fait maintenant du retrieval en deux étages : shortlist
+dense top-50 (pgvector), puis re-tri par **bge-reranker-v2-m3** (même
+famille BGE-M3 que l'embedder), qui lit la requête et le commentaire
+*ensemble*. Mesure dédiée (`french_relevance` dans le rapport) : résultats
+on-topic (proxy mot-clé anglais) dans le top-10 d'une requête française —
+
+| Thème (requête FR) | Dense seul | Reranké |
+|---|---|---|
+| Vibrations | 6/10 | **10/10** |
+| Consommation | 4/10 | **6/10** |
+| Confort de selle | 1/10 | **3/10** |
+| Débutant | 3/10 | 3/10 |
+| Freins | 0/10 | 0/10 |
+| **Total** | **14/50** | **22/50 (+57 %)** |
+
+Deux honnêtetés : (1) le recouvrement Jaccard FR/EN des top-10 ne bouge
+pas — le reranker ne peut réordonner que sa shortlist, il ne crée pas de
+rappel ; (2) « freins » reste à zéro pour la même raison : le pool dense
+de cette requête FR ne contient pas les bons candidats. Le rappel dense
+reste la borne ; la piste suivante serait l'hybride dense+sparse.
+Latence : ~0,4 s par requête à chaud sur Apple Silicon ;
+`RERANKER_ENABLED=0` le coupe (c'est le réglage du Docker Space, où le
+CPU le rendrait trop lent).
+
 Le document de preuve hébergé présente le run du 12 juillet 2026 sur le
 corpus « century » (82 589 commentaires) ; l'éval a été rejouée après le
 chargement des années 2000 et tous les tests restent au vert à 107 952

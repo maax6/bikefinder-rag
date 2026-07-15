@@ -35,11 +35,16 @@ COPY deploy/pgdata.tar.gz /opt/pgdata.tar.gz
 COPY deploy/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+# RERANKER_ENABLED=0: cross-encoder reranking is on by default in the
+# codebase, but scoring ~50 (query, comment) pairs per search takes tens
+# of seconds on Spaces-class CPUs — the hosted demo trades the last bit
+# of cross-lingual ranking quality for responsiveness.
 ENV HF_HUB_OFFLINE=1 \
     PYTHONPATH=/app/src \
     GRADIO_HOST=0.0.0.0 \
     AGENT_BACKEND=anthropic \
-    POSTGRES_HOST=localhost
+    POSTGRES_HOST=localhost \
+    RERANKER_ENABLED=0
 
 EXPOSE 7860
 ENTRYPOINT ["/entrypoint.sh"]

@@ -250,8 +250,11 @@ PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
    through concrete model-year rows instead of family names.
 4. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
-5. Cross-lingual retrieval hardening: hybrid dense+sparse or a reranker
-   (`bge-reranker-v2-m3`) for the weak FR/EN pair found in the layer-1 eval
+5. ~~Cross-lingual retrieval hardening~~ **partially done**:
+   `search_reviews` now reranks its dense top-50 with `bge-reranker-v2-m3`
+   (+57% on-topic results in French queries' top-10, see
+   [`eval_results/retrieval/`](eval_results/retrieval/)). Dense recall
+   remains the bound — hybrid dense+sparse is the remaining lever.
 6. ~~Hugging Face Spaces deployment~~ **shipped as a static showcase**:
    [huggingface.co/spaces/masonpaint/bikefinder-rag](https://huggingface.co/spaces/masonpaint/bikefinder-rag)
    (proof documents, eval results, a real captured session). The full

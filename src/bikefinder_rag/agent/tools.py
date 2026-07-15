@@ -12,6 +12,7 @@ get_bike_details returns one bike's full spec sheet including raw_specs.
 import re
 from typing import Any
 
+from bikefinder_rag.embeddings import reranker
 from bikefinder_rag.embeddings.embedder import embed_text
 
 # Brand/category matching ignores spacing, case and punctuation on both
@@ -246,6 +247,11 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
 
     query_vector = embed_text(query)
     limit = int(limit or 5)
+    # Two-stage retrieval: the dense index shortlists cheaply, the
+    # cross-encoder (which reads query and comment together) reorders the
+    # shortlist — that's what fixes the hard cross-lingual cases the
+    # layer-1 eval caught, at a cost only viable on ~dozens of candidates.
+    fetch = min(max(limit * 6, 20), 50) if reranker.enabled() else limit
 
     sql = f"""
         SELECT f.brand, f.family_name AS model_family,
@@ -258,12 +264,19 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
         ORDER BY rc.embedding <=> %s::vector
         LIMIT %s
     """
-    params_with_vector = [query_vector, *params, query_vector, limit]
+    params_with_vector = [query_vector, *params, query_vector, fetch]
 
     with conn.cursor() as cur:
         cur.execute(sql, params_with_vector)
         columns = [desc.name for desc in cur.description]
-        return [dict(zip(columns, row)) for row in cur.fetchall()]
+        rows = [dict(zip(columns, row)) for row in cur.fetchall()]
+
+    if reranker.enabled() and len(rows) > limit:
+        scores = reranker.rerank(query, [r["comment_text"] for r in rows])
+        for row, score in zip(rows, scores):
+            row["rerank_score"] = round(score, 4)
+        rows.sort(key=lambda r: r["rerank_score"], reverse=True)
+    return rows[:limit]
 
 
 # bikez spec pages carry navigation/ad rows in the same table as real specs;

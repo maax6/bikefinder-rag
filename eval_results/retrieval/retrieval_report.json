@@ -257,14 +257,55 @@
       "french_query": "est-ce que cette moto est fiable ou tombe-t-elle souvent en panne",
       "top_k": 10,
       "overlap_count": 3,
-      "jaccard": 0.176
+      "jaccard": 0.176,
+      "overlap_count_reranked": 3,
+      "jaccard_reranked": 0.176
     },
     {
       "english_query": "how good is the fuel economy and mileage",
       "french_query": "quelle est la consommation d'essence de cette moto",
       "top_k": 10,
       "overlap_count": 0,
-      "jaccard": 0.0
+      "jaccard": 0.0,
+      "overlap_count_reranked": 0,
+      "jaccard_reranked": 0.0
+    }
+  ],
+  "french_relevance": [
+    {
+      "theme": "fuel economy",
+      "french_query": "quelle est la consommation d'essence de cette moto",
+      "top_k": 10,
+      "hits_dense": 4,
+      "hits_reranked": 6
+    },
+    {
+      "theme": "vibration",
+      "french_query": "est-ce que le moteur vibre beaucoup a haute vitesse",
+      "top_k": 10,
+      "hits_dense": 6,
+      "hits_reranked": 10
+    },
+    {
+      "theme": "seat comfort",
+      "french_query": "la selle est-elle confortable sur longs trajets",
+      "top_k": 10,
+      "hits_dense": 1,
+      "hits_reranked": 3
+    },
+    {
+      "theme": "beginner",
+      "french_query": "est-ce une bonne premiere moto pour un debutant",
+      "top_k": 10,
+      "hits_dense": 3,
+      "hits_reranked": 3
+    },
+    {
+      "theme": "brakes",
+      "french_query": "les freins sont-ils bons",
+      "top_k": 10,
+      "hits_dense": 0,
+      "hits_reranked": 0
     }
   ]
 }

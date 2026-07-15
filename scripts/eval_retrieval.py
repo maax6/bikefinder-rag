@@ -54,6 +54,17 @@ THEMES = [
     ("brakes", "how good are the brakes", r"brake|braking"),
 ]
 
+# French queries judged against the same English keyword regexes as the
+# lift test — measures what the reranker actually buys: on-topic density
+# of a French query's top-10 over an English-language corpus.
+FRENCH_THEMES = [
+    ("fuel economy", "quelle est la consommation d'essence de cette moto", r"mileage|fuel consumption|km/l|mpg"),
+    ("vibration", "est-ce que le moteur vibre beaucoup a haute vitesse", r"vibrat"),
+    ("seat comfort", "la selle est-elle confortable sur longs trajets", r"seat.{0,20}comfort|comfortable seat|uncomfortable"),
+    ("beginner", "est-ce une bonne premiere moto pour un debutant", r"beginner|first bike|new rider"),
+    ("brakes", "les freins sont-ils bons", r"brake|braking"),
+]
+
 NEGATIVE_QUERIES = [
     "recette de gâteau au chocolat sans four",
     "best python web framework for a REST API",
@@ -182,19 +193,60 @@ def negative_control_test(conn, on_topic_avg_top1: float) -> list[dict]:
     return results
 
 
-def cross_lingual_test(conn, top_k=10) -> list[dict]:
+def cross_lingual_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
+    """Dense-only top-k overlap between an EN query and its FR equivalent,
+    and — when the reranker is enabled — the same overlap after
+    cross-encoder reranking of a dense top-`rerank_pool` shortlist. The
+    cross-encoder reads query and comment together, so it should agree
+    with itself across languages far more than the bi-encoder does."""
+    from bikefinder_rag.embeddings import reranker
+
+    def top_ids(query: str) -> tuple[set, set | None]:
+        dense = semantic_search(conn, query, rerank_pool if reranker.enabled() else top_k)
+        dense_ids = {r["id"] for r in dense[:top_k]}
+        if not reranker.enabled():
+            return dense_ids, None
+        scores = reranker.rerank(query, [r["comment_text"] for r in dense])
+        ranked = sorted(zip(dense, scores), key=lambda p: p[1], reverse=True)
+        return dense_ids, {r["id"] for r, _ in ranked[:top_k]}
+
     results = []
     for en, fr in CROSS_LINGUAL_PAIRS:
-        en_top = {r["id"] for r in semantic_search(conn, en, top_k)}
-        fr_top = {r["id"] for r in semantic_search(conn, fr, top_k)}
-        overlap = en_top & fr_top
-        results.append({
+        en_dense, en_reranked = top_ids(en)
+        fr_dense, fr_reranked = top_ids(fr)
+        entry = {
             "english_query": en,
             "french_query": fr,
             "top_k": top_k,
-            "overlap_count": len(overlap),
-            "jaccard": round(len(overlap) / len(en_top | fr_top), 3),
-        })
+            "overlap_count": len(en_dense & fr_dense),
+            "jaccard": round(len(en_dense & fr_dense) / len(en_dense | fr_dense), 3),
+        }
+        if en_reranked is not None:
+            entry["overlap_count_reranked"] = len(en_reranked & fr_reranked)
+            entry["jaccard_reranked"] = round(
+                len(en_reranked & fr_reranked) / len(en_reranked | fr_reranked), 3)
+        results.append(entry)
+    return results
+
+
+def french_relevance_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
+    """On-topic hits (keyword proxy) in a French query's top-k, dense-only
+    vs cross-encoder-reranked. The reranker can only reorder its dense
+    shortlist, so a theme whose pool lacks on-topic candidates stays at
+    zero — that residual is the dense recall bound, reported as-is."""
+    from bikefinder_rag.embeddings import reranker
+
+    results = []
+    for name, fr_query, pattern in FRENCH_THEMES:
+        pool = semantic_search(conn, fr_query, rerank_pool)
+        hits = lambda rows: sum(bool(re.search(pattern, r["comment_text"], re.IGNORECASE)) for r in rows)
+        entry = {"theme": name, "french_query": fr_query, "top_k": top_k,
+                 "hits_dense": hits(pool[:top_k])}
+        if reranker.enabled():
+            scores = reranker.rerank(fr_query, [r["comment_text"] for r in pool])
+            reranked = [r for r, _ in sorted(zip(pool, scores), key=lambda p: p[1], reverse=True)]
+            entry["hits_reranked"] = hits(reranked[:top_k])
+        results.append(entry)
     return results
 
 
@@ -208,6 +260,7 @@ def main() -> None:
         lift = keyword_lift_test(conn, total_chunks)
         negatives = negative_control_test(conn, self_retrieval["avg_self_distance"] + 0.3)
         cross_lingual = cross_lingual_test(conn)
+        french_relevance = french_relevance_test(conn)
 
         report = {
             "data_integrity": integrity,
@@ -215,6 +268,7 @@ def main() -> None:
             "keyword_lift": lift,
             "negative_control": negatives,
             "cross_lingual": cross_lingual,
+            "french_relevance": french_relevance,
         }
         out_path = Path(__file__).resolve().parent.parent / "eval_results/retrieval/retrieval_report.json"
         out_path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
