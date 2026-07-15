@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bikefinder RAG — agentic motorcycle advisor</title>
+<style>
+  :root { --bg: #eef1f2; --panel: #ffffff; --ink: #171b1d; --ink-soft: #565f63; --line: #dcdfe3; --accent: #1d5fc8; --user: #e8eef9; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #16191b; --panel: #1e2225; --ink: #e8eaec; --ink-soft: #9aa2a8; --line: #33393d; --accent: #6ea3f0; --user: #23303f; }
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 3rem 1.25rem 4rem; }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.7rem; margin-bottom: .35rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .9rem; }
+  p.sub { color: var(--ink-soft); margin-bottom: 1.4rem; }
+  .links a { color: var(--accent); text-decoration: none; margin-right: 1.2rem; font-weight: 600; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .8rem; margin: 1.6rem 0; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1rem; }
+  .stat b { display: block; font-size: 1.35rem; }
+  .stat span { color: var(--ink-soft); font-size: .85rem; }
+  .chat { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .msg { padding: .85rem 1.1rem; border-bottom: 1px solid var(--line); }
+  .msg:last-child { border-bottom: 0; }
+  .msg.user { background: var(--user); font-weight: 600; }
+  .msg.agent { background: var(--panel); }
+  .msg.agent ul { margin: .4rem 0 .4rem 1.2rem; }
+  .note { color: var(--ink-soft); font-size: .85rem; margin: .5rem 0 0; }
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: .92rem; }
+  th, td { text-align: left; padding: .6rem .9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { color: var(--ink-soft); font-weight: 600; }
+  td b { white-space: nowrap; }
+  a.card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: .9rem; text-decoration: none; color: inherit; }
+  a.card:hover { border-color: var(--accent); }
+  a.card strong { color: var(--accent); }
+  a.card span { display: block; color: var(--ink-soft); font-size: .9rem; margin-top: .2rem; }
+  code { background: var(--user); border-radius: 5px; padding: .1rem .35rem; font-size: .88em; }
+  .overflow { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🏍️ Bikefinder RAG</h1>
+  <p class="sub">An agentic RAG motorcycle advisor — raw tool-use loop (no LangChain),
+  PostgreSQL + pgvector, multilingual BGE-M3 embeddings, and a three-layer
+  evaluation with published results.</p>
+  <p class="links">
+    <a href="https://github.com/maax6/bikefinder-rag">GitHub</a>
+    <a href="preuve-retrieval.html">Retrieval proof</a>
+    <a href="pipeline-et-evaluation.html">Pipeline &amp; evals</a>
+    <a href="methode-sans-langchain.html">Method</a>
+  </p>
+
+  <div class="stats">
+    <div class="stat"><b>32,395</b><span>motorcycles, 1894–2024 (bikez.com)</span></div>
+    <div class="stat"><b>107,952</b><span>owner comments, embedded (BGE-M3)</span></div>
+    <div class="stat"><b>4</b><span>data layers: specs, prices FR, US recalls, used-price cote</span></div>
+    <div class="stat"><b>3</b><span>evaluation layers, results in the repo</span></div>
+  </div>
+
+  <h2>A real session</h2>
+  <div class="chat">
+    <div class="msg user">What is the fuel capacity of the Suzuki GSF 1200 Bandit?</div>
+    <div class="msg agent">The Suzuki GSF 1200 Bandit has a fuel capacity of <b>20 litres</b>.</div>
+    <div class="msg user">Are there any known safety recalls for the Ducati Multistrada?</div>
+    <div class="msg agent">The Ducati Multistrada family has one known safety recall in the US market:
+      <ul><li><b>2021 model year</b>: Excessive wear of the valve guides may cause the valve head to break (affects 129 units).</li></ul>
+      This data covers only the United States. Recall information for other regions is not included.</div>
+    <div class="msg user">Combien de motos Kawasaki dans la base ?</div>
+    <div class="msg agent">La base contient <b>2353</b> modèles de motos Kawasaki.</div>
+    <div class="msg user">Quelle moto supermotard de plus de 600 cm3 me conseilles-tu, et à quel prix ?</div>
+    <div class="msg agent">Voici quelques motos supermotard de plus de 600 cm³ disponibles en 2024 :
+      <ul>
+        <li><b>KTM 690 SMC R</b> (693 cm³) — Prix : 11 799 €</li>
+        <li><b>Ducati Hypermotard 950 SP</b> (937 cm³) — Prix : 18 990 €</li>
+        <li><b>Ducati Hypermotard 698 Mono RWE</b> (659 cm³)</li>
+        <li><b>Suzuki DR650S</b> (644 cm³), <b>Kawasaki KLR 650</b> (652 cm³), <b>Honda NC750X DCT</b> (745 cm³)…</li>
+      </ul>
+      Pour connaître les prix exacts et les détails supplémentaires, je vous recommande de consulter les pages spécifiques des modèles sur bikez.com ou de contacter un concessionnaire.</div>
+  </div>
+  <p class="note">Captured 15 July 2026 from the local demo (Ollama, mistral-small3.2) —
+  answers unedited except the last list, shortened for space. French questions retrieve
+  English forum data: the embeddings are multilingual by design. Some category labels
+  come noisy from the source (the trail bikes in the last answer are bikez.com's own
+  «&nbsp;Super motard&nbsp;» labels); the agent is instructed to flag intruders, and a curated
+  French category layer now cross-checks them.</p>
+
+  <h2>Three evaluation layers, each isolating one stage</h2>
+  <div class="overflow">
+  <table>
+    <tr><th>Layer</th><th>What it proves</th><th>Headline result</th></tr>
+    <tr><td><b>1 — Retrieval</b><br>no LLM at all</td>
+        <td>pgvector + BGE-M3 search is semantically meaningful, not random</td>
+        <td>self-retrieval 30/30 · theme lifts 22–122× over corpus base rate · off-topic queries rejected</td></tr>
+    <tr><td><b>1.5 — Tool calls</b><br>no LLM judge</td>
+        <td>the model picks the right tools with sensible arguments</td>
+        <td>16/17 questions, 43/44 deterministic checks (mistral-small3.2) — and the eval drove the fixes that took mistral-small from 9/12 to 15/15</td></tr>
+    <tr><td><b>2 — Full agent</b><br>RAGAS, Haiku judge</td>
+        <td>final answers are grounded and relevant</td>
+        <td>faithfulness 0.76 · answer relevancy 0.87 (up from 0.71/0.77 before enrichment)</td></tr>
+  </table>
+  </div>
+
+  <h2>Documents</h2>
+  <a class="card" href="preuve-retrieval.html">
+    <strong>Preuve de fonctionnement — recherche sémantique</strong> <span>(FR)
+    The retrieval-only evaluation: integrity, self-retrieval, per-theme lift, negative
+    controls, cross-lingual.</span>
+  </a>
+  <a class="card" href="pipeline-et-evaluation.html">
+    <strong>De la page web au score RAGAS — le pipeline</strong> <span>(FR)
+    The full path: scraping, model families, embeddings, agent, layered evaluation.</span>
+  </a>
+  <a class="card" href="methode-sans-langchain.html">
+    <strong>Un agent RAG sans framework — la méthode</strong> <span>(FR)
+    Why and how the project skips LangChain: agent loop, typed tools, parameterized SQL.</span>
+  </a>
+
+  <h2>Run it yourself</h2>
+  <p>The live demo runs locally (visitors bring an Anthropic or OpenRouter key, or a
+  local Ollama model — no key at all). Everything ships in the repo, datasets included:</p>
+  <p><code>git clone https://github.com/maax6/bikefinder-rag</code> — then follow the README
+  (one <code>docker run</code> for Postgres, one loader script, one command to chat).</p>
+</main>
+</body>
+</html>
