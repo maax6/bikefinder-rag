@@ -56,8 +56,8 @@
   <div class="stats">
     <div class="stat"><b>32,395</b><span>motorcycles, 1894–2024 (bikez.com)</span></div>
     <div class="stat"><b>107,952</b><span>owner comments, embedded (BGE-M3)</span></div>
-    <div class="stat"><b>4</b><span>data layers: specs, prices FR, US recalls, used-price cote</span></div>
-    <div class="stat"><b>3</b><span>evaluation layers, results in the repo</span></div>
+    <div class="stat"><b>7,137</b><span>bikes with a French launch price (25-29% of each decade since 1990)</span></div>
+    <div class="stat"><b>4</b><span>evaluation layers, results in the repo</span></div>
   </div>
 
   <h2>A real session</h2>
@@ -87,7 +87,7 @@
   «&nbsp;Super motard&nbsp;» labels); the agent is instructed to flag intruders, and a curated
   French category layer now cross-checks them.</p>
 
-  <h2>Three evaluation layers, each isolating one stage</h2>
+  <h2>Four evaluation layers, each isolating one stage</h2>
   <div class="overflow">
   <table>
     <tr><th>Layer</th><th>What it proves</th><th>Headline result</th></tr>
@@ -97,6 +97,9 @@
     <tr><td><b>1.5 — Tool calls</b><br>no LLM judge</td>
         <td>the model picks the right tools with sensible arguments</td>
         <td>16/17 questions, 43/44 deterministic checks (mistral-small3.2) — and the eval drove the fixes that took mistral-small from 9/12 to 15/15</td></tr>
+    <tr><td><b>1.75 — Hard constraints</b><br>no LLM judge</td>
+        <td>no recommended bike violates the question's budget, displacement, weight or decade</td>
+        <td>0.0% violation rate over 41 verified mentions (8 questions, EN+FR), 0 hallucinated model names</td></tr>
     <tr><td><b>2 — Full agent</b><br>RAGAS, Haiku judge</td>
         <td>final answers are grounded and relevant</td>
         <td>faithfulness 0.76 · answer relevancy 0.87 (up from 0.71/0.77 before enrichment)</td></tr>

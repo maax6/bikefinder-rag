@@ -115,9 +115,10 @@ robots.txt says).
 **Current state: the motoplanete crawl is done and loaded** —
 `scripts/scrape_motoplanete_prices.py` collected 11,418 fiches (93% with a
 French launch price, 100% with a curated category), and
-`scripts/load_motoplanete_prices.py` matched 6,860 of them onto our
-motorcycles: **5,737 bikes now carry a French MSRP** in `msrp_eur` and
-5,889 a clean `category_fr` (Roadster, Sportive, Trail, Supermotard...) —
+`scripts/load_motoplanete_prices.py` matched 9,390 of them (82%) onto our
+motorcycles: **7,137 bikes now carry a French MSRP** in `msrp_eur` (22% of
+the catalog, 25-29% of each decade since 1990) and
+7,356 a clean `category_fr` (Roadster, Sportive, Trail, Supermotard...) —
 used as a cross-check against bikez's loose categories, which mislabel
 e.g. recent Transalps as 'Super motard'. Coverage is still partial, and
 the agent is instructed to say "no price data" plainly rather than imply a
@@ -131,7 +132,7 @@ Two more data layers ride along (loaded by their own idempotent scripts):
   `get_bike_details` with an explicit "US market only" caveat.
 - **Indicative used prices** (`scripts/load_used_prices.py`): median and
   quartiles per (family, registration year) aggregated from a 2022
-  European marketplace snapshot (Kaggle, ~21k matched listings, 542
+  European marketplace snapshot (Kaggle, ~22k matched listings, 626
   families) — a dated cote indicative, presented as such, never as
   today's market value.
 
@@ -238,15 +239,15 @@ PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
 
 ## Roadmap
 
-1. ~~Price enrichment from motoplanete.com~~ **done** (5,737 bikes priced,
+1. ~~Price enrichment from motoplanete.com~~ **done** (7,137 bikes priced,
    plus `category_fr`); A2-version info (35 kW bridage) from the same fiches
    remains to harvest — feeds a future "permis A2" filter.
 2. ~~Scale scraping beyond the 2024 demo year~~ **done** (century +
    2000-2023 crawls: 32,395 bikes, 107,952 embedded comments)
-3. Better entity resolution across sources: the used-price cote lands on
-   bikez's family split ('Bandit' vs 'GSF 1200 Bandit' are different
-   forums), so some estimates don't reach the family a spec question hits.
-   A model-alias table would join the four data layers cleanly.
+3. ~~Better entity resolution across sources~~ **done**
+   (`src/bikefinder_rag/matching.py`): one token-level matcher shared by
+   the enrichment loaders; the used-price cote now reaches families
+   through concrete model-year rows instead of family names.
 4. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
 5. Cross-lingual retrieval hardening: hybrid dense+sparse or a reranker
