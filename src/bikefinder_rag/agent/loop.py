@@ -3,8 +3,12 @@
 The loop is intentionally explicit (not hidden behind LangChain/LlamaIndex)
 so the whole tool-call round-trip is visible and easy to reason about.
 
-Two backends are supported, picked via the AGENT_BACKEND env var:
-- "anthropic" (default): the hosted Gradio demo path, visitor's own key.
+Three backends are supported, picked via the AGENT_BACKEND env var (or
+per-call via run_agent's `provider`, which is how the Gradio demo routes
+each visitor by the prefix of the key they pasted):
+- "anthropic" (default): visitor's own Anthropic key.
+- "openrouter": visitor's own OpenRouter key (sk-or-...), OpenAI-style
+  chat-completions API — one key, many models (OPENROUTER_MODEL).
 - "ollama": local models (e.g. Mistral Small) for free/offline dev and
   testing, via Ollama's OpenAI-style function-calling API.
 """
@@ -22,6 +26,8 @@ BACKEND = os.environ.get("AGENT_BACKEND", "anthropic")
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small3.2")
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+OPENROUTER_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-5")
 
 # Hard cap on tool-call round-trips per user turn: a model stuck re-calling
 # tools would otherwise loop forever on the visitor's API key.
@@ -121,15 +127,24 @@ def _tool_results_to_content(tool_use_id: str, results: list[dict]) -> dict:
     }
 
 
-def run_agent(conn, client: Anthropic | None, user_message: str, history: list[dict] | None = None) -> tuple[str, list[dict]]:
+def run_agent(conn, client: Anthropic | None, user_message: str, history: list[dict] | None = None,
+              *, provider: str | None = None, api_key: str | None = None) -> tuple[str, list[dict]]:
     """Run one user turn through the agent loop.
 
     Returns (final_text, updated_history) so a caller (e.g. Gradio) can
-    keep the conversation going across turns. `client` is ignored when
-    AGENT_BACKEND=ollama (no Anthropic client needed for that path).
+    keep the conversation going across turns. `provider` overrides
+    AGENT_BACKEND for this call (the demo routes each visitor by their key
+    prefix); `client` is only used on the anthropic path and is built from
+    `api_key` when absent. The history format is provider-specific, so a
+    session that switches provider should start from an empty history.
     """
-    if BACKEND == "ollama":
+    backend = provider or BACKEND
+    if backend == "ollama":
         return _run_agent_ollama(conn, user_message, history)
+    if backend == "openrouter":
+        return _run_agent_openrouter(conn, api_key or "", user_message, history)
+    if client is None and api_key:
+        client = Anthropic(api_key=api_key)
     return _run_agent_anthropic(conn, client, user_message, history)
 
 
@@ -165,6 +180,58 @@ def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: li
             tool_results.append(_tool_results_to_content(block.id, results))
 
         messages.append({"role": "user", "content": tool_results})
+
+    return TURN_LIMIT_MESSAGE, messages
+
+
+def _run_agent_openrouter(conn, api_key: str, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
+    messages = list(history or [])
+    messages.append({"role": "user", "content": user_message})
+
+    for _ in range(MAX_TOOL_TURNS):
+        try:
+            response = requests.post(
+                OPENROUTER_URL,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    # OpenRouter attribution headers (optional, shows in their stats).
+                    "HTTP-Referer": "https://github.com/maax6/bikefinder-rag",
+                    "X-Title": "Bikefinder RAG",
+                },
+                json={
+                    "model": OPENROUTER_MODEL,
+                    "messages": [{"role": "system", "content": SYSTEM_PROMPT}, *messages],
+                    "tools": OLLAMA_TOOLS,
+                },
+                timeout=120,
+            )
+        except requests.RequestException as exc:
+            return (f"Could not reach OpenRouter ({type(exc).__name__}) — please try again.", messages)
+        if response.status_code in (401, 403):
+            return ("That OpenRouter API key was rejected — check it at openrouter.ai/keys.", messages)
+        if not response.ok:
+            return (f"OpenRouter returned an error (HTTP {response.status_code}) — please try again.", messages)
+
+        message = response.json()["choices"][0]["message"]
+        messages.append(message)
+
+        tool_calls = message.get("tool_calls") or []
+        if not tool_calls:
+            return message.get("content") or "", messages
+
+        for call in tool_calls:
+            arguments = call["function"].get("arguments") or {}
+            if isinstance(arguments, str):
+                try:
+                    arguments = json.loads(arguments)
+                except json.JSONDecodeError:
+                    arguments = {}
+            results = execute_tool(conn, call["function"]["name"], arguments)
+            messages.append({
+                "role": "tool",
+                "tool_call_id": call.get("id"),
+                "content": str(results) if results else "No matching rows.",
+            })
 
     return TURN_LIMIT_MESSAGE, messages
 
