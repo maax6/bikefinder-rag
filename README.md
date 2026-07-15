@@ -102,13 +102,33 @@ marketplaces block that outright:
 | ParuVendu | `robots.txt` disallows exactly the `/auto-moto/*` paths |
 | **Motoplanete** | ✅ **viable** (verified 2026-07-12): `robots.txt` allows the spec pages and publishes a moto sitemap (~12k pages); CGU has no database-extraction clause (non-commercial use only); fiches carry French MSRP ("Tarifs France"), full specs *and* explicit A2-version info. Hard constraint: `Crawl-delay: 10` → targeted enrichment of our existing models, not a catalog clone. |
 
-We don't scrape against an explicit prohibition or bypass anti-bot protection.
-**Current state: `msrp_eur` is a placeholder column, populated from a
-to-be-determined legitimate source (partner API, a permissive smaller
-marketplace, or an existing dataset).** Until then, expect `filter_specs`
-price queries to mostly return "no price data," which the agent is
-instructed to say plainly rather than imply the bike is unaffordable or
-doesn't exist. Real market pricing is the first item on the roadmap below.
+We don't scrape against an explicit prohibition or bypass anti-bot protection
+(Le Repaire des Motards was probed for French owner reviews and serves an
+active human-check page to automated clients — dropped, whatever its
+robots.txt says).
+
+**Current state: the motoplanete crawl is done and loaded** —
+`scripts/scrape_motoplanete_prices.py` collected 11,418 fiches (93% with a
+French launch price, 100% with a curated category), and
+`scripts/load_motoplanete_prices.py` matched 6,860 of them onto our
+motorcycles: **5,737 bikes now carry a French MSRP** in `msrp_eur` and
+5,889 a clean `category_fr` (Roadster, Sportive, Trail, Supermotard...) —
+used as a cross-check against bikez's loose categories, which mislabel
+e.g. recent Transalps as 'Super motard'. Coverage is still partial, and
+the agent is instructed to say "no price data" plainly rather than imply a
+bike is unaffordable or doesn't exist.
+
+Two more data layers ride along (loaded by their own idempotent scripts):
+
+- **US safety recalls** (`scripts/load_nhtsa_recalls.py`): NHTSA's free
+  flat files, 3,521 campaign rows matched onto 431 model families — the
+  project's only *objective* reliability signal, surfaced by
+  `get_bike_details` with an explicit "US market only" caveat.
+- **Indicative used prices** (`scripts/load_used_prices.py`): median and
+  quartiles per (family, registration year) aggregated from a 2022
+  European marketplace snapshot (Kaggle, ~21k matched listings, 542
+  families) — a dated cote indicative, presented as such, never as
+  today's market value.
 
 ## Architecture
 
@@ -123,8 +143,9 @@ Agent loop (raw Anthropic SDK, tool-use)
         ├── search_reviews ──► PostgreSQL + pgvector (BGE-M3 embeddings,
         │                       optional ILIKE metadata pre-filter)
         │
-        └── get_bike_details ► PostgreSQL (one bike's full spec sheet,
-                                raw_specs included)
+        └── get_bike_details ► PostgreSQL (one bike's full spec sheet +
+                                the family's NHTSA recalls and used-price
+                                estimate)
 ```
 
 ## Project layout
@@ -138,8 +159,14 @@ src/bikefinder_rag/
   eval/           golden_questions.json, run_ragas.py
   app.py          Gradio interface
 scripts/
-  run_pilot_scrape.py   stratified sample (categories x decades x brands)
-  load_db.py            loads scraped JSONL into Postgres, embeds comments
+  run_pilot_scrape.py            stratified sample (categories x decades x brands)
+  load_db.py                     loads scraped JSONL into Postgres, embeds comments
+  scrape_motoplanete_prices.py   French prices + categories (11.4k fiches)
+  load_motoplanete_prices.py     matches fiches onto motorcycles (msrp_eur, category_fr)
+  load_nhtsa_recalls.py          US safety recalls onto model families
+  load_used_prices.py            2022 used-price aggregates onto model families
+  eval_retrieval.py              layer-1 eval (retrieval alone, no LLM)
+  eval_tool_trajectory.py        layer-1.5 eval (tool calls, no LLM judge)
 ```
 
 ## Running it locally
@@ -161,6 +188,11 @@ PYTHONPATH=src .venv/bin/python scripts/load_db.py data/pilot
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/demo
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/century
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/2000s
+
+# Enrichment layers (idempotent, in any order after load_db):
+PYTHONPATH=src .venv/bin/python scripts/load_motoplanete_prices.py  # French MSRP + category_fr
+PYTHONPATH=src .venv/bin/python scripts/load_nhtsa_recalls.py       # US safety recalls
+PYTHONPATH=src .venv/bin/python scripts/load_used_prices.py         # 2022 used-price cote
 
 # Re-scrape / extend (resumable at bike, thread and forum level):
 PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
@@ -196,14 +228,17 @@ PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
 
 ## Roadmap
 
-1. Price + missing-field enrichment from **motoplanete.com** (verified
-   scrapable, see the price table above): match our models against its moto
-   sitemap, fetch `Tarifs France` into `msrp_eur`/`msrp_source`, and pick up
-   A2-version info (35 kW bridage) along the way — feeds a future "permis A2"
-   filter. 10s crawl-delay → enrichment of our own catalog only.
-2. Scale scraping beyond the 2024 demo year (the demo scrape covers the
-   full 2024 lineup of 16 major street brands; family-level forums mean the
-   narrative layer already reaches back years)
-3. RAGAS `context_precision`/`context_recall` (needs a hand-curated
+1. ~~Price enrichment from motoplanete.com~~ **done** (5,737 bikes priced,
+   plus `category_fr`); A2-version info (35 kW bridage) from the same fiches
+   remains to harvest — feeds a future "permis A2" filter.
+2. ~~Scale scraping beyond the 2024 demo year~~ **done** (century +
+   2000-2023 crawls: 32,395 bikes, 107,952 embedded comments)
+3. Better entity resolution across sources: the used-price cote lands on
+   bikez's family split ('Bandit' vs 'GSF 1200 Bandit' are different
+   forums), so some estimates don't reach the family a spec question hits.
+   A model-alias table would join the four data layers cleanly.
+4. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
-4. Hugging Face Spaces deployment
+5. Cross-lingual retrieval hardening: hybrid dense+sparse or a reranker
+   (`bge-reranker-v2-m3`) for the weak FR/EN pair found in the layer-1 eval
+6. Hugging Face Spaces deployment
