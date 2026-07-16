@@ -233,6 +233,24 @@ OLLAMA_MODEL=qwen3.6 RAGAS_JUDGE_MODEL=claude-cli:haiku \
 PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
 ```
 
+## Data licensing
+
+The **code** is MIT-licensed (see [LICENSE](LICENSE)). The **datasets in
+`data/`** are compilations of third-party sources and keep their sources'
+terms:
+
+- `data/pilot`, `data/demo`, `data/century`, `data/2000s` — scraped from
+  bikez.com (specs and public forum comments; their robots.txt permits the
+  crawled pages, see [Data source](#data-source--why-self-scrape)).
+- `data/motoplanete` — prices and categories from motoplanete.com, whose
+  CGU allow **non-commercial use only**: do not reuse this data
+  commercially.
+- NHTSA recalls (downloaded at load time, not committed) — US public
+  domain government data.
+- The 2022 used-listings snapshot (fetched from Kaggle at load time, not
+  committed) — ZenRows' free sample; only aggregates are stored in the
+  database.
+
 ## Roadmap
 
 1. ~~Price enrichment from motoplanete.com~~ **done** (7,137 bikes priced,
