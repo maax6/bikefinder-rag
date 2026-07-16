@@ -44,8 +44,9 @@
 <main>
   <h1>🏍️ Bikefinder RAG</h1>
   <p class="sub">An agentic RAG motorcycle advisor — raw tool-use loop (no LangChain),
-  PostgreSQL + pgvector, multilingual BGE-M3 embeddings, and a three-layer
-  evaluation with published results.</p>
+  PostgreSQL + pgvector, hybrid dense+sparse retrieval with cross-encoder
+  reranking, a French A2-licence filter, and a four-layer evaluation with
+  published results.</p>
   <p class="links">
     <a href="https://github.com/maax6/bikefinder-rag">GitHub</a>
     <a href="preuve-retrieval.html">Retrieval proof</a>
@@ -96,7 +97,7 @@
         <td>self-retrieval 30/30 · theme lifts 22–122× over corpus base rate · off-topic queries rejected</td></tr>
     <tr><td><b>1.5 — Tool calls</b><br>no LLM judge</td>
         <td>the model picks the right tools with sensible arguments</td>
-        <td>16/17 questions, 43/44 deterministic checks (mistral-small3.2) — and the eval drove the fixes that took mistral-small from 9/12 to 15/15</td></tr>
+        <td>18/18 questions, 46/46 deterministic checks (mistral-small3.2) — and the eval drove the fixes that took mistral-small from 9/12 to 15/15</td></tr>
     <tr><td><b>1.75 — Hard constraints</b><br>no LLM judge</td>
         <td>no recommended bike violates the question's budget, displacement, weight or decade</td>
         <td>0.0% violation rate over 41 verified mentions (8 questions, EN+FR), 0 hallucinated model names</td></tr>
