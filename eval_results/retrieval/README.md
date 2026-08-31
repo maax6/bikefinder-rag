@@ -81,6 +81,85 @@ corpus « century » (82 589 commentaires) ; l'éval a été rejouée après le
 chargement des années 2000 et tous les tests restent au vert à 107 952
 commentaires — ce sont les chiffres du tableau ci-dessus.
 
+## L'hybride mesuré sur le chemin livré (31 août 2026)
+
+Le tableau ci-dessus a été mesuré le 15 juillet. L'hybride dense+sparse est
+arrivé **le 16 juillet** et n'a touché ni `scripts/eval_retrieval.py` ni ce
+rapport : `french_relevance_test` réimplémentait sa propre recherche au lieu
+d'appeler `search_reviews`. Le « +57 % » a donc été attribué pendant six
+semaines à un pipeline que rien n'avait évalué.
+
+L'éval appelle maintenant la vraie fonction. Quatre bras, résultats
+identiques sur deux runs consécutifs :
+
+| Thème (requête FR) | Dense | Reranké | `search_reviews` FR | `search_reviews` EN |
+|---|---|---|---|---|
+| Consommation | 4/10 | 6/10 | 5/10 | **9/10** |
+| Vibrations | 6/10 | **10/10** | 9/10 | 5/10 |
+| Confort de selle | 1/10 | 3/10 | 2/10 | 1/10 |
+| Débutant | 3/10 | 3/10 | 3/10 | 1/10 |
+| Freins | 0/10 | 0/10 | **1/10** | **2/10** |
+| **Total** | **14/50** | **22/50** | **20/50** | **18/50** |
+
+Le bras « reranké » retombe exactement sur le 22/50 de juillet : l'instrument
+est validé avant d'être cru.
+
+**Le sparse verse effectivement du bruit dans le pool.** Mesuré sur
+« les freins sont-ils bons » : `websearch_to_tsquery('english', …)` rend
+**0 document**, le repli OR en rend **226** sur des tokens parasites, et la
+fusion RRF laisse ce bruit **évincer 14 à 19 candidats denses légitimes** du
+pool de 50. Le repli OR existe pour que des termes rares comme « SMC »
+sortent quand même ; en français il part systématiquement, puisque la branche
+AND ne rend jamais rien.
+
+**Mais le corriger ne rapporte rien — mesuré, pas supposé (1er septembre).**
+Deux leviers essayés :
+
+| levier | livré FR | livré EN |
+|---|---|---|
+| tel quel | 20/50 | 18/50 |
+| repli OR supprimé (fusion si AND a donné) | **21/50** | **17/50** |
+
+| pool dense | 50 | 100 | 200 | 400 |
+|---|---|---|---|---|
+| on-topic /50 | 21 | 21 | 21 | 20 |
+
+Le premier déplace un point dans chaque sens. Le second ne bouge pas le
+total en multipliant le pool par huit — il redistribue seulement entre
+thèmes (les freins montent de 0 à 2, les vibrations tombent de 10 à 7).
+
+**Donc le plafond n'est ni la fusion ni le rappel dense.** Il reste deux
+suspects, et les départager demande du travail neuf : la capacité du
+cross-encoder à classer du français contre un corpus anglais, et la
+validité du proxy mot-clé lui-même. Ce second point rejoint l'item RAGAS
+resté ouvert — `context_precision`/`context_recall` demandent une
+ground-truth annotée à la main, qui trancherait aussi cette question.
+L'état honnête de cette métrique est **mesurée, pas résolue**.
+
+### Trois biais de méthode, déclarés
+
+1. **Les requêtes anglaises évitent volontairement les mots de la regex**
+   (« how well does it stop in an emergency », pas « brakes »). Sinon le bras
+   sparse retrouverait exactement les termes que le proxy compte et le score
+   monterait sans rien mesurer. Le prix de ce choix : le bras EN est pénalisé
+   sur les thèmes où le mot naturel *est* le mot de la regex — **18/50 est un
+   plancher, pas une mesure d'égalité.**
+2. **`hnsw.ef_search` vaut 40 par défaut**, donc une shortlist demandée à 50
+   revenait à 43. `search_reviews` le règle désormais sur `max(fetch, 40)`.
+   Sans effet en production (la limite par défaut de l'outil est 5, soit un
+   `fetch` de 30), l'écart ne mordait que sur les appels à limite ≥ 7 — dont
+   cette éval. Les bras dense/reranké sont explicitement remis à 40 avant
+   chaque thème : `SET` persiste sur la session, et sans ce reset ils
+   héritaient du réglage du thème précédent.
+3. **Le corpus n'est pas exactement celui de juillet.** Reconstruit le
+   31 août depuis les `data/` du dépôt : **104 418 commentaires contre les
+   107 952 publiés** (−3,3 %). Le loader et le seuil des 3 commentaires n'ont
+   pas changé depuis, donc l'écart vient de la lignée des données, pas du
+   code : la base de juillet avait accumulé des passes de scrape dont les
+   fichiers ont été remplacés depuis. **Le 107 952 n'est pas reproductible
+   depuis ce dépôt ; le 104 418 l'est.** Les motos (32 395), familles
+   (4 335), rappels (3 521) et prix FR (7 137) retombent tous juste.
+
 ## Reproduire
 
 ```bash

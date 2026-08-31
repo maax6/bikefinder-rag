@@ -292,6 +292,13 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
     where = " WHERE " + " AND ".join(clauses)
 
     with conn.cursor() as cur:
+        # pgvector's HNSW scan returns at most `hnsw.ef_search` candidates
+        # (default 40), so a LIMIT above it silently comes back short — a
+        # `fetch` of 50 yields 43 rows. Harmless at the tool's default
+        # limit of 5 (fetch 30), but the shortlist this function documents
+        # is `fetch`, so ask the index for at least that many.
+        # SET takes no bind parameter; `fetch` is our own int, never user input.
+        cur.execute(f"SET hnsw.ef_search = {max(int(fetch), 40)}")
         cur.execute(select + where + " ORDER BY rc.embedding <=> %s::vector LIMIT %s",
                     [query_vector, *params, query_vector, fetch])
         columns = [desc.name for desc in cur.description]

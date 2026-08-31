@@ -2,11 +2,11 @@
   "data_integrity": {
     "motorcycles": 32395,
     "model_families": 4335,
-    "review_chunks": 107952,
+    "review_chunks": 104418,
     "families_with_reviews": 1785,
     "motos_with_reviews": 19532,
-    "very_short": 1021,
-    "avg_len": 224,
+    "very_short": 1003,
+    "avg_len": 221,
     "null_embeddings": 0,
     "orphan_chunks": 0,
     "exact_duplicate_groups": 0
@@ -21,12 +21,12 @@
     {
       "theme": "fuel economy / mileage",
       "query": "how good is the fuel economy and mileage",
-      "base_count": 1910,
-      "base_rate": 0.0177,
+      "base_count": 1816,
+      "base_rate": 0.0174,
       "top_k": 30,
-      "hits_in_top_k": 19,
-      "hit_rate": 0.6333,
-      "lift": 35.8,
+      "hits_in_top_k": 20,
+      "hit_rate": 0.6667,
+      "lift": 38.33,
       "example_hits": [
         {
           "brand": "Kawasaki",
@@ -51,12 +51,12 @@
     {
       "theme": "vibration at speed",
       "query": "does the engine vibrate a lot at speed",
-      "base_count": 709,
-      "base_rate": 0.0066,
+      "base_count": 671,
+      "base_rate": 0.0064,
       "top_k": 30,
       "hits_in_top_k": 24,
       "hit_rate": 0.8,
-      "lift": 121.81,
+      "lift": 124.49,
       "example_hits": [
         {
           "brand": "Suzuki",
@@ -81,12 +81,12 @@
     {
       "theme": "reliability problems",
       "query": "is this bike reliable or does it break down",
-      "base_count": 12761,
-      "base_rate": 0.1182,
+      "base_count": 12206,
+      "base_rate": 0.1169,
       "top_k": 30,
       "hits_in_top_k": 8,
       "hit_rate": 0.2667,
-      "lift": 2.26,
+      "lift": 2.28,
       "example_hits": [
         {
           "brand": "Husaberg",
@@ -111,12 +111,12 @@
     {
       "theme": "seat comfort",
       "query": "is the seat comfortable for long rides",
-      "base_count": 148,
-      "base_rate": 0.0014,
+      "base_count": 136,
+      "base_rate": 0.0013,
       "top_k": 30,
       "hits_in_top_k": 4,
       "hit_rate": 0.1333,
-      "lift": 97.25,
+      "lift": 102.37,
       "example_hits": [
         {
           "brand": "Harley-Davidson",
@@ -141,12 +141,12 @@
     {
       "theme": "beginner friendly",
       "query": "is this a good first bike for a beginner",
-      "base_count": 1560,
-      "base_rate": 0.0145,
+      "base_count": 1507,
+      "base_rate": 0.0144,
       "top_k": 30,
       "hits_in_top_k": 14,
       "hit_rate": 0.4667,
-      "lift": 32.29,
+      "lift": 32.33,
       "example_hits": [
         {
           "brand": "Suzuki",
@@ -171,12 +171,12 @@
     {
       "theme": "brakes",
       "query": "how good are the brakes",
-      "base_count": 2774,
-      "base_rate": 0.0257,
+      "base_count": 2652,
+      "base_rate": 0.0254,
       "top_k": 30,
       "hits_in_top_k": 17,
       "hit_rate": 0.5667,
-      "lift": 22.05,
+      "lift": 22.31,
       "example_hits": [
         {
           "brand": "Suzuki",
@@ -275,37 +275,52 @@
     {
       "theme": "fuel economy",
       "french_query": "quelle est la consommation d'essence de cette moto",
+      "english_query": "what kind of gas usage does this bike get on the highway",
       "top_k": 10,
       "hits_dense": 4,
-      "hits_reranked": 6
+      "hits_reranked": 6,
+      "hits_shipped_fr": 5,
+      "hits_shipped_en": 9
     },
     {
       "theme": "vibration",
       "french_query": "est-ce que le moteur vibre beaucoup a haute vitesse",
+      "english_query": "does the engine buzz badly at high speed",
       "top_k": 10,
       "hits_dense": 6,
-      "hits_reranked": 10
+      "hits_reranked": 10,
+      "hits_shipped_fr": 9,
+      "hits_shipped_en": 5
     },
     {
       "theme": "seat comfort",
       "french_query": "la selle est-elle confortable sur longs trajets",
+      "english_query": "how does the saddle feel on a long ride",
       "top_k": 10,
       "hits_dense": 1,
-      "hits_reranked": 3
+      "hits_reranked": 3,
+      "hits_shipped_fr": 2,
+      "hits_shipped_en": 1
     },
     {
       "theme": "beginner",
       "french_query": "est-ce une bonne premiere moto pour un debutant",
+      "english_query": "is this a good bike to learn on",
       "top_k": 10,
       "hits_dense": 3,
-      "hits_reranked": 3
+      "hits_reranked": 3,
+      "hits_shipped_fr": 3,
+      "hits_shipped_en": 1
     },
     {
       "theme": "brakes",
       "french_query": "les freins sont-ils bons",
+      "english_query": "how well does it stop in an emergency",
       "top_k": 10,
       "hits_dense": 0,
-      "hits_reranked": 0
+      "hits_reranked": 0,
+      "hits_shipped_fr": 1,
+      "hits_shipped_en": 2
     }
   ]
 }

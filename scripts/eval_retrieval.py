@@ -55,14 +55,35 @@ THEMES = [
 ]
 
 # French queries judged against the same English keyword regexes as the
-# lift test — measures what the reranker actually buys: on-topic density
-# of a French query's top-10 over an English-language corpus.
+# lift test — on-topic density of a query's top-k over an English corpus.
+#
+# Each theme also carries an English phrasing, because since the hybrid
+# retrieval landed the agent is instructed to send `query` in English (the
+# corpus's language) — so a French *user* question reaches the retriever
+# already translated, and the French-query arms below measure the fallback
+# path, not the shipped one.
+#
+# The English phrasings deliberately avoid the words the regex matches
+# ("stop in an emergency", not "brakes"): the sparse leg retrieves on query
+# terms and the proxy scores on those same terms, so a lexically-overlapping
+# English query would score near-perfectly by construction and measure
+# nothing. Paraphrases keep the proxy independent of the retriever.
 FRENCH_THEMES = [
-    ("fuel economy", "quelle est la consommation d'essence de cette moto", r"mileage|fuel consumption|km/l|mpg"),
-    ("vibration", "est-ce que le moteur vibre beaucoup a haute vitesse", r"vibrat"),
-    ("seat comfort", "la selle est-elle confortable sur longs trajets", r"seat.{0,20}comfort|comfortable seat|uncomfortable"),
-    ("beginner", "est-ce une bonne premiere moto pour un debutant", r"beginner|first bike|new rider"),
-    ("brakes", "les freins sont-ils bons", r"brake|braking"),
+    ("fuel economy", "quelle est la consommation d'essence de cette moto",
+     "what kind of gas usage does this bike get on the highway",
+     r"mileage|fuel consumption|km/l|mpg"),
+    ("vibration", "est-ce que le moteur vibre beaucoup a haute vitesse",
+     "does the engine buzz badly at high speed",
+     r"vibrat"),
+    ("seat comfort", "la selle est-elle confortable sur longs trajets",
+     "how does the saddle feel on a long ride",
+     r"seat.{0,20}comfort|comfortable seat|uncomfortable"),
+    ("beginner", "est-ce une bonne premiere moto pour un debutant",
+     "is this a good bike to learn on",
+     r"beginner|first bike|new rider"),
+    ("brakes", "les freins sont-ils bons",
+     "how well does it stop in an emergency",
+     r"brake|braking"),
 ]
 
 NEGATIVE_QUERIES = [
@@ -230,22 +251,45 @@ def cross_lingual_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
 
 
 def french_relevance_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
-    """On-topic hits (keyword proxy) in a French query's top-k, dense-only
-    vs cross-encoder-reranked. The reranker can only reorder its dense
-    shortlist, so a theme whose pool lacks on-topic candidates stays at
-    zero — that residual is the dense recall bound, reported as-is."""
+    """On-topic hits (keyword proxy) in a query's top-k, over four arms.
+
+    Two are reimplemented here (dense-only, dense+rerank) and kept for
+    continuity with the numbers published on 2026-07-15. Two call
+    `search_reviews` — the function the agent actually calls — because the
+    two reimplemented arms stopped describing the product the day hybrid
+    retrieval landed (2026-07-16) and nothing re-measured them:
+
+      hits_dense       dense top-k, no rerank            (baseline)
+      hits_reranked    dense top-50 reranked             (the '+57%' number)
+      hits_shipped_fr  search_reviews(french query)      (fallback path)
+      hits_shipped_en  search_reviews(english query)     (the shipped path)
+
+    `hits_shipped_en` is the number that describes what a French *user*
+    gets: the agent is instructed to translate the question into English
+    before searching. The reranker can only reorder its shortlist, so a
+    theme whose pool holds no on-topic candidate stays at zero in every
+    arm — that residual is a recall bound, and it is reported as-is."""
+    from bikefinder_rag.agent.tools import search_reviews
     from bikefinder_rag.embeddings import reranker
 
     results = []
-    for name, fr_query, pattern in FRENCH_THEMES:
-        pool = semantic_search(conn, fr_query, rerank_pool)
+    for name, fr_query, en_query, pattern in FRENCH_THEMES:
         hits = lambda rows: sum(bool(re.search(pattern, r["comment_text"], re.IGNORECASE)) for r in rows)
-        entry = {"theme": name, "french_query": fr_query, "top_k": top_k,
-                 "hits_dense": hits(pool[:top_k])}
+        # `search_reviews` raises hnsw.ef_search, and SET persists for the
+        # whole session — without this reset the dense arms would inherit
+        # the previous theme's setting and stop being a fixed baseline.
+        # 40 is pgvector's default, the condition the July numbers ran under.
+        with conn.cursor() as cur:
+            cur.execute("SET hnsw.ef_search = 40")
+        pool = semantic_search(conn, fr_query, rerank_pool)
+        entry = {"theme": name, "french_query": fr_query, "english_query": en_query,
+                 "top_k": top_k, "hits_dense": hits(pool[:top_k])}
         if reranker.enabled():
             scores = reranker.rerank(fr_query, [r["comment_text"] for r in pool])
             reranked = [r for r, _ in sorted(zip(pool, scores), key=lambda p: p[1], reverse=True)]
             entry["hits_reranked"] = hits(reranked[:top_k])
+        entry["hits_shipped_fr"] = hits(search_reviews(conn, fr_query, limit=top_k))
+        entry["hits_shipped_en"] = hits(search_reviews(conn, en_query, limit=top_k))
         results.append(entry)
     return results
 

@@ -266,15 +266,35 @@ terms:
    through concrete model-year rows instead of family names.
 4. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
-5. ~~Cross-lingual retrieval hardening~~ **done**:
-   `search_reviews` is now three-stage — dense HNSW shortlist + English
-   full-text shortlist (GIN, websearch with OR fallback) fused by
-   reciprocal rank fusion, then `bge-reranker-v2-m3` reranks the pool
-   (+57% on-topic results in French queries' top-10, see
-   [`eval_results/retrieval/`](eval_results/retrieval/)); the agent is
-   instructed to phrase `query` in English (the corpus's language),
-   which its models translate natively. ~3s per search on Apple
+5. **Cross-lingual retrieval — shipped, and measured on the shipped path
+   (2026-08-31).** `search_reviews` is three-stage: dense HNSW shortlist +
+   English full-text shortlist (GIN, websearch with OR fallback) fused by
+   reciprocal rank fusion, then `bge-reranker-v2-m3` reranks the pool. The
+   agent is instructed to phrase `query` in English (the corpus's
+   language), which its models translate natively. ~3s per search on Apple
    Silicon, reranker skippable via RERANKER_ENABLED=0.
+
+   On-topic hits in a query's top-10, keyword proxy, five themes (/50):
+
+   | dense | + reranker | **`search_reviews`, FR query** | **`search_reviews`, EN query** |
+   |---|---|---|---|
+   | 14 | 22 (+57%) | **20 (+43%)** | **18 (+29%)** |
+
+   The `+57%` this section used to advertise is the middle column: a
+   dense-plus-reranker measurement taken on 2026-07-15, the day *before*
+   hybrid retrieval landed. The eval reimplemented retrieval instead of
+   calling `search_reviews`, so nothing re-measured it and the gain was
+   attributed to a pipeline that had never been evaluated. The two right
+   columns call the shipped function.
+
+   **Two candidate fixes were measured, and neither works.** Dropping the
+   sparse OR fallback — which matches 226 documents on stray tokens for a
+   French phrase where the AND branch matches none, letting RRF evict 14-19
+   genuine dense candidates — moves the score by +1 FR / -1 EN. Growing the
+   dense pool from 50 to 400 leaves the total flat (21, 21, 21, 20); it only
+   shuffles hits between themes. So the ceiling is neither the fusion nor
+   dense recall, and the honest state of this metric is *measured, not
+   solved* — see [`eval_results/retrieval/`](eval_results/retrieval/).
 6. ~~Hugging Face Spaces deployment~~ **shipped as a static showcase**:
    [huggingface.co/spaces/masonpaint/bikefinder-rag](https://huggingface.co/spaces/masonpaint/bikefinder-rag)
    (proof documents, eval results, a real captured session). The full
