@@ -40,7 +40,11 @@ that got reversed) is in the [project's Notion doc] — the short version:
   post date — the agent is instructed never to attribute a comment to one
   specific model-year.
 - **Local, multilingual embeddings** (`BAAI/bge-m3`) — no embeddings API key
-  needed, and queries in French retrieve English-language forum comments.
+  needed. The review corpus is **bilingual since 2026-09-02**: bikez.com forum
+  comments (English, `lang='en'`) and motoplanete.com owner reviews (French,
+  `lang='fr'`, with a /5 `rating`) share one table and one embedding space, so a
+  French question reaches both; the sparse leg runs an English *and* a French
+  tsquery, and the agent is asked to phrase `query` in the user's language.
 - **Evaluation**: four layers, all with published results.
   [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
   retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
@@ -100,6 +104,8 @@ marketplaces block that outright:
 | La Centrale | DataDome anti-bot (CAPTCHA-gated) |
 | ParuVendu | `robots.txt` disallows exactly the `/auto-moto/*` paths |
 | **Motoplanete** | ✅ **viable** (verified 2026-07-12): `robots.txt` allows the spec pages and publishes a moto sitemap (~12k pages); CGU has no database-extraction clause (non-commercial use only); fiches carry French MSRP ("Tarifs France"), full specs *and* explicit A2-version info. Hard constraint: `Crawl-delay: 10` → targeted enrichment of our existing models, not a catalog clone. |
+| **Motoplanete — owner reviews** | ✅ **viable, same terms** (re-checked 2026-09-02): every fiche carries an "Avis des motards" block — owner reviews written in French with a /5 rating, the reviewer's model year and a date, server-rendered (no AJAX), pooled per model rather than per model-year. Crawled one fiche per (brand, model) at the site's `Crawl-delay: 10` — see [`scripts/scrape_motoplanete_reviews.py`](scripts/scrape_motoplanete_reviews.py). |
+| Moto-Station (Maxitests) | Owner-written long-form tests, `robots.txt` open to generic agents — **but** it disallows the whole site to every named AI crawler (GPTBot, ClaudeBot, anthropic-ai, CCBot…). A RAG *is* that use, whatever User-Agent string we send — dropped. |
 | Le Parking Moto | `robots.txt` permissive, **but** CGU (checked 2026-07-16) explicitly forbid robots/spiders and any reuse "à des fins commerciales ou non" without express authorization — dropped; asking for authorization remains possible. |
 | AutoScout24 | search pages (`/lst-moto?`), GraphQL APIs and AI crawlers all disallowed, no offer sitemap — no clean discovery path. The 2022 used-price snapshot in `data/` is a ZenRows *sample* of this site, used as a dated cote only. |
 
@@ -164,9 +170,11 @@ scripts/
   run_pilot_scrape.py            stratified sample (categories x decades x brands)
   load_db.py                     loads scraped JSONL into Postgres, embeds comments
   scrape_motoplanete_prices.py   French prices + categories (11.4k fiches)
+  scrape_motoplanete_reviews.py  French owner reviews, one fiche per model (3.7k fiches)
   load_motoplanete_prices.py     matches fiches onto motorcycles (msrp_eur, category_fr)
   load_nhtsa_recalls.py          US safety recalls onto model families
   load_used_prices.py            2022 used-price aggregates onto model families
+  load_motoplanete_reviews.py    French owner reviews onto model families (lang='fr', rating)
   eval_retrieval.py              layer-1 eval (retrieval alone, no LLM)
   eval_tool_trajectory.py        layer-1.5 eval (tool calls, no LLM judge)
 ```
@@ -195,6 +203,7 @@ PYTHONPATH=src .venv/bin/python scripts/load_db.py data/2000s
 PYTHONPATH=src .venv/bin/python scripts/load_motoplanete_prices.py  # French MSRP + category_fr
 PYTHONPATH=src .venv/bin/python scripts/load_nhtsa_recalls.py       # US safety recalls
 PYTHONPATH=src .venv/bin/python scripts/load_used_prices.py         # 2022 used-price cote
+PYTHONPATH=src .venv/bin/python scripts/load_motoplanete_reviews.py  # French owner reviews (lang='fr')
 
 # Re-scrape / extend (resumable at bike, thread and forum level):
 PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
