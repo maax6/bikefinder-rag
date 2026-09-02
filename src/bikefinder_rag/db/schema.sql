@@ -117,3 +117,17 @@ CREATE INDEX IF NOT EXISTS used_price_family_idx ON used_price_estimates (family
 ALTER TABLE review_chunks ADD COLUMN IF NOT EXISTS comment_tsv tsvector
     GENERATED ALWAYS AS (to_tsvector('english', comment_text)) STORED;
 CREATE INDEX IF NOT EXISTS idx_review_chunks_tsv ON review_chunks USING gin (comment_tsv);
+
+-- French owner reviews (scripts/load_motoplanete_reviews.py) share the
+-- review_chunks table with the bikez forum comments: one embedding space
+-- (BGE-M3 is multilingual), one search. `source`/`lang` tag the origin so
+-- results can say where an opinion comes from; `rating` is motoplanete's
+-- /5 note (NULL for bikez). The French tsvector gives the sparse leg a
+-- French stemmer — 'english' on French text stems nothing useful.
+ALTER TABLE review_chunks ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'bikez';
+ALTER TABLE review_chunks ADD COLUMN IF NOT EXISTS lang   TEXT NOT NULL DEFAULT 'en';
+ALTER TABLE review_chunks ADD COLUMN IF NOT EXISTS rating SMALLINT;
+ALTER TABLE review_chunks ADD COLUMN IF NOT EXISTS comment_tsv_fr tsvector
+    GENERATED ALWAYS AS (to_tsvector('french', comment_text)) STORED;
+CREATE INDEX IF NOT EXISTS idx_review_chunks_tsv_fr ON review_chunks USING gin (comment_tsv_fr);
+CREATE INDEX IF NOT EXISTS idx_review_chunks_lang ON review_chunks (lang);

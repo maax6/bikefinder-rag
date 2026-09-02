@@ -101,8 +101,10 @@ FILTER_SPECS_SCHEMA = {
 SEARCH_REVIEWS_SCHEMA = {
     "name": "search_reviews",
     "description": (
-        "Semantic search over owner/forum comments about specific motorcycles "
-        "(known issues, ride impressions, maintenance tips). Use for qualitative "
+        "Semantic search over owner reviews and forum comments about specific "
+        "motorcycles (known issues, ride impressions, maintenance tips). Two "
+        "sources: bikez.com forums (English, lang='en') and motoplanete.com "
+        "owner reviews (French, lang='fr', with a /5 rating). Use for qualitative "
         "questions. Optional filters narrow the search to a brand/model/category "
         "before ranking by similarity. Comments are attached to a model FAMILY "
         "(bikez.com shares one forum across every year and variant of a model), "
@@ -116,9 +118,10 @@ SEARCH_REVIEWS_SCHEMA = {
             "query": {
                 "type": "string",
                 "description": (
-                    "REQUIRED — the topic to search for, in plain ENGLISH words "
-                    "(the review corpus is English — translate the user's topic), "
-                    "e.g. 'reliability problems breakdowns'."
+                    "REQUIRED — the topic to search for, in plain words, in the "
+                    "USER'S language (the corpus mixes English forum comments and "
+                    "French owner reviews; the embeddings are multilingual), "
+                    "e.g. 'reliability problems breakdowns' / 'problèmes de fiabilité pannes'."
                 ),
             },
             "brand": {"type": "string"},
@@ -277,14 +280,16 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
     # (2) reciprocal rank fusion merges them — sparse catches the exact
     # terms dense blurs (model codes, 'brakes'), dense catches the
     # paraphrases sparse can't see; (3) the cross-encoder reranks the
-    # fused pool when enabled. The corpus is English, so the sparse leg
-    # only fires on English query words — French rides on dense+rerank.
+    # fused pool when enabled. The corpus is bilingual (English forums,
+    # French owner reviews), so the sparse leg runs an English and a French
+    # tsquery and keeps the better rank of the two.
     fetch = min(max(limit * 6, 20), 50) if reranker.enabled() else max(limit * 3, 15)
 
     select = """
         SELECT rc.id, f.brand, f.family_name AS model_family,
                f.year_min AS family_year_min, f.year_max AS family_year_max,
                rc.comment_text, rc.author, rc.posted_at,
+               rc.source, rc.lang, rc.rating,
                rc.embedding <=> %s::vector AS distance
         FROM review_chunks rc
         JOIN model_families f ON f.id = rc.family_id
@@ -316,9 +321,12 @@ def search_reviews(conn, query: str, brand: str | None = None, model: str | None
         for ts_query in (query, " or ".join(query.split())):
             cur.execute(
                 sparse_select + where
-                + " AND rc.comment_tsv @@ websearch_to_tsquery('english', %s)"
-                + " ORDER BY ts_rank_cd(rc.comment_tsv, websearch_to_tsquery('english', %s)) DESC LIMIT %s",
-                [*params, ts_query, ts_query, fetch])
+                + " AND (rc.comment_tsv @@ websearch_to_tsquery('english', %s)"
+                + "      OR rc.comment_tsv_fr @@ websearch_to_tsquery('french', %s))"
+                + " ORDER BY GREATEST(ts_rank_cd(rc.comment_tsv, websearch_to_tsquery('english', %s)),"
+                + "                   ts_rank_cd(rc.comment_tsv_fr, websearch_to_tsquery('french', %s))) DESC"
+                + " LIMIT %s",
+                [*params, ts_query, ts_query, ts_query, ts_query, fetch])
             sparse = [dict(zip(columns, row)) for row in cur.fetchall()]
             if sparse:
                 break

@@ -54,8 +54,12 @@ THEMES = [
     ("brakes", "how good are the brakes", r"brake|braking"),
 ]
 
-# French queries judged against the same English keyword regexes as the
-# lift test — on-topic density of a query's top-k over an English corpus.
+# French queries judged with a bilingual keyword proxy — on-topic density
+# of a query's top-k. The corpus mixes English forum comments and, since
+# 2026-09-02, French owner reviews from motoplanete, so each regex carries
+# the French words too; the shipped arms also report how many of their
+# top-k are French documents (`fr_docs_*`), which is the new corpus's
+# direct contribution.
 #
 # Each theme also carries an English phrasing, because since the hybrid
 # retrieval landed the agent is instructed to send `query` in English (the
@@ -71,19 +75,19 @@ THEMES = [
 FRENCH_THEMES = [
     ("fuel economy", "quelle est la consommation d'essence de cette moto",
      "what kind of gas usage does this bike get on the highway",
-     r"mileage|fuel consumption|km/l|mpg"),
+     r"mileage|fuel consumption|km/l|mpg|consommation|conso\b|litres?\s*(?:au|aux|/)\s*100|l/100"),
     ("vibration", "est-ce que le moteur vibre beaucoup a haute vitesse",
      "does the engine buzz badly at high speed",
-     r"vibrat"),
+     r"vibrat"),  # same stem in both languages
     ("seat comfort", "la selle est-elle confortable sur longs trajets",
      "how does the saddle feel on a long ride",
-     r"seat.{0,20}comfort|comfortable seat|uncomfortable"),
+     r"seat.{0,20}comfort|comfortable seat|uncomfortable|selle.{0,30}confort|confort.{0,30}selle|inconfortable"),
     ("beginner", "est-ce une bonne premiere moto pour un debutant",
      "is this a good bike to learn on",
-     r"beginner|first bike|new rider"),
+     r"beginner|first bike|new rider|d[ée]butant|premi[èe]re moto|jeune permis"),
     ("brakes", "les freins sont-ils bons",
      "how well does it stop in an emergency",
-     r"brake|braking"),
+     r"brake|braking|frein"),
 ]
 
 NEGATIVE_QUERIES = [
@@ -288,8 +292,12 @@ def french_relevance_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
             scores = reranker.rerank(fr_query, [r["comment_text"] for r in pool])
             reranked = [r for r, _ in sorted(zip(pool, scores), key=lambda p: p[1], reverse=True)]
             entry["hits_reranked"] = hits(reranked[:top_k])
-        entry["hits_shipped_fr"] = hits(search_reviews(conn, fr_query, limit=top_k))
-        entry["hits_shipped_en"] = hits(search_reviews(conn, en_query, limit=top_k))
+        shipped_fr = search_reviews(conn, fr_query, limit=top_k)
+        shipped_en = search_reviews(conn, en_query, limit=top_k)
+        entry["hits_shipped_fr"] = hits(shipped_fr)
+        entry["hits_shipped_en"] = hits(shipped_en)
+        entry["fr_docs_shipped_fr"] = sum(r.get("lang") == "fr" for r in shipped_fr)
+        entry["fr_docs_shipped_en"] = sum(r.get("lang") == "fr" for r in shipped_en)
         results.append(entry)
     return results
 
