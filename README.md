@@ -4,6 +4,11 @@ An agentic RAG chatbot over motorcycle specs and owner reviews — a from-scratc
 prod-stack learning project (and portfolio piece). Ask it things like *"a light naked
 bike under 600cc, and what do owners say about reliability?"* in French or English.
 
+
+## Launch video
+
+[![Bikefinder RAG](docs/brag/brag.jpg)](docs/brag/brag.mp4)
+
 ## Why this exists
 
 A first RAG project meant to actually learn the mechanics (local embeddings,
