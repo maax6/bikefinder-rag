@@ -7,7 +7,7 @@ bike under 600cc, and what do owners say about reliability?"* in French or Engli
 
 ## Launch video
 
-[![Bikefinder RAG](docs/brag/brag.jpg)](docs/brag/brag.mp4)
+https://github.com/user-attachments/assets/f4d35ffb-202e-4aa6-af69-7467d7dc9862
 
 ## Why this exists
 
