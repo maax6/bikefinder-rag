@@ -14,10 +14,14 @@ contexte récupéré ?) et **answer relevancy** (répond-elle à la question ?).
 
 ## Résultats
 
+Ces résultats sont **historiques**. Ils ne proviennent pas d'une nouvelle
+évaluation des correctifs d'octobre 2026. Un juge Claude via CLI est distant,
+même lorsqu'il ne demande pas de clé d'API.
+
 | Fichier | Génération | Juge | Questions | Faithfulness | Answer relevancy |
 |---|---|---|---|---|---|
-| [`ragas_results.json`](ragas_results.json) (15 juil. 2026, corpus complet + outils enrichis) | mistral-small3.2 | Claude Haiku (via `claude -p`) | 17 | **0.76** | **0.87** |
-| [`ragas_results_haiku-judge.json`](ragas_results_haiku-judge.json) (12 juil.) | mistral-small | Claude Haiku (via `claude -p`) | 12 | 0.71 | 0.77 |
+| [`ragas_results.json`](ragas_results.json) (15 juil. 2026, corpus complet + outils enrichis) | mistral-small3.2 (local) | Claude Haiku (distant, via `claude -p`) | 17 | **0.76** | **0.87** |
+| [`ragas_results_haiku-judge.json`](ragas_results_haiku-judge.json) (12 juil.) | mistral-small (local) | Claude Haiku (distant, via `claude -p`) | 12 | 0.71 | 0.77 |
 | [`ragas_results_qwen-judge.json`](ragas_results_qwen-judge.json) (12 juil.) | mistral-small | qwen3.6 (local) | 12 | 0.61 | 0.76 |
 
 Le run du 15 juillet intègre tout ce qui a changé entre-temps : le passage
@@ -25,11 +29,14 @@ Le run du 15 juillet intègre tout ce qui a changé entre-temps : le passage
 [`../trajectory/`](../trajectory/)), le corpus 107 952 commentaires, le
 troisième outil `get_bike_details`, les prix français, les rappels NHTSA et
 la cote occasion — 5 questions golden de plus pour couvrir ces capacités.
-Un timeout du juge sur 1 des 34 scorings (exclu de la moyenne).
+Un timeout du juge sur 1 des 34 scorings (exclu de la moyenne) : la
+faithfulness porte sur 17 réponses, la relevancy sur 16. Les différences de
+modèle, de questions et de corpus empêchent d'attribuer l'écart entre runs
+au seul enrichissement des données.
 
 Par question, les nouvelles capacités scorent au plafond (`details-1`
-1.0/1.0, `recall-1` 1.0/0.95) ; les scores bas restent les biais RAGAS
-connus plutôt que des défauts du système : pénalité sur les réponses
+1.0/1.0, `recall-1` 1.0/0.95) ; certains scores bas sont interprétés comme
+des limites du juge, à vérifier sur les réponses et les contextes : pénalité sur les réponses
 « pas de données » pourtant correctes (honesty-1/2), faithfulness à 0 sur
 une réponse d'un seul chiffre pourtant lue dans le contexte (count-1), et
 answer relevancy à 0 sur une réponse en français (narrative-3).
@@ -47,12 +54,19 @@ exactement la séparation des couches que cette éval à deux étages permet.
 
 ## Reproduire
 
+Parcours entièrement local (modèles déjà téléchargés dans Ollama) :
+
 ```bash
-OLLAMA_MODEL=mistral-small3.2 RAGAS_JUDGE_MODEL=claude-cli:haiku \
+OLLAMA_MODEL=mistral-small3.2 RAGAS_JUDGE_MODEL=qwen3.6 \
   EMBEDDER_DEVICE=cpu AGENT_BACKEND=ollama \
   PYTHONPATH=src .venv/bin/python -m bikefinder_rag.eval.run_ragas --regenerate
 ```
 
-Écrit `eval_results/ragas/ragas_results.json`. Les réponses sont mises en
-cache par question et reprennent après une interruption ; `--regenerate`
-force des réponses fraîches.
+Écrit un fichier daté `eval_results/ragas/ragas_results_<date-UTC>.json`,
+sans remplacer les résultats ci-dessus. Pour un juge distant optionnel,
+utiliser `RAGAS_JUDGE_MODEL=claude-cli:haiku`.
+
+Les réponses reprennent après une interruption seulement si le cache
+correspond au même générateur, code et corpus. Les caches historiques sans
+provenance sont refusés avec une instruction explicite `--regenerate`.
+Changer seulement le juge permet de re-noter des réponses identiques.

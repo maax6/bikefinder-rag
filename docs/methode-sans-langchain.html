@@ -192,7 +192,7 @@
 
   <div class="eyebrow">Bikefinder RAG · note d'ingénierie</div>
   <h1>Un agent RAG sans framework&nbsp;: la boucle est le produit</h1>
-  <p class="dek">Bikefinder répond à «&nbsp;un roadster léger en A2, et qu'en disent les propriétaires&nbsp;?&nbsp;» en interrogeant 14&nbsp;000 fiches techniques et des dizaines de milliers d'avis de forums. Le cœur de l'agent tient en <b>une boucle de ~40 lignes écrite à la main</b> — pas de LangChain, pas de LlamaIndex. Cette page montre la différence, et ce que la transparence a rapporté concrètement.</p>
+  <p class="dek">Bikefinder explore les fiches moto et les avis de propriétaires avec <b>une boucle d'outils explicite</b>. Le projet reste un POC local. Les extraits ci-dessous expliquent le principe ; le dépôt contient l'implémentation complète, ses trois backends et ses tests.</p>
 
   <h2>Le processus, sans magie</h2>
   <div class="prose"><p>Un «&nbsp;agent&nbsp;» n'est rien d'autre que ceci&nbsp;: un modèle qui reçoit des schémas d'outils, décide d'appeler un outil ou de répondre, et revoit passer le résultat de l'outil comme un message. Tout le reste est de l'emballage.</p></div>
@@ -286,7 +286,7 @@ result = executor.invoke({<span class="s">"input"</span>: question})
     </div>
     <div class="story">
       <div class="t">Un second backend en 30 lignes</div>
-      <p>Pas de clé API ? La même boucle tourne sur Ollama (Mistral local) : seule la forme des messages change. Le dev, les tests et l'éval RAGAS complète tournent gratuitement en local — le juge aussi (qwen3.6).</p>
+      <p>Le POC utilise Ollama par défaut (Mistral local). Après préparation des modèles et de la base, le chat et l'éval RAGAS avec un juge qwen3.6 peuvent fonctionner localement sans clé API. Les backends cloud restent des expériences optionnelles.</p>
       <span class="metric">éval 100 % locale, 0 € d'API</span>
     </div>
     <div class="story">
@@ -298,12 +298,12 @@ result = executor.invoke({<span class="s">"input"</span>: question})
 
   <h2>Le process complet, de la page web à la réponse évaluée</h2>
   <div class="pipeline">
-    <div class="step"><span class="n">01</span><div class="t">Scraping poli</div><div class="d">bikez.com, délai configurable, backoff auto sur 429/5xx, reprise au thread près. ~14 000 fiches + forums complets.</div></div>
+    <div class="step"><span class="n">01</span><div class="t">Scraping poli</div><div class="d">bikez.com, délai configurable, backoff sur 429/5xx et reprise au thread près. Les volumes dépendent du corpus chargé.</div></div>
     <div class="step"><span class="n">02</span><div class="t">Modèle de données</div><div class="d">Postgres + pgvector. Les avis appartiennent aux <em>familles</em> de modèles (le forum bikez est partagé entre millésimes), dédupliqués par hash.</div></div>
     <div class="step"><span class="n">03</span><div class="t">Embeddings locaux</div><div class="d">BGE-M3 (multilingue) : une question en français retrouve des avis en anglais. Aucune clé d'API d'embeddings.</div></div>
-    <div class="step"><span class="n">04</span><div class="t">Deux outils typés</div><div class="d"><code>filter_specs</code> (SQL paramétré, tri whitelisté) et <code>search_reviews</code> (cosinus pgvector + filtres mot-à-mot).</div></div>
-    <div class="step"><span class="n">05</span><div class="t">La boucle</div><div class="d">Celle du schéma ci-dessus. Claude en prod, Ollama en dev — même code, même historique inspectable.</div></div>
-    <div class="step"><span class="n">06</span><div class="t">Éval à deux étages</div><div class="d">Retrieval seul sans LLM (lifts 21-82×), puis RAGAS sur l'agent complet : faithfulness 0.78 / relevancy 0.87 en full local.</div></div>
+    <div class="step"><span class="n">04</span><div class="t">Trois outils typés</div><div class="d"><code>filter_specs</code> (SQL paramétré), <code>search_reviews</code> (hybride + reranking) et <code>get_bike_details</code> (fiche et enrichissements).</div></div>
+    <div class="step"><span class="n">05</span><div class="t">La boucle</div><div class="d">Ollama par défaut pour le POC local ; cloud optionnel. Historique inspectable.</div></div>
+    <div class="step"><span class="n">06</span><div class="t">Quatre couches d'éval</div><div class="d">Recherche, outils, contraintes et RAGAS. Runs historiques : 0.61 / 0.76 entièrement local (12 questions) ; 0.76 / 0.87 avec juge Haiku distant (17 questions, relevancy sur 16).</div></div>
   </div>
 
   <h2>Ce qu'on perd, honnêtement</h2>

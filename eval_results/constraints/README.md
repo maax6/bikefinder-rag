@@ -20,9 +20,10 @@ Méthode, entièrement déterministe :
    respectée quand la réponse en donne une) ;
 4. vérifier chaque contrainte sur les lignes résolues.
 
-Trois issues par mention : satisfaite, **violée**, invérifiable (la mention
-ne se résout pas en base — compté à part : un nom de modèle inventé est un
-échec d'une autre nature).
+Trois issues par mention : satisfaite, **violée**, invérifiable (mention
+non résolue ou données insuffisantes). Depuis octobre 2026, une contrainte
+numérique sans valeur en base ne peut plus être classée satisfaite. Une
+violation connue reste une violation, même si une autre donnée manque.
 
 ## Résultats (15 juillet 2026, mistral-small3.2, corpus complet)
 
@@ -31,15 +32,20 @@ Fichier brut : [`constraints_mistral-small3.2.json`](constraints_mistral-small3.
 | Métrique | Valeur |
 |---|---|
 | Questions | 8 (5 EN, 3 FR) |
-| Mentions vérifiées | 41 |
+| Mentions résolues (checker historique) | 41 |
 | **Violations de contraintes** | **0 → taux 0,0 %** |
 | Invérifiables | 13 (24 %) |
+
+Ce taux est un résultat historique du checker précédent. Celui-ci ignorait
+les champs numériques absents : « 41 mentions vérifiées » signifiait alors
+41 mentions résolues, sans garantir que toutes leurs contraintes étaient
+vérifiables. Les anciens scores sont conservés, pas recalculés.
 
 Les 13 « invérifiables » de ce run ne sont pas des modèles inventés : ce
 sont des sous-lignes de specs (« Seat Height: 780 mm… ») que l'extracteur
 de mentions prenait pour des noms — l'artefact est corrigé dans le script
-depuis ce run. Aucune moto réellement nommée par l'agent n'a violé une
-contrainte, et aucune ne s'est révélée inexistante en base.
+depuis ce run. Aucune violation n'a été détectée sur les champs renseignés
+des motos résolues ; les données manquantes limitaient cette vérification.
 
 Un run précédent avait affiché 1 « violation » : un bug de *l'éval*
 elle-même (la mention « Leoncino 800 » résolue sur le Leoncino 800 Trail,
@@ -54,4 +60,5 @@ AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \
   PYTHONPATH=src .venv/bin/python scripts/eval_constraints.py
 ```
 
-Écrit `eval_results/constraints/constraints_<modèle>.json`.
+Écrit un fichier daté `eval_results/constraints/constraints_<modèle>_<date-UTC>.json`
+avec provenance, sans remplacer le résultat historique.

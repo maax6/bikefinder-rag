@@ -1,8 +1,14 @@
 # Bikefinder RAG
 
-An agentic RAG chatbot over motorcycle specs and owner reviews — a from-scratch-data,
-prod-stack learning project (and portfolio piece). Ask it things like *"a light naked
-bike under 600cc, and what do owners say about reliability?"* in French or English.
+An entirely local **proof of concept** for agentic RAG over motorcycle specs
+and owner reviews. It combines Ollama, PostgreSQL/pgvector and local embedding
+and reranking models. Ask it things like *"a light naked bike under 600cc, and
+what do owners say about reliability?"* in French or English.
+
+This is a learning project and portfolio piece. The default chat path needs
+no cloud account or API key. Installation and the first model downloads need
+Internet; inference can run offline once the models and database are ready.
+Anthropic/OpenRouter and a remote evaluation judge remain optional experiments.
 
 
 ## Launch video
@@ -13,14 +19,15 @@ https://github.com/user-attachments/assets/f4d35ffb-202e-4aa6-af69-7467d7dc9862
 
 A first RAG project meant to actually learn the mechanics (local embeddings,
 hand-written pgvector similarity SQL, an explicit tool-use loop) rather than
-wrap a framework. Full context and every decision trail (including the ones
-that got reversed) is in the [project's Notion doc] — the short version:
+wrap a framework. The repository keeps the implementation and evaluation
+reports alongside the data — the short version:
 
 - **Corpus**: self-scraped from [bikez.com](https://bikez.com) (specs + owner
   discussion forums), not a pre-packaged Kaggle dump — see [Data source](#data-source--why-self-scrape).
-  Currently **32,395 motorcycles (1894–2024), 4,335 model families, 107,952
-  embedded owner comments** — the full last century, the 2000-2023 catalog
-  and the 2024 lineup, datasets shipped in `data/`.
+  The recorded full-catalog runs cover **32,395 motorcycles (1894–2024)
+  and 4,335 model families**. Review counts vary with the sources loaded;
+  a result belongs to its corpus snapshot, not every installation. The
+  century, 2000–2023 and 2024 datasets ship in `data/`.
 - **Category filter**: `Scooter` is excluded *unless* displacement ≥ 500cc
   (keeps crossovers like the Honda X-ADV or Yamaha TMAX, drops twist-and-go
   commuters), `ATV` is always excluded, everything else — including
@@ -29,7 +36,8 @@ that got reversed) is in the [project's Notion doc] — the short version:
   is checked; a motorcycle only gets a narrative/review layer if it has ≥3
   substantive comments. The narrative subset emerges from what actually has
   discussion, not from a guessed popularity ranking.
-- **Agentic RAG, raw Anthropic SDK** — no LangChain/LlamaIndex. Three tools:
+- **Agentic RAG, explicit tool-use loop** — Ollama by default, optional
+  cloud backends, no orchestration framework. Three tools:
   `filter_specs` (typed parameters only, parameterized SQL, the LLM never
   writes SQL — plus a `count_only` mode for "how many" questions),
   `search_reviews` (pgvector cosine search with optional fuzzy/`ILIKE`
@@ -50,10 +58,10 @@ that got reversed) is in the [project's Notion doc] — the short version:
   `lang='fr'`, with a /5 `rating`) share one table and one embedding space, so a
   French question reaches both; the sparse leg runs an English *and* a French
   tsquery, and the agent is asked to phrase `query` in the user's language.
-- **Evaluation**: four layers, all with published results.
-  [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) proves the
-  retrieval layer alone, no LLM involved (self-retrieval 30/30, theme lifts
-  21-82x over corpus base rate, negative controls rejected — see
+- **Evaluation**: four layers, with historical results and their limitations.
+  [`scripts/eval_retrieval.py`](scripts/eval_retrieval.py) checks the
+  retrieval layer alone, no LLM involved (data integrity, self-retrieval,
+  keyword-based theme proxies and off-topic distance controls — see
   [`eval_results/retrieval/`](eval_results/retrieval/)).
   [`scripts/eval_tool_trajectory.py`](scripts/eval_tool_trajectory.py)
   scores how a model calls the tools — deterministic predicates over the
@@ -64,20 +72,25 @@ that got reversed) is in the [project's Notion doc] — the short version:
   [`scripts/eval_constraints.py`](scripts/eval_constraints.py) then checks
   the final answers themselves: every motorcycle named in a reply is
   resolved against the database and verified against the question's hard
-  constraints — **0.0% violation rate** over 41 verified mentions
+  constraints — a historical run reported **0.0% detected violations**
+  over 41 resolved mentions. The legacy checker could treat missing numeric
+  data as satisfied; this is not evidence that every constraint was verified
   ([`eval_results/constraints/`](eval_results/constraints/)).
   [RAGAS](https://github.com/explodinggpt/ragas)
   (faithfulness, answer relevancy) then scores the full agent over the
-  golden set: **0.76 / 0.87** (generation mistral-small3.2, judge Haiku
-  via `claude -p`, 17 questions on the full corpus) — up from 0.71/0.77
-  before the enrichment layers. An earlier two-judge pass (qwen3.6 local
+  golden set: a historical run reports **0.76 / 0.87** (local generation
+  mistral-small3.2, **remote** judge Haiku via `claude -p`, 17 questions;
+  answer relevancy is available for 16). The published fully local run
+  reports **0.61 / 0.76 on 12 questions** with a qwen3.6 judge. These runs
+  have different configurations and do not establish a controlled gain.
+  An earlier two-judge pass (qwen3.6 local
   + Haiku) converged per-question, caught two real retrieval bugs whose
   fixes lifted narratives from 0.0 to 1.0, and documented RAGAS's known
   penalty on honest "no data on record" refusals
   ([`eval_results/ragas/`](eval_results/ragas/)).
-- **Interface**: Gradio, deployable on Hugging Face Spaces for free — visitors
-  paste their own Anthropic API key (used only for their session, never
-  stored server-side).
+- **Interface**: Gradio on `127.0.0.1`, using the local Ollama model by
+  default. The optional cloud interface asks for the visitor's own key.
+  The Hugging Face deployment directory is a historical showcase experiment.
 
 ## Data source & why self-scrape
 
@@ -119,17 +132,27 @@ We don't scrape against an explicit prohibition or bypass anti-bot protection
 active human-check page to automated clients — dropped, whatever its
 robots.txt says).
 
-**Current state: the motoplanete crawl is done and loaded** —
+**Historical enrichment run** —
 `scripts/scrape_motoplanete_prices.py` collected 11,418 fiches (93% with a
 French launch price, 100% with a curated category), and
 `scripts/load_motoplanete_prices.py` matched 9,390 of them (82%) onto our
-motorcycles: **7,137 bikes now carry a French MSRP** in `msrp_eur` (22% of
+motorcycles: **7,137 bikes carried a French MSRP** in `msrp_eur` (22% of
 the catalog, 25-29% of each decade since 1990) and
 7,356 a clean `category_fr` (Roadster, Sportive, Trail, Supermotard...) —
 used as a cross-check against bikez's loose categories, which mislabel
 e.g. recent Transalps as 'Super motard'. Coverage is still partial, and
 the agent is instructed to say "no price data" plainly rather than imply a
-bike is unaffordable or doesn't exist.
+bike is unaffordable or doesn't exist. These coverage figures precede the
+October 2026 matching correction: the old fallback could confuse numeric
+model identifiers (for example CBF500 and CBF600N). Corrected code prevents
+those matches on future imports; existing enrichments need a separate audit
+and rebuild before their coverage or correctness is re-published.
+
+A read-only replay of 11,416 plausible fiches with the revised matcher
+reduced automatic matches from 9,390 to 6,821. All 346 previously identified
+priced cases with disjoint numeric identifiers lose that contradiction;
+this is a diagnostic proxy, not a human validation of every new match.
+The conservative rule deliberately leaves more ambiguous names unmatched.
 
 Two more data layers ride along (loaded by their own idempotent scripts):
 
@@ -146,15 +169,15 @@ Two more data layers ride along (loaded by their own idempotent scripts):
 ## Architecture
 
 ```
-Gradio UI (visitor's own Anthropic key)
+Local Gradio UI (127.0.0.1, no API key)
         │
         ▼
-Agent loop (raw Anthropic SDK, tool-use)
+Agent loop (Ollama by default, explicit tool-use)
         │
         ├── filter_specs ────► PostgreSQL (typed columns, parameterized SQL)
         │
-        ├── search_reviews ──► PostgreSQL + pgvector (BGE-M3 embeddings,
-        │                       optional ILIKE metadata pre-filter)
+        ├── search_reviews ──► PostgreSQL + pgvector (BGE-M3 dense search
+        │                       + EN/FR full-text, RRF, local reranker)
         │
         └── get_bike_details ► PostgreSQL (one bike's full spec sheet +
                                 the family's NHTSA recalls and used-price
@@ -186,66 +209,115 @@ scripts/
 
 ## Running it locally
 
+Prerequisites: Python 3.11+, a running Docker engine with Compose, and Ollama.
+Start with the pilot corpus; loading the entire catalog is optional and much
+more expensive. The examples below explicitly select the local backend even
+if an existing `.env` still selects a cloud provider.
+
 ```bash
-python3.11 -m venv .venv && .venv/bin/pip install -e .
-cp .env.example .env   # AGENT_BACKEND=ollama for the free local path
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -e '.[dev]'
+test -f .env || cp .env.example .env
+export AGENT_BACKEND=ollama
 
-docker run -d --name bikefinder-pg \
-  -e POSTGRES_USER=bikefinder -e POSTGRES_PASSWORD=bikefinder -e POSTGRES_DB=bikefinder \
-  -p 5432:5432 \
-  -v "$(pwd)/src/bikefinder_rag/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql" \
-  pgvector/pgvector:pg17
+# Start Ollama in another terminal with `ollama serve` if it is not running.
+# The first pull needs Internet and enough disk/RAM for the chosen model.
+ollama pull mistral-small3.2
+docker compose up -d --wait postgres
 
-# The scraped datasets ship with the repo (data/pilot, data/demo,
-# data/century — 1894-1999 + the 2024 lineup, data/2000s — 2000-2023).
-# Load them (deduplicates + embeds, GPU-hours at full scale):
+# Minimal demo: the pilot data ships with the repo. The first embedding
+# operation downloads BGE-M3; the first review search downloads the reranker.
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/pilot
+
+# Chat in the browser (http://127.0.0.1:7860), or use scripts/chat_cli.py.
+PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
+```
+
+Compose persists PostgreSQL in a named volume and only exposes its port on
+`127.0.0.1`. Its initialization SQL runs once for a new volume. To apply the
+current idempotent schema to an existing Compose database:
+
+```bash
+docker compose exec -T postgres sh -c 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB"' \
+  < src/bikefinder_rag/db/schema.sql
+```
+
+For an offline session, prepare **both** local Hugging Face models once while
+online, then set `HF_HUB_OFFLINE=1` in `.env`:
+
+```bash
+PYTHONPATH=src .venv/bin/python -c 'from bikefinder_rag.embeddings.embedder import embed_text; from bikefinder_rag.embeddings.reranker import rerank; embed_text("motorcycle"); rerank("motorcycle", ["owner review"])'
+```
+
+Ollama's model must also have been pulled. The scraper and the optional
+NHTSA/Kaggle loaders still need Internet; they are separate preparation
+steps. `RERANKER_ENABLED=0` skips the second model at a ranking-quality cost.
+
+Optional full-catalog imports and enrichments:
+
+```bash
+# Same AGENT_BACKEND=ollama setting as above. Full embedding is costly,
+# including on repeat imports: existing rows are skipped only after encoding.
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/demo
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/century
 PYTHONPATH=src .venv/bin/python scripts/load_db.py data/2000s
 
-# Enrichment layers (idempotent, in any order after load_db):
+# Optional enrichment layers, after load_db:
 PYTHONPATH=src .venv/bin/python scripts/load_motoplanete_prices.py  # French MSRP + category_fr
 PYTHONPATH=src .venv/bin/python scripts/load_nhtsa_recalls.py       # US safety recalls
 PYTHONPATH=src .venv/bin/python scripts/load_used_prices.py         # 2022 used-price cote
 PYTHONPATH=src .venv/bin/python scripts/load_motoplanete_reviews.py  # French owner reviews (lang='fr')
+# The French reviews file is required for the last command; crawl it first
+# with scripts/scrape_motoplanete_reviews.py if it is absent in your checkout.
 
 # Re-scrape / extend (resumable at bike, thread and forum level):
 PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
     --years 2000-2023 --brands all --out data/2000s
-
-# Chat (Gradio, or scripts/chat_cli.py for the terminal):
-PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
 ```
 
 ## Evaluating
 
 ```bash
-# Layer 1 — retrieval alone, no LLM (writes eval_results/retrieval/retrieval_report.json):
+# Layer 1 — retrieval alone, no LLM (writes a dated report under eval_results/retrieval/):
 PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
 
 # Layer 1.5 — tool-call trajectories, deterministic checks, no LLM judge
-# (one model per run; writes eval_results/trajectory/trajectory_<model>.json):
+# (one model per run; writes a dated report under eval_results/trajectory/):
 AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \
   PYTHONPATH=src .venv/bin/python scripts/eval_tool_trajectory.py
 
 # Layer 1.75 — hard-constraint violation rate of the final answers
-# (writes eval_results/constraints/constraints_<model>.json):
+# (writes a dated report under eval_results/constraints/):
 AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \
   PYTHONPATH=src .venv/bin/python scripts/eval_constraints.py
 
-# Layer 2 — RAGAS over the full agent. Generation model via OLLAMA_MODEL;
-# judge via RAGAS_JUDGE_MODEL: an Ollama model name (local), or
-# "claude-cli[:model]" to judge through `claude -p` on a Claude
-# subscription (no API key). Answers are cached per question and resume
-# after an interrupt; --regenerate forces fresh ones.
-OLLAMA_MODEL=qwen3.6 RAGAS_JUDGE_MODEL=claude-cli:haiku \
+# Layer 2 — fully local RAGAS: pull the judge before running this command.
+# Generation and judge are deliberately different local models.
+OLLAMA_MODEL=mistral-small3.2 RAGAS_JUDGE_MODEL=qwen3.6 \
   EMBEDDER_DEVICE=cpu AGENT_BACKEND=ollama \
   PYTHONPATH=src .venv/bin/python -m bikefinder_rag.eval.run_ragas
 
 # Data-coverage dashboard (self-contained HTML, spot what to fill next):
 PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
+
+# Regression tests (no database, model download or LLM call):
+.venv/bin/python -m pytest -q
 ```
+
+Use `RAGAS_JUDGE_MODEL=claude-cli:haiku` only for an explicitly **remote**
+judge experiment. A subscription without an API key still uses a cloud model.
+RAGAS can resume cached answers only when the generation identity and corpus
+match; `--regenerate` explicitly discards incompatible answers. Changing the
+judge alone permits re-scoring the same generated answers.
+
+Cache verification requires the database and the generator's Ollama server
+even when re-scoring answers: their identities are checked before reuse.
+
+New evaluation reports include run provenance. Historical JSON files are
+preserved as recorded; they are not a fresh validation of the current code.
+Self-retrieval is a plumbing check, theme regexes are relevance proxies, and
+off-topic distance controls do not implement an abstention policy. See
+[`eval_results/README.md`](eval_results/README.md) before quoting a score.
 
 ## Data licensing
 
@@ -267,26 +339,32 @@ terms:
 
 ## Roadmap
 
-1. ~~Price enrichment from motoplanete.com~~ **done** (7,137 bikes priced,
-   plus `category_fr`); ~~"permis A2" filter~~ **done** — derived from the
+1. Price enrichment and `category_fr` are implemented; audit and rebuild
+   existing enrichments after the numeric matching correction before
+   publishing refreshed coverage. The **"permis A2" filter** is derived from the
    specs already in base (<=35 kW and <=0.2 kW/kg direct, <=70 kW
-   restrictable): `filter_specs(a2_only=true)`, 15,593 eligible bikes,
-   results carry an `a2` column saying 'A2' or 'A2 bridable'.
+   restrictable): `filter_specs(a2_only=true)`. Results carry an `a2` column
+   saying 'A2' or 'A2 bridable'. This is a specification-based estimate;
+   availability of an approved restriction kit is not verified, and the
+   source mixes wet and dry weights.
 2. ~~Scale scraping beyond the 2024 demo year~~ **done** (century +
-   2000-2023 crawls: 32,395 bikes, 107,952 embedded comments)
-3. ~~Better entity resolution across sources~~ **done**
+   2000-2023 crawls: 32,395 bikes in the recorded full-catalog runs)
+3. Shared entity resolution across sources is implemented
    (`src/bikefinder_rag/matching.py`): one token-level matcher shared by
    the enrichment loaders; the used-price cote now reaches families
-   through concrete model-year rows instead of family names.
+   through concrete model-year rows instead of family names. October 2026
+   regressions protect numeric model identifiers; ambiguous matches still
+   need source-specific auditing.
 4. RAGAS `context_precision`/`context_recall` (needs a hand-curated
    ground-truth set, deferred — faithfulness/answer_relevancy don't need one)
 5. **Cross-lingual retrieval — shipped, and measured on the shipped path
    (2026-08-31).** `search_reviews` is three-stage: dense HNSW shortlist +
-   English full-text shortlist (GIN, websearch with OR fallback) fused by
+   English/French full-text shortlists (GIN, websearch with OR fallback) fused by
    reciprocal rank fusion, then `bge-reranker-v2-m3` reranks the pool. The
-   agent is instructed to phrase `query` in English (the corpus's
-   language), which its models translate natively. ~3s per search on Apple
-   Silicon, reranker skippable via RERANKER_ENABLED=0.
+   agent is instructed to keep `query` in the user's language. Reranking is
+   skippable via RERANKER_ENABLED=0. The measurements below are the
+   **historical English-corpus baseline**, before French reviews were added;
+   they do not measure the current bilingual corpus.
 
    On-topic hits in a query's top-10, keyword proxy, five themes (/50):
 
@@ -308,11 +386,11 @@ terms:
    dense pool from 50 to 400 leaves the total flat (21, 21, 21, 20); it only
    shuffles hits between themes. So the ceiling is neither the fusion nor
    dense recall, and the honest state of this metric is *measured, not
-   solved* — see [`eval_results/retrieval/`](eval_results/retrieval/).
+   solved for that historical configuration* — see
+   [`eval_results/retrieval/`](eval_results/retrieval/).
 6. ~~Hugging Face Spaces deployment~~ **shipped as a static showcase**:
    [huggingface.co/spaces/masonpaint/bikefinder-rag](https://huggingface.co/spaces/masonpaint/bikefinder-rag)
    (proof documents, eval results, a real captured session). The full
-   Docker Space (Postgres + agent in one container, `deploy/`) is built
-   and verified locally under linux/amd64 — hosting it live needs an HF
-   PRO plan since the 2026 free-tier change, so it ships as
-   run-it-yourself instead.
+   Docker Space (Postgres + agent in one container, `deploy/`) is retained
+   as a historical hosting experiment. The supported POC workflow is local;
+   hosting availability and pricing have not been re-checked in this revision.

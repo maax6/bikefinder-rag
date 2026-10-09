@@ -134,13 +134,14 @@
 
   <div class="eyebrow">Bikefinder RAG · note d'ingénierie n°2</div>
   <h1>De la page web au score RAGAS&nbsp;: le pipeline, étape par étape</h1>
-  <p class="dek">Comment 130 ans de catalogue moto et leurs forums deviennent un agent interrogeable — et comment on <b>mesure</b> qu'il fonctionne, plutôt que de le croire sur parole. Chaque chiffre de cette page sort d'un script du repo, reproductible.</p>
+  <p class="dek">Comment 130 ans de catalogue moto et leurs forums deviennent un agent interrogeable — et comment on <b>mesure</b> ses limites.</p>
+  <div class="callout"><b class="a">Lecture historique, précisée le 10 octobre 2026.</b> Les chiffres ci-dessous décrivent les premiers runs de juillet, avec leurs corpus successifs. Ils ne valident pas le code actuel. Le projet reste un <b>POC local</b> : Ollama, PostgreSQL et modèles d'embeddings locaux. Les configurations et résultats enregistrés sont détaillés dans le <a href="https://github.com/maax6/bikefinder-rag/blob/main/eval_results/README.md">guide des évaluations</a>.</div>
 
   <div class="flow">
     <div class="fstep"><span class="n">01</span><div class="t">Scraping</div><div class="d">bikez.com, 1894–2024, reprise au thread près</div></div>
     <div class="fstep"><span class="n">02</span><div class="t">Modèle de données</div><div class="d">familles de modèles, déduplication</div></div>
     <div class="fstep"><span class="n">03</span><div class="t">Embeddings</div><div class="d">BGE-M3 local, 82&nbsp;589 vecteurs</div></div>
-    <div class="fstep"><span class="n">04</span><div class="t">Agent</div><div class="d">2 outils typés, boucle à la main</div></div>
+    <div class="fstep"><span class="n">04</span><div class="t">Agent</div><div class="d">3 outils aujourd'hui, boucle à la main</div></div>
     <div class="fstep"><span class="n">05</span><div class="t">Éval retrieval</div><div class="d">4 tests sans LLM</div></div>
     <div class="fstep"><span class="n">06</span><div class="t">Éval RAGAS</div><div class="d">l'agent complet, jugé par un LLM</div></div>
   </div>
@@ -171,9 +172,9 @@
     <p>L'ordre de grandeur à retenir&nbsp;: un commentaire médian fait ~200 octets de texte, son vecteur en pèse ~4&nbsp;000 — <b>l'embedding pèse 20&nbsp;fois le texte qu'il représente</b>. Les 82&nbsp;589 vecteurs portent la base à 1,1&nbsp;Go, et la vectorisation du corpus complet a coûté ~2&nbsp;h de GPU. C'est le vrai coût du RAG&nbsp;: pas le stockage du texte, la géométrie qu'on construit autour.</p>
   </div>
 
-  <h2><span class="num">04</span>L'agent — deux outils typés, une boucle visible</h2>
+  <h2><span class="num">04</span>L'agent — des outils typés, une boucle visible</h2>
   <div class="prose">
-    <p>Le LLM n'écrit jamais de SQL. Il dispose de deux outils aux paramètres typés&nbsp;: <code>filter_specs</code> (filtres numériques et catégoriels, tri whitelisté, requêtes paramétrées) et <code>search_reviews</code> (similarité pgvector + filtres mot-à-mot sur marque/modèle). La boucle d'orchestration fait ~40 lignes, sans framework — le pourquoi et le comment ont leur propre note&nbsp;: <em>«&nbsp;Un agent RAG sans framework&nbsp;»</em>. Même code pour Claude (démo publique) et pour un modèle local via Ollama (dev et éval gratuites).</p>
+    <p>Le LLM n'écrit jamais de SQL. Il dispose aujourd'hui de trois outils aux paramètres typés&nbsp;: <code>filter_specs</code> (filtres structurés et tri whitelisté), <code>search_reviews</code> (recherche hybride dense + texte intégral FR/EN, puis reranking) et <code>get_bike_details</code> (fiche, rappels US, cote historique). La boucle reste explicite, sans framework d'orchestration. Ollama est le backend par défaut du POC local ; les backends cloud sont optionnels.</p>
   </div>
 
   <h2><span class="num">05</span>Éval couche 1 — prouver le retrieval sans aucun LLM</h2>
@@ -185,9 +186,9 @@
     <tr><td>Intégrité</td><td class="wrap">comptages, orphelins, doublons, embeddings nuls</td><td><span class="pill g">0 doublon, 0 orphelin</span></td></tr>
     <tr><td>Self-retrieval</td><td class="wrap">un texte ré-embeddé doit se retrouver lui-même en 1er</td><td><span class="pill g">30/30, distance 0.0</span></td></tr>
     <tr><td>Lift thématique</td><td class="wrap">top-30 sémantique vs taux de base du mot-clé dans le corpus</td><td><span class="pill g">21× à 212× selon le thème</span></td></tr>
-    <tr><td>Contrôles négatifs</td><td class="wrap">une recette de cuisine doit scorer nettement plus loin</td><td><span class="pill g">rejetés (d≈0.43-0.50 vs 0.08-0.36)</span></td></tr>
+    <tr><td>Contrôles négatifs</td><td class="wrap">une recette de cuisine doit scorer nettement plus loin</td><td><span class="pill g">distances d≈0.43-0.50 vs 0.08-0.36</span></td></tr>
   </table></div>
-  <div class="callout good"><b class="g">Point clé&nbsp;:</b> les lifts se <b>renforcent</b> quand le corpus grossit (freins&nbsp;: 30/30 hits à 82&nbsp;k avis). Le retrieval est prouvé sain — tout échec en aval est donc imputable à la génération.</div>
+  <div class="callout good"><b class="g">Portée de la mesure&nbsp;:</b> ces tests donnent des signaux sur le pipeline et quelques thèmes. Ils ne couvrent pas toutes les questions ; un échec ultérieur demande encore d'examiner les appels d'outils et les contextes récupérés. Les contrôles de distance ne constituent pas un refus applicatif des questions hors sujet.</div>
 
   <h2><span class="num">06</span>Éval couche 2 — RAGAS, comment ça marche vraiment</h2>
   <div class="prose">
@@ -210,7 +211,7 @@
     <tr><td>Honnêteté (prix, moto sans avis)</td><td><span class="pill w">0.0*</span></td><td class="wrap">Réponses <em>correctes</em> («&nbsp;les données de prix sont éparses&nbsp;») mais RAGAS pénalise les refus&nbsp;: une limite connue de la métrique, documentée plutôt que contournée.</td></tr>
   </table></div>
   <div class="prose">
-    <p>La moyenne de 0.61 est donc <b>bornée par le générateur local, pas par le RAG</b>&nbsp;: chaque zéro correspond soit à mistral-small qui contredit ses propres résultats d'outils, soit au biais anti-refus de la métrique. La preuve par l'histoire du projet&nbsp;: la <em>première</em> passe RAGAS (0.55) avait révélé deux vrais bugs de retrieval — matching de modèle en sous-chaîne exacte, argument <code>query</code> omis par les petits modèles — et leur correction a fait bondir les narratives de 0.0 à 1.0. L'éval a payé pour elle-même. La prochaine marche est connue&nbsp;: brancher la génération sur Claude (le harnais est prêt, <code>AGENT_BACKEND=anthropic</code>) et re-mesurer.</p>
+    <p>Les réponses et leurs contextes permettent d'identifier des défauts de génération et des limites du juge. La première passe avait aussi révélé deux bugs de retrieval&nbsp;: matching de modèle en sous-chaîne exacte et argument <code>query</code> omis. Corriger ces défauts a amélioré certaines questions ; cela ne suffit pas à attribuer chaque score faible à une seule couche. Pour le POC local, la prochaine mesure doit conserver le même corpus et des questions fixes afin de comparer les corrections.</p>
   </div>
 
   <h3>Contre-expertise&nbsp;: les mêmes réponses, notées par un second juge</h3>

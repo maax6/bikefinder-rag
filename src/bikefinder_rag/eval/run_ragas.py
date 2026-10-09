@@ -20,10 +20,12 @@ Run: PYTHONPATH=src .venv/bin/python -m bikefinder_rag.eval.run_ragas
 """
 
 import json
+import math
 import os
 import sys
 import time
 import warnings
+from datetime import datetime, timezone
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -47,9 +49,13 @@ from ragas.llms import LangchainLLMWrapper
 from ragas.metrics import answer_relevancy, faithfulness
 from ragas.run_config import RunConfig
 
-from bikefinder_rag.agent.loop import BACKEND, OLLAMA_HOST, OLLAMA_MODEL, run_agent
+from bikefinder_rag.agent.loop import BACKEND, OLLAMA_HOST, TURN_LIMIT_MESSAGE, run_agent
 from bikefinder_rag.db.client import get_connection
 from bikefinder_rag.embeddings.embedder import embed_texts
+from bikefinder_rag.eval.provenance import (
+    CacheMismatchError, collect_provenance, dated_report_path, generation_identity,
+    load_answers_cache, ollama_model_identity, save_answers_cache,
+)
 
 GOLDEN_PATH = Path(__file__).resolve().parent / "golden_questions.json"
 ANSWERS_CACHE = Path(__file__).resolve().parent / "generated_answers.json"
@@ -122,67 +128,109 @@ def _extract_contexts(messages: list[dict]) -> list[str]:
     return contexts
 
 
-def generate_answers(questions: list[dict], cached_rows: list[dict]) -> list[dict]:
+def _completed_answer(answer: str, messages: list[dict]) -> bool:
+    """Transport/auth/turn-limit strings are not generated final answers."""
+    if not isinstance(answer, str) or not answer.strip() or answer == TURN_LIMIT_MESSAGE or not messages:
+        return False
+    final = messages[-1]
+    if not isinstance(final, dict) or final.get("role") != "assistant" or final.get("tool_calls"):
+        return False
+    content = final.get("content")
+    if isinstance(content, str):
+        return content == answer
+    if isinstance(content, list):
+        text = []
+        for block in content:
+            kind = block.get("type") if isinstance(block, dict) else getattr(block, "type", None)
+            if kind == "tool_use":
+                return False
+            if kind == "text":
+                text.append(block.get("text", "") if isinstance(block, dict) else block.text)
+        return "".join(text) == answer
+    return False
+
+
+def _summarize_scores(records: list[dict]) -> dict:
+    summary = {"scores_available": {}}
+    for name in ("faithfulness", "answer_relevancy"):
+        values = [float(row[name]) for row in records
+                  if row.get(name) is not None and math.isfinite(float(row[name]))]
+        summary["scores_available"][name] = len(values)
+        summary[f"{name}_mean"] = round(math.fsum(values) / len(values), 4) if values else None
+    return summary
+
+
+def generate_answers(questions: list[dict], cached_rows: list[dict], conn,
+                     identity: dict) -> list[dict]:
     """Generate the missing answers, reusing any cached ones. The cache is
     rewritten after every answer, so an interrupted generation resumes at
     the first unanswered question instead of redoing the run."""
     answered = {row["question"]: row for row in cached_rows}
     rows: list[dict] = []
     client = None
-    conn = None
-
-    try:
-        for item in questions:
-            if item["question"] in answered:
-                rows.append(answered[item["question"]])
-                print(f"[{item['id']}] (cached)", file=sys.stderr)
-                continue
-
-            if conn is None:
-                if BACKEND != "ollama":
-                    from anthropic import Anthropic
-
-                    client = Anthropic()
-                conn = get_connection()
-
-            answer, messages = run_agent(conn, client, item["question"])
-            contexts = _extract_contexts(messages)
-            rows.append(
-                {
-                    "question": item["question"],
-                    "answer": answer,
-                    "contexts": contexts or ["(no tool call was made)"],
-                }
+    for item in questions:
+        if item["question"] in answered:
+            rows.append(answered[item["question"]])
+            print(f"[{item['id']}] (cached)", file=sys.stderr)
+            continue
+        if BACKEND == "anthropic" and client is None:
+            from anthropic import Anthropic
+            client = Anthropic()
+        answer, messages = run_agent(conn, client, item["question"])
+        if not _completed_answer(answer, messages):
+            raise RuntimeError(
+                f"Generation failed for {item['id']}: no completed final assistant answer. "
+                f"{str(answer)[:200]} Fix the backend and rerun to resume; this failure was not cached."
             )
-            ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
-            print(f"[{item['id']}] {item['question']}\n  -> {answer[:200]}\n", file=sys.stderr)
-    finally:
-        if conn is not None:
-            conn.close()
+        contexts = _extract_contexts(messages)
+        rows.append({"question": item["question"], "answer": answer,
+                     "contexts": contexts or ["(no tool call was made)"],
+                     "generated_at_utc": datetime.now(timezone.utc).isoformat()})
+        # Preserve later cached questions if generation is interrupted here.
+        current = {row["question"] for row in rows}
+        save_answers_cache(ANSWERS_CACHE, identity,
+                           rows + [row for row in cached_rows if row["question"] not in current])
+        print(f"[{item['id']}] {item['question']}\n  -> {answer[:200]}\n", file=sys.stderr)
     return rows
 
 
 def main() -> None:
     questions = json.loads(GOLDEN_PATH.read_text())
 
-    # Generation is the expensive half (12 agent runs); cache it so a crash,
-    # an interrupt, or a judge/config change doesn't force a redo. Answers
-    # are matched per question, so a partial cache resumes where it stopped.
-    # Delete generated_answers.json (or pass --regenerate) for fresh answers.
-    cached_rows: list[dict] = []
-    if ANSWERS_CACHE.exists() and "--regenerate" not in sys.argv:
-        cached_rows = json.loads(ANSWERS_CACHE.read_text())
-
-    print(f"Generating answers (backend={BACKEND}, {len(cached_rows)} cached)...", file=sys.stderr)
-    rows = generate_answers(questions, cached_rows)
-    ANSWERS_CACHE.write_text(json.dumps(rows, indent=2, ensure_ascii=False))
+    # Verify the generator and corpus before reusing any answer. Changing
+    # only the judge is allowed; old caches with no provenance need a rerun.
+    conn = get_connection()
+    try:
+        metadata = collect_provenance(conn, generation=True)
+        identity = generation_identity(metadata)
+        try:
+            cached_rows = load_answers_cache(ANSWERS_CACHE, identity,
+                                            regenerate="--regenerate" in sys.argv)
+        except CacheMismatchError as exc:
+            raise SystemExit(str(exc)) from exc
+        print(f"Generating answers (backend={BACKEND}, {len(cached_rows)} cached)...", file=sys.stderr)
+        rows = generate_answers(questions, cached_rows, conn, identity)
+        save_answers_cache(ANSWERS_CACHE, identity, rows)
+    finally:
+        conn.close()
+    metadata["judge_model"] = JUDGE_MODEL
+    metadata["answers_generated_at_utc"] = {
+        q["id"]: row["generated_at_utc"] for q, row in zip(questions, rows)
+    }
+    metadata["cached_answers_reused"] = len(
+        {q["question"] for q in questions} & {row["question"] for row in cached_rows}
+    )
 
     if JUDGE_MODEL.startswith("claude-cli"):
         _, _, cli_model = JUDGE_MODEL.partition(":")
         judge_chat = ClaudeCliChat(model=cli_model or "sonnet")
+        metadata["judge"] = {"backend": "claude-cli", "model": judge_chat.model,
+                             "requested_model": JUDGE_MODEL}
         print(f"Scoring with judge=claude -p --model {judge_chat.model} "
               "(subscription, no API key)...", file=sys.stderr)
     else:
+        metadata["judge"] = {"backend": "ollama", **ollama_model_identity(JUDGE_MODEL, OLLAMA_HOST),
+                             "options": {"temperature": 0.0, "num_ctx": 16384}}
         print(f"Scoring with judge={JUDGE_MODEL} (local Ollama)...", file=sys.stderr)
         # 16k context: on the full corpus, tool outputs make faithfulness
         # prompts overflow 8k and the judge silently loses the tail.
@@ -195,7 +243,9 @@ def main() -> None:
     judge = LangchainLLMWrapper(judge_chat)
     embeddings = LangchainEmbeddingsWrapper(BgeM3Embeddings())
 
-    dataset = Dataset.from_list(rows)
+    dataset = Dataset.from_list([
+        {key: row[key] for key in ("question", "answer", "contexts")} for row in rows
+    ])
     result = evaluate(
         dataset,
         metrics=[faithfulness, answer_relevancy],
@@ -209,17 +259,19 @@ def main() -> None:
     df = result.to_pandas()
     df.insert(0, "id", [q["id"] for q in questions])
 
-    out_path = Path(__file__).resolve().parents[3] / "eval_results/ragas/ragas_results.json"
+    out_path = dated_report_path(Path(__file__).resolve().parents[3] / "eval_results/ragas",
+                                 "ragas_results", metadata["created_at_utc"])
     records = json.loads(df.to_json(orient="records"))
     summary = {
+        "metadata": metadata,
         "generation_backend": BACKEND,
-        "generation_model": OLLAMA_MODEL if BACKEND == "ollama" else "claude",
+        "generation_model": metadata["generation"]["model"],
         "judge_model": JUDGE_MODEL,
-        "faithfulness_mean": round(float(df["faithfulness"].mean()), 4),
-        "answer_relevancy_mean": round(float(df["answer_relevancy"].mean()), 4),
+        "questions_total": len(rows),
+        **_summarize_scores(records),
         "per_question": records,
     }
-    out_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+    out_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False, allow_nan=False))
     print(f"\nRAGAS results written to {out_path}", file=sys.stderr)
     print(result, file=sys.stderr)
 

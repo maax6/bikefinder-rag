@@ -29,7 +29,6 @@ Run:
 """
 
 import json
-import random
 import re
 import sys
 from pathlib import Path
@@ -42,6 +41,7 @@ load_dotenv()
 
 from bikefinder_rag.db.client import get_connection
 from bikefinder_rag.embeddings.embedder import embed_text, embed_texts
+from bikefinder_rag.eval.provenance import collect_provenance, dated_report_path
 
 TOTAL_CHUNKS_SQL = "SELECT count(*) FROM review_chunks"
 
@@ -61,11 +61,9 @@ THEMES = [
 # top-k are French documents (`fr_docs_*`), which is the new corpus's
 # direct contribution.
 #
-# Each theme also carries an English phrasing, because since the hybrid
-# retrieval landed the agent is instructed to send `query` in English (the
-# corpus's language) — so a French *user* question reaches the retriever
-# already translated, and the French-query arms below measure the fallback
-# path, not the shipped one.
+# Each theme also carries an English phrasing for comparison. With the
+# bilingual corpus the agent queries in the user's language: the French
+# shipped arm now describes the direct path for French user questions.
 #
 # The English phrasings deliberately avoid the words the regex matches
 # ("stop in an emergency", not "brakes"): the sparse leg retrieves on query
@@ -153,25 +151,72 @@ def data_integrity(conn) -> dict:
 
 
 def self_retrieval_test(conn, sample_size=30) -> dict:
-    sample = fetchall(conn, "SELECT id, comment_text FROM review_chunks ORDER BY random() LIMIT %s", [sample_size])
+    sample = fetchall(conn, """
+        SELECT id, comment_text FROM review_chunks
+        ORDER BY md5(id::text || ':bikefinder-self-v1'), id LIMIT %s
+    """, [sample_size])
     vectors = embed_texts([r["comment_text"] for r in sample])
     hits_rank1 = 0
-    distances = []
+    distances, samples, failures = [], [], []
     with conn.cursor() as cur:
         for row, vec in zip(sample, vectors):
             cur.execute(
-                "SELECT id, embedding <=> %s::vector AS d FROM review_chunks ORDER BY embedding <=> %s::vector LIMIT 1",
+                "SELECT embedding <=> %s::vector FROM review_chunks WHERE id = %s",
+                [vec, row["id"]],
+            )
+            own_distance = cur.fetchone()[0]
+            cur.execute(
+                "SELECT id, embedding <=> %s::vector AS d FROM review_chunks ORDER BY embedding <=> %s::vector LIMIT 10",
                 [vec, vec],
             )
-            top_id, dist = cur.fetchone()
-            distances.append(dist)
-            if top_id == row["id"]:
+            top = cur.fetchall()
+            ann_rank = next((i for i, (chunk_id, _) in enumerate(top, 1)
+                             if chunk_id == row["id"]), None)
+            distances.append(own_distance)
+            detail = {"id": row["id"], "stored_vector_distance": own_distance,
+                      "ann_rank_in_top10": ann_rank,
+                      "ann_top1_id": top[0][0] if top else None,
+                      "ann_top1_distance": top[0][1] if top else None}
+            samples.append(detail)
+            if ann_rank == 1:
                 hits_rank1 += 1
+            if ann_rank != 1 or own_distance > 1e-4:
+                # + 0 prevents the HNSW ORDER BY operator match, giving an
+                # exact scan only for failures, without changing session settings.
+                cur.execute("""
+                    SELECT id, embedding <=> %s::vector AS d FROM review_chunks
+                    ORDER BY (embedding <=> %s::vector) + 0, id LIMIT 1
+                """, [vec, vec])
+                exact_id, exact_distance = cur.fetchone()
+                cur.execute("""
+                    SELECT count(*) + 1 FROM review_chunks
+                    WHERE embedding <=> %s::vector < %s
+                """, [vec, own_distance - 1e-7])
+                exact_rank = cur.fetchone()[0]
+                if own_distance > 1e-4:
+                    reason = "stored_embedding_mismatch"
+                elif top and abs(top[0][1] - own_distance) <= 1e-7:
+                    reason = "distance_tie"
+                else:
+                    reason = "approximate_search_miss"
+                failures.append({**detail, "reason": reason,
+                                 "exact_top1_id": exact_id,
+                                 "exact_top1_distance": exact_distance,
+                                 "exact_rank_allowing_distance_ties": exact_rank,
+                                 "ann_top10": [{"id": chunk_id, "distance": dist}
+                                               for chunk_id, dist in top]})
     return {
-        "sample_size": sample_size,
+        "sampling": "md5(id::text || ':bikefinder-self-v1'), id",
+        "requested_sample_size": sample_size,
+        "sample_size": len(sample),
         "rank1_hits": hits_rank1,
-        "rank1_hit_rate": hits_rank1 / sample_size,
-        "avg_self_distance": sum(distances) / len(distances),
+        "rank1_hit_rate": hits_rank1 / len(sample) if sample else None,
+        "stored_vector_mismatches": sum(distance > 1e-4 for distance in distances),
+        "stored_distance_tolerance": 1e-4,
+        "distance_tie_tolerance": 1e-7,
+        "avg_self_distance": sum(distances) / len(distances) if distances else None,
+        "samples": samples,
+        "failures": failures,
     }
 
 
@@ -192,6 +237,7 @@ def keyword_lift_test(conn, total_chunks: int, top_k=30) -> list[dict]:
             "hits_in_top_k": len(matches),
             "hit_rate": round(hit_rate, 4),
             "lift": round(hit_rate / base_rate, 2) if base_rate > 0 else None,
+            "top1_distance": round(top[0]["distance"], 4) if top else None,
             "example_hits": [
                 {"brand": r["brand"], "model": r["model"], "distance": round(r["distance"], 4),
                  "text": r["comment_text"][:220]}
@@ -202,12 +248,14 @@ def keyword_lift_test(conn, total_chunks: int, top_k=30) -> list[dict]:
 
 
 def negative_control_test(conn, on_topic_avg_top1: float) -> list[dict]:
+    """Distance separation only; this does not test agent abstention."""
     results = []
     for query in NEGATIVE_QUERIES:
         top = semantic_search(conn, query, 3)
         results.append({
             "query": query,
             "top1_distance": round(top[0]["distance"], 4),
+            "on_topic_avg_top1_distance": round(on_topic_avg_top1, 4),
             "worse_than_on_topic_avg": top[0]["distance"] > on_topic_avg_top1,
             "top_hits": [
                 {"brand": r["brand"], "model": r["model"], "distance": round(r["distance"], 4),
@@ -265,12 +313,11 @@ def french_relevance_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
 
       hits_dense       dense top-k, no rerank            (baseline)
       hits_reranked    dense top-50 reranked             (the '+57%' number)
-      hits_shipped_fr  search_reviews(french query)      (fallback path)
-      hits_shipped_en  search_reviews(english query)     (the shipped path)
+      hits_shipped_fr  search_reviews(french query)      (French-user path)
+      hits_shipped_en  search_reviews(english query)     (English comparison)
 
-    `hits_shipped_en` is the number that describes what a French *user*
-    gets: the agent is instructed to translate the question into English
-    before searching. The reranker can only reorder its shortlist, so a
+    `hits_shipped_fr` describes a French user question with the bilingual
+    corpus; the agent uses the user's language. The reranker can only reorder its shortlist, so a
     theme whose pool holds no on-topic candidate stays at zero in every
     arm — that residual is a recall bound, and it is reported as-is."""
     from bikefinder_rag.agent.tools import search_reviews
@@ -305,16 +352,23 @@ def french_relevance_test(conn, top_k=10, rerank_pool=50) -> list[dict]:
 def main() -> None:
     conn = get_connection()
     try:
+        metadata = collect_provenance(conn)
         integrity = data_integrity(conn)
         total_chunks = integrity["review_chunks"]
+        if not total_chunks:
+            raise SystemExit("The review corpus is empty; load a dataset before evaluating retrieval.")
 
         self_retrieval = self_retrieval_test(conn)
         lift = keyword_lift_test(conn, total_chunks)
-        negatives = negative_control_test(conn, self_retrieval["avg_self_distance"] + 0.3)
+        on_topic_avg = sum(row["top1_distance"] for row in lift) / len(lift)
+        metadata["evaluation"] = {"negative_control": "distance separation, not agent abstention",
+                                  "on_topic_avg_top1_distance": on_topic_avg}
+        negatives = negative_control_test(conn, on_topic_avg)
         cross_lingual = cross_lingual_test(conn)
         french_relevance = french_relevance_test(conn)
 
         report = {
+            "metadata": metadata,
             "data_integrity": integrity,
             "self_retrieval": self_retrieval,
             "keyword_lift": lift,
@@ -322,7 +376,8 @@ def main() -> None:
             "cross_lingual": cross_lingual,
             "french_relevance": french_relevance,
         }
-        out_path = Path(__file__).resolve().parent.parent / "eval_results/retrieval/retrieval_report.json"
+        out_path = dated_report_path(Path(__file__).resolve().parent.parent / "eval_results/retrieval",
+                                    "retrieval_report", metadata["created_at_utc"])
         out_path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
         print(json.dumps(report, indent=2, ensure_ascii=False))
         print(f"\nWritten to {out_path}", file=sys.stderr)

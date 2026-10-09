@@ -43,10 +43,11 @@
 <body>
 <main>
   <h1>🏍️ Bikefinder RAG</h1>
-  <p class="sub">An agentic RAG motorcycle advisor — raw tool-use loop (no LangChain),
+  <p class="sub">A local proof of concept for an agentic RAG motorcycle advisor — explicit tool-use loop,
   PostgreSQL + pgvector, hybrid dense+sparse retrieval with cross-encoder
   reranking, a French A2-licence filter, and a four-layer evaluation with
   published results.</p>
+  <p class="note">Historical showcase: the session and figures below come from July 2026 runs. They do not validate the October corrections. The repository README describes the current local Ollama workflow and the limitations of each evaluation.</p>
   <p class="links">
     <a href="https://github.com/maax6/bikefinder-rag">GitHub</a>
     <a href="preuve-retrieval.html">Retrieval proof</a>
@@ -91,19 +92,19 @@
   <h2>Four evaluation layers, each isolating one stage</h2>
   <div class="overflow">
   <table>
-    <tr><th>Layer</th><th>What it proves</th><th>Headline result</th></tr>
+    <tr><th>Layer</th><th>What it measures</th><th>Historical result</th></tr>
     <tr><td><b>1 — Retrieval</b><br>no LLM at all</td>
         <td>pgvector + BGE-M3 search is semantically meaningful, not random</td>
-        <td>self-retrieval 30/30 · theme lifts 22–122× over corpus base rate · off-topic queries rejected</td></tr>
+        <td>self-retrieval 30/30 · keyword-based theme proxies · off-topic distance controls (no abstention policy)</td></tr>
     <tr><td><b>1.5 — Tool calls</b><br>no LLM judge</td>
         <td>the model picks the right tools with sensible arguments</td>
         <td>18/18 questions, 46/46 deterministic checks (mistral-small3.2) — and the eval drove the fixes that took mistral-small from 9/12 to 15/15</td></tr>
     <tr><td><b>1.75 — Hard constraints</b><br>no LLM judge</td>
-        <td>no recommended bike violates the question's budget, displacement, weight or decade</td>
-        <td>0.0% violation rate over 41 verified mentions (8 questions, EN+FR), 0 hallucinated model names</td></tr>
+        <td>detected violations of budget, displacement, weight or decade</td>
+        <td>0.0% detected violations over 41 resolved mentions; the legacy checker ignored missing numeric values</td></tr>
     <tr><td><b>2 — Full agent</b><br>RAGAS, Haiku judge</td>
         <td>final answers are grounded and relevant</td>
-        <td>faithfulness 0.76 · answer relevancy 0.87 (up from 0.71/0.77 before enrichment)</td></tr>
+        <td>0.76 / 0.87 with a remote Haiku judge (17 questions, relevancy on 16). Separate fully local run: 0.61 / 0.76 on 12 questions; configurations differ.</td></tr>
   </table>
   </div>
 

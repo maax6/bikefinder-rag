@@ -15,7 +15,7 @@ Run (one model per run; the report is named after the model):
     AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \\
       PYTHONPATH=src .venv/bin/python scripts/eval_tool_trajectory.py
 
-Writes eval_results/trajectory/trajectory_<model>.json
+Writes eval_results/trajectory/trajectory_<model>_<UTC timestamp>.json
 """
 
 import json
@@ -29,8 +29,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from bikefinder_rag.agent.loop import BACKEND, MODEL, OLLAMA_MODEL, TURN_LIMIT_MESSAGE, run_agent
+from bikefinder_rag.agent.loop import BACKEND, TURN_LIMIT_MESSAGE, run_agent
 from bikefinder_rag.db.client import get_connection
+from bikefinder_rag.eval.provenance import collect_provenance, dated_report_path
 
 GOLDEN_PATH = Path(__file__).resolve().parent.parent / "src/bikefinder_rag/eval/golden_questions.json"
 OUT_DIR = Path(__file__).resolve().parent.parent / "eval_results/trajectory"
@@ -210,9 +211,6 @@ EXPECTATIONS = {
 
 def main() -> None:
     questions = json.loads(GOLDEN_PATH.read_text())
-    model_tag = OLLAMA_MODEL if BACKEND == "ollama" else MODEL
-    safe_tag = re.sub(r"[^A-Za-z0-9._-]", "-", model_tag)
-
     client = None
     if BACKEND != "ollama":
         from anthropic import Anthropic
@@ -221,6 +219,8 @@ def main() -> None:
     conn = get_connection()
     per_question = []
     try:
+        metadata = collect_provenance(conn, generation=True)
+        safe_tag = re.sub(r"[^A-Za-z0-9._-]", "-", metadata["generation"]["model"])
         for q in questions:
             print(f"[{q['id']}] {q['question']}", file=sys.stderr)
             answer, messages = run_agent(conn, client, q["question"], history=None)
@@ -251,16 +251,16 @@ def main() -> None:
         conn.close()
 
     report = {
+        "metadata": metadata,
         "backend": BACKEND,
-        "model": model_tag,
+        "model": metadata["generation"]["model"],
         "questions_ok": sum(r["all_ok"] for r in per_question),
         "questions_total": len(per_question),
         "checks_ok": sum(c["ok"] for r in per_question for c in r["checks"]),
         "checks_total": sum(len(r["checks"]) for r in per_question),
         "per_question": per_question,
     }
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = OUT_DIR / f"trajectory_{safe_tag}.json"
+    out_path = dated_report_path(OUT_DIR, f"trajectory_{safe_tag}", metadata["created_at_utc"])
     out_path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(json.dumps({k: v for k, v in report.items() if k != "per_question"}, indent=2))
     print(f"\nWritten to {out_path}", file=sys.stderr)

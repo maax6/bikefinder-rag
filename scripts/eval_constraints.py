@@ -23,7 +23,7 @@ Run (one model per run):
     AGENT_BACKEND=ollama OLLAMA_MODEL=mistral-small3.2 EMBEDDER_DEVICE=cpu \\
       PYTHONPATH=src .venv/bin/python scripts/eval_constraints.py
 
-Writes eval_results/constraints/constraints_<model>.json
+Writes eval_results/constraints/constraints_<model>_<UTC timestamp>.json
 """
 
 import json
@@ -37,8 +37,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from bikefinder_rag.agent.loop import BACKEND, MODEL, OLLAMA_MODEL, run_agent
+from bikefinder_rag.agent.loop import BACKEND, run_agent
 from bikefinder_rag.db.client import get_connection
+from bikefinder_rag.eval.provenance import collect_provenance, dated_report_path
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "eval_results/constraints"
 
@@ -138,8 +139,7 @@ def resolve(mention: str, year: int | None, catalog_index) -> list[dict]:
 
 
 def check(row: dict, constraints: dict) -> list[str]:
-    """Names of the constraints this row violates ('' when data is absent —
-    absence is not a violation, the honesty prompt handles that)."""
+    """Known violations only; classify_matches handles absent data separately."""
     violated = []
     def num(field):
         v = row.get(field)
@@ -148,7 +148,7 @@ def check(row: dict, constraints: dict) -> list[str]:
     for key, bound in constraints.items():
         if key == "category":
             label = _NORM(f"{row.get('category') or ''}|{row.get('category_fr') or ''}")
-            if _NORM(bound) not in label:
+            if label and _NORM(bound) not in label:
                 violated.append(f"category!={bound}")
         elif key.startswith("min_") and (v := num(key[4:] if key[4:] != "year" else "year")) is not None:
             if v < bound:
@@ -159,10 +159,31 @@ def check(row: dict, constraints: dict) -> list[str]:
     return violated
 
 
-def main() -> None:
-    model_tag = OLLAMA_MODEL if BACKEND == "ollama" else MODEL
-    safe_tag = re.sub(r"[^A-Za-z0-9._-]", "-", model_tag)
+def classify_matches(rows: list[dict], constraints: dict) -> dict:
+    """An unknown spec cannot vindicate a recommendation as satisfied."""
+    candidates = []
+    for row in rows:
+        missing = []
+        for key in constraints:
+            field = key[4:] if key.startswith(("min_", "max_")) else key
+            if field == "category":
+                if not (row.get("category") or row.get("category_fr")):
+                    missing.append(field)
+            elif row.get(field) is None:
+                missing.append(field)
+        candidates.append((check(row, constraints), missing))
+    for violations, missing in candidates:
+        if not violations and not missing:
+            return {"status": "satisfied", "violations": [], "missing_fields": []}
+    unknown = [missing for violations, missing in candidates if not violations]
+    if not candidates or unknown:
+        return {"status": "unverifiable", "violations": [],
+                "missing_fields": min(unknown, key=len) if unknown else []}
+    violations, missing = min(candidates, key=lambda pair: len(pair[0]))
+    return {"status": "violated", "violations": violations, "missing_fields": missing}
 
+
+def main() -> None:
     client = None
     if BACKEND not in ("ollama",):
         from anthropic import Anthropic
@@ -171,6 +192,8 @@ def main() -> None:
     conn = get_connection()
     per_question = []
     try:
+        metadata = collect_provenance(conn, generation=True)
+        safe_tag = re.sub(r"[^A-Za-z0-9._-]", "-", metadata["generation"]["model"])
         catalog_index = index_catalog(load_catalog(conn))
         for spec in QUESTIONS:
             print(f"[{spec['id']}] {spec['q']}", file=sys.stderr)
@@ -180,17 +203,9 @@ def main() -> None:
             results = []
             for mention, year in mentions:
                 rows = resolve(mention, year, catalog_index)
-                if not rows:
-                    results.append({"mention": mention, "year": year, "status": "unverifiable"})
-                    continue
-                # A mention is violating only if EVERY matching row violates —
-                # variants share a name, one compliant variant vindicates it.
-                per_row = [check(r, spec["constraints"]) for r in rows]
-                cleanest = min(per_row, key=len)
                 results.append({
                     "mention": mention, "year": year,
-                    "status": "violated" if cleanest else "satisfied",
-                    "violations": cleanest,
+                    **classify_matches(rows, spec["constraints"]),
                 })
 
             counts = {s: sum(1 for r in results if r["status"] == s)
@@ -208,8 +223,9 @@ def main() -> None:
     total = {s: sum(q[s] for q in per_question) for s in ("satisfied", "violated", "unverifiable")}
     verified = total["satisfied"] + total["violated"]
     report = {
+        "metadata": metadata,
         "backend": BACKEND,
-        "model": model_tag,
+        "model": metadata["generation"]["model"],
         "mentions_total": verified + total["unverifiable"],
         **total,
         "violation_rate": round(total["violated"] / verified, 4) if verified else None,
@@ -217,8 +233,7 @@ def main() -> None:
                              if (verified + total["unverifiable"]) else None,
         "per_question": per_question,
     }
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = OUT_DIR / f"constraints_{safe_tag}.json"
+    out_path = dated_report_path(OUT_DIR, f"constraints_{safe_tag}", metadata["created_at_utc"])
     out_path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(json.dumps({k: v for k, v in report.items() if k != "per_question"}, indent=2))
     print(f"\nWritten to {out_path}", file=sys.stderr)

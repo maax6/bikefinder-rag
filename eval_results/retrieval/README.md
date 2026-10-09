@@ -1,5 +1,13 @@
 # Couche 1 — preuve du retrieval (sans LLM)
 
+Depuis octobre 2026, les nouveaux runs écrivent un rapport daté avec
+provenance. Le self-retrieval utilise un échantillon déterministe et garde
+les IDs, distances au vecteur stocké et diagnostics des ratés : égalité de
+distance, différence d'embedding ou recherche approximative. Sa distance
+moyenne est désormais celle au vecteur du commentaire lui-même ; l'ancien
+champ prenait la distance du résultat classé premier. Les scores doivent
+donc être comparés avec cette différence de définition en tête.
+
 **Document de preuve complet : [Preuve de fonctionnement — recherche
 sémantique Bikefinder](https://maax6.github.io/bikefinder-rag/preuve-retrieval.html)**
 
@@ -18,9 +26,16 @@ marche-t-elle » au « est-ce sémantiquement utile » :
    nettement plus loin, et une requête française doit retrouver les mêmes
    commentaires anglais que son équivalent anglais.
 
-## Résultats (14 juillet 2026 — corpus complet : 32 395 motos, 107 952 commentaires embarqués)
+## Snapshot versionné au commit `45e5a53`
 
-Fichier brut : [`retrieval_report.json`](retrieval_report.json)
+Le fichier [`retrieval_report.json`](retrieval_report.json) ne comporte pas
+de date de run ; sa version au commit `45e5a53` indique **32 395 motos et
+104 418 commentaires**. Les chiffres de cette section viennent de cette
+version (`git show 45e5a53:eval_results/retrieval/retrieval_report.json`).
+Ils corrigent l'ancienne description à 107 952 commentaires, qui n'était
+pas cohérente avec ce JSON. Les sections suivantes conservent les mesures
+historiques de juillet et août ; aucun de ces scores ne valide les
+correctifs d'octobre ou une base locale différente.
 
 **Intégrité** : 0 embedding nul, 0 commentaire orphelin, 0 doublon exact ;
 19 532 motos (60 %) reliées à au moins un avis.
@@ -31,12 +46,12 @@ Fichier brut : [`retrieval_report.json`](retrieval_report.json)
 
 | Thème | Hits top-30 | Lift |
 |---|---|---|
-| Vibrations à haute vitesse | 24/30 | **122×** |
-| Confort de selle | 4/30 | **97×** |
-| Consommation d'essence | 19/30 | **36×** |
+| Vibrations à haute vitesse | 24/30 | **124,49×** |
+| Confort de selle | 4/30 | **102,37×** |
+| Consommation d'essence | 20/30 | **38,33×** |
 | Adaptée aux débutants | 14/30 | **32×** |
-| Freins | 17/30 | **22×** |
-| Fiabilité | 7/30 | 2.3× * |
+| Freins | 17/30 | **22,31×** |
+| Fiabilité | 8/30 | 2,28× * |
 
 \* Artefact de mesure, pas un échec : le mot-clé de contrôle (« problem »,
 « issue »…) est si générique que son taux de base atteint 11 % du corpus, et
@@ -52,7 +67,7 @@ dense+sparse ou un reranker (`bge-reranker-v2-m3`) est la piste identifiée.
 
 ## Reranker cross-encoder (ajouté le 15 juillet 2026)
 
-`search_reviews` fait maintenant du retrieval en deux étages : shortlist
+À ce stade du projet, la mesure testait un retrieval en deux étages : shortlist
 dense top-50 (pgvector), puis re-tri par **bge-reranker-v2-m3** (même
 famille BGE-M3 que l'embedder), qui lit la requête et le commentaire
 *ensemble*. Mesure dédiée (`french_relevance` dans le rapport) : résultats
@@ -76,10 +91,10 @@ Latence : ~0,4 s par requête à chaud sur Apple Silicon ;
 `RERANKER_ENABLED=0` le coupe (c'est le réglage du Docker Space, où le
 CPU le rendrait trop lent).
 
-Le document de preuve hébergé présente le run du 12 juillet 2026 sur le
-corpus « century » (82 589 commentaires) ; l'éval a été rejouée après le
-chargement des années 2000 et tous les tests restent au vert à 107 952
-commentaires — ce sont les chiffres du tableau ci-dessus.
+Les documents HTML sont des notes historiques sur des corpus successifs.
+Leurs nombres ne doivent pas être attribués au JSON courant sans identifier
+le run correspondant ; le snapshot versionné cité plus haut en comporte
+104 418.
 
 ## L'hybride mesuré sur le chemin livré (31 août 2026)
 
@@ -89,7 +104,7 @@ rapport : `french_relevance_test` réimplémentait sa propre recherche au lieu
 d'appeler `search_reviews`. Le « +57 % » a donc été attribué pendant six
 semaines à un pipeline que rien n'avait évalué.
 
-L'éval appelle maintenant la vraie fonction. Quatre bras, résultats
+L'éval a ensuite appelé la vraie fonction. Quatre bras, résultats
 identiques sur deux runs consécutifs :
 
 | Thème (requête FR) | Dense | Reranké | `search_reviews` FR | `search_reviews` EN |
