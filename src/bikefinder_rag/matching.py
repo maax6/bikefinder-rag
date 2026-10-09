@@ -9,10 +9,11 @@ on the concatenated brand+model, tokenized, in both directions:
 
 1. every source token appears among the row's tokens (tightest row wins:
    fewest extra tokens);
-2. same, after dropping the source's displacement-suffix-looking numeric
-   tokens;
+2. same, after dropping one final displacement number, only when another
+   numeric model identifier remains and the row's numbers agree;
 3. reverse: every row token appears among the source's tokens (rows of
-   at least 3 tokens; the most specific row wins).
+   at least 3 tokens; the most specific row wins), with the same numeric
+   agreement so this fallback cannot silently drop a model number.
 """
 
 import re
@@ -24,6 +25,25 @@ def tokens(s: str) -> list[str]:
     Token-level (not substring) matching is what keeps '1098 R' from
     matching 'Superbike 1098 S' via the 'r' inside 'Superbike'."""
     return re.findall(r"[a-z]+|\d+", str(s).lower())
+
+
+def _numbers(items: list[str] | set[str]) -> set[str]:
+    return {t for t in items if t.isdigit()}
+
+
+def _without_displacement_suffix(source_tokens: list[str]) -> list[str] | None:
+    """Only a final extra number may be a displacement suffix.
+
+    'YZF-R1 1000' keeps its '1'; 'CBF 500' must keep its only model number.
+    Without another numeric identifier we cannot distinguish a displacement
+    label from a different model, so leave that name unmatched instead.
+    """
+    if not source_tokens:
+        return None
+    prefix, suffix = source_tokens[:-1], source_tokens[-1]
+    if suffix.isdigit() and int(suffix) >= 50 and _numbers(prefix):
+        return prefix
+    return None
 
 
 class MotorcycleMatcher:
@@ -39,17 +59,22 @@ class MotorcycleMatcher:
     def match_year(self, source_tokens: list[str], year: int) -> tuple[list, str | None]:
         """(payloads, pass name) — pass is 'forward', 'no-suffix' or
         'reverse', useful for auditing which rule produced a match."""
+        without_suffix = _without_displacement_suffix(source_tokens)
         for pass_name, required in (
             ("forward", source_tokens),
-            ("no-suffix", [t for t in source_tokens if not (t.isdigit() and int(t) >= 50)]),
+            ("no-suffix", without_suffix),
         ):
             if not required:
                 continue
+            required_set = set(required)
+            required_numbers = _numbers(required_set)
             best_extra, best = None, []
             for payload, row_tokens in self._by_year.get(year, []):
-                if not all(t in row_tokens for t in required):
+                if not required_set <= row_tokens:
                     continue
-                extra = len(row_tokens - set(required))
+                if pass_name == "no-suffix" and _numbers(row_tokens) != required_numbers:
+                    continue
+                extra = len(row_tokens - required_set)
                 if best_extra is None or extra < best_extra:
                     best_extra, best = extra, [payload]
                 elif extra == best_extra:
@@ -59,9 +84,14 @@ class MotorcycleMatcher:
 
         # Reverse direction: the source is the verbose side.
         source_set = set(source_tokens)
+        allowed_numbers = [_numbers(source_set)]
+        if without_suffix:
+            allowed_numbers.append(_numbers(without_suffix))
         best_size, best = 0, []
         for payload, row_tokens in self._by_year.get(year, []):
             if len(row_tokens) < 3 or not row_tokens <= source_set:
+                continue
+            if _numbers(row_tokens) not in allowed_numbers:
                 continue
             if len(row_tokens) > best_size:
                 best_size, best = len(row_tokens), [payload]
