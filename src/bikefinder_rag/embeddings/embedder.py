@@ -2,7 +2,7 @@
 
 Chosen so queries typed in French can retrieve English-language forum
 comments without a second translation step, and so nobody running this
-project needs an embeddings API key — only the agent's Claude key.
+project needs an embeddings API key. The default Ollama agent is local too.
 """
 
 import os

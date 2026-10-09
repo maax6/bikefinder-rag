@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Talk to the agent directly from the terminal, no Gradio needed.
 
-Uses AGENT_BACKEND from .env (defaults to "anthropic"; set to "ollama" to
-use a local model instead). Run:
+Uses AGENT_BACKEND from .env (defaults to "ollama" for a local model;
+remote backends require an explicit configuration). Run:
 
     PYTHONPATH=src .venv/bin/python scripts/chat_cli.py
 """

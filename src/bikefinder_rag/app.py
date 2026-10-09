@@ -1,26 +1,30 @@
-"""Gradio chat UI. Visitors provide their own API key — Anthropic
-(sk-ant-...) or OpenRouter (sk-or-...), routed by prefix — kept only in
-their browser session's Gradio State, never written to disk, so this demo
-can be hosted for free on Hugging Face Spaces without the owner paying
-for every visitor's API usage."""
+"""Gradio UI for the local proof of concept, using Ollama by default.
+
+Optional Anthropic/OpenRouter backends use a visitor-provided API key.
+"""
 
 import os
 
-import gradio as gr
 from dotenv import load_dotenv
+
+load_dotenv()
+
+import gradio as gr
 
 from bikefinder_rag.agent.loop import BACKEND, OLLAMA_MODEL, run_agent
 from bikefinder_rag.db.client import get_connection
-
-load_dotenv()
 
 
 def chat(message: str, chat_history: list, api_key: str, agent_history: list):
     api_key = (api_key or "").strip()
     if BACKEND != "ollama" and not api_key:
         chat_history = chat_history + [
-            (message, "Please enter your API key above first — Anthropic "
-                      "(console.anthropic.com) or OpenRouter (openrouter.ai/keys).")
+            {"role": "user", "content": message},
+            {
+                "role": "assistant",
+                "content": "Please enter your API key above first — Anthropic "
+                           "(console.anthropic.com) or OpenRouter (openrouter.ai/keys).",
+            },
         ]
         return chat_history, agent_history
 
@@ -36,14 +40,17 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
     finally:
         conn.close()
 
-    chat_history = chat_history + [(message, final_text)]
+    chat_history = chat_history + [
+        {"role": "user", "content": message},
+        {"role": "assistant", "content": final_text},
+    ]
     return chat_history, updated_history
 
 
 with gr.Blocks(title="Bikefinder RAG") as demo:
     if BACKEND == "ollama":
         gr.Markdown(
-            "# 🏍️ Bikefinder RAG (local model)\n"
+            "# 🏍️ Bikefinder RAG (local proof of concept)\n"
             "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
             f"Running on a local Ollama model (`{OLLAMA_MODEL}`) — "
             "no API key needed, but expect slower responses."

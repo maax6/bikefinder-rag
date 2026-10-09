@@ -37,10 +37,14 @@ CREATE TABLE IF NOT EXISTS motorcycles (
     -- checked, so this is filled from a separate, still-TBD source).
     msrp_eur             REAL,
     msrp_source          TEXT,
+    category_fr          TEXT,
 
     raw_specs            JSONB NOT NULL DEFAULT '{}',
     scraped_at            TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+-- Keep existing local databases compatible with the current tools as well.
+ALTER TABLE motorcycles ADD COLUMN IF NOT EXISTS category_fr TEXT;
 
 CREATE INDEX IF NOT EXISTS idx_motorcycles_brand ON motorcycles (brand);
 CREATE INDEX IF NOT EXISTS idx_motorcycles_category ON motorcycles (category);

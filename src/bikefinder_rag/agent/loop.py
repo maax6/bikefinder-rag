@@ -1,4 +1,4 @@
-"""Agentic RAG loop: raw Anthropic tool-use, no agent framework.
+"""Explicit agentic RAG loop: local Ollama or optional remote providers.
 
 The loop is intentionally explicit (not hidden behind LangChain/LlamaIndex)
 so the whole tool-call round-trip is visible and easy to reason about.
@@ -6,11 +6,11 @@ so the whole tool-call round-trip is visible and easy to reason about.
 Three backends are supported, picked via the AGENT_BACKEND env var (or
 per-call via run_agent's `provider`, which is how the Gradio demo routes
 each visitor by the prefix of the key they pasted):
-- "anthropic" (default): visitor's own Anthropic key.
+- "ollama" (default): local models (e.g. Mistral Small) for offline dev and
+  testing after the initial model download, via Ollama's tool-calling API.
+- "anthropic": visitor's own Anthropic key.
 - "openrouter": visitor's own OpenRouter key (sk-or-...), OpenAI-style
   chat-completions API — one key, many models (OPENROUTER_MODEL).
-- "ollama": local models (e.g. Mistral Small) for free/offline dev and
-  testing, via Ollama's OpenAI-style function-calling API.
 """
 
 import json
@@ -22,7 +22,7 @@ from anthropic import Anthropic
 
 from bikefinder_rag.agent.tools import TOOLS, execute_tool
 
-BACKEND = os.environ.get("AGENT_BACKEND", "anthropic")
+BACKEND = os.environ.get("AGENT_BACKEND", "ollama")
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small3.2")
