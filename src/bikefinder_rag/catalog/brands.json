@@ -1,0 +1,3078 @@
+{
+  "version": "brand-vocabulary-v1",
+  "sources": {
+    "bikez_fixture": {
+      "url": "https://bikez.com/motorcycles/honda_x-adv___2021.php",
+      "fixture": "tests/fixtures/xadv_spec.html",
+      "fixture_sha256": "4ad2c2355cbd75ed215d714e50548e1efaa58c1452701808031b2609bd65002b",
+      "selector": "select#CompBrand option",
+      "observed_at": "2026-10-10"
+    },
+    "royal_enfield_official": {
+      "url": "https://www.royalenfield.com/in/en/home/",
+      "observed_at": "2026-10-10",
+      "evidence": "Official site identifies the brand as Royal Enfield. This adds a literal name; it does not establish an alias for Enfield."
+    }
+  },
+  "brands": [
+    {
+      "name": "Acabion",
+      "source": "bikez_fixture",
+      "source_value": "164"
+    },
+    {
+      "name": "Access",
+      "source": "bikez_fixture",
+      "source_value": "471"
+    },
+    {
+      "name": "Ace",
+      "source": "bikez_fixture",
+      "source_value": "433"
+    },
+    {
+      "name": "Adiva",
+      "source": "bikez_fixture",
+      "source_value": "203"
+    },
+    {
+      "name": "Adler",
+      "source": "bikez_fixture",
+      "source_value": "432"
+    },
+    {
+      "name": "Adly",
+      "source": "bikez_fixture",
+      "source_value": "113"
+    },
+    {
+      "name": "Aeon",
+      "source": "bikez_fixture",
+      "source_value": "170"
+    },
+    {
+      "name": "Aermacchi",
+      "source": "bikez_fixture",
+      "source_value": "98"
+    },
+    {
+      "name": "Agrati",
+      "source": "bikez_fixture",
+      "source_value": "449"
+    },
+    {
+      "name": "AJP",
+      "source": "bikez_fixture",
+      "source_value": "106"
+    },
+    {
+      "name": "AJS",
+      "source": "bikez_fixture",
+      "source_value": "188"
+    },
+    {
+      "name": "Alfer",
+      "source": "bikez_fixture",
+      "source_value": "56"
+    },
+    {
+      "name": "Alligator",
+      "source": "bikez_fixture",
+      "source_value": "318"
+    },
+    {
+      "name": "Allstate",
+      "source": "bikez_fixture",
+      "source_value": "431"
+    },
+    {
+      "name": "AlphaSports",
+      "source": "bikez_fixture",
+      "source_value": "226"
+    },
+    {
+      "name": "Alta",
+      "source": "bikez_fixture",
+      "source_value": "503"
+    },
+    {
+      "name": "Amazonas",
+      "source": "bikez_fixture",
+      "source_value": "55"
+    },
+    {
+      "name": "American Eagle",
+      "source": "bikez_fixture",
+      "source_value": "227"
+    },
+    {
+      "name": "American IronHorse",
+      "source": "bikez_fixture",
+      "source_value": "167"
+    },
+    {
+      "name": "APC",
+      "source": "bikez_fixture",
+      "source_value": "228"
+    },
+    {
+      "name": "Apollino",
+      "source": "bikez_fixture",
+      "source_value": "617"
+    },
+    {
+      "name": "Apollo",
+      "source": "bikez_fixture",
+      "source_value": "608"
+    },
+    {
+      "name": "Aprilia",
+      "source": "bikez_fixture",
+      "source_value": "7"
+    },
+    {
+      "name": "Apsonic",
+      "source": "bikez_fixture",
+      "source_value": "551"
+    },
+    {
+      "name": "Arch",
+      "source": "bikez_fixture",
+      "source_value": "502"
+    },
+    {
+      "name": "Archive",
+      "source": "bikez_fixture",
+      "source_value": "610"
+    },
+    {
+      "name": "Arctic Cat",
+      "source": "bikez_fixture",
+      "source_value": "255"
+    },
+    {
+      "name": "Ardie",
+      "source": "bikez_fixture",
+      "source_value": "460"
+    },
+    {
+      "name": "Ariel",
+      "source": "bikez_fixture",
+      "source_value": "388"
+    },
+    {
+      "name": "Arlen Ness",
+      "source": "bikez_fixture",
+      "source_value": "365"
+    },
+    {
+      "name": "Arqin",
+      "source": "bikez_fixture",
+      "source_value": "263"
+    },
+    {
+      "name": "Ascend",
+      "source": "bikez_fixture",
+      "source_value": "619"
+    },
+    {
+      "name": "Askoll",
+      "source": "bikez_fixture",
+      "source_value": "513"
+    },
+    {
+      "name": "Aspes",
+      "source": "bikez_fixture",
+      "source_value": "313"
+    },
+    {
+      "name": "Ather",
+      "source": "bikez_fixture",
+      "source_value": "521"
+    },
+    {
+      "name": "ATK",
+      "source": "bikez_fixture",
+      "source_value": "57"
+    },
+    {
+      "name": "Atlas Honda",
+      "source": "bikez_fixture",
+      "source_value": "150"
+    },
+    {
+      "name": "Aurora",
+      "source": "bikez_fixture",
+      "source_value": "446"
+    },
+    {
+      "name": "Avanturaa Choppers",
+      "source": "bikez_fixture",
+      "source_value": "522"
+    },
+    {
+      "name": "Avinton",
+      "source": "bikez_fixture",
+      "source_value": "360"
+    },
+    {
+      "name": "Avon",
+      "source": "bikez_fixture",
+      "source_value": "335"
+    },
+    {
+      "name": "Azel",
+      "source": "bikez_fixture",
+      "source_value": "194"
+    },
+    {
+      "name": "Bajaj",
+      "source": "bikez_fixture",
+      "source_value": "44"
+    },
+    {
+      "name": "Balkan",
+      "source": "bikez_fixture",
+      "source_value": "269"
+    },
+    {
+      "name": "Baltmotors",
+      "source": "bikez_fixture",
+      "source_value": "583"
+    },
+    {
+      "name": "BamX",
+      "source": "bikez_fixture",
+      "source_value": "235"
+    },
+    {
+      "name": "Baotian",
+      "source": "bikez_fixture",
+      "source_value": "499"
+    },
+    {
+      "name": "Barossa",
+      "source": "bikez_fixture",
+      "source_value": "254"
+    },
+    {
+      "name": "Batavus",
+      "source": "bikez_fixture",
+      "source_value": "459"
+    },
+    {
+      "name": "Beeline",
+      "source": "bikez_fixture",
+      "source_value": "474"
+    },
+    {
+      "name": "Benda",
+      "source": "bikez_fixture",
+      "source_value": "614"
+    },
+    {
+      "name": "Benelli",
+      "source": "bikez_fixture",
+      "source_value": "8"
+    },
+    {
+      "name": "Bennche",
+      "source": "bikez_fixture",
+      "source_value": "305"
+    },
+    {
+      "name": "Beta",
+      "source": "bikez_fixture",
+      "source_value": "58"
+    },
+    {
+      "name": "Better",
+      "source": "bikez_fixture",
+      "source_value": "267"
+    },
+    {
+      "name": "Big Bear Choppers",
+      "source": "bikez_fixture",
+      "source_value": "229"
+    },
+    {
+      "name": "Big Dog",
+      "source": "bikez_fixture",
+      "source_value": "199"
+    },
+    {
+      "name": "Bimota",
+      "source": "bikez_fixture",
+      "source_value": "9"
+    },
+    {
+      "name": "Bintelli",
+      "source": "bikez_fixture",
+      "source_value": "476"
+    },
+    {
+      "name": "Black Douglas",
+      "source": "bikez_fixture",
+      "source_value": "442"
+    },
+    {
+      "name": "Blackburne",
+      "source": "bikez_fixture",
+      "source_value": "417"
+    },
+    {
+      "name": "Blata",
+      "source": "bikez_fixture",
+      "source_value": "133"
+    },
+    {
+      "name": "Bluroc",
+      "source": "bikez_fixture",
+      "source_value": "590"
+    },
+    {
+      "name": "BMC Choppers",
+      "source": "bikez_fixture",
+      "source_value": "230"
+    },
+    {
+      "name": "BMW",
+      "source": "bikez_fixture",
+      "source_value": "12"
+    },
+    {
+      "name": "Boom Trikes",
+      "source": "bikez_fixture",
+      "source_value": "258"
+    },
+    {
+      "name": "Borile",
+      "source": "bikez_fixture",
+      "source_value": "59"
+    },
+    {
+      "name": "Boss Hoss",
+      "source": "bikez_fixture",
+      "source_value": "104"
+    },
+    {
+      "name": "Bourget",
+      "source": "bikez_fixture",
+      "source_value": "231"
+    },
+    {
+      "name": "BPG",
+      "source": "bikez_fixture",
+      "source_value": "336"
+    },
+    {
+      "name": "BPG Werks",
+      "source": "bikez_fixture",
+      "source_value": "377"
+    },
+    {
+      "name": "Brammo",
+      "source": "bikez_fixture",
+      "source_value": "270"
+    },
+    {
+      "name": "Bridgestone",
+      "source": "bikez_fixture",
+      "source_value": "453"
+    },
+    {
+      "name": "Britten",
+      "source": "bikez_fixture",
+      "source_value": "538"
+    },
+    {
+      "name": "Brixton",
+      "source": "bikez_fixture",
+      "source_value": "492"
+    },
+    {
+      "name": "Brockhouse",
+      "source": "bikez_fixture",
+      "source_value": "461"
+    },
+    {
+      "name": "Brough Superior",
+      "source": "bikez_fixture",
+      "source_value": "404"
+    },
+    {
+      "name": "Brudeli",
+      "source": "bikez_fixture",
+      "source_value": "222"
+    },
+    {
+      "name": "BSA",
+      "source": "bikez_fixture",
+      "source_value": "99"
+    },
+    {
+      "name": "BSA Motors",
+      "source": "bikez_fixture",
+      "source_value": "332"
+    },
+    {
+      "name": "BucciMoto",
+      "source": "bikez_fixture",
+      "source_value": "184"
+    },
+    {
+      "name": "Buell",
+      "source": "bikez_fixture",
+      "source_value": "15"
+    },
+    {
+      "name": "Bullit",
+      "source": "bikez_fixture",
+      "source_value": "579"
+    },
+    {
+      "name": "Bultaco",
+      "source": "bikez_fixture",
+      "source_value": "91"
+    },
+    {
+      "name": "Cagiva",
+      "source": "bikez_fixture",
+      "source_value": "17"
+    },
+    {
+      "name": "California Scooter",
+      "source": "bikez_fixture",
+      "source_value": "316"
+    },
+    {
+      "name": "Can-Am",
+      "source": "bikez_fixture",
+      "source_value": "168"
+    },
+    {
+      "name": "Capirelli",
+      "source": "bikez_fixture",
+      "source_value": "576"
+    },
+    {
+      "name": "Cargobike",
+      "source": "bikez_fixture",
+      "source_value": "195"
+    },
+    {
+      "name": "Casal",
+      "source": "bikez_fixture",
+      "source_value": "530"
+    },
+    {
+      "name": "Caterham",
+      "source": "bikez_fixture",
+      "source_value": "385"
+    },
+    {
+      "name": "CCM",
+      "source": "bikez_fixture",
+      "source_value": "26"
+    },
+    {
+      "name": "Cectek",
+      "source": "bikez_fixture",
+      "source_value": "247"
+    },
+    {
+      "name": "CF Moto",
+      "source": "bikez_fixture",
+      "source_value": "153"
+    },
+    {
+      "name": "CH Racing",
+      "source": "bikez_fixture",
+      "source_value": "196"
+    },
+    {
+      "name": "Chang-Jiang",
+      "source": "bikez_fixture",
+      "source_value": "76"
+    },
+    {
+      "name": "Cheetah",
+      "source": "bikez_fixture",
+      "source_value": "293"
+    },
+    {
+      "name": "Cheney",
+      "source": "bikez_fixture",
+      "source_value": "531"
+    },
+    {
+      "name": "Christini",
+      "source": "bikez_fixture",
+      "source_value": "564"
+    },
+    {
+      "name": "Clarke",
+      "source": "bikez_fixture",
+      "source_value": "490"
+    },
+    {
+      "name": "Cleveland",
+      "source": "bikez_fixture",
+      "source_value": "434"
+    },
+    {
+      "name": "Clipic",
+      "source": "bikez_fixture",
+      "source_value": "200"
+    },
+    {
+      "name": "Clyno",
+      "source": "bikez_fixture",
+      "source_value": "405"
+    },
+    {
+      "name": "CMC",
+      "source": "bikez_fixture",
+      "source_value": "317"
+    },
+    {
+      "name": "Cobra",
+      "source": "bikez_fixture",
+      "source_value": "232"
+    },
+    {
+      "name": "Combat Motors",
+      "source": "bikez_fixture",
+      "source_value": "589"
+    },
+    {
+      "name": "Confederate",
+      "source": "bikez_fixture",
+      "source_value": "160"
+    },
+    {
+      "name": "Cosmos Muscle Bikes",
+      "source": "bikez_fixture",
+      "source_value": "275"
+    },
+    {
+      "name": "Cotton",
+      "source": "bikez_fixture",
+      "source_value": "424"
+    },
+    {
+      "name": "Coventry Eagle",
+      "source": "bikez_fixture",
+      "source_value": "414"
+    },
+    {
+      "name": "Covingtons",
+      "source": "bikez_fixture",
+      "source_value": "327"
+    },
+    {
+      "name": "CPI",
+      "source": "bikez_fixture",
+      "source_value": "114"
+    },
+    {
+      "name": "CR&S",
+      "source": "bikez_fixture",
+      "source_value": "142"
+    },
+    {
+      "name": "Crocker",
+      "source": "bikez_fixture",
+      "source_value": "435"
+    },
+    {
+      "name": "CRP",
+      "source": "bikez_fixture",
+      "source_value": "348"
+    },
+    {
+      "name": "CSC Motorcycles",
+      "source": "bikez_fixture",
+      "source_value": "563"
+    },
+    {
+      "name": "CSR",
+      "source": "bikez_fixture",
+      "source_value": "173"
+    },
+    {
+      "name": "Current Motor",
+      "source": "bikez_fixture",
+      "source_value": "349"
+    },
+    {
+      "name": "Curtiss",
+      "source": "bikez_fixture",
+      "source_value": "504"
+    },
+    {
+      "name": "Cushman",
+      "source": "bikez_fixture",
+      "source_value": "455"
+    },
+    {
+      "name": "CZ",
+      "source": "bikez_fixture",
+      "source_value": "27"
+    },
+    {
+      "name": "Daelim",
+      "source": "bikez_fixture",
+      "source_value": "20"
+    },
+    {
+      "name": "Dafier",
+      "source": "bikez_fixture",
+      "source_value": "198"
+    },
+    {
+      "name": "Dafra",
+      "source": "bikez_fixture",
+      "source_value": "297"
+    },
+    {
+      "name": "Dam",
+      "source": "bikez_fixture",
+      "source_value": "271"
+    },
+    {
+      "name": "Damon",
+      "source": "bikez_fixture",
+      "source_value": "557"
+    },
+    {
+      "name": "Dandy",
+      "source": "bikez_fixture",
+      "source_value": "48"
+    },
+    {
+      "name": "Davinci",
+      "source": "bikez_fixture",
+      "source_value": "602"
+    },
+    {
+      "name": "Dayang",
+      "source": "bikez_fixture",
+      "source_value": "213"
+    },
+    {
+      "name": "Dayton",
+      "source": "bikez_fixture",
+      "source_value": "436"
+    },
+    {
+      "name": "Dayun",
+      "source": "bikez_fixture",
+      "source_value": "212"
+    },
+    {
+      "name": "DB Motors",
+      "source": "bikez_fixture",
+      "source_value": "134"
+    },
+    {
+      "name": "De Dion-Bouton",
+      "source": "bikez_fixture",
+      "source_value": "488"
+    },
+    {
+      "name": "Delfast",
+      "source": "bikez_fixture",
+      "source_value": "587"
+    },
+    {
+      "name": "Demak",
+      "source": "bikez_fixture",
+      "source_value": "337"
+    },
+    {
+      "name": "Derbi",
+      "source": "bikez_fixture",
+      "source_value": "107"
+    },
+    {
+      "name": "Derringer",
+      "source": "bikez_fixture",
+      "source_value": "272"
+    },
+    {
+      "name": "DF Motor",
+      "source": "bikez_fixture",
+      "source_value": "159"
+    },
+    {
+      "name": "Dfang",
+      "source": "bikez_fixture",
+      "source_value": "214"
+    },
+    {
+      "name": "Di Blasi",
+      "source": "bikez_fixture",
+      "source_value": "115"
+    },
+    {
+      "name": "Diamo",
+      "source": "bikez_fixture",
+      "source_value": "137"
+    },
+    {
+      "name": "Dihao",
+      "source": "bikez_fixture",
+      "source_value": "361"
+    },
+    {
+      "name": "Dinamo",
+      "source": "bikez_fixture",
+      "source_value": "544"
+    },
+    {
+      "name": "Dinli",
+      "source": "bikez_fixture",
+      "source_value": "248"
+    },
+    {
+      "name": "Dirico",
+      "source": "bikez_fixture",
+      "source_value": "286"
+    },
+    {
+      "name": "DKW",
+      "source": "bikez_fixture",
+      "source_value": "97"
+    },
+    {
+      "name": "Dnepr",
+      "source": "bikez_fixture",
+      "source_value": "54"
+    },
+    {
+      "name": "Docker",
+      "source": "bikez_fixture",
+      "source_value": "577"
+    },
+    {
+      "name": "Dodge",
+      "source": "bikez_fixture",
+      "source_value": "103"
+    },
+    {
+      "name": "Dollar",
+      "source": "bikez_fixture",
+      "source_value": "419"
+    },
+    {
+      "name": "Donghai",
+      "source": "bikez_fixture",
+      "source_value": "81"
+    },
+    {
+      "name": "Douglas",
+      "source": "bikez_fixture",
+      "source_value": "415"
+    },
+    {
+      "name": "Drysdale",
+      "source": "bikez_fixture",
+      "source_value": "452"
+    },
+    {
+      "name": "Ducati",
+      "source": "bikez_fixture",
+      "source_value": "13"
+    },
+    {
+      "name": "Dürkopp",
+      "source": "bikez_fixture",
+      "source_value": "457"
+    },
+    {
+      "name": "E-max",
+      "source": "bikez_fixture",
+      "source_value": "174"
+    },
+    {
+      "name": "E-Racer",
+      "source": "bikez_fixture",
+      "source_value": "514"
+    },
+    {
+      "name": "E-Ton",
+      "source": "bikez_fixture",
+      "source_value": "290"
+    },
+    {
+      "name": "E-Tropolis",
+      "source": "bikez_fixture",
+      "source_value": "289"
+    },
+    {
+      "name": "Eagle-Wing",
+      "source": "bikez_fixture",
+      "source_value": "306"
+    },
+    {
+      "name": "Ebretti",
+      "source": "bikez_fixture",
+      "source_value": "371"
+    },
+    {
+      "name": "Eccity",
+      "source": "bikez_fixture",
+      "source_value": "445"
+    },
+    {
+      "name": "Ecooter",
+      "source": "bikez_fixture",
+      "source_value": "605"
+    },
+    {
+      "name": "Ecosse",
+      "source": "bikez_fixture",
+      "source_value": "141"
+    },
+    {
+      "name": "eCRP",
+      "source": "bikez_fixture",
+      "source_value": "359"
+    },
+    {
+      "name": "EKO",
+      "source": "bikez_fixture",
+      "source_value": "345"
+    },
+    {
+      "name": "Electric City",
+      "source": "bikez_fixture",
+      "source_value": "350"
+    },
+    {
+      "name": "Electric Motion",
+      "source": "bikez_fixture",
+      "source_value": "585"
+    },
+    {
+      "name": "Emblem",
+      "source": "bikez_fixture",
+      "source_value": "391"
+    },
+    {
+      "name": "emco",
+      "source": "bikez_fixture",
+      "source_value": "387"
+    },
+    {
+      "name": "Energica",
+      "source": "bikez_fixture",
+      "source_value": "507"
+    },
+    {
+      "name": "Enfield",
+      "source": "bikez_fixture",
+      "source_value": "28"
+    },
+    {
+      "name": "Erik Buell Racing",
+      "source": "bikez_fixture",
+      "source_value": "314"
+    },
+    {
+      "name": "Evader",
+      "source": "bikez_fixture",
+      "source_value": "558"
+    },
+    {
+      "name": "Evolet",
+      "source": "bikez_fixture",
+      "source_value": "523"
+    },
+    {
+      "name": "Evolve",
+      "source": "bikez_fixture",
+      "source_value": "351"
+    },
+    {
+      "name": "Excelsior",
+      "source": "bikez_fixture",
+      "source_value": "392"
+    },
+    {
+      "name": "Exile Cycles",
+      "source": "bikez_fixture",
+      "source_value": "294"
+    },
+    {
+      "name": "Factory Bike",
+      "source": "bikez_fixture",
+      "source_value": "124"
+    },
+    {
+      "name": "Falcon",
+      "source": "bikez_fixture",
+      "source_value": "467"
+    },
+    {
+      "name": "Fantic",
+      "source": "bikez_fixture",
+      "source_value": "45"
+    },
+    {
+      "name": "FB Mondial",
+      "source": "bikez_fixture",
+      "source_value": "466"
+    },
+    {
+      "name": "Felo",
+      "source": "bikez_fixture",
+      "source_value": "601"
+    },
+    {
+      "name": "FGR",
+      "source": "bikez_fixture",
+      "source_value": "328"
+    },
+    {
+      "name": "Fischer",
+      "source": "bikez_fixture",
+      "source_value": "161"
+    },
+    {
+      "name": "Flying Merkel",
+      "source": "bikez_fixture",
+      "source_value": "437"
+    },
+    {
+      "name": "Flyrite Choppers",
+      "source": "bikez_fixture",
+      "source_value": "233"
+    },
+    {
+      "name": "Fokamo",
+      "source": "bikez_fixture",
+      "source_value": "296"
+    },
+    {
+      "name": "Fosti",
+      "source": "bikez_fixture",
+      "source_value": "108"
+    },
+    {
+      "name": "Fuego",
+      "source": "bikez_fixture",
+      "source_value": "554"
+    },
+    {
+      "name": "FX Bikes",
+      "source": "bikez_fixture",
+      "source_value": "444"
+    },
+    {
+      "name": "G&G",
+      "source": "bikez_fixture",
+      "source_value": "75"
+    },
+    {
+      "name": "Garelli",
+      "source": "bikez_fixture",
+      "source_value": "148"
+    },
+    {
+      "name": "GAS GAS",
+      "source": "bikez_fixture",
+      "source_value": "21"
+    },
+    {
+      "name": "Geely",
+      "source": "bikez_fixture",
+      "source_value": "372"
+    },
+    {
+      "name": "Genata",
+      "source": "bikez_fixture",
+      "source_value": "464"
+    },
+    {
+      "name": "Generic",
+      "source": "bikez_fixture",
+      "source_value": "156"
+    },
+    {
+      "name": "Genuine Scooter",
+      "source": "bikez_fixture",
+      "source_value": "215"
+    },
+    {
+      "name": "Geon",
+      "source": "bikez_fixture",
+      "source_value": "595"
+    },
+    {
+      "name": "GG",
+      "source": "bikez_fixture",
+      "source_value": "346"
+    },
+    {
+      "name": "Ghezzi-Brian",
+      "source": "bikez_fixture",
+      "source_value": "73"
+    },
+    {
+      "name": "Giantco",
+      "source": "bikez_fixture",
+      "source_value": "256"
+    },
+    {
+      "name": "Gibbs",
+      "source": "bikez_fixture",
+      "source_value": "370"
+    },
+    {
+      "name": "Gilera",
+      "source": "bikez_fixture",
+      "source_value": "71"
+    },
+    {
+      "name": "Goes",
+      "source": "bikez_fixture",
+      "source_value": "260"
+    },
+    {
+      "name": "Gogo Moto",
+      "source": "bikez_fixture",
+      "source_value": "383"
+    },
+    {
+      "name": "Gogoro",
+      "source": "bikez_fixture",
+      "source_value": "500"
+    },
+    {
+      "name": "Govecs",
+      "source": "bikez_fixture",
+      "source_value": "274"
+    },
+    {
+      "name": "GPX Moto",
+      "source": "bikez_fixture",
+      "source_value": "606"
+    },
+    {
+      "name": "GRC Moto",
+      "source": "bikez_fixture",
+      "source_value": "321"
+    },
+    {
+      "name": "GreenTrans",
+      "source": "bikez_fixture",
+      "source_value": "311"
+    },
+    {
+      "name": "Greeves",
+      "source": "bikez_fixture",
+      "source_value": "401"
+    },
+    {
+      "name": "Gymotor",
+      "source": "bikez_fixture",
+      "source_value": "584"
+    },
+    {
+      "name": "Hadin",
+      "source": "bikez_fixture",
+      "source_value": "508"
+    },
+    {
+      "name": "Hamachi",
+      "source": "bikez_fixture",
+      "source_value": "547"
+    },
+    {
+      "name": "Hanway",
+      "source": "bikez_fixture",
+      "source_value": "472"
+    },
+    {
+      "name": "Haojin",
+      "source": "bikez_fixture",
+      "source_value": "299"
+    },
+    {
+      "name": "Haojue",
+      "source": "bikez_fixture",
+      "source_value": "545"
+    },
+    {
+      "name": "Harley-Davidson",
+      "source": "bikez_fixture",
+      "source_value": "11"
+    },
+    {
+      "name": "Hartford",
+      "source": "bikez_fixture",
+      "source_value": "105"
+    },
+    {
+      "name": "HDM",
+      "source": "bikez_fixture",
+      "source_value": "301"
+    },
+    {
+      "name": "Headbanger",
+      "source": "bikez_fixture",
+      "source_value": "276"
+    },
+    {
+      "name": "Heinkel",
+      "source": "bikez_fixture",
+      "source_value": "454"
+    },
+    {
+      "name": "Henderson",
+      "source": "bikez_fixture",
+      "source_value": "458"
+    },
+    {
+      "name": "Herald",
+      "source": "bikez_fixture",
+      "source_value": "477"
+    },
+    {
+      "name": "Hercules",
+      "source": "bikez_fixture",
+      "source_value": "77"
+    },
+    {
+      "name": "Hero",
+      "source": "bikez_fixture",
+      "source_value": "357"
+    },
+    {
+      "name": "Hero Electric",
+      "source": "bikez_fixture",
+      "source_value": "334"
+    },
+    {
+      "name": "Hero Honda",
+      "source": "bikez_fixture",
+      "source_value": "136"
+    },
+    {
+      "name": "Hesketh",
+      "source": "bikez_fixture",
+      "source_value": "277"
+    },
+    {
+      "name": "Highland",
+      "source": "bikez_fixture",
+      "source_value": "29"
+    },
+    {
+      "name": "Hildebrand-Wolfmüll",
+      "source": "bikez_fixture",
+      "source_value": "484"
+    },
+    {
+      "name": "HM",
+      "source": "bikez_fixture",
+      "source_value": "304"
+    },
+    {
+      "name": "Hodaka",
+      "source": "bikez_fixture",
+      "source_value": "546"
+    },
+    {
+      "name": "Honda",
+      "source": "bikez_fixture",
+      "source_value": "1"
+    },
+    {
+      "name": "Horex",
+      "source": "bikez_fixture",
+      "source_value": "39"
+    },
+    {
+      "name": "Horwin",
+      "source": "bikez_fixture",
+      "source_value": "578"
+    },
+    {
+      "name": "HP Power",
+      "source": "bikez_fixture",
+      "source_value": "312"
+    },
+    {
+      "name": "Hunter",
+      "source": "bikez_fixture",
+      "source_value": "535"
+    },
+    {
+      "name": "Husaberg",
+      "source": "bikez_fixture",
+      "source_value": "30"
+    },
+    {
+      "name": "Husqvarna",
+      "source": "bikez_fixture",
+      "source_value": "18"
+    },
+    {
+      "name": "Hyosung",
+      "source": "bikez_fixture",
+      "source_value": "22"
+    },
+    {
+      "name": "Ice Bear",
+      "source": "bikez_fixture",
+      "source_value": "469"
+    },
+    {
+      "name": "Indian",
+      "source": "bikez_fixture",
+      "source_value": "53"
+    },
+    {
+      "name": "Innoscooter",
+      "source": "bikez_fixture",
+      "source_value": "219"
+    },
+    {
+      "name": "Intrepid",
+      "source": "bikez_fixture",
+      "source_value": "234"
+    },
+    {
+      "name": "Irbis",
+      "source": "bikez_fixture",
+      "source_value": "512"
+    },
+    {
+      "name": "Italika",
+      "source": "bikez_fixture",
+      "source_value": "529"
+    },
+    {
+      "name": "Italjet",
+      "source": "bikez_fixture",
+      "source_value": "31"
+    },
+    {
+      "name": "Italmoto",
+      "source": "bikez_fixture",
+      "source_value": "559"
+    },
+    {
+      "name": "IZH",
+      "source": "bikez_fixture",
+      "source_value": "72"
+    },
+    {
+      "name": "Izuka",
+      "source": "bikez_fixture",
+      "source_value": "209"
+    },
+    {
+      "name": "James",
+      "source": "bikez_fixture",
+      "source_value": "416"
+    },
+    {
+      "name": "Janus",
+      "source": "bikez_fixture",
+      "source_value": "532"
+    },
+    {
+      "name": "Jawa",
+      "source": "bikez_fixture",
+      "source_value": "32"
+    },
+    {
+      "name": "Jawa-CZ",
+      "source": "bikez_fixture",
+      "source_value": "52"
+    },
+    {
+      "name": "Jialing",
+      "source": "bikez_fixture",
+      "source_value": "220"
+    },
+    {
+      "name": "Jianshe",
+      "source": "bikez_fixture",
+      "source_value": "221"
+    },
+    {
+      "name": "Jincheng",
+      "source": "bikez_fixture",
+      "source_value": "116"
+    },
+    {
+      "name": "Jinhao",
+      "source": "bikez_fixture",
+      "source_value": "300"
+    },
+    {
+      "name": "Jinlun",
+      "source": "bikez_fixture",
+      "source_value": "125"
+    },
+    {
+      "name": "Joerns Motor",
+      "source": "bikez_fixture",
+      "source_value": "396"
+    },
+    {
+      "name": "Johammer",
+      "source": "bikez_fixture",
+      "source_value": "555"
+    },
+    {
+      "name": "Johnny Pag",
+      "source": "bikez_fixture",
+      "source_value": "204"
+    },
+    {
+      "name": "Jonway",
+      "source": "bikez_fixture",
+      "source_value": "216"
+    },
+    {
+      "name": "Jordan",
+      "source": "bikez_fixture",
+      "source_value": "307"
+    },
+    {
+      "name": "Jotagas",
+      "source": "bikez_fixture",
+      "source_value": "470"
+    },
+    {
+      "name": "JRL",
+      "source": "bikez_fixture",
+      "source_value": "201"
+    },
+    {
+      "name": "Junak",
+      "source": "bikez_fixture",
+      "source_value": "482"
+    },
+    {
+      "name": "K2O",
+      "source": "bikez_fixture",
+      "source_value": "331"
+    },
+    {
+      "name": "Kabirdass",
+      "source": "bikez_fixture",
+      "source_value": "338"
+    },
+    {
+      "name": "Kangda",
+      "source": "bikez_fixture",
+      "source_value": "109"
+    },
+    {
+      "name": "Kanuni",
+      "source": "bikez_fixture",
+      "source_value": "123"
+    },
+    {
+      "name": "Kasinski",
+      "source": "bikez_fixture",
+      "source_value": "302"
+    },
+    {
+      "name": "Kawasaki",
+      "source": "bikez_fixture",
+      "source_value": "2"
+    },
+    {
+      "name": "Kayo",
+      "source": "bikez_fixture",
+      "source_value": "505"
+    },
+    {
+      "name": "Keeway",
+      "source": "bikez_fixture",
+      "source_value": "143"
+    },
+    {
+      "name": "Kenbo",
+      "source": "bikez_fixture",
+      "source_value": "553"
+    },
+    {
+      "name": "Kentoya",
+      "source": "bikez_fixture",
+      "source_value": "552"
+    },
+    {
+      "name": "Kikker 5150",
+      "source": "bikez_fixture",
+      "source_value": "283"
+    },
+    {
+      "name": "Kinetic",
+      "source": "bikez_fixture",
+      "source_value": "344"
+    },
+    {
+      "name": "Kinroad",
+      "source": "bikez_fixture",
+      "source_value": "284"
+    },
+    {
+      "name": "Kollter",
+      "source": "bikez_fixture",
+      "source_value": "581"
+    },
+    {
+      "name": "Kove",
+      "source": "bikez_fixture",
+      "source_value": "615"
+    },
+    {
+      "name": "Kramit",
+      "source": "bikez_fixture",
+      "source_value": "60"
+    },
+    {
+      "name": "KRC",
+      "source": "bikez_fixture",
+      "source_value": "463"
+    },
+    {
+      "name": "Kreidler",
+      "source": "bikez_fixture",
+      "source_value": "84"
+    },
+    {
+      "name": "KSR",
+      "source": "bikez_fixture",
+      "source_value": "465"
+    },
+    {
+      "name": "KTM",
+      "source": "bikez_fixture",
+      "source_value": "19"
+    },
+    {
+      "name": "Kuba",
+      "source": "bikez_fixture",
+      "source_value": "561"
+    },
+    {
+      "name": "Kuberg",
+      "source": "bikez_fixture",
+      "source_value": "382"
+    },
+    {
+      "name": "Kumpan",
+      "source": "bikez_fixture",
+      "source_value": "364"
+    },
+    {
+      "name": "Kurazai",
+      "source": "bikez_fixture",
+      "source_value": "588"
+    },
+    {
+      "name": "Kymco",
+      "source": "bikez_fixture",
+      "source_value": "23"
+    },
+    {
+      "name": "Lambretta",
+      "source": "bikez_fixture",
+      "source_value": "208"
+    },
+    {
+      "name": "Lance",
+      "source": "bikez_fixture",
+      "source_value": "596"
+    },
+    {
+      "name": "Lauge Jensen",
+      "source": "bikez_fixture",
+      "source_value": "282"
+    },
+    {
+      "name": "Laverda",
+      "source": "bikez_fixture",
+      "source_value": "33"
+    },
+    {
+      "name": "Lea Francis",
+      "source": "bikez_fixture",
+      "source_value": "425"
+    },
+    {
+      "name": "Lectrix",
+      "source": "bikez_fixture",
+      "source_value": "339"
+    },
+    {
+      "name": "Lehman Trikes",
+      "source": "bikez_fixture",
+      "source_value": "303"
+    },
+    {
+      "name": "Lem",
+      "source": "bikez_fixture",
+      "source_value": "135"
+    },
+    {
+      "name": "Leonart",
+      "source": "bikez_fixture",
+      "source_value": "356"
+    },
+    {
+      "name": "Leonhardt",
+      "source": "bikez_fixture",
+      "source_value": "281"
+    },
+    {
+      "name": "Lexmoto",
+      "source": "bikez_fixture",
+      "source_value": "380"
+    },
+    {
+      "name": "Lifan",
+      "source": "bikez_fixture",
+      "source_value": "151"
+    },
+    {
+      "name": "Lightning",
+      "source": "bikez_fixture",
+      "source_value": "451"
+    },
+    {
+      "name": "Ligier",
+      "source": "bikez_fixture",
+      "source_value": "249"
+    },
+    {
+      "name": "Linhai",
+      "source": "bikez_fixture",
+      "source_value": "117"
+    },
+    {
+      "name": "Lintex",
+      "source": "bikez_fixture",
+      "source_value": "352"
+    },
+    {
+      "name": "Lit Motors",
+      "source": "bikez_fixture",
+      "source_value": "386"
+    },
+    {
+      "name": "Lito",
+      "source": "bikez_fixture",
+      "source_value": "389"
+    },
+    {
+      "name": "LiveWire",
+      "source": "bikez_fixture",
+      "source_value": "592"
+    },
+    {
+      "name": "LML",
+      "source": "bikez_fixture",
+      "source_value": "250"
+    },
+    {
+      "name": "Lohia",
+      "source": "bikez_fixture",
+      "source_value": "340"
+    },
+    {
+      "name": "Loncin",
+      "source": "bikez_fixture",
+      "source_value": "154"
+    },
+    {
+      "name": "Longjia",
+      "source": "bikez_fixture",
+      "source_value": "358"
+    },
+    {
+      "name": "LSL",
+      "source": "bikez_fixture",
+      "source_value": "375"
+    },
+    {
+      "name": "Luojia",
+      "source": "bikez_fixture",
+      "source_value": "607"
+    },
+    {
+      "name": "Luxxon",
+      "source": "bikez_fixture",
+      "source_value": "473"
+    },
+    {
+      "name": "Macbor",
+      "source": "bikez_fixture",
+      "source_value": "126"
+    },
+    {
+      "name": "Magnat Debon",
+      "source": "bikez_fixture",
+      "source_value": "421"
+    },
+    {
+      "name": "Magni",
+      "source": "bikez_fixture",
+      "source_value": "74"
+    },
+    {
+      "name": "Mahindra",
+      "source": "bikez_fixture",
+      "source_value": "315"
+    },
+    {
+      "name": "Maico",
+      "source": "bikez_fixture",
+      "source_value": "61"
+    },
+    {
+      "name": "Malaguti",
+      "source": "bikez_fixture",
+      "source_value": "70"
+    },
+    {
+      "name": "Malanca",
+      "source": "bikez_fixture",
+      "source_value": "86"
+    },
+    {
+      "name": "Marine Turbine Techn",
+      "source": "bikez_fixture",
+      "source_value": "101"
+    },
+    {
+      "name": "Marks",
+      "source": "bikez_fixture",
+      "source_value": "491"
+    },
+    {
+      "name": "Marsh",
+      "source": "bikez_fixture",
+      "source_value": "390"
+    },
+    {
+      "name": "Marusho",
+      "source": "bikez_fixture",
+      "source_value": "406"
+    },
+    {
+      "name": "Mash",
+      "source": "bikez_fixture",
+      "source_value": "480"
+    },
+    {
+      "name": "Matchless",
+      "source": "bikez_fixture",
+      "source_value": "82"
+    },
+    {
+      "name": "Mavizen",
+      "source": "bikez_fixture",
+      "source_value": "295"
+    },
+    {
+      "name": "MBK",
+      "source": "bikez_fixture",
+      "source_value": "46"
+    },
+    {
+      "name": "MBS",
+      "source": "bikez_fixture",
+      "source_value": "62"
+    },
+    {
+      "name": "Megelli",
+      "source": "bikez_fixture",
+      "source_value": "171"
+    },
+    {
+      "name": "Metisse",
+      "source": "bikez_fixture",
+      "source_value": "278"
+    },
+    {
+      "name": "MGB",
+      "source": "bikez_fixture",
+      "source_value": "118"
+    },
+    {
+      "name": "MH",
+      "source": "bikez_fixture",
+      "source_value": "496"
+    },
+    {
+      "name": "Midual",
+      "source": "bikez_fixture",
+      "source_value": "34"
+    },
+    {
+      "name": "Mikilon",
+      "source": "bikez_fixture",
+      "source_value": "175"
+    },
+    {
+      "name": "Millet",
+      "source": "bikez_fixture",
+      "source_value": "486"
+    },
+    {
+      "name": "Mini",
+      "source": "bikez_fixture",
+      "source_value": "347"
+    },
+    {
+      "name": "Minsk",
+      "source": "bikez_fixture",
+      "source_value": "49"
+    },
+    {
+      "name": "Mission",
+      "source": "bikez_fixture",
+      "source_value": "259"
+    },
+    {
+      "name": "Mitt",
+      "source": "bikez_fixture",
+      "source_value": "566"
+    },
+    {
+      "name": "MM",
+      "source": "bikez_fixture",
+      "source_value": "94"
+    },
+    {
+      "name": "Modenas",
+      "source": "bikez_fixture",
+      "source_value": "329"
+    },
+    {
+      "name": "Mojo",
+      "source": "bikez_fixture",
+      "source_value": "611"
+    },
+    {
+      "name": "Monark",
+      "source": "bikez_fixture",
+      "source_value": "407"
+    },
+    {
+      "name": "Mondial",
+      "source": "bikez_fixture",
+      "source_value": "63"
+    },
+    {
+      "name": "Montesa",
+      "source": "bikez_fixture",
+      "source_value": "64"
+    },
+    {
+      "name": "Monto Motors",
+      "source": "bikez_fixture",
+      "source_value": "343"
+    },
+    {
+      "name": "Moto Gima",
+      "source": "bikez_fixture",
+      "source_value": "273"
+    },
+    {
+      "name": "Moto Guzzi",
+      "source": "bikez_fixture",
+      "source_value": "16"
+    },
+    {
+      "name": "Moto Morini",
+      "source": "bikez_fixture",
+      "source_value": "80"
+    },
+    {
+      "name": "Moto Union/OMV",
+      "source": "bikez_fixture",
+      "source_value": "41"
+    },
+    {
+      "name": "Motobi",
+      "source": "bikez_fixture",
+      "source_value": "87"
+    },
+    {
+      "name": "MotoCzysz",
+      "source": "bikez_fixture",
+      "source_value": "211"
+    },
+    {
+      "name": "Motolevo",
+      "source": "bikez_fixture",
+      "source_value": "42"
+    },
+    {
+      "name": "Motom",
+      "source": "bikez_fixture",
+      "source_value": "193"
+    },
+    {
+      "name": "Motomel",
+      "source": "bikez_fixture",
+      "source_value": "536"
+    },
+    {
+      "name": "Motoposh",
+      "source": "bikez_fixture",
+      "source_value": "582"
+    },
+    {
+      "name": "Motorhispania",
+      "source": "bikez_fixture",
+      "source_value": "119"
+    },
+    {
+      "name": "Motorino",
+      "source": "bikez_fixture",
+      "source_value": "468"
+    },
+    {
+      "name": "Motors Europe",
+      "source": "bikez_fixture",
+      "source_value": "483"
+    },
+    {
+      "name": "Mototrans",
+      "source": "bikez_fixture",
+      "source_value": "90"
+    },
+    {
+      "name": "Motowell",
+      "source": "bikez_fixture",
+      "source_value": "475"
+    },
+    {
+      "name": "Motron",
+      "source": "bikez_fixture",
+      "source_value": "609"
+    },
+    {
+      "name": "Motus",
+      "source": "bikez_fixture",
+      "source_value": "362"
+    },
+    {
+      "name": "Münch",
+      "source": "bikez_fixture",
+      "source_value": "65"
+    },
+    {
+      "name": "Mustang",
+      "source": "bikez_fixture",
+      "source_value": "447"
+    },
+    {
+      "name": "MuZ",
+      "source": "bikez_fixture",
+      "source_value": "14"
+    },
+    {
+      "name": "MV Agusta",
+      "source": "bikez_fixture",
+      "source_value": "10"
+    },
+    {
+      "name": "MZ",
+      "source": "bikez_fixture",
+      "source_value": "43"
+    },
+    {
+      "name": "NCR",
+      "source": "bikez_fixture",
+      "source_value": "236"
+    },
+    {
+      "name": "Neander",
+      "source": "bikez_fixture",
+      "source_value": "191"
+    },
+    {
+      "name": "Neco",
+      "source": "bikez_fixture",
+      "source_value": "556"
+    },
+    {
+      "name": "Nembo",
+      "source": "bikez_fixture",
+      "source_value": "506"
+    },
+    {
+      "name": "New Hudson",
+      "source": "bikez_fixture",
+      "source_value": "420"
+    },
+    {
+      "name": "Nimbus",
+      "source": "bikez_fixture",
+      "source_value": "418"
+    },
+    {
+      "name": "Nimota",
+      "source": "bikez_fixture",
+      "source_value": "542"
+    },
+    {
+      "name": "Nipponia",
+      "source": "bikez_fixture",
+      "source_value": "224"
+    },
+    {
+      "name": "Niu",
+      "source": "bikez_fixture",
+      "source_value": "511"
+    },
+    {
+      "name": "Norton",
+      "source": "bikez_fixture",
+      "source_value": "5"
+    },
+    {
+      "name": "NOX",
+      "source": "bikez_fixture",
+      "source_value": "291"
+    },
+    {
+      "name": "NSU",
+      "source": "bikez_fixture",
+      "source_value": "400"
+    },
+    {
+      "name": "Nuuk",
+      "source": "bikez_fixture",
+      "source_value": "501"
+    },
+    {
+      "name": "Ohvale",
+      "source": "bikez_fixture",
+      "source_value": "515"
+    },
+    {
+      "name": "Okinawa",
+      "source": "bikez_fixture",
+      "source_value": "524"
+    },
+    {
+      "name": "Ola",
+      "source": "bikez_fixture",
+      "source_value": "616"
+    },
+    {
+      "name": "Opel",
+      "source": "bikez_fixture",
+      "source_value": "537"
+    },
+    {
+      "name": "Orcal",
+      "source": "bikez_fixture",
+      "source_value": "443"
+    },
+    {
+      "name": "Orient",
+      "source": "bikez_fixture",
+      "source_value": "487"
+    },
+    {
+      "name": "Orion",
+      "source": "bikez_fixture",
+      "source_value": "190"
+    },
+    {
+      "name": "Oset",
+      "source": "bikez_fixture",
+      "source_value": "478"
+    },
+    {
+      "name": "OSSA",
+      "source": "bikez_fixture",
+      "source_value": "92"
+    },
+    {
+      "name": "Otto Bike",
+      "source": "bikez_fixture",
+      "source_value": "516"
+    },
+    {
+      "name": "Over",
+      "source": "bikez_fixture",
+      "source_value": "376"
+    },
+    {
+      "name": "Oxygen",
+      "source": "bikez_fixture",
+      "source_value": "355"
+    },
+    {
+      "name": "Pagsta",
+      "source": "bikez_fixture",
+      "source_value": "237"
+    },
+    {
+      "name": "Palmo",
+      "source": "bikez_fixture",
+      "source_value": "251"
+    },
+    {
+      "name": "Pannonia",
+      "source": "bikez_fixture",
+      "source_value": "96"
+    },
+    {
+      "name": "Panther",
+      "source": "bikez_fixture",
+      "source_value": "456"
+    },
+    {
+      "name": "Paton",
+      "source": "bikez_fixture",
+      "source_value": "528"
+    },
+    {
+      "name": "Peda",
+      "source": "bikez_fixture",
+      "source_value": "543"
+    },
+    {
+      "name": "Penton",
+      "source": "bikez_fixture",
+      "source_value": "411"
+    },
+    {
+      "name": "Peraves",
+      "source": "bikez_fixture",
+      "source_value": "205"
+    },
+    {
+      "name": "Perks and Birch",
+      "source": "bikez_fixture",
+      "source_value": "489"
+    },
+    {
+      "name": "Peugeot",
+      "source": "bikez_fixture",
+      "source_value": "110"
+    },
+    {
+      "name": "PGO",
+      "source": "bikez_fixture",
+      "source_value": "128"
+    },
+    {
+      "name": "Piaggio",
+      "source": "bikez_fixture",
+      "source_value": "47"
+    },
+    {
+      "name": "Pierce",
+      "source": "bikez_fixture",
+      "source_value": "408"
+    },
+    {
+      "name": "Pitster Pro",
+      "source": "bikez_fixture",
+      "source_value": "264"
+    },
+    {
+      "name": "Polaris",
+      "source": "bikez_fixture",
+      "source_value": "252"
+    },
+    {
+      "name": "Polini",
+      "source": "bikez_fixture",
+      "source_value": "127"
+    },
+    {
+      "name": "Pope",
+      "source": "bikez_fixture",
+      "source_value": "438"
+    },
+    {
+      "name": "Power Chief",
+      "source": "bikez_fixture",
+      "source_value": "268"
+    },
+    {
+      "name": "Praga",
+      "source": "bikez_fixture",
+      "source_value": "120"
+    },
+    {
+      "name": "PRC (Pro Racing Cycl",
+      "source": "bikez_fixture",
+      "source_value": "145"
+    },
+    {
+      "name": "Precision Cycle Work",
+      "source": "bikez_fixture",
+      "source_value": "238"
+    },
+    {
+      "name": "Pro-One",
+      "source": "bikez_fixture",
+      "source_value": "207"
+    },
+    {
+      "name": "proEco",
+      "source": "bikez_fixture",
+      "source_value": "369"
+    },
+    {
+      "name": "Puch",
+      "source": "bikez_fixture",
+      "source_value": "83"
+    },
+    {
+      "name": "Puma",
+      "source": "bikez_fixture",
+      "source_value": "285"
+    },
+    {
+      "name": "Qingqi",
+      "source": "bikez_fixture",
+      "source_value": "189"
+    },
+    {
+      "name": "QJmotor",
+      "source": "bikez_fixture",
+      "source_value": "570"
+    },
+    {
+      "name": "Qlink",
+      "source": "bikez_fixture",
+      "source_value": "158"
+    },
+    {
+      "name": "Qooder",
+      "source": "bikez_fixture",
+      "source_value": "519"
+    },
+    {
+      "name": "Quadro",
+      "source": "bikez_fixture",
+      "source_value": "320"
+    },
+    {
+      "name": "Quantya",
+      "source": "bikez_fixture",
+      "source_value": "279"
+    },
+    {
+      "name": "R-bike",
+      "source": "bikez_fixture",
+      "source_value": "166"
+    },
+    {
+      "name": "Raleigh",
+      "source": "bikez_fixture",
+      "source_value": "448"
+    },
+    {
+      "name": "Ravi Piaggio",
+      "source": "bikez_fixture",
+      "source_value": "262"
+    },
+    {
+      "name": "Raybar",
+      "source": "bikez_fixture",
+      "source_value": "560"
+    },
+    {
+      "name": "Reading Standard",
+      "source": "bikez_fixture",
+      "source_value": "393"
+    },
+    {
+      "name": "Red Wing",
+      "source": "bikez_fixture",
+      "source_value": "183"
+    },
+    {
+      "name": "Redneck",
+      "source": "bikez_fixture",
+      "source_value": "287"
+    },
+    {
+      "name": "Revolt",
+      "source": "bikez_fixture",
+      "source_value": "525"
+    },
+    {
+      "name": "Rewaco",
+      "source": "bikez_fixture",
+      "source_value": "366"
+    },
+    {
+      "name": "RGNT",
+      "source": "bikez_fixture",
+      "source_value": "613"
+    },
+    {
+      "name": "Rhino",
+      "source": "bikez_fixture",
+      "source_value": "157"
+    },
+    {
+      "name": "Rickman",
+      "source": "bikez_fixture",
+      "source_value": "403"
+    },
+    {
+      "name": "Ridley",
+      "source": "bikez_fixture",
+      "source_value": "140"
+    },
+    {
+      "name": "Riedel",
+      "source": "bikez_fixture",
+      "source_value": "429"
+    },
+    {
+      "name": "Rieju",
+      "source": "bikez_fixture",
+      "source_value": "111"
+    },
+    {
+      "name": "Rikuo",
+      "source": "bikez_fixture",
+      "source_value": "410"
+    },
+    {
+      "name": "Road Hopper",
+      "source": "bikez_fixture",
+      "source_value": "253"
+    },
+    {
+      "name": "Rockford",
+      "source": "bikez_fixture",
+      "source_value": "265"
+    },
+    {
+      "name": "Roehr",
+      "source": "bikez_fixture",
+      "source_value": "165"
+    },
+    {
+      "name": "Rokon",
+      "source": "bikez_fixture",
+      "source_value": "246"
+    },
+    {
+      "name": "Romet",
+      "source": "bikez_fixture",
+      "source_value": "381"
+    },
+    {
+      "name": "Roper",
+      "source": "bikez_fixture",
+      "source_value": "412"
+    },
+    {
+      "name": "Roxon",
+      "source": "bikez_fixture",
+      "source_value": "132"
+    },
+    {
+      "name": "Royal Alloy",
+      "source": "bikez_fixture",
+      "source_value": "520"
+    },
+    {
+      "name": "Royal Pioneer",
+      "source": "bikez_fixture",
+      "source_value": "413"
+    },
+    {
+      "name": "Rucker Performance",
+      "source": "bikez_fixture",
+      "source_value": "239"
+    },
+    {
+      "name": "Rudge",
+      "source": "bikez_fixture",
+      "source_value": "430"
+    },
+    {
+      "name": "Ryvid",
+      "source": "bikez_fixture",
+      "source_value": "598"
+    },
+    {
+      "name": "Sachs",
+      "source": "bikez_fixture",
+      "source_value": "24"
+    },
+    {
+      "name": "Samurai Chopper",
+      "source": "bikez_fixture",
+      "source_value": "225"
+    },
+    {
+      "name": "Sanglas",
+      "source": "bikez_fixture",
+      "source_value": "88"
+    },
+    {
+      "name": "Sanya",
+      "source": "bikez_fixture",
+      "source_value": "591"
+    },
+    {
+      "name": "Sarolea",
+      "source": "bikez_fixture",
+      "source_value": "426"
+    },
+    {
+      "name": "Savic",
+      "source": "bikez_fixture",
+      "source_value": "603"
+    },
+    {
+      "name": "Saxon",
+      "source": "bikez_fixture",
+      "source_value": "210"
+    },
+    {
+      "name": "Saxxx",
+      "source": "bikez_fixture",
+      "source_value": "575"
+    },
+    {
+      "name": "Schickel",
+      "source": "bikez_fixture",
+      "source_value": "394"
+    },
+    {
+      "name": "Schwinn",
+      "source": "bikez_fixture",
+      "source_value": "240"
+    },
+    {
+      "name": "Scomadi",
+      "source": "bikez_fixture",
+      "source_value": "493"
+    },
+    {
+      "name": "Scorpa",
+      "source": "bikez_fixture",
+      "source_value": "176"
+    },
+    {
+      "name": "Scott",
+      "source": "bikez_fixture",
+      "source_value": "409"
+    },
+    {
+      "name": "Sears",
+      "source": "bikez_fixture",
+      "source_value": "395"
+    },
+    {
+      "name": "Seat",
+      "source": "bikez_fixture",
+      "source_value": "573"
+    },
+    {
+      "name": "Senke",
+      "source": "bikez_fixture",
+      "source_value": "177"
+    },
+    {
+      "name": "Serpento",
+      "source": "bikez_fixture",
+      "source_value": "550"
+    },
+    {
+      "name": "Shanyang",
+      "source": "bikez_fixture",
+      "source_value": "373"
+    },
+    {
+      "name": "Sharmax",
+      "source": "bikez_fixture",
+      "source_value": "618"
+    },
+    {
+      "name": "Sherco",
+      "source": "bikez_fixture",
+      "source_value": "66"
+    },
+    {
+      "name": "Shineray",
+      "source": "bikez_fixture",
+      "source_value": "187"
+    },
+    {
+      "name": "ShineTime",
+      "source": "bikez_fixture",
+      "source_value": "186"
+    },
+    {
+      "name": "Siamoto",
+      "source": "bikez_fixture",
+      "source_value": "112"
+    },
+    {
+      "name": "Silence",
+      "source": "bikez_fixture",
+      "source_value": "574"
+    },
+    {
+      "name": "Silk",
+      "source": "bikez_fixture",
+      "source_value": "541"
+    },
+    {
+      "name": "Simplex",
+      "source": "bikez_fixture",
+      "source_value": "398"
+    },
+    {
+      "name": "Simson",
+      "source": "bikez_fixture",
+      "source_value": "51"
+    },
+    {
+      "name": "Sinnis",
+      "source": "bikez_fixture",
+      "source_value": "494"
+    },
+    {
+      "name": "Skygo",
+      "source": "bikez_fixture",
+      "source_value": "548"
+    },
+    {
+      "name": "Skyteam",
+      "source": "bikez_fixture",
+      "source_value": "144"
+    },
+    {
+      "name": "Sommer",
+      "source": "bikez_fixture",
+      "source_value": "185"
+    },
+    {
+      "name": "Sonik",
+      "source": "bikez_fixture",
+      "source_value": "379"
+    },
+    {
+      "name": "Sora",
+      "source": "bikez_fixture",
+      "source_value": "481"
+    },
+    {
+      "name": "Soriano",
+      "source": "bikez_fixture",
+      "source_value": "568"
+    },
+    {
+      "name": "Sparta",
+      "source": "bikez_fixture",
+      "source_value": "422"
+    },
+    {
+      "name": "Standbike",
+      "source": "bikez_fixture",
+      "source_value": "280"
+    },
+    {
+      "name": "Stark",
+      "source": "bikez_fixture",
+      "source_value": "599"
+    },
+    {
+      "name": "Starway/Chu Lan",
+      "source": "bikez_fixture",
+      "source_value": "40"
+    },
+    {
+      "name": "Stealth",
+      "source": "bikez_fixture",
+      "source_value": "586"
+    },
+    {
+      "name": "Stels",
+      "source": "bikez_fixture",
+      "source_value": "580"
+    },
+    {
+      "name": "Sucker Punch Sallys",
+      "source": "bikez_fixture",
+      "source_value": "292"
+    },
+    {
+      "name": "Sukida",
+      "source": "bikez_fixture",
+      "source_value": "322"
+    },
+    {
+      "name": "Sunbeam",
+      "source": "bikez_fixture",
+      "source_value": "427"
+    },
+    {
+      "name": "Sundiro",
+      "source": "bikez_fixture",
+      "source_value": "121"
+    },
+    {
+      "name": "Super Gato",
+      "source": "bikez_fixture",
+      "source_value": "594"
+    },
+    {
+      "name": "Super Motor",
+      "source": "bikez_fixture",
+      "source_value": "323"
+    },
+    {
+      "name": "Super Soco",
+      "source": "bikez_fixture",
+      "source_value": "509"
+    },
+    {
+      "name": "Surron",
+      "source": "bikez_fixture",
+      "source_value": "597"
+    },
+    {
+      "name": "Suzuki",
+      "source": "bikez_fixture",
+      "source_value": "3"
+    },
+    {
+      "name": "Suzuko",
+      "source": "bikez_fixture",
+      "source_value": "149"
+    },
+    {
+      "name": "SVM",
+      "source": "bikez_fixture",
+      "source_value": "85"
+    },
+    {
+      "name": "Swaygo",
+      "source": "bikez_fixture",
+      "source_value": "353"
+    },
+    {
+      "name": "Swift",
+      "source": "bikez_fixture",
+      "source_value": "241"
+    },
+    {
+      "name": "SWM",
+      "source": "bikez_fixture",
+      "source_value": "462"
+    },
+    {
+      "name": "Sym",
+      "source": "bikez_fixture",
+      "source_value": "25"
+    },
+    {
+      "name": "Tacita",
+      "source": "bikez_fixture",
+      "source_value": "565"
+    },
+    {
+      "name": "Tank Sports",
+      "source": "bikez_fixture",
+      "source_value": "138"
+    },
+    {
+      "name": "Tao Motor",
+      "source": "bikez_fixture",
+      "source_value": "572"
+    },
+    {
+      "name": "Tauris",
+      "source": "bikez_fixture",
+      "source_value": "319"
+    },
+    {
+      "name": "Tayo",
+      "source": "bikez_fixture",
+      "source_value": "298"
+    },
+    {
+      "name": "Techo Electra",
+      "source": "bikez_fixture",
+      "source_value": "526"
+    },
+    {
+      "name": "Terra Modena",
+      "source": "bikez_fixture",
+      "source_value": "330"
+    },
+    {
+      "name": "Terrot",
+      "source": "bikez_fixture",
+      "source_value": "533"
+    },
+    {
+      "name": "TGB",
+      "source": "bikez_fixture",
+      "source_value": "147"
+    },
+    {
+      "name": "Thumpstar",
+      "source": "bikez_fixture",
+      "source_value": "534"
+    },
+    {
+      "name": "Tiger",
+      "source": "bikez_fixture",
+      "source_value": "324"
+    },
+    {
+      "name": "Titan",
+      "source": "bikez_fixture",
+      "source_value": "35"
+    },
+    {
+      "name": "TM Racing",
+      "source": "bikez_fixture",
+      "source_value": "129"
+    },
+    {
+      "name": "Tohqi",
+      "source": "bikez_fixture",
+      "source_value": "367"
+    },
+    {
+      "name": "Tomberlin",
+      "source": "bikez_fixture",
+      "source_value": "169"
+    },
+    {
+      "name": "Tomos",
+      "source": "bikez_fixture",
+      "source_value": "122"
+    },
+    {
+      "name": "Tork",
+      "source": "bikez_fixture",
+      "source_value": "527"
+    },
+    {
+      "name": "Torrot",
+      "source": "bikez_fixture",
+      "source_value": "441"
+    },
+    {
+      "name": "Track",
+      "source": "bikez_fixture",
+      "source_value": "257"
+    },
+    {
+      "name": "Travertson",
+      "source": "bikez_fixture",
+      "source_value": "223"
+    },
+    {
+      "name": "Triton",
+      "source": "bikez_fixture",
+      "source_value": "325"
+    },
+    {
+      "name": "Triumph",
+      "source": "bikez_fixture",
+      "source_value": "6"
+    },
+    {
+      "name": "Troll",
+      "source": "bikez_fixture",
+      "source_value": "67"
+    },
+    {
+      "name": "TRS",
+      "source": "bikez_fixture",
+      "source_value": "497"
+    },
+    {
+      "name": "Tunturi",
+      "source": "bikez_fixture",
+      "source_value": "540"
+    },
+    {
+      "name": "TVS",
+      "source": "bikez_fixture",
+      "source_value": "162"
+    },
+    {
+      "name": "Ultra",
+      "source": "bikez_fixture",
+      "source_value": "242"
+    },
+    {
+      "name": "Ultra Motor",
+      "source": "bikez_fixture",
+      "source_value": "342"
+    },
+    {
+      "name": "UM",
+      "source": "bikez_fixture",
+      "source_value": "139"
+    },
+    {
+      "name": "Unu",
+      "source": "bikez_fixture",
+      "source_value": "450"
+    },
+    {
+      "name": "Ural",
+      "source": "bikez_fixture",
+      "source_value": "36"
+    },
+    {
+      "name": "Vahrenkamp",
+      "source": "bikez_fixture",
+      "source_value": "178"
+    },
+    {
+      "name": "Valenti",
+      "source": "bikez_fixture",
+      "source_value": "363"
+    },
+    {
+      "name": "Van Veen",
+      "source": "bikez_fixture",
+      "source_value": "93"
+    },
+    {
+      "name": "Vastro",
+      "source": "bikez_fixture",
+      "source_value": "569"
+    },
+    {
+      "name": "Vectrix",
+      "source": "bikez_fixture",
+      "source_value": "172"
+    },
+    {
+      "name": "Veli",
+      "source": "bikez_fixture",
+      "source_value": "131"
+    },
+    {
+      "name": "Velocette",
+      "source": "bikez_fixture",
+      "source_value": "399"
+    },
+    {
+      "name": "Veloci",
+      "source": "bikez_fixture",
+      "source_value": "567"
+    },
+    {
+      "name": "Velocifero",
+      "source": "bikez_fixture",
+      "source_value": "600"
+    },
+    {
+      "name": "Vent",
+      "source": "bikez_fixture",
+      "source_value": "517"
+    },
+    {
+      "name": "Vento",
+      "source": "bikez_fixture",
+      "source_value": "152"
+    },
+    {
+      "name": "Verge",
+      "source": "bikez_fixture",
+      "source_value": "612"
+    },
+    {
+      "name": "Vertemati",
+      "source": "bikez_fixture",
+      "source_value": "68"
+    },
+    {
+      "name": "Vertigo",
+      "source": "bikez_fixture",
+      "source_value": "440"
+    },
+    {
+      "name": "Vervemoto",
+      "source": "bikez_fixture",
+      "source_value": "498"
+    },
+    {
+      "name": "Vespa",
+      "source": "bikez_fixture",
+      "source_value": "50"
+    },
+    {
+      "name": "Vetter",
+      "source": "bikez_fixture",
+      "source_value": "539"
+    },
+    {
+      "name": "Viarelli",
+      "source": "bikez_fixture",
+      "source_value": "562"
+    },
+    {
+      "name": "Vibgyor",
+      "source": "bikez_fixture",
+      "source_value": "341"
+    },
+    {
+      "name": "Victoria",
+      "source": "bikez_fixture",
+      "source_value": "423"
+    },
+    {
+      "name": "Victory",
+      "source": "bikez_fixture",
+      "source_value": "37"
+    },
+    {
+      "name": "Vincent",
+      "source": "bikez_fixture",
+      "source_value": "402"
+    },
+    {
+      "name": "Vincent HRD",
+      "source": "bikez_fixture",
+      "source_value": "397"
+    },
+    {
+      "name": "Vins",
+      "source": "bikez_fixture",
+      "source_value": "518"
+    },
+    {
+      "name": "Viper",
+      "source": "bikez_fixture",
+      "source_value": "206"
+    },
+    {
+      "name": "Vmoto",
+      "source": "bikez_fixture",
+      "source_value": "354"
+    },
+    {
+      "name": "Voge",
+      "source": "bikez_fixture",
+      "source_value": "549"
+    },
+    {
+      "name": "Volta",
+      "source": "bikez_fixture",
+      "source_value": "571"
+    },
+    {
+      "name": "Von Dutch",
+      "source": "bikez_fixture",
+      "source_value": "243"
+    },
+    {
+      "name": "VOR",
+      "source": "bikez_fixture",
+      "source_value": "69"
+    },
+    {
+      "name": "Voskhod",
+      "source": "bikez_fixture",
+      "source_value": "95"
+    },
+    {
+      "name": "Voxan",
+      "source": "bikez_fixture",
+      "source_value": "38"
+    },
+    {
+      "name": "Vuka",
+      "source": "bikez_fixture",
+      "source_value": "308"
+    },
+    {
+      "name": "Vyrus",
+      "source": "bikez_fixture",
+      "source_value": "130"
+    },
+    {
+      "name": "Wakan",
+      "source": "bikez_fixture",
+      "source_value": "163"
+    },
+    {
+      "name": "Werner",
+      "source": "bikez_fixture",
+      "source_value": "485"
+    },
+    {
+      "name": "West Coast Choppers",
+      "source": "bikez_fixture",
+      "source_value": "310"
+    },
+    {
+      "name": "Whizzer",
+      "source": "bikez_fixture",
+      "source_value": "428"
+    },
+    {
+      "name": "WK",
+      "source": "bikez_fixture",
+      "source_value": "495"
+    },
+    {
+      "name": "WRM",
+      "source": "bikez_fixture",
+      "source_value": "182"
+    },
+    {
+      "name": "WSK",
+      "source": "bikez_fixture",
+      "source_value": "155"
+    },
+    {
+      "name": "WT Motors",
+      "source": "bikez_fixture",
+      "source_value": "245"
+    },
+    {
+      "name": "Xingfu",
+      "source": "bikez_fixture",
+      "source_value": "78"
+    },
+    {
+      "name": "Xingyue",
+      "source": "bikez_fixture",
+      "source_value": "181"
+    },
+    {
+      "name": "Xispa",
+      "source": "bikez_fixture",
+      "source_value": "180"
+    },
+    {
+      "name": "Xmotos",
+      "source": "bikez_fixture",
+      "source_value": "179"
+    },
+    {
+      "name": "XOR",
+      "source": "bikez_fixture",
+      "source_value": "326"
+    },
+    {
+      "name": "Yadea",
+      "source": "bikez_fixture",
+      "source_value": "510"
+    },
+    {
+      "name": "Yale",
+      "source": "bikez_fixture",
+      "source_value": "439"
+    },
+    {
+      "name": "Yamaha",
+      "source": "bikez_fixture",
+      "source_value": "4"
+    },
+    {
+      "name": "Yamasaki",
+      "source": "bikez_fixture",
+      "source_value": "604"
+    },
+    {
+      "name": "Yangtze",
+      "source": "bikez_fixture",
+      "source_value": "79"
+    },
+    {
+      "name": "Yiben",
+      "source": "bikez_fixture",
+      "source_value": "197"
+    },
+    {
+      "name": "YObykes",
+      "source": "bikez_fixture",
+      "source_value": "333"
+    },
+    {
+      "name": "Yuki",
+      "source": "bikez_fixture",
+      "source_value": "266"
+    },
+    {
+      "name": "Zanella",
+      "source": "bikez_fixture",
+      "source_value": "261"
+    },
+    {
+      "name": "Zero",
+      "source": "bikez_fixture",
+      "source_value": "384"
+    },
+    {
+      "name": "Zero Engineering",
+      "source": "bikez_fixture",
+      "source_value": "378"
+    },
+    {
+      "name": "Zest",
+      "source": "bikez_fixture",
+      "source_value": "309"
+    },
+    {
+      "name": "ZEV",
+      "source": "bikez_fixture",
+      "source_value": "479"
+    },
+    {
+      "name": "Znen",
+      "source": "bikez_fixture",
+      "source_value": "288"
+    },
+    {
+      "name": "Zongshen",
+      "source": "bikez_fixture",
+      "source_value": "146"
+    },
+    {
+      "name": "Zontes",
+      "source": "bikez_fixture",
+      "source_value": "368"
+    },
+    {
+      "name": "Zündapp",
+      "source": "bikez_fixture",
+      "source_value": "89"
+    },
+    {
+      "name": "Zweirad-Union",
+      "source": "bikez_fixture",
+      "source_value": "100"
+    },
+    {
+      "name": "Royal Enfield",
+      "source": "royal_enfield_official"
+    }
+  ]
+}

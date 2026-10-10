@@ -98,11 +98,13 @@ reports alongside the data — the short version:
 
 The first technical slice offers **sheets and simple comparisons by model
 year**, with owner reviews deferred. Its [validation record](docs/technical-catalog-first-slice.md)
-separates real SQL checks, simulated model transport and the pending live
-generation check. The [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
+separates real SQL checks, simulated transport and actual local generation
+through Gradio, including an induced timeout/retry. A [normalization pilot](docs/technical-catalog-normalization-pilot.md)
+now produces versioned identities and measurements without modifying the database.
+The [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
 and [local plan](docs/technical-catalog-refactor.md) cover the remaining
 identity/measure corrections, equipment/colors and model evaluation for an
-M5 with 32 GB. Normalized weights still mix dry and wet values; use the original
+M5 with 32 GB. Legacy typed weight columns still mix dry and wet values; use the original
 labels, and do not derive a power/weight ranking from these legacy columns.
 
 ## Which model years do the reviews cover?
@@ -222,6 +224,7 @@ models. The existing dataset loader still processes comments.
 
 ```
 src/bikefinder_rag/
+  catalog/        versioned identity/measurement migration candidates (not runtime data)
   scraper/        list_scraper.py, detail_scraper.py, categories.py, http.py
   db/             schema.sql, client.py
   embeddings/     embedder.py (BGE-M3)
@@ -239,6 +242,8 @@ scripts/
   load_motoplanete_reviews.py    French owner reviews onto model families (lang='fr', rating)
   eval_retrieval.py              layer-1 eval (retrieval alone, no LLM)
   eval_tool_trajectory.py        layer-1.5 eval (tool calls, no LLM judge)
+  eval_technical_demo.py         sequential real Gradio technical probes, manual review
+  audit_technical_normalization.py  bounded read-only migration-candidate audit
 ```
 
 ## Running it locally
@@ -331,6 +336,13 @@ PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
 ## Evaluating
 
 ```bash
+# Technical path: demo, Ollama and PostgreSQL already running, full catalog loaded.
+# Records answers for manual review; stops after a transport error.
+.venv/bin/python scripts/eval_technical_demo.py
+
+# Versioned normalization pilot: PostgreSQL reads only, no model or DB writes.
+PYTHONPATH=src .venv/bin/python scripts/audit_technical_normalization.py
+
 # Layer 1 — retrieval alone, no LLM (writes a dated report under eval_results/retrieval/):
 PYTHONPATH=src .venv/bin/python scripts/eval_retrieval.py
 

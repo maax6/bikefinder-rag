@@ -5,10 +5,11 @@ Adapted from the original github.com/maax6/Bikefinder `scrapeUrlByYear.py`
 listing time instead of collecting everything.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from bs4 import BeautifulSoup
 
+from bikefinder_rag.catalog.identity import known_brands, split_brand_model
 from bikefinder_rag.scraper import http
 from bikefinder_rag.scraper.categories import is_included, parse_displacement_ccm
 
@@ -25,6 +26,9 @@ class MotorcycleListing:
     engine_text: str
     displacement_ccm: float | None
     url: str
+    raw_name: str = ""
+    identity_status: str = "normalized"
+    identity_warnings: list[str] = field(default_factory=list)
 
 
 def list_motorcycles_for_year(year: int) -> list[MotorcycleListing]:
@@ -33,6 +37,14 @@ def list_motorcycles_for_year(year: int) -> list[MotorcycleListing]:
 
     response = http.get(f"/year/{year}-motorcycle-models.php")
     soup = BeautifulSoup(response.content, "html.parser")
+    # A page's explicit brand options augment the retained sourced vocabulary.
+    # Longest prefixes distinguish BSA/BSA Motors and compound manufacturers.
+    brands = {brand.casefold(): brand for brand in known_brands()}
+    for select in soup.select("select#CompBrand, select[name='CompBrand']"):
+        for option in select.find_all("option"):
+            label = option.get_text(" ", strip=True)
+            if label and option.get("value", "").strip():
+                brands[label.casefold()] = label
 
     tables = soup.find_all("table")
     if len(tables) < 2:
@@ -50,7 +62,7 @@ def list_motorcycles_for_year(year: int) -> list[MotorcycleListing]:
         if not link_tag:
             continue
 
-        name = link_tag.text.strip()
+        name = link_tag.get_text(" ", strip=True)
         relative_url = link_tag.get("href", "").replace("../", "")
         full_url = f"{http.BASE_URL}/{relative_url.lstrip('/')}"
 
@@ -61,7 +73,15 @@ def list_motorcycles_for_year(year: int) -> list[MotorcycleListing]:
         if not is_included(category, displacement_ccm):
             continue
 
-        brand, _, model = name.partition(" ")
+        brand, model = split_brand_model(name, brands.values())
+        warnings = []
+        if brand is None:
+            # Preserve the historical output shape for loaders, but retain the
+            # full label and make this unverified boundary visible in JSONL.
+            brand, _, model = name.partition(" ")
+            warnings.append("brand_not_in_vocabulary")
+        if not model:
+            warnings.append("model_missing")
 
         listings.append(
             MotorcycleListing(
@@ -72,6 +92,9 @@ def list_motorcycles_for_year(year: int) -> list[MotorcycleListing]:
                 engine_text=engine_text,
                 displacement_ccm=displacement_ccm,
                 url=full_url,
+                raw_name=name,
+                identity_status="needs_review" if warnings else "normalized",
+                identity_warnings=warnings,
             )
         )
 
