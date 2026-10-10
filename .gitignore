@@ -21,5 +21,9 @@ coverage_dashboard.html
 # NHTSA flat-file download cache (load_nhtsa_recalls.py refetches if absent)
 data/nhtsa/
 
+# Durable third-party technical collection: SQLite, snapshots and JSONL exports.
+# Coverage/validation reports are kept under eval_results/technical instead.
+data/technical/
+
 # Space data artifact (pushed to HF via LFS, not to GitHub)
 deploy/pgdata.tar.gz

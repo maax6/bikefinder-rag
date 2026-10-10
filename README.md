@@ -101,6 +101,9 @@ year**, with owner reviews deferred. Its [validation record](docs/technical-cata
 separates real SQL checks, simulated transport and actual local generation
 through Gradio, including an induced timeout/retry. A [normalization pilot](docs/technical-catalog-normalization-pilot.md)
 now produces versioned identities and measurements without modifying the database.
+A [technical data collection pipeline](docs/technical-data-collection.md) now
+audits the retained sources, exports local technical records and collects
+Motoplanete equipment/specifications separately, with resumable provenance.
 The [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
 and [local plan](docs/technical-catalog-refactor.md) cover the remaining
 identity/measure corrections, equipment/colors and model evaluation for an
@@ -136,12 +139,14 @@ one unified pipeline, it's current rather than frozen at 2022, and it directly
 extends [github.com/maax6/Bikefinder](https://github.com/maax6/Bikefinder),
 which this project grew out of.
 
-`robots.txt` on bikez.com disallows specific interactive endpoints (rating,
-review submission, spec-update forms) for all crawlers, not the spec or
-discussion pages themselves — a sitemap is published for exactly this kind
-of discovery. The scraper (`src/bikefinder_rag/scraper/`) respects that,
-identifies itself with a real User-Agent, and enforces a fixed delay between
-every request (`SCRAPER_DELAY_SECONDS`, default 1.5s).
+**Access audit, 2026-10-10:** Bikez's robots.txt permits the historical
+technical paths, but its [About page](https://bikez.com/about/index.php)
+requires prior written permission for reproduction. Robots access does
+not establish permission to reuse a database. The new collection pipeline
+therefore does **not** extend the Bikez crawl; existing local files are
+preserved with their provenance and restrictions. Do not redistribute
+them as an open dataset. Permission from the publisher remains necessary
+before extending this source.
 
 ## ⚠️ Known limitation: price data
 
@@ -157,7 +162,7 @@ marketplaces block that outright:
 | Leboncoin | `robots.txt`: *"forbidden to use search robots... access only with special permission"* |
 | La Centrale | DataDome anti-bot (CAPTCHA-gated) |
 | ParuVendu | `robots.txt` disallows exactly the `/auto-moto/*` paths |
-| **Motoplanete** | ✅ **viable** (verified 2026-07-12): `robots.txt` allows the spec pages and publishes a moto sitemap (~12k pages); CGU has no database-extraction clause (non-commercial use only); fiches carry French MSRP ("Tarifs France"), full specs *and* explicit A2-version info. Hard constraint: `Crawl-delay: 10` → targeted enrichment of our existing models, not a catalog clone. |
+| **Motoplanete** | Rechecked 2026-10-10: published technical fiches, specifications and equipment; robots `Crawl-delay: 10`. Used for this local non-commercial POC; its CGU prohibit commercial exploitation and do not grant an open redistribution licence. The new technical collector enforces at least 10 seconds, preserves source rows and never treats a price country as the market of every specification. |
 | **Motoplanete — owner reviews** | ✅ **viable, same terms** (re-checked 2026-09-02): every fiche carries an "Avis des motards" block — owner reviews written in French with a /5 rating, the reviewer's model year and a date, server-rendered (no AJAX), pooled per model rather than per model-year. Crawled one fiche per (brand, model) at the site's `Crawl-delay: 10` — see [`scripts/scrape_motoplanete_reviews.py`](scripts/scrape_motoplanete_reviews.py). |
 | Moto-Station (Maxitests) | Owner-written long-form tests, `robots.txt` open to generic agents — **but** it disallows the whole site to every named AI crawler (GPTBot, ClaudeBot, anthropic-ai, CCBot…). A RAG *is* that use, whatever User-Agent string we send — dropped. |
 | Le Parking Moto | `robots.txt` permissive, **but** CGU (checked 2026-07-16) explicitly forbid robots/spiders and any reuse "à des fins commerciales ou non" without express authorization — dropped; asking for authorization remains possible. |
@@ -391,11 +396,15 @@ The **code** is MIT-licensed (see [LICENSE](LICENSE)). The **datasets in
 terms:
 
 - `data/pilot`, `data/demo`, `data/century`, `data/2000s` — scraped from
-  bikez.com (specs and public forum comments; their robots.txt permits the
-  crawled pages, see [Data source](#data-source--why-self-scrape)).
+  Bikez historically. Its current About page requires prior written
+  permission for reproduction; robots.txt alone is not a licence.
 - `data/motoplanete` — prices and categories from motoplanete.com, whose
-  CGU allow **non-commercial use only**: do not reuse this data
-  commercially.
+  CGU prohibit commercial exploitation. This is not an open redistribution
+  licence. The new `data/technical/motoplanete` records have the same source
+  restrictions and remain outside version control.
+- `data/technical/wikidata` — structured Wikidata inventory, CC0; source
+  entity IDs and query provenance retained, without inventing model years
+  or equipment specifications.
 - NHTSA recalls (downloaded at load time, not committed) — US public
   domain government data.
 - The 2022 used-listings snapshot (fetched from Kaggle at load time, not

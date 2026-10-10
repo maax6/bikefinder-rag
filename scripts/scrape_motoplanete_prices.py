@@ -16,9 +16,9 @@ Resumable at page level via urls_done.txt, same pattern as the bikez
 scrapers. Output: one JSONL row per fiche, matched to our DB later by a
 separate loader (brand/model/year fuzzy matching).
 
-Run (~6.5h at the default 2s/page — robots.txt asks for 10s (~32h), the
-lower default is the operator's call and the 429/5xx backoff keeps it
-honest; use --limit for a pilot):
+Historical price-only collector. For complete technical data, use
+collect_technical_data.py instead. Run at the source's minimum 10s/page
+(~32h for this historical URL count; use --limit for a pilot):
     PYTHONPATH=src .venv/bin/python scripts/scrape_motoplanete_prices.py \\
         --out data/motoplanete [--delay 10] [--limit 20]
 """
@@ -26,6 +26,7 @@ honest; use --limit for a pilot):
 import argparse
 import html as htmllib
 import json
+import math
 import re
 import sys
 import time
@@ -42,11 +43,8 @@ USER_AGENT = (
     "https://github.com/maax6/Bikefinder)"
 )
 
-# robots.txt asks for `Crawl-delay: 10` (~32h for the full crawl). The
-# --delay flag defaults lower at the operator's responsibility; the hard
-# backoff below on 429/5xx is what keeps a low delay honest — if the
-# server signals stress, we stop pushing.
-DEFAULT_DELAY_SECONDS = 2.0
+# Verified 2026-10-10: robots.txt asks for Crawl-delay: 10.
+DEFAULT_DELAY_SECONDS = 10.0
 DELAY_SECONDS = DEFAULT_DELAY_SECONDS
 BACKOFF_SECONDS = 60.0
 _BACKOFF_STATUSES = {429, 500, 502, 503, 504}
@@ -144,11 +142,12 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None,
                         help="Stop after N new pages (pilot runs).")
     parser.add_argument("--delay", type=float, default=DEFAULT_DELAY_SECONDS,
-                        help="Seconds between requests (robots.txt asks for 10; "
-                             f"default {DEFAULT_DELAY_SECONDS} at your own responsibility).")
+                        help="Seconds between requests (minimum 10).")
     parser.add_argument("--refresh-sitemaps", action="store_true",
                         help="Refetch the sitemaps instead of using the cached URL list.")
     args = parser.parse_args()
+    if not math.isfinite(args.delay) or args.delay < DEFAULT_DELAY_SECONDS:
+        parser.error("--delay must be finite and at least 10 seconds")
     DELAY_SECONDS = args.delay
 
     out_dir = Path(__file__).resolve().parent.parent / args.out
@@ -176,11 +175,16 @@ def main() -> None:
             try:
                 page = get(url).text
             except requests.HTTPError as exc:
-                # A dead fiche shouldn't block the crawl; mark it done.
-                print(f"  skip {url}: {exc}", file=sys.stderr)
-                done_out.write(url + "\n")
-                done_out.flush()
-                continue
+                status = exc.response.status_code if exc.response is not None else None
+                if status in {404, 410}:
+                    # Only an explicitly gone fiche is terminal. A transient
+                    # response must never poison the success/resume journal.
+                    print(f"  gone {url}: {exc}", file=sys.stderr)
+                    done_out.write(url + "\n")
+                    done_out.flush()
+                    continue
+                print(f"  halt, URL remains retryable: {url}: {exc}", file=sys.stderr)
+                break
             except requests.RequestException as exc:
                 # Transient network trouble (read timeout, reset...) must not
                 # kill a 32h crawl: back off and move on, leaving the URL

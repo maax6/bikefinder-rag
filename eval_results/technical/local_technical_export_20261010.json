@@ -1,0 +1,244 @@
+{
+  "export_version": "bikez-local-technical-export-v1",
+  "normalization_version": "technical-catalog-v1",
+  "equipment_extraction_version": "bikez-equipment-evidence-v1",
+  "imported_at": "2026-10-10T11:04:35.537641+00:00",
+  "scope": "Offline Bikez technical-sheet export only; no network, database import or owner-review/forum file reads.",
+  "input_root": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data",
+  "input_files": {
+    "2000s/motorcycles.jsonl": {
+      "sha256": "00b9e60781b39bb261634095a24cadfde58634f1f86e5ec3a44507a97eb9a416",
+      "bytes": 55235406,
+      "rows": 22697
+    },
+    "century/motorcycles.jsonl": {
+      "sha256": "59ce93b17659959f87b69d79b3f0520ab417ecca582f0df988314d92e1a37f0c",
+      "bytes": 14993921,
+      "rows": 8950
+    },
+    "demo/motorcycles.jsonl": {
+      "sha256": "24c75bf5299edb0340a5a6462503ee44504555df6bd52e2d4806778156147ceb",
+      "bytes": 1194319,
+      "rows": 550
+    },
+    "pilot/motorcycles.jsonl": {
+      "sha256": "19ec6155a6b9155f31072627715c85233dec535aaa0298ab54855173df561c9c",
+      "bytes": 413790,
+      "rows": 206
+    }
+  },
+  "input_rows": 32403,
+  "exported_records": 32395,
+  "output": {
+    "path": "data/technical/bikez-local/records.jsonl",
+    "sha256": "4db0e90642cb8c1233f9b252ee857beffb0e6496ae376f5fdc14f57891f7e265",
+    "bytes": 290402762
+  },
+  "deduplication": {
+    "duplicate_rows": 8,
+    "duplicated_urls": 8,
+    "conflicting_urls": 6,
+    "conflict_examples": [
+      {
+        "url": "https://bikez.com/motorcycles/beta_evo_factory_2t_300_2021.php",
+        "selected_origin": {
+          "file": "2000s/motorcycles.jsonl",
+          "line": 2456,
+          "line_sha256": "f87c825a95730d3d91ab038976ab3e60bcf598c072dfafd3c862a304d14fc89d"
+        },
+        "additional_occurrences": [
+          {
+            "file": "2000s/motorcycles.jsonl",
+            "line": 2466,
+            "line_sha256": "9bf2c58ef50b7d92bc12c6e5fe8a6ae344f696a33216f21095a4fb0442f622c2",
+            "different_fields": [
+              "model"
+            ],
+            "identical_raw_record": false
+          }
+        ]
+      },
+      {
+        "url": "https://bikez.com/motorcycles/harley-davidson_fxe_1200_super_glide_1978.php",
+        "selected_origin": {
+          "file": "century/motorcycles.jsonl",
+          "line": 5124,
+          "line_sha256": "e6b809f61c6762c89c91bdbd7d4cda5354aabf1da342e21dbd98ee33db003867"
+        },
+        "additional_occurrences": [
+          {
+            "file": "century/motorcycles.jsonl",
+            "line": 5125,
+            "line_sha256": "c83fbdfc3dafea185982b97607b3c8186daa7e48e528d4374df5ffb8d2f4290b",
+            "different_fields": [
+              "category"
+            ],
+            "identical_raw_record": false
+          }
+        ]
+      },
+      {
+        "url": "https://bikez.com/motorcycles/kawasaki_ninja_300_2014.php",
+        "selected_origin": {
+          "file": "2000s/motorcycles.jsonl",
+          "line": 10753,
+          "line_sha256": "2314d04248aad46710bced34b1afb78e94865be7ba3954530e1e873068188b2e"
+        },
+        "additional_occurrences": [
+          {
+            "file": "2000s/motorcycles.jsonl",
+            "line": 10766,
+            "line_sha256": "834772872d9391b69eb2d3d49cbca6a5202477a4015bbc6e3e79c48471866bef",
+            "different_fields": [
+              "model"
+            ],
+            "identical_raw_record": false
+          }
+        ]
+      },
+      {
+        "url": "https://bikez.com/motorcycles/kawasaki_ninja_300_abs_2014.php",
+        "selected_origin": {
+          "file": "2000s/motorcycles.jsonl",
+          "line": 10754,
+          "line_sha256": "d2244c8ee4e80ef9036c11218819929dca62654e167f71034f7902291249a7f1"
+        },
+        "additional_occurrences": [
+          {
+            "file": "2000s/motorcycles.jsonl",
+            "line": 10767,
+            "line_sha256": "39d7070d3604c8ddeb2201b5670ab9b7ebeb25122b597289ff77c0f8adee448d",
+            "different_fields": [
+              "model"
+            ],
+            "identical_raw_record": false
+          }
+        ]
+      },
+      {
+        "url": "https://bikez.com/motorcycles/kawasaki_ninja_650_2022.php",
+        "selected_origin": {
+          "file": "2000s/motorcycles.jsonl",
+          "line": 1805,
+          "line_sha256": "105c13386f9599c1f59b251fe3b9992599978ba9835b46e93df86e0aa62de554"
+        },
+        "additional_occurrences": [
+          {
+            "file": "2000s/motorcycles.jsonl",
+            "line": 1813,
+            "line_sha256": "5560366501fb85c509d71605687397f278272ff06c19ca4805d43b51cba77ff1",
+            "different_fields": [
+              "model"
+            ],
+            "identical_raw_record": false
+          }
+        ]
+      },
+      {
+        "url": "https://bikez.com/motorcycles/nsu_3_1-2_ps_1914.php",
+        "selected_origin": {
+          "file": "century/motorcycles.jsonl",
+          "line": 8841,
+          "line_sha256": "5c3645c53098b8235a6c3ad050b9d3229a952938ce94654b535bd8b45dba5900"
+        },
+        "additional_occurrences": [
+          {
+            "file": "century/motorcycles.jsonl",
+            "line": 8842,
+            "line_sha256": "16d2ec58969262026d26d07b2a2e28989c817ebedb4b260b02a33e0c8383672b",
+            "different_fields": [
+              "model"
+            ],
+            "identical_raw_record": false
+          }
+        ]
+      }
+    ],
+    "selection_rule": "First full source row in sorted input-file/line order; no field merging or cross-year/variant transfer."
+  },
+  "identity_statuses": {
+    "normalized": 29242,
+    "corrected": 3109,
+    "needs_review": 44
+  },
+  "measurement_statuses": {
+    "displacement_ccm": {
+      "documented": 31316,
+      "unknown": 1079
+    },
+    "weight_dry_kg": {
+      "unknown": 14593,
+      "documented": 17802
+    },
+    "weight_wet_kg": {
+      "documented": 13704,
+      "unknown": 18691
+    },
+    "weight_unspecified_kg": {
+      "unknown": 32395
+    },
+    "power_kw": {
+      "documented": 22140,
+      "unknown": 10255
+    },
+    "torque_nm": {
+      "documented": 14222,
+      "unknown": 18173
+    },
+    "seat_height_mm": {
+      "documented": 20713,
+      "unknown": 11663,
+      "conflict": 19
+    },
+    "top_speed_kmh": {
+      "unknown": 21549,
+      "documented": 10846
+    }
+  },
+  "equipment": {
+    "rows_with_supporting_text": 31618,
+    "supporting_passages": 188219,
+    "term_passage_counts": {
+      "ABS": 9398,
+      "traction control": 1015,
+      "cruise control": 744,
+      "riding modes": 275,
+      "ride by wire": 769,
+      "TFT": 591,
+      "IMU": 46,
+      "CBS": 222,
+      "heated grips": 146,
+      "Bluetooth": 163,
+      "slipper clutch": 554,
+      "TPMS": 36,
+      "shifter": 43,
+      "airbag": 11,
+      "reverse gear": 6,
+      "TCS": 7
+    },
+    "status": "unclassified"
+  },
+  "quality": {
+    "rows_with_loading_placeholders": 548,
+    "complete_raw_record_preserved": true,
+    "source_collection_dates_not_invented": true
+  },
+  "code_files_sha256": {
+    "src/bikefinder_rag/catalog/__init__.py": "af06711296120bc7dae4a7aaed4736a57ad14fc7ee99e146ba115c5dde52d195",
+    "src/bikefinder_rag/catalog/identity.py": "82b517a28adfff930c1ac4a3476d71a5d0233113b3c0558ff48fcb12496347f9",
+    "src/bikefinder_rag/catalog/measurements.py": "3526ca36b0ceec7680553999dddd870da1cf821d361a197882dfa13d00a7b3e6",
+    "src/bikefinder_rag/catalog/normalization.py": "aab00aaeb8ca4c361760d562590f262165b410357af34f7c0a2bd35d3bf6d979",
+    "src/bikefinder_rag/catalog/brands.json": "5b6f15520203a9c947767be364e33a0c6226d18095c923057fb217c62fb35342",
+    "scripts/export_local_technical_data.py": "1e1d4b5cc6fde9d7e5df83d2c2ad9728bb0601926741c6a4841875923917a936"
+  },
+  "limitations": [
+    "Migration candidates are not imported into the running catalog or its filters.",
+    "Unknown original scrape dates remain null; imported_at is the export date only.",
+    "Equipment passages retain wording and can describe several variants, options, absence or markets.",
+    "Literal model/year identities stay separate; normalization does not establish worldwide completeness or French availability.",
+    "Raw technical source descriptions, including the Comments label, are retained; no owner-review or forum-comment object is exported.",
+    "Historical Loading placeholders require recollection; retaining them is not recovering their missing values.",
+    "Current source licences, access rules and live page availability are not verified by this offline export."
+  ],
+  "base_commit": "529bb8c715e26f566f2454a0f09b4b4d8d5d9e08"
+}

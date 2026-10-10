@@ -1,0 +1,720 @@
+{
+  "validated_on": "2026-10-10",
+  "scope": "14 real Motoplanete technical fiches; no model inference or DB import",
+  "pilot_input_sha256": "c05859cab9e0662fad82c072a3074dee8d4b5e57508eb1886e386bb624506b8e",
+  "successes": 14,
+  "rows": [
+    {
+      "url": "https://www.motoplanete.com/honda/885/ST-1100-PAN-EUROPEAN-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "Honda ST 1100 PAN EUROPEAN 2000",
+        "brand": "Honda",
+        "model": "ST 1100 PAN EUROPEAN",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 36,
+      "equipment_evidence": [
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : Dual CBS - ABS - TCS en option",
+          "status": "unclassified"
+        },
+        {
+          "term": "CBS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : Dual CBS - ABS - TCS en option",
+          "status": "unclassified"
+        },
+        {
+          "term": "TCS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : Dual CBS - ABS - TCS en option",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:58:09.476608+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R 850 RT 2000",
+        "brand": "BMW",
+        "model": "R 850 RT",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 37,
+      "equipment_evidence": [
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS en option",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:58:20.141342+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/perreaux/5983/velocipede-a-moteur-1871/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "Perreaux vélocipède à moteur 1871",
+        "brand": "Perreaux",
+        "model": "vélocipède à moteur",
+        "year": 1871,
+        "url_year": 1871,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 17,
+      "equipment_evidence": [],
+      "collected_at": "2026-10-10T10:58:30.466222+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/6162/R42-1928/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R42 1928",
+        "brand": "BMW",
+        "model": "R42",
+        "year": 1928,
+        "url_year": 1928,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 25,
+      "equipment_evidence": [],
+      "collected_at": "2026-10-10T10:58:40.995588+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/mv-agusta/9631/Superveloce-1000-Oro-2024/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "MV-Agusta Superveloce 1000 Oro 2024",
+        "brand": "MV-Agusta",
+        "model": "Superveloce 1000 Oro",
+        "year": 2024,
+        "url_year": 2024,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 54,
+      "equipment_evidence": [
+        {
+          "term": "shifter",
+          "label": "",
+          "section": "Transmission",
+          "text": "boîte à 6 rapports , manuelle - shifter de série",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS Continental MK100",
+          "status": "unclassified"
+        },
+        {
+          "term": "modes de conduite",
+          "label": "Nombre de mode de conduite",
+          "section": "Équipement de série",
+          "text": "Nombre de mode de conduite : 4",
+          "status": "unclassified"
+        },
+        {
+          "term": "TFT",
+          "label": "Taille de l'écran TFT couleur",
+          "section": "Équipement de série",
+          "text": "Taille de l'écran TFT couleur : 13,97 cm / 5.5 pouces",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "ABS Cornering",
+          "status": "unclassified"
+        },
+        {
+          "term": "Jantes aluminium",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Jantes aluminium",
+          "status": "unclassified"
+        },
+        {
+          "term": "shifter",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Shifter",
+          "status": "unclassified"
+        },
+        {
+          "term": "Amortisseur de direction",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Amortisseur de direction",
+          "status": "unclassified"
+        },
+        {
+          "term": "Indicateur de vitesse engagée",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Indicateur de vitesse engagée",
+          "status": "unclassified"
+        },
+        {
+          "term": "régulateur de vitesse",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Régulateur de vitesse",
+          "status": "unclassified"
+        },
+        {
+          "term": "Aide au départ arrêté (Launch Control)",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Aide au départ arrêté (Launch Control)",
+          "status": "unclassified"
+        },
+        {
+          "term": "contrôle de traction",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Contrôle de traction",
+          "status": "unclassified"
+        },
+        {
+          "term": "Suspensions réglables électroniquement",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Suspensions réglables électroniquement",
+          "status": "unclassified"
+        },
+        {
+          "term": "Contrôle anti wheeling",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Contrôle anti wheeling",
+          "status": "unclassified"
+        },
+        {
+          "term": "Carénage carbone",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Carénage carbone",
+          "status": "unclassified"
+        },
+        {
+          "term": "Jantes forgées",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Jantes forgées",
+          "status": "unclassified"
+        },
+        {
+          "term": "Repose-pieds réglables",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Repose-pieds réglables",
+          "status": "unclassified"
+        },
+        {
+          "term": "IMU",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Centrale inertielle",
+          "status": "unclassified"
+        },
+        {
+          "term": "Commodes rétro-éclairés",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Commodes rétro-éclairés",
+          "status": "unclassified"
+        },
+        {
+          "term": "Contrôle du frein moteur",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Contrôle du frein moteur",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:58:51.404888+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/buell/9780/Super-Cruiser-1190-x-RSD-2025/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "Buell Super Cruiser 1190 x RSD 2025",
+        "brand": "Buell",
+        "model": "Super Cruiser 1190 x RSD",
+        "year": 2025,
+        "url_year": 2025,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 21,
+      "equipment_evidence": [],
+      "collected_at": "2026-10-10T10:59:01.779068+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/ktm/10588/RC-R-990-2026/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "KTM RC R 990 2026",
+        "brand": "KTM",
+        "model": "RC R 990",
+        "year": 2026,
+        "url_year": 2026,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 57,
+      "equipment_evidence": [
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS",
+          "status": "unclassified"
+        },
+        {
+          "term": "modes de conduite",
+          "label": "Nombre de mode de conduite",
+          "section": "Équipement de série",
+          "text": "Nombre de mode de conduite : 4",
+          "status": "unclassified"
+        },
+        {
+          "term": "TFT",
+          "label": "Taille de l'écran TFT couleur",
+          "section": "Équipement de série",
+          "text": "Taille de l'écran TFT couleur : 22,56 cm / 8.88 pouces",
+          "status": "unclassified"
+        },
+        {
+          "term": "Jantes aluminium",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Jantes aluminium",
+          "status": "unclassified"
+        },
+        {
+          "term": "contrôle de traction",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Contrôle de traction",
+          "status": "unclassified"
+        },
+        {
+          "term": "modes de conduite",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Modes de conduite supplémentaires",
+          "status": "unclassified"
+        },
+        {
+          "term": "IMU",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Centrale inertielle",
+          "status": "unclassified"
+        },
+        {
+          "term": "Repose-pieds réglables",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Repose-pieds réglables",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "ABS déconnectable",
+          "status": "unclassified"
+        },
+        {
+          "term": "Bluetooth",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Bluetooth",
+          "status": "unclassified"
+        },
+        {
+          "term": "GPS",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "GPS",
+          "status": "unclassified"
+        },
+        {
+          "term": "Indicateur de vitesse engagée",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Indicateur de vitesse engagée",
+          "status": "unclassified"
+        },
+        {
+          "term": "Jantes aluminium",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Jantes aluminium",
+          "status": "unclassified"
+        },
+        {
+          "term": "Winglets",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Winglets",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:59:12.246760+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/ktm/10937/Superduke-1390-GT-2027/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "KTM Superduke 1390 GT 2027",
+        "brand": "KTM",
+        "model": "Superduke 1390 GT",
+        "year": 2027,
+        "url_year": 2027,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 60,
+      "equipment_evidence": [
+        {
+          "term": "shifter",
+          "label": "",
+          "section": "Transmission",
+          "text": "boîte à 6 rapports , manuelle - shifter en option",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS",
+          "status": "unclassified"
+        },
+        {
+          "term": "modes de conduite",
+          "label": "Nombre de mode de conduite",
+          "section": "Équipement de série",
+          "text": "Nombre de mode de conduite : 4",
+          "status": "unclassified"
+        },
+        {
+          "term": "TFT",
+          "label": "Taille de l'écran TFT couleur",
+          "section": "Équipement de série",
+          "text": "Taille de l'écran TFT couleur : 22,35 cm / 8.8 pouces",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "ABS Cornering",
+          "status": "unclassified"
+        },
+        {
+          "term": "Jantes aluminium",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Jantes aluminium",
+          "status": "unclassified"
+        },
+        {
+          "term": "Indicateur de vitesse engagée",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Indicateur de vitesse engagée",
+          "status": "unclassified"
+        },
+        {
+          "term": "régulateur de vitesse",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Régulateur de vitesse",
+          "status": "unclassified"
+        },
+        {
+          "term": "Bluetooth",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Bluetooth",
+          "status": "unclassified"
+        },
+        {
+          "term": "Prise USB",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Prise USB",
+          "status": "unclassified"
+        },
+        {
+          "term": "contrôle de traction",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Contrôle de traction",
+          "status": "unclassified"
+        },
+        {
+          "term": "Pare brise réglable",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Pare brise réglable",
+          "status": "unclassified"
+        },
+        {
+          "term": "Suspensions réglables électroniquement",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Suspensions réglables électroniquement",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "ABS déconnectable",
+          "status": "unclassified"
+        },
+        {
+          "term": "Contrôle anti wheeling",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Contrôle anti wheeling",
+          "status": "unclassified"
+        },
+        {
+          "term": "Système radar",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Système radar",
+          "status": "unclassified"
+        },
+        {
+          "term": "anti-dribble",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Embrayage anti-dribble",
+          "status": "unclassified"
+        },
+        {
+          "term": "IMU",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Centrale inertielle",
+          "status": "unclassified"
+        },
+        {
+          "term": "TPMS",
+          "label": "",
+          "section": "Équipement de série",
+          "text": "Surveillance de la pression des pneus",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:59:22.684853+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/827/R-1100-S-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R 1100 S 2000",
+        "brand": "BMW",
+        "model": "R 1100 S",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 37,
+      "equipment_evidence": [
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : Integral ABS en option",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:59:33.173219+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/861/R-1100-R-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R 1100 R 2000",
+        "brand": "BMW",
+        "model": "R 1100 R",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 35,
+      "equipment_evidence": [],
+      "collected_at": "2026-10-10T10:59:43.559100+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/866/K-1200-LT-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW K 1200 LT 2000",
+        "brand": "BMW",
+        "model": "K 1200 LT",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 35,
+      "equipment_evidence": [
+        {
+          "term": "marche arrière",
+          "label": "",
+          "section": "Transmission",
+          "text": "boîte à 5 rapports , manuelle + marche arrière électrique",
+          "status": "unclassified"
+        },
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS de série",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T10:59:53.859091+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/1587/R-1200-C-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R 1200 C 2000",
+        "brand": "BMW",
+        "model": "R 1200 C",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 37,
+      "equipment_evidence": [
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS de série",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T11:00:04.458818+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R 1150 GS 2000",
+        "brand": "BMW",
+        "model": "R 1150 GS",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 36,
+      "equipment_evidence": [
+        {
+          "term": "ABS",
+          "label": "Assistance au freinage",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS en option",
+          "status": "unclassified"
+        }
+      ],
+      "collected_at": "2026-10-10T11:00:14.927888+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    },
+    {
+      "url": "https://www.motoplanete.com/bmw/2491/R-1100-RS-2000/contact.html",
+      "state": "success",
+      "identity": {
+        "raw_name": "BMW R 1100 RS 2000",
+        "brand": "BMW",
+        "model": "R 1100 RS",
+        "year": 2000,
+        "url_year": 2000,
+        "market": null,
+        "warnings": []
+      },
+      "spec_rows": 36,
+      "equipment_evidence": [],
+      "collected_at": "2026-10-10T11:00:25.456645+00:00",
+      "snapshot_hash_verified": true,
+      "snapshot_has_no_active_content": true
+    }
+  ],
+  "collection_limits": [
+    "Equipment supporting text unclassified, not a standard/option assertion",
+    "Price country alone is not a technical-market assertion",
+    "No global catalogue completeness claim"
+  ],
+  "source_checks": {
+    "0": "efe43af0f65e3991a7b6e3a1ebe9d131b343cfd290fc369b5538c82feda41385",
+    "1": "38265a037004442886d280628b07e919f9593c1be7d7a6849d5eff7177d72f17",
+    "2": "3e941ce807ee5bf58fbd48da0ad30c6ea75fc01de3fd8ef1dae66a692eef6edb",
+    "3": "ecec0bad35fa69ae69ff05d0eaea90ae241dd3b0bf9f9b330adea1190c6c8d0c"
+  },
+  "code_sha256": {
+    "scripts/collect_technical_data.py": "0cbf14fc675d02544c4789ae4c66067c69b5413ef1ed09603a27dc2fd726b664",
+    "src/bikefinder_rag/scraper/technical_crawl.py": "6b1b72bc7a2d0cb020a84c8261d98154cb328c765d3ebbd9275e873bb342c3e3",
+    "src/bikefinder_rag/scraper/motoplanete_technical.py": "f259061b15829c5c005b2c042af7535788f2227130f2b8291b70b63a8064ede0"
+  },
+  "post_pilot_fixes": "Host-wide persisted cooldown/spacing; changed fiche/year redirects require review; image sitemap locs excluded; CLI resumes the durable queue without requiring successful discovery. Regression tested; pilot ran before these fixes."
+}
