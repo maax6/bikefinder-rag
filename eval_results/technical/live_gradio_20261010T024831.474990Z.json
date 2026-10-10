@@ -1,0 +1,282 @@
+{
+  "created_at": "2026-10-10T02:48:31.474990+00:00",
+  "base_commit": "c94a384943af3c72287fe5af65ab902de1986d43",
+  "runtime_files_sha256": {
+    "src/bikefinder_rag/agent/loop.py": "b146c0cc9dfae73492ad4154a38f9b5cb46093ca6b9d045b4e2668f68089a7f8",
+    "src/bikefinder_rag/agent/tools.py": "4884a36cf01e8ed929cb9f98ce31807e7551efcd633fc321011c5242b73a9552",
+    "src/bikefinder_rag/app.py": "43bbd2965aa606234ef20d7bd68ffa3bb02d0dc9c693fe09e281f4f8e701ad43",
+    "scripts/eval_technical_demo.py": "d28f084d3d305b36ccda1e39228e5a65c2b69e9d8cae7b07b7e35b5fef650706"
+  },
+  "transport": "Real Gradio /chat, local Ollama and PostgreSQL; fresh session per case.",
+  "ollama_version": {
+    "version": "0.32.15"
+  },
+  "installed_models": {
+    "models": [
+      {
+        "name": "mistral-small3.2:latest",
+        "model": "mistral-small3.2:latest",
+        "modified_at": "2026-07-14T20:37:43.924838196+02:00",
+        "size": 15177384862,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 5120
+        },
+        "capabilities": [
+          "vision",
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "mistral-small:latest",
+        "model": "mistral-small:latest",
+        "modified_at": "2026-07-10T01:47:11.348253453+02:00",
+        "size": 14333921662,
+        "digest": "8039dd90c1138d772437a0779a33b7349efd5d9cca71edcd26e4dd463f90439d",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "23.6B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 5120
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      {
+        "name": "minimax-m3:cloud",
+        "model": "minimax-m3:cloud",
+        "remote_model": "minimax-m3",
+        "remote_host": "https://ollama.com:443",
+        "modified_at": "2026-07-04T23:36:27.953372966+02:00",
+        "size": 362,
+        "digest": "d03a959f45c04ab183e245922ecb46ebccfb9d5e55bdee5e9055271ee70195e3",
+        "details": {
+          "parent_model": "",
+          "format": "",
+          "family": "minimax-m3",
+          "families": [
+            "minimax-m3"
+          ],
+          "parameter_size": "",
+          "quantization_level": "",
+          "context_length": 524288
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking",
+          "vision"
+        ]
+      },
+      {
+        "name": "qwen3.6:latest",
+        "model": "qwen3.6:latest",
+        "modified_at": "2026-07-04T19:24:46.188481155+02:00",
+        "size": 23938333577,
+        "digest": "07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35moe",
+          "families": [
+            "qwen35moe"
+          ],
+          "parameter_size": "36.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 2048
+        },
+        "capabilities": [
+          "vision",
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      }
+    ]
+  },
+  "model_runtime_before": {
+    "models": [
+      {
+        "name": "mistral-small3.2:latest",
+        "model": "mistral-small3.2:latest",
+        "size": 16966746111,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-10T04:51:41.587727+02:00",
+        "size_vram": 16966746111,
+        "context_length": 16384
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "sheet",
+      "question": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : cylindrée, puissance, couple, poids et type de poids, unités et source.",
+      "elapsed_seconds": 40.151,
+      "answer": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique               | Valeur documentée                                                                                     |\n|-------------------------------|--------------------------------------------------------------------------------------------------------|\n| Cylindrée                     | 1157.0 ccm                                                                                              |\n| Puissance                     | 98.0 HP (71.5 kW) @ 8500 RPM                                                                             |\n| Couple                        | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM                                                          |\n| Poids                         | 214.0 kg (poids à sec)                                                                                 |\n| Source                        | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php)        |",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : cylindrée, puissance, couple, poids et type de poids, unités et source.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique               | Valeur documentée                                                                                     |\n|-------------------------------|--------------------------------------------------------------------------------------------------------|\n| Cylindrée                     | 1157.0 ccm                                                                                              |\n| Puissance                     | 98.0 HP (71.5 kW) @ 8500 RPM                                                                             |\n| Couple                        | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM                                                          |\n| Poids                         | 214.0 kg (poids à sec)                                                                                 |\n| Source                        | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php)        |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 N Bandit",
+          "year": 2000,
+          "category": "Allround",
+          "category_fr": "Roadster",
+          "displacement_ccm": 1157.0,
+          "weight_kg": 214.0,
+          "power_hp": 98.0,
+          "torque_nm": 91.0,
+          "seat_height_mm": 835.0,
+          "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.615743+00:00",
+          "specs": {
+            "Type": "Allround",
+            "Output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+            "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+            "Gearbox": "5-speed",
+            "Starter": "Electric",
+            "Top speed": "220.0 km/h (136.7 mph)",
+            "Wheelbase": "1435 mm (56.5 inches)",
+            "Dry weight": "214.0 kg (471.8 pounds)",
+            "Engine size": "1157.0 ccm (70.60 cubic inches)",
+            "Rear brakes": "Single disc",
+            "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+            "Front brakes": "Dual disc",
+            "Color options": "Black, silver, maroon",
+            "Fuel capacity": "19.00 litres (5.02 US gallons)",
+            "Cooling system": "Oil & air",
+            "Type of engine": "In-line four, four-stroke",
+            "Motorcycle name": "Suzuki GSF 1200 N Bandit",
+            "Transmission type": "Chain  (final drive)",
+            "Power/weight ratio": "0.4579 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        }
+      ],
+      "api_error": null,
+      "manual_review": {
+        "status": "requested_values_supported",
+        "note": "Requested values, dry kg and source match the retained 2000 N sheet; French headers; no false missing-data footer."
+      }
+    },
+    {
+      "id": "absent_sheet",
+      "question": "Donne la puissance et le couple de la Suzuki GSF 1200 N Bandit de 2025, à partir du catalogue uniquement.",
+      "elapsed_seconds": 15.941,
+      "answer": "La fiche technique de la Suzuki GSF 1200 N Bandit de 2025 n'est pas documentée dans ce catalogue.",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la puissance et le couple de la Suzuki GSF 1200 N Bandit de 2025, à partir du catalogue uniquement.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche technique de la Suzuki GSF 1200 N Bandit de 2025 n'est pas documentée dans ce catalogue.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [],
+      "api_error": null,
+      "manual_review": {
+        "status": "supported_catalog_abstention",
+        "note": "No 2025 sheet returned; answer explicitly limited to this catalog."
+      }
+    }
+  ],
+  "manual_review_pending": false,
+  "limitations": [
+    "One pass of selected acceptance cases; not a model ranking or latency benchmark.",
+    "No automatic verification of every free-text claim.",
+    "Gradio does not expose tool transcripts; expected evidence is read independently.",
+    "Source hashes describe files on disk; reload the demo before evaluating a code change."
+  ],
+  "finished_at": "2026-10-10T02:49:27.657971+00:00",
+  "model_runtime_after": {
+    "models": [
+      {
+        "name": "mistral-small3.2:latest",
+        "model": "mistral-small3.2:latest",
+        "size": 16966746111,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-10T04:54:27.597603+02:00",
+        "size_vram": 16966746111,
+        "context_length": 16384
+      }
+    ]
+  },
+  "manual_review_method": "Manual check against independently recorded READ ONLY evidence; no quality score."
+}

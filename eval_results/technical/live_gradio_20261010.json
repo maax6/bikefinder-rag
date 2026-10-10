@@ -1,0 +1,510 @@
+{
+  "created_at": "2026-10-10T02:44:55.305407+00:00",
+  "git": "c94a384943af3c72287fe5af65ab902de1986d43",
+  "transport": "real Gradio /chat -> actual Ollama + PostgreSQL",
+  "scope": "One pass of targeted live acceptance cases; not a model ranking or latency benchmark",
+  "ollama_version": {
+    "version": "0.32.15"
+  },
+  "model": {
+    "name": "mistral-small3.2:latest",
+    "model": "mistral-small3.2:latest",
+    "modified_at": "2026-07-14T20:37:43.924838196+02:00",
+    "size": 15177384862,
+    "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "mistral3",
+      "families": [
+        "mistral3"
+      ],
+      "parameter_size": "24.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "vision",
+      "completion",
+      "tools"
+    ]
+  },
+  "runtime_files_sha256": {
+    "src/bikefinder_rag/agent/loop.py": "dd98a4cbe085a7c5e33023ac715fa737410a03742a268e7c939983b04aa50300",
+    "src/bikefinder_rag/agent/tools.py": "4884a36cf01e8ed929cb9f98ce31807e7551efcd633fc321011c5242b73a9552",
+    "src/bikefinder_rag/app.py": "43bbd2965aa606234ef20d7bd68ffa3bb02d0dc9c693fe09e281f4f8e701ad43"
+  },
+  "cases": [
+    {
+      "question": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec cylindrée, puissance, couple, type de poids, unités et source. Signale les données inconnues.",
+      "transport": "real Gradio /chat -> Ollama",
+      "elapsed_seconds": 35.808,
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec cylindrée, puissance, couple, type de poids, unités et source. Signale les données inconnues.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Characteristic | Documented value |\n|----------------|------------------|\n| Cylindrée | 1157.0 ccm |\n| Puissance | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Couple | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM |\n| Type de poids | Dry weight |\n| Source | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "id": "sheet",
+      "answer": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Characteristic | Documented value |\n|----------------|------------------|\n| Cylindrée | 1157.0 ccm |\n| Puissance | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Couple | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM |\n| Type de poids | Dry weight |\n| Source | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+      "manual_review": {
+        "status": "requested_values_supported",
+        "note": "Values and source match the 2000 N sheet. Type Dry weight documented; English headers later corrected."
+      }
+    },
+    {
+      "id": "comparison",
+      "question": "Compare la Suzuki GSF 1200 N Bandit et la Kawasaki ER-5 Twister de 2000 dans un tableau : cylindrée, puissance, couple et poids sec, avec les unités et les sources.",
+      "elapsed_seconds": 52.032,
+      "answer": "| Characteristic | Suzuki GSF 1200 N Bandit (2000) | Kawasaki ER-5 Twister (2000) |\n| --- | --- | --- |\n| Cylindrée | 1157.0 ccm | 499.0 ccm |\n| Puissance | 98.0 HP @ 8500 RPM | 50.0 HP @ 9000 RPM |\n| Couple | 91.0 Nm @ 4500 RPM | 45.0 Nm @ 7200 RPM |\n| Poids sec | 214.0 kg | 174.0 kg |\n| Source | [Suzuki GSF 1200 N Bandit](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) | [Kawasaki ER-5 Twister](https://bikez.com/motorcycles/kawasaki_er-5_twister_2000.php) |",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Compare la Suzuki GSF 1200 N Bandit et la Kawasaki ER-5 Twister de 2000 dans un tableau : cylindrée, puissance, couple et poids sec, avec les unités et les sources.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "| Characteristic | Suzuki GSF 1200 N Bandit (2000) | Kawasaki ER-5 Twister (2000) |\n| --- | --- | --- |\n| Cylindrée | 1157.0 ccm | 499.0 ccm |\n| Puissance | 98.0 HP @ 8500 RPM | 50.0 HP @ 9000 RPM |\n| Couple | 91.0 Nm @ 4500 RPM | 45.0 Nm @ 7200 RPM |\n| Poids sec | 214.0 kg | 174.0 kg |\n| Source | [Suzuki GSF 1200 N Bandit](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) | [Kawasaki ER-5 Twister](https://bikez.com/motorcycles/kawasaki_er-5_twister_2000.php) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 N Bandit",
+          "year": 2000,
+          "category": "Allround",
+          "category_fr": "Roadster",
+          "displacement_ccm": 1157.0,
+          "weight_kg": 214.0,
+          "power_hp": 98.0,
+          "torque_nm": 91.0,
+          "seat_height_mm": 835.0,
+          "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.615743+00:00",
+          "specs": {
+            "Type": "Allround",
+            "Output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+            "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+            "Gearbox": "5-speed",
+            "Starter": "Electric",
+            "Top speed": "220.0 km/h (136.7 mph)",
+            "Wheelbase": "1435 mm (56.5 inches)",
+            "Dry weight": "214.0 kg (471.8 pounds)",
+            "Engine size": "1157.0 ccm (70.60 cubic inches)",
+            "Rear brakes": "Single disc",
+            "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+            "Front brakes": "Dual disc",
+            "Color options": "Black, silver, maroon",
+            "Fuel capacity": "19.00 litres (5.02 US gallons)",
+            "Cooling system": "Oil & air",
+            "Type of engine": "In-line four, four-stroke",
+            "Motorcycle name": "Suzuki GSF 1200 N Bandit",
+            "Transmission type": "Chain  (final drive)",
+            "Power/weight ratio": "0.4579 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        },
+        {
+          "brand": "Kawasaki",
+          "model": "ER-5 Twister",
+          "year": 2000,
+          "category": "Naked bike",
+          "category_fr": "Roadster",
+          "displacement_ccm": 499.0,
+          "weight_kg": 174.0,
+          "power_hp": 50.0,
+          "torque_nm": 45.0,
+          "seat_height_mm": 780.0,
+          "url": "https://bikez.com/motorcycles/kawasaki_er-5_twister_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.514996+00:00",
+          "specs": {
+            "Type": "Naked bike",
+            "Model": "Kawasaki ER-5 Twister",
+            "Output": "50.0 HP (36.5 kW )) @ 9000 RPM",
+            "Torque": "45.0 Nm (4.6 kgf-m or 33.2 ft.lbs) @ 7200 RPM",
+            "Gearbox": "6-speed",
+            "Top speed": "160.0 km/h (99.4 mph)",
+            "Wheelbase": "1430 mm (56.3 inches)",
+            "Dry weight": "174.0 kg (383.6 pounds)",
+            "Engine size": "499.0 ccm (30.45 cubic inches)",
+            "Rear brakes": "Expanding brake",
+            "Seat height": "780 mm (30.7 inches) If adjustable, lowest setting.",
+            "Front brakes": "Single disc",
+            "Color options": "Red, green, blue",
+            "Fuel capacity": "16.00 litres (4.23 US gallons)",
+            "Cooling system": "Liquid",
+            "Type of engine": "Twin, four-stroke",
+            "Power/weight ratio": "0.2874 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        }
+      ],
+      "api_error": null,
+      "manual_review": {
+        "status": "requested_values_supported",
+        "note": "Both exact 2000 sheets cited; displacement, HP, Nm and dry kg match raw labels."
+      }
+    },
+    {
+      "id": "missing_torque",
+      "question": "Quel couple est documenté pour l'Aprilia RSV Mille SP de 2000 ? Donne uniquement la valeur sourcée ou précise qu'elle n'est pas documentée.",
+      "elapsed_seconds": 22.358,
+      "answer": "Le couple n'est pas documenté pour l'Aprilia RSV Mille SP de 2000.\n\nSource : [Fiche technique de l'Aprilia RSV Mille SP de 2000](https://bikez.com/motorcycles/aprilia_rsv_mille_sp_2000.php)",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel couple est documenté pour l'Aprilia RSV Mille SP de 2000 ? Donne uniquement la valeur sourcée ou précise qu'elle n'est pas documentée.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le couple n'est pas documenté pour l'Aprilia RSV Mille SP de 2000.\n\nSource : [Fiche technique de l'Aprilia RSV Mille SP de 2000](https://bikez.com/motorcycles/aprilia_rsv_mille_sp_2000.php)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [
+        {
+          "brand": "Aprilia",
+          "model": "RSV Mille SP",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 998.0,
+          "weight_kg": 185.0,
+          "power_hp": 145.0,
+          "torque_nm": null,
+          "seat_height_mm": 825.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rsv_mille_sp_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.432864+00:00",
+          "specs": {
+            "Year": "2000",
+            "Power": "145.0 HP (105.8 kW )) @ 11000 RPM",
+            "Gearbox": "6-speed",
+            "Category": "Sport",
+            "Comments": "The SP version is the most extreme of the RSV models this year, being even more optimized for racing than the R version. As the SP is being used in the World Championship by Aprilia's team, only 150 numbered bikes are made this year.",
+            "Top speed": "275.0 km/h (170.9 mph)",
+            "Wheelbase": "1405 mm (55.3 inches)",
+            "Dry weight": "185.0 kg (407.9 pounds)",
+            "Model name": "Aprilia RSV Mille SP",
+            "Engine type": "V2, four-stroke",
+            "Rear brakes": "Single disc",
+            "Seat height": "825 mm (32.5 inches) If adjustable, lowest setting.",
+            "Displacement": "998.0 ccm (60.90 cubic inches)",
+            "Front brakes": "Dual disc",
+            "Color options": "Black/orange, blue",
+            "Fuel capacity": "20.00 litres (5.28 US gallons)",
+            "Cooling system": "Liquid",
+            "Power/weight ratio": "0.7838 HP/kg"
+          }
+        }
+      ],
+      "api_error": null,
+      "manual_review": {
+        "status": "supported_abstention",
+        "note": "Existing Aprilia sheet cited; torque absent from retained raw specs."
+      }
+    },
+    {
+      "id": "missing_year",
+      "question": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+      "elapsed_seconds": 8.968,
+      "answer": "Quelle année de la Suzuki GSF 1200 N Bandit vous intéresse ?",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle année de la Suzuki GSF 1200 N Bandit vous intéresse ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [],
+      "api_error": null,
+      "manual_review": {
+        "status": "supported_clarification",
+        "note": "Asks model year instead of inventing one."
+      }
+    },
+    {
+      "id": "absent_sheet",
+      "question": "Donne la puissance et le couple de la Suzuki GSF 1200 N Bandit de 1800, à partir du catalogue uniquement.",
+      "elapsed_seconds": 5.035,
+      "answer": "La Suzuki GSF 1200 N Bandit de 1800 n'existe pas. Veuillez vérifier le modèle et l'année.",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la puissance et le couple de la Suzuki GSF 1200 N Bandit de 1800, à partir du catalogue uniquement.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Suzuki GSF 1200 N Bandit de 1800 n'existe pas. Veuillez vérifier le modèle et l'année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [],
+      "api_error": null,
+      "manual_review": {
+        "status": "failed_scope_claim",
+        "note": "Says motorcycle does not exist; empty catalog result cannot establish market absence. Prompt repaired and 2025 case replayed separately."
+      }
+    },
+    {
+      "id": "abs_catalog_scope",
+      "question": "Quelles motos avaient l'ABS en 2000 ? Donne toutes les motos du catalogue qui l'avaient et distingue série et option.",
+      "elapsed_seconds": 8.908,
+      "answer": "Les outils disponibles ne permettent pas de répondre à votre question. Ils ne permettent pas de filtrer les motos par équipement, comme l'ABS. Je ne peux donc pas lister les motos qui avaient l'ABS en 2000, ni distinguer si c'était en série ou en option.",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelles motos avaient l'ABS en 2000 ? Donne toutes les motos du catalogue qui l'avaient et distingue série et option.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les outils disponibles ne permettent pas de répondre à votre question. Ils ne permettent pas de filtrer les motos par équipement, comme l'ABS. Je ne peux donc pas lister les motos qui avaient l'ABS en 2000, ni distinguer si c'était en série ou en option.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [],
+      "api_error": null,
+      "manual_review": {
+        "status": "supported_limitation",
+        "note": "No catalog equipment filter offered; does not fabricate ABS list."
+      }
+    },
+    {
+      "id": "launch_date",
+      "question": "Quelle est la date de lancement exacte de la Suzuki GSF 1200 N Bandit de 2000 ? Ne confonds pas millésime et date de lancement.",
+      "elapsed_seconds": 5.464,
+      "answer": "La date de lancement exacte de la Suzuki GSF 1200 N Bandit de 2000 n'est pas documentée dans les fiches techniques disponibles.",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la date de lancement exacte de la Suzuki GSF 1200 N Bandit de 2000 ? Ne confonds pas millésime et date de lancement.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La date de lancement exacte de la Suzuki GSF 1200 N Bandit de 2000 n'est pas documentée dans les fiches techniques disponibles.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 N Bandit",
+          "year": 2000,
+          "category": "Allround",
+          "category_fr": "Roadster",
+          "displacement_ccm": 1157.0,
+          "weight_kg": 214.0,
+          "power_hp": 98.0,
+          "torque_nm": 91.0,
+          "seat_height_mm": 835.0,
+          "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.615743+00:00",
+          "specs": {
+            "Type": "Allround",
+            "Output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+            "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+            "Gearbox": "5-speed",
+            "Starter": "Electric",
+            "Top speed": "220.0 km/h (136.7 mph)",
+            "Wheelbase": "1435 mm (56.5 inches)",
+            "Dry weight": "214.0 kg (471.8 pounds)",
+            "Engine size": "1157.0 ccm (70.60 cubic inches)",
+            "Rear brakes": "Single disc",
+            "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+            "Front brakes": "Dual disc",
+            "Color options": "Black, silver, maroon",
+            "Fuel capacity": "19.00 litres (5.02 US gallons)",
+            "Cooling system": "Oil & air",
+            "Type of engine": "In-line four, four-stroke",
+            "Motorcycle name": "Suzuki GSF 1200 N Bandit",
+            "Transmission type": "Chain  (final drive)",
+            "Power/weight ratio": "0.4579 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        }
+      ],
+      "api_error": null,
+      "manual_review": {
+        "status": "supported_abstention",
+        "note": "No launch date derived from model year."
+      }
+    },
+    {
+      "id": "reviews_deferred",
+      "question": "Quels avis de propriétaires prouvent la puissance de la Bandit 1200 de 2000 ?",
+      "elapsed_seconds": 3.319,
+      "answer": "Cette preuve de concept ne couvre que les spécifications techniques. Les avis des propriétaires ne sont pas disponibles.",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quels avis de propriétaires prouvent la puissance de la Bandit 1200 de 2000 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Cette preuve de concept ne couvre que les spécifications techniques. Les avis des propriétaires ne sont pas disponibles.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "expected_evidence": [],
+      "api_error": null,
+      "manual_review": {
+        "status": "supported_limitation",
+        "note": "Does not use owner reviews as technical evidence."
+      }
+    }
+  ],
+  "manual_review_pending": false,
+  "limitations": [
+    "No automatic proof of all free-text claims.",
+    "No tool transcripts exposed by Gradio API; expected evidence is read independently from DB.",
+    "Single pass, current model only, no judge."
+  ],
+  "finished_at": "2026-10-10T02:46:41.642128+00:00",
+  "manual_review_method": "Human-style manual comparison of recorded requested claims with retained SQL/raw-sheet evidence; no automatic judge or global score.",
+  "earlier_regression": {
+    "observation": {
+      "question": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec cylindrée, puissance, couple, type de poids, unités et source. Signale les données inconnues.",
+      "transport": "real Gradio /chat -> Ollama",
+      "elapsed_seconds": 52.338,
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec cylindrée, puissance, couple, type de poids, unités et source. Signale les données inconnues.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n- **Cylindrée** : 1157.0 ccm\n- **Puissance** : 98.0 HP (71.5 kW) @ 8500 RPM\n- **Couple** : 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM\n- **Poids** : 214.0 kg (poids à sec)\n- **Hauteur de selle** : 835 mm\n- **Source** : [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php)\n\nLes données inconnues ou non documentées incluent notamment la vitesse maximale, la consommation de carburant, et les détails des freins avant et arrière.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ]
+    },
+    "review": "False unknown claims: original Top speed=220.0 km/h, Front brakes=Dual disc, Rear brakes=Single disc exist on this same sheet. Missing-data footer removed by prompt repair. Other unspecified claims not scored."
+  }
+}

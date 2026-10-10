@@ -16,7 +16,9 @@ each visitor by the prefix of the key they pasted):
 import json
 import math
 import os
+import re
 import time
+import unicodedata
 
 import anthropic
 import requests
@@ -80,6 +82,9 @@ You have two tools:
 displacement, power, torque, weight and seat height; also counts.
 - get_bike_details: the original spec sheet for a model and an explicit year, \
 including raw labels/units, source URL and collection timestamp.
+For ANY characteristic of a named model and year, call get_bike_details, \
+including a question asking only for torque or power. filter_specs has NO \
+model argument and cannot retrieve a named model's sheet.
 
 Tool-call examples — follow these argument patterns exactly:
 - "Quelles Honda en 2000 ?" -> filter_specs \
@@ -111,23 +116,56 @@ when available; otherwise say the weight type is undocumented. Do not rank \
 mixed types or compute power/weight from the legacy columns.
 - Missing values mean "non documenté", never zero, absence of equipment, \
 or a value from general knowledge, another model, year or family.
+An existing sheet with an unknown characteristic is still an existing sheet: \
+cite its URL and mark only that requested characteristic undocumented.
+- Answer the fields the user requested. Do not append an unsolicited list of \
+other supposedly missing specifications. Before calling a requested field \
+undocumented, check every original label in specs: Top speed documents vitesse \
+maximale; Front brakes and Rear brakes document freinage; Output, Power output \
+and Effect also document puissance. A field outside the numeric columns may \
+still be fully documented in specs. Never describe it as absent on that basis.
 - Do not call a performance measured unless its sheet documents a test; \
 otherwise report it as a catalog specification with measurement status unknown.
 - Catalog model year is not a launch date. Market, variant, launch date and \
 production period are undocumented unless explicitly stated in the sheet.
+Do not equate catalog model year with the actual year of manufacture.
 - Category sources can conflict: expose category and category_fr separately \
 if inconsistent. Do not treat either label as authoritative by assumption.
 - Equipment/color filters are not implemented yet. A missing ABS mention \
 does not mean no ABS. A list of selected sheets cannot establish which \
 motorcycles in an entire year had an equipment. State this limitation.
+Explain that the catalog-wide equipment FILTER is unavailable; individual \
+raw sheets may document equipment. Do not claim all equipment data is absent.
 - Results are bounded catalog selections, never an exhaustive market list. \
 For exact catalog counts use count_only. If a tool reports truncation, ask \
 for a narrower model. An error means a search was not executed, not no match.
+If an argument is rejected, retry with the supported tool/arguments or report \
+the search error. Never turn an error into missing data or a missing sheet.
+- A successful get_bike_details call returning no sheet means \
+"aucune fiche documentée dans ce catalogue pour ce \
+modèle et ce millésime". Never say the motorcycle does not exist or was never \
+produced merely because the catalog has no matching row.
 - Price, licence eligibility and family recall data are outside these tools. \
 Never infer A2 approval or restrictability from power and mixed weight alone.
 - Never state a specification that did not come from a tool result.
 
 Answer in the user's language, with concise tables for comparisons."""
+
+SYSTEM_PROMPT += """
+
+Required output for a technical sheet or comparison:
+Return ONLY a Markdown table of the requested characteristics and a source row.
+Use headers in the user's language (French: Caractéristique, Valeur documentée).
+For one sheet use columns Characteristic and Documented value. For a comparison
+use one column per exact model/year. Put an unknown value in its table cell only
+when that requested characteristic has no evidence in specs. DO NOT append a
+missing-data section or any paragraph about other characteristics. Do not add
+seat height, brakes, colors or speed unless asked. The table ends at the source
+row; include no speculative disclaimer after it.
+For an absent sheet, missing year, ambiguous/truncated model, rejected search \
+or unsupported filter, use a short clarification or explain the limitation \
+instead. A tool error is never proof of an absent sheet.
+"""
 
 
 def _tool_results_to_content(tool_use_id: str, results: list[dict]) -> dict:
@@ -152,6 +190,111 @@ def _technical_history(history: list[dict] | None) -> list[dict]:
                 if name == "search_reviews":
                     return []
     return list(history or [])
+
+
+def _numeric_user_years(text: str, model: str | None = None) -> set[int]:
+    """Narrow numeric policy, not natural-language date interpretation.
+
+    Accept 1800..2199 after en/de/in, or as a numeric-only reply; year/année/
+    millésime labels also permit positive numbers outside that band. Explicit
+    ranges authorize their endpoints only. Ignore bare numbers inside prose,
+    written-out dates and the LLM's model argument: a model identity such as
+    Vulcan 2000 must never establish a date. Ambiguous shorthand needs a date
+    label. Units, prices and numeric prefixes cannot establish dates either.
+    """
+    def fold(value):
+        return "".join(char for char in unicodedata.normalize("NFKD", value).casefold()
+                       if not unicodedata.combining(char))
+
+    text = fold(text)
+    number = r"[0-9]{1,4}(?!\w|[.,][0-9])"
+    endpoints = rf"(?P<first>{number})(?:\s*(?:[-–—]|a|to)\s*(?P<last>{number}))?"
+    numeric_reply = re.fullmatch(rf"\s*{endpoints}\s*[.!?,]?\s*", text)
+    if numeric_reply:
+        values = {int(value) for value in numeric_reply.groups() if value is not None}
+        return values if all(1800 <= value <= 2199 for value in values) else set()
+
+    labelled = re.compile(
+        rf"\b(?P<label>model[ -]year|year|annee|millesime|en|de|in)\s*"
+        rf"(?:(?:de|of)\s*|[:=]\s*)?{endpoints}"
+    )
+    years = set()
+    for match in labelled.finditer(text):
+        before, after = text[:match.start()], text[match.end():]
+        if re.match(r"\s*(?:ccm?|cm3|kg|kw|hp|ps|ch|n[ .·]?m|rpm|eur|euros?)(?!\w)", after):
+            continue
+        if re.match(r"\s*[€$£]", after) or re.search(r"[€$£]\s*$", before):
+            continue
+        if re.search(r"\b(?:budget|prix|price|cost|power|puissance|weight|poids|cylindree|displacement)\s*(?:de|of|[:=])?\s*$", before):
+            continue
+        values = {int(match.group(key)) for key in ("first", "last") if match.group(key) is not None}
+        if match.group("label") in {"en", "de", "in"}:
+            values = {value for value in values if 1800 <= value <= 2199}
+        years.update(value for value in values if value > 0)
+    return years
+
+
+def _user_text(message: dict) -> str:
+    """Ignore tool_result blocks even though Anthropic gives them role=user."""
+    content = message.get("content")
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        text = []
+        for block in content:
+            kind = block.get("type") if isinstance(block, dict) else getattr(block, "type", None)
+            value = block.get("text") if isinstance(block, dict) else getattr(block, "text", None)
+            if kind == "text" and isinstance(value, str):
+                text.append(value)
+        return " ".join(text)
+    return ""
+
+
+def _established_user_years(user_message: str, history: list[dict] | None, model: str | None = None) -> tuple[set[int], bool]:
+    years = _numeric_user_years(user_message, model)
+    if years:
+        return years, False
+    for message in reversed(history or []):
+        if message.get("role") == "user":
+            years = _numeric_user_years(_user_text(message), model)
+            if years:
+                return years, len(years) > 1
+    return set(), False
+
+
+def _tool_arguments(value):
+    if isinstance(value, str):
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            return {}
+    return value
+
+
+def _detail_year_clarification(calls: list[tuple], user_message: str, history: list[dict] | None) -> str | None:
+    """Preflight the whole batch before any tool execution or history append."""
+    for name, arguments in calls:
+        if name != "get_bike_details" or not isinstance(arguments, dict):
+            continue
+        year = arguments.get("year")
+        # Missing/non-integer years remain the tool validator's responsibility.
+        if type(year) is not int:
+            continue
+        years, ambiguous_history = _established_user_years(user_message, history)
+        if ambiguous_history:
+            return "Plusieurs millésimes ont été indiqués. Quel millésime souhaitez-vous utiliser pour cette fiche ?"
+        if year not in years:
+            if years:
+                explicit = ", ".join(str(value) for value in sorted(years))
+                return (f"J’ai bloqué un millésime différent de celui indiqué ({explicit}). "
+                        "Quel millésime souhaitez-vous utiliser pour cette fiche ?")
+            return "Quel millésime souhaitez-vous pour cette fiche ? Aucune année n’a été établie dans vos messages."
+    return None
+
+
+def _clarified_turn(messages: list[dict], clarification: str, *, anthropic_blocks=False) -> tuple[str, list[dict]]:
+    content = [{"type": "text", "text": clarification}] if anthropic_blocks else clarification
+    return clarification, [*messages, {"role": "assistant", "content": content}]
 
 
 def run_agent(conn, client: Anthropic | None, user_message: str, history: list[dict] | None = None,
@@ -179,6 +322,7 @@ def run_agent(conn, client: Anthropic | None, user_message: str, history: list[d
 def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
+    clean_turn = list(messages)
 
     for _ in range(MAX_TOOL_TURNS):
         try:
@@ -194,6 +338,10 @@ def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: li
         except anthropic.APIError as exc:
             return (f"The Anthropic API returned an error ({type(exc).__name__}) — please try again.", messages)
 
+        calls = [(block.name, block.input) for block in response.content if block.type == "tool_use"]
+        clarification = _detail_year_clarification(calls, user_message, history)
+        if clarification:
+            return _clarified_turn(clean_turn, clarification, anthropic_blocks=True)
         messages.append({"role": "assistant", "content": response.content})
 
         if response.stop_reason != "tool_use":
@@ -215,6 +363,7 @@ def _run_agent_anthropic(conn, client: Anthropic, user_message: str, history: li
 def _run_agent_openrouter(conn, api_key: str, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
+    clean_turn = list(messages)
 
     for _ in range(MAX_TOOL_TURNS):
         try:
@@ -241,6 +390,11 @@ def _run_agent_openrouter(conn, api_key: str, user_message: str, history: list[d
             return (f"OpenRouter returned an error (HTTP {response.status_code}) — please try again.", messages)
 
         message = response.json()["choices"][0]["message"]
+        calls = [(call["function"]["name"], _tool_arguments(call["function"].get("arguments") or {}))
+                 for call in message.get("tool_calls") or []]
+        clarification = _detail_year_clarification(calls, user_message, history)
+        if clarification:
+            return _clarified_turn(clean_turn, clarification)
         messages.append(message)
 
         tool_calls = message.get("tool_calls") or []
@@ -248,12 +402,7 @@ def _run_agent_openrouter(conn, api_key: str, user_message: str, history: list[d
             return message.get("content") or "", messages
 
         for call in tool_calls:
-            arguments = call["function"].get("arguments") or {}
-            if isinstance(arguments, str):
-                try:
-                    arguments = json.loads(arguments)
-                except json.JSONDecodeError:
-                    arguments = {}
+            arguments = _tool_arguments(call["function"].get("arguments") or {})
             results = execute_tool(conn, call["function"]["name"], arguments)
             messages.append({
                 "role": "tool",
@@ -268,6 +417,7 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
     deadline = time.monotonic() + OLLAMA_TURN_TIMEOUT_SECONDS
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
+    clean_turn = list(messages)
     budget_message = (
         f"The local Ollama turn exhausted its {OLLAMA_TURN_TIMEOUT_SECONDS:g}-second budget "
         "— narrow the question or increase OLLAMA_TURN_TIMEOUT_SECONDS and retry."
@@ -311,6 +461,11 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
         message = response.json()["message"]
         if time.monotonic() >= deadline:
             return budget_message, messages
+        calls = [(call["function"]["name"], _tool_arguments(call["function"]["arguments"]))
+                 for call in message.get("tool_calls") or []]
+        clarification = _detail_year_clarification(calls, user_message, history)
+        if clarification:
+            return _clarified_turn(clean_turn, clarification)
         messages.append(message)
 
         tool_calls = message.get("tool_calls") or []
@@ -319,9 +474,7 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
 
         for call in tool_calls:
             name = call["function"]["name"]
-            arguments = call["function"]["arguments"]
-            if isinstance(arguments, str):
-                arguments = json.loads(arguments)
+            arguments = _tool_arguments(call["function"]["arguments"])
             if time.monotonic() >= deadline:
                 return budget_message, messages
             results = execute_tool(conn, name, arguments)

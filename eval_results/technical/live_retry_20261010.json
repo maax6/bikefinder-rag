@@ -1,0 +1,194 @@
+{
+  "test": "real local HTTP timeout + retry at the app.chat callback used by Gradio",
+  "forced_budget_seconds": 0.01,
+  "default_budget_seconds": 180.0,
+  "elapsed_seconds": 30.774,
+  "failed_chat": [
+    {
+      "role": "user",
+      "content": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance et poids sec, avec la source."
+    },
+    {
+      "role": "assistant",
+      "content": "The local Ollama turn exhausted its 0.01-second budget — narrow the question or increase OLLAMA_TURN_TIMEOUT_SECONDS and retry."
+    }
+  ],
+  "failed_state": [],
+  "retry_chat": [
+    {
+      "role": "user",
+      "content": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance et poids sec, avec la source."
+    },
+    {
+      "role": "assistant",
+      "content": "The local Ollama turn exhausted its 0.01-second budget — narrow the question or increase OLLAMA_TURN_TIMEOUT_SECONDS and retry."
+    },
+    {
+      "role": "user",
+      "content": "réessaie"
+    },
+    {
+      "role": "assistant",
+      "content": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Puissance       | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Poids sec       | 214.0 kg (471.8 pounds) |\n| Source          | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |"
+    }
+  ],
+  "retry_state": [
+    {
+      "role": "user",
+      "content": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance et poids sec, avec la source."
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_rgvq0z0p",
+          "function": {
+            "index": 0,
+            "name": "get_bike_details",
+            "arguments": {
+              "model": "GSF 1200 N Bandit",
+              "year": 2000,
+              "brand": "Suzuki"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": "[{'brand': 'Suzuki', 'model': 'GSF 1200 N Bandit', 'year': 2000, 'category': 'Allround', 'category_fr': 'Roadster', 'displacement_ccm': 1157.0, 'weight_kg': 214.0, 'power_hp': 98.0, 'torque_nm': 91.0, 'seat_height_mm': 835.0, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php', 'scraped_at': '2026-08-30 21:34:27.615743+00:00', 'specs': {'Type': 'Allround', 'Output': '98.0 HP (71.5 kW )) @ 8500 RPM', 'Torque': '91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM', 'Gearbox': '5-speed', 'Starter': 'Electric', 'Top speed': '220.0 km/h (136.7 mph)', 'Wheelbase': '1435 mm (56.5 inches)', 'Dry weight': '214.0 kg (471.8 pounds)', 'Engine size': '1157.0 ccm (70.60 cubic inches)', 'Rear brakes': 'Single disc', 'Seat height': '835 mm (32.9 inches) If adjustable, lowest setting.', 'Front brakes': 'Dual disc', 'Color options': 'Black, silver, maroon', 'Fuel capacity': '19.00 litres (5.02 US gallons)', 'Cooling system': 'Oil & air', 'Type of engine': 'In-line four, four-stroke', 'Motorcycle name': 'Suzuki GSF 1200 N Bandit', 'Transmission type': 'Chain  (final drive)', 'Power/weight ratio': '0.4579 HP/kg', 'Year of manufacture': '2000'}}]"
+    },
+    {
+      "role": "assistant",
+      "content": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Puissance       | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Poids sec       | 214.0 kg (471.8 pounds) |\n| Source          | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |"
+    }
+  ],
+  "tool_events": [
+    {
+      "name": "get_bike_details",
+      "arguments": {
+        "model": "GSF 1200 N Bandit",
+        "year": 2000,
+        "brand": "Suzuki"
+      },
+      "result": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 N Bandit",
+          "year": 2000,
+          "category": "Allround",
+          "category_fr": "Roadster",
+          "displacement_ccm": 1157.0,
+          "weight_kg": 214.0,
+          "power_hp": 98.0,
+          "torque_nm": 91.0,
+          "seat_height_mm": 835.0,
+          "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.615743+00:00",
+          "specs": {
+            "Type": "Allround",
+            "Output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+            "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+            "Gearbox": "5-speed",
+            "Starter": "Electric",
+            "Top speed": "220.0 km/h (136.7 mph)",
+            "Wheelbase": "1435 mm (56.5 inches)",
+            "Dry weight": "214.0 kg (471.8 pounds)",
+            "Engine size": "1157.0 ccm (70.60 cubic inches)",
+            "Rear brakes": "Single disc",
+            "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+            "Front brakes": "Dual disc",
+            "Color options": "Black, silver, maroon",
+            "Fuel capacity": "19.00 litres (5.02 US gallons)",
+            "Cooling system": "Oil & air",
+            "Type of engine": "In-line four, four-stroke",
+            "Motorcycle name": "Suzuki GSF 1200 N Bandit",
+            "Transmission type": "Chain  (final drive)",
+            "Power/weight ratio": "0.4579 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:11434/api/chat",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a technical motorcycle catalog assistant in a local proof of concept. Answer only from the technical sheets returned by tools.\nOwner opinions and reputation are deferred: do not retrieve them or use them as evidence for specifications. If asked, explain that this path covers specs.\n\nYou have two tools:\n- filter_specs: structured filtering by brand, category, model year, displacement, power, torque, weight and seat height; also counts.\n- get_bike_details: the original spec sheet for a model and an explicit year, including raw labels/units, source URL and collection timestamp.\n\nTool-call examples — follow these argument patterns exactly:\n- \"Quelles Honda en 2000 ?\" -> filter_specs {\"brand\": \"Honda\", \"min_year\": 2000, \"max_year\": 2000, \"limit\": 10}\n- \"Quelles motos custom des années 1950 ?\" -> filter_specs {\"category\": \"Custom/Cruiser\", \"min_year\": 1950, \"max_year\": 1959}\n- \"Fiche technique de la Suzuki GSF 1200 N Bandit de 2000\" -> get_bike_details {\"brand\": \"Suzuki\", \"model\": \"GSF 1200 N Bandit\", \"year\": 2000}\n- \"Compare la Bandit N et l'ER-5 Twister en 2000\" -> TWO calls: get_bike_details {\"brand\": \"Suzuki\", \"model\": \"GSF 1200 N Bandit\", \"year\": 2000} and get_bike_details {\"brand\": \"Kawasaki\", \"model\": \"ER-5 Twister\", \"year\": 2000}.\nThen present a table with model/variant, year, displacement, power, torque, weight with its original type, and the source of each sheet.\n\nEvidence and scope constraints:\n- For one year, set BOTH filter year bounds to that year. A decade also needs both bounds. Never substitute another year for an absent sheet.\n- Ask for a model year if none is specified or already explicit in the conversation. For a comparison use the same year unless the user explicitly asks for different years. Never silently pick the newest available entries.\n- Keep each returned model/variant separate. If several entries match a name, show the ambiguity and ask which one; do not combine their values.\n- Cite each sheet's URL near its specifications or in the comparison table. Use the original labels, values, units and qualifications in specs. Numeric columns come from a legacy parser; power_hp conventions are not validated yet. Do not silently relabel HP as metric ch or convert/derive ratios.\n- weight_kg mixes dry and wet weights. Report the original dry/wet label when available; otherwise say the weight type is undocumented. Do not rank mixed types or compute power/weight from the legacy columns.\n- Missing values mean \"non documenté\", never zero, absence of equipment, or a value from general knowledge, another model, year or family.\n- Answer the fields the user requested. Do not append an unsolicited list of other supposedly missing specifications. Before calling a requested field undocumented, check every original label in specs: Top speed documents vitesse maximale; Front brakes and Rear brakes document freinage; Output, Power output and Effect also document puissance. A field outside the numeric columns may still be fully documented in specs. Never describe it as absent on that basis.\n- Do not call a performance measured unless its sheet documents a test; otherwise report it as a catalog specification with measurement status unknown.\n- Catalog model year is not a launch date. Market, variant, launch date and production period are undocumented unless explicitly stated in the sheet.\n- Category sources can conflict: expose category and category_fr separately if inconsistent. Do not treat either label as authoritative by assumption.\n- Equipment/color filters are not implemented yet. A missing ABS mention does not mean no ABS. A list of selected sheets cannot establish which motorcycles in an entire year had an equipment. State this limitation.\n- Results are bounded catalog selections, never an exhaustive market list. For exact catalog counts use count_only. If a tool reports truncation, ask for a narrower model. An error means a search was not executed, not no match.\n- No matching sheet means \"aucune fiche documentée dans ce catalogue pour ce modèle et ce millésime\". Never say the motorcycle does not exist or was never produced merely because the catalog has no matching row.\n- Price, licence eligibility and family recall data are outside these tools. Never infer A2 approval or restrictability from power and mixed weight alone.\n- Never state a specification that did not come from a tool result.\n\nAnswer in the user's language, with concise tables for comparisons.\n\nRequired output for a technical sheet or comparison:\nReturn ONLY a Markdown table of the requested characteristics and a source row.\nUse headers in the user's language (French: Caractéristique, Valeur documentée).\nFor one sheet use columns Characteristic and Documented value. For a comparison\nuse one column per exact model/year. Put an unknown value in its table cell only\nwhen that requested characteristic has no evidence in specs. DO NOT append a\nmissing-data section or any paragraph about other characteristics. Do not add\nseat height, brakes, colors or speed unless asked. The table ends at the source\nrow; include no speculative disclaimer after it.\nFor an absent sheet or missing year, use a short clarification instead.\n"
+        },
+        {
+          "role": "user",
+          "content": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance et poids sec, avec la source."
+        }
+      ],
+      "timeout": 0.009994083899073303
+    },
+    {
+      "url": "http://127.0.0.1:11434/api/chat",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a technical motorcycle catalog assistant in a local proof of concept. Answer only from the technical sheets returned by tools.\nOwner opinions and reputation are deferred: do not retrieve them or use them as evidence for specifications. If asked, explain that this path covers specs.\n\nYou have two tools:\n- filter_specs: structured filtering by brand, category, model year, displacement, power, torque, weight and seat height; also counts.\n- get_bike_details: the original spec sheet for a model and an explicit year, including raw labels/units, source URL and collection timestamp.\n\nTool-call examples — follow these argument patterns exactly:\n- \"Quelles Honda en 2000 ?\" -> filter_specs {\"brand\": \"Honda\", \"min_year\": 2000, \"max_year\": 2000, \"limit\": 10}\n- \"Quelles motos custom des années 1950 ?\" -> filter_specs {\"category\": \"Custom/Cruiser\", \"min_year\": 1950, \"max_year\": 1959}\n- \"Fiche technique de la Suzuki GSF 1200 N Bandit de 2000\" -> get_bike_details {\"brand\": \"Suzuki\", \"model\": \"GSF 1200 N Bandit\", \"year\": 2000}\n- \"Compare la Bandit N et l'ER-5 Twister en 2000\" -> TWO calls: get_bike_details {\"brand\": \"Suzuki\", \"model\": \"GSF 1200 N Bandit\", \"year\": 2000} and get_bike_details {\"brand\": \"Kawasaki\", \"model\": \"ER-5 Twister\", \"year\": 2000}.\nThen present a table with model/variant, year, displacement, power, torque, weight with its original type, and the source of each sheet.\n\nEvidence and scope constraints:\n- For one year, set BOTH filter year bounds to that year. A decade also needs both bounds. Never substitute another year for an absent sheet.\n- Ask for a model year if none is specified or already explicit in the conversation. For a comparison use the same year unless the user explicitly asks for different years. Never silently pick the newest available entries.\n- Keep each returned model/variant separate. If several entries match a name, show the ambiguity and ask which one; do not combine their values.\n- Cite each sheet's URL near its specifications or in the comparison table. Use the original labels, values, units and qualifications in specs. Numeric columns come from a legacy parser; power_hp conventions are not validated yet. Do not silently relabel HP as metric ch or convert/derive ratios.\n- weight_kg mixes dry and wet weights. Report the original dry/wet label when available; otherwise say the weight type is undocumented. Do not rank mixed types or compute power/weight from the legacy columns.\n- Missing values mean \"non documenté\", never zero, absence of equipment, or a value from general knowledge, another model, year or family.\n- Answer the fields the user requested. Do not append an unsolicited list of other supposedly missing specifications. Before calling a requested field undocumented, check every original label in specs: Top speed documents vitesse maximale; Front brakes and Rear brakes document freinage; Output, Power output and Effect also document puissance. A field outside the numeric columns may still be fully documented in specs. Never describe it as absent on that basis.\n- Do not call a performance measured unless its sheet documents a test; otherwise report it as a catalog specification with measurement status unknown.\n- Catalog model year is not a launch date. Market, variant, launch date and production period are undocumented unless explicitly stated in the sheet.\n- Category sources can conflict: expose category and category_fr separately if inconsistent. Do not treat either label as authoritative by assumption.\n- Equipment/color filters are not implemented yet. A missing ABS mention does not mean no ABS. A list of selected sheets cannot establish which motorcycles in an entire year had an equipment. State this limitation.\n- Results are bounded catalog selections, never an exhaustive market list. For exact catalog counts use count_only. If a tool reports truncation, ask for a narrower model. An error means a search was not executed, not no match.\n- No matching sheet means \"aucune fiche documentée dans ce catalogue pour ce modèle et ce millésime\". Never say the motorcycle does not exist or was never produced merely because the catalog has no matching row.\n- Price, licence eligibility and family recall data are outside these tools. Never infer A2 approval or restrictability from power and mixed weight alone.\n- Never state a specification that did not come from a tool result.\n\nAnswer in the user's language, with concise tables for comparisons.\n\nRequired output for a technical sheet or comparison:\nReturn ONLY a Markdown table of the requested characteristics and a source row.\nUse headers in the user's language (French: Caractéristique, Valeur documentée).\nFor one sheet use columns Characteristic and Documented value. For a comparison\nuse one column per exact model/year. Put an unknown value in its table cell only\nwhen that requested characteristic has no evidence in specs. DO NOT append a\nmissing-data section or any paragraph about other characteristics. Do not add\nseat height, brakes, colors or speed unless asked. The table ends at the source\nrow; include no speculative disclaimer after it.\nFor an absent sheet or missing year, use a short clarification instead.\n"
+        },
+        {
+          "role": "user",
+          "content": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance et poids sec, avec la source."
+        }
+      ],
+      "timeout": 179.99999504198786
+    },
+    {
+      "url": "http://127.0.0.1:11434/api/chat",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a technical motorcycle catalog assistant in a local proof of concept. Answer only from the technical sheets returned by tools.\nOwner opinions and reputation are deferred: do not retrieve them or use them as evidence for specifications. If asked, explain that this path covers specs.\n\nYou have two tools:\n- filter_specs: structured filtering by brand, category, model year, displacement, power, torque, weight and seat height; also counts.\n- get_bike_details: the original spec sheet for a model and an explicit year, including raw labels/units, source URL and collection timestamp.\n\nTool-call examples — follow these argument patterns exactly:\n- \"Quelles Honda en 2000 ?\" -> filter_specs {\"brand\": \"Honda\", \"min_year\": 2000, \"max_year\": 2000, \"limit\": 10}\n- \"Quelles motos custom des années 1950 ?\" -> filter_specs {\"category\": \"Custom/Cruiser\", \"min_year\": 1950, \"max_year\": 1959}\n- \"Fiche technique de la Suzuki GSF 1200 N Bandit de 2000\" -> get_bike_details {\"brand\": \"Suzuki\", \"model\": \"GSF 1200 N Bandit\", \"year\": 2000}\n- \"Compare la Bandit N et l'ER-5 Twister en 2000\" -> TWO calls: get_bike_details {\"brand\": \"Suzuki\", \"model\": \"GSF 1200 N Bandit\", \"year\": 2000} and get_bike_details {\"brand\": \"Kawasaki\", \"model\": \"ER-5 Twister\", \"year\": 2000}.\nThen present a table with model/variant, year, displacement, power, torque, weight with its original type, and the source of each sheet.\n\nEvidence and scope constraints:\n- For one year, set BOTH filter year bounds to that year. A decade also needs both bounds. Never substitute another year for an absent sheet.\n- Ask for a model year if none is specified or already explicit in the conversation. For a comparison use the same year unless the user explicitly asks for different years. Never silently pick the newest available entries.\n- Keep each returned model/variant separate. If several entries match a name, show the ambiguity and ask which one; do not combine their values.\n- Cite each sheet's URL near its specifications or in the comparison table. Use the original labels, values, units and qualifications in specs. Numeric columns come from a legacy parser; power_hp conventions are not validated yet. Do not silently relabel HP as metric ch or convert/derive ratios.\n- weight_kg mixes dry and wet weights. Report the original dry/wet label when available; otherwise say the weight type is undocumented. Do not rank mixed types or compute power/weight from the legacy columns.\n- Missing values mean \"non documenté\", never zero, absence of equipment, or a value from general knowledge, another model, year or family.\n- Answer the fields the user requested. Do not append an unsolicited list of other supposedly missing specifications. Before calling a requested field undocumented, check every original label in specs: Top speed documents vitesse maximale; Front brakes and Rear brakes document freinage; Output, Power output and Effect also document puissance. A field outside the numeric columns may still be fully documented in specs. Never describe it as absent on that basis.\n- Do not call a performance measured unless its sheet documents a test; otherwise report it as a catalog specification with measurement status unknown.\n- Catalog model year is not a launch date. Market, variant, launch date and production period are undocumented unless explicitly stated in the sheet.\n- Category sources can conflict: expose category and category_fr separately if inconsistent. Do not treat either label as authoritative by assumption.\n- Equipment/color filters are not implemented yet. A missing ABS mention does not mean no ABS. A list of selected sheets cannot establish which motorcycles in an entire year had an equipment. State this limitation.\n- Results are bounded catalog selections, never an exhaustive market list. For exact catalog counts use count_only. If a tool reports truncation, ask for a narrower model. An error means a search was not executed, not no match.\n- No matching sheet means \"aucune fiche documentée dans ce catalogue pour ce modèle et ce millésime\". Never say the motorcycle does not exist or was never produced merely because the catalog has no matching row.\n- Price, licence eligibility and family recall data are outside these tools. Never infer A2 approval or restrictability from power and mixed weight alone.\n- Never state a specification that did not come from a tool result.\n\nAnswer in the user's language, with concise tables for comparisons.\n\nRequired output for a technical sheet or comparison:\nReturn ONLY a Markdown table of the requested characteristics and a source row.\nUse headers in the user's language (French: Caractéristique, Valeur documentée).\nFor one sheet use columns Characteristic and Documented value. For a comparison\nuse one column per exact model/year. Put an unknown value in its table cell only\nwhen that requested characteristic has no evidence in specs. DO NOT append a\nmissing-data section or any paragraph about other characteristics. Do not add\nseat height, brakes, colors or speed unless asked. The table ends at the source\nrow; include no speculative disclaimer after it.\nFor an absent sheet or missing year, use a short clarification instead.\n"
+        },
+        {
+          "role": "user",
+          "content": "Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance et poids sec, avec la source."
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_rgvq0z0p",
+              "function": {
+                "index": 0,
+                "name": "get_bike_details",
+                "arguments": {
+                  "model": "GSF 1200 N Bandit",
+                  "year": 2000,
+                  "brand": "Suzuki"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'brand': 'Suzuki', 'model': 'GSF 1200 N Bandit', 'year': 2000, 'category': 'Allround', 'category_fr': 'Roadster', 'displacement_ccm': 1157.0, 'weight_kg': 214.0, 'power_hp': 98.0, 'torque_nm': 91.0, 'seat_height_mm': 835.0, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php', 'scraped_at': '2026-08-30 21:34:27.615743+00:00', 'specs': {'Type': 'Allround', 'Output': '98.0 HP (71.5 kW )) @ 8500 RPM', 'Torque': '91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM', 'Gearbox': '5-speed', 'Starter': 'Electric', 'Top speed': '220.0 km/h (136.7 mph)', 'Wheelbase': '1435 mm (56.5 inches)', 'Dry weight': '214.0 kg (471.8 pounds)', 'Engine size': '1157.0 ccm (70.60 cubic inches)', 'Rear brakes': 'Single disc', 'Seat height': '835 mm (32.9 inches) If adjustable, lowest setting.', 'Front brakes': 'Dual disc', 'Color options': 'Black, silver, maroon', 'Fuel capacity': '19.00 litres (5.02 US gallons)', 'Cooling system': 'Oil & air', 'Type of engine': 'In-line four, four-stroke', 'Motorcycle name': 'Suzuki GSF 1200 N Bandit', 'Transmission type': 'Chain  (final drive)', 'Power/weight ratio': '0.4579 HP/kg', 'Year of manufacture': '2000'}}]"
+        }
+      ],
+      "timeout": 170.06115062499885
+    }
+  ],
+  "checks": {
+    "failed_state_empty": true,
+    "retry_uses_original_question_without_incomplete_traces": true,
+    "retry_completed": true
+  },
+  "limitations": [
+    "Timeout deliberately induced by a tiny budget, not a natural latency failure.",
+    "Same callback as UI but this case calls it directly, not through the Gradio transport."
+  ],
+  "manual_review": {
+    "status": "supported_values_and_completed_retry",
+    "note": "Real tool event uses exact Bandit N 2000; 98 HP / 71.5 kW and dry 214 kg cited from returned sheet. Induced timeout precedes this successful request, with no incomplete state carried over."
+  }
+}

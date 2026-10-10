@@ -1,0 +1,255 @@
+{
+  "created_at": "2026-10-10T03:11:18.501127+00:00",
+  "transport": "Real Gradio /chat; three turns in the same client session, local Ollama and PostgreSQL",
+  "loop_sha256": "78c628ff3f16de8efd27992eb7de131b8cc9879b2a3e230918e7944b07f51425",
+  "model_runtime_before": {
+    "models": [
+      {
+        "name": "mistral-small3.2:latest",
+        "model": "mistral-small3.2:latest",
+        "size": 16966746111,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-10T05:15:09.18518+02:00",
+        "size_vram": 16966746111,
+        "context_length": 16384
+      }
+    ]
+  },
+  "turns": [
+    {
+      "question": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+      "answer": "Pourriez-vous préciser l'année modèle de la Suzuki GSF 1200 N Bandit qui vous intéresse ?",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pourriez-vous préciser l'année modèle de la Suzuki GSF 1200 N Bandit qui vous intéresse ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "elapsed_seconds": 3.483,
+      "manual_review": {
+        "status": "supported_clarification",
+        "note": "Asks for model year without assigning a default."
+      }
+    },
+    {
+      "question": "2000",
+      "answer": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Puissance       | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Couple         | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM |\n| Poids          | 214.0 kg (poids à sec) |\n| Cylindrée      | 1157.0 ccm (70.60 cubic inches) |\n| Source         | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pourriez-vous préciser l'année modèle de la Suzuki GSF 1200 N Bandit qui vous intéresse ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "2000",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Puissance       | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Couple         | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM |\n| Poids          | 214.0 kg (poids à sec) |\n| Cylindrée      | 1157.0 ccm (70.60 cubic inches) |\n| Source         | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "elapsed_seconds": 37.557,
+      "manual_review": {
+        "status": "requested_value_supported_with_extra_fields",
+        "note": "Explicit reply 2000 reuses the original Bandit N question and cites the correct power and sheet. Also includes documented torque/weight/displacement that were not requested; remaining brevity/format deviation."
+      }
+    },
+    {
+      "question": "Et son poids à sec ?",
+      "answer": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Poids à sec     | 214.0 kg (471.8 pounds) |\n| Source         | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+      "result": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pourriez-vous préciser l'année modèle de la Suzuki GSF 1200 N Bandit qui vous intéresse ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "2000",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Puissance       | 98.0 HP (71.5 kW) @ 8500 RPM |\n| Couple         | 91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM |\n| Poids          | 214.0 kg (poids à sec) |\n| Cylindrée      | 1157.0 ccm (70.60 cubic inches) |\n| Source         | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et son poids à sec ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Voici la fiche technique de la Suzuki GSF 1200 N Bandit de 2000 :\n\n| Caractéristique | Valeur documentée |\n|-----------------|-------------------|\n| Poids à sec     | 214.0 kg (471.8 pounds) |\n| Source         | [Lien vers la fiche technique](https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "elapsed_seconds": 19.149,
+      "manual_review": {
+        "status": "supported_same_year_followup",
+        "note": "Returns documented dry weight 214 kg for the same exact 2000 N sheet, with source; no year invented."
+      }
+    }
+  ],
+  "manual_review_pending": false,
+  "limitations": [
+    "One real conversation, not a quality score. Gradio does not expose internal tool transcripts."
+  ],
+  "finished_at": "2026-10-10T03:12:19.746396+00:00",
+  "base_commit": "c94a384943af3c72287fe5af65ab902de1986d43",
+  "client_version": "2.5.0",
+  "gradio_version": "6.20.0",
+  "runtime_files_sha256": {
+    "src/bikefinder_rag/agent/loop.py": "78c628ff3f16de8efd27992eb7de131b8cc9879b2a3e230918e7944b07f51425",
+    "src/bikefinder_rag/app.py": "43bbd2965aa606234ef20d7bd68ffa3bb02d0dc9c693fe09e281f4f8e701ad43",
+    "src/bikefinder_rag/agent/tools.py": "4884a36cf01e8ed929cb9f98ce31807e7551efcd633fc321011c5242b73a9552"
+  },
+  "expected_evidence": [
+    {
+      "brand": "Suzuki",
+      "model": "GSF 1200 N Bandit",
+      "year": 2000,
+      "category": "Allround",
+      "category_fr": "Roadster",
+      "displacement_ccm": 1157.0,
+      "weight_kg": 214.0,
+      "power_hp": 98.0,
+      "torque_nm": 91.0,
+      "seat_height_mm": 835.0,
+      "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php",
+      "scraped_at": "2026-08-30 21:34:27.615743+00:00",
+      "specs": {
+        "Type": "Allround",
+        "Output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+        "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+        "Gearbox": "5-speed",
+        "Starter": "Electric",
+        "Top speed": "220.0 km/h (136.7 mph)",
+        "Wheelbase": "1435 mm (56.5 inches)",
+        "Dry weight": "214.0 kg (471.8 pounds)",
+        "Engine size": "1157.0 ccm (70.60 cubic inches)",
+        "Rear brakes": "Single disc",
+        "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+        "Front brakes": "Dual disc",
+        "Color options": "Black, silver, maroon",
+        "Fuel capacity": "19.00 litres (5.02 US gallons)",
+        "Cooling system": "Oil & air",
+        "Type of engine": "In-line four, four-stroke",
+        "Motorcycle name": "Suzuki GSF 1200 N Bandit",
+        "Transmission type": "Chain  (final drive)",
+        "Power/weight ratio": "0.4579 HP/kg",
+        "Year of manufacture": "2000"
+      }
+    }
+  ],
+  "manual_review_method": "Manual comparison against separately retained READ ONLY sheet evidence; not a model quality score.",
+  "earlier_guard_observation": {
+    "question": "Quelle est la puissance de la Suzuki GSF 1200 N Bandit ?",
+    "answer": "Quel millésime souhaitez-vous pour cette fiche ? Aucune année n’a été établie dans vos messages.",
+    "elapsed_seconds": 23.96,
+    "loop_sha256": "78c628ff3f16de8efd27992eb7de131b8cc9879b2a3e230918e7944b07f51425",
+    "note": "Real Gradio turn returned the runtime guard clarification. A following preliminary client request failed in Gradio preprocessing due to a string-content history payload; corrected run above uses returned content blocks."
+  },
+  "reviewed_at": "2026-10-10T03:13:11.451027+00:00"
+}
