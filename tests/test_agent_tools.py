@@ -20,7 +20,7 @@ def test_long_review_is_bounded_without_mutating_the_ranked_result(monkeypatch):
     search = Mock(return_value=reviews)
     monkeypatch.setattr(tools, "search_reviews", search)
 
-    results = tools.execute_tool(None, "search_reviews", {"query": "RS 125 reliability"})
+    results = tools.execute_tool(None, "search_reviews", {"query": "RS 125 reliability"}, allow_reviews=True)
 
     search.assert_called_once_with(None, query="RS 125 reliability")
     assert reviews == original
@@ -41,7 +41,7 @@ def test_long_review_stops_at_a_nearby_sentence_boundary(monkeypatch):
     text = first_sentence + "a" * 1700 + ". " + "Le commentaire continue " * 100
     monkeypatch.setattr(tools, "search_reviews", Mock(return_value=[{"comment_text": text}]))
 
-    result = tools.execute_tool(None, "search_reviews", {"query": "confort"})[0]
+    result = tools.execute_tool(None, "search_reviews", {"query": "confort"}, allow_reviews=True)[0]
 
     assert result["comment_text"] == first_sentence + "a" * 1700 + ".…"
 
@@ -50,7 +50,7 @@ def test_long_review_without_sentences_stops_between_words(monkeypatch):
     text = "problème " * 400
     monkeypatch.setattr(tools, "search_reviews", Mock(return_value=[{"comment_text": text}]))
 
-    result = tools.execute_tool(None, "search_reviews", {"query": "fiabilité"})[0]
+    result = tools.execute_tool(None, "search_reviews", {"query": "fiabilité"}, allow_reviews=True)[0]
 
     assert len(result["comment_text"]) <= 2000
     assert result["comment_text"].endswith("problème…")
@@ -60,7 +60,7 @@ def test_long_review_without_sentences_stops_between_words(monkeypatch):
 def test_long_review_without_whitespace_still_has_a_hard_character_cap(monkeypatch):
     monkeypatch.setattr(tools, "search_reviews", Mock(return_value=[{"comment_text": "x" * 65_536}]))
 
-    result = tools.execute_tool(None, "search_reviews", {"query": "reliability"})[0]
+    result = tools.execute_tool(None, "search_reviews", {"query": "reliability"}, allow_reviews=True)[0]
 
     assert len(result["comment_text"]) == 2000
     assert result["comment_text"] == "x" * 1999 + "…"
@@ -71,7 +71,7 @@ def test_short_reviews_are_unchanged(monkeypatch, text):
     reviews = [{"comment_text": text, "source": "motoplanete", "lang": "fr"}]
     monkeypatch.setattr(tools, "search_reviews", Mock(return_value=reviews))
 
-    assert tools.execute_tool(None, "search_reviews", {"query": "avis"}) == reviews
+    assert tools.execute_tool(None, "search_reviews", {"query": "avis"}, allow_reviews=True) == reviews
 
 
 def test_excerpting_preserves_ranking_and_existing_argument_repair_notes(monkeypatch):
@@ -81,7 +81,7 @@ def test_excerpting_preserves_ranking_and_existing_argument_repair_notes(monkeyp
     ]
     monkeypatch.setattr(tools, "search_reviews", Mock(return_value=reviews))
 
-    results = tools.execute_tool(None, "search_reviews", {"model_family": "RS 125"})
+    results = tools.execute_tool(None, "search_reviews", {"model_family": "RS 125"}, allow_reviews=True)
 
     assert "notes" in results[0]
     assert [row["model_family"] for row in results[1:]] == ["First", "Second"]
@@ -96,7 +96,7 @@ def test_other_tools_do_not_trim_fields_or_add_excerpt_metadata(monkeypatch, too
     call = Mock(return_value=results)
     monkeypatch.setattr(tools, tool_name, call)
 
-    returned = tools.execute_tool(None, tool_name, {"model": "RS 125"} if tool_name == "get_bike_details" else {})
+    returned = tools.execute_tool(None, tool_name, {"model": "RS 125", "year": 2000} if tool_name == "get_bike_details" else {})
 
     assert returned == original
     assert returned is results
@@ -105,4 +105,4 @@ def test_other_tools_do_not_trim_fields_or_add_excerpt_metadata(monkeypatch, too
 def test_empty_review_result_remains_empty(monkeypatch):
     monkeypatch.setattr(tools, "search_reviews", Mock(return_value=[]))
 
-    assert tools.execute_tool(None, "search_reviews", {"query": "unknown model"}) == []
+    assert tools.execute_tool(None, "search_reviews", {"query": "unknown model"}, allow_reviews=True) == []

@@ -1,4 +1,4 @@
-"""The agent's three tools.
+"""Structured technical tools, with review retrieval retained for experiments.
 
 All are typed-parameter function calls, never raw SQL from the LLM —
 filter_specs builds a parameterized query from a fixed set of known
@@ -9,11 +9,9 @@ casing mismatch from the LLM doesn't silently return zero rows), and
 get_bike_details returns one bike's full spec sheet including raw_specs.
 """
 
+import math
 import re
 from typing import Any
-
-from bikefinder_rag.embeddings import reranker
-from bikefinder_rag.embeddings.embedder import embed_text
 
 # Brand/category matching ignores spacing, case and punctuation on both
 # sides: bikez writes 'Super motard' and 'Harley-Davidson', LLMs (and
@@ -22,18 +20,26 @@ from bikefinder_rag.embeddings.embedder import embed_text
 _NORM_SQL = "regexp_replace(lower({column}), '[^a-z0-9]', '', 'g') LIKE %s"
 
 
+def _normalized_name(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", value.lower())
+
+
 def _norm_pattern(value: str) -> str:
-    return "%" + re.sub(r"[^a-z0-9]", "", value.lower()) + "%"
+    return "%" + _normalized_name(value) + "%"
 
 FILTER_SPECS_SCHEMA = {
     "name": "filter_specs",
     "description": (
         "Filter motorcycles by structured specs (displacement, weight, power, "
-        "seat height, category, brand, year, price). Use for precise numeric or "
-        "categorical constraints, e.g. 'naked bikes between 600 and 900cc under 8000 EUR'."
+        "torque, seat height, category, brand, model year). Use exact year bounds "
+        "for a single model year. Returns at most 20 catalog entries, not an "
+        "exhaustive market list. Numeric columns use the legacy normalization: "
+        "weight_kg can be dry or wet; use the returned original specs before "
+        "comparing measures. No equipment or color filter is available yet."
     ),
     "input_schema": {
         "type": "object",
+        "additionalProperties": False,
         "properties": {
             "brand": {"type": "string", "description": "Exact or partial brand name, e.g. 'Honda'."},
             "category": {
@@ -62,28 +68,17 @@ FILTER_SPECS_SCHEMA = {
             "max_weight_kg": {"type": "number"},
             "min_power_hp": {"type": "number"},
             "max_power_hp": {"type": "number"},
+            "min_torque_nm": {"type": "number"},
+            "max_torque_nm": {"type": "number"},
             "min_seat_height_mm": {"type": "number"},
             "max_seat_height_mm": {"type": "number"},
-            "max_msrp_eur": {
-                "type": "number",
-                "description": "MSRP is sparsely populated (bikez.com has no price field; see README) — treat absence of results as 'unknown', not 'too expensive'.",
-            },
             "order_by": {
                 "type": "string",
                 "description": (
                     "Sort column: year, displacement_ccm, weight_kg, power_hp, "
-                    "torque_nm, seat_height_mm or msrp_eur. Prefix with '-' for "
+                    "torque_nm or seat_height_mm. Prefix with '-' for "
                     "descending. Default '-year'. Required for superlatives: "
                     "'the lightest X' needs order_by='weight_kg' with a small limit."
-                ),
-            },
-            "a2_only": {
-                "type": "boolean",
-                "description": (
-                    "Keep only bikes compatible with the French A2 licence: "
-                    "either directly (<=35 kW and <=0.2 kW/kg) or restrictable "
-                    "(unrestricted version <=70 kW). Results carry an 'a2' "
-                    "column saying which ('A2' or 'A2 bridable')."
                 ),
             },
             "count_only": {
@@ -93,7 +88,8 @@ FILTER_SPECS_SCHEMA = {
                     "listing them. Use for 'how many...' questions."
                 ),
             },
-            "limit": {"type": "integer", "description": "Max rows to return, default 10."},
+            "limit": {"type": "integer", "minimum": 1, "maximum": 20,
+                      "description": "Max rows to return, default 10, maximum 20."},
         },
     },
 }
@@ -138,24 +134,31 @@ GET_BIKE_DETAILS_SCHEMA = {
     "description": (
         "Full factory spec sheet for ONE specific motorcycle: fuel capacity, "
         "cooling system, transmission, tires, brakes, suspension, bore x "
-        "stroke, and every other spec bikez.com lists — plus, for the model "
-        "family: known US safety recalls (NHTSA) and an indicative used-market "
-        "price estimate. Use for questions about a specific bike's specs, its "
-        "recalls/reliability record, or its used price. Returns the most "
-        "recent model-years unless a year is given."
+        "stroke, and the original labels and units bikez.com lists. A model "
+        "year is required; ask the user if it is missing. Returns up to three "
+        "matching entries with source URLs; multiple entries can be distinct "
+        "variants, so do not merge their values. For a comparison, call once "
+        "per model with the SAME explicit year and cite each source."
     ),
     "input_schema": {
         "type": "object",
+        "additionalProperties": False,
         "properties": {
             "model": {"type": "string", "description": "Model name, e.g. 'GSF 1200 Bandit'."},
             "brand": {"type": "string"},
             "year": {"type": "integer", "description": "Exact model year, if the user named one."},
         },
-        "required": ["model"],
+        "required": ["model", "year"],
     },
 }
 
-TOOLS = [FILTER_SPECS_SCHEMA, SEARCH_REVIEWS_SCHEMA, GET_BIKE_DETAILS_SCHEMA]
+TOOLS = [FILTER_SPECS_SCHEMA, GET_BIKE_DETAILS_SCHEMA]
+
+_SORTABLE_COLUMNS = {"year", "displacement_ccm", "weight_kg", "power_hp",
+                     "torque_nm", "seat_height_mm"}
+FILTER_SPECS_SCHEMA["input_schema"]["properties"]["order_by"]["enum"] = sorted(
+    _SORTABLE_COLUMNS | {f"-{column}" for column in _SORTABLE_COLUMNS}
+)
 
 _FILTER_COLUMNS: list[tuple[str, str, str]] = [
     # (input arg, sql column, sql operator)
@@ -167,9 +170,10 @@ _FILTER_COLUMNS: list[tuple[str, str, str]] = [
     ("max_weight_kg", "weight_kg", "<="),
     ("min_power_hp", "power_hp", ">="),
     ("max_power_hp", "power_hp", "<="),
+    ("min_torque_nm", "torque_nm", ">="),
+    ("max_torque_nm", "torque_nm", "<="),
     ("min_seat_height_mm", "seat_height_mm", ">="),
     ("max_seat_height_mm", "seat_height_mm", "<="),
-    ("max_msrp_eur", "msrp_eur", "<="),
 ]
 
 
@@ -183,8 +187,8 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
 
     if kwargs.get("category"):
         # Match bikez's Category OR motoplanete's curated category_fr: bikez
-        # mislabels recent bikes ('Super motard' Transalps), the French badge
-        # is the reliable one where present.
+        # can conflict with the French badge; return both labels so the
+        # response can expose that disagreement.
         pattern = _norm_pattern(kwargs["category"])
         clauses.append(
             "(" + _NORM_SQL.format(column="category")
@@ -198,42 +202,26 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
             clauses.append(f"{column} {operator} %s")
             params.append(value)
 
-    # French A2 licence, derived from specs (1 hp = 0.7355 kW): direct
-    # eligibility is <=35 kW AND <=0.2 kW/kg; a bike whose unrestricted
-    # power is <=70 kW can be sold restricted ('bridable'). weight_kg mixes
-    # wet and dry figures (dry is a fallback in the scraper), so the ratio
-    # test is an approximation — the a2 column says which case applies and
-    # rows without power data are excluded rather than guessed.
-    _A2_DIRECT = ("(power_hp * 0.7355 <= 35 AND weight_kg IS NOT NULL "
-                  "AND power_hp * 0.7355 / weight_kg <= 0.2)")
-    _A2_BRIDABLE = "(power_hp * 0.7355 > 35 AND power_hp * 0.7355 <= 70)"
-    a2_select = (f"CASE WHEN {_A2_DIRECT} THEN 'A2' "
-                 f"WHEN {_A2_BRIDABLE} THEN 'A2 bridable' END AS a2")
-    if kwargs.get("a2_only"):
-        clauses.append(f"power_hp IS NOT NULL AND ({_A2_DIRECT} OR {_A2_BRIDABLE})")
-
     if kwargs.get("count_only"):
         with conn.cursor() as cur:
             cur.execute(f"SELECT count(*) FROM motorcycles WHERE {' AND '.join(clauses)}", params)
             return [{"matching_motorcycles": cur.fetchone()[0]}]
 
     # Column names come from this whitelist, never from the LLM's string.
-    sortable = {"year", "displacement_ccm", "weight_kg", "power_hp",
-                "torque_nm", "seat_height_mm", "msrp_eur"}
     order_by = str(kwargs.get("order_by") or "-year")
     direction = "DESC" if order_by.startswith("-") else "ASC"
     column = order_by.lstrip("-")
-    if column not in sortable:
-        column, direction = "year", "DESC"
+    if column not in _SORTABLE_COLUMNS:
+        raise ValueError(f"Unsupported sort column: {order_by}")
 
-    limit = int(kwargs.get("limit") or 10)
+    limit = min(int(kwargs.get("limit") or 10), 20)
     query = f"""
         SELECT brand, model, year, category, category_fr, displacement_ccm,
-               weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url,
-               {a2_select}
+               weight_kg, power_hp, torque_nm, seat_height_mm, url, raw_specs,
+               scraped_at
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
-        ORDER BY {column} {direction} NULLS LAST
+        ORDER BY {column} {direction} NULLS LAST, brand, model, url
         LIMIT %s
     """
     params.append(limit)
@@ -241,11 +229,18 @@ def filter_specs(conn, **kwargs: Any) -> list[dict]:
     with conn.cursor() as cur:
         cur.execute(query, params)
         columns = [desc.name for desc in cur.description]
-        return [dict(zip(columns, row)) for row in cur.fetchall()]
+        rows = [dict(zip(columns, row)) for row in cur.fetchall()]
+    for row in rows:
+        _technical_specs(row, measures_only=True)
+    return rows
 
 
 def search_reviews(conn, query: str, brand: str | None = None, model: str | None = None,
                     category: str | None = None, limit: int | None = None) -> list[dict]:
+    # The default technical path needs neither review model in memory.
+    from bikefinder_rag.embeddings import reranker
+    from bikefinder_rag.embeddings.embedder import embed_text
+
     clauses = ["1=1"]
     params: list[Any] = []
 
@@ -356,7 +351,25 @@ _RAW_SPECS_NOISE = {"Rating", "Ask questions", "Update specs", "Related bikes",
                     "Maintenance", "Insurance costs"}
 
 
-def get_bike_details(conn, model: str, brand: str | None = None, year: int | None = None) -> list[dict]:
+def _technical_specs(row: dict, *, measures_only: bool = False) -> None:
+    """Keep original units/qualifiers alongside legacy numeric columns."""
+    specs = row.pop("raw_specs", None) or {}
+    row["specs"] = {
+        k: v for k, v in specs.items()
+        if k not in _RAW_SPECS_NOISE and isinstance(v, str)
+        and v.strip() and v.strip() != "Loading..."
+        and (not measures_only or k.lower() in {
+            "displacement", "engine size", "weight incl. oil, gas, etc",
+            "weight", "dry weight", "power output", "power", "output",
+            "effect", "torque", "seat height",
+        })
+    }
+    if row.get("scraped_at") is not None:
+        row["scraped_at"] = str(row["scraped_at"])
+
+
+def get_bike_details(conn, model: str, brand: str | None = None, year: int | None = None,
+                     *, include_family_context: bool = False) -> list[dict]:
     # Same word-by-word matching rationale as search_reviews' model filter.
     words = model.split() or [model]
     clauses = ["(brand || ' ' || model) ILIKE %s"] * len(words)
@@ -369,30 +382,43 @@ def get_bike_details(conn, model: str, brand: str | None = None, year: int | Non
         clauses.append("year = %s")
         params.append(int(year))
 
+    # A precise variant name must win over a loose word match: the word 'N'
+    # in 'GSF 1200 N Bandit' also appears inside 'Bandit' on the S variant.
+    exact_name = _normalized_name(model)
+    exact_sql = (
+        "(regexp_replace(lower(model), '[^a-z0-9]', '', 'g') = %s OR "
+        "regexp_replace(lower(brand || ' ' || model), '[^a-z0-9]', '', 'g') = %s)"
+    )
+    params.extend([exact_name, exact_name])
+
     sql = f"""
         SELECT brand, model, year, category, category_fr, displacement_ccm,
-               weight_kg, power_hp, torque_nm, seat_height_mm, msrp_eur, url,
-               raw_specs, family_id
+               weight_kg, power_hp, torque_nm, seat_height_mm, url,
+               raw_specs, scraped_at, family_id
         FROM motorcycles
         WHERE {' AND '.join(clauses)}
-        ORDER BY year DESC
-        LIMIT 3
+        ORDER BY {exact_sql} DESC, year DESC, brand, model, url
+        LIMIT 4
     """
     with conn.cursor() as cur:
         cur.execute(sql, params)
         columns = [desc.name for desc in cur.description]
         rows = [dict(zip(columns, row)) for row in cur.fetchall()]
 
+    exact_rows = [row for row in rows if exact_name in {
+        _normalized_name(row["model"]),
+        _normalized_name(row["brand"] + " " + row["model"]),
+    }]
+    rows = exact_rows or rows
+    truncated = len(rows) > 3
+    rows = rows[:3]
     family_ids = {row.pop("family_id") for row in rows} - {None}
     for row in rows:
-        specs = row.pop("raw_specs", None) or {}
-        # "Loading..." is bikez's client-side placeholder — some scraped
-        # cells still carry it; a blank is more honest than echoing it.
-        row["specs"] = {
-            k: v for k, v in specs.items()
-            if k not in _RAW_SPECS_NOISE and v and v.strip() and v.strip() != "Loading..."
-        }
-    if family_ids:
+        _technical_specs(row)
+    if truncated:
+        rows.append({"info": "More than three matching entries. Narrow the model/variant; do not merge these specs.",
+                     "truncated": True})
+    if include_family_context and family_ids:
         rows.append(_family_context(conn, sorted(family_ids)))
     return rows
 
@@ -482,24 +508,67 @@ def _review_excerpt(row: dict) -> dict:
     return result
 
 
-def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
+def _validate_technical_arguments(schema: dict, arguments: dict) -> str | None:
+    for name in schema.get("required", []):
+        if name not in arguments:
+            return f"'{name}' is required; ask for an explicit model year when missing"
+    for name, value in arguments.items():
+        field = schema["properties"][name]
+        kind = field["type"]
+        if kind == "string":
+            if not isinstance(value, str) or not value.strip():
+                return f"'{name}' must be a nonempty string"
+        elif kind == "boolean":
+            if not isinstance(value, bool):
+                return f"'{name}' must be a boolean"
+        elif kind in {"integer", "number"}:
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                return f"'{name}' must be a {kind}"
+            if kind == "integer" and not isinstance(value, int):
+                return f"'{name}' must be an integer"
+            try:
+                finite = math.isfinite(value)
+            except OverflowError:
+                finite = False
+            if not finite or value < 0:
+                return f"'{name}' must be finite and nonnegative"
+            if name in {"year", "min_year", "max_year"} and value < 1:
+                return f"'{name}' must be a positive model year"
+            if value < field.get("minimum", 0) or value > field.get("maximum", math.inf):
+                return f"'{name}' is outside the supported bounds"
+        if "enum" in field and value not in field["enum"]:
+            return f"'{name}' is unsupported: {value}"
+    for name, lower in arguments.items():
+        if name.startswith("min_"):
+            upper = arguments.get("max_" + name[4:])
+            if upper is not None and lower > upper:
+                return f"contradictory bounds for '{name[4:]}'"
+    return None
+
+
+def execute_tool(conn, tool_name: str, tool_input: dict, *, allow_reviews: bool = False) -> list[dict]:
     # Tool-calling LLMs (local models especially) sometimes emit argument
     # names that drift from the schema (e.g. "models" instead of "model", or
     # drop a required one like "query" entirely). Remap the known near-misses,
-    # drop the rest, and say so in the tool result — a silent repair hides the
-    # mistake from the model, so it never self-corrects; a TypeError likewise
-    # becomes a tool_result instead of crashing the whole loop.
+    # Reject unsupported technical filters before querying: returning a wider
+    # search would falsely imply that the user's constraints were applied.
+    # Historical review experiments retain their explicit repair behaviour.
     if tool_name == "filter_specs":
         known = FILTER_SPECS_SCHEMA["input_schema"]["properties"]
         call = filter_specs
     elif tool_name == "search_reviews":
+        if not allow_reviews:
+            return [{"error": "Owner reviews are disabled in the technical catalog. Use technical sheets; do not infer specifications from opinions."}]
         known = SEARCH_REVIEWS_SCHEMA["input_schema"]["properties"]
         call = search_reviews
     elif tool_name == "get_bike_details":
         known = GET_BIKE_DETAILS_SCHEMA["input_schema"]["properties"]
         call = get_bike_details
     else:
-        raise ValueError(f"Unknown tool: {tool_name}")
+        return [{"error": f"Unknown tool: {tool_name}"}]
+
+    if not isinstance(tool_input, dict):
+        return [{"error": f"Invalid arguments for {tool_name}: expected an object."}]
 
     filtered_input: dict[str, Any] = {}
     notes = []
@@ -511,7 +580,15 @@ def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
             filtered_input[alias] = value
             notes.append(f"interpreted unknown argument '{key}' as '{alias}'")
         else:
+            if tool_name != "search_reviews":
+                return [{"error": f"Unsupported argument '{key}' for {tool_name}; no search was executed."}]
             notes.append(f"ignored unknown argument '{key}'")
+
+    if tool_name != "search_reviews":
+        schema = FILTER_SPECS_SCHEMA if tool_name == "filter_specs" else GET_BIKE_DETAILS_SCHEMA
+        error = _validate_technical_arguments(schema["input_schema"], filtered_input)
+        if error:
+            return [{"error": f"Invalid arguments for {tool_name}: {error}. No search was executed."}]
 
     # Weak tool-callers (local models especially) sometimes drop the required
     # query even when the rest of the call is fine. Searching for general
@@ -526,7 +603,7 @@ def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
 
     try:
         results = call(conn, **filtered_input)
-    except TypeError as e:
+    except (TypeError, ValueError) as e:
         results = [{"error": f"Invalid arguments for {tool_name}: {e}"}]
 
     if tool_name == "search_reviews":

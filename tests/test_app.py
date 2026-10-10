@@ -54,6 +54,34 @@ def app(monkeypatch):
         return importlib.import_module("bikefinder_rag.app")
 
 
+def test_local_ui_exposes_technical_year_questions_and_catalogue_limits(app):
+    components = app.demo.get_config_file()["components"]
+    visible = [component for component in components if component["props"].get("visible", True)]
+    descriptions = " ".join(
+        component["props"].get("value", "")
+        for component in visible if component["type"] == "markdown"
+    )
+    assert "POC local" in descriptions
+    assert app.OLLAMA_MODEL in descriptions
+    assert f"{app.OLLAMA_TURN_TIMEOUT_SECONDS:g} s" in descriptions
+    assert "millésime" in descriptions
+    assert "couverture" in descriptions and "partielle" in descriptions
+    assert "inconnue" in descriptions
+    assert "poids sec" in descriptions and "poids tous pleins" in descriptions
+    assert "date de lancement" in descriptions
+
+    questions = next(
+        component["props"]["samples"]
+        for component in visible if component["type"] == "dataset"
+    )
+    assert len(questions) == 2
+    assert all("2000" in question[0] and "sources" in question[0] for question in questions)
+    assert any("fiche technique" in question[0].lower() for question in questions)
+    assert any("compare" in question[0].lower() and "tableau" in question[0] for question in questions)
+    user_text = descriptions + " ".join(question[0] for question in questions) + app.msg.placeholder
+    assert not any(term in user_text.lower() for term in ("owner", "avis", "réputation", "prix"))
+
+
 def test_local_chat_returns_gradio_messages_and_closes_connection(app, monkeypatch):
     monkeypatch.setattr(app, "BACKEND", "ollama")
     conn = SimpleNamespace(close=Mock())

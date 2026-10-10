@@ -1,0 +1,778 @@
+{
+  "generated_at": "2026-10-10T00:25:21.774660+00:00",
+  "base_commit": "23cf58ac1e280105c8863a4a3487fba56cc651dd",
+  "validation": "Real PostgreSQL tool calls in a read-only transaction; no LLM generation, embedding, service restart or benchmark.",
+  "limitations": [
+    "Does not validate final model wording or latency.",
+    "Legacy normalization remains; identity/measure migration is the next step.",
+    "Existing Gradio process has not loaded these changes."
+  ],
+  "catalog_snapshot": {
+    "motorcycles": 32395,
+    "min_year": 1894,
+    "max_year": 2024
+  },
+  "working_tree_sha256": {
+    "src/bikefinder_rag/agent/tools.py": "4884a36cf01e8ed929cb9f98ce31807e7551efcd633fc321011c5242b73a9552",
+    "src/bikefinder_rag/agent/loop.py": "0d4f54a35ce870501c052d57674380fcf93e86587a1cb43ca7a4a232c7939f19",
+    "src/bikefinder_rag/app.py": "43bbd2965aa606234ef20d7bd68ffa3bb02d0dc9c693fe09e281f4f8e701ad43",
+    "scripts/validate_technical_catalog.py": "665b45588bcdfe9ace36a6977445e5e6efe3cee5ed4bdcc320323a868c1918cd"
+  },
+  "selected_evidence_sha256": "f2a8d8c147f9d2035e5b13ed11728558334cbc4c99a8778fbea823dcf1f8d7d8",
+  "cases": [
+    {
+      "case": "sheet_exact_variant",
+      "tool": "get_bike_details",
+      "arguments": {
+        "brand": "Suzuki",
+        "model": "GSF 1200 N Bandit",
+        "year": 2000
+      },
+      "result": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 N Bandit",
+          "year": 2000,
+          "category": "Allround",
+          "category_fr": "Roadster",
+          "displacement_ccm": 1157.0,
+          "weight_kg": 214.0,
+          "power_hp": 98.0,
+          "torque_nm": 91.0,
+          "seat_height_mm": 835.0,
+          "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_n_bandit_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.615743+00:00",
+          "specs": {
+            "Type": "Allround",
+            "Output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+            "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+            "Gearbox": "5-speed",
+            "Starter": "Electric",
+            "Top speed": "220.0 km/h (136.7 mph)",
+            "Wheelbase": "1435 mm (56.5 inches)",
+            "Dry weight": "214.0 kg (471.8 pounds)",
+            "Engine size": "1157.0 ccm (70.60 cubic inches)",
+            "Rear brakes": "Single disc",
+            "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+            "Front brakes": "Dual disc",
+            "Color options": "Black, silver, maroon",
+            "Fuel capacity": "19.00 litres (5.02 US gallons)",
+            "Cooling system": "Oil & air",
+            "Type of engine": "In-line four, four-stroke",
+            "Motorcycle name": "Suzuki GSF 1200 N Bandit",
+            "Transmission type": "Chain  (final drive)",
+            "Power/weight ratio": "0.4579 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "comparison_second_sheet",
+      "tool": "get_bike_details",
+      "arguments": {
+        "brand": "Kawasaki",
+        "model": "ER-5 Twister",
+        "year": 2000
+      },
+      "result": [
+        {
+          "brand": "Kawasaki",
+          "model": "ER-5 Twister",
+          "year": 2000,
+          "category": "Naked bike",
+          "category_fr": "Roadster",
+          "displacement_ccm": 499.0,
+          "weight_kg": 174.0,
+          "power_hp": 50.0,
+          "torque_nm": 45.0,
+          "seat_height_mm": 780.0,
+          "url": "https://bikez.com/motorcycles/kawasaki_er-5_twister_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.514996+00:00",
+          "specs": {
+            "Type": "Naked bike",
+            "Model": "Kawasaki ER-5 Twister",
+            "Output": "50.0 HP (36.5 kW )) @ 9000 RPM",
+            "Torque": "45.0 Nm (4.6 kgf-m or 33.2 ft.lbs) @ 7200 RPM",
+            "Gearbox": "6-speed",
+            "Top speed": "160.0 km/h (99.4 mph)",
+            "Wheelbase": "1430 mm (56.3 inches)",
+            "Dry weight": "174.0 kg (383.6 pounds)",
+            "Engine size": "499.0 ccm (30.45 cubic inches)",
+            "Rear brakes": "Expanding brake",
+            "Seat height": "780 mm (30.7 inches) If adjustable, lowest setting.",
+            "Front brakes": "Single disc",
+            "Color options": "Red, green, blue",
+            "Fuel capacity": "16.00 litres (4.23 US gallons)",
+            "Cooling system": "Liquid",
+            "Type of engine": "Twin, four-stroke",
+            "Power/weight ratio": "0.2874 HP/kg",
+            "Year of manufacture": "2000"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "different_variant",
+      "tool": "get_bike_details",
+      "arguments": {
+        "brand": "Suzuki",
+        "model": "GSF 1200 S Bandit",
+        "year": 2000
+      },
+      "result": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 S Bandit",
+          "year": 2000,
+          "category": "Allround",
+          "category_fr": "Roadster",
+          "displacement_ccm": 1157.0,
+          "weight_kg": 214.0,
+          "power_hp": 98.0,
+          "torque_nm": 91.0,
+          "seat_height_mm": 835.0,
+          "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.570991+00:00",
+          "specs": {
+            "Model": "Suzuki GSF 1200 S Bandit",
+            "Torque": "91.0 Nm (9.3 kgf-m or 67.1 ft.lbs) @ 4500 RPM",
+            "Gearbox": "5-speed",
+            "Starter": "Electric",
+            "Category": "Allround",
+            "Top speed": "220.0 km/h (136.7 mph)",
+            "Wheelbase": "1435 mm (56.5 inches)",
+            "Dry weight": "214.0 kg (471.8 pounds)",
+            "Model year": "2000",
+            "Engine type": "In-line four, four-stroke",
+            "Rear brakes": "Single disc",
+            "Seat height": "835 mm (32.9 inches) If adjustable, lowest setting.",
+            "Displacement": "1157.0 ccm (70.60 cubic inches)",
+            "Front brakes": "Dual disc",
+            "Power output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+            "Color options": "Black, silver, maroon",
+            "Fuel capacity": "19.00 litres (5.02 US gallons)",
+            "Cooling system": "Oil & air",
+            "Transmission type": "Chain  (final drive)",
+            "Power/weight ratio": "0.4579 HP/kg"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "absent_sheet",
+      "tool": "get_bike_details",
+      "arguments": {
+        "brand": "FixtureUnlisted",
+        "model": "FixtureUnlisted",
+        "year": 2000
+      },
+      "result": [],
+      "passed": true
+    },
+    {
+      "case": "year_listing",
+      "tool": "filter_specs",
+      "arguments": {
+        "min_year": 2000,
+        "max_year": 2000,
+        "limit": 20
+      },
+      "result": [
+        {
+          "brand": "Aprilia",
+          "model": "ETX 125",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 124.8,
+          "weight_kg": 129.0,
+          "power_hp": 12.1,
+          "torque_nm": 14.0,
+          "seat_height_mm": 915.0,
+          "url": "https://bikez.com/motorcycles/aprilia_etx_125_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.584291+00:00",
+          "specs": {
+            "Torque": "14.0 Nm (1.4 kgf-m or 10.3 ft.lbs) @ 6000 RPM",
+            "Dry weight": "115.0 kg (253.5 pounds)",
+            "Seat height": "915 mm (36.0 inches) If adjustable, lowest setting.",
+            "Displacement": "124.8 ccm (7.62 cubic inches)",
+            "Power output": "12.1 HP (8.8 kW )) @ 6750 RPM",
+            "Weight incl. oil, gas, etc": "129.0 kg (284.4 pounds)"
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "Moto 6.5",
+          "year": 2000,
+          "category": "Unspecified category",
+          "category_fr": null,
+          "displacement_ccm": 650.0,
+          "weight_kg": 150.0,
+          "power_hp": 42.0,
+          "torque_nm": 51.0,
+          "seat_height_mm": 810.0,
+          "url": "https://bikez.com/motorcycles/aprilia_moto_65_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.587620+00:00",
+          "specs": {
+            "Power": "42.0 HP (30.7 kW )) @ 6250 RPM",
+            "Torque": "51.0 Nm (5.2 kgf-m or 37.6 ft.lbs) @ 4500 RPM",
+            "Dry weight": "150.0 kg (330.7 pounds)",
+            "Seat height": "810 mm (31.9 inches) If adjustable, lowest setting.",
+            "Displacement": "650.0 ccm (39.66 cubic inches)"
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "Pegaso 650",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 652.0,
+          "weight_kg": 180.0,
+          "power_hp": 50.0,
+          "torque_nm": 54.0,
+          "seat_height_mm": 870.0,
+          "url": "https://bikez.com/motorcycles/aprilia_pegaso_650_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.429698+00:00",
+          "specs": {
+            "Output": "50.0 HP (36.5 kW ))",
+            "Torque": "54.0 Nm (5.5 kgf-m or 39.8 ft.lbs)",
+            "Dry weight": "180.0 kg (396.8 pounds)",
+            "Engine size": "652.0 ccm (39.79 cubic inches)",
+            "Seat height": "870 mm (34.3 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RS 125",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 124.8,
+          "weight_kg": 139.0,
+          "power_hp": 29.5,
+          "torque_nm": 20.0,
+          "seat_height_mm": 805.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rs_125_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.591051+00:00",
+          "specs": {
+            "Output": "29.5 HP (21.5 kW )) @ 11250 RPM",
+            "Torque": "20.0 Nm (2.0 kgf-m or 14.8 ft.lbs) @ 10000 RPM",
+            "Engine size": "124.8 ccm (7.62 cubic inches)",
+            "Seat height": "805 mm (31.7 inches) If adjustable, lowest setting.",
+            "Weight incl. oil, gas, etc": "139.0 kg (306.4 pounds)"
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RS 250",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 249.3,
+          "weight_kg": 140.0,
+          "power_hp": 61.7,
+          "torque_nm": 40.0,
+          "seat_height_mm": 810.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rs_250_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.430526+00:00",
+          "specs": {
+            "Effect": "61.7 HP (45.0 kW )) @ 11000 RPM",
+            "Torque": "40.0 Nm (4.1 kgf-m or 29.5 ft.lbs) @ 11000 RPM",
+            "Dry weight": "140.0 kg (308.6 pounds)",
+            "Engine size": "249.3 ccm (15.21 cubic inches)",
+            "Seat height": "810 mm (31.9 inches) If adjustable, lowest setting.",
+            "Weight incl. oil, gas, etc": "167.0 kg (368.2 pounds)"
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RSV Mille",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 998.0,
+          "weight_kg": 189.0,
+          "power_hp": 128.0,
+          "torque_nm": 105.0,
+          "seat_height_mm": 825.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rsv_mille_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.431123+00:00",
+          "specs": {
+            "Torque": "105.0 Nm (10.7 kgf-m or 77.4 ft.lbs) @ 7000 RPM",
+            "Dry weight": "189.0 kg (416.7 pounds)",
+            "Seat height": "825 mm (32.5 inches) If adjustable, lowest setting.",
+            "Displacement": "998.0 ccm (60.90 cubic inches)",
+            "Power output": "128.0 HP (93.4 kW )) @ 9250 RPM"
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RSV Mille R",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 998.0,
+          "weight_kg": 185.0,
+          "power_hp": 128.0,
+          "torque_nm": 105.0,
+          "seat_height_mm": 825.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rsv_mille_r_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.431678+00:00",
+          "specs": {
+            "Effect": "128.0 HP (93.4 kW )) @ 9500 RPM",
+            "Torque": "105.0 Nm (10.7 kgf-m or 77.4 ft.lbs) @ 7000 RPM",
+            "Dry weight": "185.0 kg (407.9 pounds)",
+            "Engine size": "998.0 ccm (60.90 cubic inches)",
+            "Seat height": "825 mm (32.5 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RSV Mille SL Falco",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sport-GT",
+          "displacement_ccm": 998.0,
+          "weight_kg": 190.0,
+          "power_hp": 118.0,
+          "torque_nm": 95.6,
+          "seat_height_mm": 815.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rsv_mille_sl_falco_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.432261+00:00",
+          "specs": {
+            "Output": "118.0 HP (86.1 kW )) @ 9250 RPM",
+            "Torque": "95.6 Nm (9.7 kgf-m or 70.5 ft.lbs) @ 7000 RPM",
+            "Dry weight": "190.0 kg (418.9 pounds)",
+            "Engine size": "998.0 ccm (60.90 cubic inches)",
+            "Seat height": "815 mm (32.1 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "RSV Mille SP",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 998.0,
+          "weight_kg": 185.0,
+          "power_hp": 145.0,
+          "torque_nm": null,
+          "seat_height_mm": 825.0,
+          "url": "https://bikez.com/motorcycles/aprilia_rsv_mille_sp_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.432864+00:00",
+          "specs": {
+            "Power": "145.0 HP (105.8 kW )) @ 11000 RPM",
+            "Dry weight": "185.0 kg (407.9 pounds)",
+            "Seat height": "825 mm (32.5 inches) If adjustable, lowest setting.",
+            "Displacement": "998.0 ccm (60.90 cubic inches)"
+          }
+        },
+        {
+          "brand": "Atlas",
+          "model": "Honda CG 125 - Millenium Power",
+          "year": 2000,
+          "category": "Naked bike",
+          "category_fr": null,
+          "displacement_ccm": 125.0,
+          "weight_kg": null,
+          "power_hp": null,
+          "torque_nm": null,
+          "seat_height_mm": null,
+          "url": "https://bikez.com/motorcycles/atlas_honda_cg_125-millenium_power_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.594602+00:00",
+          "specs": {
+            "Engine size": "125.0 ccm (7.63 cubic inches)"
+          }
+        },
+        {
+          "brand": "Bimota",
+          "model": "DB3 Mantra",
+          "year": 2000,
+          "category": "Naked bike",
+          "category_fr": null,
+          "displacement_ccm": 904.0,
+          "weight_kg": 172.0,
+          "power_hp": 80.0,
+          "torque_nm": 92.0,
+          "seat_height_mm": 790.0,
+          "url": "https://bikez.com/motorcycles/bimota_db3_mantra_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.595735+00:00",
+          "specs": {
+            "Effect": "80.0 HP (58.4 kW )) @ 7000 RPM",
+            "Torque": "92.0 Nm (9.4 kgf-m or 67.9 ft.lbs) @ 5700 RPM",
+            "Dry weight": "172.0 kg (379.2 pounds)",
+            "Engine size": "904.0 ccm (55.16 cubic inches)",
+            "Seat height": "790 mm (31.1 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Bimota",
+          "model": "DB4 - DB4 Iniezione",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": null,
+          "displacement_ccm": 904.0,
+          "weight_kg": 169.0,
+          "power_hp": 76.0,
+          "torque_nm": 75.0,
+          "seat_height_mm": 820.0,
+          "url": "https://bikez.com/motorcycles/bimota_db4-db4_iniezione_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.592357+00:00",
+          "specs": {
+            "Power": "76.0 HP (55.5 kW )) @ 7100 RPM",
+            "Torque": "75.0 Nm (7.6 kgf-m or 55.3 ft.lbs) @ 5600 RPM",
+            "Dry weight": "169.0 kg (372.6 pounds)",
+            "Seat height": "820 mm (32.3 inches) If adjustable, lowest setting.",
+            "Displacement": "904.0 ccm (55.16 cubic inches)"
+          }
+        },
+        {
+          "brand": "Bimota",
+          "model": "SB 6",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": null,
+          "displacement_ccm": 1100.0,
+          "weight_kg": null,
+          "power_hp": 160.0,
+          "torque_nm": null,
+          "seat_height_mm": null,
+          "url": "https://bikez.com/motorcycles/bimota_sb_6_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.433505+00:00",
+          "specs": {
+            "Power": "160.0 HP (116.8 kW )) @ 9500 RPM",
+            "Displacement": "1100.0 ccm (67.12 cubic inches)"
+          }
+        },
+        {
+          "brand": "Bimota",
+          "model": "SB6R",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": null,
+          "displacement_ccm": 1074.0,
+          "weight_kg": 190.0,
+          "power_hp": 152.0,
+          "torque_nm": 119.0,
+          "seat_height_mm": 800.0,
+          "url": "https://bikez.com/motorcycles/bimota_sb6r_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.434133+00:00",
+          "specs": {
+            "Effect": "152.0 HP (110.9 kW )) @ 10000 RPM",
+            "Torque": "119.0 Nm (12.1 kgf-m or 87.8 ft.lbs) @ 8700 RPM",
+            "Dry weight": "190.0 kg (418.9 pounds)",
+            "Engine size": "1074.0 ccm (65.54 cubic inches)",
+            "Seat height": "800 mm (31.5 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Bimota",
+          "model": "SB8R",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": "Sportive",
+          "displacement_ccm": 996.0,
+          "weight_kg": 178.0,
+          "power_hp": 135.0,
+          "torque_nm": 104.0,
+          "seat_height_mm": 810.0,
+          "url": "https://bikez.com/motorcycles/bimota_sb8r_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.435192+00:00",
+          "specs": {
+            "Output": "135.0 HP (98.5 kW )) @ 10000 RPM",
+            "Torque": "104.0 Nm (10.6 kgf-m or 76.7 ft.lbs) @ 8500 RPM",
+            "Dry weight": "178.0 kg (392.4 pounds)",
+            "Engine size": "996.0 ccm (60.78 cubic inches)",
+            "Seat height": "810 mm (31.9 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Bimota",
+          "model": "YB 11 Edizione Speciale",
+          "year": 2000,
+          "category": "Sport",
+          "category_fr": null,
+          "displacement_ccm": 1002.0,
+          "weight_kg": 183.0,
+          "power_hp": 148.0,
+          "torque_nm": 110.0,
+          "seat_height_mm": 770.0,
+          "url": "https://bikez.com/motorcycles/bimota_yb_11_edizione_speciale_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.435735+00:00",
+          "specs": {
+            "Torque": "110.0 Nm (11.2 kgf-m or 81.1 ft.lbs) @ 8500 RPM",
+            "Dry weight": "183.0 kg (403.4 pounds)",
+            "Seat height": "770 mm (30.3 inches) If adjustable, lowest setting.",
+            "Displacement": "1002.0 ccm (61.14 cubic inches)",
+            "Power output": "148.0 HP (108.0 kW )) @ 10000 RPM"
+          }
+        },
+        {
+          "brand": "BMW",
+          "model": "C1",
+          "year": 2000,
+          "category": "Unspecified category",
+          "category_fr": null,
+          "displacement_ccm": 125.0,
+          "weight_kg": 185.0,
+          "power_hp": 15.0,
+          "torque_nm": 12.0,
+          "seat_height_mm": 701.0,
+          "url": "https://bikez.com/motorcycles/bmw_c1_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.588651+00:00",
+          "specs": {
+            "Effect": "15.0 HP (10.9 kW )) @ 9250 RPM",
+            "Torque": "12.0 Nm (1.2 kgf-m or 8.9 ft.lbs) @ 6500 RPM",
+            "Dry weight": "185.0 kg (407.9 pounds)",
+            "Engine size": "125.0 ccm (7.63 cubic inches)",
+            "Seat height": "701 mm (27.6 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "BMW",
+          "model": "F 650",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 652.0,
+          "weight_kg": 191.0,
+          "power_hp": 48.0,
+          "torque_nm": 57.0,
+          "seat_height_mm": 785.0,
+          "url": "https://bikez.com/motorcycles/bmw_f_650_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.585280+00:00",
+          "specs": {
+            "Torque": "57.0 Nm (5.8 kgf-m or 42.0 ft.lbs) @ 5200 RPM",
+            "Dry weight": "191.0 kg (421.1 pounds)",
+            "Seat height": "785 mm (30.9 inches) If adjustable, lowest setting.",
+            "Displacement": "652.0 ccm (39.79 cubic inches)",
+            "Power output": "48.0 HP (35.0 kW )) @ 6500 RPM"
+          }
+        },
+        {
+          "brand": "BMW",
+          "model": "F 650 ST Strada",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 652.0,
+          "weight_kg": 176.0,
+          "power_hp": 48.0,
+          "torque_nm": 57.0,
+          "seat_height_mm": 785.0,
+          "url": "https://bikez.com/motorcycles/bmw_f_650_st_strada_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.436281+00:00",
+          "specs": {
+            "Output": "48.0 HP (35.0 kW )) @ 6500 RPM",
+            "Torque": "57.0 Nm (5.8 kgf-m or 42.0 ft.lbs) @ 5200 RPM",
+            "Dry weight": "176.0 kg (388.0 pounds)",
+            "Engine size": "652.0 ccm (39.79 cubic inches)",
+            "Seat height": "785 mm (30.9 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "BMW",
+          "model": "K 1200 LT",
+          "year": 2000,
+          "category": "Touring",
+          "category_fr": "Routière & GT",
+          "displacement_ccm": 1171.0,
+          "weight_kg": 354.0,
+          "power_hp": 98.0,
+          "torque_nm": 115.0,
+          "seat_height_mm": 770.0,
+          "url": "https://bikez.com/motorcycles/bmw_k_1200_lt_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.598029+00:00",
+          "specs": {
+            "Power": "98.0 HP (71.5 kW )) @ 6750 RPM",
+            "Torque": "115.0 Nm (11.7 kgf-m or 84.8 ft.lbs) @ 4750 RPM",
+            "Dry weight": "354.0 kg (780.4 pounds)",
+            "Seat height": "770 mm (30.3 inches) If adjustable, lowest setting.",
+            "Displacement": "1171.0 ccm (71.45 cubic inches)"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "year_count",
+      "tool": "filter_specs",
+      "arguments": {
+        "min_year": 2000,
+        "max_year": 2000,
+        "count_only": true
+      },
+      "result": [
+        {
+          "matching_motorcycles": 323
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "torque_filter",
+      "tool": "filter_specs",
+      "arguments": {
+        "min_year": 2000,
+        "max_year": 2000,
+        "min_torque_nm": 50,
+        "max_torque_nm": 70,
+        "limit": 5
+      },
+      "result": [
+        {
+          "brand": "Aprilia",
+          "model": "Moto 6.5",
+          "year": 2000,
+          "category": "Unspecified category",
+          "category_fr": null,
+          "displacement_ccm": 650.0,
+          "weight_kg": 150.0,
+          "power_hp": 42.0,
+          "torque_nm": 51.0,
+          "seat_height_mm": 810.0,
+          "url": "https://bikez.com/motorcycles/aprilia_moto_65_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.587620+00:00",
+          "specs": {
+            "Power": "42.0 HP (30.7 kW )) @ 6250 RPM",
+            "Torque": "51.0 Nm (5.2 kgf-m or 37.6 ft.lbs) @ 4500 RPM",
+            "Dry weight": "150.0 kg (330.7 pounds)",
+            "Seat height": "810 mm (31.9 inches) If adjustable, lowest setting.",
+            "Displacement": "650.0 ccm (39.66 cubic inches)"
+          }
+        },
+        {
+          "brand": "Aprilia",
+          "model": "Pegaso 650",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 652.0,
+          "weight_kg": 180.0,
+          "power_hp": 50.0,
+          "torque_nm": 54.0,
+          "seat_height_mm": 870.0,
+          "url": "https://bikez.com/motorcycles/aprilia_pegaso_650_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.429698+00:00",
+          "specs": {
+            "Output": "50.0 HP (36.5 kW ))",
+            "Torque": "54.0 Nm (5.5 kgf-m or 39.8 ft.lbs)",
+            "Dry weight": "180.0 kg (396.8 pounds)",
+            "Engine size": "652.0 ccm (39.79 cubic inches)",
+            "Seat height": "870 mm (34.3 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "BMW",
+          "model": "F 650",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 652.0,
+          "weight_kg": 191.0,
+          "power_hp": 48.0,
+          "torque_nm": 57.0,
+          "seat_height_mm": 785.0,
+          "url": "https://bikez.com/motorcycles/bmw_f_650_2000.php",
+          "scraped_at": "2026-08-30 21:34:27.585280+00:00",
+          "specs": {
+            "Torque": "57.0 Nm (5.8 kgf-m or 42.0 ft.lbs) @ 5200 RPM",
+            "Dry weight": "191.0 kg (421.1 pounds)",
+            "Seat height": "785 mm (30.9 inches) If adjustable, lowest setting.",
+            "Displacement": "652.0 ccm (39.79 cubic inches)",
+            "Power output": "48.0 HP (35.0 kW )) @ 6500 RPM"
+          }
+        },
+        {
+          "brand": "BMW",
+          "model": "F 650 ST Strada",
+          "year": 2000,
+          "category": "Enduro/offroad",
+          "category_fr": "Trail",
+          "displacement_ccm": 652.0,
+          "weight_kg": 176.0,
+          "power_hp": 48.0,
+          "torque_nm": 57.0,
+          "seat_height_mm": 785.0,
+          "url": "https://bikez.com/motorcycles/bmw_f_650_st_strada_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.436281+00:00",
+          "specs": {
+            "Output": "48.0 HP (35.0 kW )) @ 6500 RPM",
+            "Torque": "57.0 Nm (5.8 kgf-m or 42.0 ft.lbs) @ 5200 RPM",
+            "Dry weight": "176.0 kg (388.0 pounds)",
+            "Engine size": "652.0 ccm (39.79 cubic inches)",
+            "Seat height": "785 mm (30.9 inches) If adjustable, lowest setting."
+          }
+        },
+        {
+          "brand": "Ducati",
+          "model": "Monster 600 - Monster 600 Dark - Monster 600 City - Monster 600 Metallic",
+          "year": 2000,
+          "category": "Naked bike",
+          "category_fr": "Roadster",
+          "displacement_ccm": 583.0,
+          "weight_kg": 174.0,
+          "power_hp": 51.0,
+          "torque_nm": 51.0,
+          "seat_height_mm": 770.0,
+          "url": "https://bikez.com/motorcycles/ducati_monster_600-monster_600_dark-monster_600_city-monster_600_metallic_2000.php",
+          "scraped_at": "2026-08-30 23:27:36.454233+00:00",
+          "specs": {
+            "Torque": "51.0 Nm (5.2 kgf-m or 37.6 ft.lbs) @ 6000 RPM",
+            "Dry weight": "174.0 kg (383.6 pounds)",
+            "Seat height": "770 mm (30.3 inches) If adjustable, lowest setting.",
+            "Displacement": "583.0 ccm (35.57 cubic inches)",
+            "Power output": "51.0 HP (37.2 kW )) @ 8000 RPM"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "equipment_unsupported",
+      "tool": "filter_specs",
+      "arguments": {
+        "min_year": 2000,
+        "max_year": 2000,
+        "abs": true
+      },
+      "result": [
+        {
+          "error": "Unsupported argument 'abs' for filter_specs; no search was executed."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "missing_model_year",
+      "tool": "get_bike_details",
+      "arguments": {
+        "model": "GSF 1200 N Bandit"
+      },
+      "result": [
+        {
+          "error": "Invalid arguments for get_bike_details: 'year' is required; ask for an explicit model year when missing. No search was executed."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "reviews_disabled",
+      "tool": "search_reviews",
+      "arguments": {
+        "query": "technical specifications"
+      },
+      "result": [
+        {
+          "error": "Owner reviews are disabled in the technical catalog. Use technical sheets; do not infer specifications from opinions."
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

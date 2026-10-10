@@ -13,7 +13,13 @@ load_dotenv()
 
 import gradio as gr
 
-from bikefinder_rag.agent.loop import BACKEND, OLLAMA_MODEL, TURN_LIMIT_MESSAGE, run_agent
+from bikefinder_rag.agent.loop import (
+    BACKEND,
+    OLLAMA_MODEL,
+    OLLAMA_TURN_TIMEOUT_SECONDS,
+    TURN_LIMIT_MESSAGE,
+    run_agent,
+)
 from bikefinder_rag.db.client import get_connection
 
 
@@ -110,30 +116,53 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
     return chat_history, updated_history
 
 
-with gr.Blocks(title="Bikefinder RAG") as demo:
+with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
+    gr.Markdown(
+        "# 🏍️ Bikefinder — catalogue technique\n"
+        "Consultez une fiche par modèle et **millésime**, ou comparez plusieurs motos "
+        "d'une même année. Précisez la marque, le modèle, l'année et, si vous la "
+        "connaissez, la variante. Demandez les unités et les sources des caractéristiques."
+    )
     if BACKEND == "ollama":
         gr.Markdown(
-            "# 🏍️ Bikefinder RAG (local proof of concept)\n"
-            "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
-            f"Running on a local Ollama model (`{OLLAMA_MODEL}`) — "
-            "no API key needed, but expect slower responses."
+            f"**POC local** : modèle `{OLLAMA_MODEL}` exécuté avec Ollama, "
+            "sur le catalogue chargé sur votre machine. Aucune clé API nécessaire. "
+            f"Budget de traitement : {OLLAMA_TURN_TIMEOUT_SECONDS:g} s par question ; "
+            "une recherche déjà en cours peut prolonger l'attente."
         )
         api_key_input = gr.Textbox(visible=False)
     else:
         gr.Markdown(
-            "# 🏍️ Bikefinder RAG\n"
-            "Ask about motorcycle specs and owner reviews, scraped from bikez.com. "
-            "Bring your own [Anthropic](https://console.anthropic.com/) or "
-            "[OpenRouter](https://openrouter.ai/keys) API key — detected by its "
-            "prefix, used only for your session and never stored."
+            "**POC avec modèle distant** : cette configuration utilise votre clé "
+            "[Anthropic](https://console.anthropic.com/) ou "
+            "[OpenRouter](https://openrouter.ai/keys), uniquement pour cette session. "
+            "Les questions et les fiches retenues sont transmises à ce fournisseur."
         )
         api_key_input = gr.Textbox(
-            label="API key (Anthropic or OpenRouter)",
+            label="Clé API (Anthropic ou OpenRouter)",
             type="password",
             placeholder="sk-ant-... or sk-or-...",
         )
-    chatbot = gr.Chatbot(label="Chat")
-    msg = gr.Textbox(label="Your question", placeholder="A light naked bike under 600cc, and what do owners say about it?")
+    gr.Markdown(
+        "**Limites du catalogue** : la couverture des années, variantes et champs "
+        "est partielle. Une donnée absente reste **inconnue**, y compris pour un "
+        "équipement. Le poids sec et le poids tous pleins ne sont pas encore "
+        "normalisés séparément : leur comparaison doit rester prudente. "
+        "Le premier millésime présent ne prouve pas la date de lancement."
+    )
+    chatbot = gr.Chatbot(label="Questions techniques")
+    msg = gr.Textbox(
+        label="Votre question",
+        placeholder="Fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance, couple, poids et sources ?",
+    )
+    question_examples = gr.Examples(
+        examples=[
+            ["Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec les unités, les sources et les données inconnues."],
+            ["Compare la Suzuki GSF 1200 N Bandit et la Kawasaki ER-5 Twister de 2000 dans un tableau : cylindrée, puissance, couple et poids, avec les sources et les données inconnues."],
+        ],
+        inputs=msg,
+        label="Exemples de questions techniques",
+    )
     agent_state = gr.State([])
 
     msg.submit(

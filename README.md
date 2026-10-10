@@ -1,9 +1,11 @@
 # Bikefinder RAG
 
-An entirely local **proof of concept** for agentic RAG over motorcycle specs
-and owner reviews. It combines Ollama, PostgreSQL/pgvector and local embedding
-and reranking models. Ask it things like *"a light naked bike under 600cc, and
-what do owners say about reliability?"* in French or English.
+An entirely local **proof of concept** for a technical motorcycle catalog
+by model year. Ollama queries PostgreSQL through structured tools. Ask for
+a specific sheet or a same-year comparison, in French or English — for example
+*"Compare the Suzuki GSF 1200 N Bandit and Kawasaki ER-5 Twister in 2000,
+with units, sources and missing data."* The existing owner-review corpus and
+its retrieval code are retained for a later, separately evaluated extension.
 
 This is a learning project and portfolio piece. The default chat path needs
 no cloud account or API key. Installation and the first model downloads need
@@ -36,13 +38,15 @@ reports alongside the data — the short version:
   is checked; a motorcycle only gets a narrative/review layer if it has ≥3
   substantive comments. The narrative subset emerges from what actually has
   discussion, not from a guessed popularity ranking.
-- **Agentic RAG, explicit tool-use loop** — Ollama by default, optional
-  cloud backends, no orchestration framework. Three tools:
+- **Explicit technical tool-use loop** — Ollama by default, optional
+  cloud backends, no orchestration framework. Two tools by default:
   `filter_specs` (typed parameters only, parameterized SQL, the LLM never
   writes SQL — plus a `count_only` mode for "how many" questions),
-  `search_reviews` (pgvector cosine search with optional fuzzy/`ILIKE`
-  metadata filters) and `get_bike_details` (one bike's full factory spec
-  sheet, `raw_specs` included).
+  and `get_bike_details` (one model's original technical sheets for an
+  explicit year, with source URLs and original labels/units). Reviews are
+  blocked in this path; price, A2 eligibility and family recall context are
+  also outside the default tools. Legacy review retrieval remains available
+  to Python callers through an explicit opt-in.
 - **PostgreSQL + pgvector**, one database for both structured specs and
   review embeddings.
 - **Comments belong to model families, not model-years.** bikez.com shares
@@ -92,12 +96,14 @@ reports alongside the data — the short version:
   default. The optional cloud interface asks for the visitor's own key.
   The Hugging Face deployment directory is a historical showcase experiment.
 
-The next iteration will prioritize **technical specifications and performance
-comparisons by model year**, with owner reviews deferred until that catalog is
-reliable. The [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
-and [local plan](docs/technical-catalog-refactor.md) record the coverage audit,
-data corrections, acceptance cases and model benchmark for an M5 with 32 GB.
-This is planned work; the current demo still includes owner reviews.
+The first technical slice offers **sheets and simple comparisons by model
+year**, with owner reviews deferred. Its [validation record](docs/technical-catalog-first-slice.md)
+separates real SQL checks, simulated model transport and the pending live
+generation check. The [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
+and [local plan](docs/technical-catalog-refactor.md) cover the remaining
+identity/measure corrections, equipment/colors and model evaluation for an
+M5 with 32 GB. Normalized weights still mix dry and wet values; use the original
+labels, and do not derive a power/weight ranking from these legacy columns.
 
 ## Which model years do the reviews cover?
 
@@ -204,13 +210,13 @@ Agent loop (Ollama by default, explicit tool-use)
         │
         ├── filter_specs ────► PostgreSQL (typed columns, parameterized SQL)
         │
-        ├── search_reviews ──► PostgreSQL + pgvector (BGE-M3 dense search
-        │                       + EN/FR full-text, RRF, local reranker)
-        │
-        └── get_bike_details ► PostgreSQL (one bike's full spec sheet +
-                                the family's NHTSA recalls and used-price
-                                estimate)
+        └── get_bike_details ► PostgreSQL (explicit model year, original
+                                technical specs and source URL)
 ```
+
+The retained review pipeline uses pgvector, BGE-M3 and a local reranker;
+default technical queries on the loaded catalog do not import or load those
+models. The existing dataset loader still processes comments.
 
 ## Project layout
 
