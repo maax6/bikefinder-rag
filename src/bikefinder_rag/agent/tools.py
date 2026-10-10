@@ -454,6 +454,34 @@ _ARG_ALIASES = {
 }
 
 
+_REVIEW_EXCERPT_MAX_CHARS = 2000
+
+
+def _review_excerpt(row: dict) -> dict:
+    """Bound the agent's evidence without changing the stored/ranked review."""
+    result = dict(row)
+    text = result.get("comment_text")
+    if not isinstance(text, str) or len(text) <= _REVIEW_EXCERPT_MAX_CHARS:
+        return result
+
+    # Reserve one character for the ellipsis. Prefer a nearby sentence or
+    # paragraph end, then a word boundary; never discard most of the excerpt
+    # just because a long paragraph has only one early sentence boundary.
+    prefix = text[:_REVIEW_EXCERPT_MAX_CHARS - 1]
+    cut = max((m.end() for m in re.finditer(r"[.!?](?=\s)|\n", prefix)), default=0)
+    if cut < _REVIEW_EXCERPT_MAX_CHARS // 2:
+        cut = max((m.start() for m in re.finditer(r"\s+", prefix)), default=0)
+        if cut < _REVIEW_EXCERPT_MAX_CHARS // 2:
+            cut = len(prefix)
+    result.update(
+        comment_text=prefix[:cut].rstrip() + "…",
+        text_truncated=True,
+        original_text_chars=len(text),
+        excerpt_note="Partial excerpt: the rest of this comment was omitted.",
+    )
+    return result
+
+
 def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
     # Tool-calling LLMs (local models especially) sometimes emit argument
     # names that drift from the schema (e.g. "models" instead of "model", or
@@ -500,6 +528,9 @@ def execute_tool(conn, tool_name: str, tool_input: dict) -> list[dict]:
         results = call(conn, **filtered_input)
     except TypeError as e:
         results = [{"error": f"Invalid arguments for {tool_name}: {e}"}]
+
+    if tool_name == "search_reviews":
+        results = [_review_excerpt(row) for row in results]
 
     if notes:
         return [{"notes": notes}, *(results or [{"info": "No matching rows."}])]
