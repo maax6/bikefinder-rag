@@ -159,6 +159,33 @@ des tests simulés. Les revues du contrat et de l'implémentation ont conduit
 à corriger la reprise après échec de découverte, le refroidissement partagé
 et les redirections changeant d'identité.
 
+## Suivi visuel local
+
+Le collecteur fonctionne sur ce Mac, dans un processus Python indépendant
+de la page de chat. Un suivi local est disponible sur
+<http://127.0.0.1:7861/> : progression, fiches restantes, cadence mesurée,
+durée estimée, dernières fiches et couverture par période. La page se
+rafraîchit toutes les dix secondes et peut être fermée sans arrêter la
+collecte.
+
+Pour relancer uniquement ce suivi :
+
+```bash
+.venv/bin/python scripts/monitor_technical_collection.py --port 7861
+```
+
+Le moniteur lit SQLite en mode lecture seule, dans une transaction courte.
+Il vérifie le PID, le programme et le répertoire du collecteur, plutôt que
+de déduire son activité du seul `running` enregistré dans `status.json`.
+La cadence utilise les succès récents et exclut l'ancien pilote ; l'ETA
+est masquée si le processus est arrêté ou si les données ne sont plus
+récentes. Les huit tests du moniteur vérifient ces cas et la lecture WAL
+pendant une écriture indépendante.
+
+Après ajout du suivi, la suite complète passe : **437 tests** (7,68 s).
+La page a été vérifiée dans le navigateur local, y compris le rafraîchissement
+des compteurs et l'identification du processus de collecte.
+
 ## Livraison suivante
 
 Après la collecte : contrôler les identités, unités et variantes, classer

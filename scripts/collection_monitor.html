@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collecte Motoplanete · Bikefinder</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0d1318; --panel:#151e26; --line:#29353f; --text:#eef4f7; --muted:#99abb9; --green:#8dd9b2; --amber:#edc77d; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,sans-serif; }
+    main { max-width:1100px; padding:42px 28px; margin:auto; }
+    header,.row { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:650; }
+    h1 { font-size:clamp(28px,4vw,38px); font-weight:650; letter-spacing:-.04em; margin:4px 0 8px; }
+    h2 { font-size:18px; margin:0; font-weight:600; }
+    p { margin:0; }
+    .muted { color:var(--muted); }
+    #activity { display:inline-flex; align-items:center; gap:9px; border:1px solid var(--line); border-radius:999px; padding:9px 15px; color:var(--green); font-size:13px; }
+    #activity::before { content:""; width:7px; height:7px; background:currentColor; border-radius:50%; }
+    #activity[data-kind="stopped"],#activity[data-kind="unknown"],#activity[data-kind="waiting"] { color:var(--amber); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:26px; margin-top:25px; }
+    .percentage { font-size:48px; letter-spacing:-.04em; font-weight:650; line-height:1.2; }
+    progress { display:block; width:100%; height:14px; margin:22px 0 12px; appearance:none; border:0; border-radius:9px; overflow:hidden; background:#25333c; }
+    progress::-webkit-progress-bar { background:#25333c; border-radius:9px; }
+    progress::-webkit-progress-value { background:var(--green); border-radius:9px; }
+    progress::-moz-progress-bar { background:var(--green); border-radius:9px; }
+    .metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin:26px 0 8px; }
+    .metric { padding:0 24px; border-left:1px solid var(--line); }
+    .metric:first-child { border:0; padding-left:0; }
+    .value { font-size:30px; letter-spacing:-.025em; font-weight:600; margin:4px 0; font-variant-numeric:tabular-nums; }
+    .caption { font-size:12px; color:var(--muted); }
+    .chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; font-size:12px; color:var(--muted); }
+    .chip { background:#202c35; padding:5px 10px; border-radius:6px; }
+    .notice { font-size:13px; color:var(--muted); margin-top:22px; }
+    #error { color:var(--amber); margin-top:15px; }
+    [hidden] { display:none !important; }
+    table { border-collapse:collapse; width:100%; margin-top:14px; }
+    th,td { text-align:left; padding:13px 0; border-bottom:1px solid var(--line); }
+    th { color:var(--muted); font-size:12px; font-weight:500; }
+    td { font-size:14px; }
+    th:last-child,td:last-child { text-align:right; }
+    tbody tr:last-child td { border-bottom:0; }
+    a { color:var(--text); text-decoration:none; }
+    a:hover { color:var(--green); text-decoration:underline; }
+    .state { color:var(--green); font-size:12px; }
+    .state[data-state="needs_review"],.state[data-state="retryable"],.state[data-state="terminal"],.state[data-state="blocked"] { color:var(--amber); }
+    .timestamp { color:var(--muted); font-size:12px; }
+    .small { font-size:12px; }
+    details { margin-top:25px; color:var(--muted); font-size:13px; }
+    summary { cursor:pointer; }
+    code { overflow-wrap:anywhere; font-size:12px; }
+    .storage { margin-top:10px; }
+    .years { display:grid; gap:9px; margin-top:16px; }
+    .year-row { display:grid; grid-template-columns:95px 1fr 85px; align-items:center; gap:12px; font-size:12px; }
+    .year-track { height:7px; background:#25333c; border-radius:6px; overflow:hidden; }
+    .year-fill { height:100%; background:var(--green); }
+    .year-count { text-align:right; font-variant-numeric:tabular-nums; }
+    @media(max-width:650px) { main { padding:25px 16px; } .panel { padding:20px; } .metrics { grid-template-columns:1fr; gap:16px; } .metric { padding:15px 0 0; border-left:0; border-top:1px solid var(--line); } .value { font-size:28px; } .time-column { display:none; } .percentage { font-size:40px; } td:first-child { max-width:220px; overflow-wrap:anywhere; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="eyebrow">Bikefinder · données techniques</div><h1>Collecte Motoplanete</h1><p class="muted">Sur ce Mac · actualisation toutes les 10 secondes</p></div>
+    <span id="activity" data-kind="unknown">Connexion au suivi…</span>
+  </header>
+  <p id="error" role="alert" hidden></p>
+  <section class="panel" aria-labelledby="progress-title">
+    <div class="row"><div><h2 id="progress-title">Fiches enregistrées</h2><p id="count" class="muted">Chargement…</p></div><div id="percentage" class="percentage">—</div></div>
+    <progress id="progress" value="0" max="100" aria-label="Part des fiches enregistrées"></progress>
+    <div class="row small muted"><span id="remaining">—</span><span id="last-update">—</span></div>
+    <div class="metrics">
+      <div class="metric"><p class="muted">Cadence récente</p><div id="rate" class="value">—</div><p class="caption">Mesurée sur les derniers succès</p></div>
+      <div class="metric"><p class="muted">Temps restant estimé</p><div id="eta" class="value">—</div><p class="caption">Si cette cadence se maintient</p></div>
+      <div class="metric"><p class="muted">Délai minimum restant</p><div id="minimum" class="value">—</div><p class="caption">10 secondes par fiche, hors chargement</p></div>
+    </div>
+    <div id="states" class="chips"></div>
+    <p class="notice">Chaque succès est sauvegardé immédiatement. Une fiche à vérifier reste séparée. L'estimation dépend du site, du réseau et des périodes de veille du Mac.</p>
+  </section>
+  <section class="panel" aria-labelledby="recent-title">
+    <div class="row"><h2 id="recent-title">Dernières fiches traitées</h2><span class="caption">Du plus récent au plus ancien</span></div>
+    <table><thead><tr><th scope="col">Moto / millésime</th><th scope="col" class="time-column">Enregistrée à</th><th scope="col">Résultat</th></tr></thead><tbody id="records"></tbody></table>
+  </section>
+  <details><summary>Couverture par période</summary><div id="years" class="years"></div></details>
+  <details><summary>Emplacement et processus</summary><p id="process" class="storage"></p><p class="storage">Données sauvegardées dans <code id="out-dir"></code></p><p class="storage">La collecte continue même si cette page est fermée.</p></details>
+</main>
+<script>
+  const number = new Intl.NumberFormat('fr-FR');
+  const percent = new Intl.NumberFormat('fr-FR', { maximumFractionDigits:2 });
+  const clock = new Intl.DateTimeFormat('fr-FR', { timeZone:'Europe/Paris', hour:'2-digit', minute:'2-digit', second:'2-digit' });
+  const labels = { pending:'En attente', success:'Enregistrées', quarantined:'Isolées pour examen', needs_review:'À vérifier', retryable:'À réessayer', terminal:'Inaccessibles', blocked:'Accès interdit' };
+  const resultLabels = { success:'Enregistrée', needs_review:'À vérifier', retryable:'À réessayer', terminal:'Inaccessible', blocked:'Accès interdit' };
+  const el = id => document.getElementById(id);
+  const text = (id, value) => { el(id).textContent = value; };
+  function duration(seconds) {
+    if (seconds == null) return '—';
+    const minutes = Math.ceil(seconds / 60);
+    return minutes >= 60 ? Math.floor(minutes / 60) + ' h ' + String(minutes % 60).padStart(2, '0') : minutes + ' min';
+  }
+  function render(data) {
+    text('activity', data.activity.label); el('activity').dataset.kind = data.activity.kind;
+    text('count', number.format(data.success) + ' sur ' + number.format(data.total) + ' URL connues');
+    text('percentage', percent.format(data.progress_percent) + ' %');
+    el('progress').value = data.progress_percent;
+    text('remaining', number.format(data.remaining) + ' fiches encore à traiter');
+    text('last-update', data.updated_at ? 'Dernière activité : ' + clock.format(new Date(data.updated_at)) : 'Aucune fiche traitée');
+    text('rate', data.rate_per_hour ? number.format(Math.round(data.rate_per_hour)) + ' fiches/h' : 'En mesure…');
+    text('eta', data.eta_seconds == null ? (data.remaining === 0 ? 'Terminé' : '—') : '≈ ' + duration(data.eta_seconds));
+    text('minimum', duration(data.minimum_remaining_seconds));
+    const states = el('states'); states.replaceChildren();
+    for (const state of ['pending','success','needs_review','quarantined','retryable','terminal','blocked']) {
+      if (!data.counts[state]) continue;
+      const chip = document.createElement('span'); chip.className = 'chip'; chip.textContent = labels[state] + ' : ' + number.format(data.counts[state]); states.append(chip);
+    }
+    const records = el('records'); records.replaceChildren();
+    for (const item of data.last_records) {
+      const row = document.createElement('tr');
+      const name = document.createElement('td'); const link = document.createElement('a');
+      link.textContent = item.name; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      try { const url = new URL(item.url); if (url.protocol === 'https:' && url.hostname === 'www.motoplanete.com' && !url.username && !url.password) link.href = url.href; } catch {}
+      name.append(link);
+      const time = document.createElement('td'); time.className = 'timestamp time-column'; time.textContent = item.updated_at ? clock.format(new Date(item.updated_at)) : '—';
+      const state = document.createElement('td'); const badge = document.createElement('span'); badge.className = 'state'; badge.dataset.state = item.state; badge.textContent = resultLabels[item.state] || item.state; state.append(badge);
+      row.append(name, time, state); records.append(row);
+    }
+    const periods = new Map();
+    for (const y of data.years) { const start = Math.floor(y.year / 10) * 10; const p = periods.get(start) || { success:0, total:0 }; p.success += y.success; p.total += y.total; periods.set(start,p); }
+    const years = el('years'); years.replaceChildren();
+    for (const [year, period] of periods) {
+      const row = document.createElement('div'); row.className = 'year-row';
+      const label = document.createElement('span'); label.textContent = year + '–' + (year + 9);
+      const track = document.createElement('div'); track.className = 'year-track'; const fill = document.createElement('div'); fill.className = 'year-fill'; fill.style.width = (period.success / period.total * 100) + '%'; track.append(fill);
+      const count = document.createElement('span'); count.className = 'year-count'; count.textContent = number.format(period.success) + ' / ' + number.format(period.total);
+      row.append(label,track,count); years.append(row);
+    }
+    text('process', 'Processus Python · PID ' + (data.process.pid || 'inconnu') + ' · ' + (data.process.alive === true ? 'présence vérifiée' : data.process.alive === false ? 'arrêt confirmé' : 'présence non confirmée'));
+    text('out-dir', data.out_dir);
+  }
+  async function refresh() {
+    try {
+      const response = await fetch('/api/progress', { cache:'no-store' });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Lecture indisponible');
+      render(data); el('error').hidden = true;
+    } catch (error) {
+      text('activity','Suivi indisponible'); el('activity').dataset.kind = 'unknown';
+      text('eta','—'); text('error','Le suivi ne répond plus. Les valeurs affichées peuvent être anciennes ; cela ne confirme pas un arrêt de la collecte.'); el('error').hidden = false;
+    } finally { setTimeout(refresh,10000); }
+  }
+  refresh();
+</script>
+</body>
+</html>
