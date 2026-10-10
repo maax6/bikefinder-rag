@@ -1,7 +1,7 @@
 # Bikefinder RAG
 
-An entirely local **proof of concept** for a technical motorcycle catalog
-by model year. Ollama queries PostgreSQL through structured tools. Ask for
+A **proof of concept** for a technical motorcycle catalog by model year.
+The current local chat uses Ollama to query PostgreSQL through structured tools. Ask for
 a specific sheet or a same-year comparison, in French or English — for example
 *"Compare the Suzuki GSF 1200 N Bandit and Kawasaki ER-5 Twister in 2000,
 with units, sources and missing data."* The existing owner-review corpus and
@@ -10,7 +10,9 @@ its retrieval code are retained for a later, separately evaluated extension.
 This is a learning project and portfolio piece. The default chat path needs
 no cloud account or API key. Installation and the first model downloads need
 Internet; inference can run offline once the models and database are ready.
-Anthropic/OpenRouter and a remote evaluation judge remain optional experiments.
+The selected next workflow combines local SQL and BGE-M3 with Jev decisions
+through OpenRouter, reserving Mistral for synthesis and unresolved evidence.
+That workflow has been evaluated separately and is not yet connected to the chat.
 
 ## Direction as of 2026-10-10
 
@@ -30,7 +32,7 @@ The French review corpus arrived in September, before this October refocus.
 | Product focus | Buying advice combining specs, owner reviews, prices and recalls | Technical sheets and comparisons by explicit model year; reviews deferred |
 | Default inference | Anthropic; Ollama available for local experiments | Ollama on the local Mac, without a cloud key |
 | Evidence | Structured specs plus family-level review retrieval | Structured SQL and original technical labels/units; source, year and unknowns preserved |
-| Text retrieval | BGE-M3, hybrid review search and reranking | Retained review pipeline; a distinct technical-passage index is still planned |
+| Text retrieval | BGE-M3, hybrid review search and reranking | Retained review pipeline; a distinct technical-passage index evaluated in the isolated hybrid POC |
 | Data quality | Existing typed fields and source matching | Versioned identity/measurement candidates; dry/wet weights, variants and conflicting sources audited |
 | Evaluation | Review retrieval, tool trajectories, constraints and RAGAS scores | Technical acceptance cases, correct tool arguments, evidence, retry behavior, latency and memory before choosing another model |
 
@@ -64,10 +66,11 @@ memory: the context/KV cache, runtime, database and macOS also need memory.
 | Role | Current choice | Scope |
 |---|---|---|
 | Tool selection and final answer | `mistral-small3.2` through Ollama | Reference for the current technical POC; [real Gradio acceptance traces](eval_results/technical/live_gradio_20261010.json), not a model-ranking benchmark |
-| Embeddings | `BAAI/bge-m3` | Retained review index; reference for a future, separately versioned technical index. Changing the generator alone does not require re-embedding reviews. |
+| Embeddings | `BAAI/bge-m3` | Retained review index and isolated technical-passage POC. Changing the generator alone does not require re-embedding reviews. |
+| Decisions, routing and evidence selection | `typesafe/jev-1.13` through OpenRouter | Selected after the hybrid POC; remote decisions over supplied criteria and passages, not yet integrated into the chat |
 | Reranker | `BAAI/bge-reranker-v2-m3` | Retained review retrieval; not loaded by ordinary technical sheet/filter queries |
 | Local evaluation judge | `qwen3.6` | Default RAGAS judge, separate from the chat generator; not needed to use the technical chat |
-| Remote experiments | Anthropic/OpenRouter; Haiku via `claude -p` for selected historical evaluations | Explicit opt-in; remote judging remains remote even when generation is local |
+| Other remote experiments | Anthropic/OpenRouter; Haiku via `claude -p` for selected historical evaluations | Explicit opt-in; remote judging remains remote even when generation is local |
 
 For the **M5 / 32 GB** target, the planned comparison favors smaller
 generators that may leave more memory for context and services. Their official
@@ -86,6 +89,43 @@ useful partial answers, appropriate abstentions, total latency, memory pressure
 and swap. Vendor benchmarks and a `tools` badge do not establish suitability
 for this catalogue. See the [benchmark protocol](docs/technical-catalog-refactor.md#modèles-à-comparer-sur-m5--32-go).
 
+## Selected workflow: avoid unnecessary generation
+
+**Decision, 2026-10-11: keep Jev.** The POC is conclusive for routing and
+selecting evidence so that ordinary factual answers do not require a generated
+paragraph. SQL resolves identities, filters and lists; BGE-M3 retrieves passages
+within that scope; Jev selects among defined decisions and checks whether a
+passage answers the question. Supported facts and lists can be returned directly
+with their source URLs. Mistral handles comparisons requiring synthesis and
+cases where the selected evidence is insufficient. Unknown equipment remains
+unknown when the source cannot resolve it.
+
+The frozen experiment covers **2,254 source sheets**, **880 equipment decisions
+on 706 sheets** and **24 questions**. On 60 independently annotated source cases,
+the cascade and systematic Mistral both agree with **54/60** references, including
+**34/37** held-out cases. Among 173 distinct inputs containing an equipment
+mention, **141 (81.5%) avoid Mistral**. The references were annotated by an
+independent agent, rather than verified by manufacturers or a human panel.
+
+For the 24 questions, median measured backend latency falls from **31.3 s to
+0.45 s**, and Mistral calls from **44 to 3**. This compares the current agent loop
+and the hybrid POC on the same frozen corpus through an isolated SQLite adapter.
+Hybrid latency excludes precomputed query embeddings: a separate warm BGE
+measurement adds about **79 ms** to the six branches using semantic retrieval.
+Complex comparisons remain a limitation: both hybrid outputs were truncated at
+400 tokens, and one included an unsupported interpretation of suspension travel.
+This is evidence for fewer generation calls, not a demonstrated accuracy gain
+or a production latency guarantee.
+
+Jev is a **remote API** in this workflow; SQL, BGE-M3 and Mistral remain local.
+The collection and running chat were unchanged by the experiment. After the
+current collection, audit coverage and equipment ambiguity before integrating
+the selected workflow. See the [decision record](docs/hybrid-workflow-decision.md)
+and [complete results, errors and limits](docs/hybrid-poc-results.md).
+The frozen source data, model outputs and vectors remain local under ignored
+`data/technical/hybrid-poc/`; a fresh clone cannot replay this exact benchmark
+without those artifacts.
+
 ## Technical data collection and live progress
 
 The retained Bikez corpus has **32,395 distinct source sheets (1894–2024)**.
@@ -103,18 +143,19 @@ not verified model-year sheets. These counts must not be added into a total of
 distinct motorcycles or described as worldwide completeness.
 
 ```bash
-# Read-only progress monitor; the collector runs independently.
-.venv/bin/python scripts/monitor_technical_collection.py --port 7861
-# Open http://127.0.0.1:7861/ on the same Mac.
+# Resume/reuse the collector and attach its Zellij dashboard here.
+.venv/bin/python scripts/start_collection_panel.py --here
+# Without --here, open the dashboard in macOS Terminal.
 ```
 
-The monitor refreshes every ten seconds, showing progress, recent throughput,
-an approximate remaining duration, latest fiches and the collector's verified
-process state. Roughly **32 hours of waiting alone** are needed for the full
+The collector runs independently of the dashboard, protected from idle sleep
+by `caffeinate -i`. Zellij displays read-only progress, recent HTTP codes and
+fiches, and the collection log. The launcher reuses an active collector and
+preserves its queue and source cooldown. Roughly **32 hours of waiting alone** are needed for the full
 11.5k-URL lot, before page loading or interruptions. Raw collected files stay
 outside Git; [dated reports and source-access decisions](docs/technical-data-collection.md)
-are versioned. The latest code validation after adding this monitor is
-**437 passing tests**; this is not a claim of catalogue completeness or a model score.
+are versioned. The latest code validation including the hybrid POC is
+**454 passing tests**; this is not a claim of catalogue completeness or a model score.
 
 
 ## Historical launch video
