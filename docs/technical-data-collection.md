@@ -186,6 +186,26 @@ Après ajout du suivi, la suite complète passe : **437 tests** (7,68 s).
 La page a été vérifiée dans le navigateur local, y compris le rafraîchissement
 des compteurs et l'identification du processus de collecte.
 
+## Suivi dans Zellij
+
+Depuis un terminal ouvert à la racine du projet :
+
+```bash
+.venv/bin/python scripts/start_collection_panel.py --here
+```
+
+Le lanceur réutilise le collecteur actif ou reprend sa file SQLite, respecte
+le délai de pause du site et attache `caffeinate -i` au PID du collecteur.
+Il rejoint la session `bikefinder-collecte` si elle existe, sans créer de
+panneaux supplémentaires. Sans `--here`, il demande une fenêtre à Terminal
+sur macOS. Fermer le panneau ne termine pas le collecteur détaché.
+
+Les trois panneaux montrent l'avancement, les derniers statuts HTTP par
+fiche et le journal. Les statuts SQLite ne représentent pas l'historique
+de toutes les tentatives HTTP. `caffeinate` empêche la veille automatique,
+mais les réponses 429/5xx continuent d'arrêter le lot selon la politique
+source ; le lanceur ne crée pas de boucle de relance automatique.
+
 ## Livraison suivante
 
 Après la collecte : contrôler les identités, unités et variantes, classer
