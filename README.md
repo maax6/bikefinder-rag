@@ -12,8 +12,114 @@ no cloud account or API key. Installation and the first model downloads need
 Internet; inference can run offline once the models and database are ready.
 Anthropic/OpenRouter and a remote evaluation judge remain optional experiments.
 
+## Direction as of 2026-10-10
 
-## Launch video
+The goal is to choose and compare motorcycles using documented technical
+characteristics and performance: **brand → model → model year → variant**,
+with market scope when the source provides it. Useful partial answers should
+show the available evidence and its limits. Missing data must remain unknown;
+a silent equipment field does not establish that the bike lacks ABS.
+
+The comparison point for "two months ago" is the repository state on
+**2026-08-10**, whose last preceding commit was
+[`b0c0ec9` (2026-07-16)](https://github.com/maax6/bikefinder-rag/commit/b0c0ec9).
+The French review corpus arrived in September, before this October refocus.
+
+| Decision | Summer prototype | Current technical POC |
+|---|---|---|
+| Product focus | Buying advice combining specs, owner reviews, prices and recalls | Technical sheets and comparisons by explicit model year; reviews deferred |
+| Default inference | Anthropic; Ollama available for local experiments | Ollama on the local Mac, without a cloud key |
+| Evidence | Structured specs plus family-level review retrieval | Structured SQL and original technical labels/units; source, year and unknowns preserved |
+| Text retrieval | BGE-M3, hybrid review search and reranking | Retained review pipeline; a distinct technical-passage index is still planned |
+| Data quality | Existing typed fields and source matching | Versioned identity/measurement candidates; dry/wet weights, variants and conflicting sources audited |
+| Evaluation | Review retrieval, tool trajectories, constraints and RAGAS scores | Technical acceptance cases, correct tool arguments, evidence, retry behavior, latency and memory before choosing another model |
+
+An equipment mention is supporting text, not a verified **standard / optional /
+explicitly absent / unknown** classification. A French launch price does not
+establish the market of every specification. Catalogue year, first observed
+year and documented launch date are separate facts.
+
+The first technical chat slice is running, but the new normalization and
+collection outputs are **not yet imported into its database or equipment
+filters**. This avoids presenting a collected passage as a finished search
+feature. See the [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
+and [technical acceptance record](docs/technical-catalog-first-slice.md).
+
+## Model choices and their roles
+
+**Mistral Small 3.2 remains the generator reference.** It was selected as the
+local model on **2026-07-15**, in
+[`297fb65`](https://github.com/maax6/bikefinder-rag/commit/297fb65), after a
+historical tool-trajectory comparison with `mistral-small`: both reached
+15/15 cases, while 3.2 avoided the observed tool-marker leakage in final prose.
+It is not a new October replacement. October changed the default backend
+and the task/data contract; those historical 15 cases do not validate the
+new technical workload.
+
+The current local installation was checked on 2026-10-10: Ollama **0.32.15**,
+`mistral-small3.2:latest`, **24B / Q4_K_M**, approximately **15.2 GB of model
+files**. The agent requests a **16,384-token context**. File size is not peak
+memory: the context/KV cache, runtime, database and macOS also need memory.
+
+| Role | Current choice | Scope |
+|---|---|---|
+| Tool selection and final answer | `mistral-small3.2` through Ollama | Reference for the current technical POC; [real Gradio acceptance traces](eval_results/technical/live_gradio_20261010.json), not a model-ranking benchmark |
+| Embeddings | `BAAI/bge-m3` | Retained review index; reference for a future, separately versioned technical index. Changing the generator alone does not require re-embedding reviews. |
+| Reranker | `BAAI/bge-reranker-v2-m3` | Retained review retrieval; not loaded by ordinary technical sheet/filter queries |
+| Local evaluation judge | `qwen3.6` | Default RAGAS judge, separate from the chat generator; not needed to use the technical chat |
+| Remote experiments | Anthropic/OpenRouter; Haiku via `claude -p` for selected historical evaluations | Explicit opt-in; remote judging remains remote even when generation is local |
+
+For the **M5 / 32 GB** target, the planned comparison favors smaller
+generators that may leave more memory for context and services. Their official
+Ollama pages were checked on 2026-10-10:
+
+| Candidate | Reason to test it | Status |
+|---|---|---|
+| [Gemma 4 12B MLX](https://ollama.com/library/gemma4:12b-mlx) | Evaluate the MLX artifact on Apple Silicon and its advertised tool support | Planned; not installed or benchmarked here |
+| [Ministral 3 14B](https://ollama.com/library/ministral-3:14b) | Smaller Mistral generator with documented French, function calling and JSON support | Planned; not installed or benchmarked here |
+| [Qwen 3.5 9B](https://ollama.com/library/qwen3.5:9b) | Compact alternative; record and control reasoning behavior in the comparison | Planned; not installed or benchmarked here |
+
+No winner has been selected. Compare the reference and candidates on identical
+technical questions, corpus, tools and context budgets, with repeated cold/warm
+runs and one generator at a time. Measure correct tool calls, supported claims,
+useful partial answers, appropriate abstentions, total latency, memory pressure
+and swap. Vendor benchmarks and a `tools` badge do not establish suitability
+for this catalogue. See the [benchmark protocol](docs/technical-catalog-refactor.md#modèles-à-comparer-sur-m5--32-go).
+
+## Technical data collection and live progress
+
+The retained Bikez corpus has **32,395 distinct source sheets (1894–2024)**.
+Its offline normalized export includes **44 identities requiring review**;
+equipment passages remain unclassified. **548 historical 2024 sheets** still
+contain `Loading...` placeholders.
+
+The new Motoplanete collector preserves technical rows, equipment wording,
+source URLs, UTC collection dates, response hashes and sanitized technical
+snapshots. It has a resumable SQLite queue of **11,479 historical URLs**, with
+one isolated for examination, and waits at least **10 seconds** between
+requests. The fresh sitemap attempt returned HTTP 500; this queue may therefore
+miss newer fiches. A separate Wikidata run collected **3,255 candidate entities**,
+not verified model-year sheets. These counts must not be added into a total of
+distinct motorcycles or described as worldwide completeness.
+
+```bash
+# Read-only progress monitor; the collector runs independently.
+.venv/bin/python scripts/monitor_technical_collection.py --port 7861
+# Open http://127.0.0.1:7861/ on the same Mac.
+```
+
+The monitor refreshes every ten seconds, showing progress, recent throughput,
+an approximate remaining duration, latest fiches and the collector's verified
+process state. Roughly **32 hours of waiting alone** are needed for the full
+11.5k-URL lot, before page loading or interruptions. Raw collected files stay
+outside Git; [dated reports and source-access decisions](docs/technical-data-collection.md)
+are versioned. The latest code validation after adding this monitor is
+**437 passing tests**; this is not a claim of catalogue completeness or a model score.
+
+
+## Historical launch video
+
+Published in September 2026, before the October technical refocus.
 
 https://github.com/user-attachments/assets/f4d35ffb-202e-4aa6-af69-7467d7dc9862
 
@@ -30,12 +136,14 @@ reports alongside the data — the short version:
   and 4,335 model families**. Review counts vary with the sources loaded;
   a result belongs to its corpus snapshot, not every installation. The
   century, 2000–2023 and 2024 datasets ship in `data/`.
-- **Category filter**: `Scooter` is excluded *unless* displacement ≥ 500cc
+- **Historical Bikez scrape filter**: `Scooter` is excluded *unless* displacement ≥ 500cc
   (keeps crossovers like the Honda X-ADV or Yamaha TMAX, drops twist-and-go
   commuters), `ATV` is always excluded, everything else — including
-  `Minibike` and oddball `Prototype/concept model` entries — is kept.
-- **No pre-curated "top N" popular models list.** Every scraped page's forum
-  is checked; a motorcycle only gets a narrative/review layer if it has ≥3
+  `Minibike` and oddball `Prototype/concept model` entries — is kept. The
+  new technical source queue keeps all published motorcycle categories.
+- **Retained review corpus, without a pre-curated "top N" popular models list.**
+  Historically, each scraped page's forum was checked; a motorcycle only
+  received a narrative/review layer if it had ≥3
   substantive comments. The narrative subset emerges from what actually has
   discussion, not from a guessed popularity ranking.
 - **Explicit technical tool-use loop** — Ollama by default, optional
@@ -49,14 +157,14 @@ reports alongside the data — the short version:
   to Python callers through an explicit opt-in.
 - **PostgreSQL + pgvector**, one database for both structured specs and
   review embeddings.
-- **Comments belong to model families, not model-years.** bikez.com shares
+- **Retained comments belong to model families, not model-years.** bikez.com shares
   one discussion forum across every year and variant of a model (the same
   threads back the CB 250 K 1 1970 and the CB 250 N 1985), so comments are
   stored once per family (`model_families`), deduplicated, and every
   retrieval result carries the family's year range plus the comment's own
   post date — the agent is instructed never to attribute a comment to one
   specific model-year.
-- **Local, multilingual embeddings** (`BAAI/bge-m3`) — no embeddings API key
+- **Retained local, multilingual review embeddings** (`BAAI/bge-m3`) — no embeddings API key
   needed. The review corpus is **bilingual since 2026-09-02**: bikez.com forum
   comments (English, `lang='en'`) and motoplanete.com owner reviews (French,
   `lang='fr'`, with a /5 `rating`) share one table and one embedding space, so a
@@ -133,11 +241,12 @@ are outside this figure. Coverage depends on the datasets loaded locally.
 
 ## Data source & why self-scrape
 
-There's an existing Kaggle dataset (`all_bikez`, CC0) scraped from bikez.com
-in 2022. We scrape ourselves instead: it keeps specs *and* forum comments on
-one unified pipeline, it's current rather than frozen at 2022, and it directly
-extends [github.com/maax6/Bikefinder](https://github.com/maax6/Bikefinder),
-which this project grew out of.
+There's an existing Kaggle dataset (`all_bikez`, labelled CC0) scraped from
+bikez.com in 2022. The original project collected its own specs and forum
+comments to study the full pipeline and extend
+[github.com/maax6/Bikefinder](https://github.com/maax6/Bikefinder). That historical
+choice does not establish permission for further Bikez collection, nor does a
+dataset label override the original source's terms.
 
 **Access audit, 2026-10-10:** Bikez's robots.txt permits the historical
 technical paths, but its [About page](https://bikez.com/about/index.php)
@@ -195,12 +304,14 @@ priced cases with disjoint numeric identifiers lose that contradiction;
 this is a diagnostic proxy, not a human validation of every new match.
 The conservative rule deliberately leaves more ambiguous names unmatched.
 
-Two more data layers ride along (loaded by their own idempotent scripts):
+Two retained enrichment layers have their own idempotent loaders. They are
+outside the default technical chat evidence:
 
 - **US safety recalls** (`scripts/load_nhtsa_recalls.py`): NHTSA's free
   flat files, 3,521 campaign rows matched onto 431 model families — the
-  project's only *objective* reliability signal, surfaced by
-  `get_bike_details` with an explicit "US market only" caveat.
+  project's historical recall layer, available through the opt-in legacy
+  family context with an explicit "US market only" caveat. A recall count
+  alone is not a reliability ranking.
 - **Indicative used prices** (`scripts/load_used_prices.py`): median and
   quartiles per (family, registration year) aggregated from a 2022
   European marketplace snapshot (Kaggle, ~18k deduplicated listings, 598
@@ -224,6 +335,11 @@ Agent loop (Ollama by default, explicit tool-use)
 The retained review pipeline uses pgvector, BGE-M3 and a local reranker;
 default technical queries on the loaded catalog do not import or load those
 models. The existing dataset loader still processes comments.
+
+Technical collection runs separately: source pages → versioned raw records
+and SQLite queue → read-only progress monitor. Its next step is a validated
+normalization/import and technical index; the chat continues to use the
+previously loaded PostgreSQL catalogue until that work is accepted.
 
 ## Project layout
 
@@ -249,6 +365,11 @@ scripts/
   eval_tool_trajectory.py        layer-1.5 eval (tool calls, no LLM judge)
   eval_technical_demo.py         sequential real Gradio technical probes, manual review
   audit_technical_normalization.py  bounded read-only migration-candidate audit
+  collect_technical_data.py      resumable Motoplanete technical/equipment crawl
+  collect_wikidata_motorcycles.py  bounded global identity inventory
+  export_local_technical_data.py  offline technical export with provenance
+  audit_collected_technical_data.py  field/year coverage from read-only SQLite
+  monitor_technical_collection.py  local live progress on 127.0.0.1:7861
 ```
 
 ## Running it locally
@@ -333,9 +454,8 @@ PYTHONPATH=src .venv/bin/python scripts/load_motoplanete_reviews.py  # French ow
 # The French reviews file is required for the last command; crawl it first
 # with scripts/scrape_motoplanete_reviews.py if it is absent in your checkout.
 
-# Re-scrape / extend (resumable at bike, thread and forum level):
-PYTHONPATH=src .venv/bin/python scripts/run_demo_scrape.py \
-    --years 2000-2023 --brands all --out data/2000s
+# New technical collection: source rules and resume commands are documented
+# in docs/technical-data-collection.md. No new Bikez crawl is enabled.
 ```
 
 ## Evaluating
@@ -413,14 +533,22 @@ terms:
 
 ## Roadmap
 
-1. Price enrichment and `category_fr` are implemented; audit and rebuild
-   existing enrichments after the numeric matching correction before
-   publishing refreshed coverage. The **"permis A2" filter** is derived from the
-   specs already in base (<=35 kW and <=0.2 kW/kg direct, <=70 kW
-   restrictable): `filter_specs(a2_only=true)`. Results carry an `a2` column
-   saying 'A2' or 'A2 bridable'. This is a specification-based estimate;
-   availability of an approved restriction kit is not verified, and the
-   source mixes wet and dry weights.
+The [technical refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
+is the current roadmap. The first sheet/comparison slice is delivered;
+identity/measurement normalization is a versioned pilot; expanded technical
+collection and its monitor are implemented. Next: validate and import the
+normalization, classify equipment by variant/market, add equipment/color
+search and a versioned technical-passage index, then compare local generators
+on the same evidence. Each stage needs its own acceptance record.
+
+### Retained historical work
+
+1. Price enrichment and `category_fr` loaders are implemented; audit and
+   rebuild existing enrichments after the numeric matching correction before
+   publishing refreshed coverage. The former A2 estimate remains documented
+   in historical reports; `a2_only` is **not supported by the current technical
+   tools**. That earlier estimate did not verify approved restriction kits,
+   and its source mixed wet and dry weights.
 2. ~~Scale scraping beyond the 2024 demo year~~ **done** (century +
    2000-2023 crawls: 32,395 bikes in the recorded full-catalog runs)
 3. Shared entity resolution across sources is implemented
