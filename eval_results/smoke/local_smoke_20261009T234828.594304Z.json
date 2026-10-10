@@ -1,0 +1,1286 @@
+{
+  "created_at_utc": "2026-10-09T23:48:28.594304+00:00",
+  "git": {
+    "sha": "652176aa162d3291eb956fa1cc8b6e63678042cb",
+    "dirty": true
+  },
+  "scope": "six local smoke cases; no judge or full quality benchmark",
+  "environment": {
+    "backend": "ollama",
+    "ollama_host": "http://127.0.0.1:11434",
+    "requested_model": "mistral-small3.2",
+    "HF_HUB_OFFLINE": "1",
+    "embedder_device": "cpu",
+    "reranker_enabled": true
+  },
+  "cases": [
+    {
+      "id": "struct-1",
+      "question": "What naked bikes are there between 600cc and 900cc?",
+      "started_at_utc": "2026-10-09T23:48:29.115669+00:00",
+      "answer": "Here are some naked bikes between 600cc and 900cc:\n\n- Triumph Street Triple 765 RS (2024)\n- MV Agusta Brutale 800 RR (2024)\n- Triumph Street Triple 765 Moto2 Edition (2024)\n- Triumph Street Triple 765 R (2024)\n- Benelli TNT 600i (2024)\n- MV Agusta Dragster RC Racing (2024)\n- Benelli Leoncino 800 (2024)\n- KTM 890 Duke R (2024)\n- Moto Morini Seiemmezzo 650 SCR (2024)\n- Yamaha Niken GT (2024)",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What naked bikes are there between 600cc and 900cc?"
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_ke3msien",
+              "function": {
+                "index": 0,
+                "name": "filter_specs",
+                "arguments": {
+                  "category": "Naked bike",
+                  "min_displacement_ccm": 600,
+                  "max_displacement_ccm": 900
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'brand': 'Triumph', 'model': 'Street Triple 765 RS', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 765.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 12695.0, 'url': 'https://bikez.com/motorcycles/triumph_street_triple_765_rs_2024.php', 'a2': None}, {'brand': 'MV', 'model': 'Agusta Brutale 800 RR', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 798.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 16700.0, 'url': 'https://bikez.com/motorcycles/mv_agusta_brutale_800_rr_2024.php', 'a2': None}, {'brand': 'Triumph', 'model': 'Street Triple 765 Moto2 Edition', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 765.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/triumph_street_triple_765_moto2_edition_2024.php', 'a2': None}, {'brand': 'Triumph', 'model': 'Street Triple 765 R', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 765.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 10495.0, 'url': 'https://bikez.com/motorcycles/triumph_street_triple_765_r_2024.php', 'a2': None}, {'brand': 'Benelli', 'model': 'TNT 600i', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 600.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/benelli_tnt_600i_2024.php', 'a2': None}, {'brand': 'MV', 'model': 'Agusta Dragster RC Racing', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 798.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/mv_agusta_dragster_rc_racing_2024.php', 'a2': None}, {'brand': 'Benelli', 'model': 'Leoncino 800', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 754.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/benelli_leoncino_800_2024.php', 'a2': None}, {'brand': 'KTM', 'model': '890 Duke R', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 889.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/ktm_890_duke_r_2024.php', 'a2': None}, {'brand': 'Moto', 'model': 'Morini Seiemmezzo 650 SCR', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 649.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 6999.0, 'url': 'https://bikez.com/motorcycles/moto_morini_seiemmezzo_650_scr_2024.php', 'a2': None}, {'brand': 'Yamaha', 'model': 'Niken GT', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Hors catégorie', 'displacement_ccm': 890.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 17999.0, 'url': 'https://bikez.com/motorcycles/yamaha_niken_gt_2024.php', 'a2': None}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Here are some naked bikes between 600cc and 900cc:\n\n- Triumph Street Triple 765 RS (2024)\n- MV Agusta Brutale 800 RR (2024)\n- Triumph Street Triple 765 Moto2 Edition (2024)\n- Triumph Street Triple 765 R (2024)\n- Benelli TNT 600i (2024)\n- MV Agusta Dragster RC Racing (2024)\n- Benelli Leoncino 800 (2024)\n- KTM 890 Duke R (2024)\n- Moto Morini Seiemmezzo 650 SCR (2024)\n- Yamaha Niken GT (2024)"
+        }
+      ],
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "category": "Naked bike",
+            "min_displacement_ccm": 600,
+            "max_displacement_ccm": 900
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "category": "Naked bike",
+            "min_displacement_ccm": 600,
+            "max_displacement_ccm": 900
+          },
+          "rows": [
+            {
+              "brand": "Triumph",
+              "model": "Street Triple 765 RS",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": "Roadster",
+              "displacement_ccm": 765.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": 12695.0,
+              "url": "https://bikez.com/motorcycles/triumph_street_triple_765_rs_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "MV",
+              "model": "Agusta Brutale 800 RR",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": "Roadster",
+              "displacement_ccm": 798.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": 16700.0,
+              "url": "https://bikez.com/motorcycles/mv_agusta_brutale_800_rr_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "Triumph",
+              "model": "Street Triple 765 Moto2 Edition",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": null,
+              "displacement_ccm": 765.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/triumph_street_triple_765_moto2_edition_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "Triumph",
+              "model": "Street Triple 765 R",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": "Roadster",
+              "displacement_ccm": 765.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": 10495.0,
+              "url": "https://bikez.com/motorcycles/triumph_street_triple_765_r_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "Benelli",
+              "model": "TNT 600i",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": null,
+              "displacement_ccm": 600.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/benelli_tnt_600i_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "MV",
+              "model": "Agusta Dragster RC Racing",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": null,
+              "displacement_ccm": 798.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/mv_agusta_dragster_rc_racing_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "Benelli",
+              "model": "Leoncino 800",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": null,
+              "displacement_ccm": 754.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/benelli_leoncino_800_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "KTM",
+              "model": "890 Duke R",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": null,
+              "displacement_ccm": 889.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/ktm_890_duke_r_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "Moto",
+              "model": "Morini Seiemmezzo 650 SCR",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": "Roadster",
+              "displacement_ccm": 649.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": 6999.0,
+              "url": "https://bikez.com/motorcycles/moto_morini_seiemmezzo_650_scr_2024.php",
+              "a2": null
+            },
+            {
+              "brand": "Yamaha",
+              "model": "Niken GT",
+              "year": 2024,
+              "category": "Naked bike",
+              "category_fr": "Hors catégorie",
+              "displacement_ccm": 890.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": 17999.0,
+              "url": "https://bikez.com/motorcycles/yamaha_niken_gt_2024.php",
+              "a2": null
+            }
+          ],
+          "raw_result": "[{'brand': 'Triumph', 'model': 'Street Triple 765 RS', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 765.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 12695.0, 'url': 'https://bikez.com/motorcycles/triumph_street_triple_765_rs_2024.php', 'a2': None}, {'brand': 'MV', 'model': 'Agusta Brutale 800 RR', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 798.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 16700.0, 'url': 'https://bikez.com/motorcycles/mv_agusta_brutale_800_rr_2024.php', 'a2': None}, {'brand': 'Triumph', 'model': 'Street Triple 765 Moto2 Edition', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 765.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/triumph_street_triple_765_moto2_edition_2024.php', 'a2': None}, {'brand': 'Triumph', 'model': 'Street Triple 765 R', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 765.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 10495.0, 'url': 'https://bikez.com/motorcycles/triumph_street_triple_765_r_2024.php', 'a2': None}, {'brand': 'Benelli', 'model': 'TNT 600i', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 600.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/benelli_tnt_600i_2024.php', 'a2': None}, {'brand': 'MV', 'model': 'Agusta Dragster RC Racing', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 798.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/mv_agusta_dragster_rc_racing_2024.php', 'a2': None}, {'brand': 'Benelli', 'model': 'Leoncino 800', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 754.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/benelli_leoncino_800_2024.php', 'a2': None}, {'brand': 'KTM', 'model': '890 Duke R', 'year': 2024, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 889.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/ktm_890_duke_r_2024.php', 'a2': None}, {'brand': 'Moto', 'model': 'Morini Seiemmezzo 650 SCR', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 649.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 6999.0, 'url': 'https://bikez.com/motorcycles/moto_morini_seiemmezzo_650_scr_2024.php', 'a2': None}, {'brand': 'Yamaha', 'model': 'Niken GT', 'year': 2024, 'category': 'Naked bike', 'category_fr': 'Hors catégorie', 'displacement_ccm': 890.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': 17999.0, 'url': 'https://bikez.com/motorcycles/yamaha_niken_gt_2024.php', 'a2': None}]",
+          "parse_error": null
+        }
+      ],
+      "checks": [
+        {
+          "label": "completed final assistant answer",
+          "ok": true
+        },
+        {
+          "label": "only known tools called",
+          "ok": true
+        },
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "min displacement ~600",
+          "ok": true
+        },
+        {
+          "label": "max displacement ~900",
+          "ok": true
+        },
+        {
+          "label": "category naked",
+          "ok": true
+        },
+        {
+          "label": "all tool results parsed",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "no tool argument/runtime error returned",
+          "ok": true,
+          "observed": []
+        },
+        {
+          "label": "numeric search returned catalog rows",
+          "ok": true,
+          "observed": 10
+        },
+        {
+          "label": "every returned displacement is in [600,900] cc",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "every returned category is naked",
+          "ok": true,
+          "observed": null
+        }
+      ],
+      "objective_ok": true,
+      "elapsed_seconds": 57.151
+    },
+    {
+      "id": "struct-5",
+      "question": "Quelles motos custom/cruiser des annees 1950 sont dans la base ?",
+      "started_at_utc": "2026-10-09T23:49:26.267970+00:00",
+      "answer": "Could not reach the local Ollama server (ReadTimeout) — is it running?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quelles motos custom/cruiser des annees 1950 sont dans la base ?"
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_8z2vi73d",
+              "function": {
+                "index": 0,
+                "name": "filter_specs",
+                "arguments": {
+                  "min_year": 1950,
+                  "max_year": 1959,
+                  "category": "Custom/Cruiser"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'brand': 'Harley-Davidson', 'model': 'XLCH Sportster', 'year': 1959, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 883.0, 'weight_kg': 205.0, 'power_hp': 50.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1959.php', 'a2': 'A2 bridable'}, {'brand': 'Harley-Davidson', 'model': 'XLCH Sportster', 'year': 1958, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 883.0, 'weight_kg': 205.0, 'power_hp': 50.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1958.php', 'a2': 'A2 bridable'}, {'brand': 'Harley-Davidson', 'model': 'XLCH Sportster', 'year': 1957, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 883.0, 'weight_kg': 205.0, 'power_hp': 50.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1957.php', 'a2': 'A2 bridable'}, {'brand': 'Adler', 'model': 'M 250', 'year': 1954, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 250.0, 'weight_kg': 135.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/adler_m_250_1954.php', 'a2': 'A2'}, {'brand': 'Zündapp', 'model': 'Elastic 198', 'year': 1954, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 198.0, 'weight_kg': 140.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/zundapp_elastic_198_1954.php', 'a2': 'A2'}, {'brand': 'Adler', 'model': 'M 250', 'year': 1953, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 250.0, 'weight_kg': 135.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/adler_m_250_1953.php', 'a2': 'A2'}, {'brand': 'Simson', 'model': 'AWO 425', 'year': 1953, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 249.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/simson_awo_425_1953.php', 'a2': None}, {'brand': 'Indian', 'model': 'Chief', 'year': 1953, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 1300.0, 'weight_kg': 258.6, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/indian_chief_1953.php', 'a2': None}, {'brand': 'Indian', 'model': 'Chief', 'year': 1952, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 1300.0, 'weight_kg': 258.6, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/indian_chief_1952.php', 'a2': None}, {'brand': 'Adler', 'model': 'M 250', 'year': 1952, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 250.0, 'weight_kg': 135.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/adler_m_250_1952.php', 'a2': 'A2'}]"
+        }
+      ],
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "min_year": 1950,
+            "max_year": 1959,
+            "category": "Custom/Cruiser"
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "min_year": 1950,
+            "max_year": 1959,
+            "category": "Custom/Cruiser"
+          },
+          "rows": [
+            {
+              "brand": "Harley-Davidson",
+              "model": "XLCH Sportster",
+              "year": 1959,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 883.0,
+              "weight_kg": 205.0,
+              "power_hp": 50.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1959.php",
+              "a2": "A2 bridable"
+            },
+            {
+              "brand": "Harley-Davidson",
+              "model": "XLCH Sportster",
+              "year": 1958,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 883.0,
+              "weight_kg": 205.0,
+              "power_hp": 50.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1958.php",
+              "a2": "A2 bridable"
+            },
+            {
+              "brand": "Harley-Davidson",
+              "model": "XLCH Sportster",
+              "year": 1957,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 883.0,
+              "weight_kg": 205.0,
+              "power_hp": 50.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1957.php",
+              "a2": "A2 bridable"
+            },
+            {
+              "brand": "Adler",
+              "model": "M 250",
+              "year": 1954,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 250.0,
+              "weight_kg": 135.0,
+              "power_hp": 16.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/adler_m_250_1954.php",
+              "a2": "A2"
+            },
+            {
+              "brand": "Zündapp",
+              "model": "Elastic 198",
+              "year": 1954,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 198.0,
+              "weight_kg": 140.0,
+              "power_hp": 16.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/zundapp_elastic_198_1954.php",
+              "a2": "A2"
+            },
+            {
+              "brand": "Adler",
+              "model": "M 250",
+              "year": 1953,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 250.0,
+              "weight_kg": 135.0,
+              "power_hp": 16.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/adler_m_250_1953.php",
+              "a2": "A2"
+            },
+            {
+              "brand": "Simson",
+              "model": "AWO 425",
+              "year": 1953,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 249.0,
+              "weight_kg": null,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/simson_awo_425_1953.php",
+              "a2": null
+            },
+            {
+              "brand": "Indian",
+              "model": "Chief",
+              "year": 1953,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 1300.0,
+              "weight_kg": 258.6,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/indian_chief_1953.php",
+              "a2": null
+            },
+            {
+              "brand": "Indian",
+              "model": "Chief",
+              "year": 1952,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 1300.0,
+              "weight_kg": 258.6,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/indian_chief_1952.php",
+              "a2": null
+            },
+            {
+              "brand": "Adler",
+              "model": "M 250",
+              "year": 1952,
+              "category": "Custom/cruiser",
+              "category_fr": null,
+              "displacement_ccm": 250.0,
+              "weight_kg": 135.0,
+              "power_hp": 16.0,
+              "torque_nm": null,
+              "seat_height_mm": null,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/adler_m_250_1952.php",
+              "a2": "A2"
+            }
+          ],
+          "raw_result": "[{'brand': 'Harley-Davidson', 'model': 'XLCH Sportster', 'year': 1959, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 883.0, 'weight_kg': 205.0, 'power_hp': 50.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1959.php', 'a2': 'A2 bridable'}, {'brand': 'Harley-Davidson', 'model': 'XLCH Sportster', 'year': 1958, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 883.0, 'weight_kg': 205.0, 'power_hp': 50.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1958.php', 'a2': 'A2 bridable'}, {'brand': 'Harley-Davidson', 'model': 'XLCH Sportster', 'year': 1957, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 883.0, 'weight_kg': 205.0, 'power_hp': 50.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/harley-davidson_xlch_sportster_1957.php', 'a2': 'A2 bridable'}, {'brand': 'Adler', 'model': 'M 250', 'year': 1954, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 250.0, 'weight_kg': 135.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/adler_m_250_1954.php', 'a2': 'A2'}, {'brand': 'Zündapp', 'model': 'Elastic 198', 'year': 1954, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 198.0, 'weight_kg': 140.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/zundapp_elastic_198_1954.php', 'a2': 'A2'}, {'brand': 'Adler', 'model': 'M 250', 'year': 1953, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 250.0, 'weight_kg': 135.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/adler_m_250_1953.php', 'a2': 'A2'}, {'brand': 'Simson', 'model': 'AWO 425', 'year': 1953, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 249.0, 'weight_kg': None, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/simson_awo_425_1953.php', 'a2': None}, {'brand': 'Indian', 'model': 'Chief', 'year': 1953, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 1300.0, 'weight_kg': 258.6, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/indian_chief_1953.php', 'a2': None}, {'brand': 'Indian', 'model': 'Chief', 'year': 1952, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 1300.0, 'weight_kg': 258.6, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/indian_chief_1952.php', 'a2': None}, {'brand': 'Adler', 'model': 'M 250', 'year': 1952, 'category': 'Custom/cruiser', 'category_fr': None, 'displacement_ccm': 250.0, 'weight_kg': 135.0, 'power_hp': 16.0, 'torque_nm': None, 'seat_height_mm': None, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/adler_m_250_1952.php', 'a2': 'A2'}]",
+          "parse_error": null
+        }
+      ],
+      "checks": [
+        {
+          "label": "completed final assistant answer",
+          "ok": false
+        },
+        {
+          "label": "only known tools called",
+          "ok": true
+        },
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "years bounded to the 1950s",
+          "ok": true
+        },
+        {
+          "label": "category custom/cruiser",
+          "ok": true
+        },
+        {
+          "label": "all tool results parsed",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "no tool argument/runtime error returned",
+          "ok": true,
+          "observed": []
+        },
+        {
+          "label": "decade filter has both bounds 1950 and 1959",
+          "ok": true,
+          "observed": [
+            {
+              "min_year": 1950,
+              "max_year": 1959,
+              "category": "Custom/Cruiser"
+            }
+          ]
+        },
+        {
+          "label": "decade search returned catalog rows",
+          "ok": true,
+          "observed": 10
+        },
+        {
+          "label": "every returned year is in the 1950s",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "every returned category is custom/cruiser",
+          "ok": true,
+          "observed": null
+        }
+      ],
+      "objective_ok": false,
+      "elapsed_seconds": 126.336
+    },
+    {
+      "id": "count-1",
+      "question": "How many Kawasaki motorcycles are in the database?",
+      "started_at_utc": "2026-10-09T23:51:32.606344+00:00",
+      "answer": "There are 2,353 Kawasaki motorcycles in the database.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "How many Kawasaki motorcycles are in the database?"
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_96ljwep0",
+              "function": {
+                "index": 0,
+                "name": "filter_specs",
+                "arguments": {
+                  "brand": "Kawasaki",
+                  "count_only": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'matching_motorcycles': 2353}]"
+        },
+        {
+          "role": "assistant",
+          "content": "There are 2,353 Kawasaki motorcycles in the database."
+        }
+      ],
+      "calls": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "brand": "Kawasaki",
+            "count_only": true
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "name": "filter_specs",
+          "args": {
+            "brand": "Kawasaki",
+            "count_only": true
+          },
+          "rows": [
+            {
+              "matching_motorcycles": 2353
+            }
+          ],
+          "raw_result": "[{'matching_motorcycles': 2353}]",
+          "parse_error": null
+        }
+      ],
+      "checks": [
+        {
+          "label": "completed final assistant answer",
+          "ok": true
+        },
+        {
+          "label": "only known tools called",
+          "ok": true
+        },
+        {
+          "label": "calls filter_specs",
+          "ok": true
+        },
+        {
+          "label": "brand Kawasaki",
+          "ok": true
+        },
+        {
+          "label": "asks for a count",
+          "ok": true
+        },
+        {
+          "label": "all tool results parsed",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "no tool argument/runtime error returned",
+          "ok": true,
+          "observed": []
+        },
+        {
+          "label": "tool count equals independent read-only SQL count",
+          "ok": true,
+          "observed": {
+            "tool_counts": [
+              2353
+            ],
+            "sql_count": 2353
+          }
+        }
+      ],
+      "objective_ok": true,
+      "elapsed_seconds": 8.153
+    },
+    {
+      "id": "details-1",
+      "question": "What is the fuel capacity of the Suzuki GSF 1200 Bandit?",
+      "started_at_utc": "2026-10-09T23:51:40.761072+00:00",
+      "answer": "The Suzuki GSF 1200 Bandit has a fuel capacity of 20.00 litres (5.28 US gallons).",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is the fuel capacity of the Suzuki GSF 1200 Bandit?"
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_97ps3lk7",
+              "function": {
+                "index": 0,
+                "name": "get_bike_details",
+                "arguments": {
+                  "model": "GSF 1200 Bandit",
+                  "brand": "Suzuki"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'brand': 'Suzuki', 'model': 'GSF 1200 Bandit', 'year': 2003, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 1157.0, 'weight_kg': 220.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 790.0, 'msrp_eur': 7799.0, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_bandit_2003.php', 'specs': {'Gearbox': '5-speed', 'Category': 'Naked bike', 'Rear tire': '180/55-ZR17', 'Wheelbase': '1430 mm (56.3 inches)', 'Dry weight': '220.0 kg (485.0 pounds)', 'Front tire': '120/70-ZR17', 'Model name': 'Suzuki GSF 1200 Bandit', 'Model year': '2003', 'Compression': '9.5:1', 'Engine type': 'In-line four, four-stroke', 'Fuel system': 'Carburettor', 'Rear brakes': 'Single disc', 'Seat height': '790 mm (31.1 inches) If adjustable, lowest setting.', 'Displacement': '1157.0 ccm (70.60 cubic inches)', 'Front brakes': 'Double disc', 'Fuel control': 'Double Overhead Cams/Twin Cam (DOHC)', 'Bore x stroke': '79.0 x 59.0 mm (3.1 x 2.3 inches)', 'Fuel capacity': '20.00 litres (5.28 US gallons)', 'Overall width': '765 mm (30.1 inches)', 'Cooling system': 'Air', 'Overall height': '1220 mm (48.0 inches)', 'Overall length': '2070 mm (81.5 inches)', 'Transmission type': 'Chain  (final drive)', 'Valves per cylinder': '4'}}, {'brand': 'Suzuki', 'model': 'GSF 1200 S Bandit', 'year': 2003, 'category': 'Sport touring', 'category_fr': None, 'displacement_ccm': 1157.0, 'weight_kg': 220.0, 'power_hp': 98.0, 'torque_nm': 91.7, 'seat_height_mm': 790.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2003.php', 'specs': {'Model': 'Suzuki GSF 1200 S Bandit', 'Torque': '91.7 Nm (9.4 kgf-m or 67.6 ft.lbs) @ 6500 RPM', 'Gearbox': '5-speed', 'Category': 'Sport touring', 'Rear tire': '180/55-17', 'Wheelbase': '1430 mm (56.3 inches)', 'Dry weight': '220.0 kg (485.0 pounds)', 'Front tire': '120/70-17', 'Model year': '2003', 'Compression': '9.5:1', 'Engine type': 'In-line four, four-stroke', 'Fuel system': 'Carburettor', 'Rear brakes': 'Single disc', 'Seat height': '790 mm (31.1 inches) If adjustable, lowest setting.', 'Displacement': '1157.0 ccm (70.60 cubic inches)', 'Front brakes': 'Double disc', 'Fuel control': 'Double Overhead Cams/Twin Cam (DOHC)', 'Power output': '98.0 HP (71.5 kW )) @ 8500 RPM', 'Bore x stroke': '79.0 x 59.0 mm (3.1 x 2.3 inches)', 'Fuel capacity': '20.00 litres (5.28 US gallons)', 'Overall width': '765 mm (30.1 inches)', 'Overall length': '2070 mm (81.5 inches)', 'Ground clearance': '130 mm (5.1 inches)', 'Transmission type': 'Chain  (final drive)', 'Power/weight ratio': '0.4455 HP/kg', 'Valves per cylinder': '4', 'Reserve fuel capacity': '4.50 litres (1.19 US gallons)'}}, {'brand': 'Suzuki', 'model': 'GSF 1200 S Bandit', 'year': 2002, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 1157.0, 'weight_kg': 220.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 790.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2002.php', 'specs': {'Year': '2002', 'Gearbox': '5-speed', 'Category': 'Naked bike', 'Rear tire': '180/55-ZR17', 'Wheelbase': '1430 mm (56.3 inches)', 'Dry weight': '220.0 kg (485.0 pounds)', 'Front tire': '120/70-ZR17', 'Model name': 'Suzuki GSF 1200 S Bandit', 'Compression': '9.5:1', 'Engine type': 'In-line four, four-stroke', 'Fuel system': 'Carburettor', 'Rear brakes': 'Single disc', 'Seat height': '790 mm (31.1 inches) If adjustable, lowest setting.', 'Displacement': '1157.0 ccm (70.60 cubic inches)', 'Front brakes': 'Dual disc', 'Fuel control': 'Double Overhead Cams/Twin Cam (DOHC)', 'Bore x stroke': '79.0 x 59.0 mm (3.1 x 2.3 inches)', 'Fuel capacity': '20.00 litres (5.28 US gallons)', 'Overall width': '765 mm (30.1 inches)', 'Cooling system': 'Oil & air', 'Overall height': '1220 mm (48.0 inches)', 'Overall length': '2070 mm (81.5 inches)', 'Ground clearance': '130 mm (5.1 inches)', 'Transmission type': 'Chain  (final drive)', 'Valves per cylinder': '4'}}, {'known_us_recalls_total': 0}]"
+        },
+        {
+          "role": "assistant",
+          "content": "The Suzuki GSF 1200 Bandit has a fuel capacity of 20.00 litres (5.28 US gallons)."
+        }
+      ],
+      "calls": [
+        {
+          "name": "get_bike_details",
+          "args": {
+            "model": "GSF 1200 Bandit",
+            "brand": "Suzuki"
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "name": "get_bike_details",
+          "args": {
+            "model": "GSF 1200 Bandit",
+            "brand": "Suzuki"
+          },
+          "rows": [
+            {
+              "brand": "Suzuki",
+              "model": "GSF 1200 Bandit",
+              "year": 2003,
+              "category": "Naked bike",
+              "category_fr": "Roadster",
+              "displacement_ccm": 1157.0,
+              "weight_kg": 220.0,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": 790.0,
+              "msrp_eur": 7799.0,
+              "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_bandit_2003.php",
+              "specs": {
+                "Gearbox": "5-speed",
+                "Category": "Naked bike",
+                "Rear tire": "180/55-ZR17",
+                "Wheelbase": "1430 mm (56.3 inches)",
+                "Dry weight": "220.0 kg (485.0 pounds)",
+                "Front tire": "120/70-ZR17",
+                "Model name": "Suzuki GSF 1200 Bandit",
+                "Model year": "2003",
+                "Compression": "9.5:1",
+                "Engine type": "In-line four, four-stroke",
+                "Fuel system": "Carburettor",
+                "Rear brakes": "Single disc",
+                "Seat height": "790 mm (31.1 inches) If adjustable, lowest setting.",
+                "Displacement": "1157.0 ccm (70.60 cubic inches)",
+                "Front brakes": "Double disc",
+                "Fuel control": "Double Overhead Cams/Twin Cam (DOHC)",
+                "Bore x stroke": "79.0 x 59.0 mm (3.1 x 2.3 inches)",
+                "Fuel capacity": "20.00 litres (5.28 US gallons)",
+                "Overall width": "765 mm (30.1 inches)",
+                "Cooling system": "Air",
+                "Overall height": "1220 mm (48.0 inches)",
+                "Overall length": "2070 mm (81.5 inches)",
+                "Transmission type": "Chain  (final drive)",
+                "Valves per cylinder": "4"
+              }
+            },
+            {
+              "brand": "Suzuki",
+              "model": "GSF 1200 S Bandit",
+              "year": 2003,
+              "category": "Sport touring",
+              "category_fr": null,
+              "displacement_ccm": 1157.0,
+              "weight_kg": 220.0,
+              "power_hp": 98.0,
+              "torque_nm": 91.7,
+              "seat_height_mm": 790.0,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2003.php",
+              "specs": {
+                "Model": "Suzuki GSF 1200 S Bandit",
+                "Torque": "91.7 Nm (9.4 kgf-m or 67.6 ft.lbs) @ 6500 RPM",
+                "Gearbox": "5-speed",
+                "Category": "Sport touring",
+                "Rear tire": "180/55-17",
+                "Wheelbase": "1430 mm (56.3 inches)",
+                "Dry weight": "220.0 kg (485.0 pounds)",
+                "Front tire": "120/70-17",
+                "Model year": "2003",
+                "Compression": "9.5:1",
+                "Engine type": "In-line four, four-stroke",
+                "Fuel system": "Carburettor",
+                "Rear brakes": "Single disc",
+                "Seat height": "790 mm (31.1 inches) If adjustable, lowest setting.",
+                "Displacement": "1157.0 ccm (70.60 cubic inches)",
+                "Front brakes": "Double disc",
+                "Fuel control": "Double Overhead Cams/Twin Cam (DOHC)",
+                "Power output": "98.0 HP (71.5 kW )) @ 8500 RPM",
+                "Bore x stroke": "79.0 x 59.0 mm (3.1 x 2.3 inches)",
+                "Fuel capacity": "20.00 litres (5.28 US gallons)",
+                "Overall width": "765 mm (30.1 inches)",
+                "Overall length": "2070 mm (81.5 inches)",
+                "Ground clearance": "130 mm (5.1 inches)",
+                "Transmission type": "Chain  (final drive)",
+                "Power/weight ratio": "0.4455 HP/kg",
+                "Valves per cylinder": "4",
+                "Reserve fuel capacity": "4.50 litres (1.19 US gallons)"
+              }
+            },
+            {
+              "brand": "Suzuki",
+              "model": "GSF 1200 S Bandit",
+              "year": 2002,
+              "category": "Naked bike",
+              "category_fr": null,
+              "displacement_ccm": 1157.0,
+              "weight_kg": 220.0,
+              "power_hp": null,
+              "torque_nm": null,
+              "seat_height_mm": 790.0,
+              "msrp_eur": null,
+              "url": "https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2002.php",
+              "specs": {
+                "Year": "2002",
+                "Gearbox": "5-speed",
+                "Category": "Naked bike",
+                "Rear tire": "180/55-ZR17",
+                "Wheelbase": "1430 mm (56.3 inches)",
+                "Dry weight": "220.0 kg (485.0 pounds)",
+                "Front tire": "120/70-ZR17",
+                "Model name": "Suzuki GSF 1200 S Bandit",
+                "Compression": "9.5:1",
+                "Engine type": "In-line four, four-stroke",
+                "Fuel system": "Carburettor",
+                "Rear brakes": "Single disc",
+                "Seat height": "790 mm (31.1 inches) If adjustable, lowest setting.",
+                "Displacement": "1157.0 ccm (70.60 cubic inches)",
+                "Front brakes": "Dual disc",
+                "Fuel control": "Double Overhead Cams/Twin Cam (DOHC)",
+                "Bore x stroke": "79.0 x 59.0 mm (3.1 x 2.3 inches)",
+                "Fuel capacity": "20.00 litres (5.28 US gallons)",
+                "Overall width": "765 mm (30.1 inches)",
+                "Cooling system": "Oil & air",
+                "Overall height": "1220 mm (48.0 inches)",
+                "Overall length": "2070 mm (81.5 inches)",
+                "Ground clearance": "130 mm (5.1 inches)",
+                "Transmission type": "Chain  (final drive)",
+                "Valves per cylinder": "4"
+              }
+            },
+            {
+              "known_us_recalls_total": 0
+            }
+          ],
+          "raw_result": "[{'brand': 'Suzuki', 'model': 'GSF 1200 Bandit', 'year': 2003, 'category': 'Naked bike', 'category_fr': 'Roadster', 'displacement_ccm': 1157.0, 'weight_kg': 220.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 790.0, 'msrp_eur': 7799.0, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_bandit_2003.php', 'specs': {'Gearbox': '5-speed', 'Category': 'Naked bike', 'Rear tire': '180/55-ZR17', 'Wheelbase': '1430 mm (56.3 inches)', 'Dry weight': '220.0 kg (485.0 pounds)', 'Front tire': '120/70-ZR17', 'Model name': 'Suzuki GSF 1200 Bandit', 'Model year': '2003', 'Compression': '9.5:1', 'Engine type': 'In-line four, four-stroke', 'Fuel system': 'Carburettor', 'Rear brakes': 'Single disc', 'Seat height': '790 mm (31.1 inches) If adjustable, lowest setting.', 'Displacement': '1157.0 ccm (70.60 cubic inches)', 'Front brakes': 'Double disc', 'Fuel control': 'Double Overhead Cams/Twin Cam (DOHC)', 'Bore x stroke': '79.0 x 59.0 mm (3.1 x 2.3 inches)', 'Fuel capacity': '20.00 litres (5.28 US gallons)', 'Overall width': '765 mm (30.1 inches)', 'Cooling system': 'Air', 'Overall height': '1220 mm (48.0 inches)', 'Overall length': '2070 mm (81.5 inches)', 'Transmission type': 'Chain  (final drive)', 'Valves per cylinder': '4'}}, {'brand': 'Suzuki', 'model': 'GSF 1200 S Bandit', 'year': 2003, 'category': 'Sport touring', 'category_fr': None, 'displacement_ccm': 1157.0, 'weight_kg': 220.0, 'power_hp': 98.0, 'torque_nm': 91.7, 'seat_height_mm': 790.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2003.php', 'specs': {'Model': 'Suzuki GSF 1200 S Bandit', 'Torque': '91.7 Nm (9.4 kgf-m or 67.6 ft.lbs) @ 6500 RPM', 'Gearbox': '5-speed', 'Category': 'Sport touring', 'Rear tire': '180/55-17', 'Wheelbase': '1430 mm (56.3 inches)', 'Dry weight': '220.0 kg (485.0 pounds)', 'Front tire': '120/70-17', 'Model year': '2003', 'Compression': '9.5:1', 'Engine type': 'In-line four, four-stroke', 'Fuel system': 'Carburettor', 'Rear brakes': 'Single disc', 'Seat height': '790 mm (31.1 inches) If adjustable, lowest setting.', 'Displacement': '1157.0 ccm (70.60 cubic inches)', 'Front brakes': 'Double disc', 'Fuel control': 'Double Overhead Cams/Twin Cam (DOHC)', 'Power output': '98.0 HP (71.5 kW )) @ 8500 RPM', 'Bore x stroke': '79.0 x 59.0 mm (3.1 x 2.3 inches)', 'Fuel capacity': '20.00 litres (5.28 US gallons)', 'Overall width': '765 mm (30.1 inches)', 'Overall length': '2070 mm (81.5 inches)', 'Ground clearance': '130 mm (5.1 inches)', 'Transmission type': 'Chain  (final drive)', 'Power/weight ratio': '0.4455 HP/kg', 'Valves per cylinder': '4', 'Reserve fuel capacity': '4.50 litres (1.19 US gallons)'}}, {'brand': 'Suzuki', 'model': 'GSF 1200 S Bandit', 'year': 2002, 'category': 'Naked bike', 'category_fr': None, 'displacement_ccm': 1157.0, 'weight_kg': 220.0, 'power_hp': None, 'torque_nm': None, 'seat_height_mm': 790.0, 'msrp_eur': None, 'url': 'https://bikez.com/motorcycles/suzuki_gsf_1200_s_bandit_2002.php', 'specs': {'Year': '2002', 'Gearbox': '5-speed', 'Category': 'Naked bike', 'Rear tire': '180/55-ZR17', 'Wheelbase': '1430 mm (56.3 inches)', 'Dry weight': '220.0 kg (485.0 pounds)', 'Front tire': '120/70-ZR17', 'Model name': 'Suzuki GSF 1200 S Bandit', 'Compression': '9.5:1', 'Engine type': 'In-line four, four-stroke', 'Fuel system': 'Carburettor', 'Rear brakes': 'Single disc', 'Seat height': '790 mm (31.1 inches) If adjustable, lowest setting.', 'Displacement': '1157.0 ccm (70.60 cubic inches)', 'Front brakes': 'Dual disc', 'Fuel control': 'Double Overhead Cams/Twin Cam (DOHC)', 'Bore x stroke': '79.0 x 59.0 mm (3.1 x 2.3 inches)', 'Fuel capacity': '20.00 litres (5.28 US gallons)', 'Overall width': '765 mm (30.1 inches)', 'Cooling system': 'Oil & air', 'Overall height': '1220 mm (48.0 inches)', 'Overall length': '2070 mm (81.5 inches)', 'Ground clearance': '130 mm (5.1 inches)', 'Transmission type': 'Chain  (final drive)', 'Valves per cylinder': '4'}}, {'known_us_recalls_total': 0}]",
+          "parse_error": null
+        }
+      ],
+      "checks": [
+        {
+          "label": "completed final assistant answer",
+          "ok": true
+        },
+        {
+          "label": "only known tools called",
+          "ok": true
+        },
+        {
+          "label": "calls get_bike_details",
+          "ok": true
+        },
+        {
+          "label": "targets the GSF 1200 Bandit",
+          "ok": true
+        },
+        {
+          "label": "all tool results parsed",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "no tool argument/runtime error returned",
+          "ok": true,
+          "observed": []
+        },
+        {
+          "label": "details returned concrete bike rows",
+          "ok": true,
+          "observed": 3
+        },
+        {
+          "label": "details rows target Suzuki GSF 1200 Bandit",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "requested fuel/tank capacity is present in tool specs",
+          "ok": true,
+          "observed": [
+            {
+              "Fuel capacity": "20.00 litres (5.28 US gallons)"
+            },
+            {
+              "Fuel capacity": "20.00 litres (5.28 US gallons)",
+              "Reserve fuel capacity": "4.50 litres (1.19 US gallons)"
+            },
+            {
+              "Fuel capacity": "20.00 litres (5.28 US gallons)"
+            }
+          ]
+        }
+      ],
+      "objective_ok": true,
+      "elapsed_seconds": 31.24
+    },
+    {
+      "id": "narrative-3",
+      "question": "Quels sont les retours des proprietaires sur l'Aprilia RS 125 ?",
+      "started_at_utc": "2026-10-09T23:52:12.002741+00:00",
+      "answer": "Les retours des propriétaires sur l'Aprilia RS 125 sont limités et ne fournissent pas d'informations détaillées sur les problèmes de fiabilité ou les impressions de conduite. Les commentaires disponibles sont très succincts et ne donnent pas une image complète des expériences des propriétaires. Il semble qu'il n'y ait pas beaucoup de discussions ou de retours approfondis sur ce modèle spécifique dans les forums consultés.\n\nSi vous avez des questions spécifiques sur les caractéristiques techniques ou les performances de l'Aprilia RS 125, je peux vous fournir des informations détaillées à ce sujet.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quels sont les retours des proprietaires sur l'Aprilia RS 125 ?"
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_97562ggh",
+              "function": {
+                "index": 0,
+                "name": "search_reviews",
+                "arguments": {
+                  "model": "RS 125",
+                  "brand": "Aprilia",
+                  "query": "retours propriétaires"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'get an rs', 'author': 'ss', 'posted_at': '2004-12-10 19:30', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5130333892683145, 'rrf': 0.01639, 'rerank_score': 0.002}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'go for the rs', 'author': 'sam', 'posted_at': '2004-12-10 19:27', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5320064146522523, 'rrf': 0.01515, 'rerank_score': 0.0006}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'cOME aGAIN', 'author': 'NN', 'posted_at': '2002-01-22 12:41', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5146365446285518, 'rrf': 0.01613, 'rerank_score': 0.0002}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'Was the \\\\', 'author': 'jerry', 'posted_at': '2010-12-05 18:09', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5810280393941372, 'rrf': 0.01176, 'rerank_score': 0.0001}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'i just purchased an rs125, just to have a feel of riding against the wind again after 10 odd years...', 'author': 'wee', 'posted_at': '2011-09-28 02:14', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5030771788266648, 'rrf': 0.01667, 'rerank_score': 0.0}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Les retours des propriétaires sur l'Aprilia RS 125 sont limités et ne fournissent pas d'informations détaillées sur les problèmes de fiabilité ou les impressions de conduite. Les commentaires disponibles sont très succincts et ne donnent pas une image complète des expériences des propriétaires. Il semble qu'il n'y ait pas beaucoup de discussions ou de retours approfondis sur ce modèle spécifique dans les forums consultés.\n\nSi vous avez des questions spécifiques sur les caractéristiques techniques ou les performances de l'Aprilia RS 125, je peux vous fournir des informations détaillées à ce sujet."
+        }
+      ],
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "model": "RS 125",
+            "brand": "Aprilia",
+            "query": "retours propriétaires"
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "model": "RS 125",
+            "brand": "Aprilia",
+            "query": "retours propriétaires"
+          },
+          "rows": [
+            {
+              "brand": "Aprilia",
+              "model_family": "125",
+              "family_year_min": 1997,
+              "family_year_max": 2024,
+              "comment_text": "get an rs",
+              "author": "ss",
+              "posted_at": "2004-12-10 19:30",
+              "source": "bikez",
+              "lang": "en",
+              "rating": null,
+              "distance": 0.5130333892683145,
+              "rrf": 0.01639,
+              "rerank_score": 0.002
+            },
+            {
+              "brand": "Aprilia",
+              "model_family": "125",
+              "family_year_min": 1997,
+              "family_year_max": 2024,
+              "comment_text": "go for the rs",
+              "author": "sam",
+              "posted_at": "2004-12-10 19:27",
+              "source": "bikez",
+              "lang": "en",
+              "rating": null,
+              "distance": 0.5320064146522523,
+              "rrf": 0.01515,
+              "rerank_score": 0.0006
+            },
+            {
+              "brand": "Aprilia",
+              "model_family": "125",
+              "family_year_min": 1997,
+              "family_year_max": 2024,
+              "comment_text": "cOME aGAIN",
+              "author": "NN",
+              "posted_at": "2002-01-22 12:41",
+              "source": "bikez",
+              "lang": "en",
+              "rating": null,
+              "distance": 0.5146365446285518,
+              "rrf": 0.01613,
+              "rerank_score": 0.0002
+            },
+            {
+              "brand": "Aprilia",
+              "model_family": "125",
+              "family_year_min": 1997,
+              "family_year_max": 2024,
+              "comment_text": "Was the \\",
+              "author": "jerry",
+              "posted_at": "2010-12-05 18:09",
+              "source": "bikez",
+              "lang": "en",
+              "rating": null,
+              "distance": 0.5810280393941372,
+              "rrf": 0.01176,
+              "rerank_score": 0.0001
+            },
+            {
+              "brand": "Aprilia",
+              "model_family": "125",
+              "family_year_min": 1997,
+              "family_year_max": 2024,
+              "comment_text": "i just purchased an rs125, just to have a feel of riding against the wind again after 10 odd years...",
+              "author": "wee",
+              "posted_at": "2011-09-28 02:14",
+              "source": "bikez",
+              "lang": "en",
+              "rating": null,
+              "distance": 0.5030771788266648,
+              "rrf": 0.01667,
+              "rerank_score": 0.0
+            }
+          ],
+          "raw_result": "[{'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'get an rs', 'author': 'ss', 'posted_at': '2004-12-10 19:30', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5130333892683145, 'rrf': 0.01639, 'rerank_score': 0.002}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'go for the rs', 'author': 'sam', 'posted_at': '2004-12-10 19:27', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5320064146522523, 'rrf': 0.01515, 'rerank_score': 0.0006}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'cOME aGAIN', 'author': 'NN', 'posted_at': '2002-01-22 12:41', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5146365446285518, 'rrf': 0.01613, 'rerank_score': 0.0002}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'Was the \\\\', 'author': 'jerry', 'posted_at': '2010-12-05 18:09', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5810280393941372, 'rrf': 0.01176, 'rerank_score': 0.0001}, {'brand': 'Aprilia', 'model_family': '125', 'family_year_min': 1997, 'family_year_max': 2024, 'comment_text': 'i just purchased an rs125, just to have a feel of riding against the wind again after 10 odd years...', 'author': 'wee', 'posted_at': '2011-09-28 02:14', 'source': 'bikez', 'lang': 'en', 'rating': None, 'distance': 0.5030771788266648, 'rrf': 0.01667, 'rerank_score': 0.0}]",
+          "parse_error": null
+        }
+      ],
+      "checks": [
+        {
+          "label": "completed final assistant answer",
+          "ok": true
+        },
+        {
+          "label": "only known tools called",
+          "ok": true
+        },
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "targets the Aprilia RS 125",
+          "ok": true
+        },
+        {
+          "label": "all tool results parsed",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "no tool argument/runtime error returned",
+          "ok": true,
+          "observed": []
+        },
+        {
+          "label": "French user question retrieves real owner comments",
+          "ok": true,
+          "observed": 5
+        },
+        {
+          "label": "comments are scoped to Aprilia RS 125 family",
+          "ok": false,
+          "observed": null
+        },
+        {
+          "label": "comments carry source, language and family-year provenance",
+          "ok": true,
+          "observed": null
+        }
+      ],
+      "objective_ok": false,
+      "elapsed_seconds": 230.138
+    },
+    {
+      "id": "honesty-2",
+      "question": "What do owners say about the 1930 BMW R 16?",
+      "started_at_utc": "2026-10-09T23:56:02.147595+00:00",
+      "answer": "Could not reach the local Ollama server (ReadTimeout) — is it running?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What do owners say about the 1930 BMW R 16?"
+        },
+        {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_ufjgd458",
+              "function": {
+                "index": 0,
+                "name": "search_reviews",
+                "arguments": {
+                  "brand": "BMW",
+                  "min_year": 1930,
+                  "max_year": 1930,
+                  "query": "owner reviews",
+                  "model": "R 16"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "content": "[{'notes': [\"ignored unknown argument 'min_year'\", \"ignored unknown argument 'max_year'\"]}, {'info': 'No matching rows.'}]"
+        }
+      ],
+      "calls": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "brand": "BMW",
+            "min_year": 1930,
+            "max_year": 1930,
+            "query": "owner reviews",
+            "model": "R 16"
+          }
+        }
+      ],
+      "tool_events": [
+        {
+          "name": "search_reviews",
+          "args": {
+            "brand": "BMW",
+            "min_year": 1930,
+            "max_year": 1930,
+            "query": "owner reviews",
+            "model": "R 16"
+          },
+          "rows": [
+            {
+              "notes": [
+                "ignored unknown argument 'min_year'",
+                "ignored unknown argument 'max_year'"
+              ]
+            },
+            {
+              "info": "No matching rows."
+            }
+          ],
+          "raw_result": "[{'notes': [\"ignored unknown argument 'min_year'\", \"ignored unknown argument 'max_year'\"]}, {'info': 'No matching rows.'}]",
+          "parse_error": null
+        }
+      ],
+      "checks": [
+        {
+          "label": "completed final assistant answer",
+          "ok": false
+        },
+        {
+          "label": "only known tools called",
+          "ok": true
+        },
+        {
+          "label": "calls search_reviews",
+          "ok": true
+        },
+        {
+          "label": "targets the BMW R 16",
+          "ok": true
+        },
+        {
+          "label": "all tool results parsed",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "no tool argument/runtime error returned",
+          "ok": true,
+          "observed": []
+        },
+        {
+          "label": "missing-review check actually searched",
+          "ok": true,
+          "observed": null
+        },
+        {
+          "label": "searches are scoped to the BMW R 16",
+          "ok": true,
+          "observed": [
+            {
+              "brand": "BMW",
+              "min_year": 1930,
+              "max_year": 1930,
+              "query": "owner reviews",
+              "model": "R 16"
+            }
+          ]
+        },
+        {
+          "label": "no owner comments returned for the historical no-review case",
+          "ok": true,
+          "observed": {
+            "comment_rows": 0,
+            "root_must_review_honest_abstention_text": true
+          }
+        }
+      ],
+      "objective_ok": false,
+      "elapsed_seconds": 217.249
+    }
+  ],
+  "installed_generator": {
+    "model": "mistral-small3.2:latest",
+    "requested_model": "mistral-small3.2",
+    "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b"
+  },
+  "corpus_counts": {
+    "motorcycles": 32395,
+    "review_chunks": 121191
+  },
+  "finished_at_utc": "2026-10-09T23:59:39.412390+00:00",
+  "summary": {
+    "cases_planned": 6,
+    "cases_run": 6,
+    "objective_passed": 3,
+    "text_quality_reviewed": false
+  },
+  "post_run_audit": {
+    "review_scope": {
+      "case_id": "narrative-3",
+      "original_check_is_false_negative": true,
+      "reason": "The display family name is 125; the actual discussion URL and member models identify RS 125.",
+      "read_only_provenance_checks": [
+        {
+          "matched_families": [
+            {
+              "id": 80,
+              "discussion_url": "https://bikez.com/models/aprilia-rs-125-discussions.php"
+            }
+          ],
+          "ok": true
+        },
+        {
+          "matched_families": [
+            {
+              "id": 80,
+              "discussion_url": "https://bikez.com/models/aprilia-rs-125-discussions.php"
+            }
+          ],
+          "ok": true
+        },
+        {
+          "matched_families": [
+            {
+              "id": 80,
+              "discussion_url": "https://bikez.com/models/aprilia-rs-125-discussions.php"
+            }
+          ],
+          "ok": true
+        },
+        {
+          "matched_families": [
+            {
+              "id": 80,
+              "discussion_url": "https://bikez.com/models/aprilia-rs-125-discussions.php"
+            }
+          ],
+          "ok": true
+        },
+        {
+          "matched_families": [
+            {
+              "id": 80,
+              "discussion_url": "https://bikez.com/models/aprilia-rs-125-discussions.php"
+            }
+          ],
+          "ok": true
+        }
+      ],
+      "corrected_scope_ok": true
+    },
+    "structured_category_caveat": "Niken GT appears under Naked bike in bikez category and Hors categorie in category_fr. The final answer did not flag this conflict.",
+    "runtime_caveat": "The user also ran the live Gradio demo against the same single Ollama runner. Queueing affects timings; these are not isolated latency benchmarks.",
+    "pending_fixes": "Configurable Ollama request timeout, cooperative turn budget, bounded review excerpts and retry-state isolation passed unit tests but have not been replayed against the live service; the user requested keeping the current demo running.",
+    "text_quality_fully_evaluated": false,
+    "corrected_objective_passed": 4
+  }
+}

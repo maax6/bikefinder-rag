@@ -1,0 +1,641 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-09T23:45:08.319273+00:00",
+    "git": {
+      "sha": "652176aa162d3291eb956fa1cc8b6e63678042cb",
+      "dirty": true
+    },
+    "python": "3.11.15",
+    "package_versions": {
+      "requests": "2.34.2",
+      "anthropic": "0.116.0",
+      "psycopg": "3.3.4",
+      "pgvector": "0.5.0",
+      "sentence-transformers": "5.6.0",
+      "transformers": "5.13.0",
+      "torch": "2.13.0",
+      "ragas": "0.4.3",
+      "langchain-ollama": "1.1.0"
+    },
+    "implementation_sha256": {
+      "agent/tools.py": "78b4739992fba4c77a2b12979cafae190c2cb37b4839326e2d5c5ed6c03baeb7",
+      "embeddings/embedder.py": "83973887bf8d7034a0916d83ce41823a62856a3c9f1ebe1c8e8ae01bc77645d0",
+      "embeddings/reranker.py": "495282e994ac3c7dabbf84fe78f875c7a279dbb5909bbb0eecc9a8063abb32d2"
+    },
+    "corpus": {
+      "motorcycles": {
+        "rows": 32395,
+        "max_id": 32403,
+        "rows_md5": "8a54c2a8c17c0c978379c44b6f18a232"
+      },
+      "model_families": {
+        "rows": 4335,
+        "max_id": 5084,
+        "rows_md5": "39092614dae624356f34f93c64ee8805"
+      },
+      "review_chunks": {
+        "rows": 121191,
+        "max_id": 134786,
+        "rows_md5": "ccab1fee2d33a4be00e0e371a04bfa6a"
+      },
+      "recalls": {
+        "rows": 3521,
+        "max_id": 5719,
+        "rows_md5": "9ef39d14a791f555bb81e1c9480b23f0"
+      },
+      "used_price_estimates": {
+        "rows": 2165,
+        "max_id": 2165,
+        "rows_md5": "5d7799fd05d0653667a1002d89e06886"
+      },
+      "review_languages": [
+        {
+          "lang": "en",
+          "source": "bikez",
+          "rows": 104418
+        },
+        {
+          "lang": "fr",
+          "source": "motoplanete",
+          "rows": 16773
+        }
+      ],
+      "database_versions": {
+        "postgres": "17.11 (Debian 17.11-1.pgdg12+2)",
+        "pgvector": "0.8.6"
+      }
+    },
+    "retrieval": {
+      "embedder_model": "BAAI/bge-m3",
+      "embedding_dimensions": 1024,
+      "device": "cpu",
+      "reranker_model": "BAAI/bge-reranker-v2-m3",
+      "reranker_enabled": true,
+      "weight_revision_tracking": "model names and packages; HF weight files are not hashed or pinned"
+    },
+    "evaluation": {
+      "negative_control": "distance separation, not agent abstention",
+      "on_topic_avg_top1_distance": 0.1688666666666667
+    }
+  },
+  "data_integrity": {
+    "motorcycles": 32395,
+    "model_families": 4335,
+    "review_chunks": 121191,
+    "families_with_reviews": 2068,
+    "motos_with_reviews": 21956,
+    "very_short": 1108,
+    "avg_len": 238,
+    "null_embeddings": 0,
+    "orphan_chunks": 0,
+    "exact_duplicate_groups": 0
+  },
+  "self_retrieval": {
+    "sampling": "md5(id::text || ':bikefinder-self-v1'), id",
+    "requested_sample_size": 30,
+    "sample_size": 30,
+    "rank1_hits": 30,
+    "rank1_hit_rate": 1.0,
+    "stored_vector_mismatches": 0,
+    "stored_distance_tolerance": 0.0001,
+    "distance_tie_tolerance": 1e-07,
+    "avg_self_distance": 3.1789142873606124e-08,
+    "samples": [
+      {
+        "id": 104728,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 104728,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 11555,
+        "stored_vector_distance": 1.1920929487985177e-07,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 11555,
+        "ann_top1_distance": 1.1920929487985177e-07
+      },
+      {
+        "id": 85817,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 85817,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 81818,
+        "stored_vector_distance": 2.980232283178452e-08,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 81818,
+        "ann_top1_distance": 2.980232283178452e-08
+      },
+      {
+        "id": 62433,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 62433,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 86289,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 86289,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 82929,
+        "stored_vector_distance": 1.1920926823449918e-07,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 82929,
+        "ann_top1_distance": 1.1920926823449918e-07
+      },
+      {
+        "id": 108747,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 108747,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 87858,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 87858,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 91089,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 91089,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 52373,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 52373,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 118784,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 118784,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 88860,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 88860,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 41606,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 41606,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 81789,
+        "stored_vector_distance": 1.78813921891674e-07,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 81789,
+        "ann_top1_distance": 1.78813921891674e-07
+      },
+      {
+        "id": 49573,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 49573,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 18400,
+        "stored_vector_distance": 2.980232460814136e-08,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 18400,
+        "ann_top1_distance": 2.980232460814136e-08
+      },
+      {
+        "id": 131028,
+        "stored_vector_distance": 1.1920926823449918e-07,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 131028,
+        "ann_top1_distance": 1.1920926823449918e-07
+      },
+      {
+        "id": 78672,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 78672,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 42429,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 42429,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 55979,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 55979,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 103277,
+        "stored_vector_distance": 1.4901162481706365e-07,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 103277,
+        "ann_top1_distance": 1.4901162481706365e-07
+      },
+      {
+        "id": 39646,
+        "stored_vector_distance": 5.960463944632011e-08,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 39646,
+        "ann_top1_distance": 5.960463944632011e-08
+      },
+      {
+        "id": 78851,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 78851,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 47002,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 47002,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 14005,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 14005,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 32503,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 32503,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 48094,
+        "stored_vector_distance": 1.4901162126434997e-07,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 48094,
+        "ann_top1_distance": 1.4901162126434997e-07
+      },
+      {
+        "id": 47825,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 47825,
+        "ann_top1_distance": 0.0
+      },
+      {
+        "id": 29130,
+        "stored_vector_distance": 0.0,
+        "ann_rank_in_top10": 1,
+        "ann_top1_id": 29130,
+        "ann_top1_distance": 0.0
+      }
+    ],
+    "failures": []
+  },
+  "keyword_lift": [
+    {
+      "theme": "fuel economy / mileage",
+      "query": "how good is the fuel economy and mileage",
+      "base_count": 1818,
+      "base_rate": 0.015,
+      "top_k": 30,
+      "hits_in_top_k": 20,
+      "hit_rate": 0.6667,
+      "lift": 44.44,
+      "top1_distance": 0.2277,
+      "example_hits": [
+        {
+          "brand": "Kawasaki",
+          "model": "Vulcan 2000",
+          "distance": 0.2277,
+          "text": "What kind of fuel mileage do they average?"
+        },
+        {
+          "brand": "Honda",
+          "model": "VF 750",
+          "distance": 0.2563,
+          "text": "What kind of gas mileage does it average?"
+        },
+        {
+          "brand": "Atlas",
+          "model": "Honda Pridor",
+          "distance": 0.2662,
+          "text": "What is average fuel consumption per km"
+        }
+      ]
+    },
+    {
+      "theme": "vibration at speed",
+      "query": "does the engine vibrate a lot at speed",
+      "base_count": 959,
+      "base_rate": 0.0079,
+      "top_k": 30,
+      "hits_in_top_k": 24,
+      "hit_rate": 0.8,
+      "lift": 101.1,
+      "top1_distance": 0.1825,
+      "example_hits": [
+        {
+          "brand": "Suzuki",
+          "model": "Boulevard S83",
+          "distance": 0.1825,
+          "text": "motor cycle vibrates at highway speed. is this normal or do I have a problem?"
+        },
+        {
+          "brand": "BMW",
+          "model": "R 1200 GS",
+          "distance": 0.207,
+          "text": "Steering vibrates at high speed, 150 ro 180 klms"
+        },
+        {
+          "brand": "Kymco",
+          "model": "Stryker",
+          "distance": 0.2145,
+          "text": "my striker has a huge vibration from the engine when i rev it up"
+        }
+      ]
+    },
+    {
+      "theme": "reliability problems",
+      "query": "is this bike reliable or does it break down",
+      "base_count": 12477,
+      "base_rate": 0.103,
+      "top_k": 30,
+      "hits_in_top_k": 8,
+      "hit_rate": 0.2667,
+      "lift": 2.59,
+      "top1_distance": 0.0979,
+      "example_hits": [
+        {
+          "brand": "Husaberg",
+          "model": "FE 501",
+          "distance": 0.0979,
+          "text": "is this a reliable bike"
+        },
+        {
+          "brand": "Ducati",
+          "model": "900 SS",
+          "distance": 0.1578,
+          "text": "How dependable are these bikes?"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "Dyna",
+          "distance": 0.1739,
+          "text": "Is this bike any good?"
+        }
+      ]
+    },
+    {
+      "theme": "seat comfort",
+      "query": "is the seat comfortable for long rides",
+      "base_count": 136,
+      "base_rate": 0.0011,
+      "top_k": 30,
+      "hits_in_top_k": 4,
+      "hit_rate": 0.1333,
+      "lift": 118.81,
+      "top1_distance": 0.1764,
+      "example_hits": [
+        {
+          "brand": "Harley-Davidson",
+          "model": "Fat Boy",
+          "distance": 0.1764,
+          "text": "What is the most comfortable 2 rider seat for long trips? Thanks"
+        },
+        {
+          "brand": "Honda",
+          "model": "CBR600RR",
+          "distance": 0.1918,
+          "text": "find riders seat very uncomfortable on long drives any solutions?"
+        },
+        {
+          "brand": "KTM",
+          "model": "640 Enduro",
+          "distance": 0.2168,
+          "text": "I want one but are they comfortable for riding long distances on the road?"
+        }
+      ]
+    },
+    {
+      "theme": "beginner friendly",
+      "query": "is this a good first bike for a beginner",
+      "base_count": 1507,
+      "base_rate": 0.0124,
+      "top_k": 30,
+      "hits_in_top_k": 14,
+      "hit_rate": 0.4667,
+      "lift": 37.53,
+      "top1_distance": 0.0388,
+      "example_hits": [
+        {
+          "brand": "Suzuki",
+          "model": "VS 1400 GLP Intruder",
+          "distance": 0.0388,
+          "text": "is this a good bike for a first time rider?"
+        },
+        {
+          "brand": "Kawasaki",
+          "model": "Ninja",
+          "distance": 0.0473,
+          "text": "is this a good beginers bike?"
+        },
+        {
+          "brand": "Victory",
+          "model": "Vegas",
+          "distance": 0.0495,
+          "text": "new to riding is this a good 1st bike?"
+        }
+      ]
+    },
+    {
+      "theme": "brakes",
+      "query": "how good are the brakes",
+      "base_count": 2654,
+      "base_rate": 0.0219,
+      "top_k": 30,
+      "hits_in_top_k": 30,
+      "hit_rate": 1.0,
+      "lift": 45.66,
+      "top1_distance": 0.2899,
+      "example_hits": [
+        {
+          "brand": "Yamaha",
+          "model": "RD 500 LC",
+          "distance": 0.2899,
+          "text": "Poor front brakes how can I improve them?"
+        },
+        {
+          "brand": "Kymco",
+          "model": "Active 110",
+          "distance": 0.3023,
+          "text": "poor brake system"
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 450 S",
+          "distance": 0.3069,
+          "text": "uhh, the brakes"
+        }
+      ]
+    }
+  ],
+  "negative_control": [
+    {
+      "query": "recette de gâteau au chocolat sans four",
+      "top1_distance": 0.4323,
+      "on_topic_avg_top1_distance": 0.1689,
+      "worse_than_on_topic_avg": true,
+      "top_hits": [
+        {
+          "brand": "Honda",
+          "model": "XLR",
+          "distance": 0.4323,
+          "text": "I am looking for a compleat block (no carb)"
+        },
+        {
+          "brand": "KTM",
+          "model": "1190 RC8",
+          "distance": 0.4631,
+          "text": "How can I started without the key"
+        },
+        {
+          "brand": "Harley-Davidson",
+          "model": "Super Glide Custom 110th Anniversary",
+          "distance": 0.4945,
+          "text": "can make these almost maintenace free"
+        }
+      ]
+    },
+    {
+      "query": "best python web framework for a REST API",
+      "top1_distance": 0.4976,
+      "on_topic_avg_top1_distance": 0.1689,
+      "worse_than_on_topic_avg": true,
+      "top_hits": [
+        {
+          "brand": "Honda",
+          "model": "Africa Twin",
+          "distance": 0.4976,
+          "text": "the best"
+        },
+        {
+          "brand": "Yamaha",
+          "model": "WR450F",
+          "distance": 0.5087,
+          "text": "Just wondering what pipe is the best to run?"
+        },
+        {
+          "brand": "CPI",
+          "model": "GTR",
+          "distance": 0.5105,
+          "text": "what is the best pipe"
+        }
+      ]
+    }
+  ],
+  "cross_lingual": [
+    {
+      "english_query": "is this bike reliable or does it break down",
+      "french_query": "est-ce que cette moto est fiable ou tombe-t-elle souvent en panne",
+      "top_k": 10,
+      "overlap_count": 3,
+      "jaccard": 0.176,
+      "overlap_count_reranked": 2,
+      "jaccard_reranked": 0.111
+    },
+    {
+      "english_query": "how good is the fuel economy and mileage",
+      "french_query": "quelle est la consommation d'essence de cette moto",
+      "top_k": 10,
+      "overlap_count": 0,
+      "jaccard": 0.0,
+      "overlap_count_reranked": 0,
+      "jaccard_reranked": 0.0
+    }
+  ],
+  "french_relevance": [
+    {
+      "theme": "fuel economy",
+      "french_query": "quelle est la consommation d'essence de cette moto",
+      "english_query": "what kind of gas usage does this bike get on the highway",
+      "top_k": 10,
+      "hits_dense": 4,
+      "hits_reranked": 6,
+      "hits_shipped_fr": 6,
+      "hits_shipped_en": 9,
+      "fr_docs_shipped_fr": 0,
+      "fr_docs_shipped_en": 0
+    },
+    {
+      "theme": "vibration",
+      "french_query": "est-ce que le moteur vibre beaucoup a haute vitesse",
+      "english_query": "does the engine buzz badly at high speed",
+      "top_k": 10,
+      "hits_dense": 6,
+      "hits_reranked": 10,
+      "hits_shipped_fr": 7,
+      "hits_shipped_en": 4,
+      "fr_docs_shipped_fr": 2,
+      "fr_docs_shipped_en": 0
+    },
+    {
+      "theme": "seat comfort",
+      "french_query": "la selle est-elle confortable sur longs trajets",
+      "english_query": "how does the saddle feel on a long ride",
+      "top_k": 10,
+      "hits_dense": 5,
+      "hits_reranked": 8,
+      "hits_shipped_fr": 8,
+      "hits_shipped_en": 1,
+      "fr_docs_shipped_fr": 9,
+      "fr_docs_shipped_en": 0
+    },
+    {
+      "theme": "beginner",
+      "french_query": "est-ce une bonne premiere moto pour un debutant",
+      "english_query": "is this a good bike to learn on",
+      "top_k": 10,
+      "hits_dense": 4,
+      "hits_reranked": 7,
+      "hits_shipped_fr": 4,
+      "hits_shipped_en": 1,
+      "fr_docs_shipped_fr": 1,
+      "fr_docs_shipped_en": 0
+    },
+    {
+      "theme": "brakes",
+      "french_query": "les freins sont-ils bons",
+      "english_query": "how well does it stop in an emergency",
+      "top_k": 10,
+      "hits_dense": 10,
+      "hits_reranked": 10,
+      "hits_shipped_fr": 9,
+      "hits_shipped_en": 1,
+      "fr_docs_shipped_fr": 9,
+      "fr_docs_shipped_en": 0
+    }
+  ]
+}

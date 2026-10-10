@@ -92,6 +92,34 @@ reports alongside the data — the short version:
   default. The optional cloud interface asks for the visitor's own key.
   The Hugging Face deployment directory is a historical showcase experiment.
 
+The next iteration will prioritize **technical specifications and performance
+comparisons by model year**, with owner reviews deferred until that catalog is
+reliable. The [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
+and [local plan](docs/technical-catalog-refactor.md) record the coverage audit,
+data corrections, acceptance cases and model benchmark for an M5 with 32 GB.
+This is planned work; the current demo still includes owner reviews.
+
+## Which model years do the reviews cover?
+
+![Timeline showing catalog model years and shared review coverage for four example motorcycle families](docs/assets/review-year-coverage.svg)
+
+Each dot is a **model year present in the three selected datasets**:
+`data/century`, `data/2000s` and `data/demo`, checked on 2026-10-10. The
+interval joins the earliest and latest years of a family; gaps between
+dots are gaps in this selection, not necessarily in other bundled datasets
+or the database. The comment counts are deduplicated Bikez comments from
+these same files.
+
+For example, Honda CB 250 entries span **1967–2020** in these files. Their
+comments form one shared family pool: that range does **not** establish
+owner testimony for every year or generation. A comment's publication date
+(`posted_at`) is separate from the family's model-year range
+(`family_year_min` / `family_year_max`).
+
+This is an illustrative selection, not the full review inventory. French
+Motoplanete reviews also join model families in the local database; they
+are outside this figure. Coverage depends on the datasets loaded locally.
+
 ## Data source & why self-scrape
 
 There's an existing Kaggle dataset (`all_bikez`, CC0) scraped from bikez.com
@@ -232,6 +260,25 @@ PYTHONPATH=src .venv/bin/python scripts/load_db.py data/pilot
 # Chat in the browser (http://127.0.0.1:7860), or use scripts/chat_cli.py.
 PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
 ```
+
+Local model loading and generation can take several minutes. Ollama has a
+**180-second cooperative budget per user turn** (`OLLAMA_TURN_TIMEOUT_SECONDS`)
+and a **300-second read timeout cap per request** (`OLLAMA_TIMEOUT_SECONDS`).
+Each request uses the smaller of its cap and the remaining turn budget;
+successive tool calls do not restart that budget. Set positive finite values
+in `.env` to adjust either limit.
+
+The budget is checked before requests and tools and after each operation.
+An in-progress DB/CPU tool is not interrupted, so it can overrun the budget;
+HTTP read timeouts also do not guarantee a hard wall-clock deadline. Once
+exhaustion is detected, no further operation starts. Budget exhaustion,
+slow-response read timeouts and connection failures have separate messages.
+These settings do not change the cloud backends' timeouts.
+
+Failed local attempts remain visible in the chat, but their incomplete tool
+traces are excluded from the model's conversation state. A standalone `retry`
+or `réessaie` repeats the most recent substantive question; successful tool
+turns keep their evidence for follow-up questions.
 
 Compose persists PostgreSQL in a named volume and only exposes its port on
 `127.0.0.1`. Its initialization SQL runs once for a new volume. To apply the

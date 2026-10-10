@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="730" viewBox="0 0 1080 730" role="img" aria-labelledby="title description">
+<title id="title">Review coverage by model family</title>
+<desc id="description">Examples from the selected Bikez datasets: century, 2000s and demo. Their catalog years span 1894 to 2024. Each dot is a model year in this selection; other bundled datasets or the database can contain additional years. Comments belong to the shared model family; no review coverage is guaranteed for an individual year. BMW R 16 has no comments in these files.</desc>
+<metadata id="snapshot">{&quot;verified_on&quot;: &quot;2026-10-10&quot;, &quot;source_files&quot;: [&quot;data/century/motorcycles.jsonl&quot;, &quot;data/century/comments.jsonl&quot;, &quot;data/2000s/motorcycles.jsonl&quot;, &quot;data/2000s/comments.jsonl&quot;, &quot;data/demo/motorcycles.jsonl&quot;, &quot;data/demo/comments.jsonl&quot;], &quot;deduplication&quot;: &quot;forum, author, posted_at, text (acute apostrophes normalized)&quot;, &quot;examples&quot;: [{&quot;label&quot;: &quot;BMW R 16&quot;, &quot;forum&quot;: &quot;https://bikez.com/models/bmw-r-16-discussions.php&quot;, &quot;years&quot;: [1929, 1930, 1931, 1932], &quot;unique_comments&quot;: 0}, {&quot;label&quot;: &quot;Honda CB 250&quot;, &quot;forum&quot;: &quot;https://bikez.com/models/honda-cb-250-discussions.php&quot;, &quot;years&quot;: [1967, 1968, 1971, 1972, 1973, 1974, 1975, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1997, 2000, 2002, 2003, 2004, 2005, 2006, 2008, 2015, 2016, 2020], &quot;unique_comments&quot;: 252}, {&quot;label&quot;: &quot;Suzuki GSF 1200 Bandit&quot;, &quot;forum&quot;: &quot;https://bikez.com/models/suzuki-gsf-1200-discussions.php&quot;, &quot;years&quot;: [1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003], &quot;unique_comments&quot;: 204}, {&quot;label&quot;: &quot;Yamaha XJR 1300&quot;, &quot;forum&quot;: &quot;https://bikez.com/models/yamaha-xjr-1300-discussions.php&quot;, &quot;years&quot;: [1999, 2000, 2001, 2002, 2003, 2004, 2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018], &quot;unique_comments&quot;: 62}]}</metadata>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#1e293b} .muted{fill:#526175} .small{font-size:16px} .body{font-size:18px} .label{font-size:21px;font-weight:600} .tick{font-size:16px;fill:#526175}</style>
+<rect x="1" y="1" width="1078" height="728" rx="18" fill="#ffffff" stroke="#dce3ed"/>
+<text x="38" y="52" font-size="29" font-weight="700">Which model years do the reviews cover?</text>
+<text x="38" y="82" class="body muted">Reviews are shared by a model family. Dots show catalog years, not dated owner testimony.</text>
+<rect x="38" y="106" width="1004" height="82" rx="10" fill="#f1f5f9"/>
+<text x="56" y="134" class="small muted">SELECTED CATALOG · SPECS</text>
+<text x="56" y="164" font-size="22" font-weight="600">1894–2024</text>
+<line x1="310" x2="970" y1="148" y2="148" stroke="#b6c3d4" stroke-width="8" stroke-linecap="round"/>
+<circle cx="310" cy="148" r="5" fill="#64748b"/><circle cx="970" cy="148" r="5" fill="#64748b"/>
+<text x="38" y="222" class="small muted">EXAMPLE FAMILIES · BIKEZ COMMENTS IN THESE FILES</text>
+<line x1="310.00" x2="310.00" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="310.00" y="249" text-anchor="middle" class="tick">1894</text>
+<line x1="442.00" x2="442.00" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="442.00" y="249" text-anchor="middle" class="tick">1920</text>
+<line x1="543.54" x2="543.54" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="543.54" y="249" text-anchor="middle" class="tick">1940</text>
+<line x1="645.08" x2="645.08" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="645.08" y="249" text-anchor="middle" class="tick">1960</text>
+<line x1="746.62" x2="746.62" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="746.62" y="249" text-anchor="middle" class="tick">1980</text>
+<line x1="848.15" x2="848.15" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="848.15" y="249" text-anchor="middle" class="tick">2000</text>
+<line x1="970.00" x2="970.00" y1="255" y2="550" stroke="#e8edf4" stroke-dasharray="3 5"/><text x="970.00" y="249" text-anchor="middle" class="tick">2024</text>
+<text x="38" y="291" class="label">BMW R 16</text><text x="38" y="315" class="small muted">1929–1932 · no comments</text>
+<line x1="487.69" x2="502.92" y1="295" y2="295" stroke="#94a3b8" stroke-opacity="0.23" stroke-width="16" stroke-linecap="round"/>
+<circle cx="487.69" cy="295" r="3.2" fill="#94a3b8" stroke="#fff" stroke-width="0.8"><title>BMW R 16 · catalog year 1929</title></circle>
+<circle cx="492.77" cy="295" r="3.2" fill="#94a3b8" stroke="#fff" stroke-width="0.8"><title>BMW R 16 · catalog year 1930</title></circle>
+<circle cx="497.85" cy="295" r="3.2" fill="#94a3b8" stroke="#fff" stroke-width="0.8"><title>BMW R 16 · catalog year 1931</title></circle>
+<circle cx="502.92" cy="295" r="3.2" fill="#94a3b8" stroke="#fff" stroke-width="0.8"><title>BMW R 16 · catalog year 1932</title></circle>
+<text x="38" y="366" class="label">Honda CB 250</text><text x="38" y="390" class="small muted">1967–2020 · 252 unique comments</text>
+<line x1="680.62" x2="949.69" y1="370" y2="370" stroke="#2563eb" stroke-opacity="0.23" stroke-width="16" stroke-linecap="round"/>
+<circle cx="680.62" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1967</title></circle>
+<circle cx="685.69" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1968</title></circle>
+<circle cx="700.92" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1971</title></circle>
+<circle cx="706.00" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1972</title></circle>
+<circle cx="711.08" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1973</title></circle>
+<circle cx="716.15" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1974</title></circle>
+<circle cx="721.23" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1975</title></circle>
+<circle cx="736.46" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1978</title></circle>
+<circle cx="741.54" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1979</title></circle>
+<circle cx="746.62" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1980</title></circle>
+<circle cx="751.69" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1981</title></circle>
+<circle cx="756.77" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1982</title></circle>
+<circle cx="761.85" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1983</title></circle>
+<circle cx="766.92" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1984</title></circle>
+<circle cx="772.00" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1985</title></circle>
+<circle cx="777.08" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1986</title></circle>
+<circle cx="832.92" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 1997</title></circle>
+<circle cx="848.15" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2000</title></circle>
+<circle cx="858.31" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2002</title></circle>
+<circle cx="863.38" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2003</title></circle>
+<circle cx="868.46" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2004</title></circle>
+<circle cx="873.54" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2005</title></circle>
+<circle cx="878.62" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2006</title></circle>
+<circle cx="888.77" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2008</title></circle>
+<circle cx="924.31" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2015</title></circle>
+<circle cx="929.38" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2016</title></circle>
+<circle cx="949.69" cy="370" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Honda CB 250 · catalog year 2020</title></circle>
+<text x="38" y="441" class="label">Suzuki GSF 1200 Bandit</text><text x="38" y="465" class="small muted">1996–2003 · 204 unique comments</text>
+<line x1="827.85" x2="863.38" y1="445" y2="445" stroke="#2563eb" stroke-opacity="0.23" stroke-width="16" stroke-linecap="round"/>
+<circle cx="827.85" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 1996</title></circle>
+<circle cx="832.92" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 1997</title></circle>
+<circle cx="838.00" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 1998</title></circle>
+<circle cx="843.08" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 1999</title></circle>
+<circle cx="848.15" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 2000</title></circle>
+<circle cx="853.23" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 2001</title></circle>
+<circle cx="858.31" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 2002</title></circle>
+<circle cx="863.38" cy="445" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Suzuki GSF 1200 Bandit · catalog year 2003</title></circle>
+<text x="38" y="516" class="label">Yamaha XJR 1300</text><text x="38" y="540" class="small muted">1999–2018 · 62 unique comments</text>
+<line x1="843.08" x2="939.54" y1="520" y2="520" stroke="#2563eb" stroke-opacity="0.23" stroke-width="16" stroke-linecap="round"/>
+<circle cx="843.08" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 1999</title></circle>
+<circle cx="848.15" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2000</title></circle>
+<circle cx="853.23" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2001</title></circle>
+<circle cx="858.31" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2002</title></circle>
+<circle cx="863.38" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2003</title></circle>
+<circle cx="868.46" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2004</title></circle>
+<circle cx="878.62" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2006</title></circle>
+<circle cx="883.69" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2007</title></circle>
+<circle cx="888.77" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2008</title></circle>
+<circle cx="893.85" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2009</title></circle>
+<circle cx="904.00" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2011</title></circle>
+<circle cx="909.08" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2012</title></circle>
+<circle cx="914.15" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2013</title></circle>
+<circle cx="919.23" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2014</title></circle>
+<circle cx="924.31" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2015</title></circle>
+<circle cx="929.38" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2016</title></circle>
+<circle cx="934.46" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2017</title></circle>
+<circle cx="939.54" cy="520" r="3.2" fill="#2563eb" stroke="#fff" stroke-width="0.8"><title>Yamaha XJR 1300 · catalog year 2018</title></circle>
+<rect x="38" y="577" width="1004" height="103" rx="10" fill="#eff6ff" stroke="#dbeafe"/>
+<text x="56" y="604" font-size="20" font-weight="700">Read an interval as a family, not as one review per year.</text>
+<text x="56" y="633" class="body">A CB 250 comment is attached to the family spanning 1967–2020 in these files.</text>
+<text x="56" y="660" class="body">The comment's publication date is separate. Gaps show years absent from this selection.</text>
+<text x="38" y="707" font-size="14" class="muted">Illustrative selection · bundled Bikez files: century, 2000s, demo · checked 10 Oct 2026 · French reviews are outside this view.</text>
+</svg>
