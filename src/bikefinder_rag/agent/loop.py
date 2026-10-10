@@ -14,7 +14,9 @@ each visitor by the prefix of the key they pasted):
 """
 
 import json
+import math
 import os
+import time
 
 import anthropic
 import requests
@@ -26,6 +28,21 @@ BACKEND = os.environ.get("AGENT_BACKEND", "ollama")
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "mistral-small3.2")
+
+
+def _positive_seconds_from_env(name: str, default: str) -> float:
+    message = f"{name} must be a positive finite number of seconds."
+    try:
+        timeout = float(os.environ.get(name, default))
+    except ValueError as exc:
+        raise ValueError(message) from exc
+    if not math.isfinite(timeout) or timeout <= 0:
+        raise ValueError(message)
+    return timeout
+
+
+OLLAMA_TIMEOUT_SECONDS = _positive_seconds_from_env("OLLAMA_TIMEOUT_SECONDS", "300")
+OLLAMA_TURN_TIMEOUT_SECONDS = _positive_seconds_from_env("OLLAMA_TURN_TIMEOUT_SECONDS", "180")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-5")
 
@@ -239,10 +256,19 @@ def _run_agent_openrouter(conn, api_key: str, user_message: str, history: list[d
 
 
 def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tuple[str, list[dict]]:
+    deadline = time.monotonic() + OLLAMA_TURN_TIMEOUT_SECONDS
     messages = list(history or [])
     messages.append({"role": "user", "content": user_message})
+    budget_message = (
+        f"The local Ollama turn exhausted its {OLLAMA_TURN_TIMEOUT_SECONDS:g}-second budget "
+        "— narrow the question or increase OLLAMA_TURN_TIMEOUT_SECONDS and retry."
+    )
 
     for _ in range(MAX_TOOL_TURNS):
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            return budget_message, messages
+        request_timeout = min(OLLAMA_TIMEOUT_SECONDS, remaining)
         try:
             response = requests.post(
                 f"{OLLAMA_HOST}/api/chat",
@@ -258,12 +284,24 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
                     # (the instructions) would fall off mid-loop.
                     "options": {"temperature": 0, "num_ctx": 16384},
                 },
-                timeout=120,
+                timeout=request_timeout,
             )
             response.raise_for_status()
+        except requests.ReadTimeout:
+            if time.monotonic() >= deadline:
+                return budget_message, messages
+            return (
+                f"The local Ollama response exceeded the {request_timeout:g}-second read timeout "
+                "— model loading or generation may be too slow. Increase OLLAMA_TIMEOUT_SECONDS and retry.",
+                messages,
+            )
         except requests.RequestException as exc:
+            if time.monotonic() >= deadline:
+                return budget_message, messages
             return (f"Could not reach the local Ollama server ({type(exc).__name__}) — is it running?", messages)
         message = response.json()["message"]
+        if time.monotonic() >= deadline:
+            return budget_message, messages
         messages.append(message)
 
         tool_calls = message.get("tool_calls") or []
@@ -275,10 +313,15 @@ def _run_agent_ollama(conn, user_message: str, history: list[dict] | None) -> tu
             arguments = call["function"]["arguments"]
             if isinstance(arguments, str):
                 arguments = json.loads(arguments)
+            if time.monotonic() >= deadline:
+                return budget_message, messages
             results = execute_tool(conn, name, arguments)
             messages.append({
                 "role": "tool",
                 "content": str(results) if results else "No matching rows.",
             })
+            # Cooperative limit: an in-progress DB/CPU tool cannot be preempted.
+            if time.monotonic() >= deadline:
+                return budget_message, messages
 
     return TURN_LIMIT_MESSAGE, messages

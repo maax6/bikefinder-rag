@@ -4,6 +4,8 @@ Optional Anthropic/OpenRouter backends use a visitor-provided API key.
 """
 
 import os
+import re
+import unicodedata
 
 from dotenv import load_dotenv
 
@@ -11,8 +13,47 @@ load_dotenv()
 
 import gradio as gr
 
-from bikefinder_rag.agent.loop import BACKEND, OLLAMA_MODEL, run_agent
+from bikefinder_rag.agent.loop import BACKEND, OLLAMA_MODEL, TURN_LIMIT_MESSAGE, run_agent
 from bikefinder_rag.db.client import get_connection
+
+
+def _is_retry(message: str) -> bool:
+    text = unicodedata.normalize("NFKD", message).encode("ascii", "ignore").decode().lower()
+    text = re.sub(r"[^a-z\s]", "", text)
+    return " ".join(text.split()) in {
+        "retry", "try again", "retry please", "retente", "reessaie", "reessaye",
+        "essaie encore", "reessaie stp", "retente stp",
+    }
+
+
+def _is_final_local_message(message: dict) -> bool:
+    return (isinstance(message, dict) and message.get("role") == "assistant"
+            and not message.get("tool_calls") and isinstance(message.get("content"), str)
+            and bool(message["content"].strip()) and message["content"] != TURN_LIMIT_MESSAGE)
+
+
+def _completed_local_history(history: list) -> list:
+    """Discard incomplete attempts, including legacy ones before later turns."""
+    completed, pending = [], []
+    for message in history:
+        if isinstance(message, dict) and message.get("role") == "user":
+            pending = [message]
+        elif pending:
+            pending.append(message)
+            if _is_final_local_message(message):
+                completed.extend(pending)
+                pending = []
+    return history if completed == history else completed
+
+
+def _previous_question(chat_history: list) -> str | None:
+    for message in reversed(chat_history):
+        if not isinstance(message, dict) or message.get("role") != "user":
+            continue
+        content = message.get("content")
+        if isinstance(content, str) and content.strip() and not _is_retry(content):
+            return content
+    return None
 
 
 def chat(message: str, chat_history: list, api_key: str, agent_history: list):
@@ -32,13 +73,35 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
     if BACKEND != "ollama":
         provider = "openrouter" if api_key.startswith("sk-or-") else "anthropic"
 
+    question = message
+    previous_state = agent_history
+    if BACKEND == "ollama":
+        previous_state = _completed_local_history(agent_history)
+        if _is_retry(message):
+            question = _previous_question(chat_history)
+            if question is None:
+                return chat_history + [
+                    {"role": "user", "content": message},
+                    {"role": "assistant", "content": "There is no earlier question to retry. Ask your question first."},
+                ], previous_state
+
     conn = get_connection()
     try:
         final_text, updated_history = run_agent(
-            conn, None, message, agent_history, provider=provider, api_key=api_key or None
+            conn, None, question, previous_state, provider=provider, api_key=api_key or None
         )
     finally:
         conn.close()
+
+    if BACKEND == "ollama" and not (
+        isinstance(updated_history, list) and updated_history
+        and _is_final_local_message(updated_history[-1])
+        and updated_history[-1]["content"] == final_text
+    ):
+        # The UI keeps its error bubble; the model only sees completed turns.
+        updated_history = previous_state
+        if not isinstance(final_text, str) or not final_text.strip():
+            final_text = "The local model did not produce a final answer. Please retry."
 
     chat_history = chat_history + [
         {"role": "user", "content": message},
