@@ -1,0 +1,258 @@
+{
+  "source_objects": 11478,
+  "chat": [
+    {
+      "question": "Quelles motos ont l'ABS en 2000 ?",
+      "answer": "Le catalogue documente **2 fiches de 2000 avec ABS de série**. Les mentions inconnues ne sont pas comptées.\n\n| Moto | Millésime | ABS | Source |\n|---|---:|---|---|\n| BMW K 1200 LT | 2000 | de série | [Fiche](https://www.motoplanete.com/bmw/866/K-1200-LT-2000/contact.html) |\n| BMW R 1200 C | 2000 | de série | [Fiche](https://www.motoplanete.com/bmw/1587/R-1200-C-2000/contact.html) |",
+      "seconds": 0.010813165921717882,
+      "checks": {
+        "2 fiches": true,
+        "motoplanete.com": true
+      },
+      "passed": true,
+      "tool_calls": [],
+      "tool_results": []
+    },
+    {
+      "question": "Combien de motos de 2025 ont l'ABS de série ?",
+      "answer": "Le catalogue documente **530 fiches de 2025 avec ABS de série**. Les mentions inconnues ne sont pas comptées.",
+      "seconds": 0.01191424997523427,
+      "checks": {
+        "fiches": true
+      },
+      "passed": true,
+      "tool_calls": [],
+      "tool_results": []
+    },
+    {
+      "question": "Quelles motos de 2025 ont l'ABS en option ?",
+      "answer": "Le catalogue documente **0 fiches de 2025 avec ABS en option**. Les mentions inconnues ne sont pas comptées. Cela ne prouve pas qu’aucune autre moto ne disposait de cet équipement.",
+      "seconds": 0.004117707954719663,
+      "checks": {
+        "0 fiches": true
+      },
+      "passed": true,
+      "tool_calls": [],
+      "tool_results": []
+    },
+    {
+      "question": "Quelle est l'autonomie de la BMW R 1150 GS de 2000 ?",
+      "answer": "**BMW R 1150 GS — 2000**\n\n| Caractéristique | Valeur documentée |\n|---|---|\n| Autonomie estimée | 440 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée. |\n| Source | [Fiche Motoplanète](https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html) |",
+      "seconds": 0.0015367080923169851,
+      "checks": {
+        "440": true,
+        "calcul": true,
+        "non vérifi": true,
+        "motoplanete.com": true
+      },
+      "passed": true,
+      "tool_calls": [],
+      "tool_results": []
+    },
+    {
+      "question": "Donne l'ABS et l'autonomie de la CFMoto 800 MT Explore de 2025, avec la source.",
+      "answer": "**CFMOTO 800 MT Explore — 2025**\n\n| Caractéristique | Valeur documentée |\n|---|---|\n| ABS | de série |\n| Autonomie estimée | 380 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée. |\n| Source | [Fiche Motoplanète](https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html) |",
+      "seconds": 0.0012817919487133622,
+      "checks": {
+        "380": true,
+        "ABS": true,
+        "calcul": true,
+        "non vérifi": true,
+        "motoplanete.com": true
+      },
+      "passed": true,
+      "tool_calls": [],
+      "tool_results": []
+    },
+    {
+      "question": "Donne l'autonomie de la Ducati Desmo450 Sm de 2026.",
+      "answer": "Aucune fiche documentée dans ce catalogue pour ce modèle et ce millésime.",
+      "seconds": 14.754179166979156,
+      "checks": {
+        "aucune fiche": true,
+        "requested_year_not_substituted": true
+      },
+      "passed": true,
+      "tool_calls": [
+        {
+          "index": 0,
+          "name": "get_catalog_details",
+          "arguments": {
+            "brand": "Ducati",
+            "model": "Desmo450 Sm",
+            "year": 2026
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "name": null,
+          "content": "No matching rows."
+        }
+      ]
+    },
+    {
+      "question": "Compare l'autonomie documentée de la BMW R 1150 GS de 2000 et de la CFMoto 800 MT Explore de 2025. Explique les limites de cette comparaison.",
+      "answer": "### Comparaison de l'autonomie documentée\n\n| Caractéristique                     | BMW R 1150 GS 2000                                                                 | CFMoto 800 MT Explore 2025                                                                 |\n|-------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|\n| Autonomie estimée                    | 440 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.               | 380 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.                     |\n| Source                               | [Motoplanete](https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html)    | [Motoplanete](https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html)  |\n\n### Limites de cette comparaison\n\n1. **Autonomie estimée** : Les valeurs d'autonomie sont calculées mais non vérifiées. Elles peuvent varier en fonction des conditions réelles d'utilisation, du style de conduite, des conditions météorologiques, et de l'état de la moto.\n\n2. **Différence de modèle et d'année** : La BMW R 1150 GS est un modèle de 2000, tandis que la CFMoto 800 MT Explore est un modèle de 2025. Les technologies et les normes ont évolué, ce qui peut influencer les performances et les spécifications.\n\n3. **Conditions de test** : Les autonomies sont basées sur des calculs théoriques et non sur des tests réels. Les conditions de test peuvent différer entre les deux modèles, ce qui peut affecter la comparabilité des résultats.\n\n4. **Capacité du réservoir** : La BMW R 1150 GS a un réservoir de 22 litres, tandis que la CFMoto 800 MT Explore a un réservoir de 19 litres. Cette différence peut influencer l'autonomie même si la consommation est similaire.\n\n5. **Consommation moyenne** : Les deux motos ont une consommation moyenne documentée de 5 l/100km. Cependant, cette valeur peut varier en fonction des conditions réelles d'utilisation.\n\n6. **Équipement et options** : Les équipements et options peuvent influencer la consommation de carburant et donc l'autonomie. Par exemple, des équipements supplémentaires ou des options peuvent augmenter le poids et la consommation.\n\n7. **Conditions de conduite** : L'autonomie peut être affectée par des facteurs tels que la charge, le type de route, la vitesse, et les conditions météorologiques. Ces facteurs ne sont pas pris en compte dans les valeurs documentées.\n\n8. **Évolution technologique** : Les motos modernes comme la CFMoto 800 MT Explore peuvent avoir des technologies de gestion de carburant plus avancées, ce qui peut influencer l'autonomie par rapport à des modèles plus anciens comme la BMW R 1150 GS.\n\nEn résumé, bien que les valeurs d'autonomie documentées fournissent une indication, elles doivent être interprétées avec prudence en tenant compte des limites mentionnées ci-dessus.",
+      "seconds": 154.30791945802048,
+      "checks": {
+        "440": true,
+        "380": true,
+        "calcul": true,
+        "non vérifi": true,
+        "motoplanete.com": true
+      },
+      "passed": true,
+      "tool_calls": [
+        {
+          "index": 0,
+          "name": "get_catalog_details",
+          "arguments": {
+            "brand": "BMW",
+            "model": "R 1150 GS",
+            "year": 2000
+          }
+        },
+        {
+          "index": 1,
+          "name": "get_catalog_details",
+          "arguments": {
+            "model": "800 MT Explore",
+            "year": 2025,
+            "brand": "CFMoto"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "name": null,
+          "content": "[{'id': '44822c1821d4c4a4', 'source_url': 'https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html', 'brand': 'BMW', 'model': 'R 1150 GS', 'year': 2000, 'source_sha256': 'b36ef139f3d8e9aefe945ee4b889ca85d83b501ae3b113b91a590c0f07936fba', 'spec_rows': [{'label': 'Cadre', 'value': 'bâti avant en alu coulé, bâti arrière en acier', 'section': 'Châssis'}, {'label': 'Réservoir', 'value': '22 litres', 'section': 'Châssis'}, {'label': '', 'value': 'Hauteur de selle réglable entre 840 mm et 860 mm', 'section': 'Châssis'}, {'label': 'Longueur', 'value': '2 189 mm', 'section': 'Châssis'}, {'label': 'Largeur', 'value': '980 mm', 'section': 'Châssis'}, {'label': 'Hauteur min', 'value': '1 366 mm', 'section': 'Châssis'}, {'label': 'Empattement', 'value': '1 509 mm', 'section': 'Châssis'}, {'label': 'Poids à sec', 'value': '228 kg', 'section': 'Châssis'}, {'label': 'Poids tous pleins faits', 'value': '249 kg', 'section': 'Châssis'}, {'label': 'Fourche Telelever, déb', 'value': '190 mm', 'section': 'Train avant'}, {'label': 'Freinage', 'value': '2 disques Ø 305 mm, étrier 4 pistons', 'section': 'Train avant'}, {'label': 'Roue avant', 'value': '110 / 80 - 19', 'section': 'Train avant'}, {'label': 'Pression', 'value': '2.2 bars', 'section': 'Train avant'}, {'label': '', 'value': 'boîte à 6 rapports', 'section': 'Transmission'}, {'label': '', 'value': 'Secondaire par cardan', 'section': 'Transmission'}, {'label': 'Mono-amortisseur et monobras Paralever, déb', 'value': '200 mm', 'section': 'Train arrière'}, {'label': 'Freinage', 'value': '1 disque Ø 275 mm, étrier 2 pistons', 'section': 'Train arrière'}, {'label': 'Roue arrière', 'value': '150 / 70 - 17', 'section': 'Train arrière'}, {'label': 'Pression', 'value': '2.5 bars', 'section': 'Train arrière'}, {'label': '', 'value': 'Bicylindre à plat , 4 temps', 'section': 'Moteur'}, {'label': '', 'value': 'Injection', 'section': 'Moteur'}, {'label': 'Refroidissement', 'value': 'combiné air / huile', 'section': 'Moteur'}, {'label': '', 'value': '1 ACT par cylindre', 'section': 'Moteur'}, {'label': '', 'value': '4 soupapes par cylindre', 'section': 'Moteur'}, {'label': '', 'value': '1 130 cc (Alésage * course: 101 x 70.5 mm)', 'section': 'Moteur'}, {'label': '', 'value': '85 ch à 6 800 tr/min', 'section': 'Moteur'}, {'label': '', 'value': '10 mkg à 5 300 tr/min', 'section': 'Moteur'}, {'label': 'Rapport poids / puissance', 'value': '2.68 kg/ch', 'section': 'Moteur'}, {'label': 'Rapport poids / couple', 'value': '22.8 kg/mkg', 'section': 'Moteur'}, {'label': 'Compression', 'value': '10.3 : 1', 'section': 'Moteur'}, {'label': 'Assistance au freinage', 'value': 'ABS en option', 'section': 'Équipement de série'}, {'label': 'La moto est accessible aux permis', 'value': 'A', 'section': 'Infos pratiques'}, {'label': 'Vitesse max', 'value': 'environ 195 km/h', 'section': 'Performances'}, {'label': 'Consommation moyenne', 'value': '5 l/100km', 'section': 'Performances'}, {'label': 'Autonomie estimée', 'value': \"440 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.\", 'section': 'Performances'}, {'label': 'France — Version de base', 'value': '12 150 € *', 'section': 'Tarifs'}], 'equipment': [{'equipment': 'ABS', 'status': 'optional', 'proof': [{'id': '44822c1821d4c4a4:row:30', 'text': 'Assistance au freinage : ABS en option', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}], 'market': None, 'collection': {'http_status': 200, 'collected_at': '2026-10-10T11:00:14.927888+00:00', 'resolved_url': 'https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html', 'requested_url': 'https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html', 'parser_version': 'motoplanete-technical-v1', 'schema_version': 'technical-source-v1', 'response_sha256': 'efcaf73137214b60a6223c0d0c4c166b5de63dfd337229348d0a1aafd1eab934', 'snapshot_sha256': '1a9f8f4ae20a88af7be673f6c2d62ae04414b36da79c9db657e912a456faa096', 'technical_snapshot': 'snapshots/25de1e5b67c3232cd612761d7c0af8d83844e5fe9ce12bb88a71a76370d2507a.html'}}]"
+        },
+        {
+          "name": null,
+          "content": "[{'id': 'f3e4515cd7b72852', 'source_url': 'https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html', 'brand': 'CFMOTO', 'model': '800 MT Explore', 'year': 2025, 'source_sha256': '8651b9af9724367dc6198d4b740ab40abfb4e0055ef7959189027dfa3b3f1488', 'spec_rows': [{'label': '', 'value': 'Selle biplaces', 'section': 'Châssis'}, {'label': 'Cadre', 'value': 'treillis tubuluraire en acier', 'section': 'Châssis'}, {'label': 'Réservoir', 'value': '19 litres', 'section': 'Châssis'}, {'label': 'Hauteur de selle', 'value': '825 mm', 'section': 'Châssis'}, {'label': 'Longueur', 'value': '2 234 mm', 'section': 'Châssis'}, {'label': 'Largeur', 'value': '853 mm', 'section': 'Châssis'}, {'label': 'Hauteur min', 'value': '1 277 mm', 'section': 'Châssis'}, {'label': 'Garde au sol min', 'value': '190 mm Empattement : 1 531 mm Poids à sec : 231 kg', 'section': 'Châssis'}, {'label': 'Fourche téléhydraulique inversée Ø nc, déb', 'value': '160 mm', 'section': 'Train avant'}, {'label': '', 'value': 'Réglage de la précharge, de la compression et de la détente', 'section': 'Train avant'}, {'label': 'Freinage', 'value': '1 disque J.Juan Ø 320 mm, fixation radiale, étrier 4 pistons', 'section': 'Train avant'}, {'label': '', 'value': 'Roue avant (Tubeless) : 110 / 80 - 19', 'section': 'Train avant'}, {'label': '', 'value': 'boîte à 6 rapports , manuelle - Shifter de série', 'section': 'Transmission'}, {'label': '', 'value': 'Secondaire par chaîne', 'section': 'Transmission'}, {'label': 'Mono-amortisseur, déb', 'value': '150 mm', 'section': 'Train arrière'}, {'label': '', 'value': 'Réglage de la précharge et de la détente', 'section': 'Train arrière'}, {'label': 'Freinage', 'value': '1 disque J.Juan Ø 260 mm, étrier 2 pistons', 'section': 'Train arrière'}, {'label': '', 'value': 'Roue arrière (Tubeless) : 150 / 70 - 17', 'section': 'Train arrière'}, {'label': '', 'value': 'Bicylindre parallèle , 4 temps, calé à 285°', 'section': 'Moteur'}, {'label': '', 'value': 'Injection', 'section': 'Moteur'}, {'label': 'Refroidissement', 'value': 'liquide', 'section': 'Moteur'}, {'label': '', 'value': '2 ACT', 'section': 'Moteur'}, {'label': '', 'value': '4 soupapes par cylindre', 'section': 'Moteur'}, {'label': '', 'value': '799 cc (Alésage * course: 88 x 65,7 mm)', 'section': 'Moteur'}, {'label': '', 'value': '91 ch à 9 250 tr/min', 'section': 'Moteur'}, {'label': '', 'value': '7,60 mkg (75 Nm) à 7 500 tr/min', 'section': 'Moteur'}, {'label': 'Rapport poids / puissance', 'value': '2.54 kg/ch', 'section': 'Moteur'}, {'label': 'Rapport poids / couple', 'value': '30.39 kg/mkg', 'section': 'Moteur'}, {'label': 'Compression', 'value': '12,7 : 1', 'section': 'Moteur'}, {'label': 'Système de démarrage', 'value': 'électrique', 'section': 'Moteur'}, {'label': 'Emission CO²', 'value': '120 g/km', 'section': 'Moteur'}, {'label': 'Assistance au freinage', 'value': 'ABS', 'section': 'Équipement de série'}, {'label': 'Nombre de mode de conduite', 'value': '6', 'section': 'Équipement de série'}, {'label': \"Taille de l'écran TFT couleur\", 'value': '20,32 cm / 8 pouces', 'section': 'Équipement de série'}, {'label': '', 'value': 'ABS Cornering', 'section': 'Équipement de série'}, {'label': '', 'value': 'Shifter', 'section': 'Équipement de série'}, {'label': '', 'value': 'Béquille centrale', 'section': 'Équipement de série'}, {'label': '', 'value': 'Amortisseur de direction', 'section': 'Équipement de série'}, {'label': '', 'value': 'Indicateur de vitesse engagée', 'section': 'Équipement de série'}, {'label': '', 'value': 'Régulateur de vitesse', 'section': 'Équipement de série'}, {'label': '', 'value': 'Bluetooth', 'section': 'Équipement de série'}, {'label': '', 'value': 'Prise USB', 'section': 'Équipement de série'}, {'label': '', 'value': 'Contrôle de traction', 'section': 'Équipement de série'}, {'label': '', 'value': 'Poignées chauffantes', 'section': 'Équipement de série'}, {'label': '', 'value': 'Pare brise réglable', 'section': 'Équipement de série'}, {'label': '', 'value': 'Crash Bars / Top Blocks', 'section': 'Équipement de série'}, {'label': '', 'value': 'Système radar', 'section': 'Équipement de série'}, {'label': '', 'value': 'Embrayage anti-dribble', 'section': 'Équipement de série'}, {'label': '', 'value': 'Selle chauffante', 'section': 'Équipement de série'}, {'label': '', 'value': 'Surveillance de la pression des pneus', 'section': 'Équipement de série'}, {'label': '', 'value': 'Prise 12V', 'section': 'Équipement de série'}, {'label': 'La moto est accessible aux permis', 'value': 'A, A2', 'section': 'Infos pratiques'}, {'label': 'Pays de fabrication', 'value': 'Chine', 'section': 'Infos pratiques'}, {'label': 'Vitesse max', 'value': 'environ 200 km/h', 'section': 'Performances'}, {'label': 'Consommation moyenne', 'value': '5 l/100km', 'section': 'Performances'}, {'label': 'Autonomie estimée', 'value': \"380 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.\", 'section': 'Performances'}, {'label': 'France — Version de base', 'value': '12 490 € *', 'section': 'Tarifs'}, {'label': 'Coloris', 'value': 'noir', 'section': 'Coloris'}, {'label': 'Coloris', 'value': 'blanc / bleu', 'section': 'Coloris'}], 'equipment': [{'equipment': 'ABS', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:31', 'text': 'Assistance au freinage : ABS', 'section': 'Équipement de série'}, {'id': 'f3e4515cd7b72852:row:34', 'text': 'ABS Cornering', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Amortisseur de direction', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:37', 'text': 'Amortisseur de direction', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Bluetooth', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:40', 'text': 'Bluetooth', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Béquille centrale', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:36', 'text': 'Béquille centrale', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Crash Bars / Top Blocks', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:45', 'text': 'Crash Bars / Top Blocks', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Indicateur de vitesse engagée', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:38', 'text': 'Indicateur de vitesse engagée', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Pare brise réglable', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:44', 'text': 'Pare brise réglable', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Prise 12V', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:50', 'text': 'Prise 12V', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Prise USB', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:41', 'text': 'Prise USB', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Selle chauffante', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:48', 'text': 'Selle chauffante', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'Système radar', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:46', 'text': 'Système radar', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'TFT', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:33', 'text': \"Taille de l'écran TFT couleur : 20,32 cm / 8 pouces\", 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'TPMS', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:49', 'text': 'Surveillance de la pression des pneus', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'anti-dribble', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:47', 'text': 'Embrayage anti-dribble', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'contrôle de traction', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:42', 'text': 'Contrôle de traction', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'modes de conduite', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:32', 'text': 'Nombre de mode de conduite : 6', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'poignées chauffantes', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:43', 'text': 'Poignées chauffantes', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'régulateur de vitesse', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:39', 'text': 'Régulateur de vitesse', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}, {'equipment': 'shifter', 'status': 'standard', 'proof': [{'id': 'f3e4515cd7b72852:row:12', 'text': 'boîte à 6 rapports , manuelle - Shifter de série', 'section': 'Transmission'}, {'id': 'f3e4515cd7b72852:row:35', 'text': 'Shifter', 'section': 'Équipement de série'}], 'reasons': ['explicit_source_fact; model uncertainty does not remove the original fact']}], 'market': None, 'collection': {'http_status': 200, 'collected_at': '2026-10-12T19:58:12.679448+00:00', 'resolved_url': 'https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html', 'requested_url': 'https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html', 'parser_version': 'motoplanete-technical-v1', 'schema_version': 'technical-source-v1', 'response_sha256': 'f0ec885f44231fee56a8a29059c0b8263743e916cf770888f0a39815a79c67d0', 'snapshot_sha256': 'ab2a876a16d15f7942a15dad81c45090774a41f6bec9b2a0b2c6e064dd4cdd9e', 'technical_snapshot': 'snapshots/dfd36cc18f25d695b152e501723b67cefd4abedee079878879f7dd7d7452cc17.html', 'identity_review_reasons': []}}]"
+        }
+      ]
+    }
+  ],
+  "sql": [
+    {
+      "year": 1871,
+      "count": 1,
+      "expected": 1,
+      "passed": true,
+      "seconds": 0.013279167003929615
+    },
+    {
+      "year": 1950,
+      "count": 3,
+      "expected": 3,
+      "passed": true,
+      "seconds": 0.012043792055919766
+    },
+    {
+      "year": 2000,
+      "count": 196,
+      "expected": 196,
+      "passed": true,
+      "seconds": 0.01179670903366059
+    },
+    {
+      "year": 2010,
+      "count": 331,
+      "expected": 331,
+      "passed": true,
+      "seconds": 0.010703415959142148
+    },
+    {
+      "year": 2025,
+      "count": 610,
+      "expected": 610,
+      "passed": true,
+      "seconds": 0.01077616703696549
+    },
+    {
+      "year": 2027,
+      "count": 56,
+      "expected": 56,
+      "passed": true,
+      "seconds": 0.010015041916631162
+    }
+  ],
+  "conservation": {
+    "objects_exact": 11478,
+    "spec_rows": 411954,
+    "autonomy_fiches": 6168
+  },
+  "bge": [
+    {
+      "run": 0,
+      "seconds": 7.277461500023492,
+      "passed": true,
+      "passages": [
+        {
+          "brand": "BMW",
+          "model": "R 1150 GS",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+          "section": "Performances",
+          "text": "Vitesse max : environ 195 km/h; Consommation moyenne : 5 l/100km; Autonomie estimée : 440 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+          "distance": 0.46996355056762695
+        },
+        {
+          "brand": "BMW",
+          "model": "R 1150 GS",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+          "section": "Transmission",
+          "text": "boîte à 6 rapports; Secondaire par cardan",
+          "distance": 0.5701943209825252
+        },
+        {
+          "brand": "BMW",
+          "model": "R 1150 GS",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS en option",
+          "distance": 0.5839736411587206
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "seconds": 0.08813287504017353,
+      "passed": true,
+      "passages": [
+        {
+          "brand": "BMW",
+          "model": "R 1150 GS",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+          "section": "Performances",
+          "text": "Vitesse max : environ 195 km/h; Consommation moyenne : 5 l/100km; Autonomie estimée : 440 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+          "distance": 0.46996355056762695
+        },
+        {
+          "brand": "BMW",
+          "model": "R 1150 GS",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+          "section": "Transmission",
+          "text": "boîte à 6 rapports; Secondaire par cardan",
+          "distance": 0.5701943209825252
+        },
+        {
+          "brand": "BMW",
+          "model": "R 1150 GS",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS en option",
+          "distance": 0.5839736411587206
+        }
+      ]
+    }
+  ],
+  "all_checks_passed": true
+}

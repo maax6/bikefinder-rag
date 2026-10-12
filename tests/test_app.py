@@ -3,6 +3,7 @@
 import importlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -74,8 +75,10 @@ def test_local_ui_exposes_technical_year_questions_and_catalogue_limits(app):
         component["props"]["samples"]
         for component in visible if component["type"] == "dataset"
     )
-    assert len(questions) == 2
-    assert all("2000" in question[0] and "sources" in question[0] for question in questions)
+    assert len(questions) == 5
+    assert all(re.search(r'\b20\d{2}\b',question[0]) for question in questions)
+    assert any("ABS" in question[0] for question in questions)
+    assert any("autonomie" in question[0] for question in questions)
     assert any("fiche technique" in question[0].lower() for question in questions)
     assert any("compare" in question[0].lower() and "tableau" in question[0] for question in questions)
     user_text = descriptions + " ".join(question[0] for question in questions) + app.msg.placeholder

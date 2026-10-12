@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-13",
+  "cold": {
+    "total": 480,
+    "passed": 480,
+    "routes": {
+      "filter": 290,
+      "count": 50,
+      "details": 100,
+      "clarification": 30,
+      "mistral_required": 10
+    },
+    "median_seconds": 0.35527889599325135,
+    "p95_seconds": 0.48318787501193583,
+    "cost_usd": 0.06685030799999997,
+    "fresh_calls": 462,
+    "metadata": {
+      "protocol": "catalog-routing-v5",
+      "model": "typesafe/jev-1.13",
+      "code_sha256": {
+        "src/bikefinder_rag/agent/jev_router.py": "0fe42d36981f98fe9facac0b2d6f1ad6714507581c178e905e59be00a23dcc7f",
+        "src/bikefinder_rag/catalog/measures.py": "75c2f2b2d024d83676e7901e9a827a974cfc54a40add9a1b0fc80b8057132597",
+        "scripts/evaluate_jev_routing.py": "efda5e68282e48d3d3b6066e8c5402f8936ddc1042ab3ac0293e048b410d9d53"
+      },
+      "questions_sha256": "cd8dfa814267cb16ca7ceb84a2c137a82ff4e2a5ba22055c1dd6e965157de72b"
+    }
+  },
+  "warm_final": {
+    "total": 480,
+    "passed": 480,
+    "routes": {
+      "filter": 290,
+      "count": 50,
+      "details": 100,
+      "clarification": 30,
+      "mistral_required": 10
+    },
+    "median_seconds": 0.058615104004275054,
+    "p95_seconds": 0.1040088749723509,
+    "fresh_calls": 0,
+    "metadata": {
+      "protocol": "catalog-routing-v5",
+      "model": "typesafe/jev-1.13",
+      "code_sha256": {
+        "src/bikefinder_rag/agent/jev_router.py": "6738b1b38140b6d3f1ef78acb560e36f31ac45151ac78a2141b598ddd33efb80",
+        "src/bikefinder_rag/catalog/measures.py": "75c2f2b2d024d83676e7901e9a827a974cfc54a40add9a1b0fc80b8057132597",
+        "scripts/evaluate_jev_routing.py": "efda5e68282e48d3d3b6066e8c5402f8936ddc1042ab3ac0293e048b410d9d53"
+      },
+      "questions_sha256": "cd8dfa814267cb16ca7ceb84a2c137a82ff4e2a5ba22055c1dd6e965157de72b"
+    },
+    "cached_provider_usage_cost_usd": 0.06685030799999996,
+    "fresh_provider_cost_usd": 0,
+    "cost_note": "Cached responses retain their original usage cost; warm replay made zero fresh provider calls."
+  },
+  "first_heldout": {
+    "passed": 115,
+    "total": 123,
+    "subsequent_evaluation_is_no_longer_unseen": true
+  },
+  "old_fast_path_direct": {
+    "count": 2,
+    "total": 480,
+    "not_a_full_old_latency_benchmark": true
+  },
+  "tests": {
+    "passed": 542,
+    "seconds": 7.52,
+    "scope": "Complete local workspace, including separate collection/Zellij changes"
+  },
+  "live_api": [
+    {
+      "question": "Motos en dessous de 10000 eu et minimum 100 cv en 2020",
+      "seconds": 0.1670860410667956,
+      "passed": true,
+      "answer": "**9 fiches correspondent dans le catalogue.** Prix France de la version de base indiqué dans la fiche, pas prix d’occasion ou prix actuel. Puissance documentée en ch.\n\n| Moto | Millésime | Prix France — version de base | Puissance (ch) | Source |\n|---|---:|---|---|---|\n| BMW F 900 R | 2020 | Tarifs — France — Version de base : 8 870 € * | Moteur — 105 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/bmw/8382/F-900-R-2020/contact.html) |\n| Kawasaki Z 900 | 2020 | Tarifs — France — Version de base : 9 499 € * | Moteur — 125 ch à 9 500 tr/min | [Fiche](https://www.motoplanete.com/kawasaki/8217/Z-900-2020/contact.html) |\n| KTM 790 Duke | 2020 | Tarifs — France — Version de base : 9 899 € * | Moteur — 105 ch à 9 000 tr/min | [Fiche](https://www.motoplanete.com/ktm/8200/790-Duke-2020/contact.html) |\n| Suzuki GSX-S 750 | 2020 | Tarifs — France — Version de base : 8 899 € * | Moteur — 114 ch à 10 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8176/GSX-S-750-2020/contact.html) |\n| Suzuki GSX-S 750 | 2020 | Tarifs — France — Version de base : 8 899 € * | Moteur — 114 ch à 10 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8186/GSX-S-750-2020/contact.html) |\n| Suzuki GSX-S 750 MotoGP Replica | 2020 | Tarifs — France — Version de base : 9 449 € * | Moteur — 114 ch à 10 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8405/GSX-S-750-MotoGP-Replica-2020/contact.html) |\n| Triumph 765 Street Triple R | 2020 | Tarifs — France — Version de base : 9 700 € * | Moteur — 118 ch à 12 000 tr/min | [Fiche](https://www.motoplanete.com/triumph/8327/765-Street-Triple-R-2020/contact.html) |\n| Yamaha 850 MT-09 | 2020 | Tarifs — France — Version de base : 9 199 € * | Moteur — 115 ch à 10 000 tr/min | [Fiche](https://www.motoplanete.com/yamaha/8173/850-MT-09-2020/contact.html) |\n| Yamaha XSR 900 | 2020 | Tarifs — France — Version de base : 9 999 € * | Moteur — 115 ch à 10 000 tr/min | [Fiche](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |"
+    },
+    {
+      "question": "Et en 2021 ?",
+      "seconds": 0.5380022081080824,
+      "passed": true,
+      "answer": "**5 fiches correspondent dans le catalogue.** Prix France de la version de base indiqué dans la fiche, pas prix d’occasion ou prix actuel. Puissance documentée en ch.\n\n| Moto | Millésime | Prix France — version de base | Puissance (ch) | Source |\n|---|---:|---|---|---|\n| BMW F 900 R | 2021 | Tarifs — France — Version de base : 8 870 € * | Moteur — 105 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/bmw/8441/F-900-R-2021/contact.html) |\n| Kawasaki Z 900 | 2021 | Tarifs — France — Version de base : 9 699 € * | Moteur — 125 ch à 9 500 tr/min | [Fiche](https://www.motoplanete.com/kawasaki/8488/Z-900-2021/contact.html) |\n| Suzuki GSX-S 750 | 2021 | Tarifs — France — Version de base : 8 999 € * | Moteur — 114 ch à 10 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8527/GSX-S-750-2021/contact.html) |\n| Triumph 765 Street Triple R | 2021 | Tarifs — France — Version de base : 9 900 € * | Moteur — 118 ch à 12 000 tr/min | [Fiche](https://www.motoplanete.com/triumph/8732/765-Street-Triple-R-2021/contact.html) |\n| Yamaha MT-09 900 | 2021 | Tarifs — France — Version de base : 9 499 € * | Moteur — 119 ch à 10 000 tr/min | [Fiche](https://www.motoplanete.com/yamaha/8526/MT-09-900-2021/contact.html) |"
+    },
+    {
+      "question": "Recovered visible history: Et en 2021 ?",
+      "seconds": 0.12055016704834998,
+      "passed": true,
+      "answer": "**5 fiches correspondent dans le catalogue.** Prix France de la version de base indiqué dans la fiche, pas prix d’occasion ou prix actuel. Puissance documentée en ch.\n\n| Moto | Millésime | Prix France — version de base | Puissance (ch) | Source |\n|---|---:|---|---|---|\n| BMW F 900 R | 2021 | Tarifs — France — Version de base : 8 870 € * | Moteur — 105 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/bmw/8441/F-900-R-2021/contact.html) |\n| Kawasaki Z 900 | 2021 | Tarifs — France — Version de base : 9 699 € * | Moteur — 125 ch à 9 500 tr/min | [Fiche](https://www.motoplanete.com/kawasaki/8488/Z-900-2021/contact.html) |\n| Suzuki GSX-S 750 | 2021 | Tarifs — France — Version de base : 8 999 € * | Moteur — 114 ch à 10 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8527/GSX-S-750-2021/contact.html) |\n| Triumph 765 Street Triple R | 2021 | Tarifs — France — Version de base : 9 900 € * | Moteur — 118 ch à 12 000 tr/min | [Fiche](https://www.motoplanete.com/triumph/8732/765-Street-Triple-R-2021/contact.html) |\n| Yamaha MT-09 900 | 2021 | Tarifs — France — Version de base : 9 499 € * | Moteur — 119 ch à 10 000 tr/min | [Fiche](https://www.motoplanete.com/yamaha/8526/MT-09-900-2021/contact.html) |"
+    },
+    {
+      "question": "ABS 2000 list request",
+      "seconds": 0.4245207499479875,
+      "passed": true,
+      "answer": "**2 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| BMW K 1200 LT | 2000 | [Fiche](https://www.motoplanete.com/bmw/866/K-1200-LT-2000/contact.html) |\n| BMW R 1200 C | 2000 | [Fiche](https://www.motoplanete.com/bmw/1587/R-1200-C-2000/contact.html) |\n\nÉquipement filtré : ABS — de série. Les inconnus ne sont pas des absences."
+    }
+  ],
+  "synthesis": {
+    "measured_seconds": 30.132,
+    "outcome": "Jev rejected causal claims; deterministic source evidence returned"
+  },
+  "limitations": [
+    "Agent-authored templated acceptance suite, not independent general accuracy.",
+    "Only catalog base prices, not current or used prices.",
+    "Some unsupported global constraints require clarification rather than silently dropping criteria.",
+    "Jev is remote through OpenRouter; SQL and Mistral remain local."
+  ],
+  "published_content_tests": {
+    "passed": 525,
+    "seconds": 10.24,
+    "postgresql_integration": true,
+    "scope": "Exact staged snapshot, excluding separate collection/Zellij/retrieval-review changes"
+  }
+}

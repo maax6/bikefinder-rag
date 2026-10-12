@@ -83,6 +83,9 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
     previous_state = agent_history
     if BACKEND == "ollama":
         previous_state = _completed_local_history(agent_history)
+        if os.getenv('BIKEFINDER_JEV_ROUTER')=='1' and not previous_state and chat_history:
+            from bikefinder_rag.agent.loop import _user_text
+            previous_state=[{'role':m['role'],'content':_user_text(m)} for m in chat_history[-16:] if m.get('role') in ['user','assistant']]
         if _is_retry(message):
             question = _previous_question(chat_history)
             if question is None:
@@ -124,12 +127,16 @@ with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
         "connaissez, la variante. Demandez les unités et les sources des caractéristiques."
     )
     if BACKEND == "ollama":
-        gr.Markdown(
-            f"**POC local** : modèle `{OLLAMA_MODEL}` exécuté avec Ollama, "
-            "sur le catalogue chargé sur votre machine. Aucune clé API nécessaire. "
-            f"Budget de traitement : {OLLAMA_TURN_TIMEOUT_SECONDS:g} s par question ; "
-            "une recherche déjà en cours peut prolonger l'attente."
-        )
+        if os.getenv('BIKEFINDER_JEV_ROUTER')=='1':
+            gr.Markdown('**Mode rapide** : Jev comprend la demande, puis le catalogue local fournit les réponses factuelles. Les questions et, pour vérifier une synthèse, les extraits nécessaires sont transmis au service distant Jev.')
+            gr.Markdown(f'**POC local** : `{OLLAMA_MODEL}` sert uniquement aux synthèses nécessaires. Budget de génération : {float(os.getenv("CATALOG_SYNTHESIS_TIMEOUT_SECONDS","30")):g} s, puis affichage des faits sources si la synthèse est trop lente ou non vérifiable. Aucune clé à saisir ici.')
+        else:
+            gr.Markdown(
+                f"**POC local** : modèle `{OLLAMA_MODEL}` exécuté avec Ollama, "
+                "sur le catalogue chargé sur votre machine. Aucune clé API nécessaire. "
+                f"Budget de traitement : {OLLAMA_TURN_TIMEOUT_SECONDS:g} s par question ; "
+                "une recherche déjà en cours peut prolonger l'attente."
+            )
         api_key_input = gr.Textbox(visible=False)
     else:
         gr.Markdown(
@@ -144,6 +151,9 @@ with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
             placeholder="sk-ant-... or sk-or-...",
         )
     gr.Markdown(
+        "**Catalogue enrichi Motoplanète** : recherche par millésime et équipements "
+        "de série ou en option, avec les fiches sources. Les autonomies conservent "
+        "leurs mentions d’estimation. Une moto fictive reste hors du catalogue réel.\n\n"
         "**Limites du catalogue** : la couverture des années, variantes et champs "
         "est partielle. Une donnée absente reste **inconnue**, y compris pour un "
         "équipement. Le poids sec et le poids tous pleins ne sont pas encore "
@@ -157,6 +167,9 @@ with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
     )
     question_examples = gr.Examples(
         examples=[
+            ["Quelles motos ont l'ABS en 2000 ?"],
+            ["Quelle est l'autonomie de la BMW R 1150 GS de 2000 ?"],
+            ["Donne l'ABS et l'autonomie de la CFMoto 800 MT Explore de 2025, avec la source."],
             ["Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec les unités, les sources et les données inconnues."],
             ["Compare la Suzuki GSF 1200 N Bandit et la Kawasaki ER-5 Twister de 2000 dans un tableau : cylindrée, puissance, couple et poids, avec les sources et les données inconnues."],
         ],
@@ -169,6 +182,7 @@ with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
         chat,
         inputs=[msg, chatbot, api_key_input, agent_state],
         outputs=[chatbot, agent_state],
+        concurrency_limit=8,
     ).then(lambda: "", None, msg)
 
 

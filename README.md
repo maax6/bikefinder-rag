@@ -1,18 +1,26 @@
 # Bikefinder RAG
 
 A **proof of concept** for a technical motorcycle catalog by model year.
-The current local chat uses Ollama to query PostgreSQL through structured tools. Ask for
-a specific sheet or a same-year comparison, in French or English — for example
-*"Compare the Suzuki GSF 1200 N Bandit and Kawasaki ER-5 Twister in 2000,
-with units, sources and missing data."* The existing owner-review corpus and
-its retrieval code are retained for a later, separately evaluated extension.
+The active local chat uses Jev to interpret natural questions and PostgreSQL to
+return documented facts with their source URLs. Ask for price/power filters,
+equipment, a model-year sheet or a comparison — for example
+*"Motos en dessous de 10000 eu et minimum 100 cv en 2020"*.
+BGE-M3 remains available for scoped technical passage retrieval. Mistral Small
+3.2 runs locally only when the fast path needs synthesis of selected evidence.
 
-This is a learning project and portfolio piece. The default chat path needs
-no cloud account or API key. Installation and the first model downloads need
-Internet; inference can run offline once the models and database are ready.
-The selected next workflow combines local SQL and BGE-M3 with Jev decisions
-through OpenRouter, reserving Mistral for synthesis and unresolved evidence.
-That workflow has been evaluated separately and is not yet connected to the chat.
+This is a learning project and portfolio piece. Jev runs remotely through
+OpenRouter using a server-side key: questions and the excerpts needed to check
+a synthesis are transmitted to that service. SQL, BGE-M3 and Mistral remain
+local. The legacy path can run offline after model downloads; the enabled Jev
+router requires Internet. Visitors do not enter an API key.
+
+On the controlled 480-question suite, **440 answers use data directly**, 30
+ask for clarification and 10 are routed to bounded synthesis. The actual
+price/power question returns nine source sheets in **0.167 s** through Gradio,
+after a previous observed 180-second timeout. **525 tests pass on the exact
+publication snapshot**, including PostgreSQL integration. These are controlled acceptance
+results, not a general accuracy score. See the
+[measurements and safeguards](docs/jev-routing-natural-questions.md).
 
 ## Direction as of 2026-10-10
 
@@ -30,9 +38,9 @@ The French review corpus arrived in September, before this October refocus.
 | Decision | Summer prototype | Current technical POC |
 |---|---|---|
 | Product focus | Buying advice combining specs, owner reviews, prices and recalls | Technical sheets and comparisons by explicit model year; reviews deferred |
-| Default inference | Anthropic; Ollama available for local experiments | Ollama on the local Mac, without a cloud key |
+| Default inference | Anthropic; Ollama available for local experiments | Remote Jev routing, direct local SQL facts, local Ollama only for necessary synthesis |
 | Evidence | Structured specs plus family-level review retrieval | Structured SQL and original technical labels/units; source, year and unknowns preserved |
-| Text retrieval | BGE-M3, hybrid review search and reranking | Retained review pipeline; a distinct technical-passage index evaluated in the isolated hybrid POC |
+| Text retrieval | BGE-M3, hybrid review search and reranking | Distinct technical-passage retrieval connected to the chat; BGE-M3 vectors cached on demand within a model/year |
 | Data quality | Existing typed fields and source matching | Versioned identity/measurement candidates; dry/wet weights, variants and conflicting sources audited |
 | Evaluation | Review retrieval, tool trajectories, constraints and RAGAS scores | Technical acceptance cases, correct tool arguments, evidence, retry behavior, latency and memory before choosing another model |
 
@@ -41,11 +49,11 @@ explicitly absent / unknown** classification. A French launch price does not
 establish the market of every specification. Catalogue year, first observed
 year and documented launch date are separate facts.
 
-The first technical chat slice is running, but the new normalization and
-collection outputs are **not yet imported into its database or equipment
-filters**. This avoids presenting a collected passage as a finished search
-feature. See the [refactor issue](https://github.com/maax6/bikefinder-rag/issues/2)
-and [technical acceptance record](docs/technical-catalog-first-slice.md).
+The full Motoplanete collection is now loaded into distinct PostgreSQL tables:
+**11,478 real fiches**, **31,435 equipment rows**, and **105,687 technical passages**.
+Original wording, autonomy qualifications and provenance are retained. BGE-M3
+retrieval is scoped to a model/year and caches embeddings on first use.
+See the [complete integration and measured results](docs/enriched-catalog-chat.md).
 
 ## Model choices and their roles
 
@@ -60,14 +68,16 @@ new technical workload.
 
 The current local installation was checked on 2026-10-10: Ollama **0.32.15**,
 `mistral-small3.2:latest`, **24B / Q4_K_M**, approximately **15.2 GB of model
-files**. The agent requests a **16,384-token context**. File size is not peak
+files**. The legacy agent requests a **16,384-token context**; the fast router uses a
+**4,096-token context**, at most 350 output tokens and a 30-second request
+budget for a single Mistral synthesis. File size is not peak
 memory: the context/KV cache, runtime, database and macOS also need memory.
 
 | Role | Current choice | Scope |
 |---|---|---|
-| Tool selection and final answer | `mistral-small3.2` through Ollama | Reference for the current technical POC; [real Gradio acceptance traces](eval_results/technical/live_gradio_20261010.json), not a model-ranking benchmark |
-| Embeddings | `BAAI/bge-m3` | Retained review index and isolated technical-passage POC. Changing the generator alone does not require re-embedding reviews. |
-| Decisions, routing and evidence selection | `typesafe/jev-1.13` through OpenRouter | Selected after the hybrid POC; remote decisions over supplied criteria and passages, not yet integrated into the chat |
+| Necessary synthesis | `mistral-small3.2` through Ollama | One bounded call over selected evidence; Jev checks claims, with direct source facts on timeout or rejected claims. Legacy tool-loop path remains available with the router disabled. |
+| Embeddings | `BAAI/bge-m3` | Retained review index plus connected scoped technical retrieval, with local embeddings cached by source text. |
+| Decisions, routing and evidence selection | `typesafe/jev-1.13` through OpenRouter | Active in the chat; closed decisions over user constraints and evidence, never free-form SQL or invented numeric values |
 | Reranker | `BAAI/bge-reranker-v2-m3` | Retained review retrieval; not loaded by ordinary technical sheet/filter queries |
 | Local evaluation judge | `qwen3.6` | Default RAGAS judge, separate from the chat generator; not needed to use the technical chat |
 | Other remote experiments | Anthropic/OpenRouter; Haiku via `claude -p` for selected historical evaluations | Explicit opt-in; remote judging remains remote even when generation is local |
@@ -96,8 +106,8 @@ selecting evidence so that ordinary factual answers do not require a generated
 paragraph. SQL resolves identities, filters and lists; BGE-M3 retrieves passages
 within that scope; Jev selects among defined decisions and checks whether a
 passage answers the question. Supported facts and lists can be returned directly
-with their source URLs. Mistral handles comparisons requiring synthesis and
-cases where the selected evidence is insufficient. Unknown equipment remains
+with their source URLs. Mistral handles comparisons requiring synthesis of documented evidence.
+Missing evidence remains unknown; unsupported criteria ask for clarification. Unknown equipment remains
 unknown when the source cannot resolve it.
 
 The frozen experiment covers **2,254 source sheets**, **880 equipment decisions
@@ -118,9 +128,10 @@ This is evidence for fewer generation calls, not a demonstrated accuracy gain
 or a production latency guarantee.
 
 Jev is a **remote API** in this workflow; SQL, BGE-M3 and Mistral remain local.
-The collection and running chat were unchanged by the experiment. After the
-current collection, audit coverage and equipment ambiguity before integrating
-the selected workflow. See the [decision record](docs/hybrid-workflow-decision.md)
+That initial experiment did not change the collection or running chat.
+The complete enriched catalog was connected on October 12; Jev conversation
+routing was activated on October 13. The dated POC results below remain distinct
+from the later live-chat acceptance tests. See the [decision record](docs/hybrid-workflow-decision.md)
 and [complete results, errors and limits](docs/hybrid-poc-results.md).
 The frozen source data, model outputs and vectors remain local under ignored
 `data/technical/hybrid-poc/`; a fresh clone cannot replay this exact benchmark
@@ -135,8 +146,9 @@ contain `Loading...` placeholders.
 
 The new Motoplanete collector preserves technical rows, equipment wording,
 source URLs, UTC collection dates, response hashes and sanitized technical
-snapshots. It has a resumable SQLite queue of **11,479 historical URLs**, with
-one isolated for examination, and waits at least **10 seconds** between
+snapshots. Its **11,479 discovered URLs** are resolved as of 2026-10-12:
+**11,478 real fiches** and one fictional Cyberpunk fiche archived separately.
+The collector waits at least **10 seconds** between
 requests. The fresh sitemap attempt returned HTTP 500; this queue may therefore
 miss newer fiches. A separate Wikidata run collected **3,255 candidate entities**,
 not verified model-year sheets. These counts must not be added into a total of
@@ -149,13 +161,21 @@ distinct motorcycles or described as worldwide completeness.
 ```
 
 The collector runs independently of the dashboard, protected from idle sleep
-by `caffeinate -i`. Zellij displays read-only progress, recent HTTP codes and
-fiches, and the collection log. The launcher reuses an active collector and
+by `caffeinate -i`. Four Zellij panes display read-only progress, recent HTTP
+codes and fiches, model-year coverage, and incidents. Each shows a refresh clock
+twice per second, with data read every second. Use `--dashboard-only --refresh-dashboard` to rebuild only
+the dashboard. The launcher reuses an active collector and
 preserves its queue and source cooldown. Roughly **32 hours of waiting alone** are needed for the full
 11.5k-URL lot, before page loading or interruptions. Raw collected files stay
 outside Git; [dated reports and source-access decisions](docs/technical-data-collection.md)
 are versioned. The latest code validation including the hybrid POC is
-**454 passing tests**; this is not a claim of catalogue completeness or a model score.
+reported separately in each dated evaluation; test counts do not measure
+catalogue completeness or model accuracy.
+
+The [first equipment enrichment pass](docs/first-equipment-enrichment-pass.md)
+evaluates Jev and local Mistral on 7,698 frozen source records. Its final
+isolated SQLite export preserves every source row, keeps ambiguous equipment
+unknown, and gives explicit source facts priority over model uncertainty.
 
 
 ## Historical launch video
@@ -241,8 +261,9 @@ reports alongside the data — the short version:
   fixes lifted narratives from 0.0 to 1.0, and documented RAGAS's known
   penalty on honest "no data on record" refusals
   ([`eval_results/ragas/`](eval_results/ragas/)).
-- **Interface**: Gradio on `127.0.0.1`, using the local Ollama model by
-  default. The optional cloud interface asks for the visitor's own key.
+- **Interface**: Gradio on `127.0.0.1`, with the enabled Jev router using a
+  server-side OpenRouter key. The separate cloud-generator interface asks for
+  the visitor's own key.
   The Hugging Face deployment directory is a historical showcase experiment.
 
 The first technical slice offers **sheets and simple comparisons by model
@@ -362,35 +383,35 @@ outside the default technical chat evidence:
 ## Architecture
 
 ```
-Local Gradio UI (127.0.0.1, no API key)
+Local Gradio UI (127.0.0.1, no visitor key)
         │
         ▼
-Agent loop (Ollama by default, explicit tool-use)
+Jev via OpenRouter → validated closed query plan
         │
-        ├── filter_specs ────► PostgreSQL (typed columns, parameterized SQL)
-        │
-        └── get_bike_details ► PostgreSQL (explicit model year, original
-                                technical specs and source URL)
+        ├── facts / filters / counts → local PostgreSQL → sourced answer
+        ├── unclear / unsupported   → explicit clarification
+        └── necessary synthesis    → selected local evidence → Ollama Mistral
+                                      → Jev claim check → answer or source facts
 ```
 
-The retained review pipeline uses pgvector, BGE-M3 and a local reranker;
-default technical queries on the loaded catalog do not import or load those
-models. The existing dataset loader still processes comments.
+BGE-M3 provides scoped technical retrieval through `search_technical`, with
+vectors cached on demand. Plain structured filters do not load it. The legacy
+agent and retained owner-review pipeline remain separate paths.
 
 Technical collection runs separately: source pages → versioned raw records
-and SQLite queue → read-only progress monitor. Its next step is a validated
-normalization/import and technical index; the chat continues to use the
-previously loaded PostgreSQL catalogue until that work is accepted.
+and SQLite queue → frozen enrichment → distinct PostgreSQL catalog tables.
+The loaded raw rows retain their wording, autonomy qualifications and source
+hashes. Numeric projections distinguish dry/wet weight and reject stale hashes.
 
 ## Project layout
 
 ```
 src/bikefinder_rag/
-  catalog/        versioned identity/measurement migration candidates (not runtime data)
+  catalog/        enriched runtime tables, measures and migration candidates
   scraper/        list_scraper.py, detail_scraper.py, categories.py, http.py
   db/             schema.sql, client.py
   embeddings/     embedder.py (BGE-M3)
-  agent/          tools.py, loop.py
+  agent/          loop.py, tools.py, catalog_tools.py, jev_router.py
   eval/           golden_questions.json, run_ragas.py
   app.py          Gradio interface
 scripts/
@@ -410,7 +431,8 @@ scripts/
   collect_wikidata_motorcycles.py  bounded global identity inventory
   export_local_technical_data.py  offline technical export with provenance
   audit_collected_technical_data.py  field/year coverage from read-only SQLite
-  monitor_technical_collection.py  local live progress on 127.0.0.1:7861
+  load_enriched_catalog.py       frozen SQLite snapshot → local PostgreSQL + measures
+  evaluate_jev_routing.py        controlled natural-question routing evaluation
 ```
 
 ## Running it locally
@@ -439,7 +461,23 @@ PYTHONPATH=src .venv/bin/python scripts/load_db.py data/pilot
 PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
 ```
 
-Local model loading and generation can take several minutes. Ollama has a
+For the current fast enriched-catalog chat, first prepare the frozen SQLite
+export locally, then import and enable the router. The source snapshot and
+question corpus are not bundled in Git. In `.env`, configure
+`OPENROUTER_API_KEY`, `BIKEFINDER_JEV_ROUTER=1`,
+`JEV_ROUTER_TIMEOUT_SECONDS=5` and `CATALOG_SYNTHESIS_TIMEOUT_SECONDS=30`.
+
+```bash
+PYTHONPATH=src .venv/bin/python scripts/load_enriched_catalog.py \
+  --source data/technical/enrichment-full-20261012/pass2/catalogue.enriched.sqlite3
+PYTHONPATH=src .venv/bin/python src/bikefinder_rag/app.py
+```
+
+Set `BIKEFINDER_JEV_ROUTER=0` to use the legacy local path. Jev classification
+failure returns a clarification instead of starting the slow generator loop.
+
+With the Jev router disabled, local model loading and generation can take
+several minutes. The legacy Ollama agent has a
 **180-second cooperative budget per user turn** (`OLLAMA_TURN_TIMEOUT_SECONDS`)
 and a **300-second read timeout cap per request** (`OLLAMA_TIMEOUT_SECONDS`).
 Each request uses the smaller of its cap and the remaining turn budget;
@@ -637,3 +675,14 @@ on the same evidence. Each stage needs its own acceptance record.
    Docker Space (Postgres + agent in one container, `deploy/`) is retained
    as a historical hosting experiment. The supported POC workflow is local;
    hosting availability and pricing have not been re-checked in this revision.
+
+## Natural-question routing — 2026-10-13
+
+The final controlled suite passes 480/480 questions: 440 direct factual answers,
+30 clarifications and 10 cases classified for bounded Mistral synthesis. These
+are acceptance tests, not an independent accuracy benchmark. The original
+price/power question now returns nine source sheets in 0.17 seconds through the
+live chat API; its previous observed attempt timed out at 180 seconds.
+
+See [measurements and safeguards](docs/jev-routing-natural-questions.md) and
+[the result artifact](eval_results/technical/jev_routing_20261013.json).

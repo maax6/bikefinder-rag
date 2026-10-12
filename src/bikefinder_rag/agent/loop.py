@@ -77,12 +77,12 @@ proof of concept. Answer only from the technical sheets returned by tools.
 Owner opinions and reputation are deferred: do not retrieve them or use them \
 as evidence for specifications. If asked, explain that this path covers specs.
 
-You have two tools:
+You have enriched catalog tools plus two legacy tools:
 - filter_specs: structured filtering by brand, category, model year, \
 displacement, power, torque, weight and seat height; also counts.
 - get_bike_details: the original spec sheet for a model and an explicit year, \
 including raw labels/units, source URL and collection timestamp.
-For ANY characteristic of a named model and year, call get_bike_details, \
+For ANY characteristic of a named model and year, prefer get_catalog_details, \
 including a question asking only for torque or power. filter_specs has NO \
 model argument and cannot retrieve a named model's sheet.
 
@@ -131,11 +131,11 @@ production period are undocumented unless explicitly stated in the sheet.
 Do not equate catalog model year with the actual year of manufacture.
 - Category sources can conflict: expose category and category_fr separately \
 if inconsistent. Do not treat either label as authoritative by assumption.
-- Equipment/color filters are not implemented yet. A missing ABS mention \
-does not mean no ABS. A list of selected sheets cannot establish which \
-motorcycles in an entire year had an equipment. State this limitation.
-Explain that the catalog-wide equipment FILTER is unavailable; individual \
-raw sheets may document equipment. Do not claim all equipment data is absent.
+- Equipment filters ARE implemented in filter_catalog for the enriched Motoplanete catalog.
+Use equipment_status=standard for fitted as standard; optional is a separate purchase.
+unknown means not established, NEVER absent. Missing equipment rows also mean unknown.
+For ABS, use the exact equipment name ABS, not a generic assistance field.
+No technical market filter is supported; do not infer availability in France from a price.
 - Results are bounded catalog selections, never an exhaustive market list. \
 For exact catalog counts use count_only. If a tool reports truncation, ask \
 for a narrower model. An error means a search was not executed, not no match.
@@ -152,6 +152,22 @@ Never infer A2 approval or restrictability from power and mixed weight alone.
 Answer in the user's language, with concise tables for comparisons."""
 
 SYSTEM_PROMPT += """
+
+Enriched catalog tools take priority:
+- filter_catalog: equipment filters, model/year selections and catalog counts.
+- get_catalog_details: original spec_rows, equipment proofs and exact model/year.
+- For autonomy-only questions or comparisons, set characteristic=autonomy on
+  EACH get_catalog_details call. Preserve the full estimation qualification.
+- search_technical: scoped BGE-M3 passages for technical explanations.
+For equipment or a named model use these tools first. An empty result may be
+followed by the legacy tools, explicitly identifying the different source.
+Never mix values from different sources or years. Evidence from spec_rows
+is authoritative source wording, including autonomy and its qualifications.
+For lists include URLs and the equipment status. For France-market questions
+state that technical market coverage is not established by these filters.
+Example: quelles motos ont ABS en 2000 -> filter_catalog
+{"equipment":"ABS","equipment_status":"standard","min_year":2000,"max_year":2000}.
+
 
 Required output for a technical sheet or comparison:
 Return ONLY a Markdown table of the requested characteristics and a source row.
@@ -189,7 +205,7 @@ def _technical_history(history: list[dict] | None) -> list[dict]:
                 name = block.get("name") if isinstance(block, dict) else getattr(block, "name", None)
                 if name == "search_reviews":
                     return []
-    return list(history or [])
+    return [{k:v for k,v in message.items() if not k.startswith('_catalog_')} for message in history or []]
 
 
 def _numeric_user_years(text: str, model: str | None = None) -> set[int]:
@@ -274,7 +290,7 @@ def _tool_arguments(value):
 def _detail_year_clarification(calls: list[tuple], user_message: str, history: list[dict] | None) -> str | None:
     """Preflight the whole batch before any tool execution or history append."""
     for name, arguments in calls:
-        if name != "get_bike_details" or not isinstance(arguments, dict):
+        if name not in {"get_bike_details", "get_catalog_details", "search_technical"} or not isinstance(arguments, dict):
             continue
         year = arguments.get("year")
         # Missing/non-integer years remain the tool validator's responsibility.
@@ -308,8 +324,31 @@ def run_agent(conn, client: Anthropic | None, user_message: str, history: list[d
     `api_key` when absent. The history format is provider-specific, so a
     session that switches provider should start from an empty history.
     """
+    routing_history = list(history or [])
     history = _technical_history(history)
     backend = provider or BACKEND
+    if os.getenv("BIKEFINDER_CATALOG_FAST_PATH") == "1" and os.getenv("BIKEFINDER_JEV_ROUTER") != "1":
+        from bikefinder_rag.agent.catalog_fast_path import answer_catalog_question
+        answer = answer_catalog_question(conn, user_message)
+        if answer is not None:
+            content = [{"type":"text", "text":answer}] if backend == "anthropic" else answer
+            return answer, [*(history or []), {"role":"user", "content":user_message}, {"role":"assistant", "content":content}]
+    if os.getenv("BIKEFINDER_JEV_ROUTER") == "1":
+        from bikefinder_rag.agent.jev_router import route_question
+        result = route_question(conn, user_message, routing_history)
+        if result['answer'] is not None:
+            answer=result['answer']
+            content=[{"type":"text","text":answer}] if backend=="anthropic" else answer
+            completed={"role":"assistant","content":content,"_catalog_plan":result.get('plan'),
+                       "_catalog_route":result['route'],"_catalog_seconds":result.get('seconds'),
+                       "_catalog_jev_calls":result.get('jev_calls',0)}
+            return answer,[*routing_history,{"role":"user","content":user_message},completed]
+        if result['route']=='mistral_required':
+            from bikefinder_rag.agent.jev_router import synthesize_complex
+            answer=synthesize_complex(conn,user_message,result['plan'])
+            content=[{"type":"text","text":answer}] if backend=="anthropic" else answer
+            return answer,[*routing_history,{"role":"user","content":user_message},
+                {"role":"assistant","content":content,"_catalog_plan":result['plan'],"_catalog_route":"bounded_mistral"}]
     if backend == "ollama":
         return _run_agent_ollama(conn, user_message, history)
     if backend == "openrouter":

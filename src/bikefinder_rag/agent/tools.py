@@ -152,7 +152,9 @@ GET_BIKE_DETAILS_SCHEMA = {
     },
 }
 
-TOOLS = [FILTER_SPECS_SCHEMA, GET_BIKE_DETAILS_SCHEMA]
+from bikefinder_rag.agent.catalog_tools import CATALOG_TOOLS, CATALOG_CALLS, execute_catalog_tool
+
+TOOLS = [*CATALOG_TOOLS, FILTER_SPECS_SCHEMA, GET_BIKE_DETAILS_SCHEMA]
 
 _SORTABLE_COLUMNS = {"year", "displacement_ccm", "weight_kg", "power_hp",
                      "torque_nm", "seat_height_mm"}
@@ -547,6 +549,8 @@ def _validate_technical_arguments(schema: dict, arguments: dict) -> str | None:
 
 
 def execute_tool(conn, tool_name: str, tool_input: dict, *, allow_reviews: bool = False) -> list[dict]:
+    if tool_name in CATALOG_CALLS:
+        return execute_catalog_tool(conn, tool_name, tool_input, _validate_technical_arguments)
     # Tool-calling LLMs (local models especially) sometimes emit argument
     # names that drift from the schema (e.g. "models" instead of "model", or
     # drop a required one like "query" entirely). Remap the known near-misses,

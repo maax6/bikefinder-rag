@@ -1,0 +1,8 @@
+{
+  "question": "Pour la BMW R 1150 GS de 2000, explique pourquoi les caractéristiques du moteur et de la suspension changent les sensations de conduite, sans inventer de mesures.",
+  "route": "mistral_required",
+  "seconds": 30.13152649998665,
+  "answer": "La fiche ne permet pas de vérifier toutes les conclusions demandées. Voici les données documentées :\n\n| Caractéristique | BMW R 1150 GS (2000) |\n|---|---|\n| Suspensions et réglages avant/arrière | Train avant — Fourche Telelever, déb : 190 mm ; Train arrière — Mono-amortisseur et monobras Paralever, déb : 200 mm |\n| Source | [Fiche](https://www.motoplanete.com/bmw/2229/R-1150-GS-2000/contact.html) |",
+  "has_source": true,
+  "bounded_timeout_seconds": 30
+}

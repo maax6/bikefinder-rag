@@ -152,7 +152,9 @@ def assert_technical_transport(requests):
     for request in requests:
         schemas = {item["function"]["name"]: item["function"]["parameters"]
                    for item in request["tools"]}
-        assert set(schemas) == {"filter_specs", "get_bike_details"}
+        assert set(schemas) == {"filter_specs", "get_bike_details", "filter_catalog", "get_catalog_details", "search_technical"}
+        assert set(schemas["get_catalog_details"]["required"]) == {"model", "year"}
+        assert set(schemas["search_technical"]["required"]) == {"query", "model", "year"}
         assert set(schemas["get_bike_details"]["required"]) == {"model", "year"}
         assert all(schema["additionalProperties"] is False for schema in schemas.values())
         assert schemas["filter_specs"]["properties"]["limit"]["maximum"] == 20

@@ -1,0 +1,384 @@
+{
+  "objects": 11478,
+  "equipment_cases": 26599,
+  "unique_inputs": 1080,
+  "pass2": {
+    "jev_calls": 675,
+    "mistral_calls": 334,
+    "jev_errors": 0,
+    "mistral_errors": 0,
+    "stages": {
+      "source_review": 163,
+      "code_literal_evidence": 25994,
+      "code_no_mention": 442
+    },
+    "statuses": {
+      "unknown": 605,
+      "optional": 975,
+      "standard": 25011,
+      "explicitly_absent": 8
+    },
+    "jev_cost_usd": 0.019255151999999946,
+    "audit": {
+      "historical_regressions": {
+        "jev": {
+          "available": 55,
+          "references": 60,
+          "correct": 49,
+          "mismatches": [
+            {
+              "case_id": "94c8146094f54d8b54fa",
+              "equipment": "CBS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "7c75781cf132e76dd6c5",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "ecc3780b417a1b73020b",
+              "equipment": "TCS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "9e2f4095688916f3ef2f",
+              "equipment": "ABS",
+              "expected": "unknown",
+              "predicted": "standard",
+              "correct": false
+            },
+            {
+              "case_id": "32c636d216d9ae3351b8",
+              "equipment": "CBS",
+              "expected": "unknown",
+              "predicted": "standard",
+              "correct": false
+            },
+            {
+              "case_id": "f5d8ab6e09ce6074e5ff",
+              "equipment": "ride by wire",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            }
+          ]
+        },
+        "mistral": {
+          "available": 55,
+          "references": 60,
+          "correct": 42,
+          "mismatches": [
+            {
+              "case_id": "55f9e0db9137a7c060e0",
+              "equipment": "ABS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "094bdd19e8b7ad01126e",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "aeff1fa1c4327a1df65e",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "93868e6c75f2aacc6320",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "e5f3509c12939dd7f06c",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "5ccb9fc8da8610f88120",
+              "equipment": "CBS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "94c8146094f54d8b54fa",
+              "equipment": "CBS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "7c75781cf132e76dd6c5",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "bc2f93ca3405152b33da",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "dcac401c321b11d39321",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "ecc3780b417a1b73020b",
+              "equipment": "TCS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "8c6103c66ae106ef4ddb",
+              "equipment": "ABS",
+              "expected": "standard",
+              "predicted": "optional",
+              "correct": false
+            },
+            {
+              "case_id": "f5d8ab6e09ce6074e5ff",
+              "equipment": "ride by wire",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            }
+          ]
+        },
+        "cascade": {
+          "available": 55,
+          "references": 60,
+          "correct": 52,
+          "mismatches": [
+            {
+              "case_id": "94c8146094f54d8b54fa",
+              "equipment": "CBS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "7c75781cf132e76dd6c5",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "ecc3780b417a1b73020b",
+              "equipment": "TCS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            }
+          ]
+        }
+      },
+      "new_source_audit": {
+        "jev": {
+          "available": 64,
+          "references": 67,
+          "correct": 63,
+          "mismatches": [
+            {
+              "case_id": "c338a572677b8d729d1b",
+              "equipment": "Freinage",
+              "expected": "unknown",
+              "predicted": "standard",
+              "correct": false
+            }
+          ]
+        },
+        "mistral": {
+          "available": 64,
+          "references": 67,
+          "correct": 46,
+          "mismatches": [
+            {
+              "case_id": "d8e7629163b920c9a3b5",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "d3e31e18ad006f3f0358",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "2d63c355d6b7aa80e9fb",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "4b783e88d0bea4ca970c",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "540b542e3e60c010648d",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "0e3f2de7def985aaf6d1",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "7ff2e2c42b52c2151c57",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "d5da65f118ab25cdef96",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "ec635349327ab41bb72a",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "71b22b4874cbec1fea79",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "ca3d78c58020deae944a",
+              "equipment": "ABS",
+              "expected": "optional",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "32e2b70e8628d9b870a1",
+              "equipment": "modes de conduite",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "41931347620351be90ef",
+              "equipment": "ABS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "eb41f8d3f8b2157f8f1d",
+              "equipment": "CBS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "c5fefcc415cc4c55ec65",
+              "equipment": "ABS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "7286ad7ee9baf55aaa73",
+              "equipment": "CBS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "77b6e977beb69918cd22",
+              "equipment": "CBS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            },
+            {
+              "case_id": "a26ed3f1157e1240e928",
+              "equipment": "ABS",
+              "expected": "standard",
+              "predicted": "unknown",
+              "correct": false
+            }
+          ]
+        },
+        "cascade": {
+          "available": 64,
+          "references": 67,
+          "correct": 64,
+          "mismatches": []
+        }
+      }
+    },
+    "unique_final_routes": {
+      "source_review": 52,
+      "code_literal_evidence": 623,
+      "code_no_mention": 405
+    },
+    "latency_seconds": {
+      "jev": {
+        "median": 0.324,
+        "p95": 0.4564,
+        "run": {
+          "seconds": 27.565077124978416,
+          "selected_unique_inputs": 675
+        }
+      },
+      "mistral": {
+        "median": 1.2455500000000002,
+        "p95": 1.9566,
+        "run": {
+          "seconds": 67.2290445419494,
+          "selected_unique_inputs": 280
+        }
+      }
+    }
+  },
+  "new_jev_calls": 290,
+  "new_mistral_calls": 46,
+  "method_limit": "Source conformity on targeted agent annotations; not manufacturer truth or representative accuracy.",
+  "new_jev_cost_usd": 0.008311548
+}
