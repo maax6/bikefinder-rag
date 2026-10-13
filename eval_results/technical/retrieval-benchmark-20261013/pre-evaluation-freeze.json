@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-10-13T18:01:48.948623+00:00",
+  "question_files_sha256": {
+    "questions/dev.json": "b593c8232bc8a960ca3cbea1bbcc45e7af9b2c1495a4ff391bc540fd5ea162ba",
+    "questions/holdout.json": "64b0331bcca034eefaf146d172e0141128f8ba61164e3e771181d1d5a827abb3",
+    "questions/author-manifest.json": "f96268b5996d2dc6cdc81eb545c391b44a620a28d9aad08f9d7aa44f87aa9f37"
+  },
+  "harness_sha256": "9b67837b6ea17693711698317326ae767148b246530e1cc73efd743b289a1b0c",
+  "harness_tests_sha256": "1127d8a5205ca9dfce0d6c4166a1798e8cee7e1dbb20b8751133a6567320c091",
+  "independent_author": "isolated AI agent, source-only, no human panel",
+  "heldout_question_text_disclosed_to_implementer": false,
+  "parameters_frozen": {
+    "device": "mps",
+    "compute_dtype": "float16",
+    "stored_dtype": "float32",
+    "batch_size": 32,
+    "pool": 30,
+    "k": 10,
+    "rrf_constant": 60,
+    "max_length": 512,
+    "repeats": 3
+  },
+  "tests": {
+    "passed": 947,
+    "skipped": 8,
+    "seconds": 10.43
+  },
+  "no_tuning_from_heldout": true
+}

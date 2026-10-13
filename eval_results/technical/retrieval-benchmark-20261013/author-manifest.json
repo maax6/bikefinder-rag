@@ -1,0 +1,90 @@
+{
+  "schema_version": "independent-source-only-author-manifest-v1",
+  "author_role": "isolated AI benchmark author subagent; no human panel",
+  "authorship_day": "2026-10-13",
+  "frozen_at_utc": "2026-10-13T17:56:48.224818+00:00",
+  "corpus": {
+    "path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/catalogue.frozen.sqlite3",
+    "sha256": "249da64a87ffe71594f1662cabdf3e94b9349474c133c3dd8786fab700d7112a",
+    "sha256_after_authorship": "249da64a87ffe71594f1662cabdf3e94b9349474c133c3dd8786fab700d7112a",
+    "read_only_sqlite_uri": true,
+    "object_count": 11478,
+    "source_families": {
+      "motoplanete": 11478
+    }
+  },
+  "method": {
+    "independent_source_only_authorship": true,
+    "inputs": "Only the allowed frozen SQLite corpus objects and equipment tables. Gold evidence and expected facts use original record.technical_sections; no equipment decision was used to determine questions, gold grades or expected facts.",
+    "excluded_material": "No project source code, prior evaluation questions, reports, conversation history, implementation outputs, external API or online source was read or used.",
+    "external_services_used": false,
+    "model_inference_used": false,
+    "model_downloads_used": false,
+    "prior_questions_read": false,
+    "implementation_outputs_read": false,
+    "annotation": "Every technical section for every supplied scope object was reviewed. Exact zero-based technical_sections IDs are used. Grade 2 is direct evidence for a requested fact; grade 1 is relevant redundant or alternative-candidate context.",
+    "required_groups": "Each inner list contains interchangeable sufficient passages for a required fact; every outer group is needed for complete evidence coverage. Context graded 1 is not mandatory unless expressly included.",
+    "scope": "Named-fiche cases evaluate identity-given retrieval within supplied_scope_object_ids. Ambiguity cases give a controlled candidate set. No positive case asserts exhaustive global alternatives.",
+    "negative_cases": "Missing exact document requests use global empty scope, answerability unanswerable, empty gold and required groups. The complete source-family inventory and technical-section document-term scan establish the absence of the requested official document family, not a legal or real-world verdict.",
+    "limits": "Original labels, units, unknown values and source wording are preserved. A2 mentions are not homologation. Missing equipment or colour mentions are not proof of real-world absence. No market or variant is invented.",
+    "split_freeze": "Question wording, gold judgements and groups were serialized and hashed before any retrieval results or implementation outputs were seen. Reserved wording was not disclosed to the parent.",
+    "split_isolation": "Development and reserved supplied-scope object IDs, gold passage IDs, required-group IDs and normalized brand+model families are disjoint across all years. Exact model families are normalized case-insensitively, without accents or punctuation, with alphabetic and numeric tokens sorted to catch reordered numeric model names. Distinct versions retain distinguishing tokens. Identity-specific proof or wording variants stay in the same split. Generic source boilerplate recurring across distinct families is not a blocker.",
+    "isolation_revision": "Before reading any retrieval results or implementation output, development cases were revised from corpus-only evidence to eliminate shared supplied-scope objects and shared normalized model families. One global negative development request was aligned with a development-only family. Reserved bytes never changed.",
+    "author_identity": "Questions and gold annotations were authored by an isolated AI subagent from frozen corpus evidence. They are not independent human judgements or a human panel; downstream claims must describe that limitation."
+  },
+  "files": {
+    "dev": {
+      "path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/questions/dev.json",
+      "sha256": "b593c8232bc8a960ca3cbea1bbcc45e7af9b2c1495a4ff391bc540fd5ea162ba",
+      "question_count": 10
+    },
+    "holdout": {
+      "path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/questions/holdout.json",
+      "sha256": "64b0331bcca034eefaf146d172e0141128f8ba61164e3e771181d1d5a827abb3",
+      "question_count": 50
+    }
+  },
+  "counts": {
+    "total": 60,
+    "dev": 10,
+    "reserved": 50,
+    "a2_question_mentions": 8,
+    "unanswerable": 7
+  },
+  "schema_fields": [
+    "id",
+    "split",
+    "category",
+    "question",
+    "answerability",
+    "supplied_scope_object_ids",
+    "gold_passages",
+    "required_groups",
+    "expected_facts",
+    "expected_limits",
+    "source_refs",
+    "judgements_complete_within_supplied_scope",
+    "judgements_complete_global",
+    "scope_protocol"
+  ],
+  "validation": {
+    "ids_exist": true,
+    "section_indices_exact": true,
+    "all_gold_inside_scope": true,
+    "required_groups_subset_of_gold": true,
+    "quotes_match_frozen_source": true,
+    "source_hashes_match_objects": true,
+    "question_ids_unique": true,
+    "question_texts_unique": true,
+    "negative_gold_empty": true,
+    "corpus_unchanged": true,
+    "json_round_trip": true,
+    "scope_object_id_intersection_count": 0,
+    "gold_passage_id_intersection_count": 0,
+    "required_group_id_intersection_count": 0,
+    "normalized_question_exact_intersection_count": 0,
+    "paraphrase_variants_cross_split": false,
+    "paraphrase_review_policy": "Manual review of question intent, target identity and requested facts; no shared identity-specific proof group or wording variant across splits. No automated semantic similarity or model inference was used.",
+    "normalized_brand_model_family_intersection_count": 0
+  }
+}

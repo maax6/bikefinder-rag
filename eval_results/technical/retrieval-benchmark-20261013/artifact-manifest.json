@@ -1,0 +1,159 @@
+{
+  "artifacts": {
+    "source-manifest.json": {
+      "sha256": "0b47dff9bafc25107014c05d57868dfbec4eb7bc274ad9284c10122b90a42226",
+      "bytes": 1073
+    },
+    "model-license-metadata.json": {
+      "sha256": "ebb89e85099433a0a7828598b3b5256dae825022b099e27a80e49890aed72c4b",
+      "bytes": 600
+    },
+    "pre-evaluation-freeze.json": {
+      "sha256": "8fcb42d747396d86a48e07b2a28af398bbeae496dae3b768cb4a5480f46bf856",
+      "bytes": 1041
+    },
+    "device-profile-host.json": {
+      "sha256": "eedae5dcafebc21d9bd5859d6d52073aa2b43d5896f21036899840105459a13e",
+      "bytes": 739
+    },
+    "dev-supplied-cold-init.json": {
+      "sha256": "3ddab33f6ce726419175868a5f054292faa56eb8f3c934d68ea6f243499398d0",
+      "bytes": 5046
+    },
+    "dev-global-firstpass-summary.json": {
+      "sha256": "2460cb7d6ba7b97e864c9fdd5cfeb7f74f255182440ccd2991fa0b0ab73d8805",
+      "bytes": 17729
+    },
+    "dev-supplied-firstpass-run.json": {
+      "sha256": "a173412f32f69632a7b2d0fd2ef4254ca39e92f8fde60edd2476327f52209343",
+      "bytes": 3532
+    },
+    "dev-supplied-firstpass-summary.json": {
+      "sha256": "d9dad72e2015b50cf37d0a26e263cc1d93ea18321d9308f8988fd71273da7df0",
+      "bytes": 17589
+    },
+    "environment-manifest.json": {
+      "sha256": "16358ca7d5167a4eecc79aae9095dff0c8000f1219aa2cdb53e11146d587d0e6",
+      "bytes": 4190
+    },
+    "index-manifest.json": {
+      "sha256": "b2f255b320e3c03b19d873ceae7ce87ed39a8d1ba6ed6719e52eacca0f6abb56",
+      "bytes": 347869
+    },
+    "questions-dev.json": {
+      "sha256": "b593c8232bc8a960ca3cbea1bbcc45e7af9b2c1495a4ff391bc540fd5ea162ba",
+      "bytes": 25919
+    },
+    "holdout-supplied-firstpass-summary.json": {
+      "sha256": "398d9dbb51d24a266fe77e5ffdfb5664758fab0e028dfc0fb045c33f9aa8c0ba",
+      "bytes": 42593
+    },
+    "review-notes.md": {
+      "sha256": "21ed59c2f1781f6f9eae87f8f8c5ac9edbec1927d71cbe7194167c7c2f48d605",
+      "bytes": 2060
+    },
+    "live-raw-cache-coverage.json": {
+      "sha256": "1d787a7123a501cbb4a2456d3efddb4eebfb74988c71b320f4368c727d11e1a3",
+      "bytes": 197
+    },
+    "confidence-analysis.json": {
+      "sha256": "05e628049542a85790cb861873bbe19a21d2e0217af968a8359c4d18e68e08bd",
+      "bytes": 1911
+    },
+    "device-profile-fp16.json": {
+      "sha256": "9f4b9fddf2c333482342f053d4c56009c35ce02eee9eb30874fb35a097374087",
+      "bytes": 830
+    },
+    "post-run-live-check.json": {
+      "sha256": "c7a235ec60d61cc6857b99312af84625f698fd591cb7e63b3902365b498ce2a1",
+      "bytes": 233
+    },
+    "README.md": {
+      "sha256": "54a237181939b1c7649a29a983c2d4481b0675bcf995865228fdbc1d221cdabd",
+      "bytes": 5156
+    },
+    "holdout-global-firstpass-summary.json": {
+      "sha256": "c6c78d6cdd6f1f9cc99c877c9c9ec35993c1a045ae9d5d559e3aeaafcad9fbf1",
+      "bytes": 43337
+    },
+    "holdout-supplied-firstpass-run.json": {
+      "sha256": "81be3eab35f9a02910cee5bc147a0d5b4633b75d1811592c09773bf127eb93fc",
+      "bytes": 3533
+    },
+    "dev-global-firstpass-run.json": {
+      "sha256": "61074ce960564b637b9195d8af0fac111309199e7068b6939eb9e00545540edd",
+      "bytes": 3524
+    },
+    "author-manifest.json": {
+      "sha256": "f96268b5996d2dc6cdc81eb545c391b44a620a28d9aad08f9d7aa44f87aa9f37",
+      "bytes": 5933
+    },
+    "lazy-dev-profile.json": {
+      "sha256": "1f7b92e99635b7b56adb985c91251dec54a22639820b2bb31ea0a812935be588",
+      "bytes": 5765
+    },
+    "protocol.json": {
+      "sha256": "794187e95dbe38604e9704115a2102b5d97fcb18a94686c492b512bb23070642",
+      "bytes": 6465
+    },
+    "holdout-global-firstpass-traces.json": {
+      "sha256": "51f448ff4ccc9a3bcebef3ced25458e5d0ed82578196c868aae2e3470a521f5a",
+      "bytes": 1654523
+    },
+    "holdout-global-firstpass-run.json": {
+      "sha256": "e01760fc12bcb0a99859e33b78311c7927aa70479b92314c2b1d72af18912cd3",
+      "bytes": 3533
+    },
+    "live-equivalence.json": {
+      "sha256": "829527e2a5401fe4f0436fba60c3c3795a02740aa01c777ceae851d5e59f2842",
+      "bytes": 206
+    },
+    "dev-supplied-firstpass-traces.json": {
+      "sha256": "7c34ae5719f2a490423cf285b68982712402f8cf12ad2192bde37eedbbb26cca",
+      "bytes": 277166
+    },
+    "dev-global-firstpass-traces.json": {
+      "sha256": "b9627b65b67232a351504d5f96255f81d94ed55ba13e2208d35deeaec8592054",
+      "bytes": 314194
+    },
+    "evaluation-protocol.json": {
+      "sha256": "1a3f485ea8140da72222a932a198e7676580bd66b6795e4ebd8a83452e514dd3",
+      "bytes": 362
+    },
+    "dev-global-cold-init.json": {
+      "sha256": "a143ad9ec9172bbb78d561e9990f0df55c02c5912d6e0488bc5135723ccc9758",
+      "bytes": 6423
+    },
+    "holdout-supplied-firstpass-traces.json": {
+      "sha256": "d169a413a82c9081e64944ac07747cdc137b99d1dcd07c0c90a7f67e08e8b1f5",
+      "bytes": 1421973
+    },
+    "questions-holdout.json": {
+      "sha256": "64b0331bcca034eefaf146d172e0141128f8ba61164e3e771181d1d5a827abb3",
+      "bytes": 143743
+    }
+  },
+  "original_full_trace_files": {
+    "dev-supplied-firstpass": {
+      "sha256": "68cd38133022373b354fb2fbd497300814313ce87045f4039ef20b861b79f46b",
+      "bytes": 694469,
+      "local_path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/index/results/dev-supplied-firstpass.jsonl"
+    },
+    "dev-global-firstpass": {
+      "sha256": "82b4c5db0c594e6c4e7cfb6e735b9646f2aadcced124ff1618b0e3ccec248593",
+      "bytes": 805993,
+      "local_path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/index/results/dev-global-firstpass.jsonl"
+    },
+    "holdout-supplied-firstpass": {
+      "sha256": "32618876ede594c2e0853a97419ecdf3ad99ab27758048433316dcd4113252cb",
+      "bytes": 3584224,
+      "local_path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/index/results/holdout-supplied-firstpass.jsonl"
+    },
+    "holdout-global-firstpass": {
+      "sha256": "25b7a8b58135f4591f1b616c69b1d0e40cdc96860ae7a527f13dccf3143943b9",
+      "bytes": 4284893,
+      "local_path": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/index/results/holdout-global-firstpass.jsonl"
+    }
+  },
+  "note": "Index vectors, SQLite snapshots and model weights remain local unversioned caches. Compact traces preserve every first ranking and every measured timing."
+}

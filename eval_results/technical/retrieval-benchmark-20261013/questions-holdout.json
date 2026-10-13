@@ -1,0 +1,2915 @@
+{
+  "schema_version": "independent-source-only-questions-v1",
+  "split": "holdout",
+  "corpus_sha256": "249da64a87ffe71594f1662cabdf3e94b9349474c133c3dd8786fab700d7112a",
+  "questions": [
+    {
+      "id": "HOLDOUT-001",
+      "split": "holdout",
+      "category": "dimensions",
+      "question": "La CFMOTO 450 MT 2024 n’a pas une selle fixe ? Donne-moi aussi son encombrement en longueur et sa masse annoncée.",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "1145a40178537481"
+      ],
+      "gold_passages": [
+        {
+          "id": "1145a40178537481:section:0",
+          "grade": 2,
+          "reason": "Réunit plage de hauteur de selle, longueur et poids à sec."
+        }
+      ],
+      "required_groups": [
+        [
+          "1145a40178537481:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Selle réglable entre 800 et 820 mm ; longueur 2 210 mm ; poids à sec 175 kg."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Le poids indiqué est à sec, pas tous pleins faits."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "1145a40178537481:section:0",
+          "object_id": "1145a40178537481",
+          "source_url": "https://www.motoplanete.com/cfmoto/10690/450-MT-2024/contact.html",
+          "source_sha256": "4c18949996d5e2247bc5fdc89a40407e76af91fdabc934db4e7b03f61831c6e7",
+          "section": "Châssis",
+          "quote": "Cadre : tubulure en acier; Réservoir : 17,50 litres; Hauteur de selle réglable entre 800 mm et 820 mm; Longueur : 2 210 mm; Largeur : 870 mm; Hauteur min : 1 390 mm; Empattement : 1 505 mm; Poids à sec : 175 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-002",
+      "split": "holdout",
+      "category": "engine",
+      "question": "Sur la Honda CB 500 Hornet 2024, le chiffre 500 correspond à la cylindrée exacte ? Combien de cylindres et quel refroidissement ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "89486136f6838f45"
+      ],
+      "gold_passages": [
+        {
+          "id": "89486136f6838f45:section:4",
+          "grade": 2,
+          "reason": "Donne 471 cc, bicylindre en ligne et refroidissement liquide."
+        }
+      ],
+      "required_groups": [
+        [
+          "89486136f6838f45:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "471 cc ; bicylindre en ligne 4 temps, calé à 180° ; refroidissement liquide."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Ne pas convertir le nombre dans le nom commercial en cylindrée mesurée."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "89486136f6838f45:section:4",
+          "object_id": "89486136f6838f45",
+          "source_url": "https://www.motoplanete.com/honda/10160/CB-500-Hornet-2024/contact.html",
+          "source_sha256": "ee36ab9e7b3527a74846587fe181b79b772d7658fe7d0a238dedc96276b752d7",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps, calé à 180°; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.61 kg/ch; Rapport poids / couple : environ 38.46 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-003",
+      "split": "holdout",
+      "category": "dimensions_mass_missing",
+      "question": "KTM 390 Duke 2024 : j’aimerais le volume du réservoir et les poids à vide et avec le plein. La fiche a les deux ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "d1564f68413d4aeb"
+      ],
+      "gold_passages": [
+        {
+          "id": "d1564f68413d4aeb:section:0",
+          "grade": 2,
+          "reason": "Donne le réservoir et uniquement le poids tous pleins faits."
+        }
+      ],
+      "required_groups": [
+        [
+          "d1564f68413d4aeb:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Réservoir 15 litres ; poids tous pleins faits 165 kg."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Aucun poids à sec n’est donné dans cette fiche. « À vide » n’est pas défini : ne pas calculer une masse sèche en retirant arbitrairement le carburant."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "d1564f68413d4aeb:section:0",
+          "object_id": "d1564f68413d4aeb",
+          "source_url": "https://www.motoplanete.com/ktm/10009/390-Duke-2024/contact.html",
+          "source_sha256": "3f101622bb0515148984a2315f2b8f89bfdfc53173bac602d8f06f86881ce6ce",
+          "section": "Châssis",
+          "quote": "Cadre : cadre treillis en tubes d'acier; Réservoir : 15 litres; Hauteur de selle : 820 mm; Hauteur min : 1 109 mm; Empattement : 1 357 mm; Poids tous pleins faits : 165 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-004",
+      "split": "holdout",
+      "category": "dimensions_mass_basis",
+      "question": "Pour la Royal-Enfield 450 Himalayan 2024, quelles sont les deux hauteurs de selle et les masses à sec et prête à rouler indiquées ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "a694ca2a26252015"
+      ],
+      "gold_passages": [
+        {
+          "id": "a694ca2a26252015:section:0",
+          "grade": 2,
+          "reason": "Contient la plage de selle et les deux libellés de masse."
+        }
+      ],
+      "required_groups": [
+        [
+          "a694ca2a26252015:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Selle réglable entre 825 et 845 mm ; poids à sec 181 kg ; poids tous pleins faits 196 kg."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Conserver le libellé tous pleins faits pour la seconde masse ; ne pas attribuer la différence à un composant précis."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "a694ca2a26252015:section:0",
+          "object_id": "a694ca2a26252015",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "section": "Châssis",
+          "quote": "Cadre : tubulaire en acier; Réservoir : 17 litres; Hauteur de selle réglable entre 825 mm et 845 mm; Longueur : 2 245 mm; Largeur : 852 mm; Hauteur min : 1 316 mm; Empattement : 1 510 mm; Poids à sec : 181 kg; Poids tous pleins faits : 196 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-005",
+      "split": "holdout",
+      "category": "engine_gearbox",
+      "question": "La Moto-Guzzi 850 V7 Stone 2024 roule avec une chaîne ? Et son moteur refroidit à l’eau ou à l’air ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "d0795676152e69de"
+      ],
+      "gold_passages": [
+        {
+          "id": "d0795676152e69de:section:2",
+          "grade": 2,
+          "reason": "Identifie le cardan."
+        },
+        {
+          "id": "d0795676152e69de:section:4",
+          "grade": 2,
+          "reason": "Identifie le refroidissement par air et le bicylindre."
+        }
+      ],
+      "required_groups": [
+        [
+          "d0795676152e69de:section:2"
+        ],
+        [
+          "d0795676152e69de:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "Secondaire par cardan ; moteur bicylindre en L à 90°, refroidi par air."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "d0795676152e69de:section:2",
+          "object_id": "d0795676152e69de",
+          "source_url": "https://www.motoplanete.com/moto-guzzi/10566/850-V7-Stone-2024/contact.html",
+          "source_sha256": "80fa0fffb1e227850a26449d01d0613294229ccd57456e9e1d25b0239565b2de",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle; Secondaire par cardan"
+        },
+        {
+          "passage_id": "d0795676152e69de:section:4",
+          "object_id": "d0795676152e69de",
+          "source_url": "https://www.motoplanete.com/moto-guzzi/10566/850-V7-Stone-2024/contact.html",
+          "source_sha256": "80fa0fffb1e227850a26449d01d0613294229ccd57456e9e1d25b0239565b2de",
+          "section": "Moteur",
+          "quote": "Bicylindre en L à 90° , 4 temps; Injection Ø 38 mm; Refroidissement : par air; culbuté; 2 soupapes par cylindre; 853 cc (Alésage * course: 84 x 77 mm); 65 ch à 6 800 tr/min; 7,50 mkg à 5 000 tr/min; Rapport poids / puissance : 3.05 kg/ch; Rapport poids / couple : 26.4 kg/mkg; Compression : 10,5 : 1; Emission CO² : 119 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-006",
+      "split": "holdout",
+      "category": "gearbox_exact_code",
+      "question": "Pour la Honda NC 750 X 2024, que dit la base sur le DCT, le nombre de rapports et la transmission jusqu’à la roue ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "ca659e852f01b07e"
+      ],
+      "gold_passages": [
+        {
+          "id": "ca659e852f01b07e:section:2",
+          "grade": 2,
+          "reason": "Détaille boîte robotisée DCT, six rapports et chaîne."
+        },
+        {
+          "id": "ca659e852f01b07e:section:5",
+          "grade": 2,
+          "reason": "La liste d’équipements mentionne aussi Boîte automatique."
+        }
+      ],
+      "required_groups": [
+        [
+          "ca659e852f01b07e:section:2"
+        ]
+      ],
+      "expected_facts": [
+        "Boîte à 6 rapports robotisée DCT ; secondaire par chaîne ; Boîte automatique dans les équipements."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La fiche ne sépare pas une variante manuelle, un marché ou une configuration individuelle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "ca659e852f01b07e:section:2",
+          "object_id": "ca659e852f01b07e",
+          "source_url": "https://www.motoplanete.com/honda/10218/NC-750-X-2024/contact.html",
+          "source_sha256": "6fb0785959db5b4f380ee44b61fcf10cf6cab0c63729a4f43e81eb7882213c8a",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , robotisée DCT; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "ca659e852f01b07e:section:5",
+          "object_id": "ca659e852f01b07e",
+          "source_url": "https://www.motoplanete.com/honda/10218/NC-750-X-2024/contact.html",
+          "source_sha256": "6fb0785959db5b4f380ee44b61fcf10cf6cab0c63729a4f43e81eb7882213c8a",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS de série; Indicateur de vitesse engagée; Boîte automatique; Contrôle de couple; Contrôle du frein moteur"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 9
+      }
+    },
+    {
+      "id": "HOLDOUT-007",
+      "split": "holdout",
+      "category": "comparison_gearbox_engine",
+      "question": "La Yamaha MT-09 900 Y-AMT 2024 change quoi face à la MT-09 900 2024 : la boîte seulement, ou aussi la cylindrée et la puissance ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "5f8c8c61b3eeb916",
+        "2a224bbc503cf279"
+      ],
+      "gold_passages": [
+        {
+          "id": "5f8c8c61b3eeb916:section:2",
+          "grade": 2,
+          "reason": "Décrit la boîte manuelle automatisée Y-AMT."
+        },
+        {
+          "id": "2a224bbc503cf279:section:2",
+          "grade": 2,
+          "reason": "Décrit la boîte manuelle avec shifter de série."
+        },
+        {
+          "id": "5f8c8c61b3eeb916:section:4",
+          "grade": 2,
+          "reason": "Donne cylindrée et puissance Y-AMT."
+        },
+        {
+          "id": "2a224bbc503cf279:section:4",
+          "grade": 2,
+          "reason": "Donne cylindrée et puissance de la version standard."
+        },
+        {
+          "id": "5f8c8c61b3eeb916:section:5",
+          "grade": 1,
+          "reason": "Mention complémentaire Boîte automatique pour Y-AMT."
+        },
+        {
+          "id": "2a224bbc503cf279:section:5",
+          "grade": 1,
+          "reason": "Mention complémentaire Shifter sur la standard."
+        }
+      ],
+      "required_groups": [
+        [
+          "5f8c8c61b3eeb916:section:2"
+        ],
+        [
+          "2a224bbc503cf279:section:2"
+        ],
+        [
+          "5f8c8c61b3eeb916:section:4"
+        ],
+        [
+          "2a224bbc503cf279:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "Y-AMT : boîte à 6 rapports manuelle automatisée ; standard : boîte à 6 rapports manuelle avec shifter de série ; les deux fiches donnent 889 cc et 119 ch à 10 000 tr/min."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Comparer seulement les caractéristiques demandées. L’égalité de cylindrée et de puissance ne prouve pas que toutes les autres pièces sont identiques."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "5f8c8c61b3eeb916:section:2",
+          "object_id": "5f8c8c61b3eeb916",
+          "source_url": "https://www.motoplanete.com/yamaha/10704/MT-09-900-Y-AMT-2024/contact.html",
+          "source_sha256": "39615e8d0f0847f1414100c031f75e32bcaf1cefa9a298d67a5bebcc645382e4",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle automatisée; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "2a224bbc503cf279:section:2",
+          "object_id": "2a224bbc503cf279",
+          "source_url": "https://www.motoplanete.com/yamaha/10099/MT-09-900-2024/contact.html",
+          "source_sha256": "13400a249699be0c33928113c090981765aaa672fe0cb4f024cf049c944aab5d",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "5f8c8c61b3eeb916:section:4",
+          "object_id": "5f8c8c61b3eeb916",
+          "source_url": "https://www.motoplanete.com/yamaha/10704/MT-09-900-Y-AMT-2024/contact.html",
+          "source_sha256": "39615e8d0f0847f1414100c031f75e32bcaf1cefa9a298d67a5bebcc645382e4",
+          "section": "Moteur",
+          "quote": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes; 889 cc (Alésage * course: 78 x 62.1 mm); 119 ch à 10 000 tr/min; 9,50 mkg à 7 000 tr/min; Rapport poids / puissance : environ 1.52 kg/ch; Rapport poids / couple : environ 18.99 kg/mkg; Compression : 11.5 : 1; Emission CO² : 116 g/km"
+        },
+        {
+          "passage_id": "2a224bbc503cf279:section:4",
+          "object_id": "2a224bbc503cf279",
+          "source_url": "https://www.motoplanete.com/yamaha/10099/MT-09-900-2024/contact.html",
+          "source_sha256": "13400a249699be0c33928113c090981765aaa672fe0cb4f024cf049c944aab5d",
+          "section": "Moteur",
+          "quote": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes; 889 cc (Alésage * course: 78 x 62.1 mm); 119 ch à 10 000 tr/min; 9,50 mkg à 7 000 tr/min; Rapport poids / puissance : environ 1.52 kg/ch; Rapport poids / couple : environ 18.99 kg/mkg; Compression : 11.5 : 1; Emission CO² : 116 g/km"
+        },
+        {
+          "passage_id": "5f8c8c61b3eeb916:section:5",
+          "object_id": "5f8c8c61b3eeb916",
+          "source_url": "https://www.motoplanete.com/yamaha/10704/MT-09-900-Y-AMT-2024/contact.html",
+          "source_sha256": "39615e8d0f0847f1414100c031f75e32bcaf1cefa9a298d67a5bebcc645382e4",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 5; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Régulateur de vitesse; Boîte automatique; Bluetooth; Prise USB; Démarrage sans clé; Contrôle de traction; Contrôle anti wheeling; Jantes forgées; Contrôle de glisse; Embrayage anti-dribble; Repose-pieds réglables; Contrôle du frein moteur"
+        },
+        {
+          "passage_id": "2a224bbc503cf279:section:5",
+          "object_id": "2a224bbc503cf279",
+          "source_url": "https://www.motoplanete.com/yamaha/10099/MT-09-900-2024/contact.html",
+          "source_sha256": "13400a249699be0c33928113c090981765aaa672fe0cb4f024cf049c944aab5d",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 5; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Prise USB; Contrôle de traction; Contrôle anti wheeling; Jantes forgées; Contrôle de glisse; Embrayage anti-dribble; Repose-pieds réglables; Contrôle du frein moteur"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-008",
+      "split": "holdout",
+      "category": "dimensions_engine",
+      "question": "La Suzuki GSX-8R 800 de 2024 fait vraiment 800 cm³ ? Et à quelle hauteur se trouve la selle, avec quel réservoir ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e5ae298425ec85ab"
+      ],
+      "gold_passages": [
+        {
+          "id": "e5ae298425ec85ab:section:4",
+          "grade": 2,
+          "reason": "Donne la cylindrée exacte."
+        },
+        {
+          "id": "e5ae298425ec85ab:section:0",
+          "grade": 2,
+          "reason": "Donne hauteur de selle et réservoir."
+        }
+      ],
+      "required_groups": [
+        [
+          "e5ae298425ec85ab:section:4"
+        ],
+        [
+          "e5ae298425ec85ab:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "776 cc ; selle 810 mm ; réservoir 14 litres."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e5ae298425ec85ab:section:4",
+          "object_id": "e5ae298425ec85ab",
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1",
+          "section": "Moteur",
+          "quote": "Bicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.32 kg/ch; Rapport poids / couple : environ 24.05 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km"
+        },
+        {
+          "passage_id": "e5ae298425ec85ab:section:0",
+          "object_id": "e5ae298425ec85ab",
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1",
+          "section": "Châssis",
+          "quote": "Cadre : structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 810 mm; Longueur : 2 150 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Empattement : 1 465 mm; Poids tous pleins faits : 205 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-009",
+      "split": "holdout",
+      "category": "engine_rpm_units",
+      "question": "Pour l’Aprilia RS 660 2024, donne les chevaux et le couple avec les régimes auxquels ils sont annoncés.",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "8ddbd548b0409857"
+      ],
+      "gold_passages": [
+        {
+          "id": "8ddbd548b0409857:section:4",
+          "grade": 2,
+          "reason": "Puissance et couple sont accompagnés de leurs régimes dans Moteur."
+        }
+      ],
+      "required_groups": [
+        [
+          "8ddbd548b0409857:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "100 ch à 10 500 tr/min ; 6,83 mkg à 8 500 tr/min."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Garder mkg, l’unité originale du couple. Toute conversion éventuelle doit être annoncée comme un calcul."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "8ddbd548b0409857:section:4",
+          "object_id": "8ddbd548b0409857",
+          "source_url": "https://www.motoplanete.com/aprilia/10284/RS-660-2024/contact.html",
+          "source_sha256": "91411845d3f02a84fae4fca920237dbcb3e48fc701ccc382b3083d03bdc8ccd3",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps; injection Ø 48 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 659 cc (Alésage * course: 81 x 63.9 mm); 100 ch à 10 500 tr/min; 6,83 mkg à 8 500 tr/min; Rapport poids / puissance : 1.69 kg/ch; Rapport poids / couple : 24.74 kg/mkg; Compression : 13.5 : 1; Emission CO² : 116 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-010",
+      "split": "holdout",
+      "category": "dimensions",
+      "question": "J’ai besoin de la largeur de la BMW R 1250 GS 2023 et de sa plage de réglage de selle, pas de l’Adventure.",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "4d902be1a67428c8"
+      ],
+      "gold_passages": [
+        {
+          "id": "4d902be1a67428c8:section:0",
+          "grade": 2,
+          "reason": "Donne largeur et selle réglable pour la GS standard exacte."
+        }
+      ],
+      "required_groups": [
+        [
+          "4d902be1a67428c8:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Largeur 953 mm ; selle réglable entre 850 et 870 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’extraction ne précise pas la largeur avec ou sans rétroviseurs."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "4d902be1a67428c8:section:0",
+          "object_id": "4d902be1a67428c8",
+          "source_url": "https://www.motoplanete.com/bmw/9459/R-1250-GS-2023/contact.html",
+          "source_sha256": "2283eadd39a15f406254a4c8324c59743a83177bb5421efe0f3344cb01dd52af",
+          "section": "Châssis",
+          "quote": "Cadre : Structure en tubes d'acier; Réservoir : 20 litres; Hauteur de selle réglable entre 850 mm et 870 mm; Longueur : 2 207 mm; Largeur : 953 mm; Hauteur min : 1 430 mm; Empattement : 1 514 mm; Poids tous pleins faits : 249 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-011",
+      "split": "holdout",
+      "category": "brakes_suspension",
+      "question": "Sur la Kawasaki Z 900 RS SE 2024, quels freins et quel débattement de fourche sont indiqués à l’avant ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "696aa9589ef8dd6f"
+      ],
+      "gold_passages": [
+        {
+          "id": "696aa9589ef8dd6f:section:1",
+          "grade": 2,
+          "reason": "Réunit les données de fourche et de freinage avant."
+        }
+      ],
+      "required_groups": [
+        [
+          "696aa9589ef8dd6f:section:1"
+        ]
+      ],
+      "expected_facts": [
+        "Fourche inversée Ø 41 mm, débattement 120 mm ; deux disques Brembo Ø 300 mm, fixation radiale, étriers 4 pistons."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Ne pas ajouter une référence d’étrier non écrite."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "696aa9589ef8dd6f:section:1",
+          "object_id": "696aa9589ef8dd6f",
+          "source_url": "https://www.motoplanete.com/kawasaki/9995/Z-900-RS-SE-2024/contact.html",
+          "source_sha256": "22dbe9ad6bec3d4ecf833592073d30b9ec4621f368694628650504a6280f9af2",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 41 mm, déb : 120 mm; Freinage : 2 disques Brembo Ø 300 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-012",
+      "split": "holdout",
+      "category": "engine_dimensions",
+      "question": "La Harley-Davidson RH 975 Nightster 2024 a quel angle entre ses deux cylindres, et quelle hauteur de selle ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "d646e539b110fb4b"
+      ],
+      "gold_passages": [
+        {
+          "id": "d646e539b110fb4b:section:4",
+          "grade": 2,
+          "reason": "Donne l’architecture en V à 60°."
+        },
+        {
+          "id": "d646e539b110fb4b:section:0",
+          "grade": 2,
+          "reason": "Donne la hauteur de selle."
+        }
+      ],
+      "required_groups": [
+        [
+          "d646e539b110fb4b:section:4"
+        ],
+        [
+          "d646e539b110fb4b:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Bicylindre en V à 60° ; selle 705 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "d646e539b110fb4b:section:4",
+          "object_id": "d646e539b110fb4b",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976",
+          "section": "Moteur",
+          "quote": "Bicylindre en V à 60° , 4 temps; Injection; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 975 cc (Alésage * course: 97 x 66 mm); 89 ch à 7 500 tr/min; 9,70 mkg à 5 750 tr/min; Rapport poids / puissance : 2.37 kg/ch; Rapport poids / couple : 21.75 kg/mkg; Compression : 12 : 1; Emission CO² : 128 g/km"
+        },
+        {
+          "passage_id": "d646e539b110fb4b:section:0",
+          "object_id": "d646e539b110fb4b",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976",
+          "section": "Châssis",
+          "quote": "Cadre : Structures en tubes d'acier; Réservoir : 11,70 litres; Hauteur de selle : 705 mm; Longueur : 2 250 mm; Largeur : 836 mm; Hauteur min : 1 108 mm; Empattement : 1 545 mm; Poids à sec : 211 kg; Poids tous pleins faits : 221 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-013",
+      "split": "holdout",
+      "category": "gearbox_engine",
+      "question": "Yamaha TMAX 2024 : est-ce qu’il y a des vitesses à passer à la main, et quelle cylindrée exacte est extraite ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "68a36cc1471e7eff"
+      ],
+      "gold_passages": [
+        {
+          "id": "68a36cc1471e7eff:section:2",
+          "grade": 2,
+          "reason": "Décrit la transmission automatique à courroie trapézoïdale."
+        },
+        {
+          "id": "68a36cc1471e7eff:section:4",
+          "grade": 2,
+          "reason": "Donne la cylindrée 562 cc."
+        }
+      ],
+      "required_groups": [
+        [
+          "68a36cc1471e7eff:section:2"
+        ],
+        [
+          "68a36cc1471e7eff:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "Transmission « Automatique à courroie trapézoïdale » ; bicylindre en ligne de 562 cc."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Ne pas inventer un nombre de rapports fixes ou une transmission secondaire distincte : la fiche ne les détaille pas."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "68a36cc1471e7eff:section:2",
+          "object_id": "68a36cc1471e7eff",
+          "source_url": "https://www.motoplanete.com/yamaha/10671/TMAX-2024/contact.html",
+          "source_sha256": "a5ea7fb1e047f91053b3a61a51aa6d268b1d25d22bcf4b4db71f5254a709a528",
+          "section": "Transmission",
+          "quote": "Automatique à courroie trapézoïdale"
+        },
+        {
+          "passage_id": "68a36cc1471e7eff:section:4",
+          "object_id": "68a36cc1471e7eff",
+          "source_url": "https://www.motoplanete.com/yamaha/10671/TMAX-2024/contact.html",
+          "source_sha256": "a5ea7fb1e047f91053b3a61a51aa6d268b1d25d22bcf4b4db71f5254a709a528",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps; Injection électronique; Refroidissement : liquide; double arbre à cames en tête; 4 soupapes; 562 cc (Alésage * course: 70 x 73 mm); 47,60 ch à 7 500 tr/min; 5,70 mkg à 5 250 tr/min; Rapport poids / puissance : environ 4.3 kg/ch; Rapport poids / couple : environ 35.91 kg/mkg; Compression : 10,9 : 1; Emission CO² : 112 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 9
+      }
+    },
+    {
+      "id": "HOLDOUT-014",
+      "split": "holdout",
+      "category": "equipment",
+      "question": "La BMW F 900 R 2024 aide-t-elle à empêcher la roue de patiner, et quelle assistance de freinage cite la fiche ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "482906d5f5f75ca3"
+      ],
+      "gold_passages": [
+        {
+          "id": "482906d5f5f75ca3:section:5",
+          "grade": 2,
+          "reason": "Liste Contrôle de traction et ABS."
+        }
+      ],
+      "required_groups": [
+        [
+          "482906d5f5f75ca3:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Contrôle de traction ; assistance au freinage ABS."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La liste ne détaille pas les conditions de fonctionnement ou un pack d’options."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "482906d5f5f75ca3:section:5",
+          "object_id": "482906d5f5f75ca3",
+          "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+          "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 2; Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-015",
+      "split": "holdout",
+      "category": "equipment_optional",
+      "question": "Si je prends une KTM 790 Duke 2024, le système pour passer les rapports sans débrayer est compris ou marqué en option ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "08413f04a1acc6df"
+      ],
+      "gold_passages": [
+        {
+          "id": "08413f04a1acc6df:section:2",
+          "grade": 2,
+          "reason": "La transmission porte la mention explicite shifter en option."
+        }
+      ],
+      "required_groups": [
+        [
+          "08413f04a1acc6df:section:2"
+        ]
+      ],
+      "expected_facts": [
+        "Boîte à 6 rapports manuelle ; shifter en option."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La fiche n’explicite pas son fonctionnement à la montée et à la descente ni le prix de l’option."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "08413f04a1acc6df:section:2",
+          "object_id": "08413f04a1acc6df",
+          "source_url": "https://www.motoplanete.com/ktm/10069/790-Duke-2024/contact.html",
+          "source_sha256": "c1526476dc7a70da400335d66c5ed76689d102da8cfbae65b26a760f4d0769a9",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-016",
+      "split": "holdout",
+      "category": "equipment_partial",
+      "question": "La Ducati Monster SP 2024 a bien l’aide au départ arrêté et un shifter fourni ? La fiche précise s’il marche aussi en descendant les vitesses ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "02d3dd07d44cc430"
+      ],
+      "gold_passages": [
+        {
+          "id": "02d3dd07d44cc430:section:2",
+          "grade": 2,
+          "reason": "Établit explicitement le shifter de série."
+        },
+        {
+          "id": "02d3dd07d44cc430:section:5",
+          "grade": 2,
+          "reason": "Liste shifter et Launch Control."
+        }
+      ],
+      "required_groups": [
+        [
+          "02d3dd07d44cc430:section:2"
+        ],
+        [
+          "02d3dd07d44cc430:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Shifter de série dans Transmission ; aide au départ arrêté (Launch Control) dans les équipements."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Aucun sens de fonctionnement montée/descente du shifter n’est précisé. Ne pas déduire up/down du seul mot Shifter."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "02d3dd07d44cc430:section:2",
+          "object_id": "02d3dd07d44cc430",
+          "source_url": "https://www.motoplanete.com/ducati/10190/Monster-SP-2024/contact.html",
+          "source_sha256": "a71abc0cc3ff9606cbec919f7a5668363db9da4c0fdf099e5f52e2b20609ac8f",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "02d3dd07d44cc430:section:5",
+          "object_id": "02d3dd07d44cc430",
+          "source_url": "https://www.motoplanete.com/ducati/10190/Monster-SP-2024/contact.html",
+          "source_sha256": "a71abc0cc3ff9606cbec919f7a5668363db9da4c0fdf099e5f52e2b20609ac8f",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS en curvas; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 10,92 cm / 4.3 pouces; Jantes aluminium; Shifter; Amortisseur de direction; Indicateur de vitesse engagée; Bluetooth; Prise USB; Aide au départ arrêté (Launch Control); Contrôle de traction; Contrôle anti wheeling; Embrayage anti-dribble"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-017",
+      "split": "holdout",
+      "category": "equipment_brakes",
+      "question": "Aprilia Tuono 660 Factory 2024 : shifter à payer en plus ou fourni, et les étriers avant sont-ils à fixation radiale ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "f14ed8fc72b18473"
+      ],
+      "gold_passages": [
+        {
+          "id": "f14ed8fc72b18473:section:2",
+          "grade": 2,
+          "reason": "Établit shifter de série."
+        },
+        {
+          "id": "f14ed8fc72b18473:section:1",
+          "grade": 2,
+          "reason": "Précise fixation radiale au freinage avant."
+        },
+        {
+          "id": "f14ed8fc72b18473:section:5",
+          "grade": 1,
+          "reason": "Contient une autre mention du shifter."
+        }
+      ],
+      "required_groups": [
+        [
+          "f14ed8fc72b18473:section:2"
+        ],
+        [
+          "f14ed8fc72b18473:section:1"
+        ]
+      ],
+      "expected_facts": [
+        "Shifter de série ; freinage avant par deux disques Ø 320 mm, fixation radiale, étriers 4 pistons."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "f14ed8fc72b18473:section:2",
+          "object_id": "f14ed8fc72b18473",
+          "source_url": "https://www.motoplanete.com/aprilia/10235/Tuono-660-Factory-2024/contact.html",
+          "source_sha256": "4a99a93de86fdf737f0323f186ebf8be1023594935926185b2647cb0b2403c1d",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "f14ed8fc72b18473:section:1",
+          "object_id": "f14ed8fc72b18473",
+          "source_url": "https://www.motoplanete.com/aprilia/10235/Tuono-660-Factory-2024/contact.html",
+          "source_sha256": "4a99a93de86fdf737f0323f186ebf8be1023594935926185b2647cb0b2403c1d",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 41 mm, déb : 110 mm; Réglage de la précharge, de la compression et de la détente; Freinage : 2 disques Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars"
+        },
+        {
+          "passage_id": "f14ed8fc72b18473:section:5",
+          "object_id": "f14ed8fc72b18473",
+          "source_url": "https://www.motoplanete.com/aprilia/10235/Tuono-660-Factory-2024/contact.html",
+          "source_sha256": "4a99a93de86fdf737f0323f186ebf8be1023594935926185b2647cb0b2403c1d",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS en curvas; Nombre de mode de conduite : 5; Taille de l'écran TFT couleur : 10,92 cm / 4.3 pouces; Shifter; Indicateur de vitesse engagée; Régulateur de vitesse; Contrôle de traction; Contrôle anti wheeling; Phares adaptatifs en virage; Contrôle du frein moteur"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-018",
+      "split": "holdout",
+      "category": "equipment_suspension_multi_evidence",
+      "question": "Sur la Honda CRF 1100 L Africa Twin Adventure Sports 2024, les suspensions sont réglables électroniquement ? Quels débattements avant et arrière sont annoncés ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "eb337e430e4513b5"
+      ],
+      "gold_passages": [
+        {
+          "id": "eb337e430e4513b5:section:5",
+          "grade": 2,
+          "reason": "Liste Suspensions réglables électroniquement."
+        },
+        {
+          "id": "eb337e430e4513b5:section:1",
+          "grade": 2,
+          "reason": "Donne le débattement avant."
+        },
+        {
+          "id": "eb337e430e4513b5:section:3",
+          "grade": 2,
+          "reason": "Donne le débattement arrière."
+        }
+      ],
+      "required_groups": [
+        [
+          "eb337e430e4513b5:section:5"
+        ],
+        [
+          "eb337e430e4513b5:section:1"
+        ],
+        [
+          "eb337e430e4513b5:section:3"
+        ]
+      ],
+      "expected_facts": [
+        "Suspensions réglables électroniquement citées ; avant 210 mm ; arrière 200 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La fiche ne détaille pas le fournisseur, l’algorithme ou les conditions de la configuration individuelle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "eb337e430e4513b5:section:5",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS en curvas; Nombre de mode de conduite : 6; Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Prise USB; Poignées chauffantes; Suspensions réglables électroniquement; Contrôle de couple; Contrôle anti wheeling; Phares adaptatifs en virage; Contrôle du frein moteur"
+        },
+        {
+          "passage_id": "eb337e430e4513b5:section:1",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 45 mm, déb : 210 mm; Réglage de la compression et de la détente; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 110 / 80 - 19"
+        },
+        {
+          "passage_id": "eb337e430e4513b5:section:3",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Train arrière",
+          "quote": "Mono-amortisseur, déb : 200 mm; Réglage de la précharge, de la compression et de la détente; Freinage : 1 disque Ø 256 mm, étrier simple piston; Roue arrière : 150 / 70 - 18"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-019",
+      "split": "holdout",
+      "category": "equipment_partial",
+      "question": "La Yamaha Tracer 9 GT+ 2024 est-elle donnée avec un radar et un régulateur adaptatif, ou la fiche est moins précise que ça ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "593360357e043c46"
+      ],
+      "gold_passages": [
+        {
+          "id": "593360357e043c46:section:5",
+          "grade": 2,
+          "reason": "Liste Système radar et Régulateur de vitesse sans qualifier ce dernier d’adaptatif."
+        }
+      ],
+      "required_groups": [
+        [
+          "593360357e043c46:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Les équipements citent Système radar et Régulateur de vitesse."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’extraction ne dit pas explicitement régulateur adaptatif, ses fonctions ou sa portée. Ne pas inférer la fonction à partir de la simple coexistence des deux mentions."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "593360357e043c46:section:5",
+          "object_id": "593360357e043c46",
+          "source_url": "https://www.motoplanete.com/yamaha/10298/Tracer-9-GT-2024/contact.html",
+          "source_sha256": "080c483f7c24718538428f9668e887a26af90aff167fb85585b6b40be9124e39",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS de série; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 17,78 cm / 7 pouces; Shifter; Béquille centrale; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Prise USB; Contrôle de traction; Poignées chauffantes; Pare brise réglable; Suspensions réglables électroniquement; Contrôle anti wheeling; Valises; Système radar; Contrôle de glisse; Embrayage anti-dribble; Commodes rétro-éclairés; Phares adaptatifs en virage"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-020",
+      "split": "holdout",
+      "category": "equipment_connectivity",
+      "question": "Sur la CFMOTO 450 NK 2024, quelle taille fait l’écran couleur en pouces et est-ce que Bluetooth et USB sont cités ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "eccb8de7bd99daa9"
+      ],
+      "gold_passages": [
+        {
+          "id": "eccb8de7bd99daa9:section:5",
+          "grade": 2,
+          "reason": "Réunit TFT 5 pouces, Bluetooth et USB."
+        }
+      ],
+      "required_groups": [
+        [
+          "eccb8de7bd99daa9:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Écran TFT couleur 12,70 cm / 5 pouces ; Bluetooth ; prise USB."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "eccb8de7bd99daa9:section:5",
+          "object_id": "eccb8de7bd99daa9",
+          "source_url": "https://www.motoplanete.com/cfmoto/10828/450-NK-2024/contact.html",
+          "source_sha256": "a35090bdbebb6eee0a5ea3b96a1f72dff183a69e304b19e4ee22d672a0bce367",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de traction; Embrayage anti-dribble"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-021",
+      "split": "holdout",
+      "category": "equipment",
+      "question": "La Royal-Enfield Meteor 350 2024 permet de charger un téléphone, et la fiche cite l’ABS ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "9932cf3c8b15ee49"
+      ],
+      "gold_passages": [
+        {
+          "id": "9932cf3c8b15ee49:section:5",
+          "grade": 2,
+          "reason": "Cite prise USB et assistance ABS."
+        }
+      ],
+      "required_groups": [
+        [
+          "9932cf3c8b15ee49:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Prise USB ; assistance au freinage ABS."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Le type de connecteur, la puissance de charge et la présence de la prise sur un exemplaire précis ne sont pas établis."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "9932cf3c8b15ee49:section:5",
+          "object_id": "9932cf3c8b15ee49",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Bluetooth; Prise USB"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-022",
+      "split": "holdout",
+      "category": "equipment_multi_evidence",
+      "question": "Sur une Suzuki GSX-8S 800 2024, le contrôle de traction et le shifter sont mentionnés ? Pour le shifter, quelle précision donne la transmission ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "3c7991fb5c47484a"
+      ],
+      "gold_passages": [
+        {
+          "id": "3c7991fb5c47484a:section:5",
+          "grade": 2,
+          "reason": "Contient contrôle de traction et shifter."
+        },
+        {
+          "id": "3c7991fb5c47484a:section:2",
+          "grade": 2,
+          "reason": "Précise shifter de série dans une boîte manuelle six rapports."
+        }
+      ],
+      "required_groups": [
+        [
+          "3c7991fb5c47484a:section:5"
+        ],
+        [
+          "3c7991fb5c47484a:section:2"
+        ]
+      ],
+      "expected_facts": [
+        "Contrôle de traction et shifter listés ; boîte manuelle à 6 rapports avec shifter de série."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "3c7991fb5c47484a:section:5",
+          "object_id": "3c7991fb5c47484a",
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre; Contrôle de traction; Embrayage anti-dribble"
+        },
+        {
+          "passage_id": "3c7991fb5c47484a:section:2",
+          "object_id": "3c7991fb5c47484a",
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-023",
+      "split": "holdout",
+      "category": "equipment_missing",
+      "question": "Pour le Honda Forza 750 2024, tu peux confirmer la prise USB et le démarrage sans clé à partir de la fiche ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "5fc29da37183ee6c"
+      ],
+      "gold_passages": [
+        {
+          "id": "5fc29da37183ee6c:section:5",
+          "grade": 2,
+          "reason": "Confirme USB ; le démarrage sans clé n’est pas présent dans la liste extraite."
+        }
+      ],
+      "required_groups": [
+        [
+          "5fc29da37183ee6c:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "La fiche cite la prise USB."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Démarrage sans clé non documenté dans les sections fournies.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "5fc29da37183ee6c:section:5",
+          "object_id": "5fc29da37183ee6c",
+          "source_url": "https://www.motoplanete.com/honda/10623/Forza-750-2024/contact.html",
+          "source_sha256": "c5de6d1b7ca52cef6a8b7c76f62c7073dfb0d004bae006adb3260548c19d0909",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Prise USB"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 8
+      }
+    },
+    {
+      "id": "HOLDOUT-024",
+      "split": "holdout",
+      "category": "equipment",
+      "question": "Les poignées chauffantes et un ABS qu’on peut désactiver sont cités pour la BMW R 1250 GS Adventure 2023 ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "2f3029ce1e32cf71"
+      ],
+      "gold_passages": [
+        {
+          "id": "2f3029ce1e32cf71:section:5",
+          "grade": 2,
+          "reason": "La source écrit ABS deactivatable et Poignées chauffantes."
+        }
+      ],
+      "required_groups": [
+        [
+          "2f3029ce1e32cf71:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "« Assistance au freinage : ABS deactivatable » ; « Poignées chauffantes »."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Conserver la portée de la formulation de source ; elle ne précise pas quels canaux de freinage sont déconnectés."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "2f3029ce1e32cf71:section:5",
+          "object_id": "2f3029ce1e32cf71",
+          "source_url": "https://www.motoplanete.com/bmw/9455/R-1250-GS-Adventure-2023/contact.html",
+          "source_sha256": "c7fcca2be5510dca1526f47314ac4db16099e377b8f7e5c88cb9d6d0fc35d789",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS deactivatable; Poignées chauffantes"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-025",
+      "split": "holdout",
+      "category": "colours",
+      "question": "Je cherche une Yamaha MT-07 700 2025 blanche. Le blanc figure dans la fiche, et quelles autres couleurs y sont nommées ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "9f28a7ef72cefd32"
+      ],
+      "gold_passages": [
+        {
+          "id": "9f28a7ef72cefd32:section:9",
+          "grade": 2,
+          "reason": "Donne les trois coloris de la fiche 2025."
+        }
+      ],
+      "required_groups": [
+        [
+          "9f28a7ef72cefd32:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "Blanc, noir et bleu."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une liste de coloris ne garantit ni le stock actuel ni la disponibilité dans un pays précis."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "9f28a7ef72cefd32:section:9",
+          "object_id": "9f28a7ef72cefd32",
+          "source_url": "https://www.motoplanete.com/yamaha/10900/MT-07-700-2025/contact.html",
+          "source_sha256": "f266e22bdc1d50d34c5061569c3b7f5f197ad1968538fed3fda8c1e5efb8a0fa",
+          "section": "Coloris",
+          "quote": "Coloris : blanc; Coloris : noir; Coloris : bleu"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-026",
+      "split": "holdout",
+      "category": "colours",
+      "question": "La Triumph 660 Trident 2025 est citée en bleu uni ou en bleu avec une autre couleur ? Donne les combinaisons écrites.",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "0ce7454d1b7fa796"
+      ],
+      "gold_passages": [
+        {
+          "id": "0ce7454d1b7fa796:section:9",
+          "grade": 2,
+          "reason": "Énumère les combinaisons de couleurs exactes."
+        }
+      ],
+      "required_groups": [
+        [
+          "0ce7454d1b7fa796:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "Bleu / noir, jaune / noir, rouge / noir, noir."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La désignation bleu / noir doit être conservée ; ne pas réduire les bicolores à leur couleur principale."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "0ce7454d1b7fa796:section:9",
+          "object_id": "0ce7454d1b7fa796",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "section": "Coloris",
+          "quote": "Coloris : bleu / noir; Coloris : jaune / noir; Coloris : rouge / noir; Coloris : noir"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-027",
+      "split": "holdout",
+      "category": "colours",
+      "question": "Pour l’Aprilia RS 660 2025, la base cite le jaune, ou elle nomme d’autres couleurs ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "05b1efa574ef1264"
+      ],
+      "gold_passages": [
+        {
+          "id": "05b1efa574ef1264:section:9",
+          "grade": 2,
+          "reason": "Liste bleu et noir, sans mention jaune."
+        }
+      ],
+      "required_groups": [
+        [
+          "05b1efa574ef1264:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "La section Coloris de 2025 cite bleu et noir ; jaune n’y est pas cité."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "05b1efa574ef1264:section:9",
+          "object_id": "05b1efa574ef1264",
+          "source_url": "https://www.motoplanete.com/aprilia/11175/RS-660-2025/contact.html",
+          "source_sha256": "dc562d8dbe95fafb2fa07e00b22031caf029b90008c98d7786410604c7d289e7",
+          "section": "Coloris",
+          "quote": "Coloris : bleu; Coloris : noir"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-028",
+      "split": "holdout",
+      "category": "colours",
+      "question": "Quels coloris sont réellement écrits pour la Ducati Monster standard 2024 ? Je ne veux pas ceux de la SP.",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "284312cf0b7a7ed2"
+      ],
+      "gold_passages": [
+        {
+          "id": "284312cf0b7a7ed2:section:9",
+          "grade": 2,
+          "reason": "Donne les couleurs de la Monster standard exacte."
+        }
+      ],
+      "required_groups": [
+        [
+          "284312cf0b7a7ed2:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "Rouge, gris, blanc."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "284312cf0b7a7ed2:section:9",
+          "object_id": "284312cf0b7a7ed2",
+          "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+          "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+          "section": "Coloris",
+          "quote": "Coloris : rouge; Coloris : gris; Coloris : blanc"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-029",
+      "split": "holdout",
+      "category": "a2_missing_source_mention",
+      "question": "Honda CB 500 Hornet 2024 : la fiche mentionne-t-elle A2, et quelle puissance annonce-t-elle ? Je veux distinguer la mention de permis du chiffre moteur.",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "89486136f6838f45"
+      ],
+      "gold_passages": [
+        {
+          "id": "89486136f6838f45:section:6",
+          "grade": 2,
+          "reason": "La liste de permis extraite donne uniquement A."
+        },
+        {
+          "id": "89486136f6838f45:section:4",
+          "grade": 2,
+          "reason": "Donne 48 ch à 8 600 tr/min."
+        }
+      ],
+      "required_groups": [
+        [
+          "89486136f6838f45:section:6"
+        ],
+        [
+          "89486136f6838f45:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "La section Infos pratiques cite uniquement A ; le moteur est donné pour 48 ch à 8 600 tr/min."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "L’absence de A2 dans cette fiche ne prouve pas que la moto est interdite au permis A2. Ne pas reconstruire un verdict à partir du chiffre en chevaux."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "89486136f6838f45:section:6",
+          "object_id": "89486136f6838f45",
+          "source_url": "https://www.motoplanete.com/honda/10160/CB-500-Hornet-2024/contact.html",
+          "source_sha256": "ee36ab9e7b3527a74846587fe181b79b772d7658fe7d0a238dedc96276b752d7",
+          "section": "Infos pratiques",
+          "quote": "La moto est accessible aux permis : A"
+        },
+        {
+          "passage_id": "89486136f6838f45:section:4",
+          "object_id": "89486136f6838f45",
+          "source_url": "https://www.motoplanete.com/honda/10160/CB-500-Hornet-2024/contact.html",
+          "source_sha256": "ee36ab9e7b3527a74846587fe181b79b772d7658fe7d0a238dedc96276b752d7",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps, calé à 180°; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.61 kg/ch; Rapport poids / couple : environ 38.46 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-030",
+      "split": "holdout",
+      "category": "a2_source_mention",
+      "question": "La BMW F 900 R 2024 est annoncée à quelle puissance, et comment la fiche formule-t-elle sa mention A2 ou bridage ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "482906d5f5f75ca3"
+      ],
+      "gold_passages": [
+        {
+          "id": "482906d5f5f75ca3:section:4",
+          "grade": 2,
+          "reason": "Puissance annoncée dans Moteur."
+        },
+        {
+          "id": "482906d5f5f75ca3:section:6",
+          "grade": 2,
+          "reason": "Mention générique A2 ou bridage et liste A, A2."
+        }
+      ],
+      "required_groups": [
+        [
+          "482906d5f5f75ca3:section:4"
+        ],
+        [
+          "482906d5f5f75ca3:section:6"
+        ]
+      ],
+      "expected_facts": [
+        "105 ch à 8 500 tr/min ; « Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw » ; permis A, A2."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "La fiche ne fournit pas l’identité technique d’une version distincte ni la puissance avant bridage d’un exemplaire A2."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "482906d5f5f75ca3:section:4",
+          "object_id": "482906d5f5f75ca3",
+          "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+          "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps; Injection Ø 48 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 895 cc (Alésage * course: 86 x 77 mm); 105 ch à 8 500 tr/min; 9,40 mkg à 6 500 tr/min; Rapport poids / puissance : environ 1.9 kg/ch; Rapport poids / couple : environ 21.19 kg/mkg; Compression : 13.1 : 1; Emission CO² : 99 g/km"
+        },
+        {
+          "passage_id": "482906d5f5f75ca3:section:6",
+          "object_id": "482906d5f5f75ca3",
+          "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+          "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+          "section": "Infos pratiques",
+          "quote": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-031",
+      "split": "holdout",
+      "category": "a2_source_tension",
+      "question": "La fiche de la Kawasaki Z 900 2024 affiche 125 ch et cite aussi A2. Quelles sont ces deux mentions, et prouvent-elles qu’il s’agit déjà d’une version 35 kW ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "4a1aafa4f4cf6001"
+      ],
+      "gold_passages": [
+        {
+          "id": "4a1aafa4f4cf6001:section:4",
+          "grade": 2,
+          "reason": "Donne 125 ch à 9 500 tr/min."
+        },
+        {
+          "id": "4a1aafa4f4cf6001:section:6",
+          "grade": 2,
+          "reason": "Donne la mention générique A2 ou bridable et A, A2."
+        }
+      ],
+      "required_groups": [
+        [
+          "4a1aafa4f4cf6001:section:4"
+        ],
+        [
+          "4a1aafa4f4cf6001:section:6"
+        ]
+      ],
+      "expected_facts": [
+        "125 ch à 9 500 tr/min ; « Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw » et A, A2."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "Ne pas fusionner ces mentions en une puissance de version bridée. La fiche ne prouve pas que le véhicule décrit est déjà à 35 kW ni quelle variante serait concernée."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "4a1aafa4f4cf6001:section:4",
+          "object_id": "4a1aafa4f4cf6001",
+          "source_url": "https://www.motoplanete.com/kawasaki/9989/Z-900-2024/contact.html",
+          "source_sha256": "6b10d4d4bce4a9c0f1754375cc8277426d53f67e2a60d45e4a9d9870eafee207",
+          "section": "Moteur",
+          "quote": "4 cylindres en ligne , 4 temps; Injection Ø 36 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 948 cc (Alésage * course: 73.4 x 56 mm); 125 ch à 9 500 tr/min; 10,10 mkg à 7 700 tr/min; Rapport poids / puissance : environ 1.58 kg/ch; Rapport poids / couple : environ 19.52 kg/mkg; Compression : 11.8 : 1; Emission CO² : 132 g/km"
+        },
+        {
+          "passage_id": "4a1aafa4f4cf6001:section:6",
+          "object_id": "4a1aafa4f4cf6001",
+          "source_url": "https://www.motoplanete.com/kawasaki/9989/Z-900-2024/contact.html",
+          "source_sha256": "6b10d4d4bce4a9c0f1754375cc8277426d53f67e2a60d45e4a9d9870eafee207",
+          "section": "Infos pratiques",
+          "quote": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-032",
+      "split": "holdout",
+      "category": "a2_source_mention",
+      "question": "Sur la KTM 790 Duke 2024, la base indique-t-elle quelque chose sur A2 et donne-t-elle la cylindrée et la puissance du moteur décrit ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "08413f04a1acc6df"
+      ],
+      "gold_passages": [
+        {
+          "id": "08413f04a1acc6df:section:6",
+          "grade": 2,
+          "reason": "Mentionne A2 ou bridable et A, A2."
+        },
+        {
+          "id": "08413f04a1acc6df:section:4",
+          "grade": 2,
+          "reason": "Donne la cylindrée et la puissance exactes."
+        }
+      ],
+      "required_groups": [
+        [
+          "08413f04a1acc6df:section:6"
+        ],
+        [
+          "08413f04a1acc6df:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "Mention A2 ou bridable à 47.5ch / 35 Kw ; permis A, A2 ; 799 cc ; 95 ch à 9 000 tr/min."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "08413f04a1acc6df:section:6",
+          "object_id": "08413f04a1acc6df",
+          "source_url": "https://www.motoplanete.com/ktm/10069/790-Duke-2024/contact.html",
+          "source_sha256": "c1526476dc7a70da400335d66c5ed76689d102da8cfbae65b26a760f4d0769a9",
+          "section": "Infos pratiques",
+          "quote": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2"
+        },
+        {
+          "passage_id": "08413f04a1acc6df:section:4",
+          "object_id": "08413f04a1acc6df",
+          "source_url": "https://www.motoplanete.com/ktm/10069/790-Duke-2024/contact.html",
+          "source_sha256": "c1526476dc7a70da400335d66c5ed76689d102da8cfbae65b26a760f4d0769a9",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 799 cc (Alésage * course: 88 x 65.7 mm); 95 ch à 9 000 tr/min; 8,90 mkg à 8 000 tr/min; Rapport poids / puissance : 1.86 kg/ch; Rapport poids / couple : 19.89 kg/mkg; Compression : 12.7 : 1; Emission CO² : 108 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-033",
+      "split": "holdout",
+      "category": "a2_exact_variant",
+      "question": "Sur la Triumph 765 Street Triple R A2 2025, quels chevaux et quelle cylindrée sont écrits, et que dit la rubrique permis ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e1eb267f9d1f697b"
+      ],
+      "gold_passages": [
+        {
+          "id": "e1eb267f9d1f697b:section:4",
+          "grade": 2,
+          "reason": "Donne 765 cc et 94 ch pour cette identité A2 exacte."
+        },
+        {
+          "id": "e1eb267f9d1f697b:section:6",
+          "grade": 2,
+          "reason": "Donne le libellé A2 et la liste des permis."
+        }
+      ],
+      "required_groups": [
+        [
+          "e1eb267f9d1f697b:section:4"
+        ],
+        [
+          "e1eb267f9d1f697b:section:6"
+        ]
+      ],
+      "expected_facts": [
+        "765 cc ; 94 ch à 10 100 tr/min ; accessible au permis A2 ou bridable à 47.5ch / 35 Kw ; permis A, A2."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "Le A2 du nom du modèle ne démontre pas que la puissance inscrite est celle d’un exemplaire déjà bridé."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e1eb267f9d1f697b:section:4",
+          "object_id": "e1eb267f9d1f697b",
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c",
+          "section": "Moteur",
+          "quote": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 94 ch à 10 100 tr/min; 7,20 mkg à 8 750 tr/min; Rapport poids / puissance : environ 1.87 kg/ch; Rapport poids / couple : environ 24.4 kg/mkg; Compression : 13,25 : 1; Emission CO² : 120 g/km"
+        },
+        {
+          "passage_id": "e1eb267f9d1f697b:section:6",
+          "object_id": "e1eb267f9d1f697b",
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c",
+          "section": "Infos pratiques",
+          "quote": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-034",
+      "split": "holdout",
+      "category": "a2_missing_source_mention",
+      "question": "Je regarde une Royal-Enfield Meteor 350 2024 avec mon A2. Quelle puissance donne la fiche et cite-t-elle ce permis, sans faire une déduction réglementaire ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "9932cf3c8b15ee49"
+      ],
+      "gold_passages": [
+        {
+          "id": "9932cf3c8b15ee49:section:4",
+          "grade": 2,
+          "reason": "Donne 20 ch à 6 100 tr/min."
+        },
+        {
+          "id": "9932cf3c8b15ee49:section:6",
+          "grade": 2,
+          "reason": "La liste de permis donne seulement A."
+        }
+      ],
+      "required_groups": [
+        [
+          "9932cf3c8b15ee49:section:4"
+        ],
+        [
+          "9932cf3c8b15ee49:section:6"
+        ]
+      ],
+      "expected_facts": [
+        "20 ch à 6 100 tr/min ; seule la mention A est présente dans Infos pratiques."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "Le permis A2 n’est pas documenté pour cette fiche ; son silence ne constitue pas un refus d’éligibilité."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "9932cf3c8b15ee49:section:4",
+          "object_id": "9932cf3c8b15ee49",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "section": "Moteur",
+          "quote": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km"
+        },
+        {
+          "passage_id": "9932cf3c8b15ee49:section:6",
+          "object_id": "9932cf3c8b15ee49",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "section": "Infos pratiques",
+          "quote": "La moto est accessible aux permis : A"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "HOLDOUT-035",
+      "split": "holdout",
+      "category": "comparison_nearby_years",
+      "question": "Entre les Yamaha MT-07 700 2024 et 2025, la selle monte-t-elle, le poids tous pleins faits change-t-il et les freins avant gardent-ils le même diamètre ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "7f56455a0f88ed24",
+        "9f28a7ef72cefd32"
+      ],
+      "gold_passages": [
+        {
+          "id": "7f56455a0f88ed24:section:0",
+          "grade": 2,
+          "reason": "Selle et poids du millésime 2024."
+        },
+        {
+          "id": "9f28a7ef72cefd32:section:0",
+          "grade": 2,
+          "reason": "Selle et poids du millésime 2025."
+        },
+        {
+          "id": "7f56455a0f88ed24:section:1",
+          "grade": 2,
+          "reason": "Diamètre des disques avant en 2024."
+        },
+        {
+          "id": "9f28a7ef72cefd32:section:1",
+          "grade": 2,
+          "reason": "Diamètre des disques avant en 2025."
+        }
+      ],
+      "required_groups": [
+        [
+          "7f56455a0f88ed24:section:0"
+        ],
+        [
+          "9f28a7ef72cefd32:section:0"
+        ],
+        [
+          "7f56455a0f88ed24:section:1"
+        ],
+        [
+          "9f28a7ef72cefd32:section:1"
+        ]
+      ],
+      "expected_facts": [
+        "Selle 805 mm dans les deux fiches ; poids tous pleins faits 184 kg en 2024 et 183 kg en 2025 ; deux disques Ø 298 mm dans les deux fiches."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’égalité du diamètre ne prouve pas un système de freinage identique ; les autres libellés diffèrent."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "7f56455a0f88ed24:section:0",
+          "object_id": "7f56455a0f88ed24",
+          "source_url": "https://www.motoplanete.com/yamaha/10114/MT-07-700-2024/contact.html",
+          "source_sha256": "c2fa99389ad51077f11b50c8b1f54271fb269c9c2b10751d9d51368deddc5eaf",
+          "section": "Châssis",
+          "quote": "Cadre : type Diamant en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 805 mm; Longueur : 2 085 mm; Largeur : 780 mm; Hauteur min : 1 105 mm; Empattement : 1 400 mm; Poids tous pleins faits : 184 kg"
+        },
+        {
+          "passage_id": "9f28a7ef72cefd32:section:0",
+          "object_id": "9f28a7ef72cefd32",
+          "source_url": "https://www.motoplanete.com/yamaha/10900/MT-07-700-2025/contact.html",
+          "source_sha256": "f266e22bdc1d50d34c5061569c3b7f5f197ad1968538fed3fda8c1e5efb8a0fa",
+          "section": "Châssis",
+          "quote": "Cadre : type Diamant en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 805 mm; Longueur : 2 065 mm; Largeur : 780 mm; Hauteur min : 1 110 mm; Empattement : 1 395 mm; Poids tous pleins faits : 183 kg"
+        },
+        {
+          "passage_id": "7f56455a0f88ed24:section:1",
+          "object_id": "7f56455a0f88ed24",
+          "source_url": "https://www.motoplanete.com/yamaha/10114/MT-07-700-2024/contact.html",
+          "source_sha256": "c2fa99389ad51077f11b50c8b1f54271fb269c9c2b10751d9d51368deddc5eaf",
+          "section": "Train avant",
+          "quote": "Fourche téléscopique Ø 41 mm, déb : 130 mm; Freinage : 2 disques Ø 298 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.25 bars"
+        },
+        {
+          "passage_id": "9f28a7ef72cefd32:section:1",
+          "object_id": "9f28a7ef72cefd32",
+          "source_url": "https://www.motoplanete.com/yamaha/10900/MT-07-700-2025/contact.html",
+          "source_sha256": "f266e22bdc1d50d34c5061569c3b7f5f197ad1968538fed3fda8c1e5efb8a0fa",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 41 mm, déb : 130 mm; Freinage : 2 disques Advics Ø 298 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-036",
+      "split": "holdout",
+      "category": "comparison_nearby_versions",
+      "question": "La Yamaha 700 Ténéré World Raid 2024 emporte combien de litres de plus que la 700 Ténéré 2024, et quel écart de poids avec tous les pleins est indiqué ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "3e55aa0449409147",
+        "82dd348011a65e84"
+      ],
+      "gold_passages": [
+        {
+          "id": "3e55aa0449409147:section:0",
+          "grade": 2,
+          "reason": "Réservoir et poids tous pleins faits de la Ténéré standard."
+        },
+        {
+          "id": "82dd348011a65e84:section:0",
+          "grade": 2,
+          "reason": "Réservoir et poids tous pleins faits de la World Raid."
+        }
+      ],
+      "required_groups": [
+        [
+          "3e55aa0449409147:section:0"
+        ],
+        [
+          "82dd348011a65e84:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Ténéré : 16 litres et 204 kg tous pleins faits ; World Raid : 23 litres et 220 kg tous pleins faits ; écarts calculés 7 litres et 16 kg."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Les écarts sont des soustractions des chiffres publiés, pas des mesures nouvelles ni une attribution du poids supplémentaire au carburant seul."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "3e55aa0449409147:section:0",
+          "object_id": "3e55aa0449409147",
+          "source_url": "https://www.motoplanete.com/yamaha/10132/700-Tenere-2024/contact.html",
+          "source_sha256": "83295433120ed5277c56310db2649c6b746b3fe039f59797f7e12432aa04ffb6",
+          "section": "Châssis",
+          "quote": "Cadre : Double berceau en tubes d'acier; Réservoir : 16 litres; Hauteur de selle : 875 mm; Longueur : 2 370 mm; Largeur : 905 mm; Hauteur min : 1 455 mm; Empattement : 1 595 mm; Poids à sec : 187 kg; Poids tous pleins faits : 204 kg"
+        },
+        {
+          "passage_id": "82dd348011a65e84:section:0",
+          "object_id": "82dd348011a65e84",
+          "source_url": "https://www.motoplanete.com/yamaha/10118/700-Tenere-World-Raid-2024/contact.html",
+          "source_sha256": "518c0fb41ebc03c395012455dce84ddfeed1512f02a4db55ff65bf608e3fec41",
+          "section": "Châssis",
+          "quote": "Selle biplaces; Cadre : Double berceau en tubes d'acier; Réservoir : 23 litres; Hauteur de selle : 890 mm; Longueur : 2 370 mm; Largeur : 905 mm; Hauteur min : 1 490 mm; Empattement : 1 595 mm; Poids tous pleins faits : 220 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-037",
+      "split": "holdout",
+      "category": "comparison_mass_basis",
+      "question": "Pour les Ducati Multistrada V2 937 2024 et V2 890 2025, peux-tu comparer cylindrée et masses en gardant les intitulés exacts de poids ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "162856e7d117ed50",
+        "742092215aabb9f1"
+      ],
+      "gold_passages": [
+        {
+          "id": "162856e7d117ed50:section:4",
+          "grade": 2,
+          "reason": "Cylindrée du moteur 2024."
+        },
+        {
+          "id": "742092215aabb9f1:section:4",
+          "grade": 2,
+          "reason": "Cylindrée du moteur 2025."
+        },
+        {
+          "id": "162856e7d117ed50:section:0",
+          "grade": 2,
+          "reason": "Distingue poids à sec et tous pleins faits en 2024."
+        },
+        {
+          "id": "742092215aabb9f1:section:0",
+          "grade": 2,
+          "reason": "Donne Poids en ordre de marche en 2025."
+        }
+      ],
+      "required_groups": [
+        [
+          "162856e7d117ed50:section:4"
+        ],
+        [
+          "742092215aabb9f1:section:4"
+        ],
+        [
+          "162856e7d117ed50:section:0"
+        ],
+        [
+          "742092215aabb9f1:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "2024 : 937 cc, poids à sec 199 kg, poids tous pleins faits 222 kg ; 2025 : 890 cc, poids en ordre de marche 199 kg."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La source ne définit pas l’équivalence entre en ordre de marche et tous pleins faits. Ne pas annoncer une baisse de 23 kg sur une base de mesure prétendument identique."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "162856e7d117ed50:section:4",
+          "object_id": "162856e7d117ed50",
+          "source_url": "https://www.motoplanete.com/ducati/10166/Multistrada-V2-937-2024/contact.html",
+          "source_sha256": "b81f9151c41bcf51be698e22a129bcba38fd9e9d98957831ac6f2499f353a841",
+          "section": "Moteur",
+          "quote": "Bicylindre en L à 90° , 4 temps; Injection Ø 53 mm; Refroidissement : liquide; 2 ACT, desmodromique; 4 soupapes par cylindre; 937 cc (Alésage * course: 94 x 67.5 mm); 113 ch à 9 000 tr/min; 9,60 mkg à 6 750 tr/min; Rapport poids / puissance : 1.76 kg/ch; Rapport poids / couple : 20.73 kg/mkg; Compression : 12.6 : 1; Emission CO² : 137 g/km"
+        },
+        {
+          "passage_id": "742092215aabb9f1:section:4",
+          "object_id": "742092215aabb9f1",
+          "source_url": "https://www.motoplanete.com/ducati/10983/Multistrada-V2-890-2025/contact.html",
+          "source_sha256": "627b5669c168df09950ab2a154a98824d74616beda40e724935620bf5c8904b6",
+          "section": "Moteur",
+          "quote": "Bicylindre en L à 90° , 4 temps; Injection Ø 52 mm; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 890 cc (Alésage * course: 96 x 61.5 mm); 115 ch à 10 750 tr/min; 9,40 mkg (92 Nm) à 8 250 tr/min; Compression : 13.1 : 1; Système de démarrage : électrique; Emission CO² : 127 g/km; Norme anti-pollution : Euro 5+"
+        },
+        {
+          "passage_id": "162856e7d117ed50:section:0",
+          "object_id": "162856e7d117ed50",
+          "source_url": "https://www.motoplanete.com/ducati/10166/Multistrada-V2-937-2024/contact.html",
+          "source_sha256": "b81f9151c41bcf51be698e22a129bcba38fd9e9d98957831ac6f2499f353a841",
+          "section": "Châssis",
+          "quote": "Cadre : Treillis tubulaire en acier; Réservoir : 20 litres; Hauteur de selle : 830 mm; Empattement : 1 594 mm; Poids à sec : 199 kg; Poids tous pleins faits : 222 kg"
+        },
+        {
+          "passage_id": "742092215aabb9f1:section:0",
+          "object_id": "742092215aabb9f1",
+          "source_url": "https://www.motoplanete.com/ducati/10983/Multistrada-V2-890-2025/contact.html",
+          "source_sha256": "627b5669c168df09950ab2a154a98824d74616beda40e724935620bf5c8904b6",
+          "section": "Châssis",
+          "quote": "Selle biplaces; Cadre : Monocoque en aluminium; Réservoir : 19 litres; Hauteur de selle réglable entre 830 mm et 850 mm; Empattement : 1 572 mm; Poids en ordre de marche : 199 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-038",
+      "split": "holdout",
+      "category": "comparison_multi_evidence",
+      "question": "Honda CRF 1100 L Africa Twin 2024 et Adventure Sports 2024 : laquelle a une roue avant de 19 pouces, et leurs selles se règlent entre quelles hauteurs ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "16e03bf9b38a2949",
+        "eb337e430e4513b5"
+      ],
+      "gold_passages": [
+        {
+          "id": "16e03bf9b38a2949:section:1",
+          "grade": 2,
+          "reason": "Dimension de roue avant de la standard."
+        },
+        {
+          "id": "eb337e430e4513b5:section:1",
+          "grade": 2,
+          "reason": "Dimension de roue avant de l’Adventure Sports."
+        },
+        {
+          "id": "16e03bf9b38a2949:section:0",
+          "grade": 2,
+          "reason": "Plage de selle de la standard."
+        },
+        {
+          "id": "eb337e430e4513b5:section:0",
+          "grade": 2,
+          "reason": "Plage de selle de l’Adventure Sports."
+        }
+      ],
+      "required_groups": [
+        [
+          "16e03bf9b38a2949:section:1"
+        ],
+        [
+          "eb337e430e4513b5:section:1"
+        ],
+        [
+          "16e03bf9b38a2949:section:0"
+        ],
+        [
+          "eb337e430e4513b5:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Standard : roue avant 90 / 90 - 21 et selle 850–870 mm ; Adventure Sports : roue avant 110 / 80 - 19 et selle 835–855 mm ; la 19 pouces est sur la fiche Adventure Sports."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "16e03bf9b38a2949:section:1",
+          "object_id": "16e03bf9b38a2949",
+          "source_url": "https://www.motoplanete.com/honda/10064/CRF-1100-L-Africa-Twin-2024/contact.html",
+          "source_sha256": "c045010d302a2fd6cb2eef0b07cd4adaa2bba1ea14ca87f5f2b4a22c01d9ba6d",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 45 mm, déb : 230 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 90 / 90 - 21; Pression : 2.25 bars"
+        },
+        {
+          "passage_id": "eb337e430e4513b5:section:1",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 45 mm, déb : 210 mm; Réglage de la compression et de la détente; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 110 / 80 - 19"
+        },
+        {
+          "passage_id": "16e03bf9b38a2949:section:0",
+          "object_id": "16e03bf9b38a2949",
+          "source_url": "https://www.motoplanete.com/honda/10064/CRF-1100-L-Africa-Twin-2024/contact.html",
+          "source_sha256": "c045010d302a2fd6cb2eef0b07cd4adaa2bba1ea14ca87f5f2b4a22c01d9ba6d",
+          "section": "Châssis",
+          "quote": "Cadre : Double poutre + simple berceau dédoublé en acier; Réservoir : 18,80 litres; Hauteur de selle réglable entre 850 mm et 870 mm; Longueur : 2 330 mm; Largeur : 960 mm; Hauteur min : 1 485 mm; Empattement : 1 570 mm; Poids tous pleins faits : 231 kg"
+        },
+        {
+          "passage_id": "eb337e430e4513b5:section:0",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Châssis",
+          "quote": "Cadre : Double poutre + simple berceau dédoublé en acier; Réservoir : 24,80 litres; Hauteur de selle réglable entre 835 mm et 855 mm; Longueur : 2 305 mm; Largeur : 960 mm; Hauteur min : 1 475 mm; Empattement : 1 575 mm; Poids tous pleins faits : 253 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-039",
+      "split": "holdout",
+      "category": "comparison_brakes",
+      "question": "Kawasaki Z 900 2024 contre Z 900 SE 2024 : la fiche cite-t-elle Brembo pour les deux, et les dimensions de fourche et de disques avant diffèrent-elles ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "4a1aafa4f4cf6001",
+        "507e76e937b8921f"
+      ],
+      "gold_passages": [
+        {
+          "id": "4a1aafa4f4cf6001:section:1",
+          "grade": 2,
+          "reason": "Freinage et fourche de la version standard."
+        },
+        {
+          "id": "507e76e937b8921f:section:1",
+          "grade": 2,
+          "reason": "Freinage et fourche de la SE, avec mention Brembo."
+        }
+      ],
+      "required_groups": [
+        [
+          "4a1aafa4f4cf6001:section:1"
+        ],
+        [
+          "507e76e937b8921f:section:1"
+        ]
+      ],
+      "expected_facts": [
+        "Brembo est cité pour la SE et pas dans le libellé standard ; dans les deux fiches, fourche Ø 41 mm avec 120 mm de débattement et deux disques Ø 300 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle.",
+        "Ne pas affirmer la marque des pièces de la standard quand elle n’est pas écrite."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "4a1aafa4f4cf6001:section:1",
+          "object_id": "4a1aafa4f4cf6001",
+          "source_url": "https://www.motoplanete.com/kawasaki/9989/Z-900-2024/contact.html",
+          "source_sha256": "6b10d4d4bce4a9c0f1754375cc8277426d53f67e2a60d45e4a9d9870eafee207",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 41 mm, déb : 120 mm; Freinage : 2 disques Ø 300 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars"
+        },
+        {
+          "passage_id": "507e76e937b8921f:section:1",
+          "object_id": "507e76e937b8921f",
+          "source_url": "https://www.motoplanete.com/kawasaki/9996/Z-900-SE-2024/contact.html",
+          "source_sha256": "e6443983b4d2ade747eefb23cd7f7f39f78013aad80e4980b25afea9233836eb",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 41 mm, déb : 120 mm; Freinage : 2 disques Brembo Ø 300 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-040",
+      "split": "holdout",
+      "category": "comparison_equipment_years",
+      "question": "La Triumph 660 Trident 2025 apporte quoi par rapport à la 2024 pour le shifter, le régulateur et le nombre de modes de conduite, selon les fiches ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "2973af16198fdb41",
+        "0ce7454d1b7fa796"
+      ],
+      "gold_passages": [
+        {
+          "id": "2973af16198fdb41:section:2",
+          "grade": 2,
+          "reason": "Statut optionnel du shifter 2024."
+        },
+        {
+          "id": "0ce7454d1b7fa796:section:2",
+          "grade": 2,
+          "reason": "Statut de série du shifter 2025."
+        },
+        {
+          "id": "2973af16198fdb41:section:5",
+          "grade": 2,
+          "reason": "Deux modes et liste d’équipements 2024."
+        },
+        {
+          "id": "0ce7454d1b7fa796:section:5",
+          "grade": 2,
+          "reason": "Trois modes, régulateur et shifter listés en 2025."
+        }
+      ],
+      "required_groups": [
+        [
+          "2973af16198fdb41:section:2"
+        ],
+        [
+          "0ce7454d1b7fa796:section:2"
+        ],
+        [
+          "2973af16198fdb41:section:5"
+        ],
+        [
+          "0ce7454d1b7fa796:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "2024 : shifter en option, 2 modes, régulateur non cité ; 2025 : shifter de série, 3 modes, régulateur de vitesse cité."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle.",
+        "Le fait que le régulateur ne soit pas extrait en 2024 ne prouve pas l’absence sur toute configuration 2024."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "2973af16198fdb41:section:2",
+          "object_id": "2973af16198fdb41",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "0ce7454d1b7fa796:section:2",
+          "object_id": "0ce7454d1b7fa796",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "2973af16198fdb41:section:5",
+          "object_id": "2973af16198fdb41",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 2; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble"
+        },
+        {
+          "passage_id": "0ce7454d1b7fa796:section:5",
+          "object_id": "0ce7454d1b7fa796",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; ABS Cornering; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Contrôle de traction; Embrayage anti-dribble"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-041",
+      "split": "holdout",
+      "category": "comparison_nearby_versions",
+      "question": "Pour les Yamaha Tracer 9 GT et GT+ de 2024, la base parle-t-elle d’une boîte automatique et d’un radar sur les deux ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "6e32b3574417e76e",
+        "593360357e043c46"
+      ],
+      "gold_passages": [
+        {
+          "id": "6e32b3574417e76e:section:2",
+          "grade": 2,
+          "reason": "Décrit la boîte manuelle et le shifter de série sur la GT."
+        },
+        {
+          "id": "593360357e043c46:section:2",
+          "grade": 2,
+          "reason": "Décrit la boîte manuelle et le shifter de série sur la GT+."
+        },
+        {
+          "id": "6e32b3574417e76e:section:5",
+          "grade": 2,
+          "reason": "Liste de la GT où le radar n’est pas cité et le shifter est cité."
+        },
+        {
+          "id": "593360357e043c46:section:5",
+          "grade": 2,
+          "reason": "Liste de la GT+ où Système radar et Shifter sont cités."
+        }
+      ],
+      "required_groups": [
+        [
+          "6e32b3574417e76e:section:2"
+        ],
+        [
+          "593360357e043c46:section:2"
+        ],
+        [
+          "6e32b3574417e76e:section:5"
+        ],
+        [
+          "593360357e043c46:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Les deux transmissions sont manuelles à 6 rapports avec shifter de série ; Système radar est cité dans la GT+ et pas dans la liste extraite de la GT."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle.",
+        "Ne pas confondre les fiches 2024 avec un autre millésime ou déduire une boîte automatique du shifter."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "6e32b3574417e76e:section:2",
+          "object_id": "6e32b3574417e76e",
+          "source_url": "https://www.motoplanete.com/yamaha/10297/Tracer-9-GT-2024/contact.html",
+          "source_sha256": "b6e901539b9e359de78c000e684d7785cc36b41c3611d28d895b79cfdd9b761a",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "593360357e043c46:section:2",
+          "object_id": "593360357e043c46",
+          "source_url": "https://www.motoplanete.com/yamaha/10298/Tracer-9-GT-2024/contact.html",
+          "source_sha256": "080c483f7c24718538428f9668e887a26af90aff167fb85585b6b40be9124e39",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "6e32b3574417e76e:section:5",
+          "object_id": "6e32b3574417e76e",
+          "source_url": "https://www.motoplanete.com/yamaha/10297/Tracer-9-GT-2024/contact.html",
+          "source_sha256": "b6e901539b9e359de78c000e684d7785cc36b41c3611d28d895b79cfdd9b761a",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS de série; Nombre de mode de conduite : 4; Volume de rangement : 60 litres; Taille de l'écran TFT couleur : 8,89 cm / 3.5 pouces; Jantes aluminium; Shifter; Béquille centrale; Indicateur de vitesse engagée; Régulateur de vitesse; Contrôle de traction; Poignées chauffantes; Pare brise réglable; Suspensions réglables électroniquement; Contrôle anti wheeling; Valises; Jantes forgées; Contrôle de glisse; Embrayage anti-dribble; Selle réglable; Phares adaptatifs en virage; Contrôle du frein moteur"
+        },
+        {
+          "passage_id": "593360357e043c46:section:5",
+          "object_id": "593360357e043c46",
+          "source_url": "https://www.motoplanete.com/yamaha/10298/Tracer-9-GT-2024/contact.html",
+          "source_sha256": "080c483f7c24718538428f9668e887a26af90aff167fb85585b6b40be9124e39",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS de série; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 17,78 cm / 7 pouces; Shifter; Béquille centrale; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Prise USB; Contrôle de traction; Poignées chauffantes; Pare brise réglable; Suspensions réglables électroniquement; Contrôle anti wheeling; Valises; Système radar; Contrôle de glisse; Embrayage anti-dribble; Commodes rétro-éclairés; Phares adaptatifs en virage"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "HOLDOUT-042",
+      "split": "holdout",
+      "category": "identity_ambiguity",
+      "question": "On m’a juste dit Ducati Monster 2024, sans préciser standard ou SP. Quelle masse avec tous les pleins et quelle hauteur de selle dois-je retenir ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "284312cf0b7a7ed2",
+        "02d3dd07d44cc430"
+      ],
+      "gold_passages": [
+        {
+          "id": "284312cf0b7a7ed2:section:0",
+          "grade": 2,
+          "reason": "Donne masse et selle de la standard."
+        },
+        {
+          "id": "02d3dd07d44cc430:section:0",
+          "grade": 2,
+          "reason": "Donne masse et selle de la SP."
+        }
+      ],
+      "required_groups": [
+        [
+          "284312cf0b7a7ed2:section:0"
+        ],
+        [
+          "02d3dd07d44cc430:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Standard : 188 kg tous pleins faits et selle 820 mm ; SP : 186 kg tous pleins faits et selle 840 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Il faut préciser standard ou SP pour choisir une valeur. Ne pas fusionner la selle d’une version et la masse de l’autre."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "284312cf0b7a7ed2:section:0",
+          "object_id": "284312cf0b7a7ed2",
+          "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+          "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+          "section": "Châssis",
+          "quote": "Cadre : monocoque en aluminium; Réservoir : 14 litres; Hauteur de selle : 820 mm; Longueur : 2 083 mm; Largeur : 868 mm; Hauteur min : 1 236 mm; Empattement : 1 474 mm; Poids à sec : 166 kg; Poids tous pleins faits : 188 kg"
+        },
+        {
+          "passage_id": "02d3dd07d44cc430:section:0",
+          "object_id": "02d3dd07d44cc430",
+          "source_url": "https://www.motoplanete.com/ducati/10190/Monster-SP-2024/contact.html",
+          "source_sha256": "a71abc0cc3ff9606cbec919f7a5668363db9da4c0fdf099e5f52e2b20609ac8f",
+          "section": "Châssis",
+          "quote": "Cadre : monocoque en aluminium; Réservoir : 14 litres; Hauteur de selle : 840 mm; Empattement : 1 472 mm; Poids à sec : 166 kg; Poids tous pleins faits : 186 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_ambiguity_supplied_candidate_set",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      },
+      "identity_ambiguity": {
+        "missing_identity_field": "standard ou SP",
+        "candidate_set_is_exhaustive_globally": false
+      }
+    },
+    {
+      "id": "HOLDOUT-043",
+      "split": "holdout",
+      "category": "identity_ambiguity_evidence",
+      "question": "J’ai noté Honda CRF 1100 L Africa Twin 2024 avec une roue avant de 19 pouces, mais pas la version. Laquelle des deux fiches correspond et quels sont ses débattements ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "16e03bf9b38a2949",
+        "eb337e430e4513b5"
+      ],
+      "gold_passages": [
+        {
+          "id": "16e03bf9b38a2949:section:1",
+          "grade": 2,
+          "reason": "La standard cite une roue de 21 pouces, utile pour distinguer les deux fiches."
+        },
+        {
+          "id": "eb337e430e4513b5:section:1",
+          "grade": 2,
+          "reason": "L’Adventure Sports cite une roue de 19 pouces et 210 mm de débattement."
+        },
+        {
+          "id": "eb337e430e4513b5:section:3",
+          "grade": 2,
+          "reason": "Donne le débattement arrière de l’Adventure Sports."
+        },
+        {
+          "id": "16e03bf9b38a2949:section:3",
+          "grade": 1,
+          "reason": "Contexte du débattement arrière de l’autre candidate, utile sans être requis pour le modèle qui correspond."
+        }
+      ],
+      "required_groups": [
+        [
+          "16e03bf9b38a2949:section:1"
+        ],
+        [
+          "eb337e430e4513b5:section:1"
+        ],
+        [
+          "eb337e430e4513b5:section:3"
+        ]
+      ],
+      "expected_facts": [
+        "Dans les deux fiches fournies, la roue avant de 19 pouces correspond à l’Adventure Sports ; débattement avant 210 mm et arrière 200 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Cette correspondance dans le périmètre ne prouve pas l’identité d’un exemplaire modifié ou d’une autre variante. Confirmer le nom Adventure Sports avant d’attribuer la fiche au véhicule."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "16e03bf9b38a2949:section:1",
+          "object_id": "16e03bf9b38a2949",
+          "source_url": "https://www.motoplanete.com/honda/10064/CRF-1100-L-Africa-Twin-2024/contact.html",
+          "source_sha256": "c045010d302a2fd6cb2eef0b07cd4adaa2bba1ea14ca87f5f2b4a22c01d9ba6d",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 45 mm, déb : 230 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 90 / 90 - 21; Pression : 2.25 bars"
+        },
+        {
+          "passage_id": "eb337e430e4513b5:section:1",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 45 mm, déb : 210 mm; Réglage de la compression et de la détente; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 110 / 80 - 19"
+        },
+        {
+          "passage_id": "eb337e430e4513b5:section:3",
+          "object_id": "eb337e430e4513b5",
+          "source_url": "https://www.motoplanete.com/honda/10068/CRF-1100-L-Africa-Twin-Adventure-Sports-2024/contact.html",
+          "source_sha256": "6217a0811f906a3aaac8c23d3e4446d27de86663b6889648c89d9b03081693c3",
+          "section": "Train arrière",
+          "quote": "Mono-amortisseur, déb : 200 mm; Réglage de la précharge, de la compression et de la détente; Freinage : 1 disque Ø 256 mm, étrier simple piston; Roue arrière : 150 / 70 - 18"
+        },
+        {
+          "passage_id": "16e03bf9b38a2949:section:3",
+          "object_id": "16e03bf9b38a2949",
+          "source_url": "https://www.motoplanete.com/honda/10064/CRF-1100-L-Africa-Twin-2024/contact.html",
+          "source_sha256": "c045010d302a2fd6cb2eef0b07cd4adaa2bba1ea14ca87f5f2b4a22c01d9ba6d",
+          "section": "Train arrière",
+          "quote": "Mono-amortisseur, déb : 220 mm; Freinage : 1 disque Ø 256 mm, étrier simple piston; Roue arrière : 150 / 70 - 18; Pression : 2.5 bars"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_ambiguity_supplied_candidate_set",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      },
+      "identity_ambiguity": {
+        "missing_identity_field": "standard ou Adventure Sports",
+        "candidate_set_is_exhaustive_globally": false
+      }
+    },
+    {
+      "id": "HOLDOUT-044",
+      "split": "holdout",
+      "category": "identity_ambiguity_year_colours",
+      "question": "On me propose une Royal-Enfield 450 Himalayan blanche, année oubliée. Entre les fiches 2024 et 2025, laquelle cite le blanc, et cela suffit-il à dater la moto ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "a694ca2a26252015",
+        "75ec63edc171c1bc"
+      ],
+      "gold_passages": [
+        {
+          "id": "a694ca2a26252015:section:9",
+          "grade": 2,
+          "reason": "Liste de coloris 2024 sans mention blanc."
+        },
+        {
+          "id": "75ec63edc171c1bc:section:9",
+          "grade": 2,
+          "reason": "Liste de coloris 2025 avec mention blanc."
+        }
+      ],
+      "required_groups": [
+        [
+          "a694ca2a26252015:section:9"
+        ],
+        [
+          "75ec63edc171c1bc:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "La fiche 2025 cite blanc ; la fiche 2024 cite bleu, jaune / noir, vert, beige et rouge / gris sans blanc."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle.",
+        "La couleur seule ne date pas un exemplaire : année, marché, peinture ajoutée et identité complète restent inconnus. Les deux candidats sont un périmètre de comparaison, pas toute l’histoire mondiale du modèle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "a694ca2a26252015:section:9",
+          "object_id": "a694ca2a26252015",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "section": "Coloris",
+          "quote": "Coloris : bleu; Coloris : jaune / noir; Coloris : vert; Coloris : beige; Coloris : rouge / gris"
+        },
+        {
+          "passage_id": "75ec63edc171c1bc:section:9",
+          "object_id": "75ec63edc171c1bc",
+          "source_url": "https://www.motoplanete.com/royal-enfield/11248/450-Himalayan-2025/contact.html",
+          "source_sha256": "836f397fc3ee2221eded9f73567402712444c3572b741c9c63cc66536c06ef14",
+          "section": "Coloris",
+          "quote": "Coloris : blanc; Coloris : jaune / noir; Coloris : gris; Coloris : rouge / gris; Coloris : beige"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_ambiguity_supplied_candidate_set",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      },
+      "identity_ambiguity": {
+        "missing_identity_field": "année du véhicule",
+        "candidate_set_is_exhaustive_globally": false
+      }
+    },
+    {
+      "id": "HOLDOUT-045",
+      "split": "holdout",
+      "category": "missing_a2_official_document",
+      "question": "Retrouve le certificat officiel de bridage A2 de la KTM 790 Duke 2024 et son numéro d’homologation français.",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "La fiche cite A2 ou bridage, mais aucun certificat officiel, numéro d’homologation français ou corpus juridique officiel ne figure dans cette base. La mention commerciale ne prouve pas le certificat demandé.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    },
+    {
+      "id": "HOLDOUT-046",
+      "split": "holdout",
+      "category": "missing_wiring_manual",
+      "question": "Pour la Honda NC 750 X 2024, donne le schéma constructeur du connecteur du calculateur avec le numéro de broche du capteur de béquille.",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "Aucun schéma électrique constructeur, brochage de calculateur ou documentation de capteur de béquille n’est présent. Les données moteur et DCT ne permettent pas de déduire le numéro de broche.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    },
+    {
+      "id": "HOLDOUT-047",
+      "split": "holdout",
+      "category": "missing_owner_manual",
+      "question": "Selon le manuel utilisateur Yamaha de la MT-09 SP 900 2024, quelle viscosité d’huile et quelle quantité exacte faut-il lors d’une vidange avec filtre ?",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "Aucun manuel utilisateur Yamaha ni procédure de vidange avec filtre n’est présent. La cylindrée moteur ou le type de refroidissement ne donne pas la quantité d’huile ou sa viscosité recommandée.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    },
+    {
+      "id": "HOLDOUT-048",
+      "split": "holdout",
+      "category": "missing_market_homologation_document",
+      "question": "Pour une BMW R 1250 GS 2023 destinée aux États-Unis, retrouve dans les documents BMW la masse remorquable homologuée et la référence du document.",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "Aucune documentation BMW de marché américain ni valeur homologuée de remorquage n’est présente. L’identité technique n’est pas séparée par marché ; ne pas inventer une variante américaine ou traiter un prix de pays comme preuve d’un régime d’homologation.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    },
+    {
+      "id": "HOLDOUT-049",
+      "split": "holdout",
+      "category": "missing_service_schedule",
+      "question": "Quel intervalle en kilomètres le manuel d’atelier Kawasaki prescrit-il pour contrôler le jeu aux soupapes d’une Ninja 500 2024 ?",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "Aucun manuel d’atelier Kawasaki ni calendrier d’entretien avec contrôle du jeu aux soupapes n’est présent. Le nombre de soupapes dans une fiche moteur ne donne pas l’intervalle d’entretien.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    },
+    {
+      "id": "HOLDOUT-050",
+      "split": "holdout",
+      "category": "missing_official_recall_record",
+      "question": "Quelles campagnes de rappel Honda sont encore ouvertes aujourd’hui pour la CB 500 Hornet 2024 ? Donne leurs identifiants officiels.",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "Le corpus figé ne contient ni registre officiel de rappels Honda ni état actuel des campagnes ouvertes ni données de numéro de série. La fiche technique de 2024 ne permet pas de conclure à l’absence de rappel ou à son état actuel.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    }
+  ]
+}

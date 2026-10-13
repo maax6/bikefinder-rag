@@ -1,0 +1,1 @@
+{"evaluator_script_sha256":"9b67837b6ea17693711698317326ae767148b246530e1cc73efd743b289a1b0c","index_protocol_sha256":"b1e3710ef3a73507faa6cd86e433d4d13a6dd0726b9e01f90d91cf6751fc3ad1","k":10,"max_length":512,"negative_policy":"No abstention threshold, no score-as-confidence","pool":30,"repeats":3,"rrf_constant":60,"schema":"technical-retrieval-benchmark-v1"}

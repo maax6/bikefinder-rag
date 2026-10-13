@@ -1,0 +1,36 @@
+{
+  "mps_available": true,
+  "mps_built": true,
+  "swap_before": "vm.swapusage: total = 5120.00M  used = 3681.12M  free = 1438.88M  (encrypted)",
+  "load_seconds": 2.340427708113566,
+  "batches": [
+    {
+      "batch_size": 16,
+      "seconds": 1.5602960420073941,
+      "docs_per_second": 41.01785704568025,
+      "shape": [
+        64,
+        1024
+      ]
+    },
+    {
+      "batch_size": 32,
+      "seconds": 1.0962897499557585,
+      "docs_per_second": 58.37872697667999,
+      "shape": [
+        64,
+        1024
+      ]
+    },
+    {
+      "batch_size": 64,
+      "seconds": 1.7252290409523994,
+      "docs_per_second": 37.09652369674307,
+      "shape": [
+        64,
+        1024
+      ]
+    }
+  ],
+  "peak_rss_bytes": 1051066368
+}

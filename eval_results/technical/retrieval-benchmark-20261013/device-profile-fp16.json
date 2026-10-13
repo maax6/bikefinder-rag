@@ -1,0 +1,37 @@
+{
+  "device": "mps",
+  "dtype": "float16",
+  "documents": 240,
+  "batches": [
+    {
+      "batch_size": 16,
+      "seconds": 2.122223583050072,
+      "docs_per_second": 113.08893271983652,
+      "finite": true,
+      "dtype": "float16"
+    },
+    {
+      "batch_size": 32,
+      "seconds": 1.3131155000301078,
+      "docs_per_second": 182.7714317548587,
+      "finite": true,
+      "dtype": "float16"
+    },
+    {
+      "batch_size": 64,
+      "seconds": 1.6194165830966085,
+      "docs_per_second": 148.20152053838913,
+      "finite": true,
+      "dtype": "float16"
+    },
+    {
+      "batch_size": 128,
+      "seconds": 2.03781845793128,
+      "docs_per_second": 117.77300331435772,
+      "finite": true,
+      "dtype": "float16"
+    }
+  ],
+  "float32_agreement_cosine_min": 0.9997725486755371,
+  "peak_rss_bytes": 1255620608
+}

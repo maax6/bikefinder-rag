@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-13T17:35:39.550272+00:00",
+  "source": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/enrichment-full-20261012/pass2/catalogue.enriched.sqlite3",
+  "snapshot": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/catalogue.frozen.sqlite3",
+  "snapshot_sha256": "249da64a87ffe71594f1662cabdf3e94b9349474c133c3dd8786fab700d7112a",
+  "counts": {
+    "objects": 11478,
+    "equipment": 31435,
+    "technical_passages": 105687,
+    "spec_rows": 411954
+  },
+  "columns": {
+    "objects": [
+      "id",
+      "url",
+      "brand",
+      "model",
+      "year",
+      "source_sha256",
+      "record"
+    ],
+    "equipment": [
+      "object_id",
+      "equipment",
+      "status",
+      "stage",
+      "decision"
+    ]
+  },
+  "records_sha256": "53c63ef867700e6dd0b67f2c84fe06f51fad2cc1ee952aa00a862b95ca342277",
+  "source_file_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "schema_version": "technical-enrichment-sqlite-objects-equipment"
+}

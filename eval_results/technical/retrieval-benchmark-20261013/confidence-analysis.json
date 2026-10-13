@@ -1,0 +1,123 @@
+{
+  "question_counts": {
+    "answerable": 34,
+    "partial": 10,
+    "unanswerable": 6
+  },
+  "multi_evidence_questions": 25,
+  "controlled_ambiguity_questions": 3,
+  "source_only_author": true,
+  "human_panel": false,
+  "cases": {
+    "wrong_explicit_variant": [
+      "HOLDOUT-010"
+    ],
+    "wrong_year_changes_transmission": [
+      "HOLDOUT-041"
+    ],
+    "missing_official_certificate": [
+      "HOLDOUT-045"
+    ]
+  },
+  "supplied": {
+    "a2_positive_cases": 6,
+    "a2_all_groups_at5": {
+      "lexical": 0,
+      "dense": 6,
+      "hybrid": 6,
+      "rerank": 6
+    },
+    "negative_candidates": {
+      "lexical": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "dense": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hybrid": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rerank": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "rank_truncations": 0
+  },
+  "global": {
+    "a2_positive_cases": 6,
+    "a2_all_groups_at5": {
+      "lexical": 0,
+      "dense": 2,
+      "hybrid": 2,
+      "rerank": 1
+    },
+    "negative_candidates": {
+      "lexical": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "dense": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "hybrid": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "rerank": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    "rank_truncations": 0,
+    "rerank_missing_in_pool30": [
+      "HOLDOUT-036",
+      "HOLDOUT-038",
+      "HOLDOUT-039"
+    ],
+    "rerank_present_in_pool_but_missing_top10": [
+      "HOLDOUT-005",
+      "HOLDOUT-007",
+      "HOLDOUT-008",
+      "HOLDOUT-034",
+      "HOLDOUT-037",
+      "HOLDOUT-041"
+    ]
+  }
+}

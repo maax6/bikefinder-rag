@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-10-13",
+  "purpose": "Model license metadata only; no corpus/question/model inference transmitted",
+  "models": {
+    "dense": {
+      "name": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "license": "MIT",
+      "source_url": "https://huggingface.co/BAAI/bge-m3"
+    },
+    "reranker": {
+      "name": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "license": "Apache-2.0",
+      "source_url": "https://huggingface.co/BAAI/bge-reranker-v2-m3"
+    }
+  },
+  "remote_inference_calls": 0
+}

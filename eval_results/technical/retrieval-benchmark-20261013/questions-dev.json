@@ -1,0 +1,552 @@
+{
+  "schema_version": "independent-source-only-questions-v1",
+  "split": "dev",
+  "corpus_sha256": "249da64a87ffe71594f1662cabdf3e94b9349474c133c3dd8786fab700d7112a",
+  "questions": [
+    {
+      "id": "DEV-001",
+      "split": "dev",
+      "category": "dimensions",
+      "question": "Pour rentrer une Honda ST 1100 PAN EUROPEAN de 2000 dans mon garage, il faut prévoir quelle longueur et quelle largeur ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "d9414b83ba74ecd5"
+      ],
+      "gold_passages": [
+        {
+          "id": "d9414b83ba74ecd5:section:0",
+          "grade": 2,
+          "reason": "Donne la longueur et la largeur de cette fiche exacte."
+        }
+      ],
+      "required_groups": [
+        [
+          "d9414b83ba74ecd5:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Longueur 2 285 mm ; largeur 935 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La largeur extraite ne précise pas si les rétroviseurs sont inclus. Ne pas garantir le passage dans un garage sans sa largeur utile."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "d9414b83ba74ecd5:section:0",
+          "object_id": "d9414b83ba74ecd5",
+          "source_url": "https://www.motoplanete.com/honda/885/ST-1100-PAN-EUROPEAN-2000/contact.html",
+          "source_sha256": "169d3c7cc2e7f907713992b456e54e095c9a78689fe6119e7bf17b86edaf74ad",
+          "section": "Châssis",
+          "quote": "Cadre : double berceau tubulaire en acier; Réservoir : 28 litres; Hauteur de selle : 800 mm; Longueur : 2 285 mm; Largeur : 935 mm; Hauteur min : 1 405 mm; Empattement : 1 555 mm; Poids à sec : 287 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "DEV-002",
+      "split": "dev",
+      "category": "equipment_optional",
+      "question": "Sur la BMW R 850 RT de 2000, l’ABS était fourni ou il fallait prendre une option ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "b5a15d8c221957ce"
+      ],
+      "gold_passages": [
+        {
+          "id": "b5a15d8c221957ce:section:5",
+          "grade": 2,
+          "reason": "La formulation explicite ABS en option prime sur le titre de rubrique."
+        }
+      ],
+      "required_groups": [
+        [
+          "b5a15d8c221957ce:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "La source écrit « Assistance au freinage : ABS en option »."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Ne pas transformer le titre Équipement de série en preuve que l’ABS est de série."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "b5a15d8c221957ce:section:5",
+          "object_id": "b5a15d8c221957ce",
+          "source_url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html",
+          "source_sha256": "78a399257eccea301bef0230adf1b042815dd2a631aef5407d0bfbcbaef23a2d",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS en option"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 9
+      }
+    },
+    {
+      "id": "DEV-003",
+      "split": "dev",
+      "category": "a2_source_mention",
+      "question": "La fiche de la Moto-Guzzi 850 V9 Bobber 2021 cite le permis A2 ? Et elle annonce combien de chevaux avant de parler de bridage ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e2a30cec3f5b4c2d"
+      ],
+      "gold_passages": [
+        {
+          "id": "e2a30cec3f5b4c2d:section:6",
+          "grade": 2,
+          "reason": "Contient la mention A2 et la formulation du bridage."
+        },
+        {
+          "id": "e2a30cec3f5b4c2d:section:4",
+          "grade": 2,
+          "reason": "Contient la puissance annoncée et son régime."
+        }
+      ],
+      "required_groups": [
+        [
+          "e2a30cec3f5b4c2d:section:6"
+        ],
+        [
+          "e2a30cec3f5b4c2d:section:4"
+        ]
+      ],
+      "expected_facts": [
+        "Mention A, A2 et « accessible au permis A2 ou bridable à 47.5ch / 35 Kw » ; puissance annoncée 65 ch à 6 800 tr/min."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "La formulation générique accessible ou bridable ne distingue pas à elle seule les deux situations."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e2a30cec3f5b4c2d:section:6",
+          "object_id": "e2a30cec3f5b4c2d",
+          "source_url": "https://www.motoplanete.com/moto-guzzi/9334/850-V9-Bobber-2021/contact.html",
+          "source_sha256": "f13ec478dcca4a3ee494be2549e50fab72ce313d45dcb76313640832fb62616b",
+          "section": "Infos pratiques",
+          "quote": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2"
+        },
+        {
+          "passage_id": "e2a30cec3f5b4c2d:section:4",
+          "object_id": "e2a30cec3f5b4c2d",
+          "source_url": "https://www.motoplanete.com/moto-guzzi/9334/850-V9-Bobber-2021/contact.html",
+          "source_sha256": "f13ec478dcca4a3ee494be2549e50fab72ce313d45dcb76313640832fb62616b",
+          "section": "Moteur",
+          "quote": "Bicylindre en V transversal à 90° , 4 temps; Injection; Refroidissement : combiné air / huile; 1 AC, culbuté; 2 soupapes par cylindre; 853 cc (Alésage * course: 84 x 77 mm); 65 ch à 6 800 tr/min; 7,50 mkg à 5 000 tr/min; Rapport poids / puissance : 2.98 kg/ch; Rapport poids / couple : 25.87 kg/mkg; Compression : 10.5:1; Emission CO² : 119 g/km"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "DEV-004",
+      "split": "dev",
+      "category": "engine_gearbox",
+      "question": "La Norton 961 Commando Sport MK III 2023, c’est un moteur à deux cylindres ? Elle a combien de vitesses et ça entraîne la roue avec quoi ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e365d4365c979509"
+      ],
+      "gold_passages": [
+        {
+          "id": "e365d4365c979509:section:4",
+          "grade": 2,
+          "reason": "Décrit le bicylindre en ligne."
+        },
+        {
+          "id": "e365d4365c979509:section:2",
+          "grade": 2,
+          "reason": "Donne les cinq rapports et la transmission par chaîne."
+        }
+      ],
+      "required_groups": [
+        [
+          "e365d4365c979509:section:4"
+        ],
+        [
+          "e365d4365c979509:section:2"
+        ]
+      ],
+      "expected_facts": [
+        "Bicylindre en ligne 4 temps ; boîte manuelle à 5 rapports ; secondaire par chaîne."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e365d4365c979509:section:4",
+          "object_id": "e365d4365c979509",
+          "source_url": "https://www.motoplanete.com/norton/9603/961-Commando-Sport-MK-III-2023/contact.html",
+          "source_sha256": "1de663eb6d9f10b1c3baeb39bd87075e13830d6fadca18b3db2f0f3e0b833558",
+          "section": "Moteur",
+          "quote": "Bicylindre en ligne , 4 temps; Injection Ø 35 mm; Refroidissement : par air; culbuté; 2 soupapes par cylindre; 961 cc (Alésage * course: 88 x 79 mm); 77 ch à 7 250 tr/min; 8,30 mkg à 6 300 tr/min; Rapport poids / puissance : environ 2.81 kg/ch; Rapport poids / couple : environ 26.1 kg/mkg; Compression : 10.1 : 1"
+        },
+        {
+          "passage_id": "e365d4365c979509:section:2",
+          "object_id": "e365d4365c979509",
+          "source_url": "https://www.motoplanete.com/norton/9603/961-Commando-Sport-MK-III-2023/contact.html",
+          "source_sha256": "1de663eb6d9f10b1c3baeb39bd87075e13830d6fadca18b3db2f0f3e0b833558",
+          "section": "Transmission",
+          "quote": "boîte à 5 rapports , manuelle; Secondaire par chaîne"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "DEV-005",
+      "split": "dev",
+      "category": "colours_missing",
+      "question": "Tu peux me donner les couleurs de la Suzuki SV 650 2023 d’après cette base ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "a23f1df05a428c00"
+      ],
+      "gold_passages": [
+        {
+          "id": "a23f1df05a428c00:section:9",
+          "grade": 2,
+          "reason": "La section existe mais sa valeur est non défini."
+        }
+      ],
+      "required_groups": [
+        [
+          "a23f1df05a428c00:section:9"
+        ]
+      ],
+      "expected_facts": [],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La fiche contient uniquement « Coloris : non défini ». Aucun nom de couleur ne peut être fourni à partir de cette fiche.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "a23f1df05a428c00:section:9",
+          "object_id": "a23f1df05a428c00",
+          "source_url": "https://www.motoplanete.com/suzuki/9546/SV-650-2023/contact.html",
+          "source_sha256": "3c1cd08dbb1451675b95b68ae50bc5c2188d429b9a192899905a8d5a5bfac2c6",
+          "section": "Coloris",
+          "quote": "Coloris : non défini"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "DEV-006",
+      "split": "dev",
+      "category": "gearbox_exact_code",
+      "question": "CB 650 R E-Clutch 2024 chez Honda : la fiche parle d’une boîte automatique ou d’une boîte manuelle avec autre chose en plus ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "ef8e89b807d75b3d"
+      ],
+      "gold_passages": [
+        {
+          "id": "ef8e89b807d75b3d:section:2",
+          "grade": 2,
+          "reason": "Précise manuelle + embrayage automatique et le nombre de rapports."
+        }
+      ],
+      "required_groups": [
+        [
+          "ef8e89b807d75b3d:section:2"
+        ]
+      ],
+      "expected_facts": [
+        "Boîte à 6 rapports, manuelle + embrayage automatique ; secondaire par chaîne."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Ne pas assimiler automatiquement l’embrayage automatique à une boîte DCT ou à un changement automatique des rapports."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "ef8e89b807d75b3d:section:2",
+          "object_id": "ef8e89b807d75b3d",
+          "source_url": "https://www.motoplanete.com/honda/10224/CB-650-R-E-Clutch-2024/contact.html",
+          "source_sha256": "fa5994a7bd2f1c6757d1445198d254cbf3edcc036be1b8ad9d97d2d3d1fa273d",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle + embrayage automatique; Secondaire par chaîne"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "DEV-007",
+      "split": "dev",
+      "category": "equipment_connectivity",
+      "question": "La Kawasaki Ninja 500 SE 2024 a un écran couleur connecté et démarre sans clé ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e9af1f5138f3d6a9"
+      ],
+      "gold_passages": [
+        {
+          "id": "e9af1f5138f3d6a9:section:5",
+          "grade": 2,
+          "reason": "Liste TFT couleur, Bluetooth et démarrage sans clé."
+        }
+      ],
+      "required_groups": [
+        [
+          "e9af1f5138f3d6a9:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "TFT couleur 10,92 cm / 4.3 pouces ; Bluetooth ; démarrage sans clé."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Le Bluetooth ne décrit pas les fonctions exactes de l’application."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e9af1f5138f3d6a9:section:5",
+          "object_id": "e9af1f5138f3d6a9",
+          "source_url": "https://www.motoplanete.com/kawasaki/10417/Ninja-500-SE-2024/contact.html",
+          "source_sha256": "7a1d09d19b0ef0a2956ea8f8088fe3568fe1f6fe83189bf14a06ca998d435d73",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Taille de l'écran TFT couleur : 10,92 cm / 4.3 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Démarrage sans clé; Embrayage anti-dribble"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      }
+    },
+    {
+      "id": "DEV-008",
+      "split": "dev",
+      "category": "comparison_multi_evidence",
+      "question": "Entre la Benelli 500 Leoncino 2021 et la 500 Leoncino Trail 2021, laquelle a la selle la plus basse et la roue avant la plus petite ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "7083c7b76384fa71",
+        "beec28ae1c46a795"
+      ],
+      "gold_passages": [
+        {
+          "id": "7083c7b76384fa71:section:0",
+          "grade": 2,
+          "reason": "Donne la hauteur de selle de la Leoncino standard."
+        },
+        {
+          "id": "beec28ae1c46a795:section:0",
+          "grade": 2,
+          "reason": "Donne la hauteur de selle de la Leoncino Trail."
+        },
+        {
+          "id": "7083c7b76384fa71:section:1",
+          "grade": 2,
+          "reason": "Donne la dimension de la roue avant standard."
+        },
+        {
+          "id": "beec28ae1c46a795:section:1",
+          "grade": 2,
+          "reason": "Donne la dimension de la roue avant Trail."
+        }
+      ],
+      "required_groups": [
+        [
+          "7083c7b76384fa71:section:0"
+        ],
+        [
+          "beec28ae1c46a795:section:0"
+        ],
+        [
+          "7083c7b76384fa71:section:1"
+        ],
+        [
+          "beec28ae1c46a795:section:1"
+        ]
+      ],
+      "expected_facts": [
+        "Leoncino standard : selle 815 mm et roue avant 120 / 70 - 17 ; Trail : selle 835 mm et roue avant 110 / 80 - 19 ; la standard a la selle 20 mm plus basse et une roue avant de 17 pouces contre 19."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une hauteur de selle ne suffit pas à prédire la facilité à poser les pieds au sol. La taille de jante ne permet pas à elle seule de déduire le diamètre extérieur du pneu."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "7083c7b76384fa71:section:0",
+          "object_id": "7083c7b76384fa71",
+          "source_url": "https://www.motoplanete.com/benelli/9237/500-Leoncino-2021/contact.html",
+          "source_sha256": "1f20ba542ef0d3449d4cfd40f2d3e81d3b4857b7021ce6576e2e469ce5861010",
+          "section": "Châssis",
+          "quote": "Cadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg"
+        },
+        {
+          "passage_id": "beec28ae1c46a795:section:0",
+          "object_id": "beec28ae1c46a795",
+          "source_url": "https://www.motoplanete.com/benelli/9242/500-Leoncino-Trail-2021/contact.html",
+          "source_sha256": "0dbc017a624e50b542b1be8c213ce63563c4947a55a0dffbea2a8a485b68963a",
+          "section": "Châssis",
+          "quote": "Cadre : Treillis en tubes d'acier; Réservoir : 12 litres; Hauteur de selle : 835 mm; Longueur : 2 180 mm; Largeur : 875 mm; Hauteur min : 1 200 mm; Empattement : 1 470 mm; Poids tous pleins faits : 207 kg"
+        },
+        {
+          "passage_id": "7083c7b76384fa71:section:1",
+          "object_id": "7083c7b76384fa71",
+          "source_url": "https://www.motoplanete.com/benelli/9237/500-Leoncino-2021/contact.html",
+          "source_sha256": "1f20ba542ef0d3449d4cfd40f2d3e81d3b4857b7021ce6576e2e469ce5861010",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 50 mm, déb : 125 mm; Freinage : 2 disques Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.2 bars"
+        },
+        {
+          "passage_id": "beec28ae1c46a795:section:1",
+          "object_id": "beec28ae1c46a795",
+          "source_url": "https://www.motoplanete.com/benelli/9242/500-Leoncino-Trail-2021/contact.html",
+          "source_sha256": "0dbc017a624e50b542b1be8c213ce63563c4947a55a0dffbea2a8a485b68963a",
+          "section": "Train avant",
+          "quote": "Fourche téléhydraulique inversée Ø 50 mm, déb : 135 mm; Freinage : 2 disques Ø 320 mm, étrier 2 pistons; Roue avant : 110 / 80 - 19; Pression : 2.2 bars"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      }
+    },
+    {
+      "id": "DEV-009",
+      "split": "dev",
+      "category": "identity_ambiguity",
+      "question": "Une BMW R 850 RT, on hésite entre 2000 et 2001 : la mention ABS en option dans la fiche permet-elle de retrouver l’année ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "b5a15d8c221957ce",
+        "a52e5daef588b88d"
+      ],
+      "gold_passages": [
+        {
+          "id": "b5a15d8c221957ce:section:5",
+          "grade": 2,
+          "reason": "La fiche 2000 cite ABS en option."
+        },
+        {
+          "id": "a52e5daef588b88d:section:5",
+          "grade": 2,
+          "reason": "La fiche 2001 cite la même mention ABS en option."
+        }
+      ],
+      "required_groups": [
+        [
+          "b5a15d8c221957ce:section:5"
+        ],
+        [
+          "a52e5daef588b88d:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "Les deux fiches, 2000 et 2001, écrivent « Assistance au freinage : ABS en option ». Cette mention commune ne distingue pas ces deux millésimes."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’année du véhicule reste inconnue ; demander une identité ou un document daté. Ne pas attribuer un millésime d’après cet équipement commun."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "b5a15d8c221957ce:section:5",
+          "object_id": "b5a15d8c221957ce",
+          "source_url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html",
+          "source_sha256": "78a399257eccea301bef0230adf1b042815dd2a631aef5407d0bfbcbaef23a2d",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS en option"
+        },
+        {
+          "passage_id": "a52e5daef588b88d:section:5",
+          "object_id": "a52e5daef588b88d",
+          "source_url": "https://www.motoplanete.com/bmw/4175/R-850-RT-2001/contact.html",
+          "source_sha256": "ad6af60b63afcecbf745cbccbbfb509e33b5e059b24ae398d25f27386890a0c8",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS en option"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_ambiguity_supplied_candidate_set",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 18
+      },
+      "identity_ambiguity": {
+        "missing_identity_field": "année 2000 ou 2001",
+        "candidate_set_is_exhaustive_globally": false
+      }
+    },
+    {
+      "id": "DEV-010",
+      "split": "dev",
+      "category": "missing_service_manual",
+      "question": "Quel couple de serrage de l’axe de roue arrière donne le manuel d’atelier Honda pour la ST 1100 PAN EUROPEAN 2000 ?",
+      "answerability": "unanswerable",
+      "supplied_scope_object_ids": [],
+      "gold_passages": [],
+      "required_groups": [],
+      "expected_facts": [],
+      "expected_limits": [
+        "Aucun manuel d’atelier Honda ni couple de serrage de cet axe n’est présent. Le couple moteur en mkg est une autre grandeur et ne répond pas à cette demande.",
+        "Le corpus figé contient uniquement des extractions de fiches techniques Motoplanete, pas le document demandé. Une fiche ressemblante ou une mention voisine n’est pas une réponse.",
+        "Ne pas inventer de chiffre, de document, de lien constructeur ou de verdict. Indiquer précisément la donnée ou la source manquante."
+      ],
+      "source_refs": [],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "global_missing_document",
+      "negative_evidence_method": "Inventaire complet des 11 478 sources (toutes motoplanete), examen des sections du modèle cité et recherche globale des expressions documentaires dans technical_sections ; aucun document officiel correspondant n’est présent."
+    }
+  ]
+}
