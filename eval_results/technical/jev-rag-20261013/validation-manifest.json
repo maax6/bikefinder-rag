@@ -1,0 +1,56 @@
+{
+  "completed_at": "2026-10-13T21:04:45.012151+00:00",
+  "git_base": "b5932ff",
+  "worktree_note": "Validated current checkout including pre-existing unstaged project work; only task-owned changes are committed.",
+  "python": "3.11.15",
+  "dependencies": {
+    "sentence-transformers": "5.6.0",
+    "torch": "2.13.0",
+    "transformers": "5.13.0",
+    "gradio": "6.20.0",
+    "gradio-client": "2.5.0",
+    "psycopg": "3.3.4",
+    "numpy": "2.4.6"
+  },
+  "hardware": {
+    "chip": "Apple M5",
+    "memory_bytes": 34359738368
+  },
+  "runtime": {
+    "BIKEFINDER_JEV_ROUTER": "1",
+    "BIKEFINDER_JEV_RAG": "1",
+    "AGENT_BACKEND": "ollama",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "GRADIO_ANALYTICS_ENABLED": "False",
+    "BGE_MODEL": "BAAI/bge-m3",
+    "BGE_REVISION": "5617a9f61b028005a4858fdac845db406aefb181",
+    "remote_inference": "typesafe/jev-1.13 only, via OpenRouter decisions",
+    "chat_url": "http://127.0.0.1:7861/"
+  },
+  "source_sha256": {
+    "src/bikefinder_rag/agent/rag_router.py": "95330872add37d686a477ac659690ffcd5c7e15e5027c62e4744ec6616de9924",
+    "src/bikefinder_rag/catalog/technical_rag.py": "bb0db7c92b4165acde83773ebe9b3359a9e23c82c90039ad35dc7f86c46bb56f",
+    "src/bikefinder_rag/embeddings/embedder.py": "c7cc7317a27645e402f2c7996819179890d273d11ad925723ef8d5511c1b648c",
+    "src/bikefinder_rag/agent/loop.py": "f48dff8a00470fcac4a412521367dc792b5aa1187e1ccbf3e89fcefcd452f67b",
+    "src/bikefinder_rag/agent/jev_router.py": "cd3eaf49e9cc75c381b1c77ca549862c94a8bc0eb4bd6810ed0d4a93e6d4cf6e",
+    "src/bikefinder_rag/agent/query_language.py": "7074cb9baae67eb6ef232632b63de4634ea9906ff637fddcc7fc23613a4c0f0c",
+    "src/bikefinder_rag/catalog/enriched.py": "06975cf99867a97f7f70e820da2f0f897b5c7f544ff1c506913636e95e55c3f1",
+    "src/bikefinder_rag/catalog/measures.py": "39e7a8c16c621d6b9eb0d9930e75f98f21276f674f276e9ba63a3dc29af06d7b",
+    "src/bikefinder_rag/catalog/source_equipment_answers.py": "fb3f7d798a7917a658934343dbe9892b371bbcb44e052dbb20285cfe5b28af63",
+    "src/bikefinder_rag/catalog/supplemental_sources.py": "2fcc0e4426732d3202b2530051216b31f710fbbde9bab2bd7f0017994d946122",
+    "src/bikefinder_rag/catalog/unit_restatements.py": "fbe7a8eef8781b4e30ab8ac9bb7a5716697c4e5519ec2b356a28521430e4a5f8",
+    "src/bikefinder_rag/app.py": "176f6e9a15161fee0d4a0593f4d5ed6db9ac843e52390a6fff43c2367262d98d",
+    "src/bikefinder_rag/ui.py": "23da6ca220277bca43b4ed10eb0776fac84bfac16eae5042711f8d6818bea2b2",
+    "scripts/evaluate_jev_rag.py": "7c3dfdf83ef67e0bc219224351eeaae2dbdb44459ee4d09ea88005cdcf9e0346",
+    "tests/test_technical_rag.py": "3ed2142f7c4f398f439016ee2e870093a700b575e460d5be816d7b98af0a9a1e"
+  },
+  "legacy_router_unchanged": true,
+  "validation": {
+    "automated_checks_passed": 26,
+    "questions": 26,
+    "full_tests": "985 passed, 8 skipped",
+    "live_sql": true,
+    "non_a2_live_checks_passed": true
+  }
+}

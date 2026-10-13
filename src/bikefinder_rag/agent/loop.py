@@ -334,14 +334,15 @@ def run_agent(conn, client: Anthropic | None, user_message: str, history: list[d
             content = [{"type":"text", "text":answer}] if backend == "anthropic" else answer
             return answer, [*(history or []), {"role":"user", "content":user_message}, {"role":"assistant", "content":content}]
     if os.getenv("BIKEFINDER_JEV_ROUTER") == "1":
-        from bikefinder_rag.agent.jev_router import route_question
+        from bikefinder_rag.agent.rag_router import route_question
         result = route_question(conn, user_message, routing_history)
         if result['answer'] is not None:
             answer=result['answer']
             content=[{"type":"text","text":answer}] if backend=="anthropic" else answer
             completed={"role":"assistant","content":content,"_catalog_plan":result.get('plan'),"_catalog_pending":result.get('pending'),
                        "_catalog_route":result['route'],"_catalog_seconds":result.get('seconds'),
-                       "_catalog_jev_calls":result.get('jev_calls',0)}
+                       "_catalog_jev_calls":result.get('jev_calls',0),
+                       "_catalog_evidence":result.get('evidence')}
             return answer,[*routing_history,{"role":"user","content":user_message},completed]
         if result['route']=='mistral_required':
             from bikefinder_rag.agent.jev_router import synthesize_complex

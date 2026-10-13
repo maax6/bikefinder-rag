@@ -1,0 +1,2282 @@
+{
+  "schema": "jev-rag-chat-validation-v1",
+  "label": "fresh-six-regression-v6",
+  "started_at": "2026-10-13T20:54:40.240607+00:00",
+  "api_url": "http://127.0.0.1:7861/",
+  "questions_sha256": "31611e1552b5d2d294ce847df16f93267c01872f5ff7c48dc281e125b296bde8",
+  "author": "Implementing agent, after v5 corrections and before any execution of these six formulations; not an independent blind panel",
+  "previous_benchmark_questions_reused": false,
+  "protocol": "jev-scoped-source-reading-v6",
+  "embedding_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "corpus": {
+    "fiches": 11478
+  },
+  "latency_method": "API first; route inspected separately afterwards with warmed decision/document caches",
+  "remote_inference": "Jev only; no generator or external quality judge",
+  "decision_cache": "data/technical/rag-router-cache-validation-v6",
+  "code_sha256": {
+    "src/bikefinder_rag/agent/rag_router.py": "95330872add37d686a477ac659690ffcd5c7e15e5027c62e4744ec6616de9924",
+    "src/bikefinder_rag/catalog/technical_rag.py": "bb0db7c92b4165acde83773ebe9b3359a9e23c82c90039ad35dc7f86c46bb56f",
+    "src/bikefinder_rag/embeddings/embedder.py": "c7cc7317a27645e402f2c7996819179890d273d11ad925723ef8d5511c1b648c",
+    "src/bikefinder_rag/agent/loop.py": "f48dff8a00470fcac4a412521367dc792b5aa1187e1ccbf3e89fcefcd452f67b",
+    "src/bikefinder_rag/agent/jev_router.py": "cd3eaf49e9cc75c381b1c77ca549862c94a8bc0eb4bd6810ed0d4a93e6d4cf6e",
+    "src/bikefinder_rag/app.py": "176f6e9a15161fee0d4a0593f4d5ed6db9ac843e52390a6fff43c2367262d98d",
+    "scripts/evaluate_jev_rag.py": "7c3dfdf83ef67e0bc219224351eeaae2dbdb44459ee4d09ea88005cdcf9e0346"
+  },
+  "expected_sources": {
+    "2c919bf81f79967b": {
+      "brand": "Honda",
+      "model": "CBR 500 R",
+      "year": 2025,
+      "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+      "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+      "sections": {
+        "2c919bf81f79967b:section:0": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 760 mm; Hauteur min : 1 145 mm; Empattement : 1 410 mm; Poids tous pleins faits : 191 kg",
+        "2c919bf81f79967b:section:1": "Fourche téléhydraulique inversée Ø 41 mm / Showa , déb : 120 mm; Freinage : 2 disques Nissin Ø 296 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+        "2c919bf81f79967b:section:2": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+        "2c919bf81f79967b:section:3": "Mono-amortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+        "2c919bf81f79967b:section:4": "Bicylindre en ligne , 4 temps, calé à 180°; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 47,50 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.71 kg/ch; Rapport poids / couple : environ 39.13 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km",
+        "2c919bf81f79967b:section:5": "Assistance au freinage : ABS de série; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de couple; Embrayage anti-dribble; Commodes rétro-éclairés",
+        "2c919bf81f79967b:section:6": "La moto est accessible aux permis : A",
+        "2c919bf81f79967b:section:7": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,50 l/100km; Autonomie estimée : 489 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+        "2c919bf81f79967b:section:8": "France — Version de base : 7 499 € *",
+        "2c919bf81f79967b:section:9": "Coloris : bleu / blanc / rouge; Coloris : noir"
+      }
+    },
+    "3b8816ad7d7982d1": {
+      "brand": "Suzuki",
+      "model": "SV650X",
+      "year": 2025,
+      "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+      "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+      "sections": {
+        "3b8816ad7d7982d1:section:0": "Cadre : treillis tubulaire en acier; Réservoir : 14,50 litres; Hauteur de selle : 790 mm; Longueur : 2 140 mm; Largeur : 730 mm; Hauteur min : 1 090 mm; Garde au sol min : 135 mm Empattement : 1 445 mm Poids tous pleins faits : 198 kg",
+        "3b8816ad7d7982d1:section:1": "Fourche téléhydraulique Ø 41 mm; Freinage : 2 disques Ø 290 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17",
+        "3b8816ad7d7982d1:section:2": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+        "3b8816ad7d7982d1:section:3": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17",
+        "3b8816ad7d7982d1:section:4": "Bicylindre en L à 90° , 4 temps; Injection Ø 39 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 645 cc (Alésage * course: 81 x 62.6 mm); 73 ch à 8 500 tr/min; 6,50 mkg (64 Nm) à 6 800 tr/min; Rapport poids / puissance : environ 2.53 kg/ch; Rapport poids / couple : environ 28.47 kg/mkg; Compression : 11.2 : 1; Emission CO² : 96 g/km",
+        "3b8816ad7d7982d1:section:5": "Assistance au freinage : ABS; Jantes aluminium; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre",
+        "3b8816ad7d7982d1:section:6": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2; Pays de fabrication : Japon",
+        "3b8816ad7d7982d1:section:7": "Vitesse max : environ 200 km/h; Consommation moyenne : 4,10 l/100km; Autonomie estimée : 354 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+        "3b8816ad7d7982d1:section:8": "France — Version de base : 7 999 € *",
+        "3b8816ad7d7982d1:section:9": "Coloris : blanc"
+      }
+    },
+    "5b3f65c9e5525fa6": {
+      "brand": "Honda",
+      "model": "CBR 650 R E-Clutch",
+      "year": 2025,
+      "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+      "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+      "sections": {
+        "5b3f65c9e5525fa6:section:0": "Cadre : en acier de type Diamond; Réservoir : 15,40 litres; Hauteur de selle : 810 mm; Longueur : 2 120 mm; Largeur : 750 mm; Hauteur min : 1 145 mm; Empattement : 1 450 mm; Poids tous pleins faits : 211 kg",
+        "5b3f65c9e5525fa6:section:1": "Fourche téléscopique Ø 41 mm, déb : 120 mm; Freinage : 2 disques Nissin Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+        "5b3f65c9e5525fa6:section:2": "boîte à 6 rapports , manuelle + embrayage automatique; Secondaire par chaîne",
+        "5b3f65c9e5525fa6:section:3": "Mono-amortisseur, déb : 120 mm; Réglage de la précharge; Freinage : 1 disque Nissin Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+        "5b3f65c9e5525fa6:section:4": "4 cylindres en ligne , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 649 cc (Alésage * course: 67 x 46 mm); 95 ch à 12 000 tr/min; 6,50 mkg à 9 500 tr/min; Rapport poids / puissance : environ 2.08 kg/ch; Rapport poids / couple : environ 30.36 kg/mkg; Compression : 11.4 : 1; Emission CO² : 112 g/km",
+        "5b3f65c9e5525fa6:section:5": "Assistance au freinage : ABS de serie; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Prise USB; Contrôle de couple; Embrayage anti-dribble",
+        "5b3f65c9e5525fa6:section:6": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+        "5b3f65c9e5525fa6:section:7": "Vitesse max : 240 km/h au compteur; Consommation moyenne : 4,90 l/100km; Autonomie estimée : 314 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+        "5b3f65c9e5525fa6:section:8": "Espagne — Version de base : 10 400 €; France — Version de base : 9 949 € *; Royaume-uni — Version de base : £ 8 729; Suisse — Version de base : 10 990 CH; Belgique — Version de base : 10 399 €; Portugal — Version de base : 10 200 €; Italie — Version de base : 10 090 €; Allemagne — Version de base : 10 990 €",
+        "5b3f65c9e5525fa6:section:9": "Coloris : noir; Coloris : bleu / blanc / rouge"
+      }
+    },
+    "6a2a16e0dd2163af": {
+      "brand": "Voge",
+      "model": "525 R",
+      "year": 2025,
+      "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+      "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+      "sections": {
+        "6a2a16e0dd2163af:section:0": "Selle biplaces; Cadre : Structure en tube d'acier; Réservoir : 17 litres; Hauteur de selle : 785 mm; Longueur : 2 100 mm; Largeur : 770 mm; Hauteur min : 1 090 mm; Empattement : 1 445 mm; Poids en ordre de marche : 198 kg",
+        "6a2a16e0dd2163af:section:1": "Fourche téléhydraulique inversée Ø 41 mm / Kayaba (KYB) , déb : 109 mm; Freinage : 2 disques en pétale Nissin Ø 298 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.2 bars",
+        "6a2a16e0dd2163af:section:2": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+        "6a2a16e0dd2163af:section:3": "Mono-amortisseur / Kayaba (KYB) , déb : 119 mm; Réglage de la précharge; Freinage : 1 disque en pétale Nissin Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.2 bars",
+        "6a2a16e0dd2163af:section:4": "Bicylindre en ligne , 4 temps, calé à 180°; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 494 cc (Alésage * course: 68 x 68 mm); 47,60 ch à 8 500 tr/min; 4,60 mkg à 7 000 tr/min; Compression : 11,5 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km; Norme anti-pollution : Euro 5",
+        "6a2a16e0dd2163af:section:5": "Assistance au freinage : ABS; Taille de l'écran TFT couleur : 17,78 cm / 7 pouces; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de traction",
+        "6a2a16e0dd2163af:section:6": "La moto est accessible aux permis : A, A2",
+        "6a2a16e0dd2163af:section:7": "Vitesse max : environ 160 km/h; Consommation moyenne : 4,40 l/100km; Autonomie estimée : 386 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+        "6a2a16e0dd2163af:section:8": "France — Version de base : 6 095 € *",
+        "6a2a16e0dd2163af:section:9": "Coloris : noir; Coloris : gris"
+      }
+    }
+  },
+  "summary": {
+    "completed": 6,
+    "automated_checks_passed": 6,
+    "routes": {
+      "rag_partial": 4,
+      "clarification": 2
+    },
+    "api_p50_seconds": 0.8475062290090136,
+    "api_p95_seconds": 1.040314385551028,
+    "api_max_seconds": 1.0783281250623986,
+    "new_successful_jev_receipts": 9
+  },
+  "results": [
+    {
+      "id": "A2-FRESH-01",
+      "question": "Avec mon permis A2, je regarde la Honda CBR 500 R 2025 : retrouve la hauteur de selle et dis si les passages prouvent des poignées chauffantes de série.",
+      "answer": "### Honda CBR 500 R (2025)\n\n- **Hauteur de selle (mm) — la fiche indique :** Châssis — Hauteur de selle : 785 mm\n- **Équipements : ABS, options et statuts documentés — la fiche indique :** Équipement de série — Assistance au freinage : ABS de série ; Équipement de série — Taille de l'écran TFT couleur : 12,70 cm / 5 pouces ; Équipement de série — Jantes aluminium ; Équipement de série — Indicateur de vitesse engagée ; Équipement de série — Contrôle de couple ; Équipement de série — Embrayage anti-dribble ; Équipement de série — Commodes rétro-éclairés\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html)\nPreuves retenues : Équipement de série, Moteur, Train avant, Train arrière, Transmission, Châssis, Infos pratiques.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+      "api_seconds": 0.838129417039454,
+      "inspection_seconds": 6.61163379100617,
+      "routing": {
+        "answer": "### Honda CBR 500 R (2025)\n\n- **Hauteur de selle (mm) — la fiche indique :** Châssis — Hauteur de selle : 785 mm\n- **Équipements : ABS, options et statuts documentés — la fiche indique :** Équipement de série — Assistance au freinage : ABS de série ; Équipement de série — Taille de l'écran TFT couleur : 12,70 cm / 5 pouces ; Équipement de série — Jantes aluminium ; Équipement de série — Indicateur de vitesse engagée ; Équipement de série — Contrôle de couple ; Équipement de série — Embrayage anti-dribble ; Équipement de série — Commodes rétro-éclairés\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html)\nPreuves retenues : Équipement de série, Moteur, Train avant, Train arrière, Transmission, Châssis, Infos pratiques.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CBR 500 R",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "seat_height_mm",
+            "equipment",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Avec mon permis A2, je regarde la Honda CBR 500 R 2025 : retrouve la hauteur de selle et dis si les passages prouvent des poignées chauffantes de série.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "route": "rag_partial",
+        "jev_calls": 0,
+        "evidence": {
+          "sources": [
+            {
+              "object_id": "2c919bf81f79967b",
+              "brand": "Honda",
+              "model": "CBR 500 R",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+              "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "seat_height_mm": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "2c919bf81f79967b:section:0"
+                  ]
+                },
+                "equipment": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "2c919bf81f79967b:section:5"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "2c919bf81f79967b:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "2c919bf81f79967b:section:5",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS de série; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de couple; Embrayage anti-dribble; Commodes rétro-éclairés",
+                  "text": "Honda CBR 500 R 2025\nÉquipement de série\nAssistance au freinage : ABS de série; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de couple; Embrayage anti-dribble; Commodes rétro-éclairés",
+                  "score": 0.6363921165466309,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "2c919bf81f79967b:section:4",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps, calé à 180°; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 47,50 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.71 kg/ch; Rapport poids / couple : environ 39.13 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km",
+                  "text": "Honda CBR 500 R 2025\nMoteur\nBicylindre en ligne , 4 temps, calé à 180°; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 47,50 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.71 kg/ch; Rapport poids / couple : environ 39.13 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km",
+                  "score": 0.5982227921485901,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "2c919bf81f79967b:section:1",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléhydraulique inversée Ø 41 mm / Showa , déb : 120 mm; Freinage : 2 disques Nissin Ø 296 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                  "text": "Honda CBR 500 R 2025\nTrain avant\nFourche téléhydraulique inversée Ø 41 mm / Showa , déb : 120 mm; Freinage : 2 disques Nissin Ø 296 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                  "score": 0.5953423976898193,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "2c919bf81f79967b:section:3",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+                  "text": "Honda CBR 500 R 2025\nTrain arrière\nMono-amortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+                  "score": 0.592241108417511,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "2c919bf81f79967b:section:2",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "Honda CBR 500 R 2025\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.5658254027366638,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "2c919bf81f79967b:section:0",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Châssis",
+                  "original_text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 760 mm; Hauteur min : 1 145 mm; Empattement : 1 410 mm; Poids tous pleins faits : 191 kg",
+                  "text": "Honda CBR 500 R 2025\nChâssis\nCadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 760 mm; Hauteur min : 1 145 mm; Empattement : 1 410 mm; Poids tous pleins faits : 191 kg",
+                  "score": 0.5304034948348999,
+                  "rank": 8,
+                  "selection_reason": "required_field"
+                },
+                {
+                  "id": "2c919bf81f79967b:section:6",
+                  "object_id": "2c919bf81f79967b",
+                  "brand": "Honda",
+                  "model": "CBR 500 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11045/CBR-500-R-2025/contact.html",
+                  "source_sha256": "d8ab5387b4de016941c1f6bfab802f4bb2c87b94d1288dced34385413ccff195",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A",
+                  "text": "Honda CBR 500 R 2025\nInfos pratiques\nLa moto est accessible aux permis : A",
+                  "score": 0.5656106472015381,
+                  "rank": 6,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "2c919bf81f79967b",
+              "field": "equipment",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "2c919bf81f79967b",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "2c919bf81f79967b",
+              "field": "a2_mention",
+              "message": "Mention A2 non retrouvée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.6705598682165146e-07,
+              "query_encoding_seconds": 4.333882833016105,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "2c919bf81f79967b",
+              "proof_check": {
+                "fields": {
+                  "seat_height_mm": "complete",
+                  "equipment": "unverified",
+                  "license": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.0003844170132651925
+              }
+            }
+          ],
+          "seconds": 4.337460250011645,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "cached": true,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "recognized": 0.99,
+                "unresolved": 0.01
+              },
+              "confidence": 0.98
+            },
+            "intent": {
+              "type": "choice",
+              "choice": "source_facts",
+              "probabilities": {
+                "source_facts": 0.98,
+                "legal_proof": 0.02,
+                "filter": 0,
+                "unsupported": 0
+              },
+              "confidence": 0.97
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.49,
+                "no": 0.51
+              },
+              "confidence": 0.02
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.91,
+                "no": 0.09
+              },
+              "confidence": 0.82
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.05,
+                "no": 0.95
+              },
+              "confidence": 0.9
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.12,
+                "no": 0.88
+              },
+              "confidence": 0.76
+            },
+            "field_license": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            }
+          },
+          "usage": {
+            "input_tokens": 3078,
+            "output_tokens": 732,
+            "cost": 0.000129276
+          },
+          "id": "gen-dec-1791924880-8DJ6XonMLwEpN9SWq2Wf",
+          "provider": "TypeSafe"
+        },
+        "seconds": 6.611367792007513
+      },
+      "new_successful_jev_receipts": 2,
+      "receipt_ids": [
+        "6b33f2a9e026d3b97d0c2225a23a12b8a45f47a22c61e8a2ef250287e3449860",
+        "f1b7d6bfb18550dc3ac4ec8dd819c58e12a2538ce6f4f56aff837dc66512777a"
+      ],
+      "checks": {
+        "api_matches_inspection": true,
+        "exact_identities": true,
+        "no_legal_certification": true,
+        "no_runtime_error": true,
+        "visible_legal_limit": true,
+        "correct_citations": true,
+        "intact_source_passages": true,
+        "requested_fields_considered": true,
+        "facts_or_visible_gaps": true,
+        "bge_local_executed": true,
+        "original_seat_height_mm_2c919bf81f79967b": true,
+        "original_license_2c919bf81f79967b": true,
+        "missing_A2_marked_2c919bf81f79967b": true,
+        "precise_equipment_not_claimed_complete": true
+      }
+    },
+    {
+      "id": "A2-FRESH-02",
+      "question": "Pour préparer un choix A2, lis le couple de la Suzuki SV650X 2025 en gardant le mkg et le régime de la fiche, puis ses mentions de permis.",
+      "answer": "### Suzuki SV650X (2025)\n\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 6,50 mkg (64 Nm) à 6 800 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Poids à sec (kg) :** Non documenté dans les passages de cette fiche.\n- **Poids en ordre de marche / pleins faits (kg) :** Non documenté dans les passages de cette fiche.\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2; Pays de fabrication : Japon\n\n[Source — fiche exacte](https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html)\nPreuves retenues : Infos pratiques, Moteur, Équipement de série, Transmission, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+      "api_seconds": 1.0783281250623986,
+      "inspection_seconds": 0.12890437501482666,
+      "routing": {
+        "answer": "### Suzuki SV650X (2025)\n\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 6,50 mkg (64 Nm) à 6 800 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Poids à sec (kg) :** Non documenté dans les passages de cette fiche.\n- **Poids en ordre de marche / pleins faits (kg) :** Non documenté dans les passages de cette fiche.\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2; Pays de fabrication : Japon\n\n[Source — fiche exacte](https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html)\nPreuves retenues : Infos pratiques, Moteur, Équipement de série, Transmission, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Suzuki",
+              "model": "SV650X",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "torque_nm",
+            "weight_dry_kg",
+            "weight_wet_kg",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Pour préparer un choix A2, lis le couple de la Suzuki SV650X 2025 en gardant le mkg et le régime de la fiche, puis ses mentions de permis.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "route": "rag_partial",
+        "jev_calls": 0,
+        "evidence": {
+          "sources": [
+            {
+              "object_id": "3b8816ad7d7982d1",
+              "brand": "Suzuki",
+              "model": "SV650X",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+              "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "torque_nm": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "3b8816ad7d7982d1:section:4"
+                  ]
+                },
+                "weight_dry_kg": {
+                  "covered": false,
+                  "source_passages_available": false,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": []
+                },
+                "weight_wet_kg": {
+                  "covered": false,
+                  "source_passages_available": false,
+                  "requested_facts_status": "missing",
+                  "required_passage_ids": []
+                },
+                "license": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "3b8816ad7d7982d1:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "3b8816ad7d7982d1:section:6",
+                  "object_id": "3b8816ad7d7982d1",
+                  "brand": "Suzuki",
+                  "model": "SV650X",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+                  "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2; Pays de fabrication : Japon",
+                  "text": "Suzuki SV650X 2025\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2; Pays de fabrication : Japon",
+                  "score": 0.7572457790374756,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3b8816ad7d7982d1:section:4",
+                  "object_id": "3b8816ad7d7982d1",
+                  "brand": "Suzuki",
+                  "model": "SV650X",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+                  "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en L à 90° , 4 temps; Injection Ø 39 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 645 cc (Alésage * course: 81 x 62.6 mm); 73 ch à 8 500 tr/min; 6,50 mkg (64 Nm) à 6 800 tr/min; Rapport poids / puissance : environ 2.53 kg/ch; Rapport poids / couple : environ 28.47 kg/mkg; Compression : 11.2 : 1; Emission CO² : 96 g/km",
+                  "text": "Suzuki SV650X 2025\nMoteur\nBicylindre en L à 90° , 4 temps; Injection Ø 39 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 645 cc (Alésage * course: 81 x 62.6 mm); 73 ch à 8 500 tr/min; 6,50 mkg (64 Nm) à 6 800 tr/min; Rapport poids / puissance : environ 2.53 kg/ch; Rapport poids / couple : environ 28.47 kg/mkg; Compression : 11.2 : 1; Emission CO² : 96 g/km",
+                  "score": 0.7022402286529541,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3b8816ad7d7982d1:section:5",
+                  "object_id": "3b8816ad7d7982d1",
+                  "brand": "Suzuki",
+                  "model": "SV650X",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+                  "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Jantes aluminium; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre",
+                  "text": "Suzuki SV650X 2025\nÉquipement de série\nAssistance au freinage : ABS; Jantes aluminium; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre",
+                  "score": 0.6911494731903076,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3b8816ad7d7982d1:section:2",
+                  "object_id": "3b8816ad7d7982d1",
+                  "brand": "Suzuki",
+                  "model": "SV650X",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+                  "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "Suzuki SV650X 2025\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.6846118569374084,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3b8816ad7d7982d1:section:1",
+                  "object_id": "3b8816ad7d7982d1",
+                  "brand": "Suzuki",
+                  "model": "SV650X",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/suzuki/10814/SV650X-2025/contact.html",
+                  "source_sha256": "60931ba82514cdf07d9a4756c2c64b304c2ba0a2d1e0d47bfef6b6be4ccd20b2",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléhydraulique Ø 41 mm; Freinage : 2 disques Ø 290 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17",
+                  "text": "Suzuki SV650X 2025\nTrain avant\nFourche téléhydraulique Ø 41 mm; Freinage : 2 disques Ø 290 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17",
+                  "score": 0.6588053703308105,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "3b8816ad7d7982d1",
+              "field": "torque_nm",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "3b8816ad7d7982d1",
+              "field": "weight_dry_kg",
+              "message": "Non documenté dans les passages de cette fiche"
+            },
+            {
+              "kind": "field",
+              "object_id": "3b8816ad7d7982d1",
+              "field": "weight_wet_kg",
+              "message": "Non documenté dans les passages de cette fiche"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 2.0803418010473251e-07,
+              "query_encoding_seconds": 0.08042945805937052,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "3b8816ad7d7982d1",
+              "proof_check": {
+                "fields": {
+                  "torque_nm": "unverified",
+                  "weight_dry_kg": "unverified",
+                  "weight_wet_kg": "missing",
+                  "license": "complete"
+                },
+                "jev_calls": 0,
+                "seconds": 0.00014870800077915192
+              }
+            }
+          ],
+          "seconds": 0.08429879101458937,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "cached": true,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "recognized": 0.99,
+                "unresolved": 0.01
+              },
+              "confidence": 0.98
+            },
+            "intent": {
+              "type": "choice",
+              "choice": "source_facts",
+              "probabilities": {
+                "source_facts": 0.98,
+                "legal_proof": 0.02,
+                "filter": 0,
+                "unsupported": 0
+              },
+              "confidence": 0.97
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.35,
+                "no": 0.65
+              },
+              "confidence": 0.3
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.56,
+                "no": 0.44
+              },
+              "confidence": 0.12
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.79,
+                "no": 0.21
+              },
+              "confidence": 0.58
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.75,
+                "no": 0.25
+              },
+              "confidence": 0.5
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.05,
+                "no": 0.95
+              },
+              "confidence": 0.9
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.09,
+                "no": 0.91
+              },
+              "confidence": 0.82
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.18,
+                "no": 0.82
+              },
+              "confidence": 0.64
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.08,
+                "no": 0.92
+              },
+              "confidence": 0.84
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.05,
+                "no": 0.95
+              },
+              "confidence": 0.9
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.04,
+                "no": 0.96
+              },
+              "confidence": 0.92
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.04,
+                "no": 0.96
+              },
+              "confidence": 0.92
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.3,
+                "no": 0.7
+              },
+              "confidence": 0.4
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.34,
+                "no": 0.66
+              },
+              "confidence": 0.32
+            },
+            "field_license": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.87,
+                "no": 0.13
+              },
+              "confidence": 0.74
+            }
+          },
+          "usage": {
+            "input_tokens": 3064,
+            "output_tokens": 732,
+            "cost": 0.000128688
+          },
+          "id": "gen-dec-1791924887-zPVYnvJZjjP9vWqkDUoA",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.12871741596609354
+      },
+      "new_successful_jev_receipts": 2,
+      "receipt_ids": [
+        "633b4476ae8af7b9756fa4986695c3cd19782c20459d65afae02856f471e55d8",
+        "a1d264e71b01b377cb2581047343d3c1db5ed0ecb048f3e4a6a25397cd33f769"
+      ],
+      "checks": {
+        "api_matches_inspection": true,
+        "exact_identities": true,
+        "no_legal_certification": true,
+        "no_runtime_error": true,
+        "visible_legal_limit": true,
+        "correct_citations": true,
+        "intact_source_passages": true,
+        "requested_fields_considered": true,
+        "facts_or_visible_gaps": true,
+        "bge_local_executed": true,
+        "original_license_3b8816ad7d7982d1": true
+      }
+    },
+    {
+      "id": "A2-FRESH-03",
+      "question": "Honda CBR 650 R E-Clutch 2025 : dans un contexte A2, cite les freins avant et arrière et les permis ; garde cette variante précise.",
+      "answer": "### Honda CBR 650 R E-Clutch (2025)\n\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 6,50 mkg à 9 500 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Freins avant/arrière — la fiche indique :** Train avant — Freinage : 2 disques Nissin Ø 310 mm, fixation radiale, étrier 4 pistons ; Train arrière — Freinage : 1 disque Nissin Ø 240 mm, étrier simple piston\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html)\nPreuves retenues : Infos pratiques, Transmission, Train arrière, Moteur, Équipement de série, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+      "api_seconds": 0.8568830409785733,
+      "inspection_seconds": 0.08406320901121944,
+      "routing": {
+        "answer": "### Honda CBR 650 R E-Clutch (2025)\n\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 6,50 mkg à 9 500 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Freins avant/arrière — la fiche indique :** Train avant — Freinage : 2 disques Nissin Ø 310 mm, fixation radiale, étrier 4 pistons ; Train arrière — Freinage : 1 disque Nissin Ø 240 mm, étrier simple piston\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html)\nPreuves retenues : Infos pratiques, Transmission, Train arrière, Moteur, Équipement de série, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CBR 650 R E-Clutch",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "torque_nm",
+            "braking",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Honda CBR 650 R E-Clutch 2025 : dans un contexte A2, cite les freins avant et arrière et les permis ; garde cette variante précise.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "route": "rag_partial",
+        "jev_calls": 0,
+        "evidence": {
+          "sources": [
+            {
+              "object_id": "5b3f65c9e5525fa6",
+              "brand": "Honda",
+              "model": "CBR 650 R E-Clutch",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+              "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "torque_nm": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "5b3f65c9e5525fa6:section:4"
+                  ]
+                },
+                "braking": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "5b3f65c9e5525fa6:section:1",
+                    "5b3f65c9e5525fa6:section:3"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "5b3f65c9e5525fa6:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "5b3f65c9e5525fa6:section:6",
+                  "object_id": "5b3f65c9e5525fa6",
+                  "brand": "Honda",
+                  "model": "CBR 650 R E-Clutch",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+                  "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "Honda CBR 650 R E-Clutch 2025\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.7657313942909241,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5b3f65c9e5525fa6:section:2",
+                  "object_id": "5b3f65c9e5525fa6",
+                  "brand": "Honda",
+                  "model": "CBR 650 R E-Clutch",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+                  "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle + embrayage automatique; Secondaire par chaîne",
+                  "text": "Honda CBR 650 R E-Clutch 2025\nTransmission\nboîte à 6 rapports , manuelle + embrayage automatique; Secondaire par chaîne",
+                  "score": 0.6999827027320862,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5b3f65c9e5525fa6:section:3",
+                  "object_id": "5b3f65c9e5525fa6",
+                  "brand": "Honda",
+                  "model": "CBR 650 R E-Clutch",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+                  "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 120 mm; Réglage de la précharge; Freinage : 1 disque Nissin Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+                  "text": "Honda CBR 650 R E-Clutch 2025\nTrain arrière\nMono-amortisseur, déb : 120 mm; Réglage de la précharge; Freinage : 1 disque Nissin Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+                  "score": 0.6946636438369751,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5b3f65c9e5525fa6:section:4",
+                  "object_id": "5b3f65c9e5525fa6",
+                  "brand": "Honda",
+                  "model": "CBR 650 R E-Clutch",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+                  "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+                  "section": "Moteur",
+                  "original_text": "4 cylindres en ligne , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 649 cc (Alésage * course: 67 x 46 mm); 95 ch à 12 000 tr/min; 6,50 mkg à 9 500 tr/min; Rapport poids / puissance : environ 2.08 kg/ch; Rapport poids / couple : environ 30.36 kg/mkg; Compression : 11.4 : 1; Emission CO² : 112 g/km",
+                  "text": "Honda CBR 650 R E-Clutch 2025\nMoteur\n4 cylindres en ligne , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 649 cc (Alésage * course: 67 x 46 mm); 95 ch à 12 000 tr/min; 6,50 mkg à 9 500 tr/min; Rapport poids / puissance : environ 2.08 kg/ch; Rapport poids / couple : environ 30.36 kg/mkg; Compression : 11.4 : 1; Emission CO² : 112 g/km",
+                  "score": 0.6885330677032471,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5b3f65c9e5525fa6:section:5",
+                  "object_id": "5b3f65c9e5525fa6",
+                  "brand": "Honda",
+                  "model": "CBR 650 R E-Clutch",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+                  "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS de serie; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Prise USB; Contrôle de couple; Embrayage anti-dribble",
+                  "text": "Honda CBR 650 R E-Clutch 2025\nÉquipement de série\nAssistance au freinage : ABS de serie; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Prise USB; Contrôle de couple; Embrayage anti-dribble",
+                  "score": 0.6785407066345215,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5b3f65c9e5525fa6:section:1",
+                  "object_id": "5b3f65c9e5525fa6",
+                  "brand": "Honda",
+                  "model": "CBR 650 R E-Clutch",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/11081/CBR-650-R-E-Clutch-2025/contact.html",
+                  "source_sha256": "64736a2967767e01c0be79ac2bd1736feab1739ef2d2245ad09cb9e201c2607a",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléscopique Ø 41 mm, déb : 120 mm; Freinage : 2 disques Nissin Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                  "text": "Honda CBR 650 R E-Clutch 2025\nTrain avant\nFourche téléscopique Ø 41 mm, déb : 120 mm; Freinage : 2 disques Nissin Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                  "score": 0.676439642906189,
+                  "rank": 6,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "5b3f65c9e5525fa6",
+              "field": "torque_nm",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "5b3f65c9e5525fa6",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.25030055642128e-07,
+              "query_encoding_seconds": 0.03631116694305092,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "5b3f65c9e5525fa6",
+              "proof_check": {
+                "fields": {
+                  "torque_nm": "unverified",
+                  "braking": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.00017879193183034658
+              }
+            }
+          ],
+          "seconds": 0.04068674996960908,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.97,
+              "unresolved": 0.03
+            },
+            "confidence": 0.94
+          }
+        },
+        "cached": true,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "recognized": 0.97,
+                "unresolved": 0.03
+              },
+              "confidence": 0.94
+            },
+            "intent": {
+              "type": "choice",
+              "choice": "source_facts",
+              "probabilities": {
+                "source_facts": 0.96,
+                "legal_proof": 0.04,
+                "filter": 0,
+                "unsupported": 0
+              },
+              "confidence": 0.95
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.08,
+                "no": 0.92
+              },
+              "confidence": 0.84
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.1,
+                "no": 0.9
+              },
+              "confidence": 0.8
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.64,
+                "no": 0.36
+              },
+              "confidence": 0.28
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.2,
+                "no": 0.8
+              },
+              "confidence": 0.6
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.96,
+                "no": 0.04
+              },
+              "confidence": 0.92
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.05,
+                "no": 0.95
+              },
+              "confidence": 0.9
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.04,
+                "no": 0.96
+              },
+              "confidence": 0.92
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.18,
+                "no": 0.82
+              },
+              "confidence": 0.64
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.25,
+                "no": 0.75
+              },
+              "confidence": 0.5
+            },
+            "field_license": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.48,
+                "no": 0.52
+              },
+              "confidence": 0.04
+            }
+          },
+          "usage": {
+            "input_tokens": 3088,
+            "output_tokens": 732,
+            "cost": 0.000129696
+          },
+          "id": "gen-dec-1791924889-hLsQjJQss4GVOzzBFewG",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.08405083301477134
+      },
+      "new_successful_jev_receipts": 2,
+      "receipt_ids": [
+        "38c68f84b58cf05189436ff703bbc383b8a5e120c84f4ac3eb63717ec0c9a2d9",
+        "4b9bf3d5deafc4bc2841a7496c64c9df639de3a5f58f0bcf8bd56c3b5c5277d2"
+      ],
+      "checks": {
+        "api_matches_inspection": true,
+        "exact_identities": true,
+        "no_legal_certification": true,
+        "no_runtime_error": true,
+        "visible_legal_limit": true,
+        "correct_citations": true,
+        "intact_source_passages": true,
+        "requested_fields_considered": true,
+        "facts_or_visible_gaps": true,
+        "bge_local_executed": true,
+        "original_license_5b3f65c9e5525fa6": true
+      }
+    },
+    {
+      "id": "A2-FRESH-04",
+      "question": "KTM 390 Duke 2024, édition imaginaire : quels chevaux et quelle mention A2 ?",
+      "answer": "Le nom laisse une variante ou une édition ambiguë. Précise son intitulé de catalogue et son millésime ; aucune fiche de base ne sera substituée.",
+      "api_seconds": 0.06015800009481609,
+      "inspection_seconds": 0.026355916052125394,
+      "routing": {
+        "answer": "Le nom laisse une variante ou une édition ambiguë. Précise son intitulé de catalogue et son millésime ; aucune fiche de base ne sera substituée.",
+        "plan": null,
+        "route": "clarification",
+        "jev_calls": 0,
+        "evidence": {
+          "sources": [],
+          "missing": [
+            {
+              "kind": "identity"
+            }
+          ],
+          "retrieval_executed": false
+        }
+      },
+      "new_successful_jev_receipts": 0,
+      "receipt_ids": [],
+      "checks": {
+        "api_matches_inspection": true,
+        "exact_identities": true,
+        "no_legal_certification": true,
+        "no_runtime_error": true,
+        "no_bge_on_unresolved_identity": true
+      }
+    },
+    {
+      "id": "A2-FRESH-05",
+      "question": "Dans la fiche Kawasaki Ninja 650 de 2032, trouve le passage permis A2.",
+      "answer": "Fiche exacte non identifiée : Kawasaki Ninja 650 (2032). Aucune autre année ou variante substituée.",
+      "api_seconds": 0.39795670798048377,
+      "inspection_seconds": 0.05540254199877381,
+      "routing": {
+        "answer": "Fiche exacte non identifiée : Kawasaki Ninja 650 (2032). Aucune autre année ou variante substituée.",
+        "plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Kawasaki",
+              "model": "Ninja 650",
+              "year": 2032
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "torque_nm",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Dans la fiche Kawasaki Ninja 650 de 2032, trouve le passage permis A2.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "route": "clarification",
+        "jev_calls": 0,
+        "evidence": {
+          "sources": [],
+          "missing": [
+            {
+              "kind": "identity",
+              "message": "Fiche exacte non identifiée : Kawasaki Ninja 650 (2032). Aucune autre année ou variante substituée."
+            }
+          ],
+          "retrieval_executed": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "cached": true,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "recognized": 0.99,
+                "unresolved": 0.01
+              },
+              "confidence": 0.98
+            },
+            "intent": {
+              "type": "choice",
+              "choice": "source_facts",
+              "probabilities": {
+                "source_facts": 0.98,
+                "legal_proof": 0.02,
+                "filter": 0,
+                "unsupported": 0
+              },
+              "confidence": 0.97
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.12,
+                "no": 0.88
+              },
+              "confidence": 0.76
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.35,
+                "no": 0.65
+              },
+              "confidence": 0.3
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.64,
+                "no": 0.36
+              },
+              "confidence": 0.28
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.09,
+                "no": 0.91
+              },
+              "confidence": 0.82
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.14,
+                "no": 0.86
+              },
+              "confidence": 0.72
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.04,
+                "no": 0.96
+              },
+              "confidence": 0.92
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.13,
+                "no": 0.87
+              },
+              "confidence": 0.74
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.17,
+                "no": 0.83
+              },
+              "confidence": 0.66
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.18,
+                "no": 0.82
+              },
+              "confidence": 0.64
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.19,
+                "no": 0.81
+              },
+              "confidence": 0.62
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.23,
+                "no": 0.77
+              },
+              "confidence": 0.54
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.2,
+                "no": 0.8
+              },
+              "confidence": 0.6
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.22,
+                "no": 0.78
+              },
+              "confidence": 0.56
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.32,
+                "no": 0.68
+              },
+              "confidence": 0.36
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.23,
+                "no": 0.77
+              },
+              "confidence": 0.54
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.29,
+                "no": 0.71
+              },
+              "confidence": 0.42
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.38,
+                "no": 0.62
+              },
+              "confidence": 0.24
+            },
+            "field_license": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.57,
+                "no": 0.43
+              },
+              "confidence": 0.14
+            }
+          },
+          "usage": {
+            "input_tokens": 3061,
+            "output_tokens": 732,
+            "cost": 0.000128562
+          },
+          "id": "gen-dec-1791924890-GZPNqg3K8KRwdtFd89KQ",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.05537433305289596
+      },
+      "new_successful_jev_receipts": 1,
+      "receipt_ids": [
+        "ed3aacc22081fcd680a00d1112b7a297c8e59c8802ee75700a4d3aeea40de1a7"
+      ],
+      "checks": {
+        "api_matches_inspection": true,
+        "exact_identities": true,
+        "no_legal_certification": true,
+        "no_runtime_error": true,
+        "no_bge_on_unresolved_identity": true,
+        "missing_exact_year": true
+      }
+    },
+    {
+      "id": "A2-FRESH-06",
+      "question": "Dans la fiche Voge 525 R 2025, pour préparer un choix A2, cite le prix catalogue France de base et les coloris.",
+      "answer": "### Voge 525 R (2025)\n\n- **Prix France — version de base — la fiche indique :** Tarifs — France — Version de base : 6 095 € *\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 4,60 mkg à 7 000 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Coloris documentés — la fiche indique :** Coloris — Coloris : noir ; Coloris — Coloris : gris\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/voge/11690/525-R-2025/contact.html)\nPreuves retenues : Tarifs, Coloris, Équipement de série, Moteur, Transmission, Infos pratiques.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+      "api_seconds": 0.926273167016916,
+      "inspection_seconds": 0.1438847080571577,
+      "routing": {
+        "answer": "### Voge 525 R (2025)\n\n- **Prix France — version de base — la fiche indique :** Tarifs — France — Version de base : 6 095 € *\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 4,60 mkg à 7 000 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Coloris documentés — la fiche indique :** Coloris — Coloris : noir ; Coloris — Coloris : gris\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/voge/11690/525-R-2025/contact.html)\nPreuves retenues : Tarifs, Coloris, Équipement de série, Moteur, Transmission, Infos pratiques.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Voge",
+              "model": "525 R",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "price_eur",
+            "torque_nm",
+            "colors",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Dans la fiche Voge 525 R 2025, pour préparer un choix A2, cite le prix catalogue France de base et les coloris.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "route": "rag_partial",
+        "jev_calls": 0,
+        "evidence": {
+          "sources": [
+            {
+              "object_id": "6a2a16e0dd2163af",
+              "brand": "Voge",
+              "model": "525 R",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+              "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "price_eur": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "6a2a16e0dd2163af:section:8"
+                  ]
+                },
+                "torque_nm": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "6a2a16e0dd2163af:section:4"
+                  ]
+                },
+                "colors": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "6a2a16e0dd2163af:section:9"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "6a2a16e0dd2163af:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "6a2a16e0dd2163af:section:8",
+                  "object_id": "6a2a16e0dd2163af",
+                  "brand": "Voge",
+                  "model": "525 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+                  "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+                  "section": "Tarifs",
+                  "original_text": "France — Version de base : 6 095 € *",
+                  "text": "Voge 525 R 2025\nTarifs\nFrance — Version de base : 6 095 € *",
+                  "score": 0.7459094524383545,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "6a2a16e0dd2163af:section:9",
+                  "object_id": "6a2a16e0dd2163af",
+                  "brand": "Voge",
+                  "model": "525 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+                  "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+                  "section": "Coloris",
+                  "original_text": "Coloris : noir; Coloris : gris",
+                  "text": "Voge 525 R 2025\nColoris\nColoris : noir; Coloris : gris",
+                  "score": 0.6714565753936768,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "6a2a16e0dd2163af:section:5",
+                  "object_id": "6a2a16e0dd2163af",
+                  "brand": "Voge",
+                  "model": "525 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+                  "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Taille de l'écran TFT couleur : 17,78 cm / 7 pouces; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de traction",
+                  "text": "Voge 525 R 2025\nÉquipement de série\nAssistance au freinage : ABS; Taille de l'écran TFT couleur : 17,78 cm / 7 pouces; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de traction",
+                  "score": 0.6228636503219604,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "6a2a16e0dd2163af:section:4",
+                  "object_id": "6a2a16e0dd2163af",
+                  "brand": "Voge",
+                  "model": "525 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+                  "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps, calé à 180°; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 494 cc (Alésage * course: 68 x 68 mm); 47,60 ch à 8 500 tr/min; 4,60 mkg à 7 000 tr/min; Compression : 11,5 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km; Norme anti-pollution : Euro 5",
+                  "text": "Voge 525 R 2025\nMoteur\nBicylindre en ligne , 4 temps, calé à 180°; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 494 cc (Alésage * course: 68 x 68 mm); 47,60 ch à 8 500 tr/min; 4,60 mkg à 7 000 tr/min; Compression : 11,5 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km; Norme anti-pollution : Euro 5",
+                  "score": 0.616014838218689,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "6a2a16e0dd2163af:section:2",
+                  "object_id": "6a2a16e0dd2163af",
+                  "brand": "Voge",
+                  "model": "525 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+                  "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "Voge 525 R 2025\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.604753315448761,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "6a2a16e0dd2163af:section:6",
+                  "object_id": "6a2a16e0dd2163af",
+                  "brand": "Voge",
+                  "model": "525 R",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/voge/11690/525-R-2025/contact.html",
+                  "source_sha256": "78b3072e5125b60e00c064416ba3a57892e8f69f9458dfedb9c937c1afbda941",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A, A2",
+                  "text": "Voge 525 R 2025\nInfos pratiques\nLa moto est accessible aux permis : A, A2",
+                  "score": 0.5924867391586304,
+                  "rank": 6,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "6a2a16e0dd2163af",
+              "field": "price_eur",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "6a2a16e0dd2163af",
+              "field": "torque_nm",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "6a2a16e0dd2163af",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.25030055642128e-07,
+              "query_encoding_seconds": 0.09310995799023658,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "6a2a16e0dd2163af",
+              "proof_check": {
+                "fields": {
+                  "price_eur": "unverified",
+                  "torque_nm": "unverified",
+                  "colors": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.00016141601372510195
+              }
+            }
+          ],
+          "seconds": 0.09596249996684492,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.84,
+              "unresolved": 0.16
+            },
+            "confidence": 0.68
+          }
+        },
+        "cached": true,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "recognized": 0.84,
+                "unresolved": 0.16
+              },
+              "confidence": 0.68
+            },
+            "intent": {
+              "type": "choice",
+              "choice": "source_facts",
+              "probabilities": {
+                "source_facts": 0.99,
+                "legal_proof": 0,
+                "filter": 0,
+                "unsupported": 0.01
+              },
+              "confidence": 0.99
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.93,
+                "no": 0.07
+              },
+              "confidence": 0.86
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.71,
+                "no": 0.29
+              },
+              "confidence": 0.42
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.08,
+                "no": 0.92
+              },
+              "confidence": 0.84
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.04,
+                "no": 0.96
+              },
+              "confidence": 0.92
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.87,
+                "no": 0.13
+              },
+              "confidence": 0.74
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.3,
+                "no": 0.7
+              },
+              "confidence": 0.4
+            },
+            "field_license": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.09,
+                "no": 0.91
+              },
+              "confidence": 0.82
+            }
+          },
+          "usage": {
+            "input_tokens": 3051,
+            "output_tokens": 732,
+            "cost": 0.000128142
+          },
+          "id": "gen-dec-1791924890-bCzpV0QPVXfjSc5FqyKE",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.14386312500573695
+      },
+      "new_successful_jev_receipts": 2,
+      "receipt_ids": [
+        "712e605ec7c96e7c7ef88b28d159b107572bdf1bcfa51832663ea345a42be460",
+        "f96c8033ab94ef5aa69d7fd19aaefc56d31a82723bee7634fce22384d1d80b55"
+      ],
+      "checks": {
+        "api_matches_inspection": true,
+        "exact_identities": true,
+        "no_legal_certification": true,
+        "no_runtime_error": true,
+        "visible_legal_limit": true,
+        "correct_citations": true,
+        "intact_source_passages": true,
+        "requested_fields_considered": true,
+        "facts_or_visible_gaps": true,
+        "bge_local_executed": true,
+        "original_license_6a2a16e0dd2163af": true
+      }
+    }
+  ]
+}

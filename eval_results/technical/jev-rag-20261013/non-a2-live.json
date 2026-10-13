@@ -1,0 +1,434 @@
+{
+  "question": "Dans la fiche KTM 390 Duke 2023, retrouve puissance et couple avec les unités et les régimes de la source.",
+  "api_seconds": 1.0132531250128523,
+  "answer": "| Caractéristique | KTM 390 Duke (2023) |\n|---|---|\n| Puissance documentée (unités source) | Moteur — 44 ch à 9 500 tr/min |\n| Couple documenté (unités source) | Moteur — 3,90 mkg à 7 250 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html) |",
+  "routing": {
+    "answer": "| Caractéristique | KTM 390 Duke (2023) |\n|---|---|\n| Puissance documentée (unités source) | Moteur — 44 ch à 9 500 tr/min |\n| Couple documenté (unités source) | Moteur — 3,90 mkg à 7 250 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html) |",
+    "route": "rag_sources",
+    "jev_calls": 0,
+    "plan": {
+      "identity": {
+        "brand": "KTM",
+        "year": 2023
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "KTM",
+          "model": "390 DUKE"
+        }
+      ],
+      "fields": [
+        "power_ch",
+        "torque_nm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Dans la fiche KTM 390 Duke 2023, retrouve puissance et couple avec les unités et les régimes de la source.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "cached": true,
+    "raw": {
+      "model": "typesafe/jev-1.13-20260917",
+      "answers": {
+        "identity_binding": {
+          "type": "choice",
+          "choice": "recognized",
+          "probabilities": {
+            "none": 0,
+            "recognized": 1,
+            "unresolved": 0
+          },
+          "confidence": 1
+        },
+        "operation": {
+          "type": "choice",
+          "choice": "details",
+          "probabilities": {
+            "filter": 0,
+            "count": 0,
+            "details": 0.91,
+            "comparison": 0,
+            "clarify": 0.01,
+            "unsupported": 0.08,
+            "complex": 0
+          },
+          "confidence": 0.89
+        },
+        "scope": {
+          "type": "choice",
+          "choice": "supported",
+          "probabilities": {
+            "supported": 0.82,
+            "used_price": 0,
+            "market": 0.01,
+            "a2": 0,
+            "weight_type": 0,
+            "unsupported": 0.16,
+            "contradictory": 0.01
+          },
+          "confidence": 0.79
+        },
+        "equipment": {
+          "type": "choice",
+          "choice": "none",
+          "probabilities": {
+            "none": 0.97,
+            "ABS": 0.03,
+            "CBS": 0,
+            "contrôle de traction": 0,
+            "régulateur de vitesse": 0,
+            "poignées chauffantes": 0,
+            "shifter": 0,
+            "TPMS": 0,
+            "IMU": 0,
+            "ride by wire": 0,
+            "airbag": 0
+          },
+          "confidence": 0.97
+        },
+        "status": {
+          "type": "choice",
+          "choice": "unknown",
+          "probabilities": {
+            "standard": 0.11,
+            "optional": 0,
+            "explicitly_absent": 0,
+            "unknown": 0.89
+          },
+          "confidence": 0.85
+        },
+        "field_price_eur": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_power_ch": {
+          "type": "choice",
+          "choice": "yes",
+          "probabilities": {
+            "yes": 0.99,
+            "no": 0.01
+          },
+          "confidence": 0.98
+        },
+        "field_torque_nm": {
+          "type": "choice",
+          "choice": "yes",
+          "probabilities": {
+            "yes": 0.97,
+            "no": 0.03
+          },
+          "confidence": 0.94
+        },
+        "field_displacement_ccm": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_seat_height_mm": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_weight_dry_kg": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_weight_wet_kg": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_autonomy_km": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_equipment": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0.02,
+            "no": 0.98
+          },
+          "confidence": 0.96
+        },
+        "field_suspension": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_braking": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_transmission": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0.01,
+            "no": 0.99
+          },
+          "confidence": 0.98
+        },
+        "field_cooling": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_reservoir": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_dimensions": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_wheels": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_engine": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_colors": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0,
+            "no": 1
+          },
+          "confidence": 1
+        },
+        "field_performance": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0.48,
+            "no": 0.52
+          },
+          "confidence": 0.04
+        },
+        "field_full": {
+          "type": "choice",
+          "choice": "no",
+          "probabilities": {
+            "yes": 0.04,
+            "no": 0.96
+          },
+          "confidence": 0.92
+        }
+      },
+      "usage": {
+        "input_tokens": 3690,
+        "output_tokens": 953,
+        "cost": 0.00015498
+      },
+      "id": "gen-dec-1791925040-5h22HRgGdvzCBC0CLV9Y",
+      "provider": "TypeSafe"
+    },
+    "seconds": 6.922669416991994,
+    "evidence": {
+      "sources": [
+        {
+          "object_id": "7a5b8fd86298628a",
+          "brand": "KTM",
+          "model": "390 Duke",
+          "year": 2023,
+          "source_url": "https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html",
+          "source_sha256": "4c9c8cf9dc98ec9d92423235f146b12a3d4c180358def3f412d131fd89fe709a",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "7a5b8fd86298628a:section:4"
+              ]
+            },
+            "torque_nm": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "7a5b8fd86298628a:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "7a5b8fd86298628a:section:4",
+              "object_id": "7a5b8fd86298628a",
+              "brand": "KTM",
+              "model": "390 Duke",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html",
+              "source_sha256": "4c9c8cf9dc98ec9d92423235f146b12a3d4c180358def3f412d131fd89fe709a",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 375 cc (Alésage * course: 88 x 60 mm); 44 ch à 9 500 tr/min; 3,90 mkg à 7 250 tr/min; Rapport poids / puissance : 3.41 kg/ch; Rapport poids / couple : 38.46 kg/mkg; Compression : 12.6 : 1; Emission CO² : 81 g/km",
+              "text": "KTM 390 Duke 2023\nMoteur\nMonocylindre , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 375 cc (Alésage * course: 88 x 60 mm); 44 ch à 9 500 tr/min; 3,90 mkg à 7 250 tr/min; Rapport poids / puissance : 3.41 kg/ch; Rapport poids / couple : 38.46 kg/mkg; Compression : 12.6 : 1; Emission CO² : 81 g/km",
+              "score": 0.7483424544334412,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7a5b8fd86298628a:section:1",
+              "object_id": "7a5b8fd86298628a",
+              "brand": "KTM",
+              "model": "390 Duke",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html",
+              "source_sha256": "4c9c8cf9dc98ec9d92423235f146b12a3d4c180358def3f412d131fd89fe709a",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée WP Ø 43 mm / White Power (WP) , déb : 142 mm; Freinage : 1 disque Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 110 / 70 - 17; Pression : 2 bars",
+              "text": "KTM 390 Duke 2023\nTrain avant\nFourche téléhydraulique inversée WP Ø 43 mm / White Power (WP) , déb : 142 mm; Freinage : 1 disque Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 110 / 70 - 17; Pression : 2 bars",
+              "score": 0.6913244724273682,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7a5b8fd86298628a:section:6",
+              "object_id": "7a5b8fd86298628a",
+              "brand": "KTM",
+              "model": "390 Duke",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html",
+              "source_sha256": "4c9c8cf9dc98ec9d92423235f146b12a3d4c180358def3f412d131fd89fe709a",
+              "section": "Infos pratiques",
+              "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+              "text": "KTM 390 Duke 2023\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+              "score": 0.6897815465927124,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7a5b8fd86298628a:section:0",
+              "object_id": "7a5b8fd86298628a",
+              "brand": "KTM",
+              "model": "390 Duke",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html",
+              "source_sha256": "4c9c8cf9dc98ec9d92423235f146b12a3d4c180358def3f412d131fd89fe709a",
+              "section": "Châssis",
+              "original_text": "Cadre : cadre treillis en tubes d'acier; Réservoir : 13 litres; Hauteur de selle : 830 mm; Longueur : 2 072 mm; Largeur : 831 mm; Hauteur min : 1 109 mm; Empattement : 1 357 mm; Poids à sec : 150 kg",
+              "text": "KTM 390 Duke 2023\nChâssis\nCadre : cadre treillis en tubes d'acier; Réservoir : 13 litres; Hauteur de selle : 830 mm; Longueur : 2 072 mm; Largeur : 831 mm; Hauteur min : 1 109 mm; Empattement : 1 357 mm; Poids à sec : 150 kg",
+              "score": 0.688646137714386,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7a5b8fd86298628a:section:2",
+              "object_id": "7a5b8fd86298628a",
+              "brand": "KTM",
+              "model": "390 Duke",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/ktm/9639/390-Duke-2023/contact.html",
+              "source_sha256": "4c9c8cf9dc98ec9d92423235f146b12a3d4c180358def3f412d131fd89fe709a",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+              "text": "KTM 390 Duke 2023\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+              "score": 0.6872064471244812,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.0803418010473251e-07,
+          "query_encoding_seconds": 4.6372087500058115,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "7a5b8fd86298628a",
+          "proof_check": {
+            "fields": {
+              "power_ch": "complete",
+              "torque_nm": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.00042824994307011366
+          }
+        }
+      ],
+      "seconds": 4.6411529580364,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    }
+  },
+  "checks": {
+    "api_matches_inspection": true,
+    "retrieval_executed": true,
+    "exact_2023_id": true,
+    "source_power": true,
+    "source_torque": true
+  }
+}

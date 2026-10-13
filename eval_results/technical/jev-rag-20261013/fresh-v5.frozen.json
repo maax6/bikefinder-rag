@@ -1,0 +1,91 @@
+{
+  "schema": "jev-rag-fresh-after-v5-v1",
+  "frozen_at": "2026-10-13T20:48:45.354140+00:00",
+  "author": "Implementing agent, after v5 corrections and before any execution of these six formulations; not an independent blind panel",
+  "previous_benchmark_questions_reused": false,
+  "questions": [
+    {
+      "id": "A2-FRESH-01",
+      "question": "Avec mon permis A2, je regarde la Honda CBR 500 R 2025 : retrouve la hauteur de selle et dis si les passages prouvent des poignées chauffantes de série.",
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CBR 500 R",
+          "year": 2025,
+          "object_id": "2c919bf81f79967b"
+        }
+      ],
+      "requested_fields": [
+        "seat_height_mm",
+        "equipment",
+        "license"
+      ],
+      "expected_missing_fields": [
+        "equipment"
+      ]
+    },
+    {
+      "id": "A2-FRESH-02",
+      "question": "Pour préparer un choix A2, lis le couple de la Suzuki SV650X 2025 en gardant le mkg et le régime de la fiche, puis ses mentions de permis.",
+      "models": [
+        {
+          "brand": "Suzuki",
+          "model": "SV650X",
+          "year": 2025,
+          "object_id": "3b8816ad7d7982d1"
+        }
+      ],
+      "requested_fields": [
+        "torque_nm",
+        "license"
+      ]
+    },
+    {
+      "id": "A2-FRESH-03",
+      "question": "Honda CBR 650 R E-Clutch 2025 : dans un contexte A2, cite les freins avant et arrière et les permis ; garde cette variante précise.",
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CBR 650 R E-Clutch",
+          "year": 2025,
+          "object_id": "5b3f65c9e5525fa6"
+        }
+      ],
+      "requested_fields": [
+        "braking",
+        "license"
+      ]
+    },
+    {
+      "id": "A2-FRESH-04",
+      "question": "KTM 390 Duke 2024, édition imaginaire : quels chevaux et quelle mention A2 ?",
+      "models": [],
+      "requested_fields": []
+    },
+    {
+      "id": "A2-FRESH-05",
+      "question": "Dans la fiche Kawasaki Ninja 650 de 2032, trouve le passage permis A2.",
+      "models": [],
+      "requested_fields": [],
+      "expected_identity_missing": true,
+      "requested_year": 2032
+    },
+    {
+      "id": "A2-FRESH-06",
+      "question": "Dans la fiche Voge 525 R 2025, pour préparer un choix A2, cite le prix catalogue France de base et les coloris.",
+      "models": [
+        {
+          "brand": "Voge",
+          "model": "525 R",
+          "year": 2025,
+          "object_id": "6a2a16e0dd2163af"
+        }
+      ],
+      "requested_fields": [
+        "price_eur",
+        "colors",
+        "license"
+      ]
+    }
+  ]
+}

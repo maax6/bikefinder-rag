@@ -1,0 +1,10 @@
+{
+  "git_base": "b5932ff",
+  "source_sha256": {
+    "src/bikefinder_rag/agent/loop.py": "75620335b659dc987f8af71f3598baab6d29850b83cc2b3bc1b6a25aa598813d",
+    "src/bikefinder_rag/embeddings/embedder.py": "83973887bf8d7034a0916d83ce41823a62856a3c9f1ebe1c8e8ae01bc77645d0",
+    ".env.example": "d3345949836e11a52dee8052fd47cc692bb4abe0685a832bda0220bbb3d13d2b",
+    "src/bikefinder_rag/agent/jev_router.py": "cd3eaf49e9cc75c381b1c77ca549862c94a8bc0eb4bd6810ed0d4a93e6d4cf6e"
+  },
+  "questions_sha256": "3557a95acf0734c3646e04419f34896319524c8ea4380893ca06e03b9a82a729"
+}

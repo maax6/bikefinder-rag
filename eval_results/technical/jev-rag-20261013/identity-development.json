@@ -1,0 +1,102 @@
+[
+  {
+    "id": "A2-NEW-01",
+    "raw": {
+      "model": "typesafe/jev-1.13-20260917",
+      "answers": {
+        "identity_binding": {
+          "type": "choice",
+          "choice": "recognized",
+          "probabilities": {
+            "recognized": 0.89,
+            "unresolved": 0.11
+          },
+          "confidence": 0.78
+        }
+      },
+      "usage": {
+        "input_tokens": 482,
+        "output_tokens": 35,
+        "cost": 2.0244e-05
+      },
+      "id": "gen-dec-1791924090-z5wpyKwGxIJDkRjLxZzY",
+      "provider": "TypeSafe"
+    },
+    "calls": 1
+  },
+  {
+    "id": "A2-NEW-03",
+    "raw": {
+      "model": "typesafe/jev-1.13-20260917",
+      "answers": {
+        "identity_binding": {
+          "type": "choice",
+          "choice": "recognized",
+          "probabilities": {
+            "recognized": 0.98,
+            "unresolved": 0.02
+          },
+          "confidence": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 481,
+        "output_tokens": 35,
+        "cost": 2.0202e-05
+      },
+      "id": "gen-dec-1791924090-158WlxV8C5zVdKanL0uI",
+      "provider": "TypeSafe"
+    },
+    "calls": 1
+  },
+  {
+    "id": "A2-NEW-09",
+    "raw": {
+      "model": "typesafe/jev-1.13-20260917",
+      "answers": {
+        "identity_binding": {
+          "type": "choice",
+          "choice": "recognized",
+          "probabilities": {
+            "recognized": 0.86,
+            "unresolved": 0.14
+          },
+          "confidence": 0.72
+        }
+      },
+      "usage": {
+        "input_tokens": 495,
+        "output_tokens": 35,
+        "cost": 2.079e-05
+      },
+      "id": "gen-dec-1791924091-om475lQjyjPWIV4xI2W9",
+      "provider": "TypeSafe"
+    },
+    "calls": 1
+  },
+  {
+    "id": "A2-NEW-20",
+    "raw": {
+      "model": "typesafe/jev-1.13-20260917",
+      "answers": {
+        "identity_binding": {
+          "type": "choice",
+          "choice": "recognized",
+          "probabilities": {
+            "recognized": 0.92,
+            "unresolved": 0.08
+          },
+          "confidence": 0.84
+        }
+      },
+      "usage": {
+        "input_tokens": 486,
+        "output_tokens": 35,
+        "cost": 2.0412e-05
+      },
+      "id": "gen-dec-1791924091-rvEzTjxVRdRSZIPykSEz",
+      "provider": "TypeSafe"
+    },
+    "calls": 1
+  }
+]

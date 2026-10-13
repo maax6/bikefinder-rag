@@ -9,6 +9,7 @@ import os
 from functools import lru_cache
 
 MODEL_NAME = "BAAI/bge-m3"
+MODEL_REVISION = "5617a9f61b028005a4858fdac845db406aefb181"
 EMBEDDING_DIM = 1024
 
 
@@ -19,7 +20,9 @@ def _get_model():
     # EMBEDDER_DEVICE=cpu keeps BGE-M3 off the GPU when something bigger
     # (e.g. a local Ollama judge during eval) already fills unified memory;
     # unset, sentence-transformers picks the best device as usual.
-    return SentenceTransformer(MODEL_NAME, device=os.environ.get("EMBEDDER_DEVICE") or None)
+    return SentenceTransformer(MODEL_NAME, revision=MODEL_REVISION,
+                               device=os.environ.get("EMBEDDER_DEVICE") or None,
+                               local_files_only=True)
 
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
