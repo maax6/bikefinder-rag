@@ -1,0 +1,84 @@
+{
+  "cases": [
+    {
+      "id": "transfer_free_01",
+      "turns": [
+        {
+          "question": "Sur la Honda CB750 Hornet millésime 2023, combien coûtait-elle au lancement en France, et quelles sont sa puissance et son couple ? Si la fiche utilise une autre unité que les chevaux, garde aussi cette unité.",
+          "expected": "Identifier la CB750 Hornet du millésime demandé et restituer le prix de lancement français, la puissance et le couple documentés, avec leurs unités. Distinguer ce prix historique d'un tarif actuel et signaler toute donnée manquante. Une conversion éventuelle doit être annoncée comme telle et préserver la valeur source."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_02",
+      "turns": [
+        {
+          "question": "Pour la Yamaha Ténéré 700 standard de 2024, pas la World Raid ni la Rally, je vois passer plusieurs poids. Le catalogue donne un poids à sec ou avec les pleins ? Donne-moi aussi la cylindrée et la hauteur de selle.",
+          "expected": "Utiliser la version standard du millésime demandé, restituer le poids avec sa définition source, puis la cylindrée et la hauteur de selle. Ne pas remplacer un poids à sec par un poids avec les pleins ni déduire une convention de pesée si elle n'est pas indiquée. Préciser les limites de la fiche lorsque le libellé ou une valeur manque."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_03",
+      "turns": [
+        {
+          "question": "Sur la Suzuki GSX-8S 2023 vendue en France, ABS, contrôle de traction et shifter sont-ils de série, en option, ou simplement pas renseignés ? Je veux distinguer ces trois cas.",
+          "expected": "Présenter séparément les équipements demandés et leur statut réellement documenté pour ce modèle et ce millésime. Ne pas assimiler une information absente à un équipement absent, et ne pas conclure à un équipement de série à partir de sa seule mention si la source ne précise pas son statut."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_04",
+      "turns": [
+        {
+          "question": "La Kawasaki Ninja 650 2024 peut-elle faire 350 km sans ravitailler ? Dis-moi seulement ce qu'on peut conclure de la fiche, en précisant comment l'autonomie est donnée.",
+          "expected": "Restituer l'autonomie du catalogue si elle existe et conserver ses qualificatifs, conditions ou méthode. Expliquer si cette donnée permet de situer l'objectif demandé sans garantir une distance réelle. Si l'autonomie manque, le dire ; ne pas inventer une consommation ni calculer une portée à partir d'hypothèses silencieuses."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_05",
+      "turns": [
+        {
+          "question": "J'essaie de savoir si une BMW R 1250 GS Adventure 2023 me conviendrait. Quelles hauteurs de selle sont indiquées pour la version standard et les éventuelles selles proposées, en séparant ce qui est de série de ce qui est optionnel ?",
+          "expected": "Donner les hauteurs et possibilités de réglage ou de selle effectivement documentées pour la version demandée, en distinguant la configuration de série des options lorsque cette distinction est connue. Signaler les options ou statuts non renseignés. La fiche seule ne permet pas de conclure à l'adaptation à la personne ; ne pas affirmer qu'elle posera les pieds au sol."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_06",
+      "turns": [
+        {
+          "question": "Entre la Royal Enfield Himalayan 450 2024 et la Honda NX500 2024, laquelle est la plus basse de selle et laquelle est la plus légère ? Compare les valeurs de fiche, et préviens-moi si les poids n'utilisent pas la même définition.",
+          "expected": "Comparer les hauteurs de selle et les poids disponibles des modèles et millésimes demandés, avec les unités et les conventions de pesée. Une hauteur réglable ou optionnelle doit rester distincte de la hauteur de série. Si les poids sont de nature différente ou une valeur manque, limiter explicitement le classement au lieu de présenter une comparaison directe comme établie."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_dialogue_01",
+      "turns": [
+        {
+          "question": "Pour la Triumph Street Triple 765 R 2023, donne-moi le prix français de lancement, la puissance, le couple et le poids, avec la convention de pesée.",
+          "expected": "Identifier la variante R du millésime demandé et restituer les champs documentés avec leurs unités et la définition du poids. Employer le prix de lancement France lorsqu'il est identifié ainsi, sans substituer un prix actuel ou étranger. Rendre visibles les données inconnues."
+        },
+        {
+          "question": "Ajoute maintenant la Street Triple 765 RS 2023 à côté de la R 2023. Quelles différences sont réellement documentées pour ces quatre données, et lesquelles restent inconnues ?",
+          "expected": "Conserver le contexte et les champs du premier tour, puis comparer les variantes R et RS du même millésime. Restituer les différences étayées et les informations manquantes. Ne calculer un écart que lorsque les valeurs et leurs unités sont comparables ; traiter séparément les éventuelles différences de convention de pesée."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_dialogue_02",
+      "turns": [
+        {
+          "question": "Je cherche les chiffres de la Honda Africa Twin 2024 : cylindrée, hauteur de selle et poids. Avant de me répondre, dis-moi si ce nom suffit à identifier la fiche.",
+          "expected": "Reconnaître que le nom peut recouvrir plusieurs variantes ou transmissions ayant des caractéristiques différentes. Demander la précision utile pour sélectionner la fiche, en s'appuyant sur les variantes réellement disponibles dans le catalogue, sans attribuer arbitrairement les chiffres d'une version à toute la gamme. Si une seule fiche est disponible, annoncer cette limite."
+        },
+        {
+          "question": "Je parle de l'Africa Twin standard 2024 à boîte manuelle, pas de l'Adventure Sports ni de la DCT. Et pour cette version, que sait-on sur l'autonomie ?",
+          "expected": "Utiliser la précision pour sélectionner la version standard à boîte manuelle du millésime demandé. Répondre aux champs laissés en attente au premier tour et ajouter l'autonomie si elle est documentée, en conservant ses conditions ou son caractère estimé. Signaler les valeurs absentes et ne pas promettre une autonomie réelle à partir d'une simple valeur catalogue."
+        }
+      ]
+    }
+  ]
+}

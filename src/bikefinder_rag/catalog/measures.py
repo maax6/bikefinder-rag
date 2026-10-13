@@ -4,6 +4,7 @@ from bikefinder_rag.catalog.enriched import folded
 
 VERSION='motoplanete-measures-v1'
 FIELDS=('price_eur','power_ch','torque_nm','displacement_ccm','seat_height_mm','weight_dry_kg','weight_wet_kg','autonomy_km')
+EQUIPMENT_STATUSES={'standard','optional','present','explicitly_absent','unknown'}
 
 def number(text):
     value=re.sub(r'\s','',text)
@@ -59,7 +60,7 @@ def rebuild(conn):
         cur.execute('CREATE INDEX IF NOT EXISTS technical_price_power ON technical_measures(price_eur,power_ch)')
     return {'objects':len(output),'version':VERSION}
 
-def filtered(conn,conditions,identity=None,equipment=None,status='standard',count=False,limit=10,order_by=None,secondary=None):
+def filtered(conn,conditions,identity=None,equipment=None,status='standard',count=False,limit=10,order_by=None,secondary=None,equipment_filters=None):
     from bikefinder_rag.catalog.enriched import scope,_rows
     identity=identity or {};clauses,params=scope(**identity)
     for condition in conditions:
@@ -67,13 +68,22 @@ def filtered(conn,conditions,identity=None,equipment=None,status='standard',coun
         if key not in FIELDS or op not in ['<','<=','>','>=','=']:
             raise ValueError('Unsupported numeric filter')
         clauses.append(f'm.{key} {op} %s');params.append(value)
-    if equipment:
-        if status=='unknown':
-            clauses.append("NOT EXISTS (SELECT 1 FROM technical_equipment e WHERE e.object_id=f.id AND lower(e.equipment)=lower(%s) AND e.status!='unknown')");params.append(equipment)
-        elif status=='present':
-            clauses.append("EXISTS (SELECT 1 FROM technical_equipment e WHERE e.object_id=f.id AND lower(e.equipment)=lower(%s) AND e.status IN ('standard','optional'))");params.append(equipment)
+    requested_equipment=[{'equipment':equipment,'status':status}] if equipment else []
+    if equipment_filters is not None:
+        if not isinstance(equipment_filters,list):raise ValueError('Equipment filters must be a list')
+        requested_equipment.extend(equipment_filters)
+    if len(requested_equipment)>4:raise ValueError('At most four equipment filters are supported')
+    for criterion in requested_equipment:
+        if not isinstance(criterion,dict):raise ValueError('Invalid equipment filter')
+        name,criterion_status=criterion.get('equipment'),criterion.get('status')
+        if not isinstance(name,str) or not name.strip() or not isinstance(criterion_status,str) or criterion_status not in EQUIPMENT_STATUSES:
+            raise ValueError('Unsupported equipment filter')
+        if criterion_status=='unknown':
+            clauses.append("NOT EXISTS (SELECT 1 FROM technical_equipment e WHERE e.object_id=f.id AND lower(e.equipment)=lower(%s) AND e.status!='unknown')");params.append(name)
+        elif criterion_status=='present':
+            clauses.append("EXISTS (SELECT 1 FROM technical_equipment e WHERE e.object_id=f.id AND lower(e.equipment)=lower(%s) AND e.status IN ('standard','optional'))");params.append(name)
         else:
-            clauses.append('EXISTS (SELECT 1 FROM technical_equipment e WHERE e.object_id=f.id AND lower(e.equipment)=lower(%s) AND e.status=%s)');params.extend([equipment,status])
+            clauses.append('EXISTS (SELECT 1 FROM technical_equipment e WHERE e.object_id=f.id AND lower(e.equipment)=lower(%s) AND e.status=%s)');params.extend([name,criterion_status])
     if secondary:
         patterns={'cardan':'cardan','courroie':'courroie','chaine':'cha[îi]ne'}
         if secondary not in patterns:raise ValueError('Unsupported secondary transmission')
@@ -85,6 +95,12 @@ def filtered(conn,conditions,identity=None,equipment=None,status='standard',coun
         if field not in FIELDS:raise ValueError('Unsupported sort')
         clauses.append(f'm.{field} IS NOT NULL')
         ordering=f'm.{field} '+('DESC' if order_by.startswith('-') else 'ASC')+',f.brand,f.model,f.id'
-    base=' FROM technical_fiches f JOIN technical_measures m ON m.object_id=f.id AND m.source_sha256=f.source_sha256 WHERE '+' AND '.join(clauses)
+    # Identity/equipment queries must keep fiches without a current projection.
+    # Numeric constraints and ranking still require values from the exact source.
+    join='JOIN' if conditions or order_by else 'LEFT JOIN'
+    base=' FROM technical_fiches f '+join+' technical_measures m ON m.object_id=f.id AND m.source_sha256=f.source_sha256 WHERE '+' AND '.join(clauses)
     if count:return _rows(conn,'SELECT count(*) AS count'+base,params)[0]['count']
-    return _rows(conn,'SELECT f.id,f.brand,f.model,f.year,f.source_url,f.record,m.*'+base+' ORDER BY '+ordering+' LIMIT %s',params+[limit])
+    rows=_rows(conn,'SELECT f.id,f.brand,f.model,f.year,f.source_url,f.record,m.*'+base+' ORDER BY '+ordering+' LIMIT %s',params+[limit])
+    for row in rows:
+        if row.get('proof') is None:row['proof']={}
+    return rows

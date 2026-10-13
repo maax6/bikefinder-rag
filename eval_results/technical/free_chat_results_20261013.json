@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-13",
+  "protocol": "catalog-routing-v6",
+  "state": "At measurement time, corrections were active locally and not yet committed or pushed. Publication is documented separately in the Jev issue.",
+  "provenance": {
+    "total_questions": 54,
+    "independently_authored_questions": 40,
+    "additional_root_probes": 14,
+    "dialogues": 7,
+    "multi_turn_questions": 19,
+    "single_questions": 35,
+    "questions_sha256": "ef3db353fe63de640135a234f2f1ff0e6880ef1db3a4a533599e6423443ab967",
+    "quality_limit": "Final replay follows fixes made after seeing these questions; not held-out general accuracy. Review is by agents against raw source records, not by human annotators."
+  },
+  "answer_reviews": {
+    "initial_blind_30": {
+      "correct": 1,
+      "safe_limitation": 5,
+      "incorrect": 24,
+      "incomplete": 0,
+      "total": 30
+    },
+    "initial_transfer_10": {
+      "correct": 1,
+      "safe_limitation": 0,
+      "incorrect": 2,
+      "incomplete": 7,
+      "total": 10
+    },
+    "final_independently_authored_40": {
+      "correct": 16,
+      "safe_limitation": 24,
+      "incorrect": 0,
+      "incomplete": 0,
+      "total": 40
+    },
+    "safe_limitation_definition": "Useful partial answer or explicit necessary clarification due to source/data scope; not a complete answer to every request.",
+    "root_additional_14": "Reviewed as exploratory probes; not included in the 40-question quality score."
+  },
+  "live_api": {
+    "measured_questions": 54,
+    "routes": {
+      "comparison": 13,
+      "clarification": 14,
+      "details": 19,
+      "clarify": 1,
+      "filter": 6,
+      "count": 1
+    },
+    "responses_concordant_with_separate_direct_router": 54,
+    "mistral_required": 0,
+    "median_seconds": 0.05733658297685906,
+    "p95_nearest_rank_seconds": 0.11307537497486919,
+    "max_seconds": 0.5416792499599978,
+    "measurement": "Actual Gradio /chat API called before independent route inspection. Mostly cached final replay; route-inspection time excluded. Concordance proves route/transport consistency, not semantic correctness.",
+    "raw_local_artifact": "data/technical/free-questions-20261013/final-54-live.json",
+    "route_inspection_cached_questions": 43,
+    "route_inspection_jev_calls": 0,
+    "cache_limit": "43 routing inspections reused classification cache; remaining preflights answered without classification. API calls preceded inspection. This is not an all-cold latency benchmark."
+  },
+  "additional_new_question": {
+    "question": "Au fait, la F900R de BMW en 2020, elle annonçait quel couple et quel poids ? Je veux voir les deux types de poids si la fiche les donne.",
+    "seconds": 0.541225416935049,
+    "new_router_cache_entries": 1,
+    "consistent": true,
+    "route": "details",
+    "answer": "| Caractéristique | BMW F 900 R (2020) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 9,40 mkg à 6 500 tr/min |\n| Poids à sec (kg) | Non documenté dans cette fiche |\n| Poids en ordre de marche / pleins faits (kg) | Châssis — Poids tous pleins faits : 211 kg |\n| Source | [Fiche](https://www.motoplanete.com/bmw/8382/F-900-R-2020/contact.html) |",
+    "measurement": "One additional new question; actual API call first, with one new Jev classification cache entry. Separate from 54-question quality lot; not an uncached population benchmark.",
+    "raw_local_artifact": "data/technical/free-questions-20261013/new-question-latency.json"
+  },
+  "regressions": {
+    "workspace_pytest_passed": 622,
+    "workspace_pytest_seconds": 7.27,
+    "workspace_scope": "Includes pre-existing collector/Zellij tests; not an exact published snapshot.",
+    "previous_480_suite_passed": 480,
+    "previous_480_suite_total": 480,
+    "previous_480_suite_limit": "Controlled plan/data regression; ten complex questions test routing without launching 480 Mistral generations.",
+    "raw_local_artifact": "data/technical/free-questions-20261013/final-480-regression.json",
+    "publication_snapshot_pytest_passed": 605,
+    "publication_snapshot_pytest_seconds": 9.52,
+    "publication_snapshot_base_commit": "2e721b53e711f594ccd962d72bb3259369e35d08",
+    "publication_snapshot_scope": "Last published commit plus only selected chatbot code, documentation, questions, reviews and tests; separate collector/Zellij modifications excluded."
+  },
+  "alias_lookup_microbenchmark": {
+    "median_before_seconds": 0.4400204580742866,
+    "median_after_seconds": 0.022622292046435177,
+    "same_entities": true,
+    "queries": [
+      "Je cherche une moto de 2020 avec 110 chevaux et 9500 euros",
+      "La Yamaha Ténéré 700 de 2024, pas la World Raid ni la Rally",
+      "Compare la Honda CB500 Hornet 2024 et la MT07 2023"
+    ],
+    "repetitions": 3,
+    "scope": "Name-resolution lookup only, three questions repeated three times; not complete chat latency."
+  },
+  "code_sha256": {
+    "src/bikefinder_rag/agent/jev_router.py": "c61de92f99af65ca359ec3627024827f78c7dcc388e874ff58422414f85ac78d",
+    "src/bikefinder_rag/agent/query_language.py": "b5934ae68be1e524cd285dcee16f7202595d8573f26131ca0b76989c19a35c40",
+    "src/bikefinder_rag/catalog/comparisons.py": "1e20dca254ffbc1d4c53796e387e6681ace842cabed38ff486dbca37eaa8ae39",
+    "src/bikefinder_rag/catalog/measures.py": "3d0a28dc8cb62c226e763e40912f73a3b4ac87babd0922ee46fa00b3b2af8101"
+  },
+  "changes": [
+    "Literal colloquial units and model aliases, explicit model/year/variant preservation.",
+    "Negation and per-clause equipment status, multi-equipment SQL intersections.",
+    "Direction-aware numeric bounds and typed follow-up context, including blocked requests.",
+    "Source-grounded arithmetic differences, compatible weight types and adjustable seat ranges.",
+    "Native units, autonomy/launch-price/option qualifications preserved; unknowns remain unknown.",
+    "Direct source answers and arithmetic bypass unnecessary Mistral synthesis.",
+    "Alias lookup avoids regex work for absent aliases."
+  ],
+  "remaining_limits": [
+    "Global category, market availability and legal A2 filters are not fully normalized.",
+    "Unresolved or missing variants require clarification; catalog is not every motorcycle worldwide.",
+    "Missing equipment mention remains unknown; factory options cannot be inferred from range/gearbox labels.",
+    "Original couple mkg kept; Nm conversion is not silently substituted.",
+    "Calculated autonomy does not guarantee real range at a speed, load or with a passenger.",
+    "Source base prices do not establish present, used or strictly launch prices without dated evidence.",
+    "BGE-M3 scope retrieval remains available; this lot does not validate a global full-catalog vector index.",
+    "Complex causal/reliability/advice questions may still need bounded Mistral and additional evidence."
+  ],
+  "collection_untouched": true,
+  "reviews_artifact": "eval_results/technical/free_chat_reviews_20261013.json",
+  "reproduction": "PYTHONPATH=src .venv/bin/python scripts/evaluate_free_chat.py --api-first --questions eval_results/technical/free_chat_all_questions_20261013.json --out data/technical/free-questions-20261013/replay.json"
+}

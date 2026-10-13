@@ -339,7 +339,7 @@ def run_agent(conn, client: Anthropic | None, user_message: str, history: list[d
         if result['answer'] is not None:
             answer=result['answer']
             content=[{"type":"text","text":answer}] if backend=="anthropic" else answer
-            completed={"role":"assistant","content":content,"_catalog_plan":result.get('plan'),
+            completed={"role":"assistant","content":content,"_catalog_plan":result.get('plan'),"_catalog_pending":result.get('pending'),
                        "_catalog_route":result['route'],"_catalog_seconds":result.get('seconds'),
                        "_catalog_jev_calls":result.get('jev_calls',0)}
             return answer,[*routing_history,{"role":"user","content":user_message},completed]

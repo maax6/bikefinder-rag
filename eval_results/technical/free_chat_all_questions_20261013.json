@@ -1,0 +1,431 @@
+{
+  "cases": [
+    {
+      "id": "dialogue_01",
+      "turns": [
+        {
+          "question": "J'hésite entre une CB500 Hornet de 2024 et une MT-07 de 2024… y a quoi comme différence sur les chiffres ?",
+          "expected": "Comparer les deux millésimes sur leurs données techniques disponibles, avec unités, type de poids et inconnues visibles."
+        },
+        {
+          "question": "Ah non la Yam c'est une 2023, j'ai mal lu l'annonce",
+          "expected": "Remplacer seulement le millésime de la Yamaha par 2023 et conserver la Honda 2024 ; ne pas reprendre les chiffres Yamaha 2024."
+        },
+        {
+          "question": "Et juste la selle et le prix neuf en France du coup ?",
+          "expected": "Donner hauteur de selle et prix catalogue France pour les deux références corrigées, sans assimiler ce prix au prix de l'annonce."
+        }
+      ]
+    },
+    {
+      "id": "dialogue_02",
+      "turns": [
+        {
+          "question": "Tu me sors des trails 2024, moins de 900 balles, selle sous 830 et au moins 60 ch ?",
+          "expected": "Appliquer les contraintes exprimées, dont le budget de 900 euros, et signaler un résultat vide sans corriger le budget à la place de l'utilisateur."
+        },
+        {
+          "question": "9000 pardon 😅 et 850 pour la selle finalement",
+          "expected": "Mettre le budget à 9000 euros et la limite de selle à 850 mm, en gardant catégorie, millésime et puissance de la demande précédente."
+        },
+        {
+          "question": "Si y a pas le prix ou la hauteur, mets les à part, je veux pas les perdre",
+          "expected": "Séparer les motos qui satisfont les critères vérifiables de celles dont prix ou hauteur manquent ; préserver ces candidates et préciser ce qui reste à vérifier."
+        }
+      ]
+    },
+    {
+      "id": "dialogue_03",
+      "turns": [
+        {
+          "question": "Sur l'Africa Twin 2024 le dct c'est de série ou faut payer en plus ?",
+          "expected": "Distinguer les versions pertinentes et le statut documenté de la transmission ; demander la version si nécessaire, sans présenter toutes les Africa Twin comme identiques."
+        },
+        {
+          "question": "La standard, pas l'adventure sports",
+          "expected": "Restreindre la réponse à l'Africa Twin standard 2024 et distinguer les variantes de transmission si les fiches les séparent."
+        },
+        {
+          "question": "ok et la selle basse elle est comprise aussi ?",
+          "expected": "Conserver modèle et année ; indiquer série, option ou inconnu pour la selle basse, sans déduire une inclusion de sa seule disponibilité."
+        }
+      ]
+    },
+    {
+      "id": "dialogue_04",
+      "turns": [
+        {
+          "question": "Une Zero S 2024 et une S2 Del Mar 2024, ça donne quoi en autonomie ?",
+          "expected": "Donner les autonomies disponibles avec leurs conditions ou qualifications et leur référence exacte ; signaler les valeurs absentes ou non comparables."
+        },
+        {
+          "question": "Je fais surtout de la voie rapide à 110, laquelle ira le plus loin ?",
+          "expected": "Vérifier si les données couvrent cet usage ; ne pas extrapoler une autonomie à 110 km/h à partir d'une valeur urbaine ou mixte."
+        },
+        {
+          "question": "Même avec quelqu'un derrière ?",
+          "expected": "Conserver la comparaison et la condition de vitesse ; dire si aucune autonomie en duo n'est documentée, sans inventer une correction chiffrée."
+        }
+      ]
+    },
+    {
+      "id": "dialogue_05",
+      "turns": [
+        {
+          "question": "Monster 2022 contre SV650 2022 niveau poid, laquelle est la plus légère ?",
+          "expected": "Identifier les références et afficher les poids avec leur définition ; ne classer directement que des poids sur une base comparable."
+        },
+        {
+          "question": "Attends la Ducati c'est 2023 en fait",
+          "expected": "Corriger uniquement l'année de la Ducati et reprendre la comparaison avec la Suzuki 2022."
+        },
+        {
+          "question": "Donc l'écart c'est combien, tous pleins faits ?",
+          "expected": "Calculer l'écart uniquement si les deux fiches donnent un poids comparable en ordre de marche ; sinon expliquer la donnée manquante sans convertir arbitrairement un poids sec."
+        }
+      ]
+    },
+    {
+      "id": "single_01",
+      "turns": [
+        {
+          "question": "La Tracer 9 GT 2023 elle fait combien de chevaux et de Nm ?",
+          "expected": "Donner puissance et couple documentés pour ce modèle et ce millésime avec unités ; indiquer toute valeur manquante."
+        }
+      ]
+    },
+    {
+      "id": "single_02",
+      "turns": [
+        {
+          "question": "Y a eu une différence de cylindrée entre la MT-09 2020 et celle de 2021 ou c'est juste du look ?",
+          "expected": "Comparer les cylindrées des deux années et ne conclure sur le changement esthétique que si une donnée le permet ; distinguer chiffres et interprétation."
+        }
+      ]
+    },
+    {
+      "id": "single_03",
+      "turns": [
+        {
+          "question": "Combien coûtait une BMW F 900 R neuve chez nous en 2022, avant les options ?",
+          "expected": "Donner le prix catalogue France du millésime demandé si disponible ; ne pas utiliser un tarif actuel, d'occasion ou étranger à sa place."
+        }
+      ]
+    },
+    {
+      "id": "single_04",
+      "turns": [
+        {
+          "question": "Cherche moi des roadsters 2021 à 2024 avec max 800 cm3 et une selle pas plus haute que 800 mm. Même les marques que je connais pas.",
+          "expected": "Filtrer les années et critères sans limiter arbitrairement les marques ; identifier chaque modèle et année, et signaler les candidats dont une mesure manque."
+        }
+      ]
+    },
+    {
+      "id": "single_05",
+      "turns": [
+        {
+          "question": "Sur une Versys 650 2024, poignées chauffantes et régulateur : inclus, options, ou rien du tout ?",
+          "expected": "Traiter chaque équipement séparément selon les mentions série, option, absent documenté ou inconnu ; ne pas confondre absence d'information et absence d'équipement."
+        }
+      ]
+    },
+    {
+      "id": "single_06",
+      "turns": [
+        {
+          "question": "Les grosses routières 2023 à cardan, t'as quoi ? Avec le prix France si tu l'as.",
+          "expected": "Rechercher les routières du millésime demandé dont la transmission à cardan est documentée ; conserver un prix inconnu et clarifier 'grosses' si ce terme change le périmètre."
+        }
+      ]
+    },
+    {
+      "id": "single_07",
+      "turns": [
+        {
+          "question": "La 390 Duke de 2024 et la 125 Duke de la même année : selle, cylindrée, puissance, prix, côte à côte stp",
+          "expected": "Comparer les deux modèles 2024 sur les quatre champs demandés, en gardant leurs identifiants numériques et les valeurs inconnues."
+        }
+      ]
+    },
+    {
+      "id": "single_08",
+      "turns": [
+        {
+          "question": "Une Ninja 650 de 2020, ça pèse combien ? Et c'est avec l'essence ou sans ?",
+          "expected": "Donner le poids et le libellé exact de sa base de mesure ; ne pas affirmer la présence du carburant si la fiche ne précise pas ce point."
+        }
+      ]
+    },
+    {
+      "id": "single_09",
+      "turns": [
+        {
+          "question": "Parmi les motos électriques de 2024, montre celles avec au moins 150 km annoncés, mais dis bien si c'est en ville ou pas",
+          "expected": "Filtrer les autonomies documentées en conservant leurs conditions et unités ; éviter un classement qui assimile les mesures urbaines et routières, et signaler les autonomies inconnues."
+        }
+      ]
+    },
+    {
+      "id": "single_10",
+      "turns": [
+        {
+          "question": "Je veux voir les 1000 cm3 environ de 2022 avec plus de 100 Nm et moins de 220 kg, pas de sportive",
+          "expected": "Interpréter ou clarifier la plage autour de 1000 cm3, appliquer couple, poids et exclusion de catégorie, puis afficher le type de poids et les données manquantes."
+        }
+      ]
+    },
+    {
+      "id": "single_11",
+      "turns": [
+        {
+          "question": "Tu peux me donner le ratio ch par kilo de la Street Triple RS 2023 et de la Z900 2023 ?",
+          "expected": "Calculer le ratio uniquement à partir des puissances et poids documentés, montrer la base de calcul et qualifier toute comparaison entre types de poids différents."
+        }
+      ]
+    },
+    {
+      "id": "single_12",
+      "turns": [
+        {
+          "question": "Je trouve deux prix pour la Ténéré 700 de 2023… tu as lequel en catalogue français et pour quelle version exactement ?",
+          "expected": "Identifier les versions et leurs prix catalogue France documentés ; expliquer les distinctions connues sans attribuer les deux prix non fournis à des causes inventées."
+        }
+      ]
+    },
+    {
+      "id": "single_13",
+      "turns": [
+        {
+          "question": "J'fais 1m68, une selle de 820 ça passe ou je vais galérer aux feux ?",
+          "expected": "Expliquer que taille et hauteur de selle seules ne suffisent pas à garantir l'appui au sol ; proposer un essai sans inventer l'entrejambe, la largeur de selle ou un verdict certain."
+        }
+      ]
+    },
+    {
+      "id": "single_14",
+      "turns": [
+        {
+          "question": "Laquelle est la plus fiable pour garder dix ans, une Honda ou une Ducati ?",
+          "expected": "Dire que les fiches techniques ne documentent pas la fiabilité à dix ans et qu'une conclusion par marque serait insuffisante ; ne pas fabriquer un classement."
+        }
+      ]
+    },
+    {
+      "id": "single_15",
+      "turns": [
+        {
+          "question": "Je veux une moto avec du caractère mais qui me casse pas le dos, tu partirais sur quoi ?",
+          "expected": "Reconnaître les critères subjectifs et demander usage ou préférences utiles ; ne pas déduire caractère et confort des seuls chiffres du catalogue ni inventer des essais."
+        }
+      ]
+    },
+    {
+      "id": "root_00",
+      "turns": [
+        {
+          "question": "J'ai 9500 balles à mettre, je veux pas moins de 110 bourrins. Regarde ce qui se faisait en 2020, sur les tarifs de sortie.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_01",
+      "turns": [
+        {
+          "question": "Sur une BMW F900R de 2020, c'était combien neuf et combien de canassons ?",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_02",
+      "turns": [
+        {
+          "question": "La BMW R 1150 GS millésime 2000, son ABS c'est livré avec ou il fallait payer en plus ?",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_03",
+      "turns": [
+        {
+          "question": "Je veux juste les bécanes de 2010 dont on sait qu'elles n'ont pas d'ABS, pas celles où t'as aucune info.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_04",
+      "turns": [
+        {
+          "question": "La CFMoto 800 MT Explore 2025 peut faire combien avec un plein ? Fais gaffe aux réserves de la fiche.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_05",
+      "turns": [
+        {
+          "question": "Entre BMW F 900 R 2020 et Yamaha XSR 900 2020, laquelle sort le plus de chevaux et de combien ?",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_06",
+      "turns": [
+        {
+          "question": "Les dix BMW de 2020 les plus légères tous pleins, ça donne quoi ?",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_07",
+      "turns": [
+        {
+          "question": "Fais une sélection 2020, prix de départ jusqu'à 10000 euros inclus, au moins 100 chevaux, et de l'ABS monté d'origine.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_08",
+      "turns": [
+        {
+          "question": "Quelle hauteur de selle sur la Honda CB 500 F 2020 ? Je fais 1m62, je veux juste le chiffre documenté.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_09",
+      "turns": [
+        {
+          "question": "La R 1150 GS de BMW en 2000 est à cardan ou à chaîne ?",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_10",
+      "turns": [
+        {
+          "question": "Je te demande les 100 chevaux moteur, pas la puissance fiscale, et un budget catalogue 9000 euros, pour 2020.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_11",
+      "turns": [
+        {
+          "question": "En 2020 chez Yamaha, combien ont l'ABS de série et un shifter d'origine ?",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_12",
+      "turns": [
+        {
+          "question": "En 2010, prends les Honda, laisse tomber Suzuki, montre-moi le couple.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "root_13",
+      "turns": [
+        {
+          "question": "J'hésite entre BMW F 900 R 2020 et Yamaha XSR 900 2020. Mets les chiffres côte à côte, je déciderai moi-même.",
+          "expected": "Conserver les contraintes explicites, citer les champs demandés avec leurs sources, sans génération pour une lecture ou un calcul factuel."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_01",
+      "turns": [
+        {
+          "question": "Sur la Honda CB750 Hornet millésime 2023, combien coûtait-elle au lancement en France, et quelles sont sa puissance et son couple ? Si la fiche utilise une autre unité que les chevaux, garde aussi cette unité.",
+          "expected": "Identifier la CB750 Hornet du millésime demandé et restituer le prix de lancement français, la puissance et le couple documentés, avec leurs unités. Distinguer ce prix historique d'un tarif actuel et signaler toute donnée manquante. Une conversion éventuelle doit être annoncée comme telle et préserver la valeur source."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_02",
+      "turns": [
+        {
+          "question": "Pour la Yamaha Ténéré 700 standard de 2024, pas la World Raid ni la Rally, je vois passer plusieurs poids. Le catalogue donne un poids à sec ou avec les pleins ? Donne-moi aussi la cylindrée et la hauteur de selle.",
+          "expected": "Utiliser la version standard du millésime demandé, restituer le poids avec sa définition source, puis la cylindrée et la hauteur de selle. Ne pas remplacer un poids à sec par un poids avec les pleins ni déduire une convention de pesée si elle n'est pas indiquée. Préciser les limites de la fiche lorsque le libellé ou une valeur manque."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_03",
+      "turns": [
+        {
+          "question": "Sur la Suzuki GSX-8S 2023 vendue en France, ABS, contrôle de traction et shifter sont-ils de série, en option, ou simplement pas renseignés ? Je veux distinguer ces trois cas.",
+          "expected": "Présenter séparément les équipements demandés et leur statut réellement documenté pour ce modèle et ce millésime. Ne pas assimiler une information absente à un équipement absent, et ne pas conclure à un équipement de série à partir de sa seule mention si la source ne précise pas son statut."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_04",
+      "turns": [
+        {
+          "question": "La Kawasaki Ninja 650 2024 peut-elle faire 350 km sans ravitailler ? Dis-moi seulement ce qu'on peut conclure de la fiche, en précisant comment l'autonomie est donnée.",
+          "expected": "Restituer l'autonomie du catalogue si elle existe et conserver ses qualificatifs, conditions ou méthode. Expliquer si cette donnée permet de situer l'objectif demandé sans garantir une distance réelle. Si l'autonomie manque, le dire ; ne pas inventer une consommation ni calculer une portée à partir d'hypothèses silencieuses."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_05",
+      "turns": [
+        {
+          "question": "J'essaie de savoir si une BMW R 1250 GS Adventure 2023 me conviendrait. Quelles hauteurs de selle sont indiquées pour la version standard et les éventuelles selles proposées, en séparant ce qui est de série de ce qui est optionnel ?",
+          "expected": "Donner les hauteurs et possibilités de réglage ou de selle effectivement documentées pour la version demandée, en distinguant la configuration de série des options lorsque cette distinction est connue. Signaler les options ou statuts non renseignés. La fiche seule ne permet pas de conclure à l'adaptation à la personne ; ne pas affirmer qu'elle posera les pieds au sol."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_06",
+      "turns": [
+        {
+          "question": "Entre la Royal Enfield Himalayan 450 2024 et la Honda NX500 2024, laquelle est la plus basse de selle et laquelle est la plus légère ? Compare les valeurs de fiche, et préviens-moi si les poids n'utilisent pas la même définition.",
+          "expected": "Comparer les hauteurs de selle et les poids disponibles des modèles et millésimes demandés, avec les unités et les conventions de pesée. Une hauteur réglable ou optionnelle doit rester distincte de la hauteur de série. Si les poids sont de nature différente ou une valeur manque, limiter explicitement le classement au lieu de présenter une comparaison directe comme établie."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_dialogue_01",
+      "turns": [
+        {
+          "question": "Pour la Triumph Street Triple 765 R 2023, donne-moi le prix français de lancement, la puissance, le couple et le poids, avec la convention de pesée.",
+          "expected": "Identifier la variante R du millésime demandé et restituer les champs documentés avec leurs unités et la définition du poids. Employer le prix de lancement France lorsqu'il est identifié ainsi, sans substituer un prix actuel ou étranger. Rendre visibles les données inconnues."
+        },
+        {
+          "question": "Ajoute maintenant la Street Triple 765 RS 2023 à côté de la R 2023. Quelles différences sont réellement documentées pour ces quatre données, et lesquelles restent inconnues ?",
+          "expected": "Conserver le contexte et les champs du premier tour, puis comparer les variantes R et RS du même millésime. Restituer les différences étayées et les informations manquantes. Ne calculer un écart que lorsque les valeurs et leurs unités sont comparables ; traiter séparément les éventuelles différences de convention de pesée."
+        }
+      ]
+    },
+    {
+      "id": "transfer_free_dialogue_02",
+      "turns": [
+        {
+          "question": "Je cherche les chiffres de la Honda Africa Twin 2024 : cylindrée, hauteur de selle et poids. Avant de me répondre, dis-moi si ce nom suffit à identifier la fiche.",
+          "expected": "Reconnaître que le nom peut recouvrir plusieurs variantes ou transmissions ayant des caractéristiques différentes. Demander la précision utile pour sélectionner la fiche, en s'appuyant sur les variantes réellement disponibles dans le catalogue, sans attribuer arbitrairement les chiffres d'une version à toute la gamme. Si une seule fiche est disponible, annoncer cette limite."
+        },
+        {
+          "question": "Je parle de l'Africa Twin standard 2024 à boîte manuelle, pas de l'Adventure Sports ni de la DCT. Et pour cette version, que sait-on sur l'autonomie ?",
+          "expected": "Utiliser la précision pour sélectionner la version standard à boîte manuelle du millésime demandé. Répondre aux champs laissés en attente au premier tour et ajouter l'autonomie si elle est documentée, en conservant ses conditions ou son caractère estimé. Signaler les valeurs absentes et ne pas promettre une autonomie réelle à partir d'une simple valeur catalogue."
+        }
+      ]
+    }
+  ],
+  "origin": "40 questions independently authored by two agents who saw neither code nor prior templated suite; 14 additional probes. Initial and transfer findings preserved; final replay follows fixes, not independent human accuracy."
+}

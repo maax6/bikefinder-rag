@@ -1,5 +1,10 @@
 # Routage naturel du catalogue — 13 octobre 2026
 
+Ce rapport décrit le premier lot contrôlé. Une vérification ultérieure de
+54 questions libres, avec corrections des alias, négations et relances, est
+documentée dans [le rapport des questions libres](jev-free-questions.md).
+Les mesures ci-dessous restent celles du premier lot et de sa publication.
+
 Le chatbot local utilise désormais Jev pour choisir un plan fermé, puis SQL pour
 répondre avec les valeurs et les liens des fiches. Jev ne produit ni SQL libre ni
 nouvelles valeurs numériques. Les opérateurs et unités explicites sont vérifiés.

@@ -17,10 +17,20 @@ router requires Internet. Visitors do not enter an API key.
 On the controlled 480-question suite, **440 answers use data directly**, 30
 ask for clarification and 10 are routed to bounded synthesis. The actual
 price/power question returns nine source sheets in **0.167 s** through Gradio,
-after a previous observed 180-second timeout. **525 tests pass on the exact
-publication snapshot**, including PostgreSQL integration. These are controlled acceptance
+after a previous observed 180-second timeout. **525 tests passed on the initial
+routing publication snapshot**, including PostgreSQL integration. These are controlled acceptance
 results, not a general accuracy score. See the
 [measurements and safeguards](docs/jev-routing-natural-questions.md).
+
+A subsequent [free-question check](docs/jev-free-questions.md) exercised 54
+natural questions, including seven dialogues, and fixed aliases, negations,
+follow-up constraints and source-based comparisons. The active local replay
+uses no Mistral calls: cached API median **0.057 s**; one additional new question
+with an uncached Jev classification took **0.541 s**. Agent review of the 40
+independently authored questions yields 16 complete answers and 24 justified
+partial answers or clarifications after fixes. This is an adapted replay,
+not a general accuracy benchmark. **605 tests pass on the exact free-question
+publication snapshot**, including PostgreSQL integration, in **9.52 s**.
 
 ## Direction as of 2026-10-10
 
@@ -686,3 +696,11 @@ live chat API; its previous observed attempt timed out at 180 seconds.
 
 See [measurements and safeguards](docs/jev-routing-natural-questions.md) and
 [the result artifact](eval_results/technical/jev_routing_20261013.json).
+
+The subsequent free-question run and its remaining source limits are documented
+in [the free-question report](docs/jev-free-questions.md), with
+[aggregate results](eval_results/technical/free_chat_results_20261013.json).
+The exact free-question publication snapshot passes 605 tests; the full local
+workspace passes 622, including separate collection/Zellij work. The previous
+controlled suite still passes 480/480. The earlier publication snapshot counts
+above remain historical measurements.

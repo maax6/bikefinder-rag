@@ -1,0 +1,492 @@
+{
+  "date": "2026-10-13",
+  "method": "Independent agents authored questions without seeing implementation or the prior templated suite; same agents later reviewed answers against raw source records. This is an agent review, not a human gold standard. Final replay was adapted after these defects were observed.",
+  "initial_blind_30": [
+    {
+      "id": "dialogue_01",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Les fiches Honda CB 500 Hornet 2024 et Yamaha MT-07 700 2024 existent dans le catalogue brut. Le rejet d'identité empêche une comparaison factuelle alors que modèles et années sont fournis."
+    },
+    {
+      "id": "dialogue_01",
+      "turn": 1,
+      "status": "incorrect",
+      "reason": "La correction concerne seulement la Yamaha, à passer en 2023. La réponse ne conserve ni cette moto ni la Honda 2024 déjà données, malgré la présence des références au catalogue."
+    },
+    {
+      "id": "dialogue_01",
+      "turn": 2,
+      "status": "incorrect",
+      "reason": "Les motos et millésimes sont disponibles dans les tours précédents. Demander de les redonner perd le contexte et empêche la lecture des deux champs explicitement demandés."
+    },
+    {
+      "id": "dialogue_02",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Année, budget maximal, selle maximale et puissance minimale sont exprimés. Le plan conserve uniquement la puissance et la réponse invoque à tort une ambiguïté de nombres/millésime. Refuser le filtre trails non normalisé serait une limite justifiée, mais ce n'est pas le diagnostic donné."
+    },
+    {
+      "id": "dialogue_02",
+      "turn": 1,
+      "status": "incorrect",
+      "reason": "La rectification du budget à 9000 euros et de la selle à 850 mm doit conserver trails, 2024 et 60 ch minimum. La réponse demande une moto exacte et le plan vide perd toute la recherche initiale, y compris sa limite de catégorie."
+    },
+    {
+      "id": "dialogue_02",
+      "turn": 2,
+      "status": "incorrect",
+      "reason": "Le millésime et les contraintes corrigées ont déjà été fournis. La réponse les redemande au lieu de conserver le contexte et la demande de préserver les prix/hauteurs inconnus ; la limite trails devait rester explicite."
+    },
+    {
+      "id": "dialogue_03",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "La famille Africa Twin 2024 est présente au catalogue. Une clarification standard/Adventure Sports peut être utile, mais le rejet générique de modèle ne traite pas cette distinction ni le statut du DCT."
+    },
+    {
+      "id": "dialogue_03",
+      "turn": 1,
+      "status": "incorrect",
+      "reason": "Le tour précise la variante standard et exclut Adventure Sports ; 2024 et la question DCT restent connus. Le plan vide et la demande d'un millésime ou critère perdent ce contexte."
+    },
+    {
+      "id": "dialogue_03",
+      "turn": 2,
+      "status": "incorrect",
+      "reason": "La moto standard 2024 est déjà identifiée dans le dialogue. La réponse la redemande et le plan réduit la selle basse à une hauteur, sans traiter son statut série/option/inconnu."
+    },
+    {
+      "id": "dialogue_04",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Aucune fiche Zero S 2024 ni S2 Del Mar 2024 n'a été trouvée dans le catalogue brut vérifié. Le refus de fournir une comparaison chiffrée pour ces références absentes est justifié."
+    },
+    {
+      "id": "dialogue_04",
+      "turn": 1,
+      "status": "incorrect",
+      "reason": "Les deux modèles et années restent connus malgré leur absence du catalogue. Redemander marque/modèle perd le contexte ; la réponse devrait rappeler l'indisponibilité des fiches et ne pas extrapoler l'autonomie à 110 km/h."
+    },
+    {
+      "id": "dialogue_04",
+      "turn": 2,
+      "status": "incorrect",
+      "reason": "La relance porte sur les mêmes motos à 110 km/h en duo. La demande générique de marque/modèle oublie ces références et conditions au lieu de maintenir leur indisponibilité et celle d'une mesure en duo."
+    },
+    {
+      "id": "dialogue_05",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Ducati Monster 2022 et Suzuki SV 650 2022 existent dans le catalogue. Le rejet d'identité empêche de lire les poids et leurs définitions, même si leur comparabilité peut nécessiter une limite explicite."
+    },
+    {
+      "id": "dialogue_05",
+      "turn": 1,
+      "status": "incorrect",
+      "reason": "Le tour corrige seulement la Ducati à 2023. Le plan retient marque/année mais perd Monster et la Suzuki 2022 ; la réponse demande une identité déjà fournie."
+    },
+    {
+      "id": "dialogue_05",
+      "turn": 2,
+      "status": "incorrect",
+      "reason": "Les deux références corrigées sont connues et la base tous pleins faits est explicitée. Le rejet d'identité perd le contexte plutôt que de lire les poids comparables ou d'indiquer le poids manquant."
+    },
+    {
+      "id": "single_01",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Yamaha Tracer 9 GT 2023 est présente au catalogue. Modèle, variante, année et champs puissance/couple sont fournis ; le rejet générique empêche une lecture directe des faits."
+    },
+    {
+      "id": "single_02",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Les deux MT-09 et leurs années existent au catalogue. La réponse signale des bornes non positives alors que la question compare des cylindrées, sans filtre négatif ; aucun résultat demandé n'est fourni."
+    },
+    {
+      "id": "single_03",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Le prix France version de base de BMW F 900 R 2022, son libellé et la fiche source sont fournis. La valeur affichée correspond à la ligne Tarifs du catalogue brut vérifié."
+    },
+    {
+      "id": "single_04",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "La plage 2021–2024 et les maxima de cylindrée et de selle sont explicites. Le plan duplique la condition cylindrée, perd la selle et les années, puis demande de préciser les bornes déjà données. Une limite de catégorie éventuelle n'excuse pas ce diagnostic."
+    },
+    {
+      "id": "single_05",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Kawasaki VERSYS 650 2024 existe au catalogue. Le rejet d'identité évite la lecture séparée des deux équipements ; une mention inconnue serait acceptable si leurs statuts ne sont pas documentés."
+    },
+    {
+      "id": "single_06",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Le plan et le résultat appliquent seulement 2023 et cardan. Les contraintes grosses routières ne sont ni appliquées ni signalées comme indisponibles ; la réponse présente ce filtre partiel comme répondant à toute la demande."
+    },
+    {
+      "id": "single_07",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "KTM 390 Duke 2024 et 125 Duke 2024 sont présentes. La même année renvoie clairement à 2024 ; le rejet d'identité empêche la comparaison des quatre champs sans justification de données absentes."
+    },
+    {
+      "id": "single_08",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Kawasaki Ninja 650 2020 est présente au catalogue. Le rejet générique empêche de lire le poids et son libellé, alors que modèle et millésime sont déjà donnés."
+    },
+    {
+      "id": "single_09",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "2024, au moins 150 km et les qualifications d'autonomie sont explicites. Le plan perd le seuil et la réponse demande de préciser année/unités/bornes déjà fournies, sans identifier une indisponibilité réelle des données."
+    },
+    {
+      "id": "single_10",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La limite de 220 kg ne précise pas poids sec ou ordre de marche. Demander cette base avant de filtrer évite une comparaison incohérente ; aucune borne ou catégorie n'est arbitrairement supprimée dans une liste exécutée."
+    },
+    {
+      "id": "single_11",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Les fiches Street Triple RS 2023 et Z 900 2023 existent au catalogue. Le rejet d'identité n'est pas une limite de poids justifiée ; il devrait lire les valeurs pour calculer un ratio qualifié, ou préciser la base manquante."
+    },
+    {
+      "id": "single_12",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Yamaha 700 Ténéré 2023 et des variantes sont présentes. La question demande précisément d'identifier le prix catalogue France et sa version ; le rejet générique ne traite ni cette identification ni une éventuelle ambiguïté de variante."
+    },
+    {
+      "id": "single_13",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La taille et une hauteur de selle ne permettent pas de garantir l'appui au sol. Demander une moto exacte reste prudent et n'invente pas un verdict ergonomique ; l'explication sur l'entrejambe et la largeur de selle gagnerait à être explicite."
+    },
+    {
+      "id": "single_14",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La fiabilité à dix ans n'est pas documentée dans les fiches techniques. La réponse exprime une limite et demande des critères vérifiables, sans fabriquer un classement par marque."
+    },
+    {
+      "id": "single_15",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Caractère et confort dorsal ne sont pas établis par les seules fiches techniques. La réponse limite sa portée et demande des critères, sans inventer un essai ni une recommandation certaine."
+    }
+  ],
+  "initial_transfer_10": [
+    {
+      "id": "transfer_free_01",
+      "turn": 0,
+      "status": "incomplete",
+      "reason": "Le modèle et le millésime sont corrects ; prix France de base, puissance et couple correspondent aux spec_rows de la fiche 9598 et les unités source sont conservées. Cependant, la source consultée libelle le prix comme un tarif France de base, sans qualifier séparément sa date de lancement. La réponse ne signale pas cette limite temporelle alors que la question demande précisément le prix au lancement. Elle devrait distinguer le tarif de cette fiche millésimée d'un prix de lancement strictement établi."
+    },
+    {
+      "id": "transfer_free_02",
+      "turn": 0,
+      "status": "incorrect",
+      "reason": "Les valeurs Yamaha correspondent à la fiche standard 10132 et les poids sec et pleins sont bien distingués. Mais la réponse ajoute une Voge 300 Rally non demandée : la mention négative de Rally a été prise comme une référence positive, malgré l'exclusion explicite des variantes. Cette seconde identité rend la réponse incorrecte."
+    },
+    {
+      "id": "transfer_free_03",
+      "turn": 0,
+      "status": "incomplete",
+      "reason": "La réserve sur la disponibilité ou la spécificité d'une version française peut être légitime, mais elle ne répond à aucun des trois équipements demandés. La fiche 9610 documente l'ABS dans Équipement de série et le shifter de série dans Transmission ; le contrôle de traction n'y est pas renseigné. Ces statuts catalogue pouvaient être restitués avec une réserve sur leur portée pour le marché français. La réponse introduit aussi homologation et bridage A2, absents de la question."
+    },
+    {
+      "id": "transfer_free_04",
+      "turn": 0,
+      "status": "correct",
+      "reason": "La réponse sélectionne la Ninja 650 2024 et reprend l'autonomie estimée de la fiche 10000 en conservant les précautions essentielles : calculée, non vérifiée et jusqu'à la panne sèche. Elle ne transforme pas cette estimation légèrement inférieure à l'objectif demandé en garantie de trajet. Une phrase de conclusion explicite faciliterait la lecture, mais la limite nécessaire figure déjà dans la réponse."
+    },
+    {
+      "id": "transfer_free_05",
+      "turn": 0,
+      "status": "incomplete",
+      "reason": "La plage de réglage de selle correspond à la fiche BMW 9455. En revanche, la réponse ne distingue pas le statut de la selle standard des éventuelles selles optionnelles et ne précise pas que ces options de selle ne sont pas documentées dans les spec_rows consultées. Les statuts ABS, poignées et shifter sont hors du sujet demandé. Elle n'affirme pas abusivement que la moto convient à la personne, mais laisse la question sur les selles inachevée."
+    },
+    {
+      "id": "transfer_free_06",
+      "turn": 0,
+      "status": "incomplete",
+      "reason": "Les valeurs correspondent aux fiches 10210 et 10209 ; la comparaison du poids est correcte et utilise les pleins pour les deux motos, avec une égalité explicitement annoncée. La réponse fournit les hauteurs mais ne répond pas à laquelle est la plus basse : la Himalayan est plus basse en position basse et plus haute en position haute que la NX500. La conclusion doit donc être conditionnée au réglage de selle au lieu d'être laissée au lecteur."
+    },
+    {
+      "id": "transfer_free_dialogue_01",
+      "turn": 0,
+      "status": "incomplete",
+      "reason": "Le refus évite de substituer un autre modèle, mais rejette une désignation naturelle correspondant à une famille présente dans le catalogue et ne fournit aucun champ. Les sources contiennent deux R 2023, 765 Street Triple R et nouvelle 765 Street Triple R, fiches 9419 et 10559, dont les caractéristiques diffèrent. Une clarification ciblée sur ces deux générations aurait constitué une limite sûre ; demander seulement de reformuler le nom de catalogue ne révèle pas l'ambiguïté réelle."
+    },
+    {
+      "id": "transfer_free_dialogue_01",
+      "turn": 1,
+      "status": "incomplete",
+      "reason": "La réponse répète le refus du premier tour sans reprendre les quatre champs ni expliquer les candidats R et RS disponibles. Les sources contiennent aussi deux RS 2023, fiches 9420 et 9675, avec et sans nouvelle dans le nom. Elle devrait demander quelle génération comparer, puis préserver cette précision entre les tours ; elle ne peut pas annoncer des différences tant que cette ambiguïté n'est pas résolue."
+    },
+    {
+      "id": "transfer_free_dialogue_02",
+      "turn": 0,
+      "status": "incomplete",
+      "reason": "Les chiffres restitués correspondent à la fiche standard 10064 et les poids inconnus sont signalés. Mais la question demandait d'abord si Africa Twin 2024 suffisait à identifier la fiche. La réponse ne traite pas cette ambiguïté et sélectionne silencieusement la standard, alors que l'Adventure Sports 2024 est aussi présente sous la fiche 10068. La fiche standard mentionne en outre boîte manuelle ou DCT, sans affecter explicitement ses valeurs à une transmission. Une clarification ou une réserve de portée était nécessaire, indépendamment de la route déclarée clarify."
+    },
+    {
+      "id": "transfer_free_dialogue_02",
+      "turn": 1,
+      "status": "incorrect",
+      "reason": "La réponse ajoute l'Adventure Sports pourtant exclue explicitement et remplace la demande d'autonomie par une comparaison de transmissions. L'autonomie estimée est documentée dans la fiche standard 10064 avec la qualification calculée mais non vérifiée jusqu'à la panne sèche ; elle devait être restituée ou sa portée pour la boîte manuelle explicitement limitée. La réserve sur le statut ou supplément DCT est prudente mais hors demande, et ne compense ni l'identité exclue ni l'omission de l'autonomie."
+    }
+  ],
+  "final_blind_30": [
+    {
+      "id": "dialogue_01",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Les deux modèles 2024 sont comparés sur leurs données techniques, avec unités sources, prix France de base, poids pleins faits et poids sec inconnu. Les valeurs et liens correspondent aux fiches brutes contrôlées."
+    },
+    {
+      "id": "dialogue_01",
+      "turn": 1,
+      "status": "correct",
+      "reason": "Seule la Yamaha passe à 2023 ; la Honda reste en 2024. Les intitulés, valeurs et sources correspondent aux références corrigées et le contexte reste conservé."
+    },
+    {
+      "id": "dialogue_01",
+      "turn": 2,
+      "status": "correct",
+      "reason": "La réponse conserve Honda 2024 et Yamaha 2023 et ne donne que les champs demandés : prix catalogue France de base et hauteur de selle, avec sources."
+    },
+    {
+      "id": "dialogue_02",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La catégorie trail non normalisée est explicitement refusée. Aucun filtre partiel n'est présenté comme répondant aux contraintes ; la question initiale est conservée dans pending. Ce refus n'est pas une sélection factuelle complète."
+    },
+    {
+      "id": "dialogue_02",
+      "turn": 1,
+      "status": "safe_limitation",
+      "reason": "La correction 9000/850 est explicitement citée et ajoutée à la liste persistante des précisions. La catégorie indisponible reste la cause du blocage, sans résultat toutes catégories ni abandon silencieux de critères."
+    },
+    {
+      "id": "dialogue_02",
+      "turn": 2,
+      "status": "safe_limitation",
+      "reason": "Le texte et pending conservent maintenant la demande initiale, la correction 9000/850 et la consigne de préserver les données manquantes. La limite de catégorie reste explicite ; aucun filtre partiel n'est présenté comme une réponse complète."
+    },
+    {
+      "id": "dialogue_03",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La transmission de la fiche Africa Twin standard 2024 est citée exactement. La réponse dit explicitement que l'inclusion de série et le supplément du DCT restent inconnus sans preuve, sans les déduire du choix de transmission."
+    },
+    {
+      "id": "dialogue_03",
+      "turn": 1,
+      "status": "safe_limitation",
+      "reason": "La variante standard 2024 est conservée et Adventure Sports exclue. La note précisant que statut et supplément DCT sont inconnus est désormais maintenue dans la réponse ; aucune inclusion ni somme n'est inventée."
+    },
+    {
+      "id": "dialogue_03",
+      "turn": 2,
+      "status": "safe_limitation",
+      "reason": "La hauteur réglable source est citée pour la bonne variante et année. La réponse distingue explicitement ce réglage de l'inclusion d'une selle basse, annoncée inconnue faute de mention d'équipement."
+    },
+    {
+      "id": "dialogue_04",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Les références Zero S 2024 et S2 Del Mar 2024 sont absentes du catalogue brut contrôlé. La réponse ne remplace pas ces références ; la question avec modèles et années est conservée dans pending."
+    },
+    {
+      "id": "dialogue_04",
+      "turn": 1,
+      "status": "safe_limitation",
+      "reason": "Le texte reprend les deux références 2024 et la condition à 110, conservée dans les précisions. Il explique l'indisponibilité des fiches exactes et refuse explicitement d'établir une autonomie à cette vitesse ou sous condition non documentée."
+    },
+    {
+      "id": "dialogue_04",
+      "turn": 2,
+      "status": "safe_limitation",
+      "reason": "Les identités, années, vitesse et condition avec passager restent présentes dans le texte et les précisions persistantes. La limite de données est annoncée sans extrapolation d'autonomie en duo ou à 110 km/h."
+    },
+    {
+      "id": "dialogue_05",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Les poids sources et inconnues sont conservés. La comparaison supplémentaire sélectionne Ducati Monster à 188 kg face à 197 kg pour Suzuki sur la même base explicitement nommée tous pleins faits, sans mélange avec le poids sec."
+    },
+    {
+      "id": "dialogue_05",
+      "turn": 1,
+      "status": "correct",
+      "reason": "Seule la Ducati passe à 2023 ; la Suzuki reste en 2022. Les titres, valeurs, types de poids et sources correspondent aux fiches corrigées."
+    },
+    {
+      "id": "dialogue_05",
+      "turn": 2,
+      "status": "correct",
+      "reason": "L'écart de 9 kg est correctement calculé à partir des valeurs visibles 188 et 197 kg des bonnes références. La base pleins faits commune et les sources sont explicites ; aucun poids sec n'est utilisé dans ce calcul."
+    },
+    {
+      "id": "single_01",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Les chiffres source de Tracer 9 GT 2023 sont exacts. La réponse expose que le couple est documenté en mkg et ne le présente pas comme une valeur en Nm ; cette limitation explicite ne constitue pas une réponse complète dans l'unité Nm demandée."
+    },
+    {
+      "id": "single_02",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Les références MT-09 2020 et 2021 sont correctes. Les cylindrées 847 et 889 cc correspondent aux fiches et donnent exactement 42 cc d'écart, ce qui établit un changement technique sans inventer de détail esthétique."
+    },
+    {
+      "id": "single_03",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Le prix France version de base de BMW F 900 R 2022 correspond au tarif brut. Les statuts d'équipements supplémentaires affichés sont conformes aux mentions sources et ne sont pas ajoutés au prix de base demandé."
+    },
+    {
+      "id": "single_04",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La catégorie roadster non normalisée est explicitement refusée et la demande numérique complète est conservée dans pending. Aucune sélection partielle n'est présentée comme satisfaisant toute la demande."
+    },
+    {
+      "id": "single_05",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Les deux équipements demandés sont maintenant traités séparément : poignées chauffantes de série selon la section source et régulateur inconnu/non documenté. L'absence de preuve du régulateur n'est pas assimilée à une absence d'équipement."
+    },
+    {
+      "id": "single_06",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La catégorie routière non normalisée est explicitement refusée, avec conservation de la demande à cardan, année et prix dans pending. La réponse ne substitue pas une sélection toutes catégories."
+    },
+    {
+      "id": "single_07",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Les deux Duke sont bien en 2024. Les quatre champs demandés, prix France, puissance, cylindrée et selle, sont présents avec unités et sources conformes aux fiches ; les identifiants 390 et 125 sont préservés."
+    },
+    {
+      "id": "single_08",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Le poids de Ninja 650 2020 correspond à la fiche et son libellé tous pleins faits répond à la question du carburant. Le poids sec manquant reste explicitement inconnu, sans conversion supposée."
+    },
+    {
+      "id": "single_09",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La catégorie électrique non normalisée est explicitement refusée, sans liste partielle prétendant respecter catégorie et seuil d'autonomie. La demande et ses qualifications sont conservées dans pending."
+    },
+    {
+      "id": "single_10",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "L'exclusion de sportive nécessite la catégorie non normalisée, limite explicitement annoncée. Les contraintes initiales restent conservées dans pending et aucune sélection supprimant l'exclusion ou mélangeant les types de poids n'est produite."
+    },
+    {
+      "id": "single_11",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Deux fiches Street Triple RS distinctes existent réellement pour 2023. La réponse montre leurs identités et celle de Z 900 avec sources, puis demande de préciser les fiches avant tout ratio sur une variante choisie arbitrairement."
+    },
+    {
+      "id": "single_12",
+      "turn": 0,
+      "status": "correct",
+      "reason": "La version de base Yamaha 700 Ténéré 2023 et son prix catalogue France sont explicitement identifiés et conformes à la fiche brute. La réponse n'invente pas l'origine des deux prix non fournis par l'utilisateur."
+    },
+    {
+      "id": "single_13",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La réponse explique que la hauteur de selle seule ne permet pas de garantir l'appui au sol. Elle expose correctement la limite des fiches techniques, sans verdict ergonomique inventé."
+    },
+    {
+      "id": "single_14",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La fiabilité à dix ans n'est pas documentée dans les fiches. La réponse annonce cette limite générale et demande des critères vérifiables, sans fabriquer de classement entre marques."
+    },
+    {
+      "id": "single_15",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Caractère et confort dorsal ne sont pas établis par les seules données techniques. La réponse limite sa portée et demande des critères, sans inventer un essai ou une recommandation certaine."
+    }
+  ],
+  "final_transfer_10": [
+    {
+      "id": "transfer_free_01",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Bon modèle et millésime, tarif France de base et unités source conformes à la fiche 9598. La nouvelle note indique explicitement que la date d'application et le caractère de prix au lancement ne sont pas établis par cette fiche, tout en fournissant les chiffres documentés. La limite temporelle précédemment omise est corrigée."
+    },
+    {
+      "id": "transfer_free_02",
+      "turn": 0,
+      "status": "correct",
+      "reason": "La Yamaha standard 2024 est seule retenue ; les modèles ou variantes cités en exclusion ne sont pas ajoutés. Cylindrée, selle, poids à sec et poids pleins sont restitués avec leurs définitions source et correspondent à la fiche 10132."
+    },
+    {
+      "id": "transfer_free_03",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Les statuts ABS et shifter de série sont étayés par la fiche 9610 ; le contrôle de traction est indiqué non documenté sans conclure à son absence. La réserve sur le rattachement technique au marché France est explicite et ne bloque pas les informations catalogue disponibles."
+    },
+    {
+      "id": "transfer_free_04",
+      "turn": 0,
+      "status": "correct",
+      "reason": "La réponse conserve l'autonomie estimée de la fiche Ninja 650 2024, calculée mais non vérifiée jusqu'à la panne sèche. Elle précise que cette donnée ne garantit pas la distance réelle demandée sans ravitailler. Aucun calcul ou engagement de portée non étayé n'est ajouté."
+    },
+    {
+      "id": "transfer_free_05",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "La plage de réglage de hauteur correspond à la fiche BMW 9455. La ligne non documentée vise désormais seulement les selles accessoires ; elle n'étend plus cette limite à l'ABS. La réponse distingue la hauteur publiée d'une preuve d'inclusion ou de disponibilité d'une selle accessoire, sans conclure à l'adaptation physique à la personne."
+    },
+    {
+      "id": "transfer_free_06",
+      "turn": 0,
+      "status": "correct",
+      "reason": "Les valeurs et les deux identités sont conformes aux fiches. L'égalité de poids compare les pleins des deux motos, sans mélanger avec le poids sec disponible pour la Himalayan. La conclusion sur la selle est explicitement conditionnée au réglage, puisque la plage Himalayan recouvre la hauteur NX500."
+    },
+    {
+      "id": "transfer_free_dialogue_01",
+      "turn": 0,
+      "status": "safe_limitation",
+      "reason": "Le nom naturel est reconnu et les deux fiches R 2023 présentes dans les sources, 9419 et 10559, sont proposées. La clarification porte sur une ambiguïté réelle de génération et évite de sélectionner ou de fusionner arbitrairement leurs caractéristiques."
+    },
+    {
+      "id": "transfer_free_dialogue_01",
+      "turn": 1,
+      "status": "safe_limitation",
+      "reason": "Le deuxième tour n'a pas résolu la génération. La réponse conserve la R du contexte et ajoute les deux candidats RS 2023 effectivement disponibles, 9420 et 9675. Elle demande la précision commune nécessaire avant d'annoncer des différences et ne compare pas silencieusement des générations différentes."
+    },
+    {
+      "id": "transfer_free_dialogue_02",
+      "turn": 0,
+      "status": "correct",
+      "reason": "La réponse répond directement à la demande préalable de désambiguïsation : le nom seul ne suffit pas, les fiches standard et Adventure Sports 2024 sont présentées et la version souhaitée est demandée avant leurs chiffres."
+    },
+    {
+      "id": "transfer_free_dialogue_02",
+      "turn": 1,
+      "status": "safe_limitation",
+      "reason": "Après la précision, la réponse utilise seulement la fiche standard 10064 et reprend les champs restés en attente : cylindrée, hauteur de selle et poids avec les définitions et l'absence de poids sec. Elle ajoute l'autonomie estimée en conservant ses qualifications calculée, non vérifiée et jusqu'à la panne sèche. La transmission source est affichée et la réserve indique que la fiche peut regrouper manuelle et DCT, sans garantir une autonomie propre à la seule boîte manuelle. Les omissions et l'identité exclue précédemment signalées sont corrigées."
+    }
+  ]
+}
