@@ -1,0 +1,236 @@
+{
+  "authorship": "Regression replay of the 12 initial cases and 3 browser cases; not fresh or blind",
+  "cases": [
+    {
+      "id": "new-01",
+      "question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 R",
+          2023
+        ]
+      ],
+      "required": [
+        "liquide",
+        "A2"
+      ]
+    },
+    {
+      "id": "new-02",
+      "question": "BMW G 310 GS 2023 : résume la hauteur de selle et le réservoir, puis dis si tu retrouves une mention A2 dans cette fiche précise.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 GS",
+          2023
+        ]
+      ],
+      "required": [
+        "835",
+        "11",
+        "non retrouvée"
+      ]
+    },
+    {
+      "id": "new-03",
+      "question": "Sur la Suzuki GSX-8S 800 2024 pour A2, le shifter est-il annoncé de série et la fiche précise-t-elle s'il fonctionne dans les deux sens ?",
+      "kind": "generation",
+      "identities": [
+        [
+          "Suzuki",
+          "GSX-8S 800",
+          2024
+        ]
+      ],
+      "required": [
+        "shifter",
+        "série"
+      ]
+    },
+    {
+      "id": "new-04",
+      "question": "Kawasaki Ninja 500 2025 : raconte-moi simplement ce que la fiche indique sur le couple, la capacité du réservoir et les permis, en contexte A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Kawasaki",
+          "Ninja 500",
+          2025
+        ]
+      ],
+      "required": [
+        "14",
+        "mkg",
+        "A2"
+      ]
+    },
+    {
+      "id": "new-05",
+      "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Honda",
+          "CB 750 Hornet",
+          2025
+        ]
+      ],
+      "required": [
+        "shifter",
+        "chauffantes"
+      ]
+    },
+    {
+      "id": "new-06",
+      "question": "La fiche Ducati Monster 2024 donne-t-elle un certificat qui prouve le bridage A2 de mon exemplaire ? Résume ses mentions de permis sans certifier ma moto.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Ducati",
+          "Monster",
+          2024
+        ]
+      ],
+      "required": [
+        "A2",
+        "certificat"
+      ]
+    },
+    {
+      "id": "new-07",
+      "question": "Compare BMW G 310 R 2024 et Kawasaki Ninja 500 2025 pour A2 : explique leurs hauteurs de selle et leurs réservoirs avec une source pour chacune.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 R",
+          2024
+        ],
+        [
+          "Kawasaki",
+          "Ninja 500",
+          2025
+        ]
+      ],
+      "required": [
+        "785",
+        "11",
+        "14"
+      ]
+    },
+    {
+      "id": "new-08",
+      "question": "Décris la transmission et le refroidissement de la Suzuki GSX-8S 800 2024 à partir de sa fiche, sans en déduire des sensations de conduite.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Suzuki",
+          "GSX-8S 800",
+          2024
+        ]
+      ],
+      "required": [
+        "6",
+        "chaîne",
+        "liquide"
+      ]
+    },
+    {
+      "id": "new-09",
+      "question": "Explique ce que décrivent le freinage et les suspensions de la Kawasaki Ninja 500 2025 ; si la fiche ne mesure pas le confort, indique ce manque.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Kawasaki",
+          "Ninja 500",
+          2025
+        ]
+      ],
+      "required": [
+        "frein",
+        "confort"
+      ]
+    },
+    {
+      "id": "new-10",
+      "question": "BMW G 310 R 2098 : peux-tu résumer la mention A2 et la hauteur de selle de cette année exacte ?",
+      "kind": "clarification",
+      "identities": [],
+      "required": [
+        "2098"
+      ]
+    },
+    {
+      "id": "new-11",
+      "question": "Suzuki GSX-8S 800 édition Galaxie 2024 : quels permis A2 la fiche annonce-t-elle ?",
+      "kind": "clarification",
+      "identities": [],
+      "required": [
+        "variante"
+      ]
+    },
+    {
+      "id": "new-12",
+      "question": "Combien de Yamaha de 2020 ont l'ABS et un shifter de série ?",
+      "kind": "sql",
+      "identities": [],
+      "required": [
+        "8 fiches"
+      ]
+    },
+    {
+      "id": "browser-01",
+      "question": "Honda CL 500 2024 : résume le refroidissement et la hauteur de selle, puis précise si la fiche contient une mention A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Honda",
+          "CL 500",
+          2024
+        ]
+      ],
+      "required": [
+        "liquide",
+        "790",
+        "non retrouvée"
+      ]
+    },
+    {
+      "id": "browser-02",
+      "question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "F 900 R",
+          2024
+        ]
+      ],
+      "required": [
+        "6",
+        "option",
+        "certificat"
+      ]
+    },
+    {
+      "id": "browser-03",
+      "question": "Kawasaki Z 500 2024 : donne-moi une réponse rédigée sur la puissance et les permis indiqués dans la fiche, avec le réservoir, pour mon dossier A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Kawasaki",
+          "Z 500",
+          2024
+        ]
+      ],
+      "required": [
+        "45",
+        "14",
+        "A2"
+      ]
+    }
+  ]
+}

@@ -131,7 +131,8 @@ def field_proofs(record, field, docs):
     if field == "license":
         passages = [d for d in docs if "permis" in folded(d["original_text"]) or "brid" in folded(d["original_text"])]
         return passages, [d["original_text"] for d in passages]
-    source_rows = ([r for r in record.get("spec_rows", []) if "equip" in folded(r["section"])]
+    source_rows = ([r for r in record.get("spec_rows", []) if "equip" in folded(r["section"])
+                   or ("transmission" in folded(r["section"]) and "shifter" in folded(r["value"]))]
                    if field == "equipment" else selected_rows(record, field))
     matched = []
     for proof in source_rows:

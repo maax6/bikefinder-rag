@@ -1,0 +1,8 @@
+{
+  "authorship": "Root agent, frozen after the first corrective replay started and before these questions were asked; source-curated, not independent or blind",
+  "cases": [
+    {"id":"browser-01","question":"Honda CL 500 2024 : résume le refroidissement et la hauteur de selle, puis précise si la fiche contient une mention A2.","kind":"generation","identities":[["Honda","CL 500",2024]],"required":["liquide","790","non retrouvée"]},
+    {"id":"browser-02","question":"Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?","kind":"generation","identities":[["BMW","F 900 R",2024]],"required":["6","option","certificat"]},
+    {"id":"browser-03","question":"Kawasaki Z 500 2024 : donne-moi une réponse rédigée sur la puissance et les permis indiqués dans la fiche, avec le réservoir, pour mon dossier A2.","kind":"generation","identities":[["Kawasaki","Z 500",2024]],"required":["45","14","A2"]}
+  ]
+}

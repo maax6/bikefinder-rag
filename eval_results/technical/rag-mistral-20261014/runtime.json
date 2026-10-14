@@ -1,0 +1,42 @@
+{
+  "catalog_fiches": 11478,
+  "cpu": "Apple M5",
+  "memory_bytes": 34359738368,
+  "versions": {
+    "langchain-ollama": "1.1.0",
+    "langchain-core": "1.4.9",
+    "ollama": "0.6.2",
+    "gradio": "6.20.0"
+  },
+  "ollama_loaded": {
+    "models": [
+      {
+        "name": "mistral-small3.2:latest",
+        "model": "mistral-small3.2:latest",
+        "size": 15616169738,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-14T02:05:14.808802+02:00",
+        "size_vram": 15616169738,
+        "context_length": 8192
+      }
+    ]
+  },
+  "inference_policy": "Jev closed decisions only remotely; Mistral, BGE and SQL local. Writer has no tools, output cache, redirects, env proxy or LangSmith tracing.",
+  "code_sha256": {
+    "src/bikefinder_rag/agent/rag_router.py": "3430a0d984cd8e7e0064e0f218744fb8ef1ea5891026e663cc7c859f16df7941",
+    "src/bikefinder_rag/agent/rag_synthesis.py": "7e5c3dc5e916e901910f29cb7db0a871aa4419e1602d0808ed66adc6ce5c413e",
+    "src/bikefinder_rag/catalog/technical_rag.py": "f838c9c681749129975b331efae63e0c748ab801024ea74aa52baa19da188394",
+    "src/bikefinder_rag/agent/loop.py": "a72b2ac1b1d3c33c3667f8cacc5c8c46df7ca87856c637105a804aad8c153380",
+    "scripts/evaluate_rag_synthesis.py": "655653ea370b5c2d4df0e4c62daf2ad0bcd0f00c442493c14ca228c3b243f011"
+  }
+}

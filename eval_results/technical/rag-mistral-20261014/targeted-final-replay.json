@@ -1,0 +1,899 @@
+{
+  "timestamp": "2026-10-13T23:35:29.433912+00:00",
+  "front_url": "http://127.0.0.1:7862/",
+  "questions_sha256": "edaa04b98e8b86ed793e3ce69a01dc8eb4cbe85593dfc98d6e053bd1a724912a",
+  "method": "Fresh Gradio session for each question, server receipt matched to the actual frontend answer; root-authored curated cases, not independent or blind",
+  "summary": {
+    "completed": 3,
+    "checks_passed": 2,
+    "published_local_generation": 3,
+    "p50_seconds": 21.79599750007037,
+    "p95_seconds": 59.46023317504441,
+    "max_seconds": 63.64514825004153
+  },
+  "results": [
+    {
+      "id": "new-01",
+      "question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 R",
+          2023
+        ]
+      ],
+      "required": [
+        "liquide",
+        "A2"
+      ],
+      "api_seconds": 63.64514825004153,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": true,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+        "answer": "La BMW G 310 R 2023 est équipée d'un moteur monocylindre 4 temps avec une injection de 42 mm de diamètre. Le refroidissement est assuré par un système de refroidissement liquide. Le moteur a une cylindrée de 313 cc avec un alésage de 80 mm et une course de 62,1 mm. Il développe une puissance de 34 ch à 9 250 tr/min et un couple de 3 mkg à 7 500 tr/min. Le rapport poids/puissance est d'environ 4,52 kg/ch et le rapport poids/couple est d'environ 51,23 kg/mkg. La compression est de 10,9:1 et les émissions de CO² sont de 80 g/km. [BMW G 310 R (2023)](https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html)\n\nLa fiche mentionne que la moto est accessible avec un permis A2 ou peut être bridée à 47,5 ch / 35 kW. Elle est également accessible avec un permis A. [BMW G 310 R (2023)](https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html)\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+        "seconds": 63.54947541700676,
+        "timestamp": "2026-10-13T23:34:48.743812+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2023
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "cooling",
+            "engine",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 63.543620457989164,
+        "_catalog_jev_calls": 1,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "fdc1fed0d4550e30",
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+              "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "cooling": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "fdc1fed0d4550e30:section:4"
+                  ]
+                },
+                "engine": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "fdc1fed0d4550e30:section:4"
+                  ]
+                },
+                "license": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "fdc1fed0d4550e30:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "fdc1fed0d4550e30:section:4",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Moteur",
+                  "original_text": "Monocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.52 kg/ch; Rapport poids / couple : environ 51.23 kg/mkg; Compression : 10.9:1; Emission CO² : 80 g/km",
+                  "text": "BMW G 310 R 2023\nMoteur\nMonocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.52 kg/ch; Rapport poids / couple : environ 51.23 kg/mkg; Compression : 10.9:1; Emission CO² : 80 g/km",
+                  "score": 0.7045146226882935,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:6",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "BMW G 310 R 2023\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6666161417961121,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:2",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "BMW G 310 R 2023\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.6520193815231323,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:5",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS de série",
+                  "text": "BMW G 310 R 2023\nÉquipement de série\nAssistance au freinage : ABS de série",
+                  "score": 0.6461988687515259,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:7",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 330 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "BMW G 310 R 2023\nPerformances\nVitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 330 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.643218457698822,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 2.9208604246377945e-07,
+              "query_encoding_seconds": 6.110779457958415,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "fdc1fed0d4550e30",
+              "proof_check": {
+                "fields": {
+                  "cooling": "complete",
+                  "engine": "complete",
+                  "license": "complete"
+                },
+                "jev_calls": 0,
+                "seconds": 0.0004041669890284538
+              }
+            }
+          ],
+          "seconds": 6.120688540977426,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "3deece83f96e0139fcd34f0fe84e206e5be3d07573124eb1f79c192489253cc4",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1443,
+          "eval_count": 255,
+          "total_duration": 54189513083,
+          "load_duration": 25202667,
+          "prompt_eval_duration": 15870232000,
+          "eval_duration": 35396018000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La BMW G 310 R 2023 est équipée d'un moteur monocylindre 4 temps avec une injection de 42 mm de diamètre. Le refroidissement est assuré par un système de refroidissement liquide. Le moteur a une cylindrée de 313 cc avec un alésage de 80 mm et une course de 62,1 mm. Il développe une puissance de 34 ch à 9 250 tr/min et un couple de 3 mkg à 7 500 tr/min. Le rapport poids/puissance est d'environ 4,52 kg/ch et le rapport poids/couple est d'environ 51,23 kg/mkg. La compression est de 10,9:1 et les émissions de CO² sont de 80 g/km.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la moto est accessible avec un permis A2 ou peut être bridée à 47,5 ch / 35 kW. Elle est également accessible avec un permis A.",
+                "sources": [
+                  "P2"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "verified_claim_indices": [
+              0,
+              1
+            ],
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.89,
+                  "unsupported": 0.11
+                },
+                "confidence": 0.78
+              }
+            }
+          },
+          "mode": "written",
+          "seconds": 54.972214750014246
+        }
+      }
+    },
+    {
+      "id": "new-05",
+      "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Honda",
+          "CB 750 Hornet",
+          2025
+        ]
+      ],
+      "required": [
+        "shifter",
+        "chauffantes"
+      ],
+      "api_seconds": 18.79622187500354,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": false,
+        "local_generation_published": true,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+        "answer": "Le shifter est proposé en option sur la Honda CB 750 Hornet 2025. [Honda CB 750 Hornet (2025)](https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n### Honda CB 750 Hornet (2025)\n\n- **Équipements : ABS, options et statuts documentés — la fiche indique :** Transmission — boîte à 6 rapports , manuelle - shifter en option ; Équipement de série — Assistance au freinage : ABS ; Équipement de série — Nombre de mode de conduite : 4 ; Équipement de série — Taille de l'écran TFT couleur : 12,70 cm / 5 pouces ; Équipement de série — Jantes aluminium ; Équipement de série — Indicateur de vitesse engagée ; Équipement de série — Bluetooth ; Équipement de série — Prise USB ; Équipement de série — Contrôle de couple ; Équipement de série — Contrôle anti wheeling ; Équipement de série — Embrayage anti-dribble ; Équipement de série — Contrôle du frein moteur\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html)\nPreuves retenues : Transmission, Moteur, Équipement de série, Infos pratiques, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- Honda CB 750 Hornet (2025) — Équipements : ABS, options et statuts documentés — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Honda CB 750 Hornet (2025) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "seconds": 18.718490791972727,
+        "timestamp": "2026-10-13T23:35:07.584828+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "equipment",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 18.718109999899752,
+        "_catalog_jev_calls": 0,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "equipment": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "9a2da2eae8ce4d9e:section:2",
+                    "9a2da2eae8ce4d9e:section:5"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "9a2da2eae8ce4d9e:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "9a2da2eae8ce4d9e:section:2",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "text": "Honda CB 750 Hornet 2025\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "score": 0.7063870429992676,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:4",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps, calé à 270°; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 755 cc (Alésage * course: 87 x 63,5 mm); 92 ch à 9 500 tr/min; 7,70 mkg à 7 250 tr/min; Rapport poids / puissance : environ 1.94 kg/ch; Rapport poids / couple : environ 23.18 kg/mkg; Compression : 11 : 1; Emission CO² : 99 g/km",
+                  "text": "Honda CB 750 Hornet 2025\nMoteur\nBicylindre en ligne , 4 temps, calé à 270°; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 755 cc (Alésage * course: 87 x 63,5 mm); 92 ch à 9 500 tr/min; 7,70 mkg à 7 250 tr/min; Rapport poids / puissance : environ 1.94 kg/ch; Rapport poids / couple : environ 23.18 kg/mkg; Compression : 11 : 1; Emission CO² : 99 g/km",
+                  "score": 0.6882676482200623,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:5",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de couple; Contrôle anti wheeling; Embrayage anti-dribble; Contrôle du frein moteur",
+                  "text": "Honda CB 750 Hornet 2025\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de couple; Contrôle anti wheeling; Embrayage anti-dribble; Contrôle du frein moteur",
+                  "score": 0.6813659071922302,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:6",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "Honda CB 750 Hornet 2025\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6588265895843506,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:1",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléhydraulique inversée Ø 41 mm / Showa , déb : 130 mm; Freinage : 2 disques Nissin Ø 296 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "text": "Honda CB 750 Hornet 2025\nTrain avant\nFourche téléhydraulique inversée Ø 41 mm / Showa , déb : 130 mm; Freinage : 2 disques Nissin Ø 296 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "score": 0.6565936803817749,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "9a2da2eae8ce4d9e",
+              "field": "equipment",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "9a2da2eae8ce4d9e",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 2.08965502679348e-07,
+              "query_encoding_seconds": 0.7500258329091594,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "9a2da2eae8ce4d9e",
+              "proof_check": {
+                "fields": {
+                  "equipment": "unverified",
+                  "license": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.00038824998773634434
+              }
+            }
+          ],
+          "seconds": 0.7621012090239674,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.92,
+              "unresolved": 0.08
+            },
+            "confidence": 0.84
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "279378b24733ab14dc6a6f0aef6013cb3dfcb58b7876fa88c2bdd535897aa5a5",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1646,
+          "eval_count": 72,
+          "total_duration": 17875743417,
+          "load_duration": 19612709,
+          "prompt_eval_duration": 7666013000,
+          "eval_duration": 10088562000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "Le shifter est proposé en option sur la Honda CB 750 Hornet 2025.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "Les poignées chauffantes ne sont pas mentionnées dans les passages fournis.",
+                "sources": [
+                  "P3"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "verified_claim_indices": [
+              0
+            ],
+            "coverage_verified": true,
+            "jev_calls": 0,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "unsupported",
+                "probabilities": {
+                  "supported": 0.38,
+                  "unsupported": 0.62
+                },
+                "confidence": 0.24
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.9,
+                  "unsupported": 0.1
+                },
+                "confidence": 0.8
+              }
+            }
+          },
+          "removed_claims": 1,
+          "mode": "mixed",
+          "seconds": 17.901383250020444
+        }
+      }
+    },
+    {
+      "id": "browser-02",
+      "question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "F 900 R",
+          2024
+        ]
+      ],
+      "required": [
+        "6",
+        "option",
+        "certificat"
+      ],
+      "api_seconds": 21.79599750007037,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": true,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+        "answer": "La BMW F 900 R 2024 est équipée d'une boîte manuelle à 6 rapports. Le shifter est proposé en option. [BMW F 900 R (2024)](https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html)\n\nLa fiche mentionne que le véhicule est accessible au permis A2 ou bridable à 47.5ch / 35 Kw. [BMW F 900 R (2024)](https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n### BMW F 900 R (2024)\n\n- **Équipements : ABS, options et statuts documentés — la fiche indique :** Transmission — boîte à 6 rapports , manuelle - shifter en option ; Équipement de série — Assistance au freinage : ABS ; Équipement de série — Nombre de mode de conduite : 2 ; Équipement de série — Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces ; Équipement de série — Indicateur de vitesse engagée ; Équipement de série — Contrôle de traction ; Équipement de série — Embrayage anti-dribble\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Boîte et transmission secondaire — la fiche indique :** Transmission — boîte à 6 rapports , manuelle - shifter en option ; Transmission — Secondaire par chaîne\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html)\nPreuves retenues : Infos pratiques, Transmission, Équipement de série, Moteur, Train arrière.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- BMW F 900 R (2024) — Équipements : ABS, options et statuts documentés — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- BMW F 900 R (2024) — Boîte et transmission secondaire — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- BMW F 900 R (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Certificat de bridage / homologation A2 — Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+        "seconds": 21.69581579195801,
+        "timestamp": "2026-10-13T23:35:29.413539+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "F 900 R",
+              "year": 2024
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "equipment",
+            "transmission",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+          "a2_context": true,
+          "legal_proof_required": true
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 21.695574542041868,
+        "_catalog_jev_calls": 0,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "482906d5f5f75ca3",
+              "brand": "BMW",
+              "model": "F 900 R",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+              "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "equipment": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "482906d5f5f75ca3:section:2",
+                    "482906d5f5f75ca3:section:5"
+                  ]
+                },
+                "transmission": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "482906d5f5f75ca3:section:2"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "482906d5f5f75ca3:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "482906d5f5f75ca3:section:6",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "BMW F 900 R 2024\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6517057418823242,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:2",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "text": "BMW F 900 R 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "score": 0.6237403154373169,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:5",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 2; Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble",
+                  "text": "BMW F 900 R 2024\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 2; Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble",
+                  "score": 0.6012088060379028,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:4",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 48 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 895 cc (Alésage * course: 86 x 77 mm); 105 ch à 8 500 tr/min; 9,40 mkg à 6 500 tr/min; Rapport poids / puissance : environ 1.9 kg/ch; Rapport poids / couple : environ 21.19 kg/mkg; Compression : 13.1 : 1; Emission CO² : 99 g/km",
+                  "text": "BMW F 900 R 2024\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 48 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 895 cc (Alésage * course: 86 x 77 mm); 105 ch à 8 500 tr/min; 9,40 mkg à 6 500 tr/min; Rapport poids / puissance : environ 1.9 kg/ch; Rapport poids / couple : environ 21.19 kg/mkg; Compression : 13.1 : 1; Emission CO² : 99 g/km",
+                  "score": 0.5626913905143738,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:3",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 142 mm; Freinage : 1 disque Ø 265 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+                  "text": "BMW F 900 R 2024\nTrain arrière\nMono-amortisseur, déb : 142 mm; Freinage : 1 disque Ø 265 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+                  "score": 0.5355536341667175,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "482906d5f5f75ca3",
+              "field": "equipment",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "482906d5f5f75ca3",
+              "field": "transmission",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "482906d5f5f75ca3",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "authority",
+              "field": "a2_certification",
+              "message": "Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2."
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 3.341119736433029e-07,
+              "query_encoding_seconds": 0.5335964160040021,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "482906d5f5f75ca3",
+              "proof_check": {
+                "fields": {
+                  "equipment": "unverified",
+                  "transmission": "unverified",
+                  "license": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.0005868329899385571
+              }
+            }
+          ],
+          "seconds": 0.5394073330098763,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.87,
+              "unresolved": 0.13
+            },
+            "confidence": 0.74
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "179dc9d3c938240d6312cdc4003abc2b5ccd0a1c10151e4a86a5e5a9f5545a67",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1835,
+          "eval_count": 135,
+          "total_duration": 21094197834,
+          "load_duration": 11949917,
+          "prompt_eval_duration": 154526000,
+          "eval_duration": 18865688000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La BMW F 900 R 2024 est équipée d'une boîte manuelle à 6 rapports. Le shifter est proposé en option.",
+                "sources": [
+                  "P2"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que le véhicule est accessible au permis A2 ou bridable à 47.5ch / 35 Kw.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "Les passages fournis ne permettent pas d'établir si cette fiche est un certificat de bridage pour votre moto.",
+                "sources": [
+                  "P1"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "verified_claim_indices": [
+              0,
+              1
+            ],
+            "coverage_verified": false,
+            "jev_calls": 0,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_2": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.81,
+                  "unsupported": 0.19
+                },
+                "confidence": 0.62
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.73,
+                  "unsupported": 0.27
+                },
+                "confidence": 0.46
+              }
+            }
+          },
+          "removed_claims": 1,
+          "mode": "mixed",
+          "seconds": 21.111240541911684
+        }
+      }
+    }
+  ]
+}

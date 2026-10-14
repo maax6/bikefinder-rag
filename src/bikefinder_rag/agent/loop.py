@@ -1,7 +1,7 @@
 """Explicit agentic RAG loop: local Ollama or optional remote providers.
 
-The loop is intentionally explicit (not hidden behind LangChain/LlamaIndex)
-so the whole tool-call round-trip is visible and easy to reason about.
+The tool loop remains explicit. The opt-in Jev RAG path uses LangChain only
+for its bounded local Mistral writer, after SQL identity and BGE retrieval.
 
 Three backends are supported, picked via the AGENT_BACKEND env var (or
 per-call via run_agent's `provider`, which is how the Gradio demo routes
@@ -342,7 +342,8 @@ def run_agent(conn, client: Anthropic | None, user_message: str, history: list[d
             completed={"role":"assistant","content":content,"_catalog_plan":result.get('plan'),"_catalog_pending":result.get('pending'),
                        "_catalog_route":result['route'],"_catalog_seconds":result.get('seconds'),
                        "_catalog_jev_calls":result.get('jev_calls',0),
-                       "_catalog_evidence":result.get('evidence')}
+                       "_catalog_evidence":result.get('evidence'),
+                       "_catalog_generation":result.get('generation')}
             return answer,[*routing_history,{"role":"user","content":user_message},completed]
         if result['route']=='mistral_required':
             from bikefinder_rag.agent.jev_router import synthesize_complex

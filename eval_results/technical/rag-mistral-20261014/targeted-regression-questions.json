@@ -1,0 +1,54 @@
+{
+  "authorship": "Targeted replay after shared-unit interpretation and partial source fallback changes; not fresh",
+  "cases": [
+    {
+      "id": "new-01",
+      "question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 R",
+          2023
+        ]
+      ],
+      "required": [
+        "liquide",
+        "A2"
+      ]
+    },
+    {
+      "id": "new-05",
+      "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Honda",
+          "CB 750 Hornet",
+          2025
+        ]
+      ],
+      "required": [
+        "shifter",
+        "chauffantes"
+      ]
+    },
+    {
+      "id": "browser-02",
+      "question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "F 900 R",
+          2024
+        ]
+      ],
+      "required": [
+        "6",
+        "option",
+        "certificat"
+      ]
+    }
+  ]
+}

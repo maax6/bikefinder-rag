@@ -1,0 +1,2901 @@
+{
+  "timestamp": "2026-10-13T23:13:11.032480+00:00",
+  "front_url": "http://127.0.0.1:7862/",
+  "questions_sha256": "9f2c630eb7b62d8061e9c0bfb0ba7bed2ba2102a074bd743754aef1f104ba707",
+  "method": "Fresh Gradio session for each question, server receipt matched to the actual frontend answer; root-authored curated cases, not independent or blind",
+  "summary": {
+    "completed": 12,
+    "checks_passed": 6,
+    "published_local_generation": 3,
+    "p50_seconds": 22.774305145954713,
+    "p95_seconds": 48.30037745418958,
+    "max_seconds": 52.864922833046876
+  },
+  "results": [
+    {
+      "id": "new-01",
+      "question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 R",
+          2023
+        ]
+      ],
+      "required": [
+        "liquide",
+        "A2"
+      ],
+      "api_seconds": 52.864922833046876,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": true,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+        "answer": "La BMW G 310 R 2023 est équipée d'un moteur monocylindre 4 temps avec une injection de 42 mm de diamètre. Le refroidissement est assuré par un système de refroidissement liquide. Le moteur a une cylindrée de 313 cc avec un alésage de 80 mm et une course de 62,1 mm. Il développe une puissance de 34 ch à 9 250 tr/min et un couple de 3 mkg à 7 500 tr/min. Le rapport poids/puissance est d'environ 4,52 kg/ch et le rapport poids/couple est d'environ 51,23 kg/mkg. La compression est de 10,9:1 et les émissions de CO² sont de 80 g/km. [BMW G 310 R (2023)](https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html)\n\nLa fiche mentionne que la BMW G 310 R 2023 est accessible avec un permis A2 ou peut être bridée à 47,5 ch / 35 kW. La moto est également accessible avec un permis A. [BMW G 310 R (2023)](https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html)\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "seconds": 52.76831170904916,
+        "timestamp": "2026-10-13T23:09:17.322133+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2023
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "cooling",
+            "engine",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Pour la BMW G 310 R 2023, explique ce que décrit la fiche sur le moteur, son refroidissement et les mentions A2.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral",
+        "_catalog_seconds": 52.761952250031754,
+        "_catalog_jev_calls": 2,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "fdc1fed0d4550e30",
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+              "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "cooling": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "fdc1fed0d4550e30:section:4"
+                  ]
+                },
+                "engine": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "fdc1fed0d4550e30:section:4"
+                  ]
+                },
+                "license": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "fdc1fed0d4550e30:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "fdc1fed0d4550e30:section:4",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Moteur",
+                  "original_text": "Monocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.52 kg/ch; Rapport poids / couple : environ 51.23 kg/mkg; Compression : 10.9:1; Emission CO² : 80 g/km",
+                  "text": "BMW G 310 R 2023\nMoteur\nMonocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.52 kg/ch; Rapport poids / couple : environ 51.23 kg/mkg; Compression : 10.9:1; Emission CO² : 80 g/km",
+                  "score": 0.7045146226882935,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:6",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "BMW G 310 R 2023\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6666161417961121,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:2",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "BMW G 310 R 2023\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.6520193815231323,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:5",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS de série",
+                  "text": "BMW G 310 R 2023\nÉquipement de série\nAssistance au freinage : ABS de série",
+                  "score": 0.6461988687515259,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "fdc1fed0d4550e30:section:7",
+                  "object_id": "fdc1fed0d4550e30",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9457/G-310-R-2023/contact.html",
+                  "source_sha256": "3a083dff759b445fcdcc65a349e9d1f68878aa01b72ed3570dc059b6ee84f5bb",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 330 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "BMW G 310 R 2023\nPerformances\nVitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 330 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.643218457698822,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.25030055642128e-07,
+              "query_encoding_seconds": 6.8357028749305755,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "fdc1fed0d4550e30",
+              "proof_check": {
+                "fields": {
+                  "cooling": "complete",
+                  "engine": "complete",
+                  "license": "complete"
+                },
+                "jev_calls": 0,
+                "seconds": 0.0008568339981138706
+              }
+            }
+          ],
+          "seconds": 6.847005957970396,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "3deece83f96e0139fcd34f0fe84e206e5be3d07573124eb1f79c192489253cc4",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1396,
+          "eval_count": 267,
+          "total_duration": 42294569833,
+          "load_duration": 25195708,
+          "prompt_eval_duration": 7202479000,
+          "eval_duration": 34938577000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La BMW G 310 R 2023 est équipée d'un moteur monocylindre 4 temps avec une injection de 42 mm de diamètre. Le refroidissement est assuré par un système de refroidissement liquide. Le moteur a une cylindrée de 313 cc avec un alésage de 80 mm et une course de 62,1 mm. Il développe une puissance de 34 ch à 9 250 tr/min et un couple de 3 mkg à 7 500 tr/min. Le rapport poids/puissance est d'environ 4,52 kg/ch et le rapport poids/couple est d'environ 51,23 kg/mkg. La compression est de 10,9:1 et les émissions de CO² sont de 80 g/km.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la BMW G 310 R 2023 est accessible avec un permis A2 ou peut être bridée à 47,5 ch / 35 kW. La moto est également accessible avec un permis A.",
+                "sources": [
+                  "P2"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.98,
+                  "unsupported": 0.02
+                },
+                "confidence": 0.96
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.91,
+                  "unsupported": 0.09
+                },
+                "confidence": 0.82
+              }
+            }
+          },
+          "seconds": 42.89522033301182
+        }
+      }
+    },
+    {
+      "id": "new-02",
+      "question": "BMW G 310 GS 2023 : résume la hauteur de selle et le réservoir, puis dis si tu retrouves une mention A2 dans cette fiche précise.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 GS",
+          2023
+        ]
+      ],
+      "required": [
+        "835",
+        "11",
+        "non retrouvée"
+      ],
+      "api_seconds": 20.306827625026926,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": false,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "BMW G 310 GS 2023 : résume la hauteur de selle et le réservoir, puis dis si tu retrouves une mention A2 dans cette fiche précise.",
+        "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n### BMW G 310 GS (2023)\n\n- **Réservoir — la fiche indique :** Châssis — Réservoir : 11,50 litres\n- **Hauteur de selle (mm) — la fiche indique :** Châssis — Hauteur de selle : 835 mm\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html)\nPreuves retenues : Châssis, Moteur, Performances, Transmission, Train arrière, Infos pratiques.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- BMW G 310 GS (2023) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- BMW G 310 GS (2023) — Mention A2 — Mention A2 non retrouvée",
+        "seconds": 20.247138250037096,
+        "timestamp": "2026-10-13T23:09:37.676703+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "G 310 GS",
+              "year": 2023
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "reservoir",
+            "seat_height_mm",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "BMW G 310 GS 2023 : résume la hauteur de selle et le réservoir, puis dis si tu retrouves une mention A2 dans cette fiche précise.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_fallback",
+        "_catalog_seconds": 20.246877916972153,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "5951f9450f8e8565",
+              "brand": "BMW",
+              "model": "G 310 GS",
+              "year": 2023,
+              "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+              "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "reservoir": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "5951f9450f8e8565:section:0"
+                  ]
+                },
+                "seat_height_mm": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "5951f9450f8e8565:section:0"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "5951f9450f8e8565:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "5951f9450f8e8565:section:0",
+                  "object_id": "5951f9450f8e8565",
+                  "brand": "BMW",
+                  "model": "G 310 GS",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+                  "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+                  "section": "Châssis",
+                  "original_text": "Cadre : Treillis tubulaire en acier; Réservoir : 11,50 litres; Hauteur de selle : 835 mm; Longueur : 2 075 mm; Largeur : 880 mm; Hauteur min : 1 230 mm; Empattement : 1 420 mm; Poids tous pleins faits : 175 kg",
+                  "text": "BMW G 310 GS 2023\nChâssis\nCadre : Treillis tubulaire en acier; Réservoir : 11,50 litres; Hauteur de selle : 835 mm; Longueur : 2 075 mm; Largeur : 880 mm; Hauteur min : 1 230 mm; Empattement : 1 420 mm; Poids tous pleins faits : 175 kg",
+                  "score": 0.7528489828109741,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5951f9450f8e8565:section:4",
+                  "object_id": "5951f9450f8e8565",
+                  "brand": "BMW",
+                  "model": "G 310 GS",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+                  "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+                  "section": "Moteur",
+                  "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.83 kg/ch; Rapport poids / couple : environ 54.77 kg/mkg; Compression : 10.9 : 1; Emission CO² : 80 g/km",
+                  "text": "BMW G 310 GS 2023\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.83 kg/ch; Rapport poids / couple : environ 54.77 kg/mkg; Compression : 10.9 : 1; Emission CO² : 80 g/km",
+                  "score": 0.6929173469543457,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5951f9450f8e8565:section:7",
+                  "object_id": "5951f9450f8e8565",
+                  "brand": "BMW",
+                  "model": "G 310 GS",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+                  "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 345 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "BMW G 310 GS 2023\nPerformances\nVitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 345 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.6773537993431091,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5951f9450f8e8565:section:2",
+                  "object_id": "5951f9450f8e8565",
+                  "brand": "BMW",
+                  "model": "G 310 GS",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+                  "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "BMW G 310 GS 2023\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.6573052406311035,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5951f9450f8e8565:section:3",
+                  "object_id": "5951f9450f8e8565",
+                  "brand": "BMW",
+                  "model": "G 310 GS",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+                  "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 180 mm; Freinage : 1 disque Ø 265 mm, étrier 2 pistons; Roue arrière : 150 / 70 - 17; Pression : 1.9 bars",
+                  "text": "BMW G 310 GS 2023\nTrain arrière\nMono-amortisseur, déb : 180 mm; Freinage : 1 disque Ø 265 mm, étrier 2 pistons; Roue arrière : 150 / 70 - 17; Pression : 1.9 bars",
+                  "score": 0.6532811522483826,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "5951f9450f8e8565:section:6",
+                  "object_id": "5951f9450f8e8565",
+                  "brand": "BMW",
+                  "model": "G 310 GS",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/bmw/9456/G-310-GS-2023/contact.html",
+                  "source_sha256": "16e6ee7704265cd8321c93aee1c646b2dabb8b5b626eec45f77ef152408b1e3e",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A",
+                  "text": "BMW G 310 GS 2023\nInfos pratiques\nLa moto est accessible aux permis : A",
+                  "score": 0.6165212988853455,
+                  "rank": 9,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "5951f9450f8e8565",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "5951f9450f8e8565",
+              "field": "a2_mention",
+              "message": "Mention A2 non retrouvée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 2.4994369596242905e-07,
+              "query_encoding_seconds": 0.4799435419263318,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "5951f9450f8e8565",
+              "proof_check": {
+                "fields": {
+                  "reservoir": "complete",
+                  "seat_height_mm": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.27940424997359514
+              }
+            }
+          ],
+          "seconds": 0.768400082946755,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": false,
+          "call_attempted": true,
+          "context_sha256": "67560105f3d9cfd3608b0696e32254e90474dbf20a9ab5a29d9c2b8b8e33619a",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1762,
+          "eval_count": 84,
+          "total_duration": 18780865292,
+          "load_duration": 14551125,
+          "prompt_eval_duration": 8042863000,
+          "eval_duration": 10640377000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La BMW G 310 GS 2023 a une hauteur de selle de 835 mm et un réservoir de 11,50 litres.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la moto est accessible aux permis A.",
+                "sources": [
+                  "P6"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.94,
+                  "unsupported": 0.06
+                },
+                "confidence": 0.88
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.51,
+                  "unsupported": 0.49
+                },
+                "confidence": 0.02
+              }
+            }
+          },
+          "error": "unverified_claims",
+          "seconds": 19.094767165952362
+        }
+      }
+    },
+    {
+      "id": "new-03",
+      "question": "Sur la Suzuki GSX-8S 800 2024 pour A2, le shifter est-il annoncé de série et la fiche précise-t-elle s'il fonctionne dans les deux sens ?",
+      "kind": "generation",
+      "identities": [
+        [
+          "Suzuki",
+          "GSX-8S 800",
+          2024
+        ]
+      ],
+      "required": [
+        "shifter",
+        "série"
+      ],
+      "api_seconds": 31.92289304197766,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": true,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Sur la Suzuki GSX-8S 800 2024 pour A2, le shifter est-il annoncé de série et la fiche précise-t-elle s'il fonctionne dans les deux sens ?",
+        "answer": "Le shifter est annoncé de série sur la Suzuki GSX-8S 800 2024. [Suzuki GSX-8S 800 (2024)](https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html)\n\nLes passages fournis ne permettent pas d'établir si le shifter fonctionne dans les deux sens. [Suzuki GSX-8S 800 (2024)](https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html)\n\nLa fiche mentionne que la Suzuki GSX-8S 800 2024 est accessible au permis A2 ou bridable à 47,5 ch / 35 kW. [Suzuki GSX-8S 800 (2024)](https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Suzuki GSX-8S 800 (2024) — Équipements : ABS, options et statuts documentés — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Suzuki GSX-8S 800 (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "seconds": 31.79853612498846,
+        "timestamp": "2026-10-13T23:10:09.591494+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Suzuki",
+              "model": "GSX-8S 800",
+              "year": 2024
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "equipment",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Sur la Suzuki GSX-8S 800 2024 pour A2, le shifter est-il annoncé de série et la fiche précise-t-elle s'il fonctionne dans les deux sens ?",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 31.798349124961533,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "3c7991fb5c47484a",
+              "brand": "Suzuki",
+              "model": "GSX-8S 800",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+              "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "equipment": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "3c7991fb5c47484a:section:5"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "3c7991fb5c47484a:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "3c7991fb5c47484a:section:2",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+                  "text": "Suzuki GSX-8S 800 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+                  "score": 0.7031033039093018,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:4",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.28 kg/ch; Rapport poids / couple : environ 23.68 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km",
+                  "text": "Suzuki GSX-8S 800 2024\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.28 kg/ch; Rapport poids / couple : environ 23.68 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km",
+                  "score": 0.6369056105613708,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:3",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Train arrière",
+                  "original_text": "Monoamortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17",
+                  "text": "Suzuki GSX-8S 800 2024\nTrain arrière\nMonoamortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17",
+                  "score": 0.6351214051246643,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:1",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléhydraulique inversée Ø nc, déb : 130 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "text": "Suzuki GSX-8S 800 2024\nTrain avant\nFourche téléhydraulique inversée Ø nc, déb : 130 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "score": 0.6323658227920532,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:5",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre; Contrôle de traction; Embrayage anti-dribble",
+                  "text": "Suzuki GSX-8S 800 2024\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre; Contrôle de traction; Embrayage anti-dribble",
+                  "score": 0.6249619722366333,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:6",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "Suzuki GSX-8S 800 2024\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.608872652053833,
+                  "rank": 6,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "3c7991fb5c47484a",
+              "field": "equipment",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "3c7991fb5c47484a",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 2.4994369596242905e-07,
+              "query_encoding_seconds": 0.6231469579506665,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "3c7991fb5c47484a",
+              "proof_check": {
+                "fields": {
+                  "equipment": "unverified",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.2750830000732094
+              }
+            }
+          ],
+          "seconds": 0.9096029578940943,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.76,
+              "unresolved": 0.24
+            },
+            "confidence": 0.52
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "968aa9254f8189345921adfed49a51a021369a9d890a4b53d9af475beba8029f",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1753,
+          "eval_count": 144,
+          "total_duration": 30112755708,
+          "load_duration": 16780166,
+          "prompt_eval_duration": 9963173000,
+          "eval_duration": 20009341000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "Le shifter est annoncé de série sur la Suzuki GSX-8S 800 2024.",
+                "sources": [
+                  "P1",
+                  "P5"
+                ]
+              },
+              {
+                "text": "Les passages fournis ne permettent pas d'établir si le shifter fonctionne dans les deux sens.",
+                "sources": [
+                  "P1",
+                  "P5"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la Suzuki GSX-8S 800 2024 est accessible au permis A2 ou bridable à 47,5 ch / 35 kW.",
+                "sources": [
+                  "P6"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.95,
+                  "unsupported": 0.05
+                },
+                "confidence": 0.9
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "claim_2": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.9,
+                  "unsupported": 0.1
+                },
+                "confidence": 0.8
+              }
+            }
+          },
+          "seconds": 30.50971162505448
+        }
+      }
+    },
+    {
+      "id": "new-04",
+      "question": "Kawasaki Ninja 500 2025 : raconte-moi simplement ce que la fiche indique sur le couple, la capacité du réservoir et les permis, en contexte A2.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Kawasaki",
+          "Ninja 500",
+          2025
+        ]
+      ],
+      "required": [
+        "14",
+        "mkg",
+        "A2"
+      ],
+      "api_seconds": 24.175310916965827,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": false,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Kawasaki Ninja 500 2025 : raconte-moi simplement ce que la fiche indique sur le couple, la capacité du réservoir et les permis, en contexte A2.",
+        "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n### Kawasaki Ninja 500 (2025)\n\n- **Couple documenté (unités source) — la fiche indique :** Moteur — 4,30 mkg à 6 000 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Réservoir — la fiche indique :** Châssis — Réservoir : 14 litres\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html)\nPreuves retenues : Infos pratiques, Moteur, Châssis, Train arrière, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- Kawasaki Ninja 500 (2025) — Couple documenté (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Kawasaki Ninja 500 (2025) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée",
+        "seconds": 24.109941666945815,
+        "timestamp": "2026-10-13T23:10:33.830445+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Kawasaki",
+              "model": "Ninja 500",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "torque_nm",
+            "reservoir",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Kawasaki Ninja 500 2025 : raconte-moi simplement ce que la fiche indique sur le couple, la capacité du réservoir et les permis, en contexte A2.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_fallback",
+        "_catalog_seconds": 24.109750250005163,
+        "_catalog_jev_calls": 2,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "eb67ab7736646f2d",
+              "brand": "Kawasaki",
+              "model": "Ninja 500",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+              "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "torque_nm": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:4"
+                  ]
+                },
+                "reservoir": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:0"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "eb67ab7736646f2d:section:6",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A, A2",
+                  "text": "Kawasaki Ninja 500 2025\nInfos pratiques\nLa moto est accessible aux permis : A, A2",
+                  "score": 0.6774693727493286,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:4",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : 3.46 kg/ch; Rapport poids / couple : 36.51 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "text": "Kawasaki Ninja 500 2025\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : 3.46 kg/ch; Rapport poids / couple : 36.51 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "score": 0.6688185930252075,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:0",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Châssis",
+                  "original_text": "Selle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 730 mm; Hauteur min : 1 120 mm; Garde au sol min : 145 mm Empattement : 1 375 mm Poids à sec : 157 kg Poids tous pleins faits : 171 kg",
+                  "text": "Kawasaki Ninja 500 2025\nChâssis\nSelle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 730 mm; Hauteur min : 1 120 mm; Garde au sol min : 145 mm Empattement : 1 375 mm Poids à sec : 157 kg Poids tous pleins faits : 171 kg",
+                  "score": 0.6443378329277039,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:3",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "text": "Kawasaki Ninja 500 2025\nTrain arrière\nMono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "score": 0.6256002187728882,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:1",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Train avant",
+                  "original_text": "Fourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+                  "text": "Kawasaki Ninja 500 2025\nTrain avant\nFourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+                  "score": 0.6127353310585022,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "eb67ab7736646f2d",
+              "field": "torque_nm",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "eb67ab7736646f2d",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.6600824892520905e-07,
+              "query_encoding_seconds": 0.6356141660362482,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "eb67ab7736646f2d",
+              "proof_check": {
+                "fields": {
+                  "torque_nm": "unverified",
+                  "reservoir": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.0003664580872282386
+              }
+            }
+          ],
+          "seconds": 0.65187483408954,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 1,
+              "unresolved": 0
+            },
+            "confidence": 1
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": false,
+          "call_attempted": true,
+          "context_sha256": "4f6281fc0d3e38ad9417845aa0410fee6522226ccf49011d5b55ad3532c4399b",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1708,
+          "eval_count": 99,
+          "total_duration": 22711780625,
+          "load_duration": 24069417,
+          "prompt_eval_duration": 9157019000,
+          "eval_duration": 13433725000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La Kawasaki Ninja 500 2025 a un couple de 4,30 mkg à 6 000 tr/min. Son réservoir a une capacité de 14 litres.",
+                "sources": [
+                  "P2",
+                  "P3"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la moto est accessible aux permis A et A2.",
+                "sources": [
+                  "P1"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.84,
+                  "unsupported": 0.16
+                },
+                "confidence": 0.68
+              }
+            }
+          },
+          "error": "unverified_claims",
+          "seconds": 23.039661542046815
+        }
+      }
+    },
+    {
+      "id": "new-05",
+      "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Honda",
+          "CB 750 Hornet",
+          2025
+        ]
+      ],
+      "required": [
+        "shifter",
+        "chauffantes"
+      ],
+      "api_seconds": 33.52217508398462,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": false,
+        "local_generation_published": false,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+        "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n### Honda CB 750 Hornet (2025)\n\n- **Équipements : ABS, options et statuts documentés — la fiche indique :** Équipement de série — Assistance au freinage : ABS ; Équipement de série — Nombre de mode de conduite : 4 ; Équipement de série — Taille de l'écran TFT couleur : 12,70 cm / 5 pouces ; Équipement de série — Jantes aluminium ; Équipement de série — Indicateur de vitesse engagée ; Équipement de série — Bluetooth ; Équipement de série — Prise USB ; Équipement de série — Contrôle de couple ; Équipement de série — Contrôle anti wheeling ; Équipement de série — Embrayage anti-dribble ; Équipement de série — Contrôle du frein moteur\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html)\nPreuves retenues : Transmission, Moteur, Équipement de série, Infos pratiques, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- Honda CB 750 Hornet (2025) — Équipements : ABS, options et statuts documentés — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Honda CB 750 Hornet (2025) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée",
+        "seconds": 33.45282474998385,
+        "timestamp": "2026-10-13T23:11:07.388079+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "equipment",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_fallback",
+        "_catalog_seconds": 33.45270062494092,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "equipment": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "9a2da2eae8ce4d9e:section:5"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "9a2da2eae8ce4d9e:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "9a2da2eae8ce4d9e:section:2",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "text": "Honda CB 750 Hornet 2025\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "score": 0.7063870429992676,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:4",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps, calé à 270°; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 755 cc (Alésage * course: 87 x 63,5 mm); 92 ch à 9 500 tr/min; 7,70 mkg à 7 250 tr/min; Rapport poids / puissance : environ 1.94 kg/ch; Rapport poids / couple : environ 23.18 kg/mkg; Compression : 11 : 1; Emission CO² : 99 g/km",
+                  "text": "Honda CB 750 Hornet 2025\nMoteur\nBicylindre en ligne , 4 temps, calé à 270°; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 755 cc (Alésage * course: 87 x 63,5 mm); 92 ch à 9 500 tr/min; 7,70 mkg à 7 250 tr/min; Rapport poids / puissance : environ 1.94 kg/ch; Rapport poids / couple : environ 23.18 kg/mkg; Compression : 11 : 1; Emission CO² : 99 g/km",
+                  "score": 0.6882676482200623,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:5",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de couple; Contrôle anti wheeling; Embrayage anti-dribble; Contrôle du frein moteur",
+                  "text": "Honda CB 750 Hornet 2025\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de couple; Contrôle anti wheeling; Embrayage anti-dribble; Contrôle du frein moteur",
+                  "score": 0.6813659071922302,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:6",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "Honda CB 750 Hornet 2025\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6588265895843506,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "9a2da2eae8ce4d9e:section:1",
+                  "object_id": "9a2da2eae8ce4d9e",
+                  "brand": "Honda",
+                  "model": "CB 750 Hornet",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+                  "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléhydraulique inversée Ø 41 mm / Showa , déb : 130 mm; Freinage : 2 disques Nissin Ø 296 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "text": "Honda CB 750 Hornet 2025\nTrain avant\nFourche téléhydraulique inversée Ø 41 mm / Showa , déb : 130 mm; Freinage : 2 disques Nissin Ø 296 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "score": 0.6565936803817749,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "9a2da2eae8ce4d9e",
+              "field": "equipment",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "9a2da2eae8ce4d9e",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.2491364032030106e-07,
+              "query_encoding_seconds": 0.540387833956629,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "9a2da2eae8ce4d9e",
+              "proof_check": {
+                "fields": {
+                  "equipment": "unverified",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.2994239169638604
+              }
+            }
+          ],
+          "seconds": 0.8512183330021799,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.92,
+              "unresolved": 0.08
+            },
+            "confidence": 0.84
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": false,
+          "call_attempted": true,
+          "context_sha256": "279378b24733ab14dc6a6f0aef6013cb3dfcb58b7876fa88c2bdd535897aa5a5",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1580,
+          "eval_count": 174,
+          "total_duration": 31890107167,
+          "load_duration": 13289167,
+          "prompt_eval_duration": 7962554000,
+          "eval_duration": 23726361000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La Honda CB 750 Hornet 2025 propose un shifter en option, selon la section Transmission. Ce dispositif permet de changer de vitesse sans utiliser la poignée d'embrayage.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "Les poignées chauffantes ne sont pas mentionnées dans la liste des équipements de série fournie dans la section Équipement de série. La fiche ne permet pas d'établir leur présence ou leur absence.",
+                "sources": [
+                  "P3"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la moto est accessible au permis A2 ou bridable à 47,5 ch / 35 kW. Cette information est indiquée dans la section Infos pratiques.",
+                "sources": [
+                  "P4"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "unsupported",
+                "probabilities": {
+                  "supported": 0.03,
+                  "unsupported": 0.97
+                },
+                "confidence": 0.94
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.68,
+                  "unsupported": 0.32
+                },
+                "confidence": 0.36
+              },
+              "claim_2": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.8,
+                  "unsupported": 0.2
+                },
+                "confidence": 0.6
+              }
+            }
+          },
+          "error": "unverified_claims",
+          "seconds": 32.253946457989514
+        }
+      }
+    },
+    {
+      "id": "new-06",
+      "question": "La fiche Ducati Monster 2024 donne-t-elle un certificat qui prouve le bridage A2 de mon exemplaire ? Résume ses mentions de permis sans certifier ma moto.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Ducati",
+          "Monster",
+          2024
+        ]
+      ],
+      "required": [
+        "A2",
+        "certificat"
+      ],
+      "api_seconds": 17.878619499970227,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": false,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "La fiche Ducati Monster 2024 donne-t-elle un certificat qui prouve le bridage A2 de mon exemplaire ? Résume ses mentions de permis sans certifier ma moto.",
+        "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n### Ducati Monster (2024)\n\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html)\nPreuves retenues : Infos pratiques, Équipement de série, Performances, Moteur, Train arrière.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- Ducati Monster (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- a2_certification — Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+        "seconds": 17.7868504159851,
+        "timestamp": "2026-10-13T23:11:25.266874+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Ducati",
+              "model": "Monster",
+              "year": 2024
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "La fiche Ducati Monster 2024 donne-t-elle un certificat qui prouve le bridage A2 de mon exemplaire ? Résume ses mentions de permis sans certifier ma moto.",
+          "a2_context": true,
+          "legal_proof_required": true
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_fallback",
+        "_catalog_seconds": 17.786676249932498,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "284312cf0b7a7ed2",
+              "brand": "Ducati",
+              "model": "Monster",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+              "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "284312cf0b7a7ed2:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "284312cf0b7a7ed2:section:6",
+                  "object_id": "284312cf0b7a7ed2",
+                  "brand": "Ducati",
+                  "model": "Monster",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+                  "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "Ducati Monster 2024\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6887234449386597,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "284312cf0b7a7ed2:section:5",
+                  "object_id": "284312cf0b7a7ed2",
+                  "brand": "Ducati",
+                  "model": "Monster",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+                  "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS en curvas; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 10,92 cm / 4.3 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Prise USB; Aide au départ arrêté (Launch Control); Contrôle de traction; Poignées chauffantes; Contrôle anti wheeling; Embrayage anti-dribble",
+                  "text": "Ducati Monster 2024\nÉquipement de série\nAssistance au freinage : ABS en curvas; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 10,92 cm / 4.3 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Prise USB; Aide au départ arrêté (Launch Control); Contrôle de traction; Poignées chauffantes; Contrôle anti wheeling; Embrayage anti-dribble",
+                  "score": 0.602291464805603,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "284312cf0b7a7ed2:section:7",
+                  "object_id": "284312cf0b7a7ed2",
+                  "brand": "Ducati",
+                  "model": "Monster",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+                  "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : supérieur à 220 km/h; Consommation moyenne : 5,20 l/100km; Autonomie estimée : 269 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "Ducati Monster 2024\nPerformances\nVitesse max : supérieur à 220 km/h; Consommation moyenne : 5,20 l/100km; Autonomie estimée : 269 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.5806177258491516,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "284312cf0b7a7ed2:section:4",
+                  "object_id": "284312cf0b7a7ed2",
+                  "brand": "Ducati",
+                  "model": "Monster",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+                  "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en L à 90° , 4 temps; Injection Ø 53 mm; Refroidissement : liquide; 2 ACT, desmodromique; 4 soupapes par cylindre; 937 cc (Alésage * course: 94 x 67.5 mm); 111 ch à 9 250 tr/min; 9,50 mkg à 6 500 tr/min; Rapport poids / puissance : 1.5 kg/ch; Rapport poids / couple : 17.47 kg/mkg; Compression : 13.3 : 1; Emission CO² : 120 g/km",
+                  "text": "Ducati Monster 2024\nMoteur\nBicylindre en L à 90° , 4 temps; Injection Ø 53 mm; Refroidissement : liquide; 2 ACT, desmodromique; 4 soupapes par cylindre; 937 cc (Alésage * course: 94 x 67.5 mm); 111 ch à 9 250 tr/min; 9,50 mkg à 6 500 tr/min; Rapport poids / puissance : 1.5 kg/ch; Rapport poids / couple : 17.47 kg/mkg; Compression : 13.3 : 1; Emission CO² : 120 g/km",
+                  "score": 0.5762248039245605,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "284312cf0b7a7ed2:section:3",
+                  "object_id": "284312cf0b7a7ed2",
+                  "brand": "Ducati",
+                  "model": "Monster",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/ducati/9868/Monster-2024/contact.html",
+                  "source_sha256": "5df8500fad2778a9ce298bf70c10124785b58429c05b4b7925659cfc9c6fee06",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 140 mm; Freinage : 1 disque Ø 245 mm, étrier 2 pistons; Roue arrière : 180 / 55 - 17; Pression : 2.5 bars",
+                  "text": "Ducati Monster 2024\nTrain arrière\nMono-amortisseur, déb : 140 mm; Freinage : 1 disque Ø 245 mm, étrier 2 pistons; Roue arrière : 180 / 55 - 17; Pression : 2.5 bars",
+                  "score": 0.5720970630645752,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "284312cf0b7a7ed2",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "authority",
+              "field": "a2_certification",
+              "message": "Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2."
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.25030055642128e-07,
+              "query_encoding_seconds": 0.6249443750130013,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "284312cf0b7a7ed2",
+              "proof_check": {
+                "fields": {
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.2822103330399841
+              }
+            }
+          ],
+          "seconds": 0.9151343749836087,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": false,
+          "call_attempted": true,
+          "context_sha256": "be6834d05dfbe74e061d85402ada0c5dcccbb02dd190d96f49fa4430ef45ce40",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1579,
+          "eval_count": 62,
+          "total_duration": 16224644375,
+          "load_duration": 16052167,
+          "prompt_eval_duration": 7823028000,
+          "eval_duration": 8303182000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La fiche mentionne que la Ducati Monster 2024 est accessible avec les permis A ou A2, ou bridable à 47,5 ch / 35 kW.",
+                "sources": [
+                  "P1"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "unsupported",
+                "probabilities": {
+                  "supported": 0.26,
+                  "unsupported": 0.74
+                },
+                "confidence": 0.48
+              }
+            }
+          },
+          "error": "unverified_claims",
+          "seconds": 16.53304904093966
+        }
+      }
+    },
+    {
+      "id": "new-07",
+      "question": "Compare BMW G 310 R 2024 et Kawasaki Ninja 500 2025 pour A2 : explique leurs hauteurs de selle et leurs réservoirs avec une source pour chacune.",
+      "kind": "generation",
+      "identities": [
+        [
+          "BMW",
+          "G 310 R",
+          2024
+        ],
+        [
+          "Kawasaki",
+          "Ninja 500",
+          2025
+        ]
+      ],
+      "required": [
+        "785",
+        "11",
+        "14"
+      ],
+      "api_seconds": 44.56574941694271,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": false,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Compare BMW G 310 R 2024 et Kawasaki Ninja 500 2025 pour A2 : explique leurs hauteurs de selle et leurs réservoirs avec une source pour chacune.",
+        "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n### BMW G 310 R (2024)\n\n- **Réservoir — la fiche indique :** Châssis — Réservoir : 11 litres\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Hauteur de selle (mm) — la fiche indique :** Châssis — Hauteur de selle : 785 mm\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n\n[Source — fiche exacte](https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html)\nPreuves retenues : Infos pratiques, Moteur, Châssis, Performances, Transmission.\n### Kawasaki Ninja 500 (2025)\n\n- **Réservoir — la fiche indique :** Châssis — Réservoir : 14 litres\n- **Hauteur de selle (mm) — la fiche indique :** Châssis — Hauteur de selle : 785 mm\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html)\nPreuves retenues : Moteur, Châssis, Performances, Train arrière, Transmission, Infos pratiques.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- BMW G 310 R (2024) — Réservoir — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Kawasaki Ninja 500 (2025) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée",
+        "seconds": 44.445707375067286,
+        "timestamp": "2026-10-13T23:12:09.865900+00:00",
+        "_catalog_plan": {
+          "operation": "comparison",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2024
+            },
+            {
+              "brand": "Kawasaki",
+              "model": "Ninja 500",
+              "year": 2025
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "reservoir",
+            "seat_height_mm",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Compare BMW G 310 R 2024 et Kawasaki Ninja 500 2025 pour A2 : explique leurs hauteurs de selle et leurs réservoirs avec une source pour chacune.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_fallback",
+        "_catalog_seconds": 44.445498708984815,
+        "_catalog_jev_calls": 4,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "b741e1b2c4b31123",
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html",
+              "source_sha256": "ac097797df821fc7bbcfbed3a39a44865aa6e392a5b71ee1ef59a7f23e9c1ef7",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "reservoir": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "b741e1b2c4b31123:section:0"
+                  ]
+                },
+                "seat_height_mm": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "b741e1b2c4b31123:section:0"
+                  ]
+                },
+                "license": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "b741e1b2c4b31123:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "b741e1b2c4b31123:section:6",
+                  "object_id": "b741e1b2c4b31123",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html",
+                  "source_sha256": "ac097797df821fc7bbcfbed3a39a44865aa6e392a5b71ee1ef59a7f23e9c1ef7",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "BMW G 310 R 2024\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6340299844741821,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "b741e1b2c4b31123:section:4",
+                  "object_id": "b741e1b2c4b31123",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html",
+                  "source_sha256": "ac097797df821fc7bbcfbed3a39a44865aa6e392a5b71ee1ef59a7f23e9c1ef7",
+                  "section": "Moteur",
+                  "original_text": "Monocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.52 kg/ch; Rapport poids / couple : environ 51.23 kg/mkg; Compression : 10.9:1; Emission CO² : 80 g/km",
+                  "text": "BMW G 310 R 2024\nMoteur\nMonocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 313 cc (Alésage * course: 80 x 62.1 mm); 34 ch à 9 250 tr/min; 3 mkg à 7 500 tr/min; Rapport poids / puissance : environ 4.52 kg/ch; Rapport poids / couple : environ 51.23 kg/mkg; Compression : 10.9:1; Emission CO² : 80 g/km",
+                  "score": 0.623866081237793,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "b741e1b2c4b31123:section:0",
+                  "object_id": "b741e1b2c4b31123",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html",
+                  "source_sha256": "ac097797df821fc7bbcfbed3a39a44865aa6e392a5b71ee1ef59a7f23e9c1ef7",
+                  "section": "Châssis",
+                  "original_text": "Selle biplaces; Cadre : cadre treillis en tubes d'acier; Réservoir : 11 litres; Hauteur de selle : 785 mm; Longueur : 2 005 mm; Largeur : 849 mm; Hauteur min : 1 080 mm; Empattement : 1 374 mm; Poids tous pleins faits : 164 kg",
+                  "text": "BMW G 310 R 2024\nChâssis\nSelle biplaces; Cadre : cadre treillis en tubes d'acier; Réservoir : 11 litres; Hauteur de selle : 785 mm; Longueur : 2 005 mm; Largeur : 849 mm; Hauteur min : 1 080 mm; Empattement : 1 374 mm; Poids tous pleins faits : 164 kg",
+                  "score": 0.6016393899917603,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "b741e1b2c4b31123:section:7",
+                  "object_id": "b741e1b2c4b31123",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html",
+                  "source_sha256": "ac097797df821fc7bbcfbed3a39a44865aa6e392a5b71ee1ef59a7f23e9c1ef7",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 330 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "BMW G 310 R 2024\nPerformances\nVitesse max : 143 km/h; Consommation moyenne : 3,33 l/100km; Autonomie estimée : 330 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.5928084254264832,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "b741e1b2c4b31123:section:2",
+                  "object_id": "b741e1b2c4b31123",
+                  "brand": "BMW",
+                  "model": "G 310 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9910/G-310-R-2024/contact.html",
+                  "source_sha256": "ac097797df821fc7bbcfbed3a39a44865aa6e392a5b71ee1ef59a7f23e9c1ef7",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "BMW G 310 R 2024\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.5622836351394653,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            },
+            {
+              "object_id": "eb67ab7736646f2d",
+              "brand": "Kawasaki",
+              "model": "Ninja 500",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+              "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "reservoir": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:0"
+                  ]
+                },
+                "seat_height_mm": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:0"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "eb67ab7736646f2d:section:4",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : 3.46 kg/ch; Rapport poids / couple : 36.51 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "text": "Kawasaki Ninja 500 2025\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : 3.46 kg/ch; Rapport poids / couple : 36.51 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "score": 0.6628145575523376,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:0",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Châssis",
+                  "original_text": "Selle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 730 mm; Hauteur min : 1 120 mm; Garde au sol min : 145 mm Empattement : 1 375 mm Poids à sec : 157 kg Poids tous pleins faits : 171 kg",
+                  "text": "Kawasaki Ninja 500 2025\nChâssis\nSelle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 730 mm; Hauteur min : 1 120 mm; Garde au sol min : 145 mm Empattement : 1 375 mm Poids à sec : 157 kg Poids tous pleins faits : 171 kg",
+                  "score": 0.6601266860961914,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:7",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : environ 170 km/h",
+                  "text": "Kawasaki Ninja 500 2025\nPerformances\nVitesse max : environ 170 km/h",
+                  "score": 0.6218691468238831,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:3",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "text": "Kawasaki Ninja 500 2025\nTrain arrière\nMono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "score": 0.6170661449432373,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:2",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "text": "Kawasaki Ninja 500 2025\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+                  "score": 0.6149287819862366,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:6",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A, A2",
+                  "text": "Kawasaki Ninja 500 2025\nInfos pratiques\nLa moto est accessible aux permis : A, A2",
+                  "score": 0.6054280996322632,
+                  "rank": 7,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "b741e1b2c4b31123",
+              "field": "reservoir",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "eb67ab7736646f2d",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 3.33995558321476e-07,
+              "query_encoding_seconds": 0.5282226250274107,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "b741e1b2c4b31123",
+              "proof_check": {
+                "fields": {
+                  "reservoir": "unverified",
+                  "seat_height_mm": "complete",
+                  "license": "complete"
+                },
+                "jev_calls": 1,
+                "seconds": 0.30139604199212044
+              }
+            },
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 2.0803418010473251e-07,
+              "query_encoding_seconds": 0.04864316701423377,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "eb67ab7736646f2d",
+              "proof_check": {
+                "fields": {
+                  "reservoir": "complete",
+                  "seat_height_mm": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.287267041974701
+              }
+            }
+          ],
+          "seconds": 1.1809471669839695,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.98,
+              "unresolved": 0.02
+            },
+            "confidence": 0.96
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": false,
+          "call_attempted": true,
+          "context_sha256": "5acf27817f07a23882fa41bf815e539a319413d36a849356fbae43e745d49477",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 2784,
+          "eval_count": 195,
+          "total_duration": 42520729417,
+          "load_duration": 18807292,
+          "prompt_eval_duration": 16038994000,
+          "eval_duration": 26347164000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La BMW G 310 R 2024 a une hauteur de selle de 785 mm et un réservoir de 11 litres.",
+                "sources": [
+                  "P3"
+                ]
+              },
+              {
+                "text": "La Kawasaki Ninja 500 2025 a une hauteur de selle de 785 mm et un réservoir de 14 litres.",
+                "sources": [
+                  "P7"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la BMW G 310 R 2024 est accessible au permis A2 ou bridable à 47.5ch / 35 Kw.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la Kawasaki Ninja 500 2025 est accessible aux permis A et A2.",
+                "sources": [
+                  "P11"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_2": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_3": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.88,
+                  "unsupported": 0.12
+                },
+                "confidence": 0.76
+              }
+            }
+          },
+          "error": "unverified_claims",
+          "seconds": 42.91166862496175
+        }
+      }
+    },
+    {
+      "id": "new-08",
+      "question": "Décris la transmission et le refroidissement de la Suzuki GSX-8S 800 2024 à partir de sa fiche, sans en déduire des sensations de conduite.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Suzuki",
+          "GSX-8S 800",
+          2024
+        ]
+      ],
+      "required": [
+        "6",
+        "chaîne",
+        "liquide"
+      ],
+      "api_seconds": 21.3732993749436,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": false,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Décris la transmission et le refroidissement de la Suzuki GSX-8S 800 2024 à partir de sa fiche, sans en déduire des sensations de conduite.",
+        "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n| Caractéristique | Suzuki GSX-8S 800 (2024) |\n|---|---|\n| Boîte et transmission secondaire | Transmission — boîte à 6 rapports , manuelle - shifter de série ; Transmission — Secondaire par chaîne |\n| Refroidissement | Moteur — Refroidissement : liquide |\n| Source | [Fiche](https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html) |",
+        "seconds": 21.3244315830525,
+        "timestamp": "2026-10-13T23:12:31.304597+00:00",
+        "_catalog_plan": {
+          "identity": {
+            "brand": "Suzuki",
+            "year": 2024
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Suzuki",
+              "model": "GSX-8S 800"
+            }
+          ],
+          "fields": [
+            "transmission",
+            "cooling"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Décris la transmission et le refroidissement de la Suzuki GSX-8S 800 2024 à partir de sa fiche, sans en déduire des sensations de conduite.",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "details"
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_fallback",
+        "_catalog_seconds": 21.324294375022873,
+        "_catalog_jev_calls": 1,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "3c7991fb5c47484a",
+              "brand": "Suzuki",
+              "model": "GSX-8S 800",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+              "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "transmission": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "3c7991fb5c47484a:section:2"
+                  ]
+                },
+                "cooling": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "3c7991fb5c47484a:section:4"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "3c7991fb5c47484a:section:2",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+                  "text": "Suzuki GSX-8S 800 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+                  "score": 0.693840742111206,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:4",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.28 kg/ch; Rapport poids / couple : environ 23.68 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km",
+                  "text": "Suzuki GSX-8S 800 2024\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.28 kg/ch; Rapport poids / couple : environ 23.68 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km",
+                  "score": 0.6928805112838745,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:3",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Train arrière",
+                  "original_text": "Monoamortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17",
+                  "text": "Suzuki GSX-8S 800 2024\nTrain arrière\nMonoamortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 180 / 55 - 17",
+                  "score": 0.6800323724746704,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:1",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Train avant",
+                  "original_text": "Fourche téléhydraulique inversée Ø nc, déb : 130 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "text": "Suzuki GSX-8S 800 2024\nTrain avant\nFourche téléhydraulique inversée Ø nc, déb : 130 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+                  "score": 0.6606339812278748,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "3c7991fb5c47484a:section:7",
+                  "object_id": "3c7991fb5c47484a",
+                  "brand": "Suzuki",
+                  "model": "GSX-8S 800",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+                  "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : environ 200 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 333 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "Suzuki GSX-8S 800 2024\nPerformances\nVitesse max : environ 200 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 333 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.6535447835922241,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.25030055642128e-07,
+              "query_encoding_seconds": 0.5575260419864208,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "3c7991fb5c47484a",
+              "proof_check": {
+                "fields": {
+                  "transmission": "complete",
+                  "cooling": "complete"
+                },
+                "jev_calls": 0,
+                "seconds": 0.024864875013008714
+              }
+            }
+          ],
+          "seconds": 0.5907431669766083,
+          "source_kind": "technical_fiche",
+          "legal_certification": false
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": false,
+          "call_attempted": true,
+          "context_sha256": "3dd8c2029fef2bdc62dbb67ee6bacfc273b8b662789a2176f7a0011c803362ec",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1468,
+          "eval_count": 97,
+          "total_duration": 20334012667,
+          "load_duration": 12437750,
+          "prompt_eval_duration": 7283832000,
+          "eval_duration": 12884824000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La Suzuki GSX-8S 800 2024 dispose d'une transmission manuelle à 6 rapports avec un shifter de série et une transmission secondaire par chaîne.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "Le moteur de la Suzuki GSX-8S 800 2024 est refroidi par liquide.",
+                "sources": [
+                  "P2"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.88,
+                  "unsupported": 0.12
+                },
+                "confidence": 0.76
+              }
+            }
+          },
+          "error": "unverified_claims",
+          "seconds": 20.67583524994552
+        }
+      }
+    },
+    {
+      "id": "new-09",
+      "question": "Explique ce que décrivent le freinage et les suspensions de la Kawasaki Ninja 500 2025 ; si la fiche ne mesure pas le confort, indique ce manque.",
+      "kind": "generation",
+      "identities": [
+        [
+          "Kawasaki",
+          "Ninja 500",
+          2025
+        ]
+      ],
+      "required": [
+        "frein",
+        "confort"
+      ],
+      "api_seconds": 39.03156587504782,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "local_generation_published": true,
+        "bge_executed": true,
+        "citations": true,
+        "missing_visible": true,
+        "a2_limit": true
+      },
+      "receipt": {
+        "question": "Explique ce que décrivent le freinage et les suspensions de la Kawasaki Ninja 500 2025 ; si la fiche ne mesure pas le confort, indique ce manque.",
+        "answer": "Le freinage de la Kawasaki Ninja 500 2025 est assuré par des disques à l'avant et à l'arrière, avec des étriers à deux pistons. L'avant dispose d'un disque de 310 mm de diamètre, tandis que l'arrière en a un de 220 mm. La moto est également équipée d'un système ABS pour une assistance au freinage. [Kawasaki Ninja 500 (2025)](https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html)\n\nLes suspensions de la Kawasaki Ninja 500 2025 comprennent une fourche télescopique à l'avant avec un diamètre de 41 mm et une course de 120 mm. À l'arrière, il y a un mono-amortisseur avec une course de 130 mm et un réglage de la précharge. Les passages fournis ne permettent pas d'établir le confort des suspensions. [Kawasaki Ninja 500 (2025)](https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Kawasaki Ninja 500 (2025) — Suspensions et réglages avant/arrière — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Kawasaki Ninja 500 (2025) — Freins avant/arrière — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée",
+        "seconds": 38.951985666994005,
+        "timestamp": "2026-10-13T23:13:10.335788+00:00",
+        "_catalog_plan": {
+          "identity": {
+            "brand": "Kawasaki",
+            "year": 2025
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Kawasaki",
+              "model": "Ninja 500"
+            }
+          ],
+          "fields": [
+            "suspension",
+            "braking"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Explique ce que décrivent le freinage et les suspensions de la Kawasaki Ninja 500 2025 ; si la fiche ne mesure pas le confort, indique ce manque.",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "details"
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 38.951851167017594,
+        "_catalog_jev_calls": 1,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "eb67ab7736646f2d",
+              "brand": "Kawasaki",
+              "model": "Ninja 500",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+              "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "suspension": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:1",
+                    "eb67ab7736646f2d:section:3"
+                  ]
+                },
+                "braking": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "eb67ab7736646f2d:section:1",
+                    "eb67ab7736646f2d:section:3"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "eb67ab7736646f2d:section:5",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Embrayage anti-dribble",
+                  "text": "Kawasaki Ninja 500 2025\nÉquipement de série\nAssistance au freinage : ABS; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Embrayage anti-dribble",
+                  "score": 0.6811637878417969,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:3",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "text": "Kawasaki Ninja 500 2025\nTrain arrière\nMono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "score": 0.6734267473220825,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:4",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : 3.46 kg/ch; Rapport poids / couple : 36.51 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "text": "Kawasaki Ninja 500 2025\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : 3.46 kg/ch; Rapport poids / couple : 36.51 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "score": 0.6577351689338684,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:1",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Train avant",
+                  "original_text": "Fourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+                  "text": "Kawasaki Ninja 500 2025\nTrain avant\nFourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+                  "score": 0.6543912291526794,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "eb67ab7736646f2d:section:0",
+                  "object_id": "eb67ab7736646f2d",
+                  "brand": "Kawasaki",
+                  "model": "Ninja 500",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10860/Ninja-500-2025/contact.html",
+                  "source_sha256": "e53f4d19f1d2b72e592fbca93be7297e3d4ea96f45895ff79616958de54fa955",
+                  "section": "Châssis",
+                  "original_text": "Selle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 730 mm; Hauteur min : 1 120 mm; Garde au sol min : 145 mm Empattement : 1 375 mm Poids à sec : 157 kg Poids tous pleins faits : 171 kg",
+                  "text": "Kawasaki Ninja 500 2025\nChâssis\nSelle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 730 mm; Hauteur min : 1 120 mm; Garde au sol min : 145 mm Empattement : 1 375 mm Poids à sec : 157 kg Poids tous pleins faits : 171 kg",
+                  "score": 0.6058306694030762,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "eb67ab7736646f2d",
+              "field": "suspension",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "eb67ab7736646f2d",
+              "field": "braking",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": true,
+              "document_encoding_seconds": 1.6693957149982452e-07,
+              "query_encoding_seconds": 0.555439459043555,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "eb67ab7736646f2d",
+              "proof_check": {
+                "fields": {
+                  "suspension": "unverified",
+                  "braking": "unverified"
+                },
+                "jev_calls": 0,
+                "seconds": 0.007042041048407555
+              }
+            }
+          ],
+          "seconds": 0.5720303750131279,
+          "source_kind": "technical_fiche",
+          "legal_certification": false
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "94d187da5cef25d2c44e11fb36af7eae25d674f015c70ee89672d0ba39dd3750",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1717,
+          "eval_count": 220,
+          "total_duration": 37953397458,
+          "load_duration": 6886125,
+          "prompt_eval_duration": 7805427000,
+          "eval_duration": 30042492000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "Le freinage de la Kawasaki Ninja 500 2025 est assuré par des disques à l'avant et à l'arrière, avec des étriers à deux pistons. L'avant dispose d'un disque de 310 mm de diamètre, tandis que l'arrière en a un de 220 mm. La moto est également équipée d'un système ABS pour une assistance au freinage.",
+                "sources": [
+                  "P4",
+                  "P2",
+                  "P1"
+                ]
+              },
+              {
+                "text": "Les suspensions de la Kawasaki Ninja 500 2025 comprennent une fourche télescopique à l'avant avec un diamètre de 41 mm et une course de 120 mm. À l'arrière, il y a un mono-amortisseur avec une course de 130 mm et un réglage de la précharge. Les passages fournis ne permettent pas d'établir le confort des suspensions.",
+                "sources": [
+                  "P4",
+                  "P2"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.98,
+                  "unsupported": 0.02
+                },
+                "confidence": 0.96
+              }
+            }
+          },
+          "seconds": 38.333887250046246
+        }
+      }
+    },
+    {
+      "id": "new-10",
+      "question": "BMW G 310 R 2098 : peux-tu résumer la mention A2 et la hauteur de selle de cette année exacte ?",
+      "kind": "clarification",
+      "identities": [],
+      "required": [
+        "2098"
+      ],
+      "api_seconds": 0.39195270801428705,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "no_generator": true
+      },
+      "receipt": {
+        "question": "BMW G 310 R 2098 : peux-tu résumer la mention A2 et la hauteur de selle de cette année exacte ?",
+        "answer": "Fiche exacte non identifiée : BMW G 310 R (2098). Aucune autre année ou variante substituée.",
+        "seconds": 0.333553416072391,
+        "timestamp": "2026-10-13T23:13:10.812170+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "G 310 R",
+              "year": 2098
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "seat_height_mm",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "BMW G 310 R 2098 : peux-tu résumer la mention A2 et la hauteur de selle de cette année exacte ?",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "clarification",
+        "_catalog_seconds": 0.3334926249226555,
+        "_catalog_jev_calls": 1,
+        "_catalog_evidence": {
+          "sources": [],
+          "missing": [
+            {
+              "kind": "identity",
+              "message": "Fiche exacte non identifiée : BMW G 310 R (2098). Aucune autre année ou variante substituée."
+            }
+          ],
+          "retrieval_executed": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.95,
+              "unresolved": 0.05
+            },
+            "confidence": 0.9
+          }
+        },
+        "_catalog_generation": null
+      }
+    },
+    {
+      "id": "new-11",
+      "question": "Suzuki GSX-8S 800 édition Galaxie 2024 : quels permis A2 la fiche annonce-t-elle ?",
+      "kind": "clarification",
+      "identities": [],
+      "required": [
+        "variante"
+      ],
+      "api_seconds": 0.06358812493272126,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "no_generator": true
+      },
+      "receipt": {
+        "question": "Suzuki GSX-8S 800 édition Galaxie 2024 : quels permis A2 la fiche annonce-t-elle ?",
+        "answer": "Le nom laisse une variante ou une édition ambiguë. Précise son intitulé de catalogue et son millésime ; aucune fiche de base ne sera substituée.",
+        "seconds": 0.03183945803903043,
+        "timestamp": "2026-10-13T23:13:10.894702+00:00",
+        "_catalog_plan": null,
+        "_catalog_pending": null,
+        "_catalog_route": "clarification",
+        "_catalog_seconds": null,
+        "_catalog_jev_calls": 0,
+        "_catalog_evidence": {
+          "sources": [],
+          "missing": [
+            {
+              "kind": "identity"
+            }
+          ],
+          "retrieval_executed": false
+        },
+        "_catalog_generation": null
+      }
+    },
+    {
+      "id": "new-12",
+      "question": "Combien de Yamaha de 2020 ont l'ABS et un shifter de série ?",
+      "kind": "sql",
+      "identities": [],
+      "required": [
+        "8 fiches"
+      ],
+      "api_seconds": 0.11537758295889944,
+      "checks": {
+        "actual_server_answer": true,
+        "requested_identities": true,
+        "requested_tokens": true,
+        "no_generator": true
+      },
+      "receipt": {
+        "question": "Combien de Yamaha de 2020 ont l'ABS et un shifter de série ?",
+        "answer": "**8 fiches correspondent dans le catalogue.** Équipements : ABS — de série, shifter — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+        "seconds": 0.05551066703628749,
+        "timestamp": "2026-10-13T23:13:10.992088+00:00",
+        "_catalog_plan": {
+          "identity": {
+            "brand": "Yamaha",
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [],
+          "fields": [
+            "equipment"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Combien de Yamaha de 2020 ont l'ABS et un shifter de série ?",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "count",
+          "equipment_filters": [
+            {
+              "equipment": "ABS",
+              "status": "standard"
+            },
+            {
+              "equipment": "shifter",
+              "status": "standard"
+            }
+          ]
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "count",
+        "_catalog_seconds": 0.05485716590192169,
+        "_catalog_jev_calls": 0,
+        "_catalog_evidence": null,
+        "_catalog_generation": null
+      }
+    }
+  ]
+}

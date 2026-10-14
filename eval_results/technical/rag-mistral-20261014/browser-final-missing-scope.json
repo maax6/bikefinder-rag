@@ -1,0 +1,295 @@
+{
+  "method": "Final replay of new-05 typed through CUA in the real front. Explicit field-vocabulary request scope annotates missing notices; no claim of heated grips presence/absence. Not a new unseen case.",
+  "case": {
+    "id": "new-05",
+    "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+    "kind": "generation",
+    "identities": [
+      [
+        "Honda",
+        "CB 750 Hornet",
+        2025
+      ]
+    ],
+    "required": [
+      "shifter",
+      "chauffantes"
+    ]
+  },
+  "receipt": {
+    "question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+    "answer": "Le shifter est proposé en option sur la Honda CB 750 Hornet 2025. [Honda CB 750 Hornet (2025)](https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html)\n\nLa fiche mentionne que la moto est accessible au permis A2 ou bridable à 47,5 ch / 35 kW. [Honda CB 750 Hornet (2025)](https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n### Honda CB 750 Hornet (2025)\n\n- **Équipements : ABS, options et statuts documentés — la fiche indique :** Transmission — boîte à 6 rapports , manuelle - shifter en option ; Équipement de série — Assistance au freinage : ABS ; Équipement de série — Nombre de mode de conduite : 4 ; Équipement de série — Taille de l'écran TFT couleur : 12,70 cm / 5 pouces ; Équipement de série — Jantes aluminium ; Équipement de série — Indicateur de vitesse engagée ; Équipement de série — Bluetooth ; Équipement de série — Prise USB ; Équipement de série — Contrôle de couple ; Équipement de série — Contrôle anti wheeling ; Équipement de série — Embrayage anti-dribble ; Équipement de série — Contrôle du frein moteur\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Permis / bridage mentionnés — la fiche indique :** Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html)\nPreuves retenues : Transmission, Moteur, Équipement de série, Infos pratiques, Train avant.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Preuves manquantes ou non vérifiées :**\n- Honda CB 750 Hornet (2025) — Équipements : ABS, options et statuts documentés — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « shifter; poignees chauffantes ».\n- Honda CB 750 Hornet (2025) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+    "seconds": 44.98121929203626,
+    "timestamp": "2026-10-13T23:45:15.419712+00:00",
+    "_catalog_plan": {
+      "operation": "details",
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 750 Hornet",
+          "year": 2025
+        }
+      ],
+      "identity": {},
+      "conditions": [],
+      "fields": [
+        "equipment",
+        "license"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "source_question": "Pour la Honda CB 750 Hornet 2025 en contexte A2, distingue ce qui est documenté sur le shifter et sur des poignées chauffantes montées de série.",
+      "a2_context": true,
+      "legal_proof_required": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 44.97134454199113,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "9a2da2eae8ce4d9e",
+          "brand": "Honda",
+          "model": "CB 750 Hornet",
+          "year": 2025,
+          "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+          "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "equipment": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "9a2da2eae8ce4d9e:section:2",
+                "9a2da2eae8ce4d9e:section:5"
+              ]
+            },
+            "license": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "9a2da2eae8ce4d9e:section:6"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "9a2da2eae8ce4d9e:section:2",
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+              "text": "Honda CB 750 Hornet 2025\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+              "score": 0.7063870429992676,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "9a2da2eae8ce4d9e:section:4",
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps, calé à 270°; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 755 cc (Alésage * course: 87 x 63,5 mm); 92 ch à 9 500 tr/min; 7,70 mkg à 7 250 tr/min; Rapport poids / puissance : environ 1.94 kg/ch; Rapport poids / couple : environ 23.18 kg/mkg; Compression : 11 : 1; Emission CO² : 99 g/km",
+              "text": "Honda CB 750 Hornet 2025\nMoteur\nBicylindre en ligne , 4 temps, calé à 270°; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 755 cc (Alésage * course: 87 x 63,5 mm); 92 ch à 9 500 tr/min; 7,70 mkg à 7 250 tr/min; Rapport poids / puissance : environ 1.94 kg/ch; Rapport poids / couple : environ 23.18 kg/mkg; Compression : 11 : 1; Emission CO² : 99 g/km",
+              "score": 0.6882676482200623,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "9a2da2eae8ce4d9e:section:5",
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de couple; Contrôle anti wheeling; Embrayage anti-dribble; Contrôle du frein moteur",
+              "text": "Honda CB 750 Hornet 2025\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Indicateur de vitesse engagée; Bluetooth; Prise USB; Contrôle de couple; Contrôle anti wheeling; Embrayage anti-dribble; Contrôle du frein moteur",
+              "score": 0.6813659071922302,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "9a2da2eae8ce4d9e:section:6",
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "section": "Infos pratiques",
+              "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+              "text": "Honda CB 750 Hornet 2025\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+              "score": 0.6588265895843506,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "9a2da2eae8ce4d9e:section:1",
+              "object_id": "9a2da2eae8ce4d9e",
+              "brand": "Honda",
+              "model": "CB 750 Hornet",
+              "year": 2025,
+              "source_url": "https://www.motoplanete.com/honda/10940/CB-750-Hornet-2025/contact.html",
+              "source_sha256": "4047d0dd4d32f9323e362a029da875b0a48c9edb82599bdf0f218ff496141681",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 41 mm / Showa , déb : 130 mm; Freinage : 2 disques Nissin Ø 296 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+              "text": "Honda CB 750 Hornet 2025\nTrain avant\nFourche téléhydraulique inversée Ø 41 mm / Showa , déb : 130 mm; Freinage : 2 disques Nissin Ø 296 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+              "score": 0.6565936803817749,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "9a2da2eae8ce4d9e",
+          "field": "equipment",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « shifter; poignees chauffantes ».",
+          "requested_terms": [
+            "shifter",
+            "poignees chauffantes"
+          ]
+        },
+        {
+          "kind": "field",
+          "object_id": "9a2da2eae8ce4d9e",
+          "field": "license",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.0803418010473251e-07,
+          "query_encoding_seconds": 7.010608416981995,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "9a2da2eae8ce4d9e",
+          "proof_check": {
+            "fields": {
+              "equipment": "unverified",
+              "license": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0006934170378372073
+          }
+        }
+      ],
+      "seconds": 7.02151483297348,
+      "source_kind": "technical_fiche",
+      "legal_certification": false,
+      "identity_interpretation": {
+        "type": "choice",
+        "choice": "recognized",
+        "probabilities": {
+          "recognized": 0.92,
+          "unresolved": 0.08
+        },
+        "confidence": 0.84
+      }
+    },
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "279378b24733ab14dc6a6f0aef6013cb3dfcb58b7876fa88c2bdd535897aa5a5",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1686,
+      "eval_count": 116,
+      "total_duration": 34561291791,
+      "load_duration": 26096750,
+      "prompt_eval_duration": 15408897000,
+      "eval_duration": 15945354000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "Le shifter est proposé en option sur la Honda CB 750 Hornet 2025.",
+            "sources": [
+              "P1"
+            ]
+          },
+          {
+            "text": "Les poignées chauffantes ne sont pas mentionnées dans les passages fournis.",
+            "sources": [
+              "P3"
+            ]
+          },
+          {
+            "text": "La fiche mentionne que la moto est accessible au permis A2 ou bridable à 47,5 ch / 35 kW.",
+            "sources": [
+              "P4"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": false,
+        "verified_claim_indices": [
+          0,
+          2
+        ],
+        "coverage_verified": false,
+        "jev_calls": 1,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "claim_1": {
+            "type": "choice",
+            "choice": "unsupported",
+            "probabilities": {
+              "supported": 0.39,
+              "unsupported": 0.61
+            },
+            "confidence": 0.22
+          },
+          "claim_2": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.99,
+              "unsupported": 0.01
+            },
+            "confidence": 0.98
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.86,
+              "unsupported": 0.14
+            },
+            "confidence": 0.72
+          }
+        }
+      },
+      "removed_claims": 1,
+      "mode": "mixed",
+      "seconds": 35.36446270800661
+    }
+  }
+}

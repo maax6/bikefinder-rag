@@ -1,0 +1,263 @@
+{
+  "method": "Final UI view, repeated browser-03 after loading the final code. Not unseen.",
+  "receipt": {
+    "question": "Kawasaki Z 500 2024 : donne-moi une réponse rédigée sur la puissance et les permis indiqués dans la fiche, avec le réservoir, pour mon dossier A2.",
+    "answer": "La Kawasaki Z 500 2024 a une puissance de 45,40 ch à 9 000 tr/min et un réservoir de 14 litres. [Kawasaki Z 500 (2024)](https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html)\n\nLa fiche mentionne que la moto est accessible aux permis A et A2. [Kawasaki Z 500 (2024)](https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Kawasaki Z 500 (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+    "seconds": 44.81895066704601,
+    "timestamp": "2026-10-14T00:04:36.689999+00:00",
+    "_catalog_plan": {
+      "operation": "details",
+      "models": [
+        {
+          "brand": "Kawasaki",
+          "model": "Z 500",
+          "year": 2024
+        }
+      ],
+      "identity": {},
+      "conditions": [],
+      "fields": [
+        "power_ch",
+        "reservoir",
+        "license"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "source_question": "Kawasaki Z 500 2024 : donne-moi une réponse rédigée sur la puissance et les permis indiqués dans la fiche, avec le réservoir, pour mon dossier A2.",
+      "a2_context": true,
+      "legal_proof_required": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 44.81045841705054,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "7f2f60abb11c9104",
+          "brand": "Kawasaki",
+          "model": "Z 500",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+          "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "7f2f60abb11c9104:section:4"
+              ]
+            },
+            "reservoir": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "7f2f60abb11c9104:section:0"
+              ]
+            },
+            "license": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "7f2f60abb11c9104:section:6"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "7f2f60abb11c9104:section:4",
+              "object_id": "7f2f60abb11c9104",
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+              "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+              "section": "Moteur",
+              "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : environ 3.51 kg/ch; Rapport poids / couple : environ 37.08 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+              "text": "Kawasaki Z 500 2024\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : environ 3.51 kg/ch; Rapport poids / couple : environ 37.08 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+              "score": 0.6880951523780823,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7f2f60abb11c9104:section:0",
+              "object_id": "7f2f60abb11c9104",
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+              "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+              "section": "Châssis",
+              "original_text": "Selle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 800 mm; Hauteur min : 1 055 mm; Empattement : 1 375 mm; Poids tous pleins faits : 172 kg",
+              "text": "Kawasaki Z 500 2024\nChâssis\nSelle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 800 mm; Hauteur min : 1 055 mm; Empattement : 1 375 mm; Poids tous pleins faits : 172 kg",
+              "score": 0.6621963977813721,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7f2f60abb11c9104:section:6",
+              "object_id": "7f2f60abb11c9104",
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+              "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A, A2; Pays de fabrication : Thailande",
+              "text": "Kawasaki Z 500 2024\nInfos pratiques\nLa moto est accessible aux permis : A, A2; Pays de fabrication : Thailande",
+              "score": 0.6398491263389587,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7f2f60abb11c9104:section:1",
+              "object_id": "7f2f60abb11c9104",
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+              "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+              "section": "Train avant",
+              "original_text": "Fourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+              "text": "Kawasaki Z 500 2024\nTrain avant\nFourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+              "score": 0.6359813213348389,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "7f2f60abb11c9104:section:3",
+              "object_id": "7f2f60abb11c9104",
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+              "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+              "text": "Kawasaki Z 500 2024\nTrain arrière\nMono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+              "score": 0.6295582056045532,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "7f2f60abb11c9104",
+          "field": "license",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6600824892520905e-07,
+          "query_encoding_seconds": 7.169406709028408,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "7f2f60abb11c9104",
+          "proof_check": {
+            "fields": {
+              "power_ch": "complete",
+              "reservoir": "complete",
+              "license": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.00048579100985080004
+          }
+        }
+      ],
+      "seconds": 7.180971708963625,
+      "source_kind": "technical_fiche",
+      "legal_certification": false,
+      "identity_interpretation": {
+        "type": "choice",
+        "choice": "recognized",
+        "probabilities": {
+          "recognized": 0.99,
+          "unresolved": 0.01
+        },
+        "confidence": 0.98
+      }
+    },
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "337c1baab8871c4b5093da345f20d3a5378bf287fcd9fcb4a746f944b5433933",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1681,
+      "eval_count": 96,
+      "total_duration": 34637418875,
+      "load_duration": 27461833,
+      "prompt_eval_duration": 18044099000,
+      "eval_duration": 13148590000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Kawasaki Z 500 2024 a une puissance de 45,40 ch à 9 000 tr/min et un réservoir de 14 litres.",
+            "sources": [
+              "P1",
+              "P2"
+            ]
+          },
+          {
+            "text": "La fiche mentionne que la moto est accessible aux permis A et A2.",
+            "sources": [
+              "P3"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0,
+          1
+        ],
+        "coverage_verified": false,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "claim_1": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.99,
+              "unsupported": 0.01
+            },
+            "confidence": 0.98
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.69,
+              "unsupported": 0.31
+            },
+            "confidence": 0.38
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 34.85866304091178
+    }
+  }
+}

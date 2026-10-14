@@ -1,0 +1,833 @@
+{
+  "protocol": "jev-local-rag-claims-v3",
+  "method": "First execution, typed in the browser through CUA. Root-authored source-curated cases, not blind. Manual review identified an unproved standard qualifier in browser-02, despite acceptance by Jev. Guard added afterwards.",
+  "results": [
+    {
+      "id": "browser-01",
+      "receipt": {
+        "question": "Honda CL 500 2024 : résume le refroidissement et la hauteur de selle, puis précise si la fiche contient une mention A2.",
+        "answer": "La Honda CL 500 2024 possède un moteur bicylindre en ligne refroidi par liquide. [Honda CL 500 (2024)](https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html)\n\nLa hauteur de selle de la Honda CL 500 2024 est de 790 mm. [Honda CL 500 (2024)](https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html)\n\nLa fiche mentionne que la moto est accessible aux permis A. [Honda CL 500 (2024)](https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Honda CL 500 (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Honda CL 500 (2024) — Mention A2 — Mention A2 non retrouvée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+        "seconds": 37.410201083053835,
+        "timestamp": "2026-10-13T23:16:20.079837+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CL 500",
+              "year": 2024
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "cooling",
+            "seat_height_mm",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Honda CL 500 2024 : résume le refroidissement et la hauteur de selle, puis précise si la fiche contient une mention A2.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 37.40341908298433,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "a0e4d35c47012dc9",
+              "brand": "Honda",
+              "model": "CL 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+              "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "cooling": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "a0e4d35c47012dc9:section:4"
+                  ]
+                },
+                "seat_height_mm": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "a0e4d35c47012dc9:section:0"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "a0e4d35c47012dc9:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "a0e4d35c47012dc9:section:4",
+                  "object_id": "a0e4d35c47012dc9",
+                  "brand": "Honda",
+                  "model": "CL 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+                  "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 46,60 ch à 8 500 tr/min; 4,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 3.88 kg/ch; Rapport poids / couple : environ 39.33 kg/mkg; Compression : 10.7 : 1; Emission CO² : 84 g/km",
+                  "text": "Honda CL 500 2024\nMoteur\nBicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 46,60 ch à 8 500 tr/min; 4,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 3.88 kg/ch; Rapport poids / couple : environ 39.33 kg/mkg; Compression : 10.7 : 1; Emission CO² : 84 g/km",
+                  "score": 0.6846880316734314,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "a0e4d35c47012dc9:section:3",
+                  "object_id": "a0e4d35c47012dc9",
+                  "brand": "Honda",
+                  "model": "CL 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+                  "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+                  "section": "Train arrière",
+                  "original_text": "2 amortisseurs latéraux, déb : 145 mm; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 150 / 70 - 17; Pression : 2 bars",
+                  "text": "Honda CL 500 2024\nTrain arrière\n2 amortisseurs latéraux, déb : 145 mm; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 150 / 70 - 17; Pression : 2 bars",
+                  "score": 0.6756669282913208,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "a0e4d35c47012dc9:section:5",
+                  "object_id": "a0e4d35c47012dc9",
+                  "brand": "Honda",
+                  "model": "CL 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+                  "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS de serie; Jantes aluminium; Indicateur de vitesse engagée; Embrayage anti-dribble",
+                  "text": "Honda CL 500 2024\nÉquipement de série\nAssistance au freinage : ABS de serie; Jantes aluminium; Indicateur de vitesse engagée; Embrayage anti-dribble",
+                  "score": 0.6581246256828308,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "a0e4d35c47012dc9:section:0",
+                  "object_id": "a0e4d35c47012dc9",
+                  "brand": "Honda",
+                  "model": "CL 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+                  "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+                  "section": "Châssis",
+                  "original_text": "Cadre : Cadre tubulaire en acier; Réservoir : 12 litres; Hauteur de selle : 790 mm; Longueur : 2 175 mm; Largeur : 830 mm; Hauteur min : 1 135 mm; Empattement : 1 485 mm; Poids tous pleins faits : 192 kg",
+                  "text": "Honda CL 500 2024\nChâssis\nCadre : Cadre tubulaire en acier; Réservoir : 12 litres; Hauteur de selle : 790 mm; Longueur : 2 175 mm; Largeur : 830 mm; Hauteur min : 1 135 mm; Empattement : 1 485 mm; Poids tous pleins faits : 192 kg",
+                  "score": 0.6386792063713074,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "a0e4d35c47012dc9:section:7",
+                  "object_id": "a0e4d35c47012dc9",
+                  "brand": "Honda",
+                  "model": "CL 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+                  "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+                  "section": "Performances",
+                  "original_text": "Vitesse max : environ 170 km/h; Consommation moyenne : 3,61 l/100km; Autonomie estimée : 332 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "text": "Honda CL 500 2024\nPerformances\nVitesse max : environ 170 km/h; Consommation moyenne : 3,61 l/100km; Autonomie estimée : 332 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                  "score": 0.6342450380325317,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "a0e4d35c47012dc9:section:6",
+                  "object_id": "a0e4d35c47012dc9",
+                  "brand": "Honda",
+                  "model": "CL 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/honda/10201/CL-500-2024/contact.html",
+                  "source_sha256": "11fe153dc9e8bbc53a1a8825bf8cb4c97040625850ff8343d6b22ad1cac460fd",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A",
+                  "text": "Honda CL 500 2024\nInfos pratiques\nLa moto est accessible aux permis : A",
+                  "score": 0.5821982026100159,
+                  "rank": 8,
+                  "selection_reason": "required_field"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "a0e4d35c47012dc9",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "a0e4d35c47012dc9",
+              "field": "a2_mention",
+              "message": "Mention A2 non retrouvée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": false,
+              "document_encoding_seconds": 8.002242499962449,
+              "query_encoding_seconds": 0.03179408400319517,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "a0e4d35c47012dc9",
+              "proof_check": {
+                "fields": {
+                  "cooling": "complete",
+                  "seat_height_mm": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.45441033400129527
+              }
+            }
+          ],
+          "seconds": 8.497670000069775,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 1,
+              "unresolved": 0
+            },
+            "confidence": 1
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "9a6422e8ea4018c4629549d104ed0754987dc610cf7fc3e5e7bb9cc75f24f262",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1787,
+          "eval_count": 110,
+          "total_duration": 25148671958,
+          "load_duration": 28755916,
+          "prompt_eval_duration": 9740147000,
+          "eval_duration": 15244223000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La Honda CL 500 2024 possède un moteur bicylindre en ligne refroidi par liquide.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "La hauteur de selle de la Honda CL 500 2024 est de 790 mm.",
+                "sources": [
+                  "P4"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la moto est accessible aux permis A.",
+                "sources": [
+                  "P6"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_2": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.98,
+                  "unsupported": 0.02
+                },
+                "confidence": 0.96
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.62,
+                  "unsupported": 0.38
+                },
+                "confidence": 0.24
+              }
+            }
+          },
+          "seconds": 25.756682666949928
+        }
+      }
+    },
+    {
+      "id": "browser-02",
+      "receipt": {
+        "question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+        "answer": "La fiche mentionne que la BMW F 900 R 2024 est accessible au permis A2 ou bridable à 47,5 ch / 35 kW. La boîte de vitesses est manuelle avec 6 rapports de série. Le shifter est proposé en option. [BMW F 900 R (2024)](https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html)\n\nLes passages fournis ne permettent pas d'établir si la fiche contient un certificat de bridage pour votre moto. [BMW F 900 R (2024)](https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- BMW F 900 R (2024) — Équipements : ABS, options et statuts documentés — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- BMW F 900 R (2024) — Boîte et transmission secondaire — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- BMW F 900 R (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- a2_certification — Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+        "seconds": 29.263358791009523,
+        "timestamp": "2026-10-13T23:17:12.977625+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "F 900 R",
+              "year": 2024
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "equipment",
+            "transmission",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Sur la BMW F 900 R 2024 pour A2, explique ce que dit la fiche sur la boîte et le shifter, en distinguant série et option. Est-ce un certificat de bridage pour ma moto ?",
+          "a2_context": true,
+          "legal_proof_required": true
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 29.26305083394982,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "482906d5f5f75ca3",
+              "brand": "BMW",
+              "model": "F 900 R",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+              "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "equipment": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "482906d5f5f75ca3:section:2",
+                    "482906d5f5f75ca3:section:5"
+                  ]
+                },
+                "transmission": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "482906d5f5f75ca3:section:2"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "482906d5f5f75ca3:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "482906d5f5f75ca3:section:6",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Infos pratiques",
+                  "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "text": "BMW F 900 R 2024\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+                  "score": 0.6517057418823242,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:2",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Transmission",
+                  "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "text": "BMW F 900 R 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+                  "score": 0.6237403154373169,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:5",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Équipement de série",
+                  "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 2; Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble",
+                  "text": "BMW F 900 R 2024\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 2; Taille de l'écran TFT couleur : 16,51 cm / 6.5 pouces; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble",
+                  "score": 0.6012088060379028,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:4",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 48 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 895 cc (Alésage * course: 86 x 77 mm); 105 ch à 8 500 tr/min; 9,40 mkg à 6 500 tr/min; Rapport poids / puissance : environ 1.9 kg/ch; Rapport poids / couple : environ 21.19 kg/mkg; Compression : 13.1 : 1; Emission CO² : 99 g/km",
+                  "text": "BMW F 900 R 2024\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 48 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 895 cc (Alésage * course: 86 x 77 mm); 105 ch à 8 500 tr/min; 9,40 mkg à 6 500 tr/min; Rapport poids / puissance : environ 1.9 kg/ch; Rapport poids / couple : environ 21.19 kg/mkg; Compression : 13.1 : 1; Emission CO² : 99 g/km",
+                  "score": 0.5626913905143738,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "482906d5f5f75ca3:section:3",
+                  "object_id": "482906d5f5f75ca3",
+                  "brand": "BMW",
+                  "model": "F 900 R",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/bmw/9907/F-900-R-2024/contact.html",
+                  "source_sha256": "66302851eeaf05a5efab32f9f2b4f5dc003bab36c1f91a265046bb73800de95f",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 142 mm; Freinage : 1 disque Ø 265 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+                  "text": "BMW F 900 R 2024\nTrain arrière\nMono-amortisseur, déb : 142 mm; Freinage : 1 disque Ø 265 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+                  "score": 0.5355536341667175,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "482906d5f5f75ca3",
+              "field": "equipment",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "482906d5f5f75ca3",
+              "field": "transmission",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "field",
+              "object_id": "482906d5f5f75ca3",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            },
+            {
+              "kind": "authority",
+              "field": "a2_certification",
+              "message": "Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2."
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": false,
+              "document_encoding_seconds": 0.9608182080555707,
+              "query_encoding_seconds": 0.27964512491598725,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "482906d5f5f75ca3",
+              "proof_check": {
+                "fields": {
+                  "equipment": "unverified",
+                  "transmission": "unverified",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.3662346659693867
+              }
+            }
+          ],
+          "seconds": 1.6171152079477906,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.87,
+              "unresolved": 0.13
+            },
+            "confidence": 0.74
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "179dc9d3c938240d6312cdc4003abc2b5ccd0a1c10151e4a86a5e5a9f5545a67",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1810,
+          "eval_count": 127,
+          "total_duration": 26856572291,
+          "load_duration": 38570666,
+          "prompt_eval_duration": 8217359000,
+          "eval_duration": 18474776000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La fiche mentionne que la BMW F 900 R 2024 est accessible au permis A2 ou bridable à 47,5 ch / 35 kW. La boîte de vitesses est manuelle avec 6 rapports de série. Le shifter est proposé en option.",
+                "sources": [
+                  "P1",
+                  "P2"
+                ]
+              },
+              {
+                "text": "Les passages fournis ne permettent pas d'établir si la fiche contient un certificat de bridage pour votre moto.",
+                "sources": [
+                  "P1"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.96,
+                  "unsupported": 0.04
+                },
+                "confidence": 0.92
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.93,
+                  "unsupported": 0.07
+                },
+                "confidence": 0.86
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.85,
+                  "unsupported": 0.15
+                },
+                "confidence": 0.7
+              }
+            }
+          },
+          "seconds": 27.25808950001374
+        }
+      }
+    },
+    {
+      "id": "browser-03",
+      "receipt": {
+        "question": "Kawasaki Z 500 2024 : donne-moi une réponse rédigée sur la puissance et les permis indiqués dans la fiche, avec le réservoir, pour mon dossier A2.",
+        "answer": "La Kawasaki Z 500 2024 a une puissance de 45,40 ch à 9 000 tr/min et un réservoir de 14 litres. [Kawasaki Z 500 (2024)](https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html)\n\nLa fiche mentionne que la moto est accessible avec les permis A et A2. [Kawasaki Z 500 (2024)](https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Kawasaki Z 500 (2024) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+        "seconds": 22.6391239160439,
+        "timestamp": "2026-10-13T23:18:59.498687+00:00",
+        "_catalog_plan": {
+          "operation": "details",
+          "models": [
+            {
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024
+            }
+          ],
+          "identity": {},
+          "conditions": [],
+          "fields": [
+            "power_ch",
+            "reservoir",
+            "license"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "source_question": "Kawasaki Z 500 2024 : donne-moi une réponse rédigée sur la puissance et les permis indiqués dans la fiche, avec le réservoir, pour mon dossier A2.",
+          "a2_context": true,
+          "legal_proof_required": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 22.63901275000535,
+        "_catalog_jev_calls": 3,
+        "_catalog_evidence": {
+          "sources": [
+            {
+              "object_id": "7f2f60abb11c9104",
+              "brand": "Kawasaki",
+              "model": "Z 500",
+              "year": 2024,
+              "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+              "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+              "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+              "coverage": {
+                "power_ch": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "7f2f60abb11c9104:section:4"
+                  ]
+                },
+                "reservoir": {
+                  "covered": true,
+                  "source_passages_available": true,
+                  "requested_facts_status": "complete",
+                  "required_passage_ids": [
+                    "7f2f60abb11c9104:section:0"
+                  ]
+                },
+                "license": {
+                  "covered": false,
+                  "source_passages_available": true,
+                  "requested_facts_status": "unverified",
+                  "required_passage_ids": [
+                    "7f2f60abb11c9104:section:6"
+                  ]
+                }
+              },
+              "passages": [
+                {
+                  "id": "7f2f60abb11c9104:section:4",
+                  "object_id": "7f2f60abb11c9104",
+                  "brand": "Kawasaki",
+                  "model": "Z 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+                  "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+                  "section": "Moteur",
+                  "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : environ 3.51 kg/ch; Rapport poids / couple : environ 37.08 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "text": "Kawasaki Z 500 2024\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 32 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 451 cc (Alésage * course: 70 x 58,6 mm); 45,40 ch à 9 000 tr/min; 4,30 mkg à 6 000 tr/min; Rapport poids / puissance : environ 3.51 kg/ch; Rapport poids / couple : environ 37.08 kg/mkg; Compression : 11.3 : 1; Système de démarrage : électrique; Emission CO² : 89 g/km",
+                  "score": 0.6880951523780823,
+                  "rank": 1,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "7f2f60abb11c9104:section:0",
+                  "object_id": "7f2f60abb11c9104",
+                  "brand": "Kawasaki",
+                  "model": "Z 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+                  "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+                  "section": "Châssis",
+                  "original_text": "Selle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 800 mm; Hauteur min : 1 055 mm; Empattement : 1 375 mm; Poids tous pleins faits : 172 kg",
+                  "text": "Kawasaki Z 500 2024\nChâssis\nSelle biplaces; Cadre : Structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 785 mm; Longueur : 1 995 mm; Largeur : 800 mm; Hauteur min : 1 055 mm; Empattement : 1 375 mm; Poids tous pleins faits : 172 kg",
+                  "score": 0.6621963977813721,
+                  "rank": 2,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "7f2f60abb11c9104:section:6",
+                  "object_id": "7f2f60abb11c9104",
+                  "brand": "Kawasaki",
+                  "model": "Z 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+                  "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+                  "section": "Infos pratiques",
+                  "original_text": "La moto est accessible aux permis : A, A2; Pays de fabrication : Thailande",
+                  "text": "Kawasaki Z 500 2024\nInfos pratiques\nLa moto est accessible aux permis : A, A2; Pays de fabrication : Thailande",
+                  "score": 0.6398491263389587,
+                  "rank": 3,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "7f2f60abb11c9104:section:1",
+                  "object_id": "7f2f60abb11c9104",
+                  "brand": "Kawasaki",
+                  "model": "Z 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+                  "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+                  "section": "Train avant",
+                  "original_text": "Fourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+                  "text": "Kawasaki Z 500 2024\nTrain avant\nFourche telescopique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 310 mm, étrier 2 pistons; Roue avant (Tubeless) : 110 / 70 - 17; Pression : 2 bars",
+                  "score": 0.6359813213348389,
+                  "rank": 4,
+                  "selection_reason": "bge_top5"
+                },
+                {
+                  "id": "7f2f60abb11c9104:section:3",
+                  "object_id": "7f2f60abb11c9104",
+                  "brand": "Kawasaki",
+                  "model": "Z 500",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/kawasaki/10351/Z-500-2024/contact.html",
+                  "source_sha256": "939ddbac4b7a5c6516179826c4d03384f2c793d4ff6de629f6dbf3819362ac1c",
+                  "section": "Train arrière",
+                  "original_text": "Mono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "text": "Kawasaki Z 500 2024\nTrain arrière\nMono-amortisseur, déb : 130 mm; Réglage de la précharge; Freinage : 1 disque Ø 220 mm, étrier 2 pistons; Roue arrière (Tubeless) : 150 / 60 - 17; Pression : 2.25 bars",
+                  "score": 0.6295582056045532,
+                  "rank": 5,
+                  "selection_reason": "bge_top5"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "field",
+              "object_id": "7f2f60abb11c9104",
+              "field": "license",
+              "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+            }
+          ],
+          "retrieval_executed": true,
+          "retrievals": [
+            {
+              "document_cache_hit": false,
+              "document_encoding_seconds": 1.2008879999630153,
+              "query_encoding_seconds": 0.05402704200241715,
+              "model": "BAAI/bge-m3",
+              "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+              "object_id": "7f2f60abb11c9104",
+              "proof_check": {
+                "fields": {
+                  "power_ch": "complete",
+                  "reservoir": "complete",
+                  "license": "unverified"
+                },
+                "jev_calls": 1,
+                "seconds": 0.3117656250251457
+              }
+            }
+          ],
+          "seconds": 1.574143167003058,
+          "source_kind": "technical_fiche",
+          "legal_certification": false,
+          "identity_interpretation": {
+            "type": "choice",
+            "choice": "recognized",
+            "probabilities": {
+              "recognized": 0.99,
+              "unresolved": 0.01
+            },
+            "confidence": 0.98
+          }
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "337c1baab8871c4b5093da345f20d3a5378bf287fcd9fcb4a746f944b5433933",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1656,
+          "eval_count": 97,
+          "total_duration": 20208735916,
+          "load_duration": 24625291,
+          "prompt_eval_duration": 7125502000,
+          "eval_duration": 12936348000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La Kawasaki Z 500 2024 a une puissance de 45,40 ch à 9 000 tr/min et un réservoir de 14 litres.",
+                "sources": [
+                  "P1",
+                  "P2"
+                ]
+              },
+              {
+                "text": "La fiche mentionne que la moto est accessible avec les permis A et A2.",
+                "sources": [
+                  "P3"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.7,
+                  "unsupported": 0.3
+                },
+                "confidence": 0.4
+              }
+            }
+          },
+          "seconds": 20.542189041967504
+        }
+      }
+    }
+  ]
+}

@@ -30,6 +30,7 @@ def plan(fields=None, **extra):
 
 @pytest.fixture
 def local_rag(tmp_path, monkeypatch, fiche):
+    monkeypatch.setenv("BIKEFINDER_RAG_SYNTHESIS", "0")
     monkeypatch.setenv("BIKEFINDER_RAG_CACHE", str(tmp_path))
     def rows(_conn, _sql, params):
         return [deepcopy(fiche)] if params == ["Honda", "Example", 2025] else []
@@ -196,6 +197,44 @@ def test_real_agent_dispatches_to_rag_and_records_evidence(connected):
     assert history[-1]["_catalog_jev_calls"] == 1
 
 
+def test_real_agent_connects_retrieval_to_local_writer(connected, monkeypatch):
+    from bikefinder_rag.agent import rag_synthesis
+    monkeypatch.setenv("BIKEFINDER_RAG_SYNTHESIS", "1")
+    writer = Mock(return_value=({"claims": [{"text": "La fiche mentionne A2 et 73 ch à 8 500 tr/min.", "sources": ["P2", "P3"]}]},
+                               {"model": "mistral-small3.2", "eval_count": 40}))
+    monkeypatch.setattr(rag_synthesis, "generate", writer)
+    monkeypatch.setattr(rag_synthesis, "check_claims", lambda *args: {"accepted": True, "jev_calls": 1})
+    answer, history = loop.run_agent(object(), None, "Honda Example 2025 : A2 et puissance ?", [], provider="ollama")
+    assert "La fiche mentionne" in answer
+    assert history[-1]["_catalog_generation"]["published"]
+    assert history[-1]["_catalog_jev_calls"] == 2
+    assert history[-1]["_catalog_evidence"]["sources"][0]["identity_validation"].startswith("unique SQL")
+    assert writer.call_count == 1
+
+
+def test_complex_plan_uses_bge_before_writer(connected, monkeypatch):
+    request = plan(["power_ch"])
+    monkeypatch.setattr(rag_router.legacy, "route_question", lambda *args:
+                        {"answer": None, "route": "mistral_required", "plan": request, "jev_calls": 1})
+    writer = Mock(side_effect=lambda q, retrieved: {**retrieved, "answer": "Rédaction locale sourcée", "route": "rag_mistral"})
+    monkeypatch.setattr(rag_router, "compose", writer)
+    result = rag_router.route_question(object(), "Explique la puissance de Honda Example 2025")
+    assert result["route"] == "rag_mistral"
+    assert writer.call_args.args[1]["evidence"]["retrieval_executed"]
+
+
+def test_explicit_arithmetic_keeps_sourced_calculation_without_writer(connected, monkeypatch):
+    request = plan(["power_ch"])
+    monkeypatch.setattr(rag_router.legacy, "route_question", lambda *args:
+                        {"answer": "Résultat calculé à partir des valeurs sources", "route": "comparison", "plan": request, "jev_calls": 1})
+    writer = Mock(side_effect=AssertionError("Arithmetic must stay in the sourced calculator"))
+    monkeypatch.setattr(rag_router, "compose", writer)
+    result = rag_router.route_question(object(), "Honda Example 2025 : de combien la puissance a-t-elle changé ?")
+    assert "Résultat calculé" in result["answer"]
+    assert result["evidence"]["retrieval_executed"]
+    writer.assert_not_called()
+
+
 def test_followup_replaces_year_without_using_previous_source(connected):
     _answer, history = loop.run_agent(object(), None, "Honda Example 2025 : A2 ?", [], provider="ollama")
     answer, new_history = loop.run_agent(object(), None, "Et en 2024, pour A2 ?", history, provider="ollama")
@@ -291,10 +330,29 @@ def test_unrelated_equipment_does_not_cover_a_requested_missing_item(local_rag):
     assert not result["evidence"]["sources"][0]["coverage"]["equipment"]["covered"]
 
 
+def test_shifter_option_in_transmission_remains_available_in_source_fallback(local_rag, fiche):
+    fiche["record"]["spec_rows"].append({"section": "Transmission", "label": "Boîte", "value": "6 rapports, shifter en option"})
+    fiche["record"]["technical_sections"].append({"section": "Transmission", "text": "Boîte : 6 rapports, shifter en option"})
+    result = rag.answer_from_sources(object(), "Shifter de série pour A2 ?", plan(["equipment"]))
+    assert "shifter en option" in result["answer"]
+    source = result["evidence"]["sources"][0]
+    assert any(p["section"] == "Transmission" and p["id"] in source["coverage"]["equipment"]["required_passage_ids"]
+               for p in source["passages"])
+
+
 def test_partial_subfact_keeps_available_source_and_marks_gap(local_rag):
     check = lambda *args: {"fields": {"equipment": "partial"}, "jev_calls": 1}
     result = rag.answer_from_sources(object(), "ABS et poignées chauffantes pour A2 ?", plan(["equipment"]), check)
     assert "ABS en option" in result["answer"] and "Un détail demandé reste non documenté" in result["answer"]
+
+
+def test_missing_notice_names_requested_details_without_asserting_absence():
+    result = {"evidence": {"missing": [{"field": "equipment", "message": "Couverture non vérifiée"}]}}
+    rag_router.annotate_missing_scope("ABS et poignées chauffantes de série ?", result)
+    missing = result["evidence"]["missing"][0]
+    assert missing["requested_terms"] == ["abs", "poignees chauffantes"]
+    assert "chauffantes" in missing["message"]
+    assert "absentes" not in missing["message"]
 
 
 def test_comparison_followup_keeps_existing_exact_year_pairs():

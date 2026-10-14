@@ -12,8 +12,9 @@ import requests
 
 from bikefinder_rag.agent import jev_router as legacy
 from bikefinder_rag.catalog.technical_rag import answer_from_sources, LICENSE_LIMIT
+from bikefinder_rag.agent.rag_synthesis import compose
 
-PROTOCOL = "jev-scoped-source-reading-v6"
+PROTOCOL = "jev-scoped-source-reading-v7"
 FIELDS = {**legacy.TOPICS, "license": "Permis et mention de bridage dans la fiche, sans certification"}
 LITERAL_FIELDS = {
     "price_eur": r"\b(?:prix|tarif|budget|euros?)\b|€",
@@ -71,7 +72,9 @@ def classify_sources(question, models, previous):
     questions = {"identity_binding": legacy.choice(
         "Is every named model/edition/variant in the user request resolved to a supplied recognized_catalog_model? "
         "An extra edition, variant or suffix that is not in the supplied model is unresolved; never silently use its base model. "
-        "Ordinary attributes such as horsepower or a requested certificate are not variants.",
+        "Ordinary attributes such as horsepower, a requested certificate or shifter bidirectionality are not variants. "
+        "Catalog model numbers are part of the name, not an unresolved edition. A model written exactly as supplied is recognized; "
+        "missing technical facts do NOT make its identity unresolved.",
         {"recognized": "Every requested identity is represented", "unresolved": "A variant/name/edition is missing or ambiguous"}),
         "intent": legacy.choice(
         "Read ONLY the user's question. A2 background and reading what a fiche says are source_facts. "
@@ -195,6 +198,23 @@ def bind_years(question, models, previous):
     return [], "Précise le millésime et la variante exacte ; je ne choisis pas une année à ta place."
 
 
+def annotate_missing_scope(question, result):
+    """Name requested terms without inferring whether equipment is present.
+
+    This is the shared field vocabulary, not a list of anticipated questions.
+    A field-level uncertain verdict refers to the combined requested details.
+    """
+    text = legacy.language(question)
+    for missing in (result.get("evidence") or {}).get("missing", []):
+        pattern = LITERAL_FIELDS.get(missing.get("field"))
+        if pattern:
+            terms = list(dict.fromkeys(m.group() for m in re.finditer(pattern, text)))
+            if terms:
+                missing["requested_terms"] = terms
+                missing["message"] += " Couverture non établie de l’ensemble des détails demandés : « " + "; ".join(terms) + " »."
+    return result
+
+
 def route_question(conn, question, history=None):
     if os.getenv("BIKEFINDER_JEV_RAG") != "1":
         return legacy.route_question(conn, question, history)
@@ -210,10 +230,10 @@ def route_question(conn, question, history=None):
     if not a2:
         result = legacy.route_question(conn, question, history)
         # Structured filters/counts keep SQL. Named source-reading plans use RAG.
-        if result.get("route") in ["details", "comparison"] and (result.get("plan") or {}).get("models"):
+        if result.get("route") in ["details", "comparison", "mistral_required"] and (result.get("plan") or {}).get("models"):
             try:
                 rag = answer_from_sources(conn, question, result["plan"], check_source_coverage)
-                if rag["evidence"]["retrieval_executed"]:
+                if rag["evidence"]["retrieval_executed"] and result.get("answer"):
                     # Preserve the established renderer's precise subfact,
                     # conversion, variant and market qualifications.
                     rag["answer"] = result["answer"]
@@ -223,9 +243,17 @@ def route_question(conn, question, history=None):
                             FIELDS.get(m["field"], m["field"]) + " — " + m["message"] for m in gaps)
                 checks = rag["evidence"].get("retrievals", [])
                 rag["jev_calls"] = result.get("jev_calls", 0) + sum(r.get("proof_check", {}).get("jev_calls", 0) for r in checks)
+                rag = annotate_missing_scope(question, rag)
+                # Explicit arithmetic and unit conversions retain their
+                # sourced Python renderer; the writer must not erase a result
+                # or attempt a calculation that its source-only prompt forbids.
+                computed = legacy.is_arithmetic_question(question) or bool(re.search(
+                    r"\b(?:conversion|convertis|convertir|convertissez)\b", legacy.language(question)))
+                if not computed:
+                    rag = compose(question, rag)
                 return {**result, **rag, "seconds": time.perf_counter() - started}
             except (OSError, ValueError, RuntimeError):
-                return {**result, "answer": result["answer"] + "\n\nLa recherche locale de passages est indisponible ; seules les lignes SQL sourcées ci-dessus sont disponibles.",
+                return {**result, "answer": (result.get("answer") or "La rédaction ne peut pas démarrer sans preuves récupérées.") + "\n\nLa recherche locale de passages est indisponible.",
                         "route": "rag_unavailable", "evidence": {"sources": [], "retrieval_executed": False}}
         return result
     models, _brands = legacy.entities(conn, question)
@@ -250,7 +278,8 @@ def route_question(conn, question, history=None):
         if intent in ["filter", "unsupported"]:
             return {**base, "answer": "Ces fiches ne permettent pas de garantir les critères demandés. " + LICENSE_LIMIT,
                     "jev_calls": calls, "evidence": {"sources": [], "missing": [{"kind": "unsupported_request"}], "retrieval_executed": False}}
-        fields = [field for field in FIELDS if raw["answers"]["field_" + field]["choice"] == "yes"]
+        fields = [field for field in FIELDS if raw["answers"]["field_" + field]["choice"] == "yes"
+                  and confident(raw["answers"]["field_" + field])]
         # A closed decision cannot silently erase an explicit source column
         # or unit. This vocabulary is about fields, never memorized questions.
         literal_text = legacy.language(question)
@@ -269,7 +298,9 @@ def route_question(conn, question, history=None):
         result = answer_from_sources(conn, question, plan, check_source_coverage)
         result["evidence"]["identity_interpretation"] = binding
         calls += sum(r.get("proof_check", {}).get("jev_calls", 0) for r in result["evidence"].get("retrievals", []))
-        return {**base, **result, "jev_calls": calls, "cached": calls == 0, "raw": raw,
+        result["jev_calls"] = calls
+        result = compose(question, annotate_missing_scope(question, result))
+        return {**base, **result, "cached": result["jev_calls"] == 0, "raw": raw,
                 "seconds": time.perf_counter() - started}
     except (requests.RequestException, OSError, ValueError, RuntimeError, KeyError) as error:
         return {**base, "answer": "La recherche sourcée est momentanément indisponible. " + LICENSE_LIMIT,

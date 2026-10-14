@@ -1,0 +1,53 @@
+{
+  "method": "Replay literal validation against stored actual candidates; no routing or new generation. Unit-pair fix adds support for original shared dimension units.",
+  "results": [
+    {
+      "id": "new-01",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-02",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-03",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-04",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-05",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-06",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-07",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-08",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "new-09",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "browser-01",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "browser-02",
+      "new_literal_check": "literal_checks_pass"
+    },
+    {
+      "id": "browser-03",
+      "new_literal_check": "literal_checks_pass"
+    }
+  ]
+}
