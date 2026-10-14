@@ -1,5 +1,11 @@
 # Bikefinder RAG
 
+## Interactive benchmark
+
+[Open the SQL + RAG model benchmark](https://maax6.github.io/bikefinder-rag/benchmark.html).
+Compare both passes, answer quality, latency and API costs, and inspect the
+recorded answers and evaluation limits. This standalone report runs in your browser.
+
 A **proof of concept** for a technical motorcycle catalog by model year.
 The active local chat uses Jev to interpret natural questions and PostgreSQL to
 return documented facts with their source URLs. Ask for price/power filters,
