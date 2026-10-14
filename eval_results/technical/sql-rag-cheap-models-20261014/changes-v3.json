@@ -1,0 +1,12 @@
+[
+  "Noms de sections et équipements : casse, accents, espaces et alias Quickshifter normalisés, sans recherche approximative.",
+  "La mention standard ne résout une identité que si sa désignation complète correspond exactement à la fiche de base.",
+  "Erreurs d’arguments avec suggestions concrètes ; édition introuvable signalée sans substitution.",
+  "Résultats d’outils compactés : source et identité partagées, doublons techniques supprimés, preuves et qualifications conservées.",
+  "Contexte cumulé toujours limité à 32 000 caractères ; plafond par résultat de 24 000 caractères et compression des échanges anciens annoncée.",
+  "Plafond de modèle passé de 4 à 6 étapes, toujours 8 appels d’outils et 30 secondes par tour utilisateur ; dernière étape réservée à la réponse.",
+  "Une correction de format finale au maximum, dans le même plafond d’étapes et de temps ; une référence inventée reste rejetée.",
+  "Sortie maximale par appel passée de 1 200 à 2 400 tokens pour les listes avec leurs références.",
+  "Consignes génériques de résolution, recherche chronologique et économie de contexte ; questions et références inchangées.",
+  "Nouveau budget autonome de 2 $ pour les entrées, contrôlé avant chaque requête ; raisonnement et absence de repli fournisseur inchangés."
+]

@@ -200,11 +200,89 @@ Il rejoint la session `bikefinder-collecte` si elle existe, sans créer de
 panneaux supplémentaires. Sans `--here`, il demande une fenêtre à Terminal
 sur macOS. Fermer le panneau ne termine pas le collecteur détaché.
 
-Les trois panneaux montrent l'avancement, les derniers statuts HTTP par
-fiche et le journal. Les statuts SQLite ne représentent pas l'historique
+Les quatre panneaux montrent l'avancement, les derniers statuts HTTP par
+fiche, la couverture par millésime et les incidents. Chaque panneau affiche
+son heure de rafraîchissement en heure de Paris. L'affichage est recalculé
+deux fois par seconde et les données sont relues chaque seconde. L'âge de la dernière fiche distingue un afficheur vivant d'une
+collecte sans nouvelles données. Les sorties sont bornées à la taille du
+panneau, utilisent un écran alternatif sans accumulation de défilement et
+désactivent la pause de sortie Ctrl-S dans leurs propres terminaux. Les dimensions
+sont lues directement sur le terminal à chaque rendu ; le redimensionnement ne
+dépend pas de variables d'environnement pouvant conserver une ancienne taille.
+La carte « Dernière moto enregistrée » reste en haut du panneau avec le nom,
+le numéro de fiche et l'heure d'enregistrement. Elle suit le dernier succès,
+sans être remplacée par une tentative en erreur.
+
+Pour reconstruire les seuls afficheurs d'une session existante :
+
+```bash
+.venv/bin/python scripts/start_collection_panel.py --dashboard-only --refresh-dashboard
+```
+
+Ce mode ne démarre ni ne modifie le collecteur ou `caffeinate`. Il remplace
+uniquement un ancien onglet contenant exclusivement nos panneaux de suivi ;
+un onglet avec un shell ou une autre commande est conservé. Le test réel du
+11 octobre a confirmé une horloge qui avance et un compteur conforme à SQLite,
+avec les mêmes PID du collecteur et de `caffeinate`.
+
+Les statuts SQLite ne représentent pas l'historique
 de toutes les tentatives HTTP. `caffeinate` empêche la veille automatique,
 mais les réponses 429/5xx continuent d'arrêter le lot selon la politique
 source ; le lanceur ne crée pas de boucle de relance automatique.
+
+## Variante par quatre fiches et conservation de l'autonomie
+
+La branche `fast-collect` a été récupérée le 11 octobre (`5634362`). Le
+comparateur public fournit jusqu'à quatre colonnes par réponse, sous le même
+délai de dix secondes. Un contrôle réel a confirmé quatre identités distinctes
+et la conservation d'« ABS en option ». Cette page ne contient toutefois pas
+la précision « autonomie jusqu'à la panne sèche, calculée mais non vérifiée »
+présente sur les fiches individuelles.
+
+`collect_technical_data_fast.py` récupère donc aussi la fiche individuelle dès
+que le comparateur donne une autonomie. Il conserve tout le résultat du parseur
+individuel, y compris les kilomètres et les qualifications ; il n'invente pas
+la mention manquante. Si la requête échoue, ou si l'autonomie disparaît de la
+fiche individuelle, l'URL reste à reprendre au lieu d'être enregistrée comme
+un succès incomplet. Les requêtes supplémentaires respectent le même délai
+et le même verrou partagé.
+
+La validation a utilisé trois fiches réelles avec autonomie (BMW R42 1928,
+BMW 1000 K1 1988, Cagiva 125 SUPERCITY 1991), puis rejoué le lot de quatre
+dans une base temporaire : les trois textes complets sont conservés. Ce lot
+demande une comparaison et trois fiches individuelles, soit quatre requêtes
+de contenu. Le gain théorique de quatre fois ne s'applique donc plus à ce lot.
+La suite complète passe : **471 tests**, dont quatre régressions portant sur
+la conservation de l'autonomie et les compléments manquants ou en erreur.
+Ce test initial n'a pas modifié la base de collecte ni relancé le collecteur.
+
+Cette correction porte sur l'autonomie. La variante reste à valider pour les
+autres écarts, notamment la ligne de permis absente du comparateur et la
+traçabilité des réponses groupées. Le benchmark d'origine compare des
+sous-chaînes de valeurs ; il ne prouve pas une équivalence champ par champ.
+
+### Décision après contrôle des autres écarts
+
+Le [contrôle élargi du 11 octobre](../eval_results/technical/motoplanete_comparator_audit_20261011.json)
+compare dix fiches choisies de 1871 à 2027, incluant des équipements récents.
+La ligne des permis disparaît dans dix cas, la précision « environ » des
+rapports calculés change dans trois cas et le marqueur de tarif `*` disparaît
+dans sept cas. Les identités, lignes d'équipements et coloris concordent sur
+les dix fiches ; les valeurs de CO₂ disponibles concordent aussi. Cet
+échantillon ciblé ne constitue pas une preuve d'équivalence pour tout le site.
+La trace d'une réponse groupée est également moins précise : le stockage
+continue d'indiquer le parseur individuel et n'enregistre pas l'URL comparateur.
+
+La priorité est donc la conservation des détails techniques, avec
+`collect_technical_data.py`, une fiche par requête. Le 11 octobre à **18:24,
+heure de Paris**, la collecte a repris depuis ses **4 230 succès** existants,
+après sauvegarde SQLite dans `data/technical/backups/`. La fiche Ducati
+Multistrada 1200 S Granturismo 2013 qui avait reçu un HTTP 500 a été récupérée
+avec succès à la reprise. Les 89 tests ciblés du collecteur, des parseurs et
+du suivi passent. `caffeinate -i` est attaché au nouveau processus et les
+quatre panneaux de `bikefinder-collecte` ont été reconstruits, avec affichage
+toutes les 0,5 seconde et lecture des données chaque seconde. Le délai minimal
+de dix secondes et les arrêts sur 429/5xx restent appliqués.
 
 ## Livraison suivante
 

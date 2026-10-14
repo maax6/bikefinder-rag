@@ -6,7 +6,6 @@ Only frozen files are read; the live crawl is never opened by this program.
 """
 import argparse
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import json
 from pathlib import Path

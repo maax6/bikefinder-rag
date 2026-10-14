@@ -1,0 +1,392 @@
+{
+  "created_utc": "2026-10-14T13:11:33.152963+00:00",
+  "mode": "smoke",
+  "provider": "ollama",
+  "model": "ministral-3:8b",
+  "corpus_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "pack_manifest_sha256": "39e662dc853814ccc9523606ec50e7d4bd9d9947324630dfc96b497bbb8bef42",
+  "service_sha256": "08228879eb7ab7f34b66eba1ef0d9f4958f44290d402518b161ad83d799b744a",
+  "adapter_sha256": "fd72c22f425b498796150a93192833176617db543b23954464b5ccf0941e0a54",
+  "session_sha256": "2a7c0c5c21cf6bce921f6916856738f8f01716c4e02a437020394a6726e6990a",
+  "retrieval_sha256": "f4bc7c6c536a97fb1d8cb45d244359c2067ad585e61edd5ed442fc7af9d1150d",
+  "preparation_seconds": 10.436817666050047,
+  "model_warmup": {
+    "model": "ministral-3:8b",
+    "total_seconds": 0.268319709,
+    "load_seconds": 0.02103075,
+    "input_tokens": 2591
+  },
+  "streamed": false,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?",
+      "status": "completed",
+      "error": null,
+      "answer": "En 2020, **8 fiches Yamaha** indiquent **ABS et shifter de série**.",
+      "final": {
+        "answer": "En 2020, **8 fiches Yamaha** indiquent **ABS et shifter de série**.",
+        "claims": [
+          {
+            "evidence_ids": [
+              "aggregate:30a9d903ecf6f25665e0203a"
+            ],
+            "text": "8 fiches Yamaha en 2020 ont ABS et shifter en équipement standard."
+          }
+        ],
+        "missing": [],
+        "needs_clarification": false
+      },
+      "calls": [
+        {
+          "id": "call_wqwnjvuq",
+          "name": "query_catalog",
+          "arguments": {
+            "mode": "count",
+            "scope": {
+              "brand": "Yamaha",
+              "max_year": 2020,
+              "min_year": 2020
+            },
+            "equipment_filters": [
+              {
+                "name": "ABS",
+                "status": "standard"
+              },
+              {
+                "name": "shifter",
+                "status": "standard"
+              }
+            ]
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "total_matches": 8,
+              "rows": [],
+              "aggregate_evidence_id": "aggregate:30a9d903ecf6f25665e0203a",
+              "unknown_exclusions": [
+                {
+                  "criterion": {
+                    "name": "ABS",
+                    "status": "standard"
+                  },
+                  "unknown_in_requested_scope": 10
+                },
+                {
+                  "criterion": {
+                    "name": "shifter",
+                    "status": "standard"
+                  },
+                  "unknown_in_requested_scope": 35
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "aggregate:30a9d903ecf6f25665e0203a",
+                "kind": "aggregate",
+                "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+                "criteria": {
+                  "scope": {
+                    "brand": "Yamaha",
+                    "max_year": 2020,
+                    "min_year": 2020
+                  },
+                  "equipment_filters": [
+                    {
+                      "name": "ABS",
+                      "status": "standard"
+                    },
+                    {
+                      "name": "shifter",
+                      "status": "standard"
+                    }
+                  ]
+                },
+                "sql": "SELECT f.id FROM fiches f WHERE 1=1 AND folded(f.brand)=folded(?) AND f.year >= ? AND f.year <= ? AND EXISTS(SELECT 1 FROM equipment e WHERE e.object_id=f.id AND e.name=? AND e.status=?) AND EXISTS(SELECT 1 FROM equipment e WHERE e.object_id=f.id AND e.name=? AND e.status=?)",
+                "parameters": [
+                  "Yamaha",
+                  2020,
+                  2020,
+                  "ABS",
+                  "standard",
+                  "shifter",
+                  "standard"
+                ],
+                "count": 8
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020
+              },
+              "searched_fiches": 43,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 8,
+              "next_cursor": null
+            },
+            "timing_ms": 46.022
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "total_matches": 8,
+              "rows": [],
+              "aggregate_evidence_id": "aggregate:30a9d903ecf6f25665e0203a",
+              "unknown_exclusions": [
+                {
+                  "criterion": {
+                    "name": "ABS",
+                    "status": "standard"
+                  },
+                  "unknown_in_requested_scope": 10
+                },
+                {
+                  "criterion": {
+                    "name": "shifter",
+                    "status": "standard"
+                  },
+                  "unknown_in_requested_scope": 35
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "aggregate:30a9d903ecf6f25665e0203a",
+                "kind": "aggregate",
+                "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+                "criteria": {
+                  "scope": {
+                    "brand": "Yamaha",
+                    "max_year": 2020,
+                    "min_year": 2020
+                  },
+                  "equipment_filters": [
+                    {
+                      "name": "ABS",
+                      "status": "standard"
+                    },
+                    {
+                      "name": "shifter",
+                      "status": "standard"
+                    }
+                  ]
+                },
+                "sql": "SELECT f.id FROM fiches f WHERE 1=1 AND folded(f.brand)=folded(?) AND f.year >= ? AND f.year <= ? AND EXISTS(SELECT 1 FROM equipment e WHERE e.object_id=f.id AND e.name=? AND e.status=?) AND EXISTS(SELECT 1 FROM equipment e WHERE e.object_id=f.id AND e.name=? AND e.status=?)",
+                "parameters": [
+                  "Yamaha",
+                  2020,
+                  2020,
+                  "ABS",
+                  "standard",
+                  "shifter",
+                  "standard"
+                ],
+                "count": 8
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020
+              },
+              "searched_fiches": 43,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 8,
+              "next_cursor": null
+            },
+            "timing_ms": 46.022
+          },
+          "seconds": 0.046042207977734506
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_wqwnjvuq",
+                "function": {
+                  "index": 0,
+                  "name": "query_catalog",
+                  "arguments": {
+                    "mode": "count",
+                    "scope": {
+                      "brand": "Yamaha",
+                      "max_year": 2020,
+                      "min_year": 2020
+                    },
+                    "equipment_filters": [
+                      {
+                        "name": "ABS",
+                        "status": "standard"
+                      },
+                      {
+                        "name": "shifter",
+                        "status": "standard"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 2606,
+            "output_tokens": 76,
+            "cost_usd": null,
+            "load_seconds": 0.009299166,
+            "native_model_seconds": 5.962113291
+          },
+          "model": "ministral-3:8b",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "**Réponse finale :**\n\n```json\n{\n  \"answer\": \"En 2020, **8 fiches Yamaha** indiquent **ABS et shifter de série**.\",\n  \"claims\": [\n    {\n      \"text\": \"8 fiches Yamaha en 2020 ont ABS et shifter en équipement standard.\",\n      \"evidence_ids\": [\"aggregate:30a9d903ecf6f25665e0203a\"]\n    }\n  ],\n  \"missing\": [],\n  \"needs_clarification\": false\n}\n```",
+          "native": {
+            "role": "assistant",
+            "content": "**Réponse finale :**\n\n```json\n{\n  \"answer\": \"En 2020, **8 fiches Yamaha** indiquent **ABS et shifter de série**.\",\n  \"claims\": [\n    {\n      \"text\": \"8 fiches Yamaha en 2020 ont ABS et shifter en équipement standard.\",\n      \"evidence_ids\": [\"aggregate:30a9d903ecf6f25665e0203a\"]\n    }\n  ],\n  \"missing\": [],\n  \"needs_clarification\": false\n}\n```",
+            "tool_calls": [
+              {
+                "id": "call_ggin2ufj",
+                "function": {
+                  "index": 0,
+                  "name": "submit_answer",
+                  "arguments": {
+                    "answer": "En 2020, **8 fiches Yamaha** indiquent **ABS et shifter de série**.",
+                    "claims": [
+                      {
+                        "evidence_ids": [
+                          "aggregate:30a9d903ecf6f25665e0203a"
+                        ],
+                        "text": "8 fiches Yamaha en 2020 ont ABS et shifter en équipement standard."
+                      }
+                    ],
+                    "missing": [],
+                    "needs_clarification": false
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3191,
+            "output_tokens": 236,
+            "cost_usd": null,
+            "load_seconds": 0.005270083,
+            "native_model_seconds": 20.033564708
+          },
+          "model": "ministral-3:8b",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "aggregate:30a9d903ecf6f25665e0203a",
+          "kind": "aggregate",
+          "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+          "criteria": {
+            "scope": {
+              "brand": "Yamaha",
+              "max_year": 2020,
+              "min_year": 2020
+            },
+            "equipment_filters": [
+              {
+                "name": "ABS",
+                "status": "standard"
+              },
+              {
+                "name": "shifter",
+                "status": "standard"
+              }
+            ]
+          },
+          "sql": "SELECT f.id FROM fiches f WHERE 1=1 AND folded(f.brand)=folded(?) AND f.year >= ? AND f.year <= ? AND EXISTS(SELECT 1 FROM equipment e WHERE e.object_id=f.id AND e.name=? AND e.status=?) AND EXISTS(SELECT 1 FROM equipment e WHERE e.object_id=f.id AND e.name=? AND e.status=?)",
+          "parameters": [
+            "Yamaha",
+            2020,
+            2020,
+            "ABS",
+            "standard",
+            "shifter",
+            "standard"
+          ],
+          "count": 8
+        }
+      ],
+      "timing": {
+        "full_answer_seconds": 26.046672584023327,
+        "model_seconds": 26.000001707929187,
+        "tool_seconds": 0.046042207977734506,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 5797,
+        "output_tokens": 312,
+        "cost_usd": null,
+        "peak_memory_bytes": 1787019264,
+        "requests": [
+          {
+            "input_tokens": 2606,
+            "output_tokens": 76,
+            "cost_usd": null,
+            "load_seconds": 0.009299166,
+            "native_model_seconds": 5.962113291
+          },
+          {
+            "input_tokens": 3191,
+            "output_tokens": 236,
+            "cost_usd": null,
+            "load_seconds": 0.005270083,
+            "native_model_seconds": 20.033564708
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "ministral-3:8b",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 1200,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": true,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "case_id": "smoke",
+      "repeat": 1,
+      "candidate_id": "ollama:ministral-3:8b"
+    }
+  ]
+}

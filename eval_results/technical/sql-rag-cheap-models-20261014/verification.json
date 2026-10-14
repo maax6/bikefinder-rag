@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-14T14:45:19.022412+00:00",
+  "pilot_sha256": "5d8dee1a0bbd77118fae77636fd95f942abb89bf6f2dd14644622cee025b3889",
+  "source_unchanged": true,
+  "unique_sessions": 64,
+  "observed_turns": 65,
+  "expected_turns_graded": 72,
+  "max_input_reservation_accounted_usd": 1.1630452400000002,
+  "final_conservative_input_debit_usd": 1.03112924,
+  "reported_total_cost_usd": 0.14947413299999998,
+  "semantic_secondary_audit": {
+    "Q27_Gemma31": "Correct earliest2018DCT/Airbag; global literal family search with chronologically oldest Transmission hit.",
+    "Q37_Luna": "Firstturn all8 exactfiches andequipmentproofs correct; secondturn contextfailure. Entirecase fails."
+  }
+}

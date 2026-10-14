@@ -1,6 +1,6 @@
 # Résultats d'évaluation
 
-Les résultats enregistrés des quatre couches d'évaluation du POC local — la convention
+Les résultats enregistrés des évaluations du POC local — la convention
 du repo est « les résultats sont commités, les caches ne le sont pas ».
 
 | Dossier | Couche | Ce qui est mesuré |
@@ -9,6 +9,9 @@ du repo est « les résultats sont commités, les caches ne le sont pas ».
 | [`trajectory/`](trajectory/) | 1,5 — tool calls, **aucun juge LLM** | Le modèle choisit-il les bons outils avec les bons arguments ? (prédicats déterministes sur les appels enregistrés) |
 | [`constraints/`](constraints/) | 1,75 — réponses finales, **aucun juge LLM** | Les motos recommandées violent-elles les contraintes dures (budget, cylindrée, poids…) ? Métrique primaire : taux de violation |
 | [`ragas/`](ragas/) | 2 — agent complet | Qualité des réponses finales (faithfulness, answer relevancy) notée par deux juges indépendants |
+| [`technical/`](technical/) | Catalogue technique, Jev et POC figés | Inventaires, audits, normalisation, intégration, questions et dialogues ; chaque fichier a son propre périmètre |
+| [`smoke/`](smoke/) | Vérification locale ponctuelle | Fonctionnement d'un parcours sur un petit essai, sans estimation de précision générale |
+| [`prices/`](prices/) | Qualité des données historiques | Audit de l'appariement des prix aux modèles et millésimes, distinct de la qualité du chat |
 
 ## Lire les résultats avant de les citer
 
@@ -29,6 +32,23 @@ description historique, pas une métadonnée récupérable dans le JSON.
 - Le checker de contraintes historique pouvait classer une valeur
   numérique absente comme satisfaite. Le nouveau checker distingue les
   données insuffisantes ; les anciens taux ne sont pas recalculés ici.
+
+Pour les dialogues techniques d'octobre, distinguer le **premier passage** sur
+des questions nouvelles des **replays après correction**. Les replays deviennent
+des vérifications de régression ; ils ne mesurent plus la généralisation à des
+questions inédites. Certaines suites vérifient le routage vers une synthèse sans
+exécuter cette génération. Une réponse partielle honnête n'est pas une réponse
+complète, et un transport réussi n'est pas un verdict de qualité.
+
+Les caches Jev et les vecteurs déjà présents peuvent raccourcir les replays.
+Comparer séparément chargement initial, recherche avec modèles chauds et latence
+du tour de chat ; ne pas additionner ou comparer des temps aux périmètres
+différents. Les [notes des essais du 13 octobre](../docs/jev-partial-improvements.md)
+précisent les premiers passages, les corrections et les réutilisations de cache.
+
+Le prochain benchmark mots clés / BGE-M3 / hybride / reranking reste à exécuter.
+Les anciens JSON ne constituent pas ses résultats ; son lot inédit et son
+snapshot devront être identifiés avant le premier essai.
 
 Les nouveaux scripts écrivent un **fichier daté distinct** et ajoutent des
 métadonnées : date UTC, révision Git et état du checkout, versions,

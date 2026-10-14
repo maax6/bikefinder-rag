@@ -6,6 +6,7 @@ from bikefinder_rag.catalog.enriched import folded
 
 def language(text):
     text=folded(text)
+    text=re.sub(r'\bkilowatts?\b','kw',text)
     for pattern,replacement in [(r'\b(?:balles|boules)\b','euros'),(r'\b(?:bourrins|canassons)\b','chevaux'),(r'\bregulateur\b(?! de vitesse)','regulateur de vitesse'),(r'\ba(?:vec)?\s+un plein\b','avec un plein')]:
         text=re.sub(pattern,replacement,text)
     amounts={'trois':'3','cinq':'5','dix':'10','vingt':'20'}
@@ -13,7 +14,7 @@ def language(text):
     return text
 
 
-def aliases(brand,model):
+def aliases(brand,model,include_family=True):
     compact=lambda s:re.sub(r'[^a-z0-9]','',folded(s))
     short=re.sub(r'^\d+(?:[.,]\d+)?\s+','',model)
     names={model,short}
@@ -22,17 +23,30 @@ def aliases(brand,model):
     prefix=re.match(r'^(\d+(?:[.,]\d+)?)\s+(.+)$',model)
     if prefix:names.add(prefix[2]+' '+prefix[1])
     words=model.split()
+    non_numeric=[word for word in words if not re.fullmatch(r'\d+(?:[.,]\d+)?',word)]
+    numeric=[word for word in words if re.fullmatch(r'\d+(?:[.,]\d+)?',word)]
+    if len(non_numeric)==2 and len(numeric)==1 and any(2<=len(compact(word))<=4 and word.upper()==word for word in non_numeric) and not any(folded(word) in {'r','rs','s','sp','gt','evo'} for word in non_numeric):
+        names.add(' '.join([numeric[0],*reversed(non_numeric)]))
     # A named suffix such as Africa Twin remains a candidate family, never
     # proof that every variant in that family has the same specification.
     for i in range(1,len(words)-1):
         suffix=' '.join(words[i:])
         if re.search(r'[a-zA-Z]',suffix):names.add(suffix)
+    if include_family and len(words)>=2 and len(compact(words[-1]))>=5 and re.fullmatch(r'[a-zA-Z]+',words[-1]) and re.fullmatch(r'(?:[A-Z][A-Z0-9-]+|\d+)',words[-2]):names.add(words[-1])
     for name in list(names):
         numbered=re.match(r'^(\d+(?:[.,]\d+)?)\s+(.+)$',name)
         if numbered:
             words=numbered[2].split()
             for position in range(1,len(words)+1):names.add(' '.join([*words[:position],numbered[1],*words[position:]]))
-    generic={'rally','classic','standard','pure','sport','adventure','nouvelle','touring','racing','custom','roadster'}
+        words=name.split()
+        for index,word in enumerate(words):
+            if re.fullmatch(r'\d+(?:[.,]\d+)?',word):
+                rest=words[:index]+words[index+1:]
+                for position in range(len(rest)+1):names.add(' '.join([*rest[:position],word,*rest[position:]]))
+        for end in (range(2,len(words)) if include_family else []):
+            prefix=' '.join(words[:end])
+            if re.search(r'\d',prefix) and re.search(r'[a-zA-Z]',prefix):names.add(prefix)
+    generic={'rally','classic','standard','pure','sport','sports','adventure','nouvelle','touring','racing','custom','roadster','normale','moto','factory','explore','performance','anniversary','special','edition','serie','france','europe','america','black','white','orange','yellow','silver','chrome'}
     result={compact(brand+' '+name) for name in names if name==model or len(compact(name))>=4}
     result.update(compact(name) for name in names if len(compact(name))>=4 and compact(name) not in generic and re.search('[a-z]',compact(name)))
     return result
@@ -81,4 +95,4 @@ def merge_conditions(previous,current,replace=False):
 
 def negated_mention(text,start):
     before=folded(text[max(0,start-45):start])
-    return bool(re.search(r"\b(?:pas|ni|sans|sauf|hors|exclure)\s+(?:de\s+)?(?:(?:la|le|les)\s+|l[’']\s*)?$",before))
+    return bool(re.search(r"\b(?:pas|ni|sans|sauf|hors|exclure)\s+(?:de\s+)?(?:(?:la|le|les)\s+|l[’']\s*)?$|sans\s+(?:melanger|confondre)\s+avec\s+(?:(?:la|le|les)\s+|l[’']\s*)?$",before))

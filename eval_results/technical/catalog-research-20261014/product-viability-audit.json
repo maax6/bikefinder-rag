@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-14",
+  "basis": "Read-only audit of captured real Gradio receipts, no new inference; rounded Ollama durations sum sequential model calls; residual includes all non-model operations and orchestration, not retrieval alone",
+  "proposal_not_user_requirement": {
+    "complete_useful_answer_target_seconds": 10
+  },
+  "product_conclusion": "Current conversational path not viable for a fast useful catalogue assistant; broader concept remains unproven, not dismissed",
+  "results": [
+    {
+      "case": "original",
+      "end_to_end_seconds": 134.10271358292084,
+      "planner_seconds": 99.014481791,
+      "writer_seconds": 23.717790917,
+      "other_seconds": 11.370440874920849,
+      "model_share_percent": 91.521095605653,
+      "planner_calls": 3,
+      "actual_tool_calls": 5,
+      "answer_words": 380,
+      "mode": "mixed",
+      "scopes": [
+        {
+          "searched_fiches": 64,
+          "searched_passages": 636,
+          "query": "boîte automatique"
+        },
+        {
+          "searched_fiches": 38,
+          "searched_passages": 369,
+          "query": "boîte automatique"
+        },
+        {
+          "searched_fiches": 64,
+          "searched_passages": 636,
+          "query": "boîte automatique"
+        },
+        {
+          "searched_fiches": 38,
+          "searched_passages": 369,
+          "query": "boîte automatique"
+        },
+        {
+          "searched_fiches": 64,
+          "searched_passages": 636,
+          "query": "boîte automatique"
+        }
+      ]
+    },
+    {
+      "case": "honda",
+      "end_to_end_seconds": 39.94615566707216,
+      "planner_seconds": 16.744342208,
+      "writer_seconds": 21.885797791,
+      "other_seconds": 1.3160156680721613,
+      "model_share_percent": 96.7055261110972,
+      "planner_calls": 1,
+      "actual_tool_calls": 1,
+      "answer_words": 292,
+      "mode": "mixed",
+      "scopes": [
+        {
+          "searched_fiches": 64,
+          "searched_passages": 636,
+          "query": "boîte robotisée à double embrayage"
+        }
+      ]
+    },
+    {
+      "case": "bmw",
+      "end_to_end_seconds": 62.68050808296539,
+      "planner_seconds": 31.821653584,
+      "writer_seconds": 28.9215125,
+      "other_seconds": 1.9373419989653904,
+      "model_share_percent": 96.90917949101325,
+      "planner_calls": 2,
+      "actual_tool_calls": 2,
+      "answer_words": 267,
+      "mode": "mixed",
+      "scopes": [
+        {
+          "searched_fiches": 38,
+          "searched_passages": 369,
+          "query": "boîte automatique ou robotisée"
+        },
+        {
+          "searched_fiches": 38,
+          "searched_passages": 369,
+          "query": "boîte automatique ou robotisée"
+        }
+      ]
+    },
+    {
+      "case": "both_rephrased",
+      "end_to_end_seconds": 94.00857766601257,
+      "planner_seconds": 51.522475417,
+      "writer_seconds": 39.852148834,
+      "other_seconds": 2.63395341501257,
+      "model_share_percent": 97.1981775701678,
+      "planner_calls": 2,
+      "actual_tool_calls": 4,
+      "answer_words": 460,
+      "mode": "mixed",
+      "scopes": [
+        {
+          "searched_fiches": 38,
+          "searched_passages": 369,
+          "query": "boîte"
+        },
+        {
+          "searched_fiches": 64,
+          "searched_passages": 636,
+          "query": "boîte"
+        },
+        {
+          "searched_fiches": 38,
+          "searched_passages": 369,
+          "query": "boîte automatique"
+        },
+        {
+          "searched_fiches": 64,
+          "searched_passages": 636,
+          "query": "boîte automatique"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "No benchmark of smaller local generator or alternative runtime",
+    "No independent end-to-end quality holdout",
+    "No fresh cold-start or concurrency measurement",
+    "No measured breakdown inside non-model residual"
+  ],
+  "local_model": {
+    "name": "mistral-small3.2",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "mistral3",
+      "families": [
+        "mistral3"
+      ],
+      "parameter_size": "24.0B",
+      "quantization_level": "Q4_K_M"
+    },
+    "parameter_count": 24011361280
+  },
+  "coverage_counterexample": {
+    "question": "Automatisation des BMW RT",
+    "observed_bot_result": "Date not established from its retrieved catalogue passages",
+    "manufacturer_evidence": {
+      "publisher": "BMW Group France",
+      "published": "2025-04-29",
+      "url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+      "facts": [
+        "R 1300 RT announced with optional ASA, automated clutch and manual or automatic shifting",
+        "First French deliveries announced for June 2025"
+      ]
+    },
+    "interpretation": "Citation correctness and explicit uncertainty passed targeted checks, but they do not establish useful answer coverage; required manufacturer evidence is absent from the executed local evidence set",
+    "project_runtime_changed": false
+  },
+  "limits_audit": {
+    "listing_defaults": "10 rows in filter_catalog and older tools; active Jev listing renderer caps 20; SQL count operates over all matching rows",
+    "historical_research": "Up to 500 fiches per family; original trace actually searched 636 Honda sections and 369 BMW sections; each search selects up to three lexical and three dense passages",
+    "product_requirement_proposal": "Listing should page results; evidence selection should follow required facts and context budget, not a universal top-10 knowledge limit"
+  },
+  "proposed_next_experiment": {
+    "architecture": "Single initial plan, local SQL and BGE execution, one local writing pass, Jev remains the only remote project service; complement only when a recoverable fact requires it",
+    "model": "Compare a smaller local generator or faster local runtime against the actual 24B Mistral; no speed claim before measuring",
+    "quality": "New unseen questions with independent expected domain facts and source authority; score useful complete answers rather than only retrieval/citation success",
+    "stop_condition_proposal": "Do not call the project viable if representative useful answers cannot meet agreed quality and end-to-end latency on the target Mac"
+  }
+}

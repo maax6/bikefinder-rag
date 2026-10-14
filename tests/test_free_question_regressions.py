@@ -54,6 +54,71 @@ def test_overlapping_names_remain_two_distinct_mentions(monkeypatch):
     m,_=router.entities(None,'Compare Kawasaki Z1000 et Kawasaki Z1000 SX en 2020')
     assert {x['model'] for x in m}=={'Z 1000','Z 1000 SX'}
 
+def test_one_model_family_mentioned_with_two_years_uses_each_years_source_identity(monkeypatch):
+    catalog(monkeypatch,[('Yamaha','850 MT-09',[2020]),('Yamaha','MT-09 900',[2021])])
+    monkeypatch.setattr(router,'classify',lambda *args:(decisions(operation='comparison'),1,False))
+    monkeypatch.setattr(router,'render_details',lambda *args:'facts')
+    r=router.route_question(None,'Compare les Yamaha MT-09 de 2020 et 2021 dans un tableau : cylindrée, puissance et poids.')
+    assert {(m['model'],m['year']) for m in r['plan']['models']}=={('850 MT-09',2020),('MT-09 900',2021)}
+
+def test_explicit_brand_and_excluded_standard_cannot_introduce_other_brands(monkeypatch):
+    catalog(monkeypatch,[('Aprilia','1100 Tuono V4 Factory',[2021]),('Aprilia','1100 Tuono V4',[2021]),('Moto-Guzzi','Normale 500',[2021])])
+    models,brands=router.entities(None,'Aprilia Tuono V4 Factory 2021, sans mélanger avec la Tuono V4 normale')
+    assert models==[{'brand':'Aprilia','model':'1100 Tuono V4 Factory'}]
+
+def test_short_brand_does_not_pick_another_brands_shared_numeric_suffix(monkeypatch):
+    catalog(monkeypatch,[('MZ / MuZ','1000 S',[2005]),('MV-Agusta','F4 1000 S',[2005])])
+    models,brands=router.entities(None,'La MZ 1000 S de 2005, type de moteur et cylindrée')
+    assert models==[{'brand':'MZ / MuZ','model':'1000 S'}]
+
+def test_brand_prefix_cannot_capture_an_ordinary_article(monkeypatch):
+    catalog(monkeypatch,[('Les Triplettes de Bonneville','Saline',[2020]),('Honda','CB 500 F',[2020])])
+    models,brands=router.entities(None,'Liste les motos de 2020')
+    assert not models and not brands
+
+def test_model_numeric_order_can_change_without_losing_variant_tokens(monkeypatch):
+    catalog(monkeypatch,[('KTM','1290 SUPER DUKE R',[2018]),('KTM','Superduke 1290 R',[2020]),('KTM','Superduke 1290 R EVO',[2022])])
+    models,_=router.entities(None,'KTM 1290 Super Duke R de 2020')
+    assert models==[{'brand':'KTM','model':'Superduke 1290 R'}]
+
+
+def test_marketing_family_and_acronym_order_are_catalogue_aliases(monkeypatch):
+    catalog(monkeypatch,[('Suzuki','1300 GSX-R Hayabusa',[2001]),('Yamaha','600 FAZER FZS',[2000])])
+    assert router.entities(None,'Suzuki Hayabusa de 2001')[0]==[{'brand':'Suzuki','model':'1300 GSX-R Hayabusa'}]
+    assert router.entities(None,'Yamaha FZS600 Fazer de 2000')[0]==[{'brand':'Yamaha','model':'600 FAZER FZS'}]
+
+
+def test_equipment_status_and_country_words_cannot_be_marketing_names(monkeypatch):
+    catalog(monkeypatch,[('Honda','CRF 1100 L Africa Twin',[2024]),('Suzuki','1000 Katana Royal Serie',[2024]),('Suzuki','GSX-R 1000 R 100th Anniversary France',[2024])])
+    assert router.entities(None,'Africa Twin 2024 : ABS de série en France')[0]==[{'brand':'Honda','model':'CRF 1100 L Africa Twin'}]
+
+
+def test_model_code_ending_in_l_is_not_a_litre_filter(monkeypatch):
+    catalog(monkeypatch,[('Honda','CRF 1100 L Africa Twin',[2020]),('Honda','CRF 1100 L Africa Twin Adventure Sports',[2020])])
+    raw=decisions(operation='details');raw['answers']['field_suspension']['choice']='yes'
+    monkeypatch.setattr(router,'classify',lambda *args:(raw,1,False))
+    monkeypatch.setattr(router,'render_details',lambda conn,p:'source facts')
+    r=router.route_question(None,'Honda Africa Twin CRF1100L standard de 2020 : diamètre de fourche')
+    assert r['route']=='details' and r['plan']['models']==[{'brand':'Honda','model':'CRF 1100 L Africa Twin'}]
+
+
+def test_followup_year_comparison_retains_both_source_year_bindings(stub,monkeypatch):
+    previous={'operation':'details','identity':{'year':2021},'models':[{'brand':'Yamaha','model':'700 MT-07'}],'fields':['weight_wet_kg'],'conditions':[],'equipment':None,'status':'standard'}
+    monkeypatch.setattr(router,'classify',lambda *args:(decisions(operation='comparison'),1,False))
+    monkeypatch.setattr(router,'render_details',lambda conn,p:'source facts')
+    r=router.route_question(None,'Et pour la 2018, donne-moi l’écart de poids',[{'role':'assistant','_catalog_plan':previous}])
+    assert r['route']=='comparison'
+    assert {m['year'] for m in r['plan']['models']}=={2018,2021}
+
+
+def test_anaphoric_conversion_uses_the_previous_source_identity(stub,monkeypatch):
+    previous={'operation':'details','identity':{'year':2022},'models':[{'brand':'Royal-Enfield','model':'410 Himalayan'}],'fields':['reservoir'],'conditions':[],'equipment':None,'status':'standard'}
+    raw=decisions(operation='clarify');raw['answers']['scope']['choice']='unsupported'
+    monkeypatch.setattr(router,'classify',lambda *args:(raw,1,False))
+    monkeypatch.setattr(router,'render_details',lambda conn,p:'source facts')
+    r=router.route_question(None,'Convertis cette capacité en gallons américains',[{'role':'assistant','_catalog_plan':previous}])
+    assert r['route']=='details' and r['plan']['models']==previous['models'] and r['plan']['identity']['year']==2022
+
 def test_equipment_intersection_preserves_individual_statuses(stub,monkeypatch):
     monkeypatch.setattr(router,'classify',lambda *args:(decisions(equipment='ABS'),1,False))
     r=router.route_question(None,'En 2024 avec ABS de série et shifter en option')

@@ -1,7 +1,7 @@
 [project]
 name = "bikefinder-rag"
 version = "0.1.0"
-description = "Agentic RAG over motorcycle specs and owner reviews, scraped from bikez.com"
+description = "Sourced motorcycle technical catalog with Jev routing and local retrieval"
 requires-python = ">=3.11"
 dependencies = [
     "requests>=2.32",

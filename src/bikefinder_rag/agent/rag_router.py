@@ -220,6 +220,14 @@ def route_question(conn, question, history=None):
         return legacy.route_question(conn, question, history)
     if re.search(r"\bsk-[a-z]|api[_ -]?key", question, re.I):
         return legacy.route_question(conn, question, history)
+    if os.getenv("BIKEFINDER_CATALOG_EXPERIMENT", "0") == "1":
+        from bikefinder_rag.catalog.experiment import supports
+        supported = supports(question)
+        continuation = any(m.get("_catalog_generation", {}).get("experiment") for m in (history or [])[-2:] if isinstance(m.get("_catalog_generation"), dict))
+        structured = bool(re.search(r"\b(?:compte|filtre|liste)\b|combien de (?:motos|modeles|versions)", legacy.folded(question)) or legacy.is_arithmetic_question(question))
+        if (supported or continuation) and not structured:
+            from bikefinder_rag.agent.catalog_experiment import answer_question
+            return answer_question(conn, question, history)
     # Discovery must precede the exact-fiche router: the year may be an output.
     # Counts/calculations and explicit single-fiche consultations retain their
     # established paths; research sessions can continue through this interface.

@@ -16,6 +16,7 @@ src/bikefinder_rag/eval/generated_answers.json
 
 # Generated dashboard (regenerate with scripts/coverage_dashboard.py)
 coverage_dashboard.html
+eval_results/coverage/coverage_dashboard.html
 .claude/settings.local.json
 
 # NHTSA flat-file download cache (load_nhtsa_recalls.py refetches if absent)
@@ -27,3 +28,7 @@ data/technical/
 
 # Space data artifact (pushed to HF via LFS, not to GitHub)
 deploy/pgdata.tar.gz
+
+# New raw owner-review collection remains local.
+data/motoplanete/reviews.jsonl
+data/motoplanete/reviews_done.txt

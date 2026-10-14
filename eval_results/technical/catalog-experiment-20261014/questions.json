@@ -1,0 +1,174 @@
+{
+  "author": "root, questions inédites dans le parcours; contrôle ciblé, non indépendant",
+  "cases": [
+    {
+      "id": "dev-honda",
+      "split": "dev",
+      "question": "Sur la Gold Wing 2018, quelles sont les deux transmissions proposées et combien de rapports ont-elles ?",
+      "facts": [
+        "manual6",
+        "dct7"
+      ],
+      "brands": [
+        "Honda"
+      ]
+    },
+    {
+      "id": "dev-bmw",
+      "split": "dev",
+      "question": "L’ASA de la nouvelle BMW RT est-il inclus ou faut-il le prendre en option ? Peut-il changer les rapports automatiquement ?",
+      "facts": [
+        "asa_optional",
+        "asa_auto"
+      ],
+      "brands": [
+        "BMW"
+      ]
+    },
+    {
+      "id": "dev-both",
+      "split": "dev",
+      "question": "Gold Wing et BMW RT : explique les solutions automatiques proposées, avec leurs années documentées et leurs différences de statut.",
+      "facts": [
+        "honda2018",
+        "dct7",
+        "bmw2025",
+        "asa_optional",
+        "asa_auto"
+      ],
+      "brands": [
+        "Honda",
+        "BMW"
+      ]
+    },
+    {
+      "id": "fresh-01",
+      "split": "holdout",
+      "question": "Je veux éviter de gérer l’embrayage : que proposent Honda sur la Gold Wing et BMW sur la RT ? Donne les versions et les dates, avec les sources.",
+      "facts": [
+        "honda2018",
+        "dct7",
+        "bmw2025",
+        "asa_optional",
+        "asa_auto"
+      ],
+      "brands": [
+        "Honda",
+        "BMW"
+      ]
+    },
+    {
+      "id": "fresh-02",
+      "split": "holdout",
+      "question": "Est-ce que toutes les Gold Wing de 2018 sont en DCT, ou pouvait-on encore choisir une boîte manuelle ?",
+      "facts": [
+        "manual6",
+        "dct7",
+        "choice_honda"
+      ],
+      "brands": [
+        "Honda"
+      ]
+    },
+    {
+      "id": "fresh-03",
+      "split": "holdout",
+      "question": "Sur la R 1300 RT, est-ce qu’ASA signifie seulement passer les vitesses sans embrayer, ou aussi laisser la moto choisir les rapports ?",
+      "facts": [
+        "asa_clutch",
+        "asa_auto"
+      ],
+      "brands": [
+        "BMW"
+      ]
+    },
+    {
+      "id": "fresh-04",
+      "split": "holdout",
+      "question": "À quelle date les premières R 1300 RT étaient-elles annoncées pour les clients français ? Et l’ASA était-il une option ?",
+      "facts": [
+        "fr_june2025",
+        "asa_optional"
+      ],
+      "brands": [
+        "BMW"
+      ]
+    },
+    {
+      "id": "fresh-05",
+      "split": "holdout",
+      "question": "La Gold Wing DCT et la Gold Wing manuelle de la génération 2018 ont-elles le même nombre de vitesses ?",
+      "facts": [
+        "manual6",
+        "dct7"
+      ],
+      "brands": [
+        "Honda"
+      ]
+    },
+    {
+      "id": "fresh-06",
+      "split": "holdout",
+      "question": "BMW présente une RT millésime 2026 aux États-Unis : est-ce incompatible avec des livraisons annoncées en France en 2025 ? Explique les marchés.",
+      "facts": [
+        "us2026",
+        "fr_june2025",
+        "market_distinction"
+      ],
+      "brands": [
+        "BMW"
+      ]
+    },
+    {
+      "id": "fresh-07",
+      "split": "holdout",
+      "question": "Pour la Gold Wing, distingue l’année de présentation du modèle et son millésime quand la DCT à sept rapports est annoncée.",
+      "facts": [
+        "announce2017",
+        "honda2018",
+        "dct7"
+      ],
+      "brands": [
+        "Honda"
+      ]
+    },
+    {
+      "id": "fresh-08",
+      "split": "holdout",
+      "question": "Je compare une RT avec ASA et une Gold Wing avec DCT : laquelle utilise un double embrayage, et laquelle propose encore un mode manuel ?",
+      "facts": [
+        "dct_dual_clutch",
+        "asa_manual",
+        "asa_auto"
+      ],
+      "brands": [
+        "Honda",
+        "BMW"
+      ]
+    },
+    {
+      "id": "fresh-09",
+      "split": "holdout",
+      "question": "Peux-tu certifier que ma BMW R 1250 RT de 2023 peut recevoir l’ASA après achat ?",
+      "facts": [
+        "retrofit_unknown"
+      ],
+      "brands": [
+        "BMW"
+      ],
+      "kind": "missing"
+    },
+    {
+      "id": "fresh-10",
+      "split": "holdout",
+      "question": "La Gold Wing édition Galaxie 2018 avait-elle la DCT livrée de série en France ?",
+      "facts": [
+        "identity_unknown"
+      ],
+      "brands": [
+        "Honda"
+      ],
+      "kind": "missing"
+    }
+  ]
+}

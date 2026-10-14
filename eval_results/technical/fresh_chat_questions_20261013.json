@@ -1,0 +1,430 @@
+{
+  "cases": [
+    {
+      "id": "fresh2_01",
+      "turns": [
+        {
+          "question": "Sur l’Aprilia Tuono V4 Factory de 2021, les suspensions pilotées sont de série ou c’est une option ? Donne-moi aussi ce qui est documenté sur la fourche, sans mélanger avec la Tuono V4 normale.",
+          "expected": "Identifier le millésime 2021 et la variante Factory ; restituer les caractéristiques documentées de la fourche et le statut explicite des suspensions pilotées. Distinguer série, option, absence et information inconnue ; ne pas transférer les données de la variante standard."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_02",
+      "turns": [
+        {
+          "question": "Je regarde une Ducati Monster 900 de 1994. Tu as quoi comme infos sur sa fourche : marque, type, diamètre et débattement ? Même si tu n’as qu’une partie, ça m’intéresse.",
+          "expected": "Rechercher exactement Monster 900, millésime 1994 ; fournir séparément les champs documentés de la fourche avec leurs unités. Marquer les champs manquants sans compléter à partir d’un autre millésime ni rejeter toute la demande si certaines données sont disponibles."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_03",
+      "turns": [
+        {
+          "question": "Pour une Suzuki GSX-R 750 de 1998, quels freins il y a à l’avant ? Je veux le nombre de disques, leur diamètre et la description des étriers telle qu’elle apparaît dans ta source.",
+          "expected": "Identifier la GSX-R 750 de 1998 ; extraire les caractéristiques du freinage avant, en préservant la description source des étriers. Ne pas déduire le nombre de pistons ou un montage radial d’un nom commercial ; signaler tout champ non documenté."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_04",
+      "turns": [
+        {
+          "question": "La Kawasaki Z1000SX de 2017, c’est quoi sa transmission ? Sépare bien le nombre de rapports de la boîte et la transmission finale, j’ai tendance à confondre les deux.",
+          "expected": "Restituer deux notions distinctes : nombre de rapports de la boîte et type de transmission finale pour le modèle et le millésime demandés. Répondre simplement et conserver les inconnues si l’un des deux champs manque."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_05",
+      "turns": [
+        {
+          "question": "Quelles sont les dimensions des pneus d’origine d’une Triumph Speed Triple 1200 RS de 2022 ? Mets l’avant et l’arrière sur deux lignes, avec les indices s’ils sont renseignés.",
+          "expected": "Cibler Speed Triple 1200 RS, année 2022 ; distinguer pneus avant et arrière et préserver les notations complètes disponibles. Ne pas inventer d’indices de charge ou de vitesse, ni substituer une monte adaptable à la monte documentée."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_06",
+      "turns": [
+        {
+          "question": "Tu peux comparer la Moto Guzzi V7 Stone et la V7 Special, toutes les deux de 2021, sur la hauteur de selle, le réservoir et le poids ? Précise à chaque fois si le poids est à sec ou en ordre de marche.",
+          "expected": "Comparer les deux variantes du même millésime dans un tableau, avec unités et définition du poids. Ne pas considérer des poids à sec et en ordre de marche comme directement équivalents ; distinguer différences documentées, égalités documentées et données manquantes."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_07",
+      "turns": [
+        {
+          "question": "Pour la KTM 390 Duke de 2018, donne-moi la capacité du réservoir en litres puis en gallons américains. Je veux une conversion explicite, pas des gallons impériaux ; garde aussi la valeur et l’unité d’origine.",
+          "expected": "Trouver la capacité documentée du réservoir, préserver la valeur originale et son unité, puis effectuer et expliquer la conversion en litres et en gallons américains avec un arrondi indiqué. Distinguer valeur source et calcul ; si la capacité manque, ne pas inventer de résultat."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_08",
+      "turns": [
+        {
+          "question": "Sur la Royal Enfield Interceptor 650 de 2020, tu peux me donner l’empattement et la hauteur de selle en millimètres et en pouces ? Je préfère voir les valeurs source et les conversions côte à côte.",
+          "expected": "Extraire les deux dimensions pour le modèle exact ; afficher valeur source, unité source et conversions demandées. Utiliser une conversion explicite et un arrondi cohérent, sans faire passer les valeurs calculées pour des données originales."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_09",
+      "turns": [
+        {
+          "question": "Quelles couleurs sont documentées pour la MV Agusta Brutale 800 Rosso de 2020 ? Garde les noms d’origine. Si tu n’as qu’une couleur renseignée, dis-le sans prétendre que c’était la seule proposée.",
+          "expected": "Rechercher les couleurs de la variante Rosso en 2020, conserver leurs noms source et préciser les limites de couverture. Ne pas déduire la liste des couleurs du mot Rosso et ne pas confondre couleur connue et liste exhaustive des couleurs commercialisées."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_10",
+      "turns": [
+        {
+          "question": "L’Husqvarna Svartpilen 401 de 2024 a-t-elle un antipatinage et un ABS en courbe ? Pour chacun, je veux savoir si c’est de série, en option, indiqué absent ou simplement non renseigné.",
+          "expected": "Traiter les deux équipements séparément pour le millésime 2024 ; attribuer uniquement les statuts appuyés par les données. Ne pas assimiler ABS simple à ABS en courbe, ni absence de mention à absence d’équipement."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_11",
+      "turns": [
+        {
+          "question": "Entre la Benelli TRK 502 et la TRK 502 X de 2019, qu’est-ce qui change sur les roues et les pneus ? Compare les tailles avant et arrière et le type de roues, seulement si ces infos sont documentées.",
+          "expected": "Séparer TRK 502 et TRK 502 X au millésime 2019 ; comparer diamètres ou dimensions des roues, type de roues et dimensions des pneus selon les champs disponibles. Ne pas mélanger diamètre de jante et notation de pneu, ni attribuer automatiquement un type de roue à partir de la lettre X."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_12",
+      "turns": [
+        {
+          "question": "Tu as une fiche pour la Cagiva Raptor 650 de 2001 ? Je cherche surtout la capacité du réservoir, la hauteur de selle, la longueur et la largeur. Réponds avec ce que tu as, même si la fiche est incomplète.",
+          "expected": "Vérifier la présence du modèle et du millésime demandés ; restituer les quatre caractéristiques disponibles avec unités et provenance accessible. Distinguer fiche absente et champs manquants, et accepter une réponse partielle explicite."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_13",
+      "turns": [
+        {
+          "question": "Sur la Buell XB12S Lightning de 2007, comment sont décrits la fourche et le frein avant ? Je veux les caractéristiques exactes disponibles, y compris la taille du disque si tu l’as.",
+          "expected": "Cibler XB12S Lightning en 2007 ; donner les descriptions documentées de la fourche et du frein avant, ainsi que les dimensions disponibles. Préserver les particularités et termes de la source sans généraliser depuis une autre Buell."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_14",
+      "turns": [
+        {
+          "question": "Pour une Bimota DB4 de 2000, peux-tu distinguer les équipements de série des options mentionnées dans le catalogue ? Si les statuts ne sont pas connus, liste simplement les équipements documentés et indique la limite.",
+          "expected": "Rechercher la DB4 de 2000 ; restituer les équipements et leurs statuts uniquement lorsqu’ils sont documentés. Si la distinction série et option est impossible, fournir les éléments connus sans transformer une liste de caractéristiques en liste d’équipements de série."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_15",
+      "turns": [
+        {
+          "question": "Je voudrais les données moteur de la Laverda 750 S de 1998 : cylindrée, puissance avec son unité d’origine et régime associé s’il est présent. Tu peux me montrer la formulation source pour la puissance ?",
+          "expected": "Identifier Laverda 750 S, année 1998 ; restituer cylindrée, puissance et éventuel régime associé en préservant unité et formulation source. Ne pas inventer le régime ni traiter des unités ou normes différentes comme identiques ; reconnaître une couverture partielle ou absente."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_16",
+      "turns": [
+        {
+          "question": "Pour la Harley-Davidson Sportster XL883N Iron de 2016, donne-moi le type de transmission finale et les dimensions des deux pneus. Vérifie bien le code XL883N, je ne cherche pas une autre Sportster.",
+          "expected": "Préserver le code de modèle XL883N et vérifier sa correspondance avec Iron au millésime demandé. Fournir transmission finale et pneus avant et arrière ; ne pas remplacer la fiche par une autre cylindrée ou variante de Sportster si la correspondance exacte manque."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_17",
+      "turns": [
+        {
+          "question": "Dans ton catalogue, combien d’entrées de 2018 à 2024 inclus ont une cylindrée entre 500 et 800 cm³ inclus, une hauteur de selle de 820 mm maximum et l’ABS explicitement de série ? Exclue BMW, Yamaha et Honda. Liste les modèles, millésimes et variantes retenus, et compte chaque entrée une seule fois.",
+          "expected": "Appliquer simultanément les bornes inclusives d’année et de cylindrée, le plafond de hauteur de selle, le statut ABS de série et les exclusions de marques. Compter et lister les mêmes entrées dédupliquées par modèle, millésime et variante ; ne pas faire passer les valeurs manquantes ou l’ABS de statut inconnu pour des correspondances. Préciser que le nombre porte sur le catalogue accessible."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_18",
+      "turns": [
+        {
+          "question": "Combien de fiches Ducati, Triumph ou KTM de 2010 à 2020 inclus ont une transmission finale par chaîne, un réservoir d’au moins 15 litres et une boîte à 6 rapports ? Écarte les variantes dont le nom contient S ou R comme mot séparé. Donne-moi la liste avec le total, et précise ce que tu ne peux pas trancher faute de données.",
+          "expected": "Combiner marques, période inclusive, transmission finale, capacité minimale et nombre de rapports. Appliquer l’exclusion aux mots isolés S ou R des noms de variantes, sans supprimer automatiquement un nom contenant ces lettres à l’intérieur d’un autre mot. Dédupliquer les fiches, maintenir la cohérence liste et total, et distinguer non-correspondances certaines et entrées indéterminées."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_19",
+      "turns": [
+        {
+          "question": "Compare l’Indian Scout Bobber de 2024 et celle de 2025 sur la cylindrée, la transmission finale, le réservoir et la hauteur de selle. Si une année est absente de ton catalogue, montre quand même les données de l’autre et les cases manquantes.",
+          "expected": "Comparer séparément les deux millésimes de Scout Bobber sans supposer la continuité de leurs caractéristiques. Donner les quatre champs disponibles avec unités ; conserver un tableau partiel si un millésime ou certains champs manquent, sans importer les données de l’autre année."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_20",
+      "turns": [
+        {
+          "question": "Tu peux comparer la Kawasaki ZX-6R 636 de 2013 et la Suzuki GSX-R 600 de 2013 sur la cylindrée réelle, l’empattement et la largeur du pneu arrière ? Garde le 636 dans l’identification de la Kawasaki.",
+          "expected": "Identifier précisément ZX-6R 636 et GSX-R 600 au millésime 2013, en préservant les identifiants numériques. Comparer cylindrée documentée, empattement et largeur du pneu arrière, en distinguant cette largeur de la notation complète du pneu. Ne pas déduire la cylindrée réelle du seul nom du modèle."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_21",
+      "turns": [
+        {
+          "question": "Quelles sont la hauteur de selle et les caractéristiques de la fourche de la Triumph Street Triple 675 R de 2013 ?",
+          "expected": "Cibler la variante 675 R du millésime 2013 ; restituer hauteur de selle et champs documentés de fourche avec unités, en conservant les inconnues."
+        },
+        {
+          "question": "Et sur la version standard de la même année ? Fais-moi un petit tableau avec les différences, en gardant aussi la R pour référence.",
+          "expected": "Résoudre la relance vers Triumph Street Triple 675 standard de 2013 et conserver la variante R précédente comme référence. Comparer les mêmes champs sans réutiliser les données de la R pour combler la standard ; qualifier les différences uniquement lorsqu’elles sont documentées des deux côtés."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_22",
+      "turns": [
+        {
+          "question": "Pour la Ducati Multistrada 1200 S de 2015, donne-moi la longueur, la largeur et l’empattement avec les unités de la fiche.",
+          "expected": "Identifier la Multistrada 1200 S de 2015 ; restituer les trois dimensions disponibles dans leurs unités source, sans changer de variante ni supposer des dimensions absentes."
+        },
+        {
+          "question": "Passe ces trois dimensions en pouces, avec deux décimales, et garde les valeurs d’origine à côté. Pour les dimensions manquantes, laisse simplement non renseigné.",
+          "expected": "Résoudre ces trois dimensions vers celles du tour précédent ; convertir seulement les valeurs connues en pouces avec deux décimales et conserver les valeurs et unités originales. Indiquer le caractère calculé des conversions et ne pas inventer de valeur pour les champs manquants."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_23",
+      "turns": [
+        {
+          "question": "Compare les pneus et le réservoir de la Suzuki V-Strom 650 XT de 2020 avec ceux de la V-Strom 650 standard de 2020.",
+          "expected": "Comparer les deux variantes de V-Strom 650 au millésime 2020 sur les pneus avant et arrière et la capacité du réservoir, avec unités et champs inconnus explicites."
+        },
+        {
+          "question": "Maintenant garde seulement les caractéristiques pour lesquelles tu peux prouver une différence entre les deux. Si les données sont identiques ou incomplètes, ne les présente pas comme différentes.",
+          "expected": "Conserver le contexte des deux variantes et filtrer la comparaison précédente pour ne montrer que les différences établies sur des données disponibles des deux côtés. Distinguer absence de différence prouvée et preuve d’identité ; si aucune différence n’est établie, le dire sans en créer."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_24",
+      "turns": [
+        {
+          "question": "Entre la KTM 1290 Super Duke R de 2020 et la 1290 Super Duke R EVO de 2022, quel est le statut documenté des suspensions semi-actives : série, option, absentes ou inconnu ?",
+          "expected": "Identifier séparément les modèles, variantes et millésimes demandés ; restituer le statut documenté des suspensions semi-actives pour chacun, sans assimiler des suspensions réglables manuellement à des suspensions semi-actives."
+        },
+        {
+          "question": "Sur ces deux motos uniquement, combien sont explicitement équipées de ces suspensions de série ? Donne le nombre et les noms retenus, et laisse les statuts inconnus en dehors du compte.",
+          "expected": "Limiter le périmètre aux deux entrées précédentes ; compter seulement les statuts de série explicitement établis et lister exactement ces entrées. Ne pas compter les options ou les inconnues ; mentionner les inconnues comme limite sans les transformer en absences."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_25",
+      "turns": [
+        {
+          "question": "Pour la Royal Enfield Himalayan 411 de 2021, tu as quoi sur l’ABS, les dimensions des pneus et les couleurs ? Sépare bien ce qui est renseigné de ce qui manque.",
+          "expected": "Identifier Himalayan 411 en 2021 ; restituer les informations disponibles sur ABS, pneus avant et arrière et couleurs, avec leurs statuts et noms source quand présents. Distinguer manque de donnée et absence d’un équipement ou d’une couleur."
+        },
+        {
+          "question": "Et pour la 2022, toujours la 411 ? Compare les mêmes rubriques sans reprendre automatiquement les infos de 2021.",
+          "expected": "Résoudre la relance vers Royal Enfield Himalayan 411 de 2022 ; conserver le modèle 411 et comparer les mêmes rubriques aux données 2021. Vérifier chaque millésime séparément, ne pas substituer une autre cylindrée et préserver les résultats partiels et inconnus."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_26",
+      "turns": [
+        {
+          "question": "Pour l’Aprilia RSV Mille R de 2002, tu peux faire une fiche courte avec l’empattement, la fourche et les freins avant et arrière ? Garde bien la R, et indique les marques des composants seulement si ta source les donne.",
+          "expected": "Identifier exactement RSV Mille R au millésime 2002 ; restituer les caractéristiques disponibles des rubriques demandées en distinguant avant et arrière. Ne pas remplacer la variante R par la RSV Mille standard ni déduire les marques des composants à partir de la gamme."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_27",
+      "turns": [
+        {
+          "question": "Quelles différences sont documentées entre la Suzuki DR-Z 400 SM et la DR-Z 400 S de 2005 pour la fourche, les roues et les pneus ? Présente les données avant et arrière séparément quand ça s’applique.",
+          "expected": "Comparer les variantes SM et S au même millésime sur les rubriques demandées ; conserver leurs identifiants et distinguer avant et arrière. Ne pas supposer les caractéristiques à partir des appellations de variantes ; préserver les champs manquants et les unités."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_28",
+      "turns": [
+        {
+          "question": "Tu peux me donner la taille des pneus de ma Duke ? Je l’ai achetée en 2019, mais je ne sais plus le nom complet.",
+          "expected": "Reconnaître que Duke et l’année d’achat ne suffisent pas à identifier le modèle, le millésime et la variante. Demander une clarification concise sur l’appellation exacte et le millésime, sans assimiler année d’achat et année modèle ni choisir arbitrairement une cylindrée."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_29",
+      "turns": [
+        {
+          "question": "Tu peux comparer la hauteur de selle et le réservoir d’une Tiger et d’une V-Strom ? Ce sont deux annonces d’occasion, je n’ai pas précisé les versions.",
+          "expected": "Constater que les familles Tiger et V-Strom couvrent plusieurs modèles, variantes et millésimes. Demander les appellations et années des deux annonces avant de donner des valeurs comparatives ; ne pas sélectionner les modèles les plus populaires ni produire une comparaison inventée."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_30",
+      "turns": [
+        {
+          "question": "Pour la Kawasaki W800 standard de 2020, quels réglages de suspension sont réellement indiqués dans la fiche, à l’avant et à l’arrière ? Distingue précharge, compression et détente ; si un réglage n’est pas mentionné, marque-le inconnu.",
+          "expected": "Cibler la W800 standard de 2020 et distinguer les possibilités de réglage pour chaque extrémité et chaque type demandé. Ne pas transformer une absence de mention en impossibilité de réglage ; ne pas transférer automatiquement les données des variantes Street ou Café."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_31",
+      "turns": [
+        {
+          "question": "Je lis une fiche anglaise de Triumph Bonneville T120 de 2017. Tu peux me donner son couple en N·m et en lb·ft, en gardant la valeur d’origine et le régime moteur associé s’il est documenté ? Indique ton arrondi.",
+          "expected": "Identifier Bonneville T120 de 2017 ; restituer couple, unité et régime source disponibles, puis convertir explicitement le couple entre N·m et lb·ft avec un arrondi indiqué. Distinguer calcul et donnée source, préserver le régime sans le déduire et ne pas calculer de couple si la valeur manque."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_32",
+      "turns": [
+        {
+          "question": "Pour la Ducati 1098 S de 2008, quel poids est documenté ? Affiche-le en kilogrammes et en livres, avec la mention à sec ou en ordre de marche inchangée. S’il existe plusieurs définitions du poids, ne les fusionne pas.",
+          "expected": "Rechercher les données de poids de la 1098 S de 2008 et préserver chaque définition documentée. Effectuer les conversions explicites kg et lb pour chaque valeur connue, en conservant l’unité et la valeur originales ; ne pas fusionner poids à sec et poids en ordre de marche ni inventer un poids manquant."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_33",
+      "turns": [
+        {
+          "question": "La cylindrée de l’Indian Chief Dark Horse de 2022 est donnée comment dans ta source ? Montre l’écriture originale puis convertis-la en cm³ et en pouces cubes avec un arrondi clair. Ne te contente pas de recopier un nombre dans le nom du moteur.",
+          "expected": "Identifier Chief Dark Horse de 2022 ; rechercher une cylindrée explicitement documentée et préserver son écriture et son unité source. Calculer les conversions en cm³ et pouces cubes avec arrondi indiqué, sans assimiler automatiquement un identifiant commercial du moteur à une mesure vérifiée."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_34",
+      "turns": [
+        {
+          "question": "Tu as la puissance du Peugeot Metropolis 400 de 2023 ? Je voudrais la valeur source et une conversion en kW puis en chevaux métriques, pas en horsepower américain. Si la variante n’est pas identifiable, précise ce qu’il te manque.",
+          "expected": "Vérifier la présence de Metropolis 400 au millésime demandé et l’éventuelle distinction de variantes. Restituer la puissance source puis convertir seulement une valeur dont l’unité est connue vers kW et chevaux métriques, en distinguant ces derniers du horsepower mécanique. Demander une précision si plusieurs variantes empêchent une réponse fiable ; accepter une couverture absente ou partielle sans inventer."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_35",
+      "turns": [
+        {
+          "question": "Compare la BMW R1100RS de 1995 et la R1150RS de 2002 : nombre de rapports, transmission finale et capacité du réservoir. Fais attention à ne pas mélanger la boîte de vitesses et la transmission jusqu’à la roue.",
+          "expected": "Identifier les deux modèles et millésimes séparément ; comparer nombre de rapports, transmission finale et réservoir avec unités. Distinguer boîte et transmission finale sans inférer une caractéristique à partir de la famille ou de la marque ; conserver les données manquantes."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_36",
+      "turns": [
+        {
+          "question": "Sur la Yamaha FZR 400 RR de 1992, quelles dimensions de pneus et de jantes sont renseignées à l’avant et à l’arrière ? Je veux voir les notations originales, même si tu ne connais pas toute la monte.",
+          "expected": "Cibler FZR 400 RR, année 1992 ; distinguer dimensions de pneus et de jantes ainsi qu’avant et arrière, avec notation source et unités. Ne pas substituer une autre FZR 400 ni combler une monte incomplète par déduction."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_37",
+      "turns": [
+        {
+          "question": "Pour la Honda VFR 750 F de 1990, tu as une capacité totale de réservoir et une réserve séparée ? Présente les deux si elles sont documentées, mais ne les additionne pas sans savoir si la réserve est déjà comprise dans le total.",
+          "expected": "Identifier VFR 750 F de 1990 ; rechercher capacité totale et réserve en conservant leur qualification exacte. Ne pas additionner deux valeurs sans preuve de leur relation, et distinguer réserve non renseignée et réserve inexistante."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_38",
+      "turns": [
+        {
+          "question": "Tu peux détailler le freinage de la Norton Commando 961 Sport de 2016 : disques, diamètres, étriers et marques quand elles sont connues ? Si tu n’as pas cette version exacte, dis-moi ce qui est identifiable avant de répondre.",
+          "expected": "Vérifier la correspondance modèle, variante Sport et année 2016 avant de restituer le freinage avant et arrière. Préserver les caractéristiques et marques effectivement documentées ; reconnaître une variante absente ou ambiguë au lieu d’emprunter silencieusement les données d’une autre Commando."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_39",
+      "turns": [
+        {
+          "question": "Pour la Moto Morini Corsaro 1200 de 2006, est-ce que la fiche donne seulement le nombre de vitesses, ou aussi les rapports de boîte et la démultiplication finale ? Liste ce qui est disponible avec les libellés d’origine, sans reconstruire les valeurs.",
+          "expected": "Cibler Corsaro 1200 de 2006 ; distinguer nombre de rapports, ratios de boîte et démultiplication finale selon les données réellement disponibles. Préserver libellés et notations source, ne pas confondre ratio final et type de transmission finale, et accepter une réponse partielle."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_40",
+      "turns": [
+        {
+          "question": "Sur la SWM Superdual X de 2018, donne-moi la hauteur de selle et ce qui est indiqué pour la suspension arrière : type, réglages et débattement. Précise si le débattement décrit la roue ou l’amortisseur quand la source le dit.",
+          "expected": "Identifier la variante Superdual X de 2018 ; restituer hauteur de selle et données de suspension arrière documentées. Préserver la distinction entre course d’amortisseur et débattement de roue quand elle est explicite ; ne pas choisir l’une des interprétations si le libellé est ambigu."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_41",
+      "turns": [
+        {
+          "question": "Tu as une fiche de MZ 1000 S de 2005 ? Je veux le type de moteur, la cylindrée, la longueur et la largeur. Garde le nom MZ 1000 S tel quel et indique séparément les rubriques non renseignées.",
+          "expected": "Vérifier la présence de MZ 1000 S au millésime 2005 et préserver l’identifiant numérique. Restituer type moteur, cylindrée et dimensions avec leurs unités et descriptions disponibles, sans dériver la cylindrée exacte du nom ni remplacer le modèle par une autre MZ."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_42",
+      "turns": [
+        {
+          "question": "Pour la GasGas SM 700 de 2023, quelles sont les dimensions des roues, celles des pneus et la capacité du réservoir ? Organise ça pour que je voie facilement ce qui concerne l’avant et l’arrière.",
+          "expected": "Cibler GasGas SM 700 de 2023 ; restituer roues et pneus avant et arrière ainsi que réservoir en conservant unités et notations. Ne pas importer automatiquement des caractéristiques d’un modèle proche d’une autre marque ou d’une autre variante."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_43",
+      "turns": [
+        {
+          "question": "Je regarde un Kymco AK 550 de 2020. Tu peux afficher longueur, largeur, hauteur et poids ? Pour le poids, garde la qualification exacte ; pour les dimensions, ne remplace pas une mesure manquante par celle de l’AK 550 Premium.",
+          "expected": "Identifier AK 550 de 2020 et distinguer toute variante Premium. Restituer les dimensions et le poids disponibles avec unités et qualification source ; ne pas compléter depuis un autre modèle, millésime ou variante, et indiquer les champs inconnus."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_44",
+      "turns": [
+        {
+          "question": "Entre la CFMoto 700 CL-X Heritage et la 700 CL-X Sport de 2022, quels freins avant sont documentés et quel est le statut de l’ABS ? Compare le nombre de disques, les diamètres et les étriers sans supposer que les deux variantes sont identiques.",
+          "expected": "Comparer Heritage et Sport au millésime 2022 ; restituer le freinage avant et le statut de l’ABS pour chacune. Préserver les descriptions des étriers et distinguer statut inconnu, équipement de série, option ou absence ; n’annoncer des différences ou identités que sur des données comparables."
+        }
+      ]
+    },
+    {
+      "id": "fresh2_45",
+      "turns": [
+        {
+          "question": "Dans les fiches de 1990 à 2009 inclus, combien ont deux disques à l’avant, une transmission finale par chaîne et un empattement inférieur à 1 450 mm ? Exclue les cylindrées de 1 000 cm³ ou plus et les marques japonaises Honda, Kawasaki, Suzuki et Yamaha. Liste les résultats par empattement croissant, avec modèle, année et variante.",
+          "expected": "Combiner période inclusive, nombre de disques avant, type de transmission finale, seuil strict d’empattement, exclusion des cylindrées supérieures ou égales au seuil et exclusions des quatre marques nommées. Compter les entrées dédupliquées et les lister par empattement numérique croissant, en conservant modèle, millésime et variante. Ne pas intégrer les entrées dont un champ requis est inconnu ; qualifier le nombre comme portant sur le catalogue accessible."
+        }
+      ]
+    }
+  ],
+  "origin": "50 new questions independently authored by an agent without consulting code, previous suites or answers. Root saw first five questions during setup; remaining questions not inspected before initial run. Final replays after repairs are not held-out accuracy."
+}

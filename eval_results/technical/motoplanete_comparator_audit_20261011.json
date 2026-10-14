@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-10-11T16:25:05.728173+00:00",
+  "selection": "10 purposively selected source fiches, 1871-2027; saved individual records vs live comparison pages, not a completeness estimate",
+  "models": [
+    {
+      "name": "KTM Superduke 1390 GT 2027",
+      "url": "https://www.motoplanete.com/ktm/10937/Superduke-1390-GT-2027/contact.html"
+    },
+    {
+      "name": "MV-Agusta Superveloce 1000 Oro 2024",
+      "url": "https://www.motoplanete.com/mv-agusta/9631/Superveloce-1000-Oro-2024/contact.html"
+    },
+    {
+      "name": "Honda XL 700 V TRANSALP 2009",
+      "url": "https://www.motoplanete.com/honda/211/XL-700-V-TRANSALP-2009/contact.html"
+    },
+    {
+      "name": "Perreaux vélocipède à moteur 1871",
+      "url": "https://www.motoplanete.com/perreaux/5983/velocipede-a-moteur-1871/contact.html"
+    },
+    {
+      "name": "BMW R42 1928",
+      "url": "https://www.motoplanete.com/bmw/6162/R42-1928/contact.html"
+    },
+    {
+      "name": "Hildebrand & Wolfmuller 1488 1894",
+      "url": "https://www.motoplanete.com/hildebrand--wolfmuller/3228/1488-1894/contact.html"
+    },
+    {
+      "name": "Brough Superior SS100 1932",
+      "url": "https://www.motoplanete.com/brough-superior/3525/SS100-1932/contact.html"
+    },
+    {
+      "name": "BMW 1000 K1 1988",
+      "url": "https://www.motoplanete.com/bmw/3599/1000-K1-1988/contact.html"
+    },
+    {
+      "name": "Cagiva 125 SUPERCITY 1991",
+      "url": "https://www.motoplanete.com/cagiva/3199/125-SUPERCITY-1991/contact.html"
+    },
+    {
+      "name": "Ducati 1199 Panigale 2012",
+      "url": "https://www.motoplanete.com/ducati/3653/1199-Panigale-2012/contact.html"
+    }
+  ],
+  "fiches_checked": 10,
+  "licence_rows_missing": 10,
+  "approximate_ratio_wording_changed": 3,
+  "price_marker_lost": 7,
+  "equipment_rows_equal": 10,
+  "colors_equal": 10,
+  "identity_equal": 10,
+  "co2_values_equal_when_present": true,
+  "additional_limitations": [
+    "Comparator omits autonomy qualification; fetching full fiche restores it but requires an extra request.",
+    "Batched record provenance still uses individual parser version and lacks fetched comparison URL.",
+    "Substring value recall can falsely count licence A as retained within unrelated text."
+  ],
+  "decision": "Resume collect_technical_data.py on existing store with caffeinate -i and Zellij; prioritize individual source detail.",
+  "pre_resume_successes": 4230,
+  "backup": "data/technical/backups/motoplanete-before-resume-20261011T162414Z.sqlite3",
+  "collector_pid": 16466,
+  "caffeinate_pid": 16468,
+  "zellij_session": "bikefinder-collecte",
+  "targeted_tests_passed": 89
+}

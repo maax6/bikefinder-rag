@@ -1,0 +1,49 @@
+{
+  "selection_status": "candidates_not_winners",
+  "execution_profile": "installed-openrouter",
+  "candidates": [
+    {
+      "id": "local-qwen4b",
+      "deployment": "local",
+      "provider": "ollama",
+      "model": "qwen3.5:4b",
+      "availability": "installed_inventory_verified_20261014",
+      "license": "Apache-2.0",
+      "source": "https://huggingface.co/Qwen/Qwen3.5-9B"
+    },
+    {
+      "id": "local-ministral",
+      "deployment": "local",
+      "provider": "ollama",
+      "model": "ministral-3:8b",
+      "availability": "installed_inventory_verified_20261014",
+      "license": "Apache-2.0",
+      "source": "https://mistral.ai/news/mistral-3/"
+    },
+    {
+      "id": "cloud-luna",
+      "deployment": "cloud",
+      "provider": "openrouter",
+      "model": "openai/gpt-6-luna",
+      "availability": "model_inventory_and_configured_account_verified_20261014",
+      "billing": "paid_usage",
+      "source": "https://developers.openai.com/api/docs/guides/latest-model"
+    },
+    {
+      "id": "cloud-flash",
+      "deployment": "cloud",
+      "provider": "openrouter",
+      "model": "google/gemini-3.8-flash",
+      "availability": "model_inventory_and_configured_account_verified_20261014",
+      "billing": "usage_and_quota_to_verify",
+      "source": "https://ai.google.dev/gemini-api/docs/models"
+    }
+  ],
+  "optional_quality_reference": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "source": "https://platform.claude.com/docs/en/models/overview"
+  },
+  "local_variants": "Optional later 4B/14B or MLX runs have separate labels; never merge runtime/quantization results.",
+  "credentials": "Server-side environment only, never saved in the pack; no inference or download during preparation."
+}

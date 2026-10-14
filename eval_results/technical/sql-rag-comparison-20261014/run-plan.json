@@ -1,0 +1,3365 @@
+{
+  "sessions": [
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q14",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q14",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q14",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q14",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q37",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q37",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q37",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q37",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q19",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q19",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q19",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q19",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q01",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q01",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q01",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q01",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q02",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q02",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q02",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q02",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q31",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q31",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q31",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q31",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q05",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q05",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q05",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q05",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q11",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q11",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q11",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q11",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q34",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q34",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q34",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q34",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q10",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q10",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q10",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q10",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q21",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q21",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q21",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q21",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q04",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q04",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q04",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q04",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q22",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q22",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q22",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q22",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q13",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q13",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q13",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q13",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q36",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q36",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q36",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q36",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q17",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q17",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q17",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q17",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q16",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q16",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q16",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q16",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q26",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q26",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q26",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q26",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q30",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q30",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q30",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q30",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q24",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q24",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q24",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q24",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q07",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q07",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q07",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q07",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q08",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q08",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q08",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q08",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q27",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q27",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q27",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q27",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q39",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q39",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q39",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 1,
+      "case_id": "Q39",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q05",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q05",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q05",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q05",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q13",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q13",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q13",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q13",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q08",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q08",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q08",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q08",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q17",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q17",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q17",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q17",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q34",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q34",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q34",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q34",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q02",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q02",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q02",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q02",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q04",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q04",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q04",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q04",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q36",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q36",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q36",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q36",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q21",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q21",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q21",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q21",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q19",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q19",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q19",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q19",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q27",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q27",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q27",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q27",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q16",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q16",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q16",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q16",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q39",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q39",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q39",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q39",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q14",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q14",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q14",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q14",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q11",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q11",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q11",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q11",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q24",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q24",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q24",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q24",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q22",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q22",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q22",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q22",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q30",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q30",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q30",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q30",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q01",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q01",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q01",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q01",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q37",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q37",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q37",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q37",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q10",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q10",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q10",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q10",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q31",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q31",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q31",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q31",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q07",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q07",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q07",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q07",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q26",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q26",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q26",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 2,
+      "case_id": "Q26",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q16",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q16",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q16",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q16",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q04",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q04",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q04",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q04",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q24",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q24",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q24",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q24",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q30",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q30",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q30",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q30",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q14",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q14",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q14",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q14",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q11",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q11",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q11",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q11",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q22",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q22",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q22",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q22",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q19",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q19",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q19",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q19",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q01",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q01",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q01",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q01",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q07",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q07",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q07",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q07",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q36",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q36",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q36",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q36",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q27",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q27",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q27",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q27",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q17",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q17",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q17",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q17",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q39",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q39",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q39",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q39",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q26",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q26",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q26",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q26",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q37",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q37",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q37",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q37",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q08",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q08",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q08",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q08",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q02",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q02",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q02",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q02",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q05",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q05",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q05",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q05",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q13",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q13",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q13",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q13",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q31",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q31",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q31",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q31",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q10",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q10",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q10",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q10",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q21",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q21",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q21",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q21",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q34",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q34",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q34",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "dev",
+      "repeat": 3,
+      "case_id": "Q34",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q18",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q18",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q18",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q18",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q12",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q12",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q12",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q12",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q25",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q25",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q25",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q25",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q28",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q28",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q28",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q28",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q29",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q29",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q29",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q29",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q03",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q03",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q03",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q03",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q15",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q15",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q15",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q15",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q40",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q40",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q40",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q40",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q23",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q23",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q23",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q23",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q33",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q33",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q33",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q33",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q35",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q35",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q35",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q35",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q09",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q09",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q09",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q09",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q32",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q32",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q32",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q32",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q20",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q20",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q20",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q20",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q38",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q38",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q38",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q38",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q06",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q06",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q06",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 1,
+      "case_id": "Q06",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q28",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q28",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q28",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q28",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q15",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q15",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q15",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q15",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q03",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q03",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q03",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q03",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q29",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q29",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q29",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q29",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q25",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q25",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q25",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q25",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q35",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q35",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q35",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q35",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q20",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q20",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q20",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q20",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q12",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q12",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q12",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q12",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q09",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q09",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q09",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q09",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q33",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q33",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q33",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q33",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q40",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q40",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q40",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q40",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q38",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q38",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q38",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q38",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q18",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q18",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q18",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q18",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q23",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q23",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q23",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q23",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q06",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q06",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q06",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q06",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q32",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q32",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q32",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 2,
+      "case_id": "Q32",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q06",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q06",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q06",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q06",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q32",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q32",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q32",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q32",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q18",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q18",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q18",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q18",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q35",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q35",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q35",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q35",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q28",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q28",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q28",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q28",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q20",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q20",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q20",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q20",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q09",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q09",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q09",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q09",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q15",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q15",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q15",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q15",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q38",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q38",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q38",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q38",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q25",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q25",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q25",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q25",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q23",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q23",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q23",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q23",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q12",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q12",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q12",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q12",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q29",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q29",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q29",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q29",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q33",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q33",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q33",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q33",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q40",
+      "candidate_id": "cloud-luna",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q40",
+      "candidate_id": "local-ministral",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q40",
+      "candidate_id": "cloud-flash",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q40",
+      "candidate_id": "local-qwen",
+      "turns": 2
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q03",
+      "candidate_id": "cloud-luna",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q03",
+      "candidate_id": "local-ministral",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q03",
+      "candidate_id": "cloud-flash",
+      "turns": 1
+    },
+    {
+      "split": "reserved",
+      "repeat": 3,
+      "case_id": "Q03",
+      "candidate_id": "local-qwen",
+      "turns": 1
+    }
+  ],
+  "inference_executed": false
+}

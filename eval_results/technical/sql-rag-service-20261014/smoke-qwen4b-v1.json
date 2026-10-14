@@ -1,0 +1,1947 @@
+{
+  "created_utc": "2026-10-14T12:42:38.674719+00:00",
+  "mode": "smoke",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "corpus_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "pack_manifest_sha256": "89243539a8c4ea7304e5034795d4c73938de84d597c434ad28cd314fb3cfa555",
+  "service_sha256": "7687390ed37132a079ed5d7d226a532bc70dea578171c55ecf5f6527c6851849",
+  "adapter_sha256": "bf33a137effc74f222c77ff3aad4977975a02ef7360c55401b39ed0bc3b8a1d5",
+  "session_sha256": "3e7199ea3f24b7fe9aaff115eef24939269e66b06755e4bbe1b93232949b5503",
+  "retrieval_sha256": "9ca73148f64c47c18d11055c7a3072bfb9a3cff3af2fb3af0cd5fd00517f77b9",
+  "preparation_seconds": 10.076250834041275,
+  "model_warmup": {
+    "model": "qwen3.5:4b",
+    "total_seconds": 10.194886792,
+    "load_seconds": 4.14561675,
+    "input_tokens": 2724
+  },
+  "streamed": false,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Quelle est la hauteur de selle de la Honda CB 500 F 2020 ?",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_n1dqhb0r",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Honda CB 500 F 2020"
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 740.094
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 740.094
+          },
+          "seconds": 0.7401131249498576
+        },
+        {
+          "id": "call_mi7hy7dt",
+          "name": "get_fiches",
+          "arguments": {
+            "object_ids": [
+              "555a2d677db34a14"
+            ],
+            "fields": [
+              "seat_height_mm",
+              "weight_dry_kg",
+              "weight_wet_kg",
+              "displacement_ccm",
+              "power_ch",
+              "torque_nm",
+              "autonomy_km",
+              "catalog_price_eur"
+            ]
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    },
+                    "weight_dry_kg": {
+                      "value": null,
+                      "unit": "kg, dry",
+                      "evidence_ids": [],
+                      "qualification": null
+                    },
+                    "weight_wet_kg": {
+                      "value": 189.0,
+                      "unit": "kg, ready to ride",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:7"
+                      ],
+                      "qualification": null
+                    },
+                    "displacement_ccm": {
+                      "value": 471.0,
+                      "unit": "cc",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:23"
+                      ],
+                      "qualification": null
+                    },
+                    "power_ch": {
+                      "value": 48.0,
+                      "unit": "ch",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:24"
+                      ],
+                      "qualification": null
+                    },
+                    "torque_nm": {
+                      "value": null,
+                      "unit": "Nm",
+                      "evidence_ids": [],
+                      "qualification": null
+                    },
+                    "autonomy_km": {
+                      "value": 503.0,
+                      "unit": "km, retain the source qualification",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:33"
+                      ],
+                      "qualification": "estimated_not_measured"
+                    },
+                    "catalog_price_eur": {
+                      "value": 6399.0,
+                      "unit": "EUR, dated catalogue price, not current used price",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:34"
+                      ],
+                      "qualification": "dated_catalogue_price"
+                    }
+                  },
+                  "equipment": [
+                    {
+                      "name": "ABS",
+                      "status": "standard",
+                      "decision": {
+                        "case_id": "cddd8f66d5f80f2e249d",
+                        "object_id": "555a2d677db34a14",
+                        "equipment": "ABS",
+                        "status": "standard",
+                        "stage": "code_literal_evidence",
+                        "reasons": [
+                          "explicit_source_fact; model uncertainty does not remove the original fact"
+                        ],
+                        "market": null,
+                        "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                        "passages": [
+                          {
+                            "id": "555a2d677db34a14:row:29",
+                            "section": "Équipement de série",
+                            "text": "Assistance au freinage : ABS de série"
+                          }
+                        ],
+                        "input_hash": "f47d87f97eacd13a96ddfbfff93c452f97f323217fa90128250a817dc43acbe7"
+                      },
+                      "evidence_ids": [
+                        "555a2d677db34a14:equipment:831a73a68b11"
+                      ]
+                    }
+                  ],
+                  "passages": [
+                    {
+                      "id": "555a2d677db34a14:section:0",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Châssis",
+                      "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                      "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:0",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:1",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Train avant",
+                      "text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                      "text_sha256": "1acea896b67fc70a934d08910621d0a7c7433b0ec8ce95b8b7ea5875c17c8a80",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:1",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:2",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Transmission",
+                      "text": "boîte à 6 rapports; Secondaire par chaîne",
+                      "text_sha256": "4a8eb356b519af9da546760af51e2e67c91a13852aad282c46eebcaaa46b22e2",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:2",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:3",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Train arrière",
+                      "text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+                      "text_sha256": "708d68b9932643e0759266239c3da207980b137de72d7e5649c25ebe2047528d",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:3",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:4",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Moteur",
+                      "text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+                      "text_sha256": "98e235f3cec53bb2d29213d949f551afba8bb6abda57aec1c615c07a094b18ea",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:4",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:5",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Équipement de série",
+                      "text": "Assistance au freinage : ABS de série",
+                      "text_sha256": "33885a1935596725eb7797c3984908d595dc85b7ab8a0a30a2681bf2955ffddc",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:5",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:6",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Infos pratiques",
+                      "text": "La moto est accessible aux permis : A",
+                      "text_sha256": "440566ae3ff4d0f1ae96c5cd31d1becaa2b65bee9a048faadd21cc0410b4a5d7",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:6",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:7",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Performances",
+                      "text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                      "text_sha256": "2b9a3d463c0df5cdaffdca37f5bbf4b31119de0045e9f8881a4c79080a836dc2",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:7",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:8",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Tarifs",
+                      "text": "France — Version de base : 6 399 € *",
+                      "text_sha256": "d26bc924797342de9e7dbeffdba9db7f45ef32d01648d62761b21e8a08d5e5b2",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:8",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:9",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Coloris",
+                      "text": "Coloris : non défini",
+                      "text_sha256": "f764934c2b473ff60b59fd9155573895abcce3c45382e902e486f02f30e2b25d",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:9",
+                      "kind": "passage"
+                    }
+                  ],
+                  "original_rows": [
+                    {
+                      "label": "Cadre",
+                      "section": "Châssis",
+                      "value": "en acier de type Diamant"
+                    },
+                    {
+                      "label": "Réservoir",
+                      "section": "Châssis",
+                      "value": "17,10 litres"
+                    },
+                    {
+                      "label": "Hauteur de selle",
+                      "section": "Châssis",
+                      "value": "785 mm"
+                    },
+                    {
+                      "label": "Longueur",
+                      "section": "Châssis",
+                      "value": "2 080 mm"
+                    },
+                    {
+                      "label": "Largeur",
+                      "section": "Châssis",
+                      "value": "790 mm"
+                    },
+                    {
+                      "label": "Hauteur min",
+                      "section": "Châssis",
+                      "value": "1 060 mm"
+                    },
+                    {
+                      "label": "Empattement",
+                      "section": "Châssis",
+                      "value": "1 410 mm"
+                    },
+                    {
+                      "label": "Poids tous pleins faits",
+                      "section": "Châssis",
+                      "value": "189 kg"
+                    },
+                    {
+                      "label": "Fourche téléhydraulique Ø 41 mm, déb",
+                      "section": "Train avant",
+                      "value": "120 mm"
+                    },
+                    {
+                      "label": "Freinage",
+                      "section": "Train avant",
+                      "value": "1 disque Ø 320 mm, étrier 2 pistons"
+                    },
+                    {
+                      "label": "Roue avant",
+                      "section": "Train avant",
+                      "value": "120 / 70 - 17"
+                    },
+                    {
+                      "label": "Pression",
+                      "section": "Train avant",
+                      "value": "2.5 bars"
+                    },
+                    {
+                      "label": "",
+                      "section": "Transmission",
+                      "value": "boîte à 6 rapports"
+                    },
+                    {
+                      "label": "",
+                      "section": "Transmission",
+                      "value": "Secondaire par chaîne"
+                    },
+                    {
+                      "label": "",
+                      "section": "Train arrière",
+                      "value": "Mono-amortisseur"
+                    },
+                    {
+                      "label": "Freinage",
+                      "section": "Train arrière",
+                      "value": "1 disque Ø 240 mm, étrier simple piston"
+                    },
+                    {
+                      "label": "Roue arrière",
+                      "section": "Train arrière",
+                      "value": "160 / 60 - 17"
+                    },
+                    {
+                      "label": "Pression",
+                      "section": "Train arrière",
+                      "value": "2.9 bars"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "Bicylindre en ligne , 4 temps"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "Injection"
+                    },
+                    {
+                      "label": "Refroidissement",
+                      "section": "Moteur",
+                      "value": "liquide"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "2 ACT"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "4 soupapes par cylindre"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "471 cc (Alésage * course: 67 x 66.8 mm)"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "48 ch à 8 600 tr/min"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "4,50 mkg à 6 500 tr/min"
+                    },
+                    {
+                      "label": "Rapport poids / puissance",
+                      "section": "Moteur",
+                      "value": "environ 3.63 kg/ch"
+                    },
+                    {
+                      "label": "Rapport poids / couple",
+                      "section": "Moteur",
+                      "value": "environ 38.69 kg/mkg"
+                    },
+                    {
+                      "label": "Compression",
+                      "section": "Moteur",
+                      "value": "10.7 : 1"
+                    },
+                    {
+                      "label": "Assistance au freinage",
+                      "section": "Équipement de série",
+                      "value": "ABS de série"
+                    },
+                    {
+                      "label": "La moto est accessible aux permis",
+                      "section": "Infos pratiques",
+                      "value": "A"
+                    },
+                    {
+                      "label": "Vitesse max",
+                      "section": "Performances",
+                      "value": "environ 180 km/h"
+                    },
+                    {
+                      "label": "Consommation moyenne",
+                      "section": "Performances",
+                      "value": "3,40 l/100km"
+                    },
+                    {
+                      "label": "Autonomie estimée",
+                      "section": "Performances",
+                      "value": "503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée."
+                    },
+                    {
+                      "label": "France — Version de base",
+                      "section": "Tarifs",
+                      "value": "6 399 € *"
+                    },
+                    {
+                      "label": "Coloris",
+                      "section": "Coloris",
+                      "value": "non défini"
+                    }
+                  ]
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:7",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Poids tous pleins faits",
+                  "section": "Châssis",
+                  "value": "189 kg"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:23",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "",
+                  "section": "Moteur",
+                  "value": "471 cc (Alésage * course: 67 x 66.8 mm)"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:24",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "",
+                  "section": "Moteur",
+                  "value": "48 ch à 8 600 tr/min"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:33",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Autonomie estimée",
+                  "section": "Performances",
+                  "value": "503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée."
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:34",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "France — Version de base",
+                  "section": "Tarifs",
+                  "value": "6 399 € *"
+                }
+              },
+              {
+                "id": "555a2d677db34a14:section:0",
+                "object_id": "555a2d677db34a14",
+                "section": "Châssis",
+                "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:0",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:1",
+                "object_id": "555a2d677db34a14",
+                "section": "Train avant",
+                "text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                "text_sha256": "1acea896b67fc70a934d08910621d0a7c7433b0ec8ce95b8b7ea5875c17c8a80",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:1",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:2",
+                "object_id": "555a2d677db34a14",
+                "section": "Transmission",
+                "text": "boîte à 6 rapports; Secondaire par chaîne",
+                "text_sha256": "4a8eb356b519af9da546760af51e2e67c91a13852aad282c46eebcaaa46b22e2",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:2",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:3",
+                "object_id": "555a2d677db34a14",
+                "section": "Train arrière",
+                "text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+                "text_sha256": "708d68b9932643e0759266239c3da207980b137de72d7e5649c25ebe2047528d",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:3",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:4",
+                "object_id": "555a2d677db34a14",
+                "section": "Moteur",
+                "text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+                "text_sha256": "98e235f3cec53bb2d29213d949f551afba8bb6abda57aec1c615c07a094b18ea",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:4",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:5",
+                "object_id": "555a2d677db34a14",
+                "section": "Équipement de série",
+                "text": "Assistance au freinage : ABS de série",
+                "text_sha256": "33885a1935596725eb7797c3984908d595dc85b7ab8a0a30a2681bf2955ffddc",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:5",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:6",
+                "object_id": "555a2d677db34a14",
+                "section": "Infos pratiques",
+                "text": "La moto est accessible aux permis : A",
+                "text_sha256": "440566ae3ff4d0f1ae96c5cd31d1becaa2b65bee9a048faadd21cc0410b4a5d7",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:6",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:7",
+                "object_id": "555a2d677db34a14",
+                "section": "Performances",
+                "text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                "text_sha256": "2b9a3d463c0df5cdaffdca37f5bbf4b31119de0045e9f8881a4c79080a836dc2",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:7",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:8",
+                "object_id": "555a2d677db34a14",
+                "section": "Tarifs",
+                "text": "France — Version de base : 6 399 € *",
+                "text_sha256": "d26bc924797342de9e7dbeffdba9db7f45ef32d01648d62761b21e8a08d5e5b2",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:8",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:9",
+                "object_id": "555a2d677db34a14",
+                "section": "Coloris",
+                "text": "Coloris : non défini",
+                "text_sha256": "f764934c2b473ff60b59fd9155573895abcce3c45382e902e486f02f30e2b25d",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:9",
+                "kind": "passage"
+              },
+              {
+                "evidence_id": "555a2d677db34a14:equipment:831a73a68b11",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "equipment": {
+                  "name": "ABS",
+                  "status": "standard",
+                  "decision": {
+                    "case_id": "cddd8f66d5f80f2e249d",
+                    "object_id": "555a2d677db34a14",
+                    "equipment": "ABS",
+                    "status": "standard",
+                    "stage": "code_literal_evidence",
+                    "reasons": [
+                      "explicit_source_fact; model uncertainty does not remove the original fact"
+                    ],
+                    "market": null,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "passages": [
+                      {
+                        "id": "555a2d677db34a14:row:29",
+                        "section": "Équipement de série",
+                        "text": "Assistance au freinage : ABS de série"
+                      }
+                    ],
+                    "input_hash": "f47d87f97eacd13a96ddfbfff93c452f97f323217fa90128250a817dc43acbe7"
+                  },
+                  "evidence_ids": [
+                    "555a2d677db34a14:equipment:831a73a68b11"
+                  ]
+                }
+              }
+            ],
+            "missing": [
+              {
+                "subject": "555a2d677db34a14",
+                "field": "weight_dry_kg",
+                "reason": "No unambiguous comparable numeric value"
+              },
+              {
+                "subject": "555a2d677db34a14",
+                "field": "torque_nm",
+                "reason": "No unambiguous comparable numeric value"
+              }
+            ],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "555a2d677db34a14"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 5.291
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    },
+                    "weight_dry_kg": {
+                      "value": null,
+                      "unit": "kg, dry",
+                      "evidence_ids": [],
+                      "qualification": null
+                    },
+                    "weight_wet_kg": {
+                      "value": 189.0,
+                      "unit": "kg, ready to ride",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:7"
+                      ],
+                      "qualification": null
+                    },
+                    "displacement_ccm": {
+                      "value": 471.0,
+                      "unit": "cc",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:23"
+                      ],
+                      "qualification": null
+                    },
+                    "power_ch": {
+                      "value": 48.0,
+                      "unit": "ch",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:24"
+                      ],
+                      "qualification": null
+                    },
+                    "torque_nm": {
+                      "value": null,
+                      "unit": "Nm",
+                      "evidence_ids": [],
+                      "qualification": null
+                    },
+                    "autonomy_km": {
+                      "value": 503.0,
+                      "unit": "km, retain the source qualification",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:33"
+                      ],
+                      "qualification": "estimated_not_measured"
+                    },
+                    "catalog_price_eur": {
+                      "value": 6399.0,
+                      "unit": "EUR, dated catalogue price, not current used price",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:34"
+                      ],
+                      "qualification": "dated_catalogue_price"
+                    }
+                  },
+                  "equipment": [
+                    {
+                      "name": "ABS",
+                      "status": "standard",
+                      "decision": {
+                        "case_id": "cddd8f66d5f80f2e249d",
+                        "object_id": "555a2d677db34a14",
+                        "equipment": "ABS",
+                        "status": "standard",
+                        "stage": "code_literal_evidence",
+                        "reasons": [
+                          "explicit_source_fact; model uncertainty does not remove the original fact"
+                        ],
+                        "market": null,
+                        "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                        "passages": [
+                          {
+                            "id": "555a2d677db34a14:row:29",
+                            "section": "Équipement de série",
+                            "text": "Assistance au freinage : ABS de série"
+                          }
+                        ],
+                        "input_hash": "f47d87f97eacd13a96ddfbfff93c452f97f323217fa90128250a817dc43acbe7"
+                      },
+                      "evidence_ids": [
+                        "555a2d677db34a14:equipment:831a73a68b11"
+                      ]
+                    }
+                  ],
+                  "passages": [
+                    {
+                      "id": "555a2d677db34a14:section:0",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Châssis",
+                      "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                      "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:0",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:1",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Train avant",
+                      "text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                      "text_sha256": "1acea896b67fc70a934d08910621d0a7c7433b0ec8ce95b8b7ea5875c17c8a80",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:1",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:2",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Transmission",
+                      "text": "boîte à 6 rapports; Secondaire par chaîne",
+                      "text_sha256": "4a8eb356b519af9da546760af51e2e67c91a13852aad282c46eebcaaa46b22e2",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:2",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:3",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Train arrière",
+                      "text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+                      "text_sha256": "708d68b9932643e0759266239c3da207980b137de72d7e5649c25ebe2047528d",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:3",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:4",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Moteur",
+                      "text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+                      "text_sha256": "98e235f3cec53bb2d29213d949f551afba8bb6abda57aec1c615c07a094b18ea",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:4",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:5",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Équipement de série",
+                      "text": "Assistance au freinage : ABS de série",
+                      "text_sha256": "33885a1935596725eb7797c3984908d595dc85b7ab8a0a30a2681bf2955ffddc",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:5",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:6",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Infos pratiques",
+                      "text": "La moto est accessible aux permis : A",
+                      "text_sha256": "440566ae3ff4d0f1ae96c5cd31d1becaa2b65bee9a048faadd21cc0410b4a5d7",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:6",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:7",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Performances",
+                      "text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                      "text_sha256": "2b9a3d463c0df5cdaffdca37f5bbf4b31119de0045e9f8881a4c79080a836dc2",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:7",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:8",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Tarifs",
+                      "text": "France — Version de base : 6 399 € *",
+                      "text_sha256": "d26bc924797342de9e7dbeffdba9db7f45ef32d01648d62761b21e8a08d5e5b2",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:8",
+                      "kind": "passage"
+                    },
+                    {
+                      "id": "555a2d677db34a14:section:9",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Coloris",
+                      "text": "Coloris : non défini",
+                      "text_sha256": "f764934c2b473ff60b59fd9155573895abcce3c45382e902e486f02f30e2b25d",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:9",
+                      "kind": "passage"
+                    }
+                  ],
+                  "original_rows": [
+                    {
+                      "label": "Cadre",
+                      "section": "Châssis",
+                      "value": "en acier de type Diamant"
+                    },
+                    {
+                      "label": "Réservoir",
+                      "section": "Châssis",
+                      "value": "17,10 litres"
+                    },
+                    {
+                      "label": "Hauteur de selle",
+                      "section": "Châssis",
+                      "value": "785 mm"
+                    },
+                    {
+                      "label": "Longueur",
+                      "section": "Châssis",
+                      "value": "2 080 mm"
+                    },
+                    {
+                      "label": "Largeur",
+                      "section": "Châssis",
+                      "value": "790 mm"
+                    },
+                    {
+                      "label": "Hauteur min",
+                      "section": "Châssis",
+                      "value": "1 060 mm"
+                    },
+                    {
+                      "label": "Empattement",
+                      "section": "Châssis",
+                      "value": "1 410 mm"
+                    },
+                    {
+                      "label": "Poids tous pleins faits",
+                      "section": "Châssis",
+                      "value": "189 kg"
+                    },
+                    {
+                      "label": "Fourche téléhydraulique Ø 41 mm, déb",
+                      "section": "Train avant",
+                      "value": "120 mm"
+                    },
+                    {
+                      "label": "Freinage",
+                      "section": "Train avant",
+                      "value": "1 disque Ø 320 mm, étrier 2 pistons"
+                    },
+                    {
+                      "label": "Roue avant",
+                      "section": "Train avant",
+                      "value": "120 / 70 - 17"
+                    },
+                    {
+                      "label": "Pression",
+                      "section": "Train avant",
+                      "value": "2.5 bars"
+                    },
+                    {
+                      "label": "",
+                      "section": "Transmission",
+                      "value": "boîte à 6 rapports"
+                    },
+                    {
+                      "label": "",
+                      "section": "Transmission",
+                      "value": "Secondaire par chaîne"
+                    },
+                    {
+                      "label": "",
+                      "section": "Train arrière",
+                      "value": "Mono-amortisseur"
+                    },
+                    {
+                      "label": "Freinage",
+                      "section": "Train arrière",
+                      "value": "1 disque Ø 240 mm, étrier simple piston"
+                    },
+                    {
+                      "label": "Roue arrière",
+                      "section": "Train arrière",
+                      "value": "160 / 60 - 17"
+                    },
+                    {
+                      "label": "Pression",
+                      "section": "Train arrière",
+                      "value": "2.9 bars"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "Bicylindre en ligne , 4 temps"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "Injection"
+                    },
+                    {
+                      "label": "Refroidissement",
+                      "section": "Moteur",
+                      "value": "liquide"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "2 ACT"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "4 soupapes par cylindre"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "471 cc (Alésage * course: 67 x 66.8 mm)"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "48 ch à 8 600 tr/min"
+                    },
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "4,50 mkg à 6 500 tr/min"
+                    },
+                    {
+                      "label": "Rapport poids / puissance",
+                      "section": "Moteur",
+                      "value": "environ 3.63 kg/ch"
+                    },
+                    {
+                      "label": "Rapport poids / couple",
+                      "section": "Moteur",
+                      "value": "environ 38.69 kg/mkg"
+                    },
+                    {
+                      "label": "Compression",
+                      "section": "Moteur",
+                      "value": "10.7 : 1"
+                    },
+                    {
+                      "label": "Assistance au freinage",
+                      "section": "Équipement de série",
+                      "value": "ABS de série"
+                    },
+                    {
+                      "label": "La moto est accessible aux permis",
+                      "section": "Infos pratiques",
+                      "value": "A"
+                    },
+                    {
+                      "label": "Vitesse max",
+                      "section": "Performances",
+                      "value": "environ 180 km/h"
+                    },
+                    {
+                      "label": "Consommation moyenne",
+                      "section": "Performances",
+                      "value": "3,40 l/100km"
+                    },
+                    {
+                      "label": "Autonomie estimée",
+                      "section": "Performances",
+                      "value": "503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée."
+                    },
+                    {
+                      "label": "France — Version de base",
+                      "section": "Tarifs",
+                      "value": "6 399 € *"
+                    },
+                    {
+                      "label": "Coloris",
+                      "section": "Coloris",
+                      "value": "non défini"
+                    }
+                  ]
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:7",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Poids tous pleins faits",
+                  "section": "Châssis",
+                  "value": "189 kg"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:23",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "",
+                  "section": "Moteur",
+                  "value": "471 cc (Alésage * course: 67 x 66.8 mm)"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:24",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "",
+                  "section": "Moteur",
+                  "value": "48 ch à 8 600 tr/min"
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:33",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Autonomie estimée",
+                  "section": "Performances",
+                  "value": "503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée."
+                }
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:34",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "France — Version de base",
+                  "section": "Tarifs",
+                  "value": "6 399 € *"
+                }
+              },
+              {
+                "id": "555a2d677db34a14:section:0",
+                "object_id": "555a2d677db34a14",
+                "section": "Châssis",
+                "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:0",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:1",
+                "object_id": "555a2d677db34a14",
+                "section": "Train avant",
+                "text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+                "text_sha256": "1acea896b67fc70a934d08910621d0a7c7433b0ec8ce95b8b7ea5875c17c8a80",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:1",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:2",
+                "object_id": "555a2d677db34a14",
+                "section": "Transmission",
+                "text": "boîte à 6 rapports; Secondaire par chaîne",
+                "text_sha256": "4a8eb356b519af9da546760af51e2e67c91a13852aad282c46eebcaaa46b22e2",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:2",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:3",
+                "object_id": "555a2d677db34a14",
+                "section": "Train arrière",
+                "text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+                "text_sha256": "708d68b9932643e0759266239c3da207980b137de72d7e5649c25ebe2047528d",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:3",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:4",
+                "object_id": "555a2d677db34a14",
+                "section": "Moteur",
+                "text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+                "text_sha256": "98e235f3cec53bb2d29213d949f551afba8bb6abda57aec1c615c07a094b18ea",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:4",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:5",
+                "object_id": "555a2d677db34a14",
+                "section": "Équipement de série",
+                "text": "Assistance au freinage : ABS de série",
+                "text_sha256": "33885a1935596725eb7797c3984908d595dc85b7ab8a0a30a2681bf2955ffddc",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:5",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:6",
+                "object_id": "555a2d677db34a14",
+                "section": "Infos pratiques",
+                "text": "La moto est accessible aux permis : A",
+                "text_sha256": "440566ae3ff4d0f1ae96c5cd31d1becaa2b65bee9a048faadd21cc0410b4a5d7",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:6",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:7",
+                "object_id": "555a2d677db34a14",
+                "section": "Performances",
+                "text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+                "text_sha256": "2b9a3d463c0df5cdaffdca37f5bbf4b31119de0045e9f8881a4c79080a836dc2",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:7",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:8",
+                "object_id": "555a2d677db34a14",
+                "section": "Tarifs",
+                "text": "France — Version de base : 6 399 € *",
+                "text_sha256": "d26bc924797342de9e7dbeffdba9db7f45ef32d01648d62761b21e8a08d5e5b2",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:8",
+                "kind": "passage"
+              },
+              {
+                "id": "555a2d677db34a14:section:9",
+                "object_id": "555a2d677db34a14",
+                "section": "Coloris",
+                "text": "Coloris : non défini",
+                "text_sha256": "f764934c2b473ff60b59fd9155573895abcce3c45382e902e486f02f30e2b25d",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:9",
+                "kind": "passage"
+              },
+              {
+                "evidence_id": "555a2d677db34a14:equipment:831a73a68b11",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "equipment": {
+                  "name": "ABS",
+                  "status": "standard",
+                  "decision": {
+                    "case_id": "cddd8f66d5f80f2e249d",
+                    "object_id": "555a2d677db34a14",
+                    "equipment": "ABS",
+                    "status": "standard",
+                    "stage": "code_literal_evidence",
+                    "reasons": [
+                      "explicit_source_fact; model uncertainty does not remove the original fact"
+                    ],
+                    "market": null,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "passages": [
+                      {
+                        "id": "555a2d677db34a14:row:29",
+                        "section": "Équipement de série",
+                        "text": "Assistance au freinage : ABS de série"
+                      }
+                    ],
+                    "input_hash": "f47d87f97eacd13a96ddfbfff93c452f97f323217fa90128250a817dc43acbe7"
+                  },
+                  "evidence_ids": [
+                    "555a2d677db34a14:equipment:831a73a68b11"
+                  ]
+                }
+              }
+            ],
+            "missing": [
+              {
+                "subject": "555a2d677db34a14",
+                "field": "weight_dry_kg",
+                "reason": "No unambiguous comparable numeric value"
+              },
+              {
+                "subject": "555a2d677db34a14",
+                "field": "torque_nm",
+                "reason": "No unambiguous comparable numeric value"
+              }
+            ],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "555a2d677db34a14"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 5.291
+          },
+          "seconds": 0.005310332984663546
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_n1dqhb0r",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "Honda CB 500 F 2020"
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 2739,
+            "output_tokens": 37,
+            "cost_usd": null,
+            "load_seconds": 0.006974458,
+            "native_model_seconds": 4.171673541
+          },
+          "model": "qwen3.5:4b",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_mi7hy7dt",
+                "function": {
+                  "index": 0,
+                  "name": "get_fiches",
+                  "arguments": {
+                    "object_ids": [
+                      "555a2d677db34a14"
+                    ],
+                    "fields": [
+                      "seat_height_mm",
+                      "weight_dry_kg",
+                      "weight_wet_kg",
+                      "displacement_ccm",
+                      "power_ch",
+                      "torque_nm",
+                      "autonomy_km",
+                      "catalog_price_eur"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3230,
+            "output_tokens": 100,
+            "cost_usd": null,
+            "load_seconds": 0.007079667,
+            "native_model_seconds": 5.788633875
+          },
+          "model": "qwen3.5:4b",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "555a2d677db34a14:identity",
+          "kind": "source_row",
+          "id": "555a2d677db34a14",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:2",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "Hauteur de selle",
+            "section": "Châssis",
+            "value": "785 mm"
+          }
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:7",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "Poids tous pleins faits",
+            "section": "Châssis",
+            "value": "189 kg"
+          }
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:23",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "",
+            "section": "Moteur",
+            "value": "471 cc (Alésage * course: 67 x 66.8 mm)"
+          }
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:24",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "",
+            "section": "Moteur",
+            "value": "48 ch à 8 600 tr/min"
+          }
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:33",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "Autonomie estimée",
+            "section": "Performances",
+            "value": "503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée."
+          }
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:34",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "France — Version de base",
+            "section": "Tarifs",
+            "value": "6 399 € *"
+          }
+        },
+        {
+          "id": "555a2d677db34a14:section:0",
+          "object_id": "555a2d677db34a14",
+          "section": "Châssis",
+          "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+          "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:0",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:1",
+          "object_id": "555a2d677db34a14",
+          "section": "Train avant",
+          "text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+          "text_sha256": "1acea896b67fc70a934d08910621d0a7c7433b0ec8ce95b8b7ea5875c17c8a80",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:1",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:2",
+          "object_id": "555a2d677db34a14",
+          "section": "Transmission",
+          "text": "boîte à 6 rapports; Secondaire par chaîne",
+          "text_sha256": "4a8eb356b519af9da546760af51e2e67c91a13852aad282c46eebcaaa46b22e2",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:2",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:3",
+          "object_id": "555a2d677db34a14",
+          "section": "Train arrière",
+          "text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+          "text_sha256": "708d68b9932643e0759266239c3da207980b137de72d7e5649c25ebe2047528d",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:3",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:4",
+          "object_id": "555a2d677db34a14",
+          "section": "Moteur",
+          "text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+          "text_sha256": "98e235f3cec53bb2d29213d949f551afba8bb6abda57aec1c615c07a094b18ea",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:4",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:5",
+          "object_id": "555a2d677db34a14",
+          "section": "Équipement de série",
+          "text": "Assistance au freinage : ABS de série",
+          "text_sha256": "33885a1935596725eb7797c3984908d595dc85b7ab8a0a30a2681bf2955ffddc",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:5",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:6",
+          "object_id": "555a2d677db34a14",
+          "section": "Infos pratiques",
+          "text": "La moto est accessible aux permis : A",
+          "text_sha256": "440566ae3ff4d0f1ae96c5cd31d1becaa2b65bee9a048faadd21cc0410b4a5d7",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:6",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:7",
+          "object_id": "555a2d677db34a14",
+          "section": "Performances",
+          "text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+          "text_sha256": "2b9a3d463c0df5cdaffdca37f5bbf4b31119de0045e9f8881a4c79080a836dc2",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:7",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:8",
+          "object_id": "555a2d677db34a14",
+          "section": "Tarifs",
+          "text": "France — Version de base : 6 399 € *",
+          "text_sha256": "d26bc924797342de9e7dbeffdba9db7f45ef32d01648d62761b21e8a08d5e5b2",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:8",
+          "kind": "passage"
+        },
+        {
+          "id": "555a2d677db34a14:section:9",
+          "object_id": "555a2d677db34a14",
+          "section": "Coloris",
+          "text": "Coloris : non défini",
+          "text_sha256": "f764934c2b473ff60b59fd9155573895abcce3c45382e902e486f02f30e2b25d",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:9",
+          "kind": "passage"
+        },
+        {
+          "evidence_id": "555a2d677db34a14:equipment:831a73a68b11",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "equipment": {
+            "name": "ABS",
+            "status": "standard",
+            "decision": {
+              "case_id": "cddd8f66d5f80f2e249d",
+              "object_id": "555a2d677db34a14",
+              "equipment": "ABS",
+              "status": "standard",
+              "stage": "code_literal_evidence",
+              "reasons": [
+                "explicit_source_fact; model uncertainty does not remove the original fact"
+              ],
+              "market": null,
+              "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+              "passages": [
+                {
+                  "id": "555a2d677db34a14:row:29",
+                  "section": "Équipement de série",
+                  "text": "Assistance au freinage : ABS de série"
+                }
+              ],
+              "input_hash": "f47d87f97eacd13a96ddfbfff93c452f97f323217fa90128250a817dc43acbe7"
+            },
+            "evidence_ids": [
+              "555a2d677db34a14:equipment:831a73a68b11"
+            ]
+          }
+        }
+      ],
+      "timing": {
+        "full_answer_seconds": 30.00458374992013,
+        "model_seconds": 29.257067791069858,
+        "tool_seconds": 0.7454234579345211,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 5969,
+        "output_tokens": 137,
+        "cost_usd": null,
+        "peak_memory_bytes": 1788198912,
+        "requests": [
+          {
+            "input_tokens": 2739,
+            "output_tokens": 37,
+            "cost_usd": null,
+            "load_seconds": 0.006974458,
+            "native_model_seconds": 4.171673541
+          },
+          {
+            "input_tokens": 3230,
+            "output_tokens": 100,
+            "cost_usd": null,
+            "load_seconds": 0.007079667,
+            "native_model_seconds": 5.788633875
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 1200,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "case_id": "smoke",
+      "repeat": 1,
+      "candidate_id": "ollama:qwen3.5:4b"
+    }
+  ]
+}

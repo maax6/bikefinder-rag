@@ -4,8 +4,8 @@ model family, to spot where data is missing and prioritize what to fill
 next (specs AJAX gap, price enrichment, review-less families...).
 
 Reads the live database, embeds aggregates as inline JSON (a few hundred
-rows, not the raw catalog), writes coverage_dashboard.html at the repo
-root. No external assets — openable offline, publishable as an artifact.
+rows, not the raw catalog), writes eval_results/coverage/coverage_dashboard.html.
+No external assets — openable offline, publishable as an artifact.
 
 Run: PYTHONPATH=src .venv/bin/python scripts/coverage_dashboard.py
 """
@@ -22,7 +22,7 @@ load_dotenv()
 
 from bikefinder_rag.db.client import get_connection
 
-OUT_PATH = Path(__file__).resolve().parent.parent / "coverage_dashboard.html"
+OUT_PATH = Path(__file__).resolve().parent.parent / "eval_results" / "coverage" / "coverage_dashboard.html"
 
 # (json key, DB column, display label)
 SPEC_FIELDS = [
@@ -345,6 +345,7 @@ def main() -> None:
         conn.close()
 
     html = HTML_TEMPLATE.replace("/*DATA*/", json.dumps(data, ensure_ascii=False, default=str))
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(html, encoding="utf-8")
     print(f"{len(data['brands'])} marques, {len(data['families'])} lignes familles -> {OUT_PATH}",
           file=sys.stderr)

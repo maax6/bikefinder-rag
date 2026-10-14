@@ -1,0 +1,181 @@
+{
+  "video": "docs/brag/brag-20261013.mp4",
+  "poster": "docs/brag/brag-20261013.jpg",
+  "poster_scene": 5,
+  "scenes": [
+    {
+      "title": "Une question libre. Des faits vérifiables.",
+      "caption": "11 478 fiches Motoplanète · modèle, millésime et source",
+      "capture": "docs/brag/captures-20261013/welcome.png",
+      "seconds": 4
+    },
+    {
+      "title": "BMW F 900 R / Yamaha XSR 900 · 2020",
+      "caption": "105 ch / 115 ch. Les valeurs gardent leurs unités source.",
+      "capture": "docs/brag/captures-20261013/power-table.png",
+      "crop": [
+        24,
+        138,
+        939,
+        448
+      ],
+      "seconds": 7
+    },
+    {
+      "title": "Une comparaison vérifiable.",
+      "caption": "Les chiffres renvoient aux fiches exactes, année comprise.",
+      "capture": "docs/brag/captures-20261013/power-sources.png",
+      "crop": [
+        24,
+        138,
+        939,
+        448
+      ],
+      "seconds": 5
+    },
+    {
+      "title": "Monster / SV 650 · comparer les mêmes poids.",
+      "caption": "188 kg / 197 kg, tous pleins faits. Le poids sec reste distinct.",
+      "capture": "docs/brag/captures-20261013/weight-sources.png",
+      "crop": [
+        24,
+        138,
+        939,
+        448
+      ],
+      "seconds": 7
+    },
+    {
+      "title": "ABS et shifter : deux conditions conservées.",
+      "caption": "8 fiches Yamaha de 2020. Une mention inconnue ne vaut pas présence.",
+      "capture": "docs/brag/captures-20261013/equipment.png",
+      "crop": [
+        24,
+        138,
+        939,
+        448
+      ],
+      "seconds": 6
+    },
+    {
+      "title": "Une autonomie estimée reste une estimation.",
+      "caption": "380 km, calculés et non vérifiés : la réserve est conservée.",
+      "capture": "docs/brag/captures-20261013/autonomy.png",
+      "crop": [
+        24,
+        138,
+        939,
+        448
+      ],
+      "seconds": 9
+    },
+    {
+      "title": "Répondre avec les données disponibles.",
+      "caption": "Jev interprète, SQL trouve les faits. Mistral sert aux synthèses nécessaires.",
+      "capture": "docs/brag/captures-20261013/welcome.png",
+      "seconds": 5
+    }
+  ],
+  "recorded_at_utc": "2026-10-13T01:42:50.852137+00:00",
+  "language": "fr",
+  "silent": true,
+  "duration_seconds": 43,
+  "method": "Edited montage of real browser screenshots, with source tables enlarged and waiting time shortened. This video is not a continuous recording or a latency benchmark.",
+  "environment": {
+    "isolated_preview_port": 7863,
+    "active_chat_and_collection_untouched": true,
+    "source": "local PostgreSQL technical_fiches",
+    "technical_fiches_count": 11478
+  },
+  "ui_code_sha256": {
+    "src/bikefinder_rag/app.py": "24c01f26d379312dbc903ba782b5af87ff9f4191ead8240372595ef61609881d",
+    "src/bikefinder_rag/ui.py": "23da6ca220277bca43b4ed10eb0776fac84bfac16eae5042711f8d6818bea2b2"
+  },
+  "routing_inspection": {
+    "protocol": "catalog-routing-v7",
+    "routes": {
+      "comparison": 2,
+      "count": 1,
+      "details": 1
+    },
+    "all_api_answers_concordant_with_separate_router": true,
+    "mistral_required": 0,
+    "code_sha256": {
+      "src/bikefinder_rag/agent/jev_router.py": "f2e7a98c49678472d2fbdd661deb1c56d26925ac65bbc7f4e90c8d9914caefad",
+      "src/bikefinder_rag/agent/query_language.py": "b5934ae68be1e524cd285dcee16f7202595d8573f26131ca0b76989c19a35c40",
+      "src/bikefinder_rag/catalog/comparisons.py": "1e20dca254ffbc1d4c53796e387e6681ace842cabed38ff486dbca37eaa8ae39",
+      "src/bikefinder_rag/catalog/measures.py": "39e7a8c16c621d6b9eb0d9930e75f98f21276f674f276e9ba63a3dc29af06d7b"
+    }
+  },
+  "questions": [
+    {
+      "id": "power",
+      "question": "BMW F900R 2020 et Yamaha XSR900 2020 : laquelle a le plus de chevaux ? Donne le couple et le poids tous pleins faits, avec les sources.",
+      "displayed_text": "Votre conversation\n\nBMW F900R 2020 et Yamaha XSR900 2020 : laquelle a le plus de chevaux ? Donne le couple et le poids tous pleins faits, avec les sources.\n\nCaractéristique\tBMW F 900 R (2020)\tYamaha XSR 900 (2020)\nPuissance documentée (unités source)\tMoteur — 105 ch à 8 500 tr/min\tMoteur — 115 ch à 10 000 tr/min\nCouple documenté (unités source)\tMoteur — 9,40 mkg à 6 500 tr/min\tMoteur — 8,90 mkg à 8 500 tr/min\nPoids à sec (kg)\tNon documenté dans cette fiche\tNon documenté dans cette fiche\nPoids en ordre de marche / pleins faits (kg)\tChâssis — Poids tous pleins faits : 211 kg\tChâssis — Poids tous pleins faits : 195 kg\nSource\tFiche\tFiche\nCalcul demandé\tRésultat\nComparaison — Puissance\tYamaha XSR 900 (2020) : 115 ch, contre 105 ch. Valeurs de catalogue du même type.\nSources des valeurs de catalogue\tBMW F 900 R (2020) ; Yamaha XSR 900 (2020)",
+      "source_urls": [
+        "https://www.motoplanete.com/bmw/8382/F-900-R-2020/contact.html",
+        "https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html"
+      ],
+      "api_answer": "| Caractéristique | BMW F 900 R (2020) | Yamaha XSR 900 (2020) |\n|---|---|---|\n| Puissance documentée (unités source) | Moteur — 105 ch à 8 500 tr/min | Moteur — 115 ch à 10 000 tr/min |\n| Couple documenté (unités source) | Moteur — 9,40 mkg à 6 500 tr/min | Moteur — 8,90 mkg à 8 500 tr/min |\n| Poids à sec (kg) | Non documenté dans cette fiche | Non documenté dans cette fiche |\n| Poids en ordre de marche / pleins faits (kg) | Châssis — Poids tous pleins faits : 211 kg | Châssis — Poids tous pleins faits : 195 kg |\n| Source | [Fiche](https://www.motoplanete.com/bmw/8382/F-900-R-2020/contact.html) | [Fiche](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Comparaison — Puissance | Yamaha XSR 900 (2020) : 115 ch, contre 105 ch. Valeurs de catalogue du même type. |\n| Sources des valeurs de catalogue | [BMW F 900 R (2020)](https://www.motoplanete.com/bmw/8382/F-900-R-2020/contact.html) ; [Yamaha XSR 900 (2020)](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |",
+      "api_answer_sha256": "81c4a88d84d0f3f8228859b139e5bba5bd734a786ce30717ed6907ccf6d1ca59",
+      "route": "comparison"
+    },
+    {
+      "id": "weight",
+      "question": "J’hésite entre la Ducati Monster 2022 et la Suzuki SV650 2022. Laquelle est la plus légère tous pleins faits, avec les sources ?",
+      "displayed_text": "Votre conversation\n\nJ’hésite entre la Ducati Monster 2022 et la Suzuki SV650 2022. Laquelle est la plus légère tous pleins faits, avec les sources ?\n\nCaractéristique\tDucati Monster (2022)\tSuzuki SV 650 (2022)\nPoids à sec (kg)\tChâssis — Poids à sec : 166 kg\tNon documenté dans cette fiche\nPoids en ordre de marche / pleins faits (kg)\tChâssis — Poids tous pleins faits : 188 kg\tChâssis — Poids tous pleins faits : 197 kg\nSource\tFiche\tFiche\nCalcul demandé\tRésultat\nComparaison — Poids tous pleins / en ordre de marche\tDucati Monster (2022) : 188 kg, contre 197 kg. Valeurs de catalogue du même type.\nSources des valeurs de catalogue\tDucati Monster (2022) ; Suzuki SV 650 (2022)",
+      "source_urls": [
+        "https://www.motoplanete.com/ducati/9095/Monster-2022/contact.html",
+        "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html"
+      ],
+      "api_answer": "| Caractéristique | Ducati Monster (2022) | Suzuki SV 650 (2022) |\n|---|---|---|\n| Poids à sec (kg) | Châssis — Poids à sec : 166 kg | Non documenté dans cette fiche |\n| Poids en ordre de marche / pleins faits (kg) | Châssis — Poids tous pleins faits : 188 kg | Châssis — Poids tous pleins faits : 197 kg |\n| Source | [Fiche](https://www.motoplanete.com/ducati/9095/Monster-2022/contact.html) | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Comparaison — Poids tous pleins / en ordre de marche | Ducati Monster (2022) : 188 kg, contre 197 kg. Valeurs de catalogue du même type. |\n| Sources des valeurs de catalogue | [Ducati Monster (2022)](https://www.motoplanete.com/ducati/9095/Monster-2022/contact.html) ; [Suzuki SV 650 (2022)](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |",
+      "api_answer_sha256": "931030ff23602aa0f600e43f7952e0b7c7be670a30fbd3dcfb1f1099f77e6359",
+      "route": "comparison"
+    },
+    {
+      "id": "equipment",
+      "question": "Dans le catalogue de 2020, compte les Yamaha avec ABS de série et shifter de série.",
+      "displayed_text": "Votre conversation\n\nDans le catalogue de 2020, compte les Yamaha avec ABS de série et shifter de série.\n\n8 fiches correspondent dans le catalogue. Équipements : ABS — de série, shifter — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+      "source_urls": [],
+      "api_answer": "**8 fiches correspondent dans le catalogue.** Équipements : ABS — de série, shifter — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+      "api_answer_sha256": "f792af1eef3c6d00a010df91f6eca8ade7530440eb545f473bafbacfe9e1287f",
+      "route": "count"
+    },
+    {
+      "id": "autonomy",
+      "question": "Donne l’ABS et l’autonomie de la CFMoto 800 MT Explore de 2025, avec la source.",
+      "displayed_text": "Votre conversation\n\nDonne l’ABS et l’autonomie de la CFMoto 800 MT Explore de 2025, avec la source.\n\nCaractéristique\tCFMOTO 800 MT Explore (2025)\nAutonomie estimée (km)\tPerformances — Autonomie estimée : 380 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.\nÉquipements : ABS, options et statuts documentés\tABS : de série — Assistance au freinage : ABS ; ABS Cornering\nSource\tFiche",
+      "source_urls": [
+        "https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html"
+      ],
+      "api_answer": "| Caractéristique | CFMOTO 800 MT Explore (2025) |\n|---|---|\n| Autonomie estimée (km) | Performances — Autonomie estimée : 380 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée. |\n| Équipements : ABS, options et statuts documentés | ABS : de série — Assistance au freinage : ABS ; ABS Cornering |\n| Source | [Fiche](https://www.motoplanete.com/cfmoto/11520/800-MT-Explore-2025/contact.html) |",
+      "api_answer_sha256": "08130d16189d33f468f50fcf38feed368eaa76146592ff1662298719a4cd6d6a",
+      "route": "details"
+    }
+  ],
+  "capture_sha256": {
+    "docs/brag/captures-20261013/autonomy.png": "e279b15a9427ca3a1d7c49061c4707488dd160b0040c58bea26c20c6f5003665",
+    "docs/brag/captures-20261013/equipment.png": "742ac4556057df01ef670bf5697afe9b2f3436f8f90d650606bb3b117c7361a6",
+    "docs/brag/captures-20261013/power-sources.png": "426baab40137b004e91e2be24ac7c9b3c33782fc5923a20af2b9ccbd8a97eb0f",
+    "docs/brag/captures-20261013/power-table.png": "9204c08c7bb3200a52a3396c537048d4a77830f65342fc2740e7589a121462fd",
+    "docs/brag/captures-20261013/weight-sources.png": "c6554e4fb236fab0723347ffdb9b08796300d280b7cbf35e0611f1e8d7dfc1fd",
+    "docs/brag/captures-20261013/welcome.png": "a21335fd1b36b0506ff156a9d02a3491834efccdee5c5e5cdf6c3e6149c97ee0"
+  },
+  "output_sha256": {
+    "video": "337c04abc980d857022fe958a2247bce3f9960839f1cbd8113d576d346a5a100",
+    "poster": "52801291846a4edb745a9ff8de367fe5dbf6779d9a4adeb358ebca938b3810b8"
+  },
+  "qa": {
+    "decoded_full_video_without_error": true,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "duration_seconds": 43,
+    "audio_streams": 0,
+    "bytes": 773540,
+    "api_cases_concordant": 4,
+    "mistral_required": 0
+  }
+}

@@ -62,6 +62,15 @@ def test_obsolete_running_flag_cannot_make_a_dead_collector_active(tmp_path):
     assert progress["total"] == 2
 
 
+def test_last_success_uses_identity_and_survives_a_newer_failed_attempt(tmp_path):
+    out = create_collection(tmp_path, [('success', stamp(30)), ('retryable', stamp(5))])
+    result = monitor.read_progress(out, now=NOW, process_checker=lambda *args: True)
+    assert result['last_success']['state'] == 'success'
+    assert result['last_success']['name'] == 'Honda Example 0 2000'
+    assert result['last_success']['updated_at'] == stamp(30)
+    assert result['last_records'][0]['state'] == 'retryable'
+
+
 def test_recent_rate_ignores_the_older_pilot_and_estimates_remaining_work(tmp_path):
     pages = [("success", stamp(4 * 3600))]
     pages += [("success", stamp(seconds)) for seconds in (50, 40, 30, 20, 10)]

@@ -1,0 +1,167 @@
+{
+  "version": "catalogue-semantic-review-v1",
+  "status": "rubric_frozen_before_candidate_results",
+  "basis": "Frozen catalogue reference and actual catalogue tool results; catalogue validity only, not independent real-world motorcycle truth.",
+  "review_method": "Manually inspect every final answer, claims/citations, delivered tool results and exact identities. Do not infer semantic correctness from mention of expected numbers or the runner mechanical score. Ignore pricing and timing while grading.",
+  "categories": {
+    "correct": {
+      "score": 2,
+      "meaning": "All requested parts correct, exact identity/scope, material claims backed by received source evidence, complete and no unsupported material additions."
+    },
+    "partial": {
+      "score": 1,
+      "meaning": "A useful supported answer with a requested part, source binding or exhaustiveness qualification missing; no central false statement."
+    },
+    "incorrect": {
+      "score": 0,
+      "meaning": "A completed response contains a central false or unsupported answer, wrong identity/scope, fabricated variant or categorical absence where unknown."
+    },
+    "failure": {
+      "score": 0,
+      "meaning": "No usable completed answer: timeout, provider/tool error, round budget, invalid format, or missing turn after preceding failure."
+    }
+  },
+  "aggregation": {
+    "fully_correct_case": "All expected turns category correct. A two-turn conversation fails case success if either turn is partial, incorrect, failed or missing.",
+    "quality_score": "Sum turn scores divided by twice the expected turn count, with missing turns scored 0; show fully correct cases alongside this score.",
+    "failure_rate": "Failure turns divided by expected turns; do not remove failures from denominator."
+  },
+  "output_schema": {
+    "run_sha256": "string",
+    "models": [
+      {
+        "model": "string",
+        "expected_sessions": 8,
+        "expected_turns": 9,
+        "fully_correct_cases": "integer",
+        "quality_score_percent": "number",
+        "correct_turns": "integer",
+        "partial_turns": "integer",
+        "incorrect_turns": "integer",
+        "failure_turns": "integer",
+        "cases": [
+          {
+            "case_id": "string",
+            "case_success": "boolean",
+            "turns": [
+              {
+                "turn": 1,
+                "category": "correct|partial|incorrect|failure",
+                "score": 2,
+                "reason": "French concise explanation",
+                "checks": {
+                  "identity_scope": "true|false|null",
+                  "answer_accuracy": "true|false|null",
+                  "completeness": "true|false|null",
+                  "evidence_support": "true|false|null",
+                  "no_material_overclaim": "true|false|null"
+                },
+                "supporting_evidence_ids": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "Q01": {
+      "turns": [
+        {
+          "required": "8 fiches Yamaha millésime 2020, ABS et shifter de série; variantes comptées distinctement.",
+          "evidence": "An exact aggregate/count or exhaustive list with all eight IDs; preserve standard vs optional/unknown."
+        }
+      ]
+    },
+    "Q10": {
+      "turns": [
+        {
+          "required": "Yamaha 700 MT-07 2020: 689 cc, source row or section for this precise fiche.",
+          "expected_object_ids": [
+            "4fbfc9bd85ffa460"
+          ]
+        }
+      ]
+    },
+    "Q17": {
+      "turns": [
+        {
+          "required": "Honda CB 500 F 2020: 785 mm; Yamaha MT-07 2020: 805 mm; Yamaha 20 mm higher (or Honda 20 mm lower). Both sources bound correctly.",
+          "expected_object_ids": [
+            "555a2d677db34a14",
+            "4fbfc9bd85ffa460"
+          ]
+        }
+      ]
+    },
+    "Q24": {
+      "turns": [
+        {
+          "required": "Honda GL 1800 GOLDWING Tour DCT/Airbag 2018: 7-speed robotised DCT with reverse; BMW R 1250 RT standard 2020: 6-speed manual; both final drives by cardan.",
+          "expected_object_ids": [
+            "c0a73ac3d40825ff",
+            "01de122991f8020a"
+          ],
+          "nuance": "Reverse is a documented Honda feature; BMW reverse unknown rather than asserted absent. Explain differences directly; no added technical definition or comfort claim unsupported by received excerpts."
+        }
+      ]
+    },
+    "Q27": {
+      "turns": [
+        {
+          "required": "Earliest literal DCT mention in Transmission within catalogue Gold Wing family: 2018, GL 1800 GOLDWING Tour DCT/Airbag.",
+          "expected_object_ids": [
+            "c0a73ac3d40825ff"
+          ],
+          "evidence": "An exhaustive scoped family/Transmission literal search, or an equivalent exhaustive documented catalogue selection, must support earliest.",
+          "nuance": "This is earliest mention in this catalogue, not official DCT launch or proof all variants had DCT; a plausible year from one fiche with no family coverage is partial."
+        }
+      ]
+    },
+    "Q31": {
+      "turns": [
+        {
+          "required": "Two Kawasaki Z 650 variants for 2020: Z 650 standard and Z 650 Performance, as separate catalogue fiches.",
+          "expected_object_ids": [
+            "133a77effceb50fb",
+            "f0abf559176623ef"
+          ],
+          "nuance": "Do not conflate editions or add absent variants. A source-backed complete resolver response is sufficient."
+        }
+      ]
+    },
+    "Q34": {
+      "turns": [
+        {
+          "required": "ZXQ-FICTIVE-999 edition not found in catalogue; cannot determine cruise control for this nonexistent/unknown fiche.",
+          "nuance": "No substitution to standard CB 500 F, no claim it lacks cruise control. An exact unsuccessful resolver/search supports absence of the fiche; citations not mandatory when no source exists."
+        }
+      ]
+    },
+    "Q37": {
+      "turns": [
+        {
+          "required": "List all eight Yamaha 2020 fiches with both ABS and shifter standard, keep separate variants, supply valid sources for each.",
+          "expected_object_ids": [
+            "d51c2336299ebb74",
+            "2dd9c39da84e1c0f",
+            "9a62a4f7e47cf67d",
+            "4a0becebc6f3922e",
+            "7563348d531528c1",
+            "21e1b2941ea62445",
+            "0e7f5b6e5ec6b048",
+            "d4f89f69096690e2"
+          ]
+        },
+        {
+          "required": "Among the same eight, exactly 3 have seat height strictly <850 mm; retain Yamaha/2020/ABS-standard/shifter-standard criteria, no treating unknown height as 0.",
+          "expected_object_ids": [
+            "d51c2336299ebb74",
+            "2dd9c39da84e1c0f",
+            "4a0becebc6f3922e"
+          ]
+        }
+      ]
+    }
+  }
+}

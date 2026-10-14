@@ -1,0 +1,14 @@
+{
+  "frozen_questions_sha256": "60a325664a3d691c9771019533ee2cda9bb49fd33cb110149a8cb8c9a93c4894",
+  "target_seconds": 10,
+  "remote_inference": "Jev only",
+  "models": [
+    "mistral-small3.2:latest",
+    "ministral-3:3b"
+  ],
+  "architecture": "zero local planning rounds; source-scoped SQL/BGE; one local writer; single batched Jev check",
+  "retrieval": "No per-question or answer cache; prepared document vectors allowed; Jev gate cache disabled",
+  "preparation": "Model download, constructor acquisition, source parsing, source vector encoding and process warmup separately measured",
+  "evaluation": "Dev first; freeze implementation and source/index fingerprints before opening holdout; fresh Gradio sessions; report actual useful-answer correctness plus latency; preserve failed runs",
+  "claim": "No general viability or multi-user performance conclusion from targeted sample"
+}

@@ -1,0 +1,1864 @@
+{
+  "version": "catalogue-semantic-review-v1",
+  "status": "completed",
+  "reviewed_turns": 72,
+  "expected_turns": 72,
+  "created_utc": "2026-10-14T17:14:42.004867+00:00",
+  "run_sha256": "c04dc84a881ff184d4f6560b57574577a464a21874277c520005aad16a9a85c9",
+  "rubric_sha256": "2126812ff27f35bf46168e8211882de5107b00b80264a419de47e536b55bd6c9",
+  "review_method": "Manual final-answer and actually delivered-evidence review under the unchanged first-pass rubric. Model identifiers visible: assessment is not blinded. Pricing and latency ignored while grading. Transport/format failures mapped separately.",
+  "scope_limit": "Catalogue-based internal development pilot; reference numbers reuse the catalogue projection parser and are not independent validation of real-world motorcycle specifications.",
+  "models": [
+    {
+      "model": "openai/gpt-6-luna",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 7,
+      "quality_score_percent": 88.8889,
+      "provisional_quality_score_percent": 88.8889,
+      "correct_turns": 8,
+      "partial_turns": 0,
+      "incorrect_turns": 1,
+      "failure_turns": 0,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, avec Yamaha/2020 et ABS + shifter explicitement de série ; témoin SQL exhaustif cité. Les statuts inconnus restent exclus.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la fiche Yamaha 700 MT-07 2020 ; valeur originale et citation concordantes. Les éventuelles dimensions ajoutées figurent aussi dans cette ligne source.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "DCT robotisée à 7 rapports avec marche arrière pour la Honda 2018, boîte manuelle à 6 rapports pour la BMW standard 2020, cardan pour les deux. Identités exactes et passages de transmission cités ; aucune absence de marche arrière BMW inventée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "01de122991f8020a:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "2018 sur la GL 1800 GOLDWING Tour DCT/Airbag, soutenu par une recherche littérale exhaustive DCT dans les transmissions des 64 fiches Honda Goldwing, triée par année. Première mention dans la base clairement distinguée du lancement officiel.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 standard et Z 650 Performance. Réponse complète, identités et citations exactes ; aucun remplacement d’une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Édition ZXQ-FICTIVE-999 non trouvée par résolution exacte ; équipement indéterminable explicitement signalé, sans remplacer cette identité par la version standard.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": []
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Liste complète des huit fiches attendues, variantes distinctes ; chaque identité dispose de ses deux preuves d’équipement. Le décompte global et les inconnues sont correctement distingués.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a",
+                "d51c2336299ebb74:equipment:831a73a68b11",
+                "d51c2336299ebb74:equipment:eafeb6ad20d2",
+                "2dd9c39da84e1c0f:equipment:831a73a68b11",
+                "2dd9c39da84e1c0f:equipment:eafeb6ad20d2",
+                "9a62a4f7e47cf67d:equipment:831a73a68b11",
+                "9a62a4f7e47cf67d:equipment:eafeb6ad20d2",
+                "4a0becebc6f3922e:equipment:831a73a68b11",
+                "4a0becebc6f3922e:equipment:eafeb6ad20d2",
+                "7563348d531528c1:equipment:831a73a68b11",
+                "7563348d531528c1:equipment:eafeb6ad20d2",
+                "21e1b2941ea62445:equipment:831a73a68b11",
+                "21e1b2941ea62445:equipment:eafeb6ad20d2",
+                "0e7f5b6e5ec6b048:equipment:831a73a68b11",
+                "0e7f5b6e5ec6b048:equipment:eafeb6ad20d2",
+                "d4f89f69096690e2:equipment:831a73a68b11",
+                "d4f89f69096690e2:equipment:eafeb6ad20d2"
+              ]
+            },
+            {
+              "turn": 2,
+              "category": "incorrect",
+              "score": 0,
+              "reason": "Le compte initial de 3 sur les huit fiches est exact. Cependant la liste suivante contient un ID MT-10 mal recopié, donc porte sur sept fiches et ne renvoie que deux mesures. La réponse explique à tort cette différence par la hauteur inconnue, confondant deux périmètres ; le SQL initial compte déjà trois hauteurs connues.",
+              "checks": {
+                "identity_scope": false,
+                "answer_accuracy": false,
+                "completeness": true,
+                "evidence_support": false,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "aggregate:a2da987197ee53ad1ccd5e78",
+                "2dd9c39da84e1c0f:row:2",
+                "4a0becebc6f3922e:row:2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 6,
+      "quality_score_percent": 77.7778,
+      "provisional_quality_score_percent": 77.7778,
+      "correct_turns": 7,
+      "partial_turns": 0,
+      "incorrect_turns": 1,
+      "failure_turns": 1,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8 fiches Yamaha/2020 avec ABS et shifter de série ; preuve SQL exhaustive reçue et citée, sans confondre statut inconnu et absence.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la fiche Yamaha 700 MT-07 2020 ; valeur originale et citation concordantes. Les éventuelles dimensions ajoutées figurent aussi dans cette ligne source.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "incorrect",
+              "score": 0,
+              "reason": "Le premier millésime 2018 et sa variante sont justes, et la recherche élargie les couvre. Cependant la réponse transforme ses 65 résultats en 65 fiches de la famille Gold Wing alors qu’une Triumph est incluse ; la liste additionnelle omet la DCT 2021 reçue et confond l’édition 2025. Ces affirmations de périmètre et de variantes ne sont pas exactes.",
+              "checks": {
+                "identity_scope": false,
+                "answer_accuracy": false,
+                "completeness": true,
+                "evidence_support": false,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "201c14ea17cb9a26:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 standard et Z 650 Performance. Réponse complète, identités et citations exactes ; aucun remplacement d’une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "L’édition exacte n’est pas trouvée et la réponse indique explicitement ne pas pouvoir répondre pour elle. L’information supplémentaire sur le statut inconnu de la fiche standard est reçue, clairement séparée et ne remplace pas l’édition demandée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:equipment:b37234527c55"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Liste complète des huit fiches attendues, variantes distinctes, années et sources concordantes. Les deux statuts de série sont prouvés pour chaque fiche et les équipements inconnus restent distincts des absences.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "d51c2336299ebb74:equipment:831a73a68b11",
+                "d51c2336299ebb74:equipment:eafeb6ad20d2",
+                "2dd9c39da84e1c0f:equipment:831a73a68b11",
+                "2dd9c39da84e1c0f:equipment:eafeb6ad20d2",
+                "9a62a4f7e47cf67d:equipment:831a73a68b11",
+                "9a62a4f7e47cf67d:equipment:eafeb6ad20d2",
+                "4a0becebc6f3922e:equipment:831a73a68b11",
+                "4a0becebc6f3922e:equipment:eafeb6ad20d2",
+                "7563348d531528c1:equipment:831a73a68b11",
+                "7563348d531528c1:equipment:eafeb6ad20d2",
+                "21e1b2941ea62445:equipment:831a73a68b11",
+                "21e1b2941ea62445:equipment:eafeb6ad20d2",
+                "0e7f5b6e5ec6b048:equipment:831a73a68b11",
+                "0e7f5b6e5ec6b048:equipment:eafeb6ad20d2",
+                "d4f89f69096690e2:equipment:831a73a68b11",
+                "d4f89f69096690e2:equipment:eafeb6ad20d2"
+              ]
+            },
+            {
+              "turn": 2,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 3 sous 850 mm, sur les mêmes huit identités du premier tour : MT-10 825 mm, MT-09 SP 815 mm et MT-10 SP 825 mm. Le SQL exclut la hauteur inconnue au lieu de la traiter comme zéro ; sources numériques exactes.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "d51c2336299ebb74:row:2",
+                "2dd9c39da84e1c0f:row:2",
+                "4a0becebc6f3922e:row:2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 5,
+      "quality_score_percent": 55.5556,
+      "provisional_quality_score_percent": 55.5556,
+      "correct_turns": 5,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 4,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8 fiches Yamaha/2020 avec ABS et shifter de série ; preuve SQL exhaustive reçue et citée, sans confondre statut inconnu et absence.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai commun dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda DCT robotisée à 7 rapports avec marche arrière, BMW standard manuelle à 6 rapports, cardan pour les deux. Passages des bonnes fiches reçus et cités ; absence de mention BMW correctement distinguée d’une absence d’équipement.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "01de122991f8020a:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai commun dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 standard et Z 650 Performance. Réponse complète, identités et citations exactes ; aucun remplacement d’une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Édition ZXQ-FICTIVE-999 non trouvée par résolution exacte ; équipement indéterminable explicitement signalé, sans remplacer cette identité par la version standard.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": []
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai commun dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "raw_error": null,
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemini-3.5-flash-lite",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 4,
+      "quality_score_percent": 55.5556,
+      "provisional_quality_score_percent": 55.5556,
+      "correct_turns": 4,
+      "partial_turns": 2,
+      "incorrect_turns": 0,
+      "failure_turns": 3,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8 fiches Yamaha/2020 avec ABS et shifter de série ; preuve SQL exhaustive reçue et citée, sans confondre statut inconnu et absence.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la fiche Yamaha 700 MT-07 2020 ; valeur originale et citation concordantes. Les éventuelles dimensions ajoutées figurent aussi dans cette ligne source.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda DCT robotisée à 7 rapports avec marche arrière, BMW standard manuelle à 6 rapports, cardan pour les deux. Passages des bonnes fiches reçus et cités ; absence de mention BMW correctement distinguée d’une absence d’équipement.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "01de122991f8020a:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "partial",
+              "score": 1,
+              "reason": "Les deux variantes et les caractéristiques ajoutées sont exactes et reçues. Toutefois les affirmations cylindrée/puissance/poids citent seulement les preuves d’identité, qui ne contiennent pas ces mesures ; leurs références techniques existent dans le résultat mais ne sont pas correctement attachées aux affirmations.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": false,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity",
+                "133a77effceb50fb:section:5",
+                "133a77effceb50fb:section:8",
+                "f0abf559176623ef:section:5",
+                "f0abf559176623ef:section:8"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "partial",
+              "score": 1,
+              "reason": "L’édition manquante est correctement signalée sans affirmer une absence de régulateur. Cependant la réponse ne précise pas que le régulateur de cette édition est indéterminable ; l’éventuelle information distincte sur la fiche standard ne complète pas cette partie demandée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": false,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": []
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "raw_error": null,
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 1,
+      "quality_score_percent": 11.1111,
+      "provisional_quality_score_percent": 11.1111,
+      "correct_turns": 1,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 8,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 standard et Z 650 Performance. Réponse complète, identités et citations exactes ; aucun remplacement d’une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "raw_error": null,
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 6,
+      "quality_score_percent": 72.2222,
+      "provisional_quality_score_percent": 72.2222,
+      "correct_turns": 6,
+      "partial_turns": 1,
+      "incorrect_turns": 0,
+      "failure_turns": 2,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8 fiches Yamaha/2020 avec ABS et shifter de série ; preuve SQL exhaustive reçue et citée, sans confondre statut inconnu et absence.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cc pour la bonne fiche MT-07 2020 ; valeur originale et citation concordantes.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "DCT robotisée à 7 rapports avec marche arrière pour la Honda 2018, boîte manuelle à 6 rapports pour la BMW standard 2020, cardan pour les deux. Identités exactes et passages de transmission cités ; aucune absence de marche arrière BMW inventée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "01de122991f8020a:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "2018, GL 1800 GOLDWING Tour DCT/Airbag : la recherche littérale DCT dans toutes les transmissions de la famille Honda Gold Wing, triée par année croissante, soutient ce premier millésime dans la base. Aucune date de lancement officielle déduite.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 standard et Z 650 Performance. Réponse complète, identités et citations exactes ; aucun remplacement d’une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "partial",
+              "score": 1,
+              "reason": "L’édition manquante est correctement signalée sans affirmer une absence de régulateur. Cependant la réponse ne précise pas que le régulateur de cette édition est indéterminable ; l’éventuelle information distincte sur la fiche standard ne complète pas cette partie demandée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": false,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": []
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai commun dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "raw_error": null,
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 2,
+      "quality_score_percent": 22.2222,
+      "provisional_quality_score_percent": 22.2222,
+      "correct_turns": 2,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 7,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la fiche Yamaha 700 MT-07 2020 ; valeur originale et citation concordantes. Les éventuelles dimensions ajoutées figurent aussi dans cette ligne source.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "answer.missing[]: unsupported or missing keys",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "answer.claims[].evidence_ids: invalid array length",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "answer: unsupported or missing keys",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "raw_error": null,
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 3,
+      "quality_score_percent": 38.8889,
+      "provisional_quality_score_percent": 38.8889,
+      "correct_turns": 3,
+      "partial_turns": 1,
+      "incorrect_turns": 4,
+      "failure_turns": 1,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "incorrect",
+              "score": 0,
+              "reason": "Le compte de 8 est juste, mais la liste ajoutée associe trois modèles aux mauvaises identités et preuves : d51c… est MT-10, 0e7f… est R1M et d4f8… est R6. Ces affirmations matérielles ne sont pas soutenues par leurs citations.",
+              "checks": {
+                "identity_scope": false,
+                "answer_accuracy": false,
+                "completeness": true,
+                "evidence_support": false,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la fiche Yamaha 700 MT-07 2020 ; valeur originale et citation concordantes. Les éventuelles dimensions ajoutées figurent aussi dans cette ligne source.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux fiches 2020 et leurs sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "incorrect",
+              "score": 0,
+              "reason": "Boîtes, rapports et cardans correctement décrits, mais la réponse affirme que la marche arrière est absente sur la BMW. La source BMW ne la mentionne pas : son absence reste inconnue. Cette différence matérielle inventée invalide la comparaison.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": false,
+                "completeness": true,
+                "evidence_support": false,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "01de122991f8020a:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Erreur de fournisseur, d’outil ou de format : aucune réponse finale exploitable.",
+              "raw_error": "Final answer cites evidence not delivered by tools",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_or_format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Les deux variantes 2020 sont correctement distinguées. Les caractéristiques ajoutées correspondent aux passages reçus de chacune, avec puissance approximative, vitesse et autonomie estimées, prix présentés comme prix catalogue. Les citations moteur/tarifs gardent les bonnes identités.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:section:4",
+                "133a77effceb50fb:section:8",
+                "f0abf559176623ef:section:4",
+                "f0abf559176623ef:section:8"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "incorrect",
+              "score": 0,
+              "reason": "La réponse ouvre sur l’équipement de la version standard et affirme l’absence de l’édition dans un « catalogue officiel Honda ». Les outils portent sur notre catalogue Motoplanete ; cette provenance officielle et la conclusion pour l’édition demandée ne sont pas établies. Le statut inconnu reçu concerne seulement la fiche standard.",
+              "checks": {
+                "identity_scope": false,
+                "answer_accuracy": false,
+                "completeness": false,
+                "evidence_support": false,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:equipment:b37234527c55"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "partial",
+              "score": 1,
+              "reason": "Sept fiches et leurs preuves sont correctement restituées, mais la YZF-R6 manque. Le résultat reçu annonçait explicitement un total global de huit et une page de contexte partielle ; la réponse ne signale pas cette limite ni ne poursuit la recherche.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": false,
+                "evidence_support": true,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "d51c2336299ebb74:equipment:831a73a68b11",
+                "d51c2336299ebb74:equipment:eafeb6ad20d2",
+                "2dd9c39da84e1c0f:equipment:831a73a68b11",
+                "2dd9c39da84e1c0f:equipment:eafeb6ad20d2",
+                "9a62a4f7e47cf67d:equipment:831a73a68b11",
+                "9a62a4f7e47cf67d:equipment:eafeb6ad20d2",
+                "4a0becebc6f3922e:equipment:831a73a68b11",
+                "4a0becebc6f3922e:equipment:eafeb6ad20d2",
+                "7563348d531528c1:equipment:831a73a68b11",
+                "7563348d531528c1:equipment:eafeb6ad20d2",
+                "21e1b2941ea62445:equipment:831a73a68b11",
+                "21e1b2941ea62445:equipment:eafeb6ad20d2",
+                "0e7f5b6e5ec6b048:equipment:831a73a68b11",
+                "0e7f5b6e5ec6b048:equipment:eafeb6ad20d2"
+              ]
+            },
+            {
+              "turn": 2,
+              "category": "incorrect",
+              "score": 0,
+              "reason": "Réponse contradictoire : 3 annoncés au début, puis total de 2. Elle place la MT-10 SP à 855 mm ou plus alors que les données reçues indiquent 825 mm, et réduit le périmètre aux sept fiches de sa première réponse incomplète.",
+              "checks": {
+                "identity_scope": false,
+                "answer_accuracy": false,
+                "completeness": false,
+                "evidence_support": false,
+                "no_material_overclaim": false
+              },
+              "supporting_evidence_ids": [
+                "d51c2336299ebb74:row:2",
+                "2dd9c39da84e1c0f:row:2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

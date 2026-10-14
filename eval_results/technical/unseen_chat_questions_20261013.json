@@ -1,0 +1,165 @@
+{
+  "cases": [
+    {
+      "id": "holdout3_01",
+      "turns": [
+        {
+          "question": "Sur la Honda CBR600F de 2001, quel type de cadre est indiqué dans la fiche ?",
+          "expected": "Retrouver le matériau et le type de cadre explicitement indiqués pour la Honda CBR600F millésime 2001, en citant la source et en signalant toute information absente."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_02",
+      "turns": [
+        {
+          "question": "Tu peux me donner la hauteur de selle et la garde au sol de la Kawasaki Z750 de 2004, avec leurs unités ?",
+          "expected": "Lire les deux dimensions demandées pour la Kawasaki Z750 2004, conserver les unités et distinguer une valeur renseignée d’une donnée inconnue."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_03",
+      "turns": [
+        {
+          "question": "Pour la Suzuki SV650 de 2017, le poids annoncé correspond à une moto à sec ou prête à rouler ?",
+          "expected": "Retrouver le poids et surtout sa qualification source pour la Suzuki SV650 2017, sans déduire la qualification d’un poids non typé."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_04",
+      "turns": [
+        {
+          "question": "Sur la BMW R1200GS de 2005, l’ABS est de série, en option, ou simplement non renseigné dans la fiche ?",
+          "expected": "Établir le statut documentaire de l’ABS pour la BMW R1200GS 2005, en séparant série, option, absence explicitement indiquée et information inconnue."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_05",
+      "turns": [
+        {
+          "question": "Quels sont le type de fourche et les débattements avant et arrière donnés pour la Ducati Monster 696 de 2010 ?",
+          "expected": "Extraire le type de fourche et les débattements des deux suspensions de la Ducati Monster 696 2010, sans compléter les composants ou les valeurs depuis des connaissances générales."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_06",
+      "turns": [
+        {
+          "question": "Compare la hauteur de selle et l’empattement de la Honda CB500X entre 2018 et 2021. Est-ce que ces deux dimensions ont changé ?",
+          "expected": "Comparer les deux dimensions sur les fiches des millésimes 2018 et 2021 de la Honda CB500X, montrer les valeurs avec leurs unités et ne conclure à un changement que si les données permettent la comparaison."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_07",
+      "turns": [
+        {
+          "question": "Quelle taille de pneu arrière est spécifiée sur la Triumph Street Triple R de 2013 ? Je veux la désignation complète telle qu’elle apparaît.",
+          "expected": "Restituer la désignation complète du pneu arrière de la Triumph Street Triple R 2013, en préservant les nombres et la notation de la source."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_08",
+      "turns": [
+        {
+          "question": "Pour l’Aprilia RS 660 de 2021, la fiche confirme-t-elle un shifter bidirectionnel et un régulateur de vitesse ?",
+          "expected": "Vérifier séparément la présence et, si disponible, le statut des deux équipements électroniques de l’Aprilia RS 660 2021 ; traiter une absence de mention comme une donnée inconnue."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_09",
+      "turns": [
+        {
+          "question": "Peux-tu convertir la puissance de la Yamaha FZS600 Fazer de 2000 en kilowatts ? Indique aussi la valeur et l’unité utilisées au départ.",
+          "expected": "Lire la puissance source de la Yamaha FZS600 Fazer 2000 puis effectuer la conversion explicitement demandée en kW, en montrant la valeur initiale, son unité et la provenance ; ne pas supposer une puissance absente."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_10",
+      "turns": [
+        {
+          "question": "Qu’est-ce qui est indiqué pour les freins avant de la Suzuki Hayabusa de 2001 : nombre de disques, diamètre et type d’étriers ?",
+          "expected": "Extraire les trois détails des freins avant de la Suzuki Hayabusa 2001, préserver les qualifications source et rendre visibles les champs non renseignés."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_11",
+      "turns": [
+        {
+          "question": "Entre les KTM 390 Duke 2023 et 2024, compare le poids uniquement si les deux fiches utilisent la même définition du poids.",
+          "expected": "Retrouver les poids et leurs types pour les KTM 390 Duke 2023 et 2024, vérifier leur comparabilité et refuser un écart direct si les définitions diffèrent ou restent inconnues."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_12",
+      "turns": [
+        {
+          "question": "La Kawasaki Ninja ZX-6R de 2025 est-elle donnée avec un antipatinage et plusieurs modes de conduite ? Précise ce que les fiches permettent vraiment de confirmer.",
+          "expected": "Vérifier les deux équipements pour la Kawasaki Ninja ZX-6R 2025, attribuer les affirmations aux sources et distinguer une confirmation, une absence explicite et une omission documentaire."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_dialogue_01",
+      "turns": [
+        {
+          "question": "Quel poids la fiche donne-t-elle pour la Yamaha MT-07 de 2021, et comment ce poids est-il qualifié ?",
+          "expected": "Lire le poids et la qualification exacte de la Yamaha MT-07 2021, avec source, et établir cette moto comme contexte du dialogue."
+        },
+        {
+          "question": "Et pour la 2018, est-ce le même type de poids ? Si oui, donne-moi l’écart en kilogrammes.",
+          "expected": "Résoudre la relance vers la Yamaha MT-07 2018, comparer les qualifications de poids aux données du tour précédent et calculer l’écart uniquement lorsque les types sont compatibles."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_dialogue_02",
+      "turns": [
+        {
+          "question": "Tu as le diamètre et le débattement de la fourche de la Honda Africa Twin CRF1100L standard de 2020 ?",
+          "expected": "Identifier la version standard de la Honda Africa Twin CRF1100L 2020 et restituer le diamètre et le débattement de sa fourche, sans fusionner les variantes Adventure Sports."
+        },
+        {
+          "question": "Et à l’arrière, quel débattement est annoncé sur cette même version ?",
+          "expected": "Conserver le modèle, le millésime et la version standard établis au tour précédent, puis lire le débattement de la suspension arrière avec son unité et sa source."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_dialogue_03",
+      "turns": [
+        {
+          "question": "Pour la Ducati Multistrada 950 de 2017, que disent les fiches sur l’ABS et l’antipatinage ?",
+          "expected": "Établir séparément les statuts documentés de l’ABS et de l’antipatinage de la Ducati Multistrada 950 2017, avec références et inconnues visibles."
+        },
+        {
+          "question": "Le régulateur de vitesse aussi est confirmé, ou cette information manque ?",
+          "expected": "Conserver la Ducati Multistrada 950 2017 comme contexte et vérifier spécifiquement le régulateur de vitesse, sans transformer une omission en preuve d’absence."
+        }
+      ]
+    },
+    {
+      "id": "holdout3_dialogue_04",
+      "turns": [
+        {
+          "question": "Quelle capacité de réservoir est indiquée pour la Royal Enfield Himalayan de 2022 ?",
+          "expected": "Retrouver la capacité du réservoir de la Royal Enfield Himalayan 2022 avec son unité et sa source, puis conserver ce modèle et cette valeur comme contexte."
+        },
+        {
+          "question": "Convertis cette capacité en gallons américains, s’il te plaît.",
+          "expected": "Réutiliser la capacité sourcée du tour précédent et la convertir explicitement en gallons américains, en identifiant le type de gallon et sans introduire une capacité non vérifiée."
+        }
+      ]
+    }
+  ],
+  "origin": "unseen_holdout_v3"
+}

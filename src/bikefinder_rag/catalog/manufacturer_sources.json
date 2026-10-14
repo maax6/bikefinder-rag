@@ -1,0 +1,86 @@
+{
+  "sources": [
+    {
+      "id": "honda-goldwing-2018-us",
+      "publisher": "Honda",
+      "brand": "Honda",
+      "model": "GL 1800 GOLDWING",
+      "model_year": 2018,
+      "published": "2017-10-25",
+      "market": "USA",
+      "url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+      "family": "goldwing",
+      "aliases": [
+        "Gold Wing",
+        "Goldwing",
+        "GL 1800",
+        "GL1800"
+      ],
+      "sql_model_pattern": "goldwing",
+      "binding_pattern": "gl.*1800.*goldwing",
+      "catalog_binding_year": 2018
+    },
+    {
+      "id": "honda-goldwing-2018-fr",
+      "publisher": "Honda",
+      "brand": "Honda",
+      "model": "GL 1800 GOLDWING",
+      "model_year": 2018,
+      "published": "2017-10-25",
+      "market": "France",
+      "url": "https://hondanews.eu/fr/fr/motorcycles/media/documenttext/116753/information-presse-gl1800-gold-wing-2018",
+      "family": "goldwing",
+      "aliases": [
+        "Gold Wing",
+        "Goldwing",
+        "GL 1800",
+        "GL1800"
+      ],
+      "sql_model_pattern": "goldwing",
+      "binding_pattern": "gl.*1800.*goldwing",
+      "catalog_binding_year": 2018
+    },
+    {
+      "id": "bmw-r1300rt-2025-fr",
+      "publisher": "BMW",
+      "brand": "BMW",
+      "model": "R 1300 RT",
+      "model_year": null,
+      "published": "2025-04-29",
+      "market": "France",
+      "url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+      "family": "rt",
+      "aliases": [
+        "RT",
+        "R 1300 RT",
+        "R1300RT",
+        "R 1250 RT",
+        "R1250RT"
+      ],
+      "sql_model_pattern": "\\mRT\\M",
+      "binding_pattern": "r.*1300.*rt",
+      "catalog_binding_year": 2025
+    },
+    {
+      "id": "bmw-r1300rt-2026-us",
+      "publisher": "BMW",
+      "brand": "BMW",
+      "model": "R 1300 RT",
+      "model_year": 2026,
+      "published": "2025-04-29",
+      "market": "USA",
+      "url": "https://www.press.bmwgroup.com/usa/article/detail/T0449846EN_US/the-new-2026-bmw-r-1300-rt",
+      "family": "rt",
+      "aliases": [
+        "RT",
+        "R 1300 RT",
+        "R1300RT",
+        "R 1250 RT",
+        "R1250RT"
+      ],
+      "sql_model_pattern": "\\mRT\\M",
+      "binding_pattern": "r.*1300.*rt",
+      "catalog_binding_year": 2025
+    }
+  ]
+}

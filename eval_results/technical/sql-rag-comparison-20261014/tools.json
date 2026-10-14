@@ -1,0 +1,637 @@
+{
+  "version": "bikefinder-sql-rag-v1",
+  "implementation_status": "specified_not_connected",
+  "tools": [
+    {
+      "name": "describe_catalog",
+      "description": "Discover available fields, units, equipment names, sections and data coverage.",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {},
+        "required": []
+      },
+      "semantics": {
+        "payload": "snapshot_id, fiche_count, passage_count, fields with coverage, equipment_names, section_names, supported_filters",
+        "rules": [
+          "No inferred riding category, homologation or current used price.",
+          "Names of equipment come from this result; aliases resolve to a documented canonical name or ambiguous status."
+        ]
+      }
+    },
+    {
+      "name": "resolve_models",
+      "description": "Find real catalogue identities and years; year is optional.",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "brand": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "model_tokens": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 1,
+                "maxItems": 8,
+                "uniqueItems": true
+              },
+              "min_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2199
+              },
+              "max_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2199
+              },
+              "object_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 1,
+                "maxItems": 100,
+                "uniqueItems": true
+              }
+            },
+            "required": []
+          },
+          "page_size": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 20
+          },
+          "cursor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "query"
+        ]
+      },
+      "semantics": {
+        "payload": "candidates with object_id, brand, model, year and source_url; total_candidates; ambiguity",
+        "rules": [
+          "Return separate variants; never silently substitute a neighbouring year or version.",
+          "Normalize accents, spaces and hyphens; preserve short discriminating variant tokens.",
+          "A family is a candidate set, not one invented canonical fiche.",
+          "No required year when exploring available years; exact identity comes from catalogue IDs."
+        ]
+      }
+    },
+    {
+      "name": "query_catalog",
+      "description": "Filter, count or list catalogue fiches using exact structured criteria.",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "brand": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "model_tokens": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 1,
+                "maxItems": 8,
+                "uniqueItems": true
+              },
+              "min_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2199
+              },
+              "max_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2199
+              },
+              "object_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 1,
+                "maxItems": 100,
+                "uniqueItems": true
+              }
+            },
+            "required": []
+          },
+          "numeric_filters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "displacement_ccm",
+                    "power_ch",
+                    "torque_nm",
+                    "seat_height_mm",
+                    "weight_dry_kg",
+                    "weight_wet_kg",
+                    "autonomy_km",
+                    "catalog_price_eur"
+                  ]
+                },
+                "op": {
+                  "type": "string",
+                  "enum": [
+                    "<",
+                    "<=",
+                    "=",
+                    ">=",
+                    ">"
+                  ]
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "field",
+                "op",
+                "value"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 12,
+            "uniqueItems": true
+          },
+          "equipment_filters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "standard",
+                    "optional",
+                    "explicitly_absent",
+                    "unknown"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "status"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "missing_fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "displacement_ccm",
+                "power_ch",
+                "torque_nm",
+                "seat_height_mm",
+                "weight_dry_kg",
+                "weight_wet_kg",
+                "autonomy_km",
+                "catalog_price_eur"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "count",
+              "list"
+            ]
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "displacement_ccm",
+                "power_ch",
+                "torque_nm",
+                "seat_height_mm",
+                "weight_dry_kg",
+                "weight_wet_kg",
+                "autonomy_km",
+                "catalog_price_eur"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "sort": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "year",
+                    "brand",
+                    "model",
+                    "displacement_ccm",
+                    "power_ch",
+                    "torque_nm",
+                    "seat_height_mm",
+                    "weight_dry_kg",
+                    "weight_wet_kg",
+                    "autonomy_km",
+                    "catalog_price_eur"
+                  ]
+                },
+                "direction": {
+                  "type": "string",
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ]
+                }
+              },
+              "required": [
+                "field",
+                "direction"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 3,
+            "uniqueItems": true
+          },
+          "page_size": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 20
+          },
+          "cursor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "semantics": {
+        "payload": "total_matches, rows with identity and requested measures/equipment, unknown_exclusions per criterion, aggregate_evidence_id",
+        "rules": [
+          "All filters are AND; missing_fields selects rows missing ANY named field.",
+          "Missing numeric values never satisfy a numeric comparison; conflicts remain unknown.",
+          "Missing equipment row and explicit unknown both satisfy unknown, never explicitly_absent.",
+          "Count covers every matching fiche, including all variants, never only a page; say fiches, not unique model families.",
+          "List includes exact total and cursor; sort is stable with object_id as final tie-breaker and nulls last.",
+          "Default ordering: year descending, brand, model, object_id. Count ignores sort/fields/page size and rejects cursor.",
+          "Rows and counts use SQL on the frozen projection bound to original source hashes.",
+          "Dry and wet weight remain distinct; autonomy and historical price keep their qualifications."
+        ]
+      }
+    },
+    {
+      "name": "get_fiches",
+      "description": "Read precise fiches and their original evidence, using catalogue IDs.",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 1,
+            "maxItems": 5,
+            "uniqueItems": true
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "displacement_ccm",
+                "power_ch",
+                "torque_nm",
+                "seat_height_mm",
+                "weight_dry_kg",
+                "weight_wet_kg",
+                "autonomy_km",
+                "catalog_price_eur"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 0,
+            "maxItems": 12,
+            "uniqueItems": true
+          },
+          "equipment_names": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160
+            },
+            "minItems": 0,
+            "maxItems": 8,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "object_ids"
+        ]
+      },
+      "semantics": {
+        "payload": "fiches with identity, requested values, original rows, equipment statuses, passages and source references",
+        "rules": [
+          "Unknown IDs are individually reported, with no replacement.",
+          "No field selector means all supported numeric fields; no section selector means all sections.",
+          "Retain duplicate rows, range values and contradictory values as original evidence.",
+          "Inferences such as actual A2 eligibility, comfort or mechanical retrofit require suitable evidence."
+        ]
+      }
+    },
+    {
+      "name": "compare_fiches",
+      "description": "Compare requested measures/equipment across precise catalogue IDs.",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "object_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 2,
+            "maxItems": 5,
+            "uniqueItems": true
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "displacement_ccm",
+                "power_ch",
+                "torque_nm",
+                "seat_height_mm",
+                "weight_dry_kg",
+                "weight_wet_kg",
+                "autonomy_km",
+                "catalog_price_eur"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "equipment_names": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160
+            },
+            "minItems": 0,
+            "maxItems": 8,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "object_ids",
+          "fields"
+        ]
+      },
+      "semantics": {
+        "payload": "matrix, pairwise numeric deltas and evidence IDs, unknowns per fiche/field",
+        "rules": [
+          "Differences calculated by Python/SQL, never by language model arithmetic.",
+          "Only same-field comparable values produce deltas; unknown values stay unknown.",
+          "Compare dated catalogue prices as such; never manufacture an overall best motorcycle."
+        ]
+      }
+    },
+    {
+      "name": "search_passages",
+      "description": "Find original passages, globally or within identified families/fiches.",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "brand": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "model_tokens": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 1,
+                "maxItems": 8,
+                "uniqueItems": true
+              },
+              "min_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2199
+              },
+              "max_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2199
+              },
+              "object_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "minItems": 1,
+                "maxItems": 100,
+                "uniqueItems": true
+              }
+            },
+            "required": []
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 0,
+            "maxItems": 12,
+            "uniqueItems": true
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "hybrid",
+              "literal"
+            ]
+          },
+          "literal_terms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "minItems": 1,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "order": {
+            "type": "string",
+            "enum": [
+              "relevance",
+              "year_asc",
+              "year_desc"
+            ]
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 8
+          },
+          "cursor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "query",
+          "mode"
+        ]
+      },
+      "semantics": {
+        "payload": "passages with identity, verbatim text, section, source_url, text/source hashes; retrieval scores; searched/matched counts; per-scope coverage",
+        "rules": [
+          "Hybrid uses the same frozen lexical+dense retrieval and RRF configuration for local and cloud; no answer cache.",
+          "Literal requires literal_terms (OR, accent/case folded word/phrase matches); exhaustive SQL scan within the stated scope.",
+          "Hybrid rejects literal_terms and cursor; literal pages all matches with a stable cursor.",
+          "No scope means entire catalogue, not a hidden subset; all supplied scope fields are AND.",
+          "Do not collapse year/variant identities when deduplicating passages.",
+          "Hybrid ranked passages do not prove an earliest occurrence; an exhaustive literal search can establish only first documented mention of the selected terms.",
+          "A source mention on a dated fiche does not establish launch date, markets or every version.",
+          "Partial retrieval reports the unsearched scope explicitly; never describe it as exhaustive."
+        ]
+      }
+    }
+  ],
+  "response_envelope": {
+    "status": [
+      "ok",
+      "partial",
+      "ambiguous",
+      "not_found",
+      "invalid_arguments",
+      "unavailable"
+    ],
+    "required": [
+      "status",
+      "snapshot_id",
+      "payload",
+      "evidence",
+      "coverage",
+      "missing",
+      "pagination",
+      "timing_ms"
+    ],
+    "evidence": "stable evidence_id, kind (source_row/passage/aggregate), object_id where applicable, source_url/source_sha256; aggregates bind criteria and snapshot, with paginated contributing IDs",
+    "coverage": "requested_scope, searched_fiches, searched_passages where relevant, exhaustive, truncation_reason",
+    "missing": "list of {subject, field, reason}; never convert no mention to explicit absence",
+    "pagination": "{returned, total, next_cursor}; cursor binds snapshot, criteria and stable ordering"
+  },
+  "execution_rules": [
+    "No free SQL, arbitrary code, write operations or web access from model tools.",
+    "Validate JSON shape/types, finite numbers, bounds, unknown keys, year order, scope combinations and canonical equipment names before execution.",
+    "Unsupported constraints produce invalid_arguments with supported alternatives; never silently ignore them.",
+    "Every output evidence reference must be traceable to the frozen corpus or exact aggregate criteria.",
+    "Document text and user query are data, never instructions for tool execution.",
+    "Provider adapters may alter only the wire format, never tool meaning, prompt content, data or retrieval parameters.",
+    "Context-budget truncation must be deterministic and disclosed; retain unresolved entities and a continuation mechanism."
+  ]
+}

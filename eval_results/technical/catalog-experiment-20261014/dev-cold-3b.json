@@ -1,0 +1,117 @@
+{
+  "route": "catalog_experiment",
+  "plan": {
+    "operation": "research",
+    "source_question": "Sur la Gold Wing 2018, quelles sont les deux transmissions proposées et combien de rapports ont-elles ?"
+  },
+  "evidence": {
+    "passages": [
+      {
+        "id": "P1",
+        "passage_id": "honda-goldwing-2018-us:paragraph:22",
+        "identity": {
+          "object_id": "honda-goldwing-2018-us",
+          "brand": "Honda",
+          "model": "GL 1800 GOLDWING",
+          "year": 2018
+        },
+        "section": "Gold wing tour",
+        "text": "The three 2018 Gold Wing Tour models—Gold Wing Tour, Gold Wing Tour DCT, and Gold Wing Tour DCT Airbag—are the modern interpretation of the classic Gold Wing, the ultimate long-distance touring machine, but with highly improved performance capabilities. Each of these models features saddlebags and a top case, as well as a tall electrically adjustable windscreen, front and rear speakers, and electrically adjustable suspension.",
+        "market": "USA",
+        "published": "2017-10-25",
+        "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+        "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+        "publisher": "Honda",
+        "kind": "manufacturer"
+      },
+      {
+        "id": "P2",
+        "passage_id": "honda-goldwing-2018-us:paragraph:1",
+        "identity": {
+          "object_id": "honda-goldwing-2018-us",
+          "brand": "Honda",
+          "model": "GL 1800 GOLDWING",
+          "year": 2018
+        },
+        "section": "News Release",
+        "text": "SANTA BARBARA, Calif., October 24, 2017 – The next chapter in one of Honda's most storied narratives began today with the unveiling of the 2018 Gold Wing and Gold Wing Tour models. Revealed during a special event at Santa Barbara, California's MOXI Museum of Exploration and Innovation, the all-new Gold Wing takes cues from the legendary GL models that came before it while maximizing potential through a lighter, more thrilling, and more technologically advanced package with a new engine, chassis, and electronics suite.",
+        "market": "USA",
+        "published": "2017-10-25",
+        "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+        "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+        "publisher": "Honda",
+        "kind": "manufacturer"
+      },
+      {
+        "id": "P3",
+        "passage_id": "honda-goldwing-2018-us:paragraph:12",
+        "identity": {
+          "object_id": "honda-goldwing-2018-us",
+          "brand": "Honda",
+          "model": "GL 1800 GOLDWING",
+          "year": 2018
+        },
+        "section": "Electronics",
+        "text": "Fully modern, the 2018 Gold Wing features a throttle-by-wire system that has opened the door to four riding modes (Tour, Sport, Econ, and Rain), Honda Selectable Torque Control (HSTC), Hill Start Assist, and a finely tuned cruise-control system. Selecting the riding mode that's best suited for the riding conditions is easily accomplished through the Gold Wing's new controls, and then confirmed via a beautiful, 7-inch full-color Thin Film Transistor liquid-crystal display—one of the many features that bolster the model's premium feel.",
+        "market": "USA",
+        "published": "2017-10-25",
+        "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+        "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+        "publisher": "Honda",
+        "kind": "manufacturer"
+      },
+      {
+        "id": "P4",
+        "passage_id": "honda-goldwing-2018-us:paragraph:8",
+        "identity": {
+          "object_id": "honda-goldwing-2018-us",
+          "brand": "Honda",
+          "model": "GL 1800 GOLDWING",
+          "year": 2018
+        },
+        "section": "Transmission",
+        "text": "The Gold Wing and Gold Wing Tour are available with both a new six-speed manual transmission or Honda's advanced, next-generation seven-speed automatic Dual Clutch Transmission (DCT), which includes forward/reverse Walking Mode.",
+        "market": "USA",
+        "published": "2017-10-25",
+        "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+        "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+        "publisher": "Honda",
+        "kind": "manufacturer"
+      }
+    ],
+    "missing": [],
+    "scopes": [
+      {
+        "brand": "Honda",
+        "family": "goldwing",
+        "passages_available": 64
+      }
+    ],
+    "timing": {
+      "query_encoding_and_ranking_seconds": 4.031143208965659,
+      "sql_validation_seconds": 0.011923291953280568,
+      "retrieval_seconds": 4.043729208991863
+    }
+  },
+  "research": {
+    "local_planner_calls": 0,
+    "local_writer_calls": 0,
+    "tool_calls": 1,
+    "timing": {
+      "query_encoding_and_ranking_seconds": 4.031143208965659,
+      "sql_validation_seconds": 0.011923291953280568,
+      "retrieval_seconds": 4.043729208991863
+    },
+    "seconds": 10.211946583003737
+  },
+  "generation": {
+    "published": false,
+    "backend": "ollama",
+    "call_attempted": true,
+    "experiment": true,
+    "error": "ReadTimeout"
+  },
+  "jev_calls": 0,
+  "answer": "Je ne peux pas encore fournir une réponse vérifiée à cette demande.",
+  "seconds": 10.211946583003737
+}

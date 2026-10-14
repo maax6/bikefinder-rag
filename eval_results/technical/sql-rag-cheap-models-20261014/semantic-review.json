@@ -1,0 +1,1814 @@
+{
+  "version": "catalogue-semantic-review-v1",
+  "status": "completed",
+  "reviewed_turns": 72,
+  "expected_turns": 72,
+  "created_utc": "2026-10-14T14:44:02.241208+00:00",
+  "run_sha256": "5d8dee1a0bbd77118fae77636fd95f942abb89bf6f2dd14644622cee025b3889",
+  "rubric_sha256": "2126812ff27f35bf46168e8211882de5107b00b80264a419de47e536b55bd6c9",
+  "review_method": "Manual final-answer and delivered-evidence review; transport/format failures mapped separately. Pricing and latency ignored while grading.",
+  "scope_limit": "Catalogue-based internal development pilot; reference numbers reuse the catalogue projection parser and are not independent validation of real-world motorcycle specifications.",
+  "models": [
+    {
+      "model": "openai/gpt-6-luna",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 4,
+      "quality_score_percent": 55.5556,
+      "provisional_quality_score_percent": 55.5556,
+      "correct_turns": 5,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 4,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, avec Yamaha/2020 et les deux équipements de série ; témoin SQL exhaustif cité.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la bonne fiche MT-07 2020 ; valeur originale et citation concordantes.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Les résultats choisis dépassent le plafond de contexte commun de 32 000 caractères.",
+              "raw_error": "Tool result cannot fit the remaining context budget",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "context_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 et Z 650 Performance. Identités et citations exactes ; la réponse ne remplace pas une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Édition ZXQ-FICTIVE-999 non trouvée explicitement ; présence du régulateur indéterminable, sans substitution à la fiche standard.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": []
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Liste complète des huit fiches attendues, variantes distinctes ; chaque modèle a les deux preuves d’équipement et le compte global est cité. Les statuts inconnus ne sont pas déclarés absents.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a",
+                "d51c2336299ebb74:equipment:831a73a68b11",
+                "d51c2336299ebb74:equipment:eafeb6ad20d2",
+                "2dd9c39da84e1c0f:equipment:831a73a68b11",
+                "2dd9c39da84e1c0f:equipment:eafeb6ad20d2",
+                "9a62a4f7e47cf67d:equipment:831a73a68b11",
+                "9a62a4f7e47cf67d:equipment:eafeb6ad20d2",
+                "4a0becebc6f3922e:equipment:831a73a68b11",
+                "4a0becebc6f3922e:equipment:eafeb6ad20d2",
+                "7563348d531528c1:equipment:831a73a68b11",
+                "7563348d531528c1:equipment:eafeb6ad20d2",
+                "21e1b2941ea62445:equipment:831a73a68b11",
+                "21e1b2941ea62445:equipment:eafeb6ad20d2",
+                "0e7f5b6e5ec6b048:equipment:831a73a68b11",
+                "0e7f5b6e5ec6b048:equipment:eafeb6ad20d2",
+                "d4f89f69096690e2:equipment:831a73a68b11",
+                "d4f89f69096690e2:equipment:eafeb6ad20d2"
+              ]
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Les résultats choisis dépassent le plafond de contexte commun de 32 000 caractères.",
+              "raw_error": "Tool result cannot fit the remaining context budget",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "context_budget"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 4,
+      "quality_score_percent": 44.4444,
+      "provisional_quality_score_percent": 44.4444,
+      "correct_turns": 4,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 5,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, périmètre Yamaha/2020 et équipements de série corrects ; preuve SQL exhaustive citée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cc pour la bonne fiche MT-07 2020 ; source originale correcte.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Les résultats choisis dépassent le plafond de contexte commun de 32 000 caractères.",
+              "raw_error": "Tool result cannot fit the remaining context budget",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "context_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Deux variantes distinctes pour 2020 : Z 650 et Z 650 Performance. Identités et citations exactes ; la réponse ne remplace pas une édition par l’autre.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Réponse tronquée par le plafond commun de 1 200 tokens de sortie.",
+              "raw_error": "Model output truncated",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "output_budget"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 3,
+      "quality_score_percent": 33.3333,
+      "provisional_quality_score_percent": 33.3333,
+      "correct_turns": 3,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 6,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, périmètre Yamaha/2020 et équipements de série corrects ; preuve SQL exhaustive citée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cc pour la bonne fiche MT-07 2020 ; source originale correcte.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai de 30 secondes dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai de 30 secondes dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai de 30 secondes dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Délai de 30 secondes dépassé avant une réponse exploitable.",
+              "raw_error": "Turn deadline or provider timeout reached",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "timeout"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Réponse tronquée par le plafond commun de 1 200 tokens de sortie.",
+              "raw_error": "Model output truncated",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "output_budget"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemini-3.5-flash-lite",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 3,
+      "quality_score_percent": 33.3333,
+      "provisional_quality_score_percent": 33.3333,
+      "correct_turns": 3,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 6,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, périmètre Yamaha/2020 et équipements de série corrects ; preuve SQL exhaustive citée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la bonne fiche MT-07 2020 ; valeur originale et citation concordantes.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "La réponse finale ne respecte pas le format attendu ; aucune réponse exploitable.",
+              "raw_error": "Expecting value: line 1 column 1 (char 0)",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "La réponse finale ne respecte pas le format attendu ; aucune réponse exploitable.",
+              "raw_error": "Expecting value: line 1 column 1 (char 0)",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Les résultats choisis dépassent le plafond de contexte commun de 32 000 caractères.",
+              "raw_error": "Tool result cannot fit the remaining context budget",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "context_budget"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 3,
+      "quality_score_percent": 33.3333,
+      "provisional_quality_score_percent": 33.3333,
+      "correct_turns": 3,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 6,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, avec Yamaha/2020 et les deux équipements de série ; témoin SQL exhaustif cité.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cc pour la bonne fiche MT-07 2020 ; source originale correcte.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "OpenRouter renvoie 429 : limite du fournisseur, aucune réponse exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_rate_limit"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "OpenRouter renvoie 429 : limite du fournisseur, aucune réponse exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_rate_limit"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "OpenRouter renvoie 429 : limite du fournisseur, aucune réponse exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_rate_limit"
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "OpenRouter renvoie 429 : limite du fournisseur, aucune réponse exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_rate_limit"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "OpenRouter renvoie 429 : limite du fournisseur, aucune réponse exploitable.",
+              "raw_error": "openrouter HTTP 429",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "provider_rate_limit"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 6,
+      "quality_score_percent": 66.6667,
+      "provisional_quality_score_percent": 66.6667,
+      "correct_turns": 6,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 3,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, périmètre Yamaha/2020 et équipements de série corrects ; preuve SQL exhaustive citée.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cc pour la bonne fiche MT-07 2020 ; source originale correcte.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "DCT robotisée à 7 rapports avec marche arrière contre boîte manuelle à 6 rapports ; cardan commun aux deux modèles, citations de transmission exactes.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2",
+                "01de122991f8020a:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "2018 et variante Tour DCT/Airbag corrects ; recherche littérale exhaustive sur les 64 Gold Wing, tri chronologique donnant un extrait Transmission en premier. La réponse reste limitée à la base.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "c0a73ac3d40825ff:section:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Z 650 et Z 650 Performance, deux variantes distinctes du bon millésime, avec leurs références d’identité.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "133a77effceb50fb:identity",
+                "f0abf559176623ef:identity"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 0,
+      "quality_score_percent": 0.0,
+      "provisional_quality_score_percent": 0.0,
+      "correct_turns": 0,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 9,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "La réponse finale ne respecte pas le format attendu ; aucune réponse exploitable.",
+              "raw_error": "Expecting value: line 1 column 1 (char 0)",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Les résultats choisis dépassent le plafond de contexte commun de 32 000 caractères.",
+              "raw_error": "Tool result cannot fit the remaining context budget",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "context_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "La réponse finale ne respecte pas le format attendu ; aucune réponse exploitable.",
+              "raw_error": "Expecting value: line 1 column 1 (char 0)",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "format"
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "expected_sessions": 8,
+      "expected_turns": 9,
+      "reviewed_turns": 9,
+      "fully_correct_cases": 3,
+      "quality_score_percent": 33.3333,
+      "provisional_quality_score_percent": 33.3333,
+      "correct_turns": 3,
+      "partial_turns": 0,
+      "incorrect_turns": 0,
+      "failure_turns": 6,
+      "cases": [
+        {
+          "case_id": "Q01",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Compte exact de 8, avec Yamaha/2020 et les deux équipements de série ; témoin SQL exhaustif cité.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "aggregate:30a9d903ecf6f25665e0203a"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q10",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "689 cm³ pour la bonne fiche MT-07 2020 ; valeur originale et citation concordantes.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "4fbfc9bd85ffa460:row:23"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q17",
+          "case_success": true,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "correct",
+              "score": 2,
+              "reason": "Honda 785 mm, Yamaha 805 mm et écart de 20 mm correctement orienté ; les deux sources soutiennent la réponse.",
+              "checks": {
+                "identity_scope": true,
+                "answer_accuracy": true,
+                "completeness": true,
+                "evidence_support": true,
+                "no_material_overclaim": true
+              },
+              "supporting_evidence_ids": [
+                "555a2d677db34a14:row:2",
+                "4fbfc9bd85ffa460:row:2"
+              ]
+            }
+          ]
+        },
+        {
+          "case_id": "Q24",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q27",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Les résultats choisis dépassent le plafond de contexte commun de 32 000 caractères.",
+              "raw_error": "Tool result cannot fit the remaining context budget",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "context_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q31",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q34",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 1,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Aucune réponse exploitable dans le plafond commun de quatre tours et huit appels aux outils.",
+              "raw_error": "Tool/model-round budget exhausted",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "round_or_tool_budget"
+            }
+          ]
+        },
+        {
+          "case_id": "Q37",
+          "case_success": false,
+          "review_complete": true,
+          "expected_turns": 2,
+          "turns": [
+            {
+              "turn": 1,
+              "category": "failure",
+              "score": 0,
+              "reason": "Sortie finale invalide : une réponse structurée complète était attendue.",
+              "raw_error": "answer: expected object",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "format"
+            },
+            {
+              "turn": 2,
+              "category": "failure",
+              "score": 0,
+              "reason": "Tour non exécuté : conversation interrompue après l’échec du tour précédent.",
+              "checks": {
+                "identity_scope": null,
+                "answer_accuracy": null,
+                "completeness": null,
+                "evidence_support": null,
+                "no_material_overclaim": null
+              },
+              "supporting_evidence_ids": [],
+              "failure_kind": "not_attempted_after_failure"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

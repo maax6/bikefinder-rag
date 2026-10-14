@@ -60,14 +60,28 @@ def rebuild(conn):
         cur.execute('CREATE INDEX IF NOT EXISTS technical_price_power ON technical_measures(price_eur,power_ch)')
     return {'objects':len(output),'version':VERSION}
 
-def filtered(conn,conditions,identity=None,equipment=None,status='standard',count=False,limit=10,order_by=None,secondary=None,equipment_filters=None):
+def filtered(conn,conditions,identity=None,equipment=None,status='standard',count=False,limit=10,order_by=None,secondary=None,equipment_filters=None,object_ids=None,unknown_fields=None,missing_only=False):
     from bikefinder_rag.catalog.enriched import scope,_rows
     identity=identity or {};clauses,params=scope(**identity)
+    if object_ids is not None:
+        if not isinstance(object_ids,list) or any(not isinstance(value,str) or not value for value in object_ids):
+            raise ValueError('Object scope must be a list of nonempty IDs')
+        clauses.append('f.id = ANY(%s)');params.append(list(dict.fromkeys(object_ids)))
+    if unknown_fields is None:unknown_fields=[]
+    if not isinstance(unknown_fields,list) or any(not isinstance(value,str) or value not in FIELDS for value in unknown_fields):
+        raise ValueError('Unsupported unknown numeric field')
+    unknown_fields=list(dict.fromkeys(unknown_fields))
+    if not isinstance(missing_only,bool) or (missing_only and not unknown_fields):
+        raise ValueError('Missing-only requires explicit numeric fields')
     for condition in conditions:
         key,op,value=condition['field'],condition['op'],condition['value']
         if key not in FIELDS or op not in ['<','<=','>','>=','=']:
             raise ValueError('Unsupported numeric filter')
-        clauses.append(f'm.{key} {op} %s');params.append(value)
+        clause=f'm.{key} {op} %s'
+        if key in unknown_fields:clause='('+clause+f' OR m.{key} IS NULL)'
+        clauses.append(clause);params.append(value)
+    if missing_only:
+        clauses.append('('+' OR '.join(f'm.{key} IS NULL' for key in unknown_fields)+')')
     requested_equipment=[{'equipment':equipment,'status':status}] if equipment else []
     if equipment_filters is not None:
         if not isinstance(equipment_filters,list):raise ValueError('Equipment filters must be a list')
@@ -97,7 +111,7 @@ def filtered(conn,conditions,identity=None,equipment=None,status='standard',coun
         ordering=f'm.{field} '+('DESC' if order_by.startswith('-') else 'ASC')+',f.brand,f.model,f.id'
     # Identity/equipment queries must keep fiches without a current projection.
     # Numeric constraints and ranking still require values from the exact source.
-    join='JOIN' if conditions or order_by else 'LEFT JOIN'
+    join='JOIN' if conditions or order_by or missing_only else 'LEFT JOIN'
     base=' FROM technical_fiches f '+join+' technical_measures m ON m.object_id=f.id AND m.source_sha256=f.source_sha256 WHERE '+' AND '.join(clauses)
     if count:return _rows(conn,'SELECT count(*) AS count'+base,params)[0]['count']
     rows=_rows(conn,'SELECT f.id,f.brand,f.model,f.year,f.source_url,f.record,m.*'+base+' ORDER BY '+ordering+' LIMIT %s',params+[limit])

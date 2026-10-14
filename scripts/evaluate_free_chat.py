@@ -29,7 +29,7 @@ def main():
     from bikefinder_rag.db.client import get_connection
     cases=json.loads(args.questions.read_text())['cases'];results=[]
     metadata={'protocol':PROTOCOL,'questions_sha256':hashlib.sha256(args.questions.read_bytes()).hexdigest(),
-              'code_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/bikefinder_rag/agent/jev_router.py','src/bikefinder_rag/agent/query_language.py','src/bikefinder_rag/catalog/comparisons.py','src/bikefinder_rag/catalog/measures.py']}}
+              'code_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/bikefinder_rag/agent/jev_router.py','src/bikefinder_rag/agent/query_language.py','src/bikefinder_rag/catalog/comparisons.py','src/bikefinder_rag/catalog/measures.py','src/bikefinder_rag/catalog/category_evidence.py','src/bikefinder_rag/catalog/unit_restatements.py','src/bikefinder_rag/catalog/source_counts.py','src/bikefinder_rag/catalog/source_equipment_answers.py','src/bikefinder_rag/catalog/supplemental_sources.py','src/bikefinder_rag/agent/loop.py','src/bikefinder_rag/app.py','src/bikefinder_rag/ui.py']}}
     for case in cases:
         client=Client(args.url,verbose=False);visible=[];history=[];conn=get_connection()
         try:

@@ -1,0 +1,82 @@
+{
+  "status": "estimate_only_not_approval",
+  "cases_per_model": 8,
+  "turns_per_model": 9,
+  "models": 8,
+  "sessions": 64,
+  "turns": 72,
+  "assumptions": {
+    "aggregate_input_tokens_per_user_turn_across_model_rounds": 20000,
+    "aggregate_output_tokens_per_user_turn_across_model_rounds": 600,
+    "cache_discount_assumed": false,
+    "larger_context_input_tokens": 50000,
+    "larger_context_output_tokens": 1200
+  },
+  "rows": [
+    {
+      "model": "openai/gpt-6-luna",
+      "input_usd_per_million": 0.09999999999999999,
+      "output_usd_per_million": 0.5,
+      "estimated_eight_cases_usd": 0.0207,
+      "larger_context_scenario_usd": 0.0504
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "input_usd_per_million": 0.09999999999999999,
+      "output_usd_per_million": 0.5,
+      "estimated_eight_cases_usd": 0.0207,
+      "larger_context_scenario_usd": 0.0504
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "input_usd_per_million": 0.75,
+      "output_usd_per_million": 3.75,
+      "estimated_eight_cases_usd": 0.15525,
+      "larger_context_scenario_usd": 0.37799999999999995
+    },
+    {
+      "model": "google/gemini-3.5-flash-lite",
+      "input_usd_per_million": 0.3,
+      "output_usd_per_million": 2.5,
+      "estimated_eight_cases_usd": 0.0675,
+      "larger_context_scenario_usd": 0.16199999999999998
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it",
+      "input_usd_per_million": 0.09,
+      "output_usd_per_million": 0.3,
+      "estimated_eight_cases_usd": 0.01782,
+      "larger_context_scenario_usd": 0.04374
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "input_usd_per_million": 0.09,
+      "output_usd_per_million": 0.33999999999999997,
+      "estimated_eight_cases_usd": 0.018035999999999996,
+      "larger_context_scenario_usd": 0.04417199999999999
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning",
+      "input_usd_per_million": 0.07,
+      "output_usd_per_million": 0.19999999999999998,
+      "estimated_eight_cases_usd": 0.013680000000000001,
+      "larger_context_scenario_usd": 0.03366
+    },
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "input_usd_per_million": 0.065,
+      "output_usd_per_million": 0.26,
+      "estimated_eight_cases_usd": 0.013103999999999998,
+      "larger_context_scenario_usd": 0.032058
+    }
+  ],
+  "estimated_total_usd": 0.32679,
+  "larger_context_total_usd": 0.79443,
+  "observed_luna_height_check": {
+    "actual_reported_cost_usd": 0.00062011,
+    "input_tokens": 9851,
+    "output_tokens": 180,
+    "model_requests": 3
+  },
+  "spending_ceiling_usd": 2.0
+}

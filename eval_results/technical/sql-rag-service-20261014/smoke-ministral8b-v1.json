@@ -1,0 +1,204 @@
+{
+  "created_utc": "2026-10-14T12:38:53.660567+00:00",
+  "mode": "smoke",
+  "provider": "ollama",
+  "model": "ministral-3:8b",
+  "corpus_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "pack_manifest_sha256": "89243539a8c4ea7304e5034795d4c73938de84d597c434ad28cd314fb3cfa555",
+  "service_sha256": "177afc9544c2aeec779e11edf7f38d5b2abf0b1d5a21e8b903de1ef198632b12",
+  "adapter_sha256": "1a592f879b46f918902961d6ac18c7daaac950ad7407e08b41a6077850ffc365",
+  "session_sha256": "0adaba614a361d3bae6e02b7fd6576af82ee04724d989ac0f7ea0675e45711ac",
+  "retrieval_sha256": "9ca73148f64c47c18d11055c7a3072bfb9a3cff3af2fb3af0cd5fd00517f77b9",
+  "preparation_seconds": 10.431279666954651,
+  "streamed": false,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Quelle est la hauteur de selle de la Honda CB 500 F 2020 ?",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_obrez7bi",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Honda CB 500 F 2020",
+            "scope": {
+              "brand": "Honda",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "CB",
+                "500",
+                "F"
+              ]
+            }
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 605.278
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 605.278
+          },
+          "seconds": 0.6054585829842836
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "555a2d677db34a14:identity",
+          "kind": "source_row",
+          "id": "555a2d677db34a14",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+        }
+      ],
+      "timing": {
+        "full_answer_seconds": 30.01116458303295,
+        "model_seconds": 29.40530083293561,
+        "tool_seconds": 0.6054585829842836,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 2227,
+        "output_tokens": 68,
+        "cost_usd": null,
+        "peak_memory_bytes": 1788100608,
+        "requests": [
+          {
+            "input_tokens": 2227,
+            "output_tokens": 68,
+            "cost_usd": null,
+            "load_seconds": 5.655108291,
+            "native_model_seconds": 19.265767916
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "ministral-3:8b",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 1200,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "case_id": "smoke",
+      "repeat": 1,
+      "candidate_id": "ollama:ministral-3:8b"
+    }
+  ]
+}

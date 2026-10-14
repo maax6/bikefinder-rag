@@ -54,6 +54,19 @@ def _timestamp(value):
         return None
 
 
+def _progress_record(row):
+    parsed = json.loads(row["result"]) if row["result"] else {}
+    identity = parsed.get("identity", {})
+    name = identity.get("raw_name") or " ".join(
+        str(identity[key]) for key in ("brand", "model", "year") if identity.get(key) is not None
+    ) or "Fiche sans identité"
+    return {
+        "name": str(name)[:300], "year": row["year"], "url": row["url"],
+        "state": row["state"], "updated_at": row["updated_at"],
+        "error": row["error"], "http_status": row["status"],
+    }
+
+
 def read_progress(out_dir: Path, *, now=None, process_checker=collector_process_alive) -> dict:
     now = now or datetime.now(timezone.utc)
     database = out_dir.resolve() / "crawl.sqlite3"
@@ -68,6 +81,10 @@ def read_progress(out_dir: Path, *, now=None, process_checker=collector_process_
             "SELECT url,year,state,updated_at,status,error,result FROM pages "
             "WHERE attempts>0 ORDER BY updated_at DESC LIMIT 8"
         ))
+        last_success = conn.execute(
+            "SELECT url,year,state,updated_at,status,error,result FROM pages "
+            "WHERE state='success' ORDER BY updated_at DESC,ordinal DESC LIMIT 1"
+        ).fetchone()
         cutoff = (now - timedelta(minutes=20)).isoformat()
         times = [row[0] for row in conn.execute(
             "SELECT updated_at FROM pages WHERE state IN ('success','needs_review') "
@@ -108,15 +125,7 @@ def read_progress(out_dir: Path, *, now=None, process_checker=collector_process_
         label, kind = "Actif · aucune fiche récente", "waiting"
     else:
         label, kind = "Collecte en cours", "running"
-    records = []
-    for row in recent:
-        parsed = json.loads(row["result"]) if row["result"] else {}
-        identity = parsed.get("identity", {})
-        records.append({
-            "name": str(identity.get("raw_name") or "Fiche sans titre")[:300],
-            "year": row["year"], "url": row["url"], "state": row["state"],
-            "updated_at": row["updated_at"], "error": row["error"],
-        })
+    records = [_progress_record(row) for row in recent]
     return {
         "server_time": now.isoformat(), "updated_at": updated_at,
         "source": "Motoplanete", "counts": counts, "total": total,
@@ -128,6 +137,7 @@ def read_progress(out_dir: Path, *, now=None, process_checker=collector_process_
         "eta_seconds": remaining * 3600 / rate if rate and fresh and alive is True else None,
         "minimum_remaining_seconds": remaining * 10,
         "out_dir": str(out_dir.resolve()), "last_records": records, "years": years,
+        "last_success": _progress_record(last_success) if last_success else None,
     }
 
 

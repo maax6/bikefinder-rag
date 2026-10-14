@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-14T19:23:56.860802+00:00",
+  "basis": "Local replay of recorded tool requests; not a third paid benchmark or evidence of new model scores",
+  "new_cloud_requests": 0,
+  "baseline_run_sha256": "c04dc84a881ff184d4f6560b57574577a464a21874277c520005aad16a9a85c9",
+  "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "source_unchanged": true,
+  "model_answers_regenerated": false,
+  "checks": [
+    {
+      "id": "luna-Q37-scope",
+      "status": "passed",
+      "before": {
+        "status": "ok",
+        "matches": 2,
+        "searched_fiches": 7
+      },
+      "after": {
+        "mistyped_scope": {
+          "status": "invalid_arguments",
+          "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+          "payload": {
+            "error": "The requested scope contains catalogue IDs that do not exist; no count or selection was produced.",
+            "argument": "arguments.scope.object_ids",
+            "unknown_object_ids": [
+              "d51c233da84e1c0f"
+            ],
+            "next_action": "Reuse the exact IDs from a prior tool result or resolve_models. Do not drop, guess or substitute an ID; the scope must be corrected before comparing counts."
+          },
+          "evidence": [],
+          "missing": [],
+          "coverage": {
+            "requested_scope": {},
+            "searched_fiches": 0,
+            "searched_passages": null,
+            "exhaustive": false,
+            "truncation_reason": "invalid_arguments"
+          },
+          "pagination": {
+            "returned": 0,
+            "total": 0,
+            "next_cursor": null
+          },
+          "timing_ms": 0.366
+        },
+        "correct_count": 3,
+        "recovered_selection": [
+          {
+            "identity": {
+              "id": "d51c2336299ebb74",
+              "brand": "Yamaha",
+              "model": "1000 MT-10",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html",
+              "source_sha256": "498007baab49cd229ad88257721890f77adc7edd6cca7b05159b56ab8731d602"
+            },
+            "measures": {
+              "seat_height_mm": {
+                "value": 825.0,
+                "unit": "mm",
+                "evidence_ids": [
+                  "d51c2336299ebb74:row:2"
+                ],
+                "qualification": null
+              }
+            },
+            "equipment": [],
+            "passages": []
+          },
+          {
+            "identity": {
+              "id": "2dd9c39da84e1c0f",
+              "brand": "Yamaha",
+              "model": "850 MT-09 SP",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html",
+              "source_sha256": "8602b1a5c3d4c0dcece8d4befd3c2850eceb192dc4641b448d96d85996bc69cf"
+            },
+            "measures": {
+              "seat_height_mm": {
+                "value": 815.0,
+                "unit": "mm",
+                "evidence_ids": [
+                  "2dd9c39da84e1c0f:row:2"
+                ],
+                "qualification": null
+              }
+            },
+            "equipment": [],
+            "passages": []
+          },
+          {
+            "identity": {
+              "id": "4a0becebc6f3922e",
+              "brand": "Yamaha",
+              "model": "MT-10 SP",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html",
+              "source_sha256": "9375d4dd8d2edc8baa2210e18255781166501478d4e84c4757d4ba16f65003da"
+            },
+            "measures": {
+              "seat_height_mm": {
+                "value": 825.0,
+                "unit": "mm",
+                "evidence_ids": [
+                  "4a0becebc6f3922e:row:2"
+                ],
+                "qualification": null
+              }
+            },
+            "equipment": [],
+            "passages": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "gold-wing-family",
+      "status": "passed",
+      "before_count": 65,
+      "after_count": 64,
+      "brands": [
+        "Honda"
+      ],
+      "natural_scope_count": 64
+    },
+    {
+      "id": "haiku-Q24-original-row-citation",
+      "status": "passed",
+      "proof": {
+        "evidence_id": "c0a73ac3d40825ff:row:12",
+        "kind": "passage",
+        "object_id": "c0a73ac3d40825ff",
+        "section": "Transmission",
+        "text": "boîte à rapports Boite à 7 rapports robotisée DCT avec marche arrière",
+        "origin_equipment_evidence_ids": [
+          "c0a73ac3d40825ff:equipment:c45782c84268"
+        ],
+        "subject": "Honda GL 1800 GOLDWING Tour DCT/Airbag (2018)"
+      },
+      "note": "Previously nested source text is now an explicit citable proof; no new source text."
+    },
+    {
+      "id": "flash-lite-Q37-identity-citations",
+      "status": "passed",
+      "identity_proofs": 8,
+      "note": "Identity-only proof availability is verified; this does not establish equipment claims or model answer correctness."
+    },
+    {
+      "id": "qwen-Q37-selection-survives-detail-truncation",
+      "status": "passed",
+      "before_rows": 7,
+      "after_rows": 8,
+      "omitted_measure_fields": [
+        "autonomy_km",
+        "catalog_price_eur",
+        "displacement_ccm",
+        "weight_wet_kg"
+      ],
+      "page_scope": {
+        "object_ids": [
+          "d51c2336299ebb74",
+          "2dd9c39da84e1c0f",
+          "9a62a4f7e47cf67d",
+          "4a0becebc6f3922e",
+          "7563348d531528c1",
+          "21e1b2941ea62445",
+          "0e7f5b6e5ec6b048",
+          "d4f89f69096690e2"
+        ],
+        "returned": 8,
+        "total_matches": 8,
+        "all_matches_in_page": true,
+        "identity_evidence_ids": [
+          "d51c2336299ebb74:identity",
+          "2dd9c39da84e1c0f:identity",
+          "9a62a4f7e47cf67d:identity",
+          "4a0becebc6f3922e:identity",
+          "7563348d531528c1:identity",
+          "21e1b2941ea62445:identity",
+          "0e7f5b6e5ec6b048:identity",
+          "d4f89f69096690e2:identity"
+        ],
+        "criteria": {
+          "scope": {
+            "brand": "Yamaha",
+            "min_year": 2020,
+            "max_year": 2020
+          },
+          "equipment_filters": [
+            {
+              "name": "ABS",
+              "status": "standard"
+            },
+            {
+              "name": "shifter",
+              "status": "standard"
+            }
+          ]
+        }
+      },
+      "view_status": "partial",
+      "note": "The recorded model is not re-run; its factual mistakes remain historical observations."
+    }
+  ],
+  "implementation_sha256": {
+    "src/bikefinder_rag/catalog/sql_rag_service.py": "1e76d944635c8fbf5f57443bd84e386dbbf095aa6688e07b99d7259be2f4d1e8",
+    "src/bikefinder_rag/agent/sql_rag_context.py": "a5ed51927cefc3e793a281a6954f424ecd4bda44faf8f29c5340f0ee65723014",
+    "src/bikefinder_rag/agent/sql_rag_session.py": "d50a0ff6e34eed46cf7890a01ed69da763a67f91c156a133c419025e9622832d",
+    "src/bikefinder_rag/agent/sql_rag_output.py": "3e618d52dd4e67188e889c877d9fdb00161f49410b07850df0526bde4dbe6a4f",
+    "scripts/check_sql_rag_regressions.py": "ce8d107317e13567ca3a16383e16d5ef4648a714f210ebdd9ca785ba49f7dd16"
+  }
+}

@@ -2,31 +2,31 @@
   "data_integrity": {
     "motorcycles": 32395,
     "model_families": 4335,
-    "review_chunks": 104418,
-    "families_with_reviews": 1785,
-    "motos_with_reviews": 19532,
-    "very_short": 1003,
-    "avg_len": 221,
+    "review_chunks": 121191,
+    "families_with_reviews": 2068,
+    "motos_with_reviews": 21956,
+    "very_short": 1108,
+    "avg_len": 238,
     "null_embeddings": 0,
     "orphan_chunks": 0,
     "exact_duplicate_groups": 0
   },
   "self_retrieval": {
     "sample_size": 30,
-    "rank1_hits": 30,
-    "rank1_hit_rate": 1.0,
-    "avg_self_distance": 0.0
+    "rank1_hits": 26,
+    "rank1_hit_rate": 0.8666666666666667,
+    "avg_self_distance": 0.041363690835488784
   },
   "keyword_lift": [
     {
       "theme": "fuel economy / mileage",
       "query": "how good is the fuel economy and mileage",
-      "base_count": 1816,
-      "base_rate": 0.0174,
+      "base_count": 1818,
+      "base_rate": 0.015,
       "top_k": 30,
       "hits_in_top_k": 20,
       "hit_rate": 0.6667,
-      "lift": 38.33,
+      "lift": 44.44,
       "example_hits": [
         {
           "brand": "Kawasaki",
@@ -51,12 +51,12 @@
     {
       "theme": "vibration at speed",
       "query": "does the engine vibrate a lot at speed",
-      "base_count": 671,
-      "base_rate": 0.0064,
+      "base_count": 959,
+      "base_rate": 0.0079,
       "top_k": 30,
       "hits_in_top_k": 24,
       "hit_rate": 0.8,
-      "lift": 124.49,
+      "lift": 101.1,
       "example_hits": [
         {
           "brand": "Suzuki",
@@ -81,12 +81,12 @@
     {
       "theme": "reliability problems",
       "query": "is this bike reliable or does it break down",
-      "base_count": 12206,
-      "base_rate": 0.1169,
+      "base_count": 12477,
+      "base_rate": 0.103,
       "top_k": 30,
       "hits_in_top_k": 8,
       "hit_rate": 0.2667,
-      "lift": 2.28,
+      "lift": 2.59,
       "example_hits": [
         {
           "brand": "Husaberg",
@@ -112,11 +112,11 @@
       "theme": "seat comfort",
       "query": "is the seat comfortable for long rides",
       "base_count": 136,
-      "base_rate": 0.0013,
+      "base_rate": 0.0011,
       "top_k": 30,
       "hits_in_top_k": 4,
       "hit_rate": 0.1333,
-      "lift": 102.37,
+      "lift": 118.81,
       "example_hits": [
         {
           "brand": "Harley-Davidson",
@@ -142,11 +142,11 @@
       "theme": "beginner friendly",
       "query": "is this a good first bike for a beginner",
       "base_count": 1507,
-      "base_rate": 0.0144,
+      "base_rate": 0.0124,
       "top_k": 30,
       "hits_in_top_k": 14,
       "hit_rate": 0.4667,
-      "lift": 32.33,
+      "lift": 37.53,
       "example_hits": [
         {
           "brand": "Suzuki",
@@ -171,19 +171,13 @@
     {
       "theme": "brakes",
       "query": "how good are the brakes",
-      "base_count": 2652,
-      "base_rate": 0.0254,
+      "base_count": 2654,
+      "base_rate": 0.0219,
       "top_k": 30,
-      "hits_in_top_k": 17,
-      "hit_rate": 0.5667,
-      "lift": 22.31,
+      "hits_in_top_k": 30,
+      "hit_rate": 1.0,
+      "lift": 45.66,
       "example_hits": [
-        {
-          "brand": "Suzuki",
-          "model": "VS 800 Intruder",
-          "distance": 0.284,
-          "text": "how good are these bikes?"
-        },
         {
           "brand": "Yamaha",
           "model": "RD 500 LC",
@@ -195,6 +189,12 @@
           "model": "Active 110",
           "distance": 0.3023,
           "text": "poor brake system"
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 450 S",
+          "distance": 0.3069,
+          "text": "uhh, the brakes"
         }
       ]
     }
@@ -258,8 +258,8 @@
       "top_k": 10,
       "overlap_count": 3,
       "jaccard": 0.176,
-      "overlap_count_reranked": 3,
-      "jaccard_reranked": 0.176
+      "overlap_count_reranked": 2,
+      "jaccard_reranked": 0.111
     },
     {
       "english_query": "how good is the fuel economy and mileage",
@@ -279,8 +279,10 @@
       "top_k": 10,
       "hits_dense": 4,
       "hits_reranked": 6,
-      "hits_shipped_fr": 5,
-      "hits_shipped_en": 9
+      "hits_shipped_fr": 6,
+      "hits_shipped_en": 9,
+      "fr_docs_shipped_fr": 0,
+      "fr_docs_shipped_en": 0
     },
     {
       "theme": "vibration",
@@ -289,38 +291,46 @@
       "top_k": 10,
       "hits_dense": 6,
       "hits_reranked": 10,
-      "hits_shipped_fr": 9,
-      "hits_shipped_en": 5
+      "hits_shipped_fr": 7,
+      "hits_shipped_en": 4,
+      "fr_docs_shipped_fr": 2,
+      "fr_docs_shipped_en": 0
     },
     {
       "theme": "seat comfort",
       "french_query": "la selle est-elle confortable sur longs trajets",
       "english_query": "how does the saddle feel on a long ride",
       "top_k": 10,
-      "hits_dense": 1,
-      "hits_reranked": 3,
-      "hits_shipped_fr": 2,
-      "hits_shipped_en": 1
+      "hits_dense": 5,
+      "hits_reranked": 8,
+      "hits_shipped_fr": 8,
+      "hits_shipped_en": 1,
+      "fr_docs_shipped_fr": 9,
+      "fr_docs_shipped_en": 0
     },
     {
       "theme": "beginner",
       "french_query": "est-ce une bonne premiere moto pour un debutant",
       "english_query": "is this a good bike to learn on",
       "top_k": 10,
-      "hits_dense": 3,
-      "hits_reranked": 3,
-      "hits_shipped_fr": 3,
-      "hits_shipped_en": 1
+      "hits_dense": 4,
+      "hits_reranked": 7,
+      "hits_shipped_fr": 4,
+      "hits_shipped_en": 1,
+      "fr_docs_shipped_fr": 1,
+      "fr_docs_shipped_en": 0
     },
     {
       "theme": "brakes",
       "french_query": "les freins sont-ils bons",
       "english_query": "how well does it stop in an emergency",
       "top_k": 10,
-      "hits_dense": 0,
-      "hits_reranked": 0,
-      "hits_shipped_fr": 1,
-      "hits_shipped_en": 2
+      "hits_dense": 10,
+      "hits_reranked": 10,
+      "hits_shipped_fr": 9,
+      "hits_shipped_en": 1,
+      "fr_docs_shipped_fr": 9,
+      "fr_docs_shipped_en": 0
     }
   ]
 }

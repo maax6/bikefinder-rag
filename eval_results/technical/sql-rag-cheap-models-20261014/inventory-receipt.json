@@ -1,0 +1,15 @@
+{
+  "fetched_utc": "2026-10-14T14:21:32.016770+00:00",
+  "endpoint": "https://openrouter.ai/api/v1/models",
+  "requested": [
+    "openai/gpt-6-luna",
+    "anthropic/claude-haiku-5.5",
+    "google/gemini-3.8-flash",
+    "google/gemini-3.5-flash-lite",
+    "google/gemma-4-26b-a4b-it",
+    "google/gemma-4-31b-it",
+    "nvidia/nemotron-3.5-lightning",
+    "qwen/qwen3.5-flash-02-23"
+  ],
+  "missing": []
+}

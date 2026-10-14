@@ -52,7 +52,7 @@ def local_url(value):
     return value.rstrip("/")
 
 
-def invoke_local(system, payload, schema, *, num_predict=700, timeout_seconds=None):
+def invoke_local(system, payload, schema, *, num_predict=700, timeout_seconds=None, model_name=None, num_ctx=8192):
     """Shared loopback-only Mistral transport; callers execute tools themselves."""
     from langchain_ollama import ChatOllama
     from langsmith import tracing_context
@@ -64,15 +64,19 @@ def invoke_local(system, payload, schema, *, num_predict=700, timeout_seconds=No
         if not math.isfinite(timeout_seconds) or timeout_seconds <= 0:
             raise ValueError("Local turn deadline expired")
         timeout = min(timeout, timeout_seconds)
-    model = os.getenv("OLLAMA_MODEL", "mistral-small3.2")
-    if model not in {"mistral-small3.2", "mistral-small3.2:latest"}:
+    model = model_name or os.getenv("OLLAMA_MODEL", "mistral-small3.2")
+    allowed = {"mistral-small3.2", "mistral-small3.2:latest"}
+    if model_name is not None:
+        allowed |= {"ministral-3:3b", "ministral-3:8b", "qwen3.5:4b"}
+    if model not in allowed:
         raise ValueError("The RAG writer requires the configured local Mistral model")
     user = json.dumps(payload, ensure_ascii=False)
     if len(user) > 24000:
         raise ValueError("Evidence exceeds the bounded context; no silent truncation")
-    llm = ChatOllama(model=model, base_url=host, temperature=0, num_ctx=8192,
+    options = {"reasoning": False} if model == "qwen3.5:4b" else {}
+    llm = ChatOllama(model=model, base_url=host, temperature=0, num_ctx=num_ctx,
                      num_predict=num_predict, format=schema, keep_alive="20m", cache=False,
-                     client_kwargs={"timeout": timeout, "trust_env": False, "follow_redirects": False}, callbacks=[])
+                     client_kwargs={"timeout": timeout, "trust_env": False, "follow_redirects": False}, callbacks=[], **options)
     # The non-streaming HTTP read has a bounded timeout. No token stream can
     # silently keep resetting the read deadline; no LangSmith export is enabled.
     with tracing_context(enabled=False, parent=False):

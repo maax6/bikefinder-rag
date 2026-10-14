@@ -1,0 +1,18 @@
+{
+  "baseline_run_sha256": "5d8dee1a0bbd77118fae77636fd95f942abb89bf6f2dd14644622cee025b3889",
+  "saved": [
+    "scripts/screen_sql_rag_models.py",
+    "src/bikefinder_rag/agent/sql_rag_adapters.py",
+    "src/bikefinder_rag/agent/sql_rag_session.py",
+    "src/bikefinder_rag/catalog/sql_rag_service.py",
+    "src/bikefinder_rag/catalog/sql_rag_retrieval.py"
+  ],
+  "already_changed": [],
+  "sha256": {
+    "scripts/screen_sql_rag_models.py": "cf289d4d9da0801610928e89ace033f553aae38cd65a8c44c2c5fbd2fcd0956a",
+    "src/bikefinder_rag/agent/sql_rag_adapters.py": "fd72c22f425b498796150a93192833176617db543b23954464b5ccf0941e0a54",
+    "src/bikefinder_rag/agent/sql_rag_session.py": "2a7c0c5c21cf6bce921f6916856738f8f01716c4e02a437020394a6726e6990a",
+    "src/bikefinder_rag/catalog/sql_rag_service.py": "08228879eb7ab7f34b66eba1ef0d9f4958f44290d402518b161ad83d799b744a",
+    "src/bikefinder_rag/catalog/sql_rag_retrieval.py": "f4bc7c6c536a97fb1d8cb45d244359c2067ad585e61edd5ed442fc7af9d1150d"
+  }
+}

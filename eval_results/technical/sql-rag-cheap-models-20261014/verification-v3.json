@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-14T17:17:51.397005+00:00",
+  "baseline_sha256": "5d8dee1a0bbd77118fae77636fd95f942abb89bf6f2dd14644622cee025b3889",
+  "new_run_sha256": "c04dc84a881ff184d4f6560b57574577a464a21874277c520005aad16a9a85c9",
+  "questions_and_references_identical": true,
+  "same_exact_eight_models": true,
+  "source_unchanged": true,
+  "sessions_each_pass": 64,
+  "new_observed_turns": 67,
+  "expected_turns_each_review": 72,
+  "correct_cases_before": 26,
+  "correct_cases_after": 34,
+  "new_input_budget_usd": 2,
+  "new_conservative_input_debit_usd": 0.7605675600000003,
+  "new_peak_input_reservation_usd": 0.7605675600000003,
+  "new_reported_cost_usd": 0.15329673300000002,
+  "context_peak_characters": 30590,
+  "scope": "One development pass per pipeline; prices/routes/cache/load and enlarged output/round budgets are disclosed; not isolated model accuracy."
+}

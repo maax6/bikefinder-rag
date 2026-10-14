@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Collect technical records 4 fiches per request via the site comparator.
 
-Drop-in for collect_technical_data.py: same --out store, same lock, same
-robots.txt Crawl-delay pacing; only the number of requests changes.
+Same options/store/lock/pacing as collect_technical_data.py. Fiches with autonomy
+are also fetched individually to preserve their complete source qualifications.
+This reduces the theoretical fourfold gain according to the sample composition.
 
 Pilot: --urls-file data/motoplanete/fiche_urls.txt --limit 20
 Full discovery/crawl: --refresh-sitemaps --all

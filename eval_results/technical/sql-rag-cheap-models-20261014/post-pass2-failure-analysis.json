@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "status": "local_corrections_verified",
+  "date": "2026-10-14",
+  "language": "fr",
+  "scope": "Analyse des observations P1/P2 et corrections locales après P2 ; aucune troisième passe cloud.",
+  "sources": {
+    "baseline_run": "pilot-v2.json",
+    "baseline_review": "semantic-review.json",
+    "second_run": "pilot-v3.json",
+    "second_review": "semantic-review-v3.json",
+    "baseline_run_sha256": "5d8dee1a0bbd77118fae77636fd95f942abb89bf6f2dd14644622cee025b3889",
+    "second_run_sha256": "c04dc84a881ff184d4f6560b57574577a464a21874277c520005aad16a9a85c9",
+    "rubric_sha256": "2126812ff27f35bf46168e8211882de5107b00b80264a419de47e536b55bd6c9",
+    "html": "benchmark.html",
+    "local_checks": "post-pass2-regression-checks.json",
+    "narrative": "../../../docs/sql-rag-remaining-failures-20261014.md",
+    "local_service_verification": "post-pass2-service-verification.json",
+    "local_checks_sha256": "a4e6c0bd28d2eb280cb801e12b0bc50a0c30a3a7a36c331a9840c7a934aa6860",
+    "local_service_verification_sha256": "76a8f15f6cb4b93f0729f122664f4409a54b23906585a3852f20635c39a3d688"
+  },
+  "historical_pass2_counts": {
+    "sessions": 64,
+    "expected_turns": 72,
+    "executed_turns": 67,
+    "finalized_turns": 46,
+    "blocked_executed_turns": 21,
+    "missing_followup_turns": 5,
+    "blocking_errors": {
+      "provider_http_429": 7,
+      "turn_deadline": 4,
+      "evidence_reference": 7,
+      "answer_schema": 3
+    },
+    "semantic_categories": {
+      "correct": 36,
+      "partial": 4,
+      "incorrect": 6,
+      "failure": 26
+    },
+    "fully_correct_cases_before": 26,
+    "fully_correct_cases_after": 34,
+    "case_score_regressions": [
+      {
+        "model": "google/gemini-3.8-flash",
+        "case_id": "Q10",
+        "before_score": 2,
+        "after_score": 0,
+        "cause": "provider_latency"
+      },
+      {
+        "model": "google/gemma-4-26b-a4b-it",
+        "case_id": "Q01",
+        "before_score": 2,
+        "after_score": 0,
+        "cause": "provider_quota"
+      },
+      {
+        "model": "google/gemma-4-26b-a4b-it",
+        "case_id": "Q10",
+        "before_score": 2,
+        "after_score": 0,
+        "cause": "provider_quota"
+      },
+      {
+        "model": "google/gemma-4-26b-a4b-it",
+        "case_id": "Q17",
+        "before_score": 2,
+        "after_score": 0,
+        "cause": "provider_quota"
+      },
+      {
+        "model": "qwen/qwen3.5-flash-02-23",
+        "case_id": "Q01",
+        "before_score": 2,
+        "after_score": 0,
+        "cause": "identity_fact_join"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "luna-q37-invalid-scope-id",
+      "origin": "tool_scope_validation",
+      "cases": [
+        "openai/gpt-6-luna/Q37/2"
+      ],
+      "observed": "Compte de 3 sur huit IDs corrects, puis liste de 2 après une faute de copie sur un ID ; ancien outil ok/exhaustif malgré sept fiches examinées.",
+      "trace": {
+        "correct_id": "d51c2336299ebb74",
+        "unknown_id": "d51c233da84e1c0f",
+        "unknown_ids_observed_in_run": 1,
+        "first_count": 3,
+        "first_scope_size": 8,
+        "next_list_count": 2,
+        "next_searched_fiches": 7,
+        "next_status": "ok",
+        "next_exhaustive": true
+      },
+      "correction": "Rejeter les IDs inexistants du périmètre avant tout compte/sélection ; aucune substitution ni réduction silencieuse.",
+      "local_status": "verified_local",
+      "local_result": {
+        "invalid_scope_status": "invalid_arguments",
+        "false_count_produced": false,
+        "correct_count": 3,
+        "recovered_selection_count": 3
+      }
+    },
+    {
+      "id": "nested-source-proof-not-registered",
+      "origin": "evidence_exposure",
+      "cases": [
+        "anthropic/claude-haiku-5.5/Q24/1"
+      ],
+      "observed": "Ligne citée effectivement livrée dans equipment.decision.passages[], mais non reconnue dans le registre des preuves.",
+      "evidence_id": "c0a73ac3d40825ff:row:12",
+      "correction": "Promouvoir les passages sources emboîtés livrés en preuves citables, avec leur texte, identité et provenance.",
+      "local_status": "verified_local",
+      "local_result": {
+        "explicit_citable_proof": "c0a73ac3d40825ff:row:12",
+        "new_source_text_added": false
+      }
+    },
+    {
+      "id": "query-result-identity-proof-missing",
+      "origin": "evidence_exposure",
+      "cases": [
+        "google/gemini-3.5-flash-lite/Q37/1"
+      ],
+      "observed": "Quatre citations :identity rejetées alors que les fiches et leur source sont livrées par query_catalog, sans preuve identité correspondante.",
+      "evidence_ids": [
+        "0e7f5b6e5ec6b048:identity",
+        "21e1b2941ea62445:identity",
+        "7563348d531528c1:identity",
+        "d4f89f69096690e2:identity"
+      ],
+      "correction": "Livrer des preuves identity_only pour les lignes et garder les noms près des faits ; elles ne prouvent pas des mesures ou équipements.",
+      "local_status": "verified_local",
+      "local_result": {
+        "identity_proofs": 8,
+        "evidence_scope": "identity_only",
+        "equipment_or_measure_claims_automatically_established": false
+      }
+    },
+    {
+      "id": "object-id-used-as-evidence-id",
+      "origin": "answer_reference_type",
+      "cases": [
+        "nvidia/nemotron-3.5-lightning/Q01/1",
+        "nvidia/nemotron-3.5-lightning/Q24/1",
+        "nvidia/nemotron-3.5-lightning/Q27/1",
+        "qwen/qwen3.5-flash-02-23/Q27/1",
+        "google/gemini-3.5-flash-lite/Q27/1"
+      ],
+      "observed": "object_id nus employés dans claims.evidence_ids ; aucun passage factuel ne doit être inventé à partir de ces IDs.",
+      "correction": "Une demande de réparation bornée pour cette erreur de type, avec les seules preuves livrées ; une preuve inconnue reste rejetée et aucun ID n’est converti automatiquement.",
+      "local_status": "verified_local",
+      "local_result": {
+        "bounded_repair_tested": true,
+        "unknown_evidence_still_rejected": true,
+        "object_ids_automatically_converted_to_proofs": false
+      }
+    },
+    {
+      "id": "gold-wing-family-cross-word-match",
+      "origin": "tool_lexical_scope",
+      "cases": [
+        "anthropic/claude-haiku-5.5/Q27/1"
+      ],
+      "observed": "La normalisation compacte de gold/wing inclut la Triumph Street Twin Gold Line dans 65 fiches ; premier millésime 2018 juste, périmètre annoncé faux.",
+      "trace": {
+        "unexpected_object_id": "2eb790a5ef2f07ec",
+        "unexpected_brand": "Triumph",
+        "unexpected_model": "900 Street Twin Gold Line",
+        "previous_searched_fiches": 65,
+        "corrected_family_fiches": 64,
+        "corrected_family_brand": "Honda"
+      },
+      "correction": "Correspondance lexicale composée respectant les frontières de mots.",
+      "local_status": "verified_local",
+      "local_result": {
+        "count": 64,
+        "brands": [
+          "Honda"
+        ],
+        "natural_scope_count": 64
+      }
+    },
+    {
+      "id": "qwen-partial-page-and-followup-synthesis",
+      "origin": "context_and_answer_synthesis",
+      "cases": [
+        "qwen/qwen3.5-flash-02-23/Q37/1",
+        "qwen/qwen3.5-flash-02-23/Q37/2"
+      ],
+      "observed": "Une page explicitement partielle de sept lignes sur huit, puis absence de nouvel appel au second tour, compte 3/2 contradictoire et mauvaise hauteur de MT-10 SP.",
+      "trace": {
+        "raw_characters": 52878,
+        "delivered_characters": 23881,
+        "total_matches": 8,
+        "delivered_rows": 7,
+        "truncation_reason": "context_budget",
+        "only_partial_new_result_in_run": true,
+        "followup_tool_calls": 0,
+        "mt10_sp_received_seat_height_mm": 825
+      },
+      "correction": "Conserver les huit identités et seize preuves équipement avec page_scope réutilisable ; retirer explicitement des colonnes secondaires avant les lignes et protéger les critères, le tri et les preuves déjà citées.",
+      "local_status": "verified_local",
+      "local_result": {
+        "delivered_rows": 8,
+        "equipment_proofs": 16,
+        "delivered_characters": 23417,
+        "view_status": "partial",
+        "omitted_measure_fields": [
+          "autonomy_km",
+          "catalog_price_eur",
+          "displacement_ccm",
+          "weight_wet_kg"
+        ],
+        "selection_object_ids_reusable": true,
+        "filter_and_sort_fields_preserved": true,
+        "protected_evidence_preserved": true,
+        "model_answer_regenerated": false
+      }
+    }
+  ],
+  "remaining_answer_errors": [
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "case_id": "Q01",
+      "issue": "Trois associations modèle/ID erronées, malgré compte exact."
+    },
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "case_id": "Q24",
+      "issue": "Équipement inconnu transformé en absent."
+    },
+    {
+      "model": "qwen/qwen3.5-flash-02-23",
+      "case_id": "Q34",
+      "issue": "Provenance officielle Honda inventée et conclusion portée sur la fiche standard."
+    },
+    {
+      "model": "google/gemini-3.5-flash-lite",
+      "case_id": "Q31",
+      "issue": "Mesures exactes mais citées avec des preuves identité ne contenant pas ces mesures."
+    },
+    {
+      "model": "google/gemini-3.5-flash-lite",
+      "case_id": "Q34",
+      "issue": "Indétermination de l’équipement de l’édition manquante omise."
+    },
+    {
+      "model": "google/gemma-4-31b-it",
+      "case_id": "Q34",
+      "issue": "Indétermination de l’équipement de l’édition manquante omise."
+    }
+  ],
+  "provider_and_protocol_limits": {
+    "provider_latency": "Quatre délais dominés par le modèle ; outils de 0 à 0.354 seconde. Flash Q27 n’obtient aucune première réponse cloud. Gemma31 Q37 reçoit une soumission après le délai, à 38.81 secondes.",
+    "provider_quota": "Sept HTTP429 Gemma26 ; le service ne contrôle pas la disponibilité du fournisseur.",
+    "format_repair_attempts": 3,
+    "format_repair_successes": 2,
+    "terminal_round_schema_failures": [
+      "nvidia/nemotron-3.5-lightning/Q34/1",
+      "nvidia/nemotron-3.5-lightning/Q37/1"
+    ],
+    "terminal_round_note": "Première soumission invalide au dernier round ; réserver une occasion de réparation est une piste de protocole, pas un gain mesuré."
+  },
+  "validation": {
+    "status": "passed_local",
+    "report": "post-pass2-regression-checks.json",
+    "method": "Rejeux locaux des défauts des traces et cas génériques, modèles simulés, aucune nouvelle requête cloud.",
+    "new_cloud_calls": 0,
+    "api_cost_of_local_checks_usd": 0,
+    "historical_runs_reviews_and_html_unchanged": true,
+    "third_cloud_pass_executed": false,
+    "new_model_success_rate_measured": false,
+    "limits": "La validation locale démontre le comportement du mécanisme corrigé ; elle ne prédit pas les futures réponses des modèles.",
+    "created_utc": "2026-10-14T19:23:56.860802+00:00",
+    "service_report": "post-pass2-service-verification.json",
+    "targeted_tests_passed": 126,
+    "targeted_tests_elapsed_seconds": 0.44,
+    "service_cases_validated": 40,
+    "service_tools_validated": 6,
+    "validated_index_passages": 105687,
+    "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+    "source_unchanged": true,
+    "implementation_sha256": {
+      "src/bikefinder_rag/catalog/sql_rag_service.py": "1e76d944635c8fbf5f57443bd84e386dbbf095aa6688e07b99d7259be2f4d1e8",
+      "src/bikefinder_rag/agent/sql_rag_context.py": "a5ed51927cefc3e793a281a6954f424ecd4bda44faf8f29c5340f0ee65723014",
+      "src/bikefinder_rag/agent/sql_rag_session.py": "d50a0ff6e34eed46cf7890a01ed69da763a67f91c156a133c419025e9622832d",
+      "src/bikefinder_rag/agent/sql_rag_output.py": "3e618d52dd4e67188e889c877d9fdb00161f49410b07850df0526bde4dbe6a4f",
+      "scripts/check_sql_rag_regressions.py": "ce8d107317e13567ca3a16383e16d5ef4648a714f210ebdd9ca785ba49f7dd16"
+    },
+    "model_answers_regenerated": false
+  },
+  "local_context_tradeoffs": {
+    "view_version": 2,
+    "per_result_limit_characters": 24000,
+    "total_tool_context_limit_characters": 32000,
+    "eight_bike_simple_list_characters": {
+      "raw": 28873,
+      "previous_view": 10863,
+      "corrected_view": 16849
+    },
+    "raw_results_replayed": 164,
+    "broken_references": 0,
+    "maximum_result_characters": 23996,
+    "partial_views": {
+      "historical_pass2_new_results": 1,
+      "corrected_local_replay": 3,
+      "corrected_cases": [
+        {
+          "kind": "resolution",
+          "returned_candidates": 47,
+          "requested_page_candidates": 50,
+          "occurrences": 2
+        },
+        {
+          "kind": "catalog_list",
+          "returned_rows": 8,
+          "total_matches": 8,
+          "omitted_secondary_columns": 4,
+          "occurrences": 1
+        }
+      ]
+    },
+    "note": "Identités lisibles et preuves supplémentaires occupent davantage de place. Les trois vues partielles sont annoncées ; cette vérification ne mesure pas la qualité de nouvelles réponses de modèles."
+  }
+}

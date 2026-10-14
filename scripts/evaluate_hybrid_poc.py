@@ -6,7 +6,6 @@ import hashlib
 import json
 from pathlib import Path
 import re
-import statistics
 import time
 import urllib.request
 from dotenv import dotenv_values

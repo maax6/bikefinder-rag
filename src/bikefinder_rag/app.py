@@ -6,6 +6,7 @@ Optional Anthropic/OpenRouter backends use a visitor-provided API key.
 import os
 import re
 import unicodedata
+from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -21,9 +22,10 @@ from bikefinder_rag.agent.loop import (
     run_agent,
 )
 from bikefinder_rag.db.client import get_connection
+from bikefinder_rag.ui import CSS, HERO, THEME, WELCOME
 
-
-CATALOG_RESEARCH_ENABLED = BACKEND == "ollama" and os.getenv("BIKEFINDER_CATALOG_RESEARCH") == "1"
+CATALOG_EXPERIMENT_ENABLED = BACKEND == "ollama" and os.getenv("BIKEFINDER_CATALOG_EXPERIMENT") == "1"
+CATALOG_RESEARCH_ENABLED = BACKEND == "ollama" and (os.getenv("BIKEFINDER_CATALOG_RESEARCH") == "1" or CATALOG_EXPERIMENT_ENABLED)
 
 
 def _is_retry(message: str) -> bool:
@@ -122,85 +124,164 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
     return chat_history, updated_history
 
 
-with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
-    gr.Markdown(
-        ("# 🏍️ Bikefinder — catalogue technique\n"
-         "Explorez une famille de motos sans année imposée. Pour une fiche précise, "
-         "indiquez le millésime et la variante. Les réponses présentent les sources et les preuves manquantes.")
-        if CATALOG_RESEARCH_ENABLED else
-        ("# 🏍️ Bikefinder — catalogue technique\n"
-         "Consultez une fiche par modèle et **millésime**, ou comparez plusieurs motos "
-         "d'une même année. Précisez la marque, le modèle, l'année et, si vous la "
-         "connaissez, la variante. Demandez les unités et les sources des caractéristiques.")
-    )
-    if BACKEND == "ollama":
-        if CATALOG_RESEARCH_ENABLED:
-            gr.Markdown(
-                "**Recherche locale** : Mistral choisit les recherches dans les fiches et rédige à partir des passages retrouvés. "
-                "Les noms, variantes et années sont vérifiés dans le catalogue local.\n\n"
-                "**Jev** est le seul service distant : il contrôle les preuves et les phrases proposées. "
-                "La question et les extraits nécessaires lui sont transmis. Une vérification insuffisante conserve les faits sources et signale les manques.\n\n"
-                "Les recherches peuvent prendre plus d’une minute. Aucune clé à saisir ici."
-            )
-        elif os.getenv('BIKEFINDER_JEV_ROUTER')=='1':
-            gr.Markdown('**Mode rapide** : Jev comprend la demande, puis le catalogue local fournit les réponses factuelles. Les questions et, pour vérifier une synthèse, les extraits nécessaires sont transmis au service distant Jev.')
-            gr.Markdown(f'**POC local** : `{OLLAMA_MODEL}` sert uniquement aux synthèses nécessaires. Budget de génération : {float(os.getenv("CATALOG_SYNTHESIS_TIMEOUT_SECONDS","30")):g} s, puis affichage des faits sources si la synthèse est trop lente ou non vérifiable. Aucune clé à saisir ici.')
-        else:
-            gr.Markdown(
-                f"**POC local** : modèle `{OLLAMA_MODEL}` exécuté avec Ollama, "
-                "sur le catalogue chargé sur votre machine. Aucune clé API nécessaire. "
-                f"Budget de traitement : {OLLAMA_TURN_TIMEOUT_SECONDS:g} s par question ; "
-                "une recherche déjà en cours peut prolonger l'attente."
-            )
-        api_key_input = gr.Textbox(visible=False)
-    else:
-        gr.Markdown(
-            "**POC avec modèle distant** : cette configuration utilise votre clé "
-            "[Anthropic](https://console.anthropic.com/) ou "
-            "[OpenRouter](https://openrouter.ai/keys), uniquement pour cette session. "
-            "Les questions et les fiches retenues sont transmises à ce fournisseur."
-        )
-        api_key_input = gr.Textbox(
-            label="Clé API (Anthropic ou OpenRouter)",
-            type="password",
-            placeholder="sk-ant-... or sk-or-...",
-        )
-    gr.Markdown(
-        "**Catalogue enrichi Motoplanète** : recherche par millésime et équipements "
-        "de série ou en option, avec les fiches sources. Les autonomies conservent "
-        "leurs mentions d’estimation. Une moto fictive reste hors du catalogue réel.\n\n"
-        "**Limites du catalogue** : la couverture des années, variantes et champs "
-        "est partielle. Une donnée absente reste **inconnue**, y compris pour un "
-        "équipement. Le poids sec et le poids tous pleins ne sont pas encore "
-        "normalisés séparément : leur comparaison doit rester prudente. "
-        "Le premier millésime présent ne prouve pas la date de lancement."
-    )
-    chatbot = gr.Chatbot(label="Questions techniques")
-    msg = gr.Textbox(
-        label="Votre question",
-        placeholder=("Une moto ou une famille, votre question…" if CATALOG_RESEARCH_ENABLED
-                     else "Fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance, couple, poids et sources ?"),
-    )
-    question_examples = gr.Examples(
-        examples=[
-            ["Quelles motos ont l'ABS en 2000 ?"],
-            ["Quelle est l'autonomie de la BMW R 1150 GS de 2000 ?"],
-            ["Donne l'ABS et l'autonomie de la CFMoto 800 MT Explore de 2025, avec la source."],
-            ["Donne la fiche technique de la Suzuki GSF 1200 N Bandit de 2000, avec les unités, les sources et les données inconnues."],
-            ["Compare la Suzuki GSF 1200 N Bandit et la Kawasaki ER-5 Twister de 2000 dans un tableau : cylindrée, puissance, couple et poids, avec les sources et les données inconnues."],
-        ],
-        inputs=msg,
-        label="Exemples de questions techniques",
-    )
-    agent_state = gr.State([])
+def clear_conversation():
+    """Start a new conversation with no hidden route or model history."""
+    return [], [], ""
 
-    msg.submit(
-        chat,
+
+with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
+    gr.HTML(HERO, apply_default_css=False, elem_id="bf-header")
+    agent_state = gr.State([])
+    with gr.Row(elem_id="bf-workspace"):
+        with gr.Column(scale=4, min_width=430, elem_id="bf-main"):
+            chatbot = gr.Chatbot(
+                label="Votre conversation",
+                elem_id="bf-chat",
+                height=590,
+                min_height=420,
+                placeholder=(WELCOME.replace("Donnez son modèle et son année.", "Donnez son modèle ou sa famille. L’année est facultative.")
+                             if CATALOG_RESEARCH_ENABLED else WELCOME),
+                layout="bubble",
+                buttons=["copy"],
+                feedback_options=None,
+            )
+            with gr.Row(elem_id="bf-composer"):
+                msg = gr.Textbox(
+                    label="Votre question",
+                    show_label=False,
+                    placeholder=("Une moto ou une famille, votre question…" if CATALOG_RESEARCH_ENABLED
+                                 else "Une moto, une année, une question…"),
+                    elem_id="bf-question",
+                    lines=1,
+                    max_lines=5,
+                    scale=6,
+                    min_width=180,
+                )
+                send = gr.Button("Envoyer ↗", variant="primary", scale=1, min_width=110, elem_id="bf-send")
+            with gr.Row(elem_id="bf-toolbar"):
+                gr.Markdown(("L’année est **facultative** pour explorer une famille. Vos relances gardent le contexte."
+                             if CATALOG_RESEARCH_ENABLED else "Précisez le **millésime**. Vos relances gardent le contexte."),
+                            elem_id="bf-toolbar-note")
+                reset = gr.Button("Nouvelle conversation", size="sm", scale=0, min_width=155, elem_id="bf-reset")
+        with gr.Column(scale=1, min_width=280, elem_id="bf-side"):
+            gr.Markdown("## Pour commencer\nChoisissez une question, puis adaptez-la.", elem_id="bf-side-title")
+            question_examples = gr.Examples(
+                examples=[
+                    ["Donne la fiche technique de la BMW F 900 R de 2020, avec les unités et les sources."],
+                    ["Compare la Yamaha MT-09 de 2020 et la Yamaha MT-09 de 2021 dans un tableau : cylindrée, puissance et poids."],
+                    ["Quelles motos ont l'ABS en 2000 ?"],
+                    ["Quelle est l'autonomie de la CFMoto 800 MT Explore de 2025, avec la source ?"],
+                    ["Combien de Yamaha de 2020 ont l'ABS et un shifter de série ?"],
+                ],
+                inputs=msg,
+                label="Exemples de questions techniques",
+                elem_id="bf-examples",
+                example_labels=[
+                    "Fiche · BMW F 900 R, 2020",
+                    "Comparer · MT-09, 2020 / 2021",
+                    "Équipements · ABS, 2000",
+                    "Autonomie · 800 MT Explore, 2025",
+                    "Filtrer · Yamaha, 2020",
+                ],
+            )
+            with gr.Accordion("Bien lire une réponse", open=False, elem_classes="bf-guide"):
+                gr.Markdown(
+                    "**Les fiches sources** accompagnent les caractéristiques. Vous pouvez les ouvrir pour vérifier un chiffre.\n\n"
+                    "**Série, option, inconnu** : une donnée absente reste **inconnue**, y compris pour un équipement.\n\n"
+                    "**Les poids** gardent leur type : poids sec et poids tous pleins ne sont comparables qu'entre valeurs de même type.\n\n"
+                    "**L’autonomie** conserve sa mention d’estimation lorsqu'elle est calculée et non vérifiée."
+                )
+            with gr.Accordion("Couverture du catalogue", open=False, elem_classes="bf-guide"):
+                gr.Markdown(
+                    "Le **catalogue enrichi Motoplanète** contient des fiches par modèle, millésime et variante, avec leurs équipements.\n\n"
+                    "La **couverture** des années, variantes et champs est **partielle**. Une moto fictive reste hors du catalogue réel.\n\n"
+                    "Le premier millésime présent ne prouve pas la **date de lancement**. Les détails d’un marché ou d’une version doivent être confirmés par la source."
+                )
+            with gr.Accordion("Confidentialité et fonctionnement", open=False, elem_classes="bf-guide"):
+                if BACKEND == "ollama":
+                    if CATALOG_EXPERIMENT_ENABLED:
+                        gr.Markdown(
+                            "**Parcours expérimental Gold Wing / BMW RT** : recherche dans le catalogue et les publications constructeur conservées localement, "
+                            "puis rédaction sur votre machine. Les informations sont accompagnées de leurs sources.\n\n"
+                            "**Jev** est le seul service distant : la question, les passages nécessaires et les phrases proposées lui sont transmis pour vérification. "
+                            "Les preuves insuffisantes sont signalées.\n\n"
+                            "Objectif : moins de dix secondes après le démarrage du service. Ce délai reste à valider, et ne constitue pas une garantie."
+                        )
+                    elif CATALOG_RESEARCH_ENABLED:
+                        gr.Markdown(
+                            "**Recherche locale** : Mistral choisit les recherches dans les fiches et rédige à partir des passages retrouvés. "
+                            "Les noms, variantes et années sont vérifiés dans le catalogue local.\n\n"
+                            "**Jev** est le seul service distant : il contrôle les preuves et les phrases proposées. "
+                            "La question et les extraits nécessaires lui sont transmis. Une vérification insuffisante conserve les faits sources et signale les manques.\n\n"
+                            "Les recherches peuvent prendre plus d’une minute. Aucune clé à saisir ici."
+                        )
+                    elif os.getenv("BIKEFINDER_JEV_ROUTER") == "1":
+                        gr.Markdown(
+                            "**Mode rapide** : Jev comprend la demande, puis le catalogue local fournit les réponses factuelles. "
+                            "Les questions et, pour vérifier une synthèse, les extraits nécessaires sont transmis au service distant Jev.\n\n"
+                            f"**POC local** : `{OLLAMA_MODEL}` sert aux synthèses nécessaires. Budget de génération : "
+                            f'{float(os.getenv("CATALOG_SYNTHESIS_TIMEOUT_SECONDS", "30")):g} s, puis affichage des faits sources '
+                            "si la synthèse est trop lente ou non vérifiable. Aucune clé à saisir ici."
+                        )
+                    else:
+                        gr.Markdown(
+                            f"**POC local** : modèle `{OLLAMA_MODEL}` exécuté avec Ollama, "
+                            "sur le catalogue chargé sur votre machine. Aucune clé API nécessaire. "
+                            f"Budget de traitement : {OLLAMA_TURN_TIMEOUT_SECONDS:g} s par question ; "
+                            "une recherche déjà en cours peut prolonger l'attente."
+                        )
+                    api_key_input = gr.Textbox(visible=False)
+                else:
+                    gr.Markdown(
+                        "Cette configuration utilise votre clé [Anthropic](https://console.anthropic.com/) "
+                        "ou [OpenRouter](https://openrouter.ai/keys), uniquement pour cette session. "
+                        "Les questions et les fiches retenues sont transmises à ce fournisseur."
+                    )
+                    api_key_input = gr.Textbox(
+                        label="Clé API (Anthropic ou OpenRouter)",
+                        type="password",
+                        placeholder="sk-ant-… ou sk-or-…",
+                    )
+            gr.Markdown(("Pour explorer : indiquez la famille. Pour une fiche précise : ajoutez l’année et la variante."
+                         if CATALOG_RESEARCH_ENABLED else "Modèle + année + variante : trois détails qui rendent la réponse plus précise."),
+                        elem_id="bf-footnote")
+
+    chat_event = gr.on(
+        triggers=[msg.submit, send.click],
+        fn=chat,
         inputs=[msg, chatbot, api_key_input, agent_state],
         outputs=[chatbot, agent_state],
+        api_name="chat",
         concurrency_limit=8,
-    ).then(lambda: "", None, msg)
+        trigger_mode="once",
+        show_progress="minimal",
+        show_progress_on=chatbot,
+    )
+    clear_draft_event = chat_event.then(lambda: "", None, msg, api_visibility="private")
+    gr.on(
+        triggers=[reset.click, chatbot.clear],
+        fn=clear_conversation,
+        outputs=[chatbot, agent_state, msg],
+        cancels=[chat_event, clear_draft_event],
+        queue=False,
+        api_visibility="private",
+    )
+
+
+def launch_chatbot(**kwargs):
+    """Launch with the presentation settings required by Gradio 6."""
+    export_dir = Path(__file__).resolve().parents[2] / "data/technical/chat-exports"
+    export_dir.mkdir(parents=True, exist_ok=True)
+    kwargs["allowed_paths"] = [*kwargs.get("allowed_paths", []), str(export_dir)]
+    options = {
+        "server_name": os.environ.get("GRADIO_HOST", "127.0.0.1"),
+        "theme": THEME,
+        "css": CSS,
+        "footer_links": [],
+    }
+    options.update(kwargs)
+    return demo.launch(**options)
 
 
 if __name__ == "__main__":
-    demo.launch(server_name=os.environ.get("GRADIO_HOST", "127.0.0.1"))
+    launch_chatbot()

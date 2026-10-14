@@ -1,0 +1,637 @@
+{
+  "startup_seconds": 7.01219541602768,
+  "results": [
+    {
+      "id": "dev-honda",
+      "question": "Sur la Gold Wing 2018, quelles sont les deux transmissions proposées et combien de rapports ont-elles ?",
+      "result": {
+        "route": "catalog_experiment",
+        "plan": {
+          "operation": "research",
+          "source_question": "Sur la Gold Wing 2018, quelles sont les deux transmissions proposées et combien de rapports ont-elles ?"
+        },
+        "evidence": {
+          "passages": [
+            {
+              "id": "P1",
+              "passage_id": "honda-goldwing-2018-us:paragraph:8",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "Transmission",
+              "text": "The Gold Wing and Gold Wing Tour are available with both a new six-speed manual transmission or Honda's advanced, next-generation seven-speed automatic Dual Clutch Transmission (DCT), which includes forward/reverse Walking Mode.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P2",
+              "passage_id": "0f988096b0add7bc:section:2",
+              "identity": {
+                "object_id": "0f988096b0add7bc",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING Tour",
+                "year": 2018
+              },
+              "section": "Transmission",
+              "text": "boîte à 6 rapports; Secondaire par cardan",
+              "market": "Non établi",
+              "published": null,
+              "source_url": "https://www.motoplanete.com/honda/6857/GL-1800-GOLDWING-Tour-2018/contact.html",
+              "source_sha256": "8b63ec3a544303141e046b416e2b91973badd8dabb41e7ea535269b28c12a27a",
+              "publisher": "Motoplanète",
+              "kind": "catalogue"
+            },
+            {
+              "id": "P3",
+              "passage_id": "honda-goldwing-2018-us:paragraph:12",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "Electronics",
+              "text": "Fully modern, the 2018 Gold Wing features a throttle-by-wire system that has opened the door to four riding modes (Tour, Sport, Econ, and Rain), Honda Selectable Torque Control (HSTC), Hill Start Assist, and a finely tuned cruise-control system. Selecting the riding mode that's best suited for the riding conditions is easily accomplished through the Gold Wing's new controls, and then confirmed via a beautiful, 7-inch full-color Thin Film Transistor liquid-crystal display—one of the many features that bolster the model's premium feel.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P4",
+              "passage_id": "honda-goldwing-2018-us:paragraph:5",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "Engine",
+              "text": "Honda's liquid-cooled, horizontally opposed six-cylinder engine is a key element to the Gold Wing's rich character, and while the general layout lives on, much has been done to make the powerplant more compact, more fuel efficient, and lighter. The engine is now 13.7 lbs. lighter when equipped with Honda's six-speed manual transmission, and 29mm shorter in the front section, and is placed forward in the chassis for more ideal weight distribution, a key contributor to the 2018 Gold Wing's sporty handling and improved vehicle packaging.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            }
+          ],
+          "missing": [],
+          "scopes": [
+            {
+              "brand": "Honda",
+              "family": "goldwing",
+              "passages_available": 80
+            }
+          ],
+          "timing": {
+            "query_encoding_and_ranking_seconds": 0.16422145790420473,
+            "sql_validation_seconds": 0.002115707960911095,
+            "retrieval_seconds": 0.6046701249433681,
+            "jev_seconds": 0.5288238750072196
+          }
+        },
+        "research": {
+          "local_planner_calls": 0,
+          "local_writer_calls": 1,
+          "tool_calls": 1,
+          "timing": {
+            "query_encoding_and_ranking_seconds": 0.16422145790420473,
+            "sql_validation_seconds": 0.002115707960911095,
+            "retrieval_seconds": 0.6046701249433681,
+            "jev_seconds": 0.5288238750072196
+          },
+          "seconds": 4.289722041925415
+        },
+        "generation": {
+          "published": true,
+          "backend": "ollama",
+          "call_attempted": true,
+          "experiment": true,
+          "model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "prompt_eval_count": 950,
+          "eval_count": 87,
+          "total_duration": 2840813042,
+          "load_duration": 5804750,
+          "prompt_eval_duration": 54944000,
+          "eval_duration": 2734445000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "La Gold Wing 2018 propose une transmission manuelle à 6 rapports.",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "Elle propose également une DCT automatique à 7 rapports.",
+                "sources": [
+                  "P1"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "verified_claim_indices": [
+              0,
+              1
+            ],
+            "coverage_verified": true,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.95,
+                  "unsupported": 0.05
+                },
+                "confidence": 0.9
+              },
+              "coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.98,
+                  "unsupported": 0.02
+                },
+                "confidence": 0.96
+              }
+            }
+          },
+          "mode": "written"
+        },
+        "jev_calls": 1,
+        "answer": "La Gold Wing 2018 propose une transmission manuelle à 6 rapports. [1](https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html)\n\nElle propose également une DCT automatique à 7 rapports. [1](https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html)",
+        "seconds": 4.289722041925415
+      }
+    },
+    {
+      "id": "dev-bmw",
+      "question": "L’ASA de la nouvelle BMW RT est-il inclus ou faut-il le prendre en option ? Peut-il changer les rapports automatiquement ?",
+      "result": {
+        "route": "catalog_experiment",
+        "plan": {
+          "operation": "research",
+          "source_question": "L’ASA de la nouvelle BMW RT est-il inclus ou faut-il le prendre en option ? Peut-il changer les rapports automatiquement ?"
+        },
+        "evidence": {
+          "passages": [
+            {
+              "id": "P1",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:19",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "Avec le nouvel Automated Shift Assistant (ASA), BMW Motorrad propose une solution technique innovante pour rendre la pratique de la moto plus facile et plus confortable. Fidèle à la devise \"Simplify your ride\", l'expérience de pilotage est encore améliorée par l'automatisation de l'embrayage et du passage des vitesses, sans sacrifier la dynamique émotionnelle des changements de rapports.",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P2",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:18",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "Commande d’embrayage entièrement automatisée grâce à l’Automated Shift Assistant (ASA - disponible en option), avec changement de vitesse manuel ou automatique.",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P3",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:4",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "En même temps, la nouvelle R 1300 RT a élargi son profil d'utilisation en rendant ses systèmes dynamiques encore plus proéminents. Des équipements optionnels sportifs tels que les freins sports, le shifter Pro et la suspension électronique DCA nouvellement développée permettent un style de pilotage encore plus actif et dynamique. La gamme d'options est complétée par l'Automated Shif Assistant (ASA), qui peut être utilisé en mode manuel sportif et dynamique, mais permet également un pilotage confortable en mode automatique. Tout cela, combiné à un design plus dynamique et visuellement plus affuté, promet de poursuivre l'histoire à succès de la BMW RT.",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P4",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:62",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "Automated Shift Assistant (ASA) avec embrayage automatisé disponible en option",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            }
+          ],
+          "missing": [],
+          "scopes": [
+            {
+              "brand": "BMW",
+              "family": "rt",
+              "passages_available": 444
+            }
+          ],
+          "timing": {
+            "query_encoding_and_ranking_seconds": 0.19200541696045548,
+            "sql_validation_seconds": 0.0020446249982342124,
+            "retrieval_seconds": 0.8739881250075996,
+            "jev_seconds": 0.3077656669775024
+          }
+        },
+        "research": {
+          "local_planner_calls": 0,
+          "local_writer_calls": 1,
+          "tool_calls": 1,
+          "timing": {
+            "query_encoding_and_ranking_seconds": 0.19200541696045548,
+            "sql_validation_seconds": 0.0020446249982342124,
+            "retrieval_seconds": 0.8739881250075996,
+            "jev_seconds": 0.3077656669775024
+          },
+          "seconds": 3.8634837500285357
+        },
+        "generation": {
+          "published": true,
+          "backend": "ollama",
+          "call_attempted": true,
+          "experiment": true,
+          "model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "prompt_eval_count": 966,
+          "eval_count": 82,
+          "total_duration": 2672943833,
+          "load_duration": 10048000,
+          "prompt_eval_duration": 68702000,
+          "eval_duration": 2550996000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "L'Automated Shift Assistant (ASA) est disponible en option.",
+                "sources": [
+                  "P2"
+                ]
+              },
+              {
+                "text": "Il permet le changement automatique des rapports.",
+                "sources": [
+                  "P1",
+                  "P3"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "verified_claim_indices": [
+              0,
+              1
+            ],
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 1,
+                  "unsupported": 0
+                },
+                "confidence": 1
+              },
+              "coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.88,
+                  "unsupported": 0.12
+                },
+                "confidence": 0.76
+              }
+            }
+          },
+          "mode": "partial"
+        },
+        "jev_calls": 1,
+        "answer": "L'Automated Shift Assistant (ASA) est disponible en option. [1](https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt)\n\nIl permet le changement automatique des rapports. [1](https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt)\n\nUne partie de la demande reste sans réponse vérifiée.",
+        "seconds": 3.8634837500285357
+      }
+    },
+    {
+      "id": "dev-both",
+      "question": "Gold Wing et BMW RT : explique les solutions automatiques proposées, avec leurs années documentées et leurs différences de statut.",
+      "result": {
+        "route": "catalog_experiment",
+        "plan": {
+          "operation": "research",
+          "source_question": "Gold Wing et BMW RT : explique les solutions automatiques proposées, avec leurs années documentées et leurs différences de statut."
+        },
+        "evidence": {
+          "passages": [
+            {
+              "id": "P1",
+              "passage_id": "honda-goldwing-2018-us:paragraph:8",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "Transmission",
+              "text": "The Gold Wing and Gold Wing Tour are available with both a new six-speed manual transmission or Honda's advanced, next-generation seven-speed automatic Dual Clutch Transmission (DCT), which includes forward/reverse Walking Mode.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P2",
+              "passage_id": "honda-goldwing-2018-us:paragraph:0",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "All-new advanced performance touring model sets a new standard for motorcycle travel",
+              "text": "October 25, 2017, U.S.A.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P3",
+              "passage_id": "honda-goldwing-2018-us:paragraph:32",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "Gold wing tour",
+              "text": "The three 2018 Gold Wing Tour models—Gold Wing Tour, Gold Wing Tour DCT, and Gold Wing Tour DCT Airbag—are the modern interpretation of the classic Gold Wing, the ultimate long-distance touring machine, but with highly improved performance capabilities. Each of these models features saddlebags and a top case, as well as a tall electrically adjustable windscreen, front and rear speakers, and electrically adjustable suspension.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P4",
+              "passage_id": "honda-goldwing-2018-us:paragraph:42",
+              "identity": {
+                "object_id": "honda-goldwing-2018-us",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING",
+                "year": 2018
+              },
+              "section": "Gold Wing",
+              "text": "Boasting a sporty character, the two Gold Wing models—Gold Wing and Gold Wing DCT—come with saddlebags but no top case or the accompanying rear audio speakers. The electric windscreen is shorter on these models, and preload adjustment is manual. HSTC, electric damping-adjust, center stand, and heated grips are not included.",
+              "market": "USA",
+              "published": "2017-10-25",
+              "source_url": "https://global.honda/en/newsroom/worldnews/2017/2171025Gold-Wing-2018.html",
+              "source_sha256": "3b5677cf7cba381c074af12ad282aebee918d8533a460daf1f59699617d33ec4",
+              "publisher": "Honda",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P5",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:19",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "Avec le nouvel Automated Shift Assistant (ASA), BMW Motorrad propose une solution technique innovante pour rendre la pratique de la moto plus facile et plus confortable. Fidèle à la devise \"Simplify your ride\", l'expérience de pilotage est encore améliorée par l'automatisation de l'embrayage et du passage des vitesses, sans sacrifier la dynamique émotionnelle des changements de rapports.",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P6",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:50",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "D’ores et déjà disponible à la commande en France, la BMW R 1300 RT est disponible à partir de 24 400 € TTC . Les premières livraisons s’effectueront début juin 2025 .",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P7",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:4",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "En même temps, la nouvelle R 1300 RT a élargi son profil d'utilisation en rendant ses systèmes dynamiques encore plus proéminents. Des équipements optionnels sportifs tels que les freins sports, le shifter Pro et la suspension électronique DCA nouvellement développée permettent un style de pilotage encore plus actif et dynamique. La gamme d'options est complétée par l'Automated Shif Assistant (ASA), qui peut être utilisé en mode manuel sportif et dynamique, mais permet également un pilotage confortable en mode automatique. Tout cela, combiné à un design plus dynamique et visuellement plus affuté, promet de poursuivre l'histoire à succès de la BMW RT.",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            },
+            {
+              "id": "P8",
+              "passage_id": "bmw-r1300rt-2025-fr:paragraph:18",
+              "identity": {
+                "object_id": "bmw-r1300rt-2025-fr",
+                "brand": "BMW",
+                "model": "R 1300 RT",
+                "year": null
+              },
+              "section": "Nouvelle BMW R 1300 RT.",
+              "text": "Commande d’embrayage entièrement automatisée grâce à l’Automated Shift Assistant (ASA - disponible en option), avec changement de vitesse manuel ou automatique.",
+              "market": "France",
+              "published": "2025-04-29",
+              "source_url": "https://www.press.bmwgroup.com/france/article/detail/T0449871FR/nouvelle-bmw-r-1300-rt",
+              "source_sha256": "0824dbffe6cf2e75d7c0a27c2e502d284cbb757e06d8516d619c4f17568026d3",
+              "publisher": "BMW",
+              "kind": "manufacturer"
+            }
+          ],
+          "missing": [],
+          "scopes": [
+            {
+              "brand": "Honda",
+              "family": "goldwing",
+              "passages_available": 686
+            },
+            {
+              "brand": "BMW",
+              "family": "rt",
+              "passages_available": 444
+            }
+          ],
+          "timing": {
+            "query_encoding_and_ranking_seconds": 0.11349195800721645,
+            "sql_validation_seconds": 0.0023197089321911335,
+            "retrieval_seconds": 0.8482394169550389,
+            "jev_seconds": 0.3650659170234576
+          }
+        },
+        "research": {
+          "local_planner_calls": 0,
+          "local_writer_calls": 1,
+          "tool_calls": 1,
+          "timing": {
+            "query_encoding_and_ranking_seconds": 0.11349195800721645,
+            "sql_validation_seconds": 0.0023197089321911335,
+            "retrieval_seconds": 0.8482394169550389,
+            "jev_seconds": 0.3650659170234576
+          },
+          "seconds": 7.3882239169906825
+        },
+        "generation": {
+          "published": false,
+          "backend": "ollama",
+          "call_attempted": true,
+          "experiment": true,
+          "model": "qwen3.5:4b",
+          "done_reason": "stop",
+          "prompt_eval_count": 1603,
+          "eval_count": 134,
+          "total_duration": 6166736333,
+          "load_duration": 9050791,
+          "prompt_eval_duration": 1760779000,
+          "eval_duration": 4355166000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "Honda propose une transmission DCT à 7 vitesses avec marche arrière pour le Gold Wing Tour (2018) et un manuel pour le Gold Wing (2018).",
+                "sources": [
+                  "P1"
+                ]
+              },
+              {
+                "text": "BMW R 1300 RT (2025) propose l'Automated Shift Assistant (ASA) en option, permettant changement de vitesse manuel ou automatique.",
+                "sources": [
+                  "P7",
+                  "P8"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": false,
+            "verified_claim_indices": [],
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "unsupported",
+                "probabilities": {
+                  "supported": 0.13,
+                  "unsupported": 0.87
+                },
+                "confidence": 0.74
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.6,
+                  "unsupported": 0.4
+                },
+                "confidence": 0.2
+              },
+              "coverage": {
+                "type": "choice",
+                "choice": "unsupported",
+                "probabilities": {
+                  "supported": 0.23,
+                  "unsupported": 0.77
+                },
+                "confidence": 0.54
+              }
+            }
+          },
+          "error": "ValueError",
+          "error_detail": "No local claim passed source verification"
+        },
+        "jev_calls": 1,
+        "answer": "Je ne peux pas encore fournir une réponse vérifiée à cette demande.",
+        "seconds": 7.3882239169906825
+      }
+    }
+  ]
+}

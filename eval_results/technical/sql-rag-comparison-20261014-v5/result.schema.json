@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "case_id",
+    "repeat",
+    "turn",
+    "status",
+    "answer",
+    "calls",
+    "evidence",
+    "timing",
+    "usage",
+    "judgments"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string",
+      "enum": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10",
+        "Q11",
+        "Q12",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q16",
+        "Q17",
+        "Q18",
+        "Q19",
+        "Q20",
+        "Q21",
+        "Q22",
+        "Q23",
+        "Q24",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29",
+        "Q30",
+        "Q31",
+        "Q32",
+        "Q33",
+        "Q34",
+        "Q35",
+        "Q36",
+        "Q37",
+        "Q38",
+        "Q39",
+        "Q40"
+      ]
+    },
+    "repeat": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "turn": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "timeout",
+        "error",
+        "unavailable"
+      ]
+    },
+    "answer": {
+      "type": "string"
+    },
+    "calls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "arguments",
+          "result",
+          "seconds"
+        ]
+      }
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "timing": {
+      "type": "object",
+      "required": [
+        "full_answer_seconds",
+        "model_seconds",
+        "tool_seconds",
+        "ttft_seconds",
+        "first_useful_result_seconds"
+      ]
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "input_tokens",
+        "output_tokens",
+        "cost_usd",
+        "peak_memory_bytes"
+      ],
+      "description": "Unavailable measurements are null, never inferred zero; cost needs actual usage and frozen price sheet."
+    },
+    "judgments": {
+      "type": "object",
+      "required": [
+        "correct",
+        "complete",
+        "citations_valid",
+        "claims_supported",
+        "reviewer"
+      ],
+      "description": "null until reviewed; do not treat source integrity as claim support."
+    }
+  }
+}

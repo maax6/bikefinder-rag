@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-10-14T01:06:25Z",
+  "purpose": "Architecture diagnosis, no fix and no model benchmark",
+  "front_url": "http://127.0.0.1:7862/",
+  "frontend_reproduction": [
+    {
+      "question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "seconds": 0.113
+    },
+    {
+      "question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ? c'est justement à toi de me dire l'année",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "seconds": 0.108
+    }
+  ],
+  "separate_runtime_probe": {
+    "question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?",
+    "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+    "route": "clarification",
+    "plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "GL 1800 GOLDWING"
+        },
+        {
+          "brand": "Honda",
+          "model": "GL 1500 GOLDWING"
+        }
+      ],
+      "fields": [
+        "transmission"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "comparison"
+    },
+    "evidence": null,
+    "generation": null,
+    "retrieval_calls": 0,
+    "writer_calls": 0,
+    "method": "Separate diagnostic call through real run_agent + real read-only SQL; retrieval and writer entrypoints intercepted to prevent workload; not a receipt of the Gradio request"
+  },
+  "catalog_counts": [
+    {
+      "fiches": 11478,
+      "passages": 105687,
+      "embeddings": 9
+    }
+  ],
+  "exploratory_selection": {
+    "method": "Honda + Gold Wing spelling regex; BMW + whole RT token; conservative exploratory selection, no official family taxonomy or exhaustiveness claim",
+    "fiches": 102
+  },
+  "family_counts": {
+    "Honda": 64,
+    "BMW": 38
+  },
+  "source_examples": [
+    {
+      "id": "450201bb95e2baed",
+      "brand": "BMW",
+      "model": "R 1300 RT",
+      "year": 2025,
+      "source_url": "https://www.motoplanete.com/bmw/11285/R-1300-RT-2025/contact.html",
+      "source_sha256": "89dd23a4828422b7579b7f5d642d8318ab195606f55db3b4318282068ef9d105",
+      "transmission_sections": [
+        {
+          "text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par cardan",
+          "section": "Transmission"
+        }
+      ]
+    },
+    {
+      "id": "c0a73ac3d40825ff",
+      "brand": "Honda",
+      "model": "GL 1800 GOLDWING Tour DCT/Airbag",
+      "year": 2018,
+      "source_url": "https://www.motoplanete.com/honda/6859/GL-1800-GOLDWING-Tour-DCTAirbag-2018/contact.html",
+      "source_sha256": "154574a371141d9caeb00f132283ef28dab6ce63115d60b6cecb77ee485278d2",
+      "transmission_sections": [
+        {
+          "text": "boîte à rapports Boite à 7 rapports robotisée DCT avec marche arrière; Secondaire par cardan",
+          "section": "Transmission"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Family selection is exploratory regex, not a canonical family taxonomy",
+    "Earliest matching evidence in this selection is not an official launch date",
+    "No ASA passage in the retained sections of the BMW R 1300 RT 2025 fiche; absence of mention is not an absence of capability",
+    "SQL embeddings count does not include file caches or frozen benchmark vectors",
+    "Frontend response and separate diagnostic are distinct observations; no unobserved Gradio trace is claimed"
+  ]
+}

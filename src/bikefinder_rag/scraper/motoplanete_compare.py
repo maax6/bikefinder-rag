@@ -1,10 +1,12 @@
 """Collect up to four Motoplanete fiches per request through the public comparator.
 
 The site's own comparator (``/vos-comparos/?ids[]=..``, allowed by robots.txt,
-limit 4 bikes enforced by the site UI) renders the same technical blocks as the
-individual fiches, one column per bike. Fetching it instead of each fiche keeps
+limit 4 bikes enforced by the site UI) renders technical blocks in separate
+columns, but omits some source qualifications. Fetching it keeps
 exactly the same pacing (robots.txt Crawl-delay, one sequential request at a
-time, Retry-After/cooldown, shared host lock) but needs ~4x fewer requests.
+time, Retry-After/cooldown, shared host lock). Records with autonomy are fetched
+individually to retain the complete source text; the actual speedup depends on
+the number of these additional requests.
 
 No pacing is relaxed here: every request goes through ``PoliteClient`` timing.
 Records keep the ``parse_technical_page`` shape so ``CrawlStore`` and the
@@ -16,7 +18,7 @@ from __future__ import annotations
 import re
 from urllib.parse import urljoin, urlsplit
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from .motoplanete_technical import _EQUIPMENT_TERMS, _definition_sections, _snapshot, _space, _split_row, _text
 from .technical_crawl import BASE_URL, FICHE_PATH, PoliteClient, SourceDenied, validate_url
@@ -241,8 +243,9 @@ def parse_compare_page(html: bytes) -> dict[str, dict]:
 def crawl_batched(store, client: CompareClient, parse_fiche, *, limit: int | None = 20, on_progress=print) -> dict:
     """Same contract as technical_crawl.crawl, four fiches per paced request.
 
-    A column missing from the comparator falls back to the individual fiche,
-    which goes through the same pacing. Errors halt exactly like ``crawl``.
+    A missing column or a record with autonomy falls back to the individual
+    fiche, through the same pacing. Autonomy qualifications must come from the
+    source, never an inferred or fabricated disclaimer. Errors halt as in crawl.
     """
     import json
     import requests
@@ -285,7 +288,13 @@ def crawl_batched(store, client: CompareClient, parse_fiche, *, limit: int | Non
                 attempted += 1
                 hit = by_id.get(fiche_id(url))
                 try:
-                    if hit:
+                    # The comparator supplies kilometres but omits the source's
+                    # "calculée mais non vérifiée" tooltip. Use the complete
+                    # fiche rather than saving a less qualified partial record.
+                    has_autonomy = hit and any(
+                        "autonomie" in r["label"].casefold() for r in hit[1]["spec_rows"]
+                    )
+                    if hit and not has_autonomy:
                         canonical, row = hit
                         state = store.record_success(url, row, response, canonical)
                     else:
@@ -299,6 +308,10 @@ def crawl_batched(store, client: CompareClient, parse_fiche, *, limit: int | Non
                         row = parse_fiche(resolved, fresp.content)
                         if not row.get("spec_rows") or not row.get("technical_snapshot"):
                             raise ValueError("Empty technical extraction")
+                        if has_autonomy and not any(
+                            "autonomie" in r["label"].casefold() for r in row["spec_rows"]
+                        ):
+                            raise ValueError("Comparator autonomy missing from individual fiche; inspect source")
                         state = store.record_success(url, row, fresp, resolved)
                     succeeded += state == "success"
                 except SourceBusy as exc:

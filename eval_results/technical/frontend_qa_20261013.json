@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-13",
+  "scope": "Gradio presentation and conversation controls only; no collector or chatbot7860 restart by this agent",
+  "gradio_version": "6.20.0",
+  "isolated_preview": "http://127.0.0.1:7862/",
+  "checks": {
+    "desktop_viewport": [
+      1280,
+      720
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "no_mobile_horizontal_overflow": true,
+    "mobile_composer_visible": true,
+    "button_send_real_response": true,
+    "enter_send_real_response": true,
+    "example_selection_fills_question": true,
+    "followup_retains_bmw_f900r_2020": true,
+    "new_conversation_returns_welcome": true,
+    "native_clear_also_resets_hidden_context": true,
+    "private_reset_endpoint": true,
+    "public_chat_contract_preserved": true,
+    "normal_nonquiet_launch_survives_custom_theme_comparison": true,
+    "no_external_font_stylesheets": true
+  },
+  "real_answers": [
+    {
+      "question": "La BMW F 900 R de 2020 : puissance et couple, avec la source.",
+      "observed": "105 ch à 8 500 tr/min ; 9,40 mkg à 6 500 tr/min ; fiche Motoplanète 8382"
+    },
+    {
+      "question": "Et son ABS, il est de série ?",
+      "observed": "BMW F 900 R 2020 ; ABS de série ; fiche Motoplanète 8382"
+    },
+    {
+      "after_native_clear": "Et son ABS, de série ?",
+      "observed": "Contexte précédent indisponible ; demande le millésime et les critères ; aucun retour à BMW"
+    }
+  ],
+  "tests": {
+    "passed": 21,
+    "command": "BIKEFINDER_JEV_ROUTER=0 PYTHONPATH=src .venv/bin/pytest tests/test_app.py tests/test_frontend.py -q"
+  },
+  "screenshots": {
+    "desktop": "/private/tmp/bikefinder-frontend-desktop.jpg",
+    "mobile": "/private/tmp/bikefinder-frontend-mobile.jpg"
+  },
+  "limitations": [
+    "Visual controls were tested in an isolated preview. Production7860 was not restarted by this agent.",
+    "Small screens keep the sidebar below the conversation; a short scroll exposes all guidance and reset controls.",
+    "The multi-year MT09 question discovered in visual QA was sent to the parent for router correction; frontend code does not modify routing."
+  ]
+}

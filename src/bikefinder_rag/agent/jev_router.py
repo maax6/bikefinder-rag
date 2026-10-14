@@ -18,17 +18,22 @@ import requests
 from bikefinder_rag.catalog.enriched import folded,get_catalog_details,_rows,scope
 from bikefinder_rag.catalog.measures import FIELDS,filtered
 from bikefinder_rag.catalog.comparisons import is_arithmetic_question,comparison_calculations
+from bikefinder_rag.catalog.unit_restatements import requested_conversions
+from bikefinder_rag.catalog.source_equipment_answers import source_equipment_answer
+from bikefinder_rag.catalog.supplemental_sources import get_supplemental_rows
+from bikefinder_rag.catalog.source_counts import try_source_count
+from bikefinder_rag.catalog.category_evidence import categories_from_text,source_category_scope
 from bikefinder_rag.agent.query_language import language,aliases,spans,equipment_status,merge_conditions,negated_mention
 
 MODEL='typesafe/jev-1.13'
-PROTOCOL='catalog-routing-v6'
+PROTOCOL='catalog-routing-v8'
 URL='https://openrouter.ai/api/alpha/decisions'
 ROOT=Path(__file__).resolve().parents[3]
 LOCK=threading.Lock()
 SYNTHESIS_SLOT=threading.BoundedSemaphore(1)
 _identities=None
 LABELS={'price_eur':'Prix France — version de base','power_ch':'Puissance (ch)','torque_nm':'Couple (Nm)','displacement_ccm':'Cylindrée (cc)','seat_height_mm':'Hauteur de selle (mm)','weight_dry_kg':'Poids à sec (kg)','weight_wet_kg':'Poids en ordre de marche / pleins faits (kg)','autonomy_km':'Autonomie estimée (km)'}
-TOPICS={**LABELS,'torque_nm':'Couple documenté (unités source)','power_ch':'Puissance documentée (unités source)','equipment':'Équipements : ABS, options et statuts documentés','suspension':'Suspensions et réglages avant/arrière','braking':'Freins avant/arrière','transmission':'Boîte et transmission secondaire','cooling':'Refroidissement','full':'Fiche technique complète'}
+TOPICS={**LABELS,'torque_nm':'Couple documenté (unités source)','power_ch':'Puissance documentée (unités source)','equipment':'Équipements : ABS, options et statuts documentés','suspension':'Suspensions et réglages avant/arrière','braking':'Freins avant/arrière','transmission':'Boîte et transmission secondaire','cooling':'Refroidissement','reservoir':'Réservoir','dimensions':'Dimensions et empattement','wheels':'Roues, pneus et pressions documentés','engine':'Architecture du moteur','colors':'Coloris documentés','performance':'Performances et consommation documentées','full':'Fiche technique complète'}
 STATUS={'standard':'de série','optional':'en option','explicitly_absent':'absence explicite','unknown':'inconnu','present':'de série ou en option'}
 OPS={'<':'strictly below / moins de / sous','<=':'maximum / au plus / budget plafond','>':'strictly above / plus de','>=':'minimum / au moins','=':'exact value','ignore':'Not a requested numeric constraint'}
 
@@ -38,16 +43,24 @@ def identities(conn):
     global _identities
     with LOCK:
         if _identities is None:
-            rows=_rows(conn,'SELECT id,brand,model,year FROM technical_fiches',[])
+            rows=_rows(conn,'SELECT f.id,f.brand,f.model,f.year,m.displacement_ccm FROM technical_fiches f LEFT JOIN technical_measures m ON m.object_id=f.id AND m.source_sha256=f.source_sha256',[])
             groups={}
             for row in rows:
                 key=(folded(row['brand']),folded(row['model']))
-                groups.setdefault(key,{'brand':row['brand'],'model':row['model'],'aliases':aliases(row['brand'],row['model']),'years':set()})['years'].add(row['year'])
+                groups.setdefault(key,{'brand':row['brand'],'model':row['model'],'aliases':aliases(row['brand'],row['model']),'primary_aliases':aliases(row['brand'],row['model'],False),'years':set()})['years'].add(row['year'])
+                displacement=row.get('displacement_ccm')
+                if displacement is not None and displacement.is_integer():
+                    # An alternate displacement designation is backed by the
+                    # same fiche, not by a nearby numeric model name.
+                    for token in re.findall(r'\b\d{3,4}\b',row['model']):
+                        variant=re.sub(r'\b'+token+r'\b',str(int(displacement)),row['model'])
+                        groups[key]['aliases'].update(aliases(row['brand'],variant))
+                        groups[key]['primary_aliases'].update(aliases(row['brand'],variant,False))
             _identities={'groups':list(groups.values()),'brands':sorted({r['brand'] for r in rows},key=len,reverse=True)}
     return _identities
 
 def entities(conn,question):
-    catalog=identities(conn);text=folded(question)
+    catalog=identities(conn);text=re.sub(r'\bmille\b','1000',folded(question))
     explicit_years=[int(x) for x in re.findall(r'\b(?:en|de|millesime|annee)\s+(18\d{2}|19\d{2}|20\d{2}|21\d{2})\b',text)]
     matches=[]
     for item in catalog['groups']:
@@ -60,6 +73,8 @@ def entities(conn,question):
     compatible=[m for m in matches if m[2]['years'] & dated]
     if compatible:
         matches=[m for m in matches if m[2]['years'] & dated or not any(a==m[0] and b==m[1] for a,b,_ in compatible)]
+    primary=[m for m in matches if any((m[0],m[1])==p for alias in m[2].get('primary_aliases',aliases(m[2]['brand'],m[2]['model'],False)) for p in spans(text,alias))]
+    matches=[m for m in matches if m in primary or not any(a==m[0] and b==m[1] for a,b,_ in primary)]
     selected=[]
     for start,end,item in sorted(matches,key=lambda p:p[0]):
         if any(folded(x['brand'])==folded(item['brand']) and folded(x['model'])==folded(item['model']) for x in selected):continue
@@ -70,11 +85,12 @@ def entities(conn,question):
         pattern=r'[\s-]*'.join(re.escape(w) for w in words)
         prefix=words[0]
         unique_prefix=len({compact(other) for other in catalog['brands'] if folded(other).startswith(prefix)})==1
-        if re.search(r'(?<!\w)'+pattern+r'(?!\w)',folded(question)) or (len(prefix)>=5 and unique_prefix and re.search(r'(?<!\w)'+re.escape(prefix)+r'(?!\w)',folded(question))):
+        if re.search(r'(?<!\w)'+pattern+r'(?!\w)',folded(question)) or (len(prefix)>=2 and prefix not in {'les','le','la','the','de','des','du'} and unique_prefix and re.search(r'(?<!\w)'+re.escape(prefix)+r'(?!\w)',folded(question))):
             if compact(b) not in {compact(previous) for previous in brands}:brands.append(b)
     brands=[brand for brand in brands if not re.search(r'(?:laisse tomber|sans|sauf|pas)\s+(?:les?\s+)?'+re.escape(folded(brand))+r'\b',text)]
     if re.search(r'\bla yam\b',text) and 'Yamaha' not in brands:brands.append('Yamaha')
-    selected=[m for m in selected if not any(negated_mention(text,a) for alias in aliases(m['brand'],m['model']) for a,b in spans(text,alias))]
+    selected=[m for m in selected if any(folded(item['brand'])==folded(m['brand']) and folded(item['model'])==folded(m['model']) and not negated_mention(text,a) for a,b,item in matches)]
+    if brands:selected=[m for m in selected if folded(m['brand']) in {folded(b) for b in brands}]
     return selected,brands
 
 def literals(question,models):
@@ -85,11 +101,14 @@ def literals(question,models):
         after=text[match.end():];before=text[max(0,match.start()-40):match.start()]
         if re.match(r'k(?=\s|€|eur\b|euros?\b|$)',after):value*=1000;after=after[1:]
         unit=None
-        for key,pattern in [('price_eur',r'^\s*(?:€|eu\b|eur\b|euros?\b)'),('power_ch',r'^\s*(?:ch\b|cv\b|chevaux\b)'),('torque_nm',r'^\s*nm\b'),('displacement_ccm',r'^\s*(?:cc\b|cm3\b|cm³)'),('seat_height_mm',r'^\s*mm\b')]:
+        for key,pattern in [('price_eur',r'^\s*(?:€|eu\b|eur\b|euros?\b)'),('power_ch',r'^\s*(?:ch\b|cv\b|chevaux\b)'),('torque_nm',r'^\s*nm\b'),('displacement_ccm',r'^\s*(?:cc\b|cm3\b|cm³)'),('seat_height_mm',r'^\s*mm\b'),('autonomy_km',r'^\s*km\b(?!\s*/\s*h)')]:
             if re.search(pattern,after):unit=key;break
         if re.match(r'^\s*kg\b',after):
             weight_context=before+' '+after[:40]
             unit='weight_dry_kg' if re.search(r'\bsec\b',weight_context) else 'weight_wet_kg' if re.search(r'pleins|ordre de marche',weight_context) else 'unspecified_weight'
+        if unit=='seat_height_mm':
+            owners=[(m.end(),m[0]) for m in re.finditer(r'empattement|longueur|largeur|garde au sol|diametre|debattement|selle',before)]
+            if owners and max(owners)[1]!='selle':unit='unsupported_dimension'
         if any(a<=match.start() and b>=match.end() for a,b in model_spans):
             output.append({'id':f'n{len(output)}','literal':raw,'value':value,'context':text[max(0,match.start()-40):match.end()+35],'role':'model_number','explicit_operator':None});continue
         if re.search(r'(?:je (?:fais|mesure)|ma taille).*$',before) and re.match(r'\s*m\d*',after):
@@ -117,6 +136,21 @@ def literals(question,models):
         output.append({'id':f'n{len(output)}','literal':raw,'value':value,'context':text[max(0,match.start()-40):match.end()+35],'role':role,'explicit_operator':op})
     return output
 
+def source_year_bindings(conn,models,text,years):
+    """A single family name can map to different literal catalog names by year."""
+    if len({folded(m['brand']) for m in models})!=1:return None
+    common=None
+    for model in models:
+        positions={p for alias in aliases(model['brand'],model['model']) for p in spans(text,alias)}
+        common=positions if common is None else common & positions
+    if not common:return None
+    groups=identities(conn)['groups'];result=[]
+    for year in dict.fromkeys(years):
+        candidates=[m for m in models if any(folded(g['brand'])==folded(m['brand']) and folded(g['model'])==folded(m['model']) and year in g['years'] for g in groups)]
+        if not candidates:return []
+        result.extend({**m,'year':year} for m in candidates)
+    return result
+
 def choice(instruction,criteria):return {'type':'choice','instructions':instruction,'criteria':criteria}
 
 def classify(question,models,brands,numbers,previous=None):
@@ -136,7 +170,14 @@ def classify(question,models,brands,numbers,previous=None):
         criteria={**LABELS,'year':'Explicit model year, only if 1800..2199 and not a model-number/unit','ignore':'Model designation, unrelated number or ambiguous value'}
         questions[n['id']+'_field']=choice('What does literal '+n['literal']+' refer to? Use its context. Do not invent any value.',criteria)
         questions[n['id']+'_op']=choice('Operator requested for literal '+n['literal']+'. Do not reinterpret strict bounds.',OPS)
-    state={'question':question,'models_recognized_from_catalog':models,'brands':brands,'literal_numbers':numbers,'previous_plan':previous,
+    verified_aliases=[]
+    if _identities is not None:
+        for model in models:
+            group=next((g for g in _identities['groups'] if folded(g['brand'])==folded(model['brand']) and folded(g['model'])==folded(model['model'])),None)
+            if group:
+                found=[alias for alias in group['aliases'] if spans(folded(question),alias) or (previous and spans(folded(previous.get('source_question','')),alias))]
+                if found:verified_aliases.append({'source_model':model,'matched_aliases':sorted(found,key=len,reverse=True)[:3],'basis':'Literal catalog naming, numeric token permutation or displacement explicitly projected from this same source. Display the source name; do not substitute another bike.'})
+    state={'question':question,'models_recognized_from_catalog':models,'source_verified_alias_bindings':verified_aliases,'brands':brands,'literal_numbers':numbers,'previous_plan':previous,
         'supported_text_filter':'Positive secondary transmission explicitly by cardan, chain or belt; no implicit absence. ABS standard OR optional is supported.',
         'available_fields':LABELS,'price_scope':'France base catalog price only, not used/current prices; source wording retained','unknown_policy':'Missing mention is unknown, never absent. Do not infer variant/market or convert units.'}
     body={'model':MODEL,'state':state,'questions':questions}
@@ -170,26 +211,43 @@ def selected_rows(record,field):
         if field=='power_ch':return [r for r in record['spec_rows'] if r['section']=='Moteur' and not folded(r['label']).startswith('rapport') and (folded(r['label'])=='puissance' or re.match(r'^\s*[\d., ]+\s*(?:ch|kw|hp|cv)\b',folded(r['value'])))]
         if field=='torque_nm':return [r for r in record['spec_rows'] if r['section']=='Moteur' and (folded(r['label'])=='couple' or re.match(r'^\s*[\d., ]+\s*(?:nm|mkg|kgm)\b',folded(r['value'])))]
         return proof.get(field,[])
-    sections={'suspension':['Train avant','Train arrière'],'braking':['Train avant','Train arrière'],'transmission':['Transmission'],'cooling':['Moteur']}
+    sections={'suspension':['Train avant','Train arrière'],'braking':['Train avant','Train arrière'],'transmission':['Transmission'],'cooling':['Moteur'],'reservoir':['Châssis'],'dimensions':['Châssis'],'wheels':['Train avant','Train arrière'],'engine':['Moteur'],'colors':['Coloris'],'performance':['Performances']}
     rows=[r for r in record['spec_rows'] if r['section'] in sections.get(field,[])]
     if field=='braking':rows=[r for r in rows if 'frein' in folded(r['label']+' '+r['value'])]
     if field=='cooling':rows=[r for r in rows if 'refroidissement' in folded(r['label'])]
     if field=='suspension':rows=[r for r in rows if re.search(r'fourche|amortisseur|reglage|precharge|detente|compression',folded(r['label']+' '+r['value']))]
+    if field=='reservoir':rows=[r for r in rows if 'reservoir' in folded(r['label'])]
+    if field=='dimensions':rows=[r for r in rows if re.search(r'longueur|largeur|hauteur min|empattement|garde au sol',folded(r['label']))]
+    if field=='wheels':rows=[r for r in rows if re.search(r'roue|pneu|pression',folded(r['label']+' '+r['value']))]
     return rows
 
 def quote(rows):
     return ' ; '.join((r['section']+' — '+(r['label']+' : ' if r['label'] else '')+r['value']).replace('|','\\|') for r in rows) or 'Non documenté dans cette fiche'
 
+
+def supplemental_text(rows):
+    return ' ; '.join('Complément Bikez — '+r['label']+' : '+re.sub(r'\s+',' ',r['value']).replace('|','\\|')+' ([fiche Bikez]('+r['source_url']+')). '+r.get('qualifier','Identité marque, modèle et millésime exacte ; marché non établi.') for r in rows)
+
 def render_list(conn,plan):
     kwargs={'equipment_filters':plan.get('equipment_filters'),'identity':plan['identity'],'equipment':plan.get('equipment'),'status':plan.get('status','standard'),'order_by':plan.get('order_by'),'secondary':plan.get('secondary')}
+    category_scope=None
+    if plan.get('category_request'):
+        category_scope=source_category_scope(conn,{**plan['category_request'],'identity':plan['identity']})
+        kwargs['object_ids']=category_scope['ids']
+    if plan.get('_missing_only'):
+        kwargs.update(unknown_fields=plan['_missing_only'],missing_only=True)
     total=filtered(conn,plan['conditions'],**kwargs,count=True)
-    introduction=f"**{total} fiches correspondent dans le catalogue.**"
+    introduction=f"**{total} fiches correspondent dans le catalogue.**" if not plan.get('_missing_only') else f"**{total} fiches complémentaires à examiner : valeur manquante, critères non tous vérifiables.**"
     if any(c['field']=='price_eur' for c in plan['conditions']):introduction+=' Prix France de la version de base indiqué dans la fiche, pas prix d’occasion ou prix actuel.'
     if any(c['field']=='power_ch' for c in plan['conditions']):introduction+=' Puissance documentée en ch.'
     if re.search(r'lancement|sortie',folded(plan.get('source_question',''))) and any(c['field']=='price_eur' for c in plan['conditions']):introduction+=' La date d’application de ce tarif, notamment au lancement, n’est pas établie par la fiche.'
     if plan['operation']=='count':
         filters=([{'equipment':plan['equipment'],'status':plan.get('status','standard')}] if plan.get('equipment') else [])+(plan.get('equipment_filters') or [])
         if filters:introduction+=' Équipements : '+', '.join(e['equipment']+' — '+STATUS[e['status']] for e in filters)+'. Les mentions inconnues ne sont pas comptées comme des présences.'
+        if category_scope:introduction+=' '+category_scope['source_note']+' Couverture partielle des seules fiches documentées.'
+        if plan.get('include_unknown_fields') and not plan.get('_missing_only'):
+            extra={**plan,'_missing_only':plan['include_unknown_fields']};extra.pop('include_unknown_fields')
+            introduction+='\n\n'+render_list(conn,extra)
         return introduction
     requested_limit=plan.get('limit',20);limit=min(20,requested_limit)
     rows=filtered(conn,plan['conditions'],**kwargs,limit=limit)
@@ -204,6 +262,17 @@ def render_list(conn,plan):
     if plan.get('equipment'):output+=['',f"Équipement filtré : {plan['equipment']} — {STATUS[plan['status']]}. Les inconnus ne sont pas des absences."]
     if plan.get('equipment_filters'):output+=['','Équipements filtrés ensemble : '+', '.join(e['equipment']+' — '+STATUS[e['status']] for e in plan['equipment_filters'])+'.']
     if plan.get('secondary'):output+=['',f"Transmission secondaire explicitement documentée par {plan['secondary']}."]
+    if category_scope:
+        coverage=category_scope['coverage']
+        output+=['',category_scope['source_note'],f"Couverture de cette portée : {coverage['known_objects']} fiches avec classification source exploitable, {coverage['unknown_objects']} inconnues ou contradictoires. Cette sélection n’est pas exhaustive du marché."]
+        if plan['category_request']['category']=='electrique' and re.search(r'ville|urbain|cycle',folded(plan.get('source_question',''))):output+=['','Ville, mixte ou cycle : seuls les qualificatifs explicitement cités dans la fiche sont établis ; sinon ce contexte d’autonomie reste inconnu.']
+        if plan['category_request']['category']!='electrique':
+            output+=['','Catégories brutes et sources distinctes :']
+            for row in rows:
+                for proof in category_scope['proofs'].get(row['id'],[]):output.append(f"- {row['brand']} {row['model']} ({row['year']}) : {proof['category_raw']} — [Bikez]({proof['source_url']})")
+    if plan.get('include_unknown_fields') and not plan.get('_missing_only'):
+        extra={**plan,'_missing_only':plan['include_unknown_fields']};extra.pop('include_unknown_fields')
+        output+=['','Les valeurs manquantes ne sont pas supposées respecter une borne. Les valeurs connues et les autres critères restent filtrés :','',render_list(conn,extra)]
     return '\n'.join(output)
 
 def render_details(conn,plan):
@@ -216,39 +285,89 @@ def render_details(conn,plan):
         rows=_rows(conn,'SELECT f.* FROM technical_fiches f WHERE '+' AND '.join(scope(model['brand'],model['model'],model_year)[0])+' ORDER BY f.model,f.id LIMIT 5',scope(model['brand'],model['model'],model_year)[1])
         exact=[r for r in rows if folded(r['model'])==folded(model['model'])]
         rows=exact or rows
-        if not rows:return f"Aucune fiche Motoplanète documentée pour {model['brand']} {model['model']} en {model_year}. Je ne remplace pas ce millésime par une autre année."
+        if not rows:
+            records.append({'id':None,'brand':model['brand'],'model':model['model'],'year':model_year,'source_url':None,'record':{'spec_rows':[]},'missing':True});continue
         if len(rows)!=1:return f"Plusieurs fiches correspondent à {model['brand']} {model['model']} en {model_year}. Précise la variante : "+'; '.join(f"[{r['model']}]({r['source_url']})" for r in rows)
         records+=rows
+    if all(r.get('missing') for r in records):return 'Aucune fiche Motoplanète documentée pour les modèles et millésimes demandés. Je ne remplace pas ces millésimes par d’autres années.'
     query=folded(plan.get('source_question',''))
     ambiguous=any(a['brand']==b['brand'] and a['year']==b['year'] and any(spans(query,alias) for alias in aliases(a['brand'],a['model']) & aliases(b['brand'],b['model'])) for index,a in enumerate(records) for b in records[index+1:])
-    if ambiguous and not re.search(r'\b(?:nouvelle|ancienne)\b',query):
-        return 'Plusieurs fiches ou générations correspondent au nom et au millésime demandés. Précise la version : '+ '; '.join(f"[{r['brand']} {r['model']} ({r['year']})]({r['source_url']})" for r in records)
-    if plan.get('calculation_question') and len(records)>2:
-        return 'Plusieurs variantes correspondent aux noms demandés. Précise les deux fiches à comparer : '+ '; '.join(f"[{r['brand']} {r['model']} ({r['year']})]({r['source_url']})" for r in records)
+    variant_note='Plusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.' if ambiguous and not re.search(r'\b(?:nouvelle|ancienne)\b',query) else ''
     fields=plan.get('fields') or ['full']
     if 'full' in fields:fields=['full']
+    if plan.get('differences_only'):
+        from bikefinder_rag.catalog.measures import project
+        keep=[]
+        for field in fields:
+            if field in FIELDS:
+                values=[project(r['record'])[0].get(field) for r in records]
+                if all(v is not None for v in values) and len(set(values))>1:keep.append(field)
+            elif field!='equipment':
+                values=[selected_rows(r['record'],field) for r in records]
+                if all(values) and len({re.sub(r'\s+','',folded(quote(v))) for v in values})>1:keep.append(field)
+        fields=keep
     headers=[r['brand']+' '+r['model']+f" ({r['year']})" for r in records]
     output=['| Caractéristique | '+' | '.join(headers)+' |','|---|'+'|'.join(['---']*len(records))+'|']
     for field in fields:
         if field=='equipment':
             values=[]
             for record in records:
+                if record.get('missing'):values.append('Fiche non disponible pour ce millésime');continue
                 clauses='object_id=%s';params=[record['id']]
                 if plan.get('requested_equipment'):clauses+=' AND equipment=ANY(%s)';params.append(plan['requested_equipment'])
                 elif plan.get('equipment'):clauses+=' AND equipment=%s';params.append(plan['equipment'])
                 elif re.search(r'selles?.*(?:propose|option|serie)',folded(plan.get('source_question',''))):clauses+=' AND equipment ILIKE %s';params.append('%selle%')
                 evidence=_rows(conn,'SELECT equipment,status,decision FROM technical_equipment WHERE '+clauses+' ORDER BY equipment',params)
-                texts=[e['equipment']+' : '+STATUS[e['status']]+' — '+ ' ; '.join(p['text'] for p in e['decision'].get('passages',[])) for e in evidence]
+                texts=[source_equipment_answer(record['record'],e['equipment']) or (e['equipment']+' : '+STATUS[e['status']]+' — '+ ' ; '.join(p['text'] for p in e['decision'].get('passages',[]))) for e in evidence]
                 seen={e['equipment'] for e in evidence}
-                texts += [name+' : inconnu / non documenté' for name in plan.get('requested_equipment',[]) if name not in seen]
+                texts += [source_equipment_answer(record['record'],name) or name+' : inconnu / non documenté' for name in plan.get('requested_equipment',[]) if name not in seen]
+                requested=plan.get('requested_equipment',[]) or ([plan['equipment']] if plan.get('equipment') else [])
+                if 'régulateur de vitesse' in requested and not any(e['equipment']=='régulateur de vitesse' and e['status']!='unknown' for e in evidence):
+                    extra=get_supplemental_rows(conn,{key:record[key] for key in ('brand','model','year')},'cruise_control')
+                    if extra:
+                        texts=['Motoplanète — '+text if text.startswith('régulateur de vitesse') else text for text in texts]
+                        texts.append(supplemental_text(extra))
                 values.append(' ; '.join(texts) or 'Inconnu / non documenté')
         else:values=[quote(selected_rows(r['record'],field)) for r in records]
         label='Selles accessoires — série / option / inconnu' if field=='equipment' and re.search(r'selles?.*(?:propose|option|serie)',folded(plan.get('source_question',''))) else TOPICS[field]
         output.append('| '+label+' | '+' | '.join(v.replace('|','\\|') for v in values)+' |')
-    output.append('| Source | '+' | '.join(f"[Fiche]({r['source_url']})" for r in records)+' |')
-    if 'price_eur' in fields and re.search(r'lancement|sortie',folded(plan.get('source_question',''))):output+=['','Ce tarif est celui indiqué dans la fiche du millésime consulté. Sa date d’application et son caractère de prix au lancement ne sont pas établis par cette fiche.']
-    if 'torque_nm' in fields and re.search(r'\bnm\b',folded(plan.get('source_question',''))):
-        output+=['','Les valeurs de couple sont citées dans leurs unités sources. Quand seule une valeur en mkg est documentée, je ne la présente pas comme une valeur en Nm et je n’invente pas de conversion.']
+    output.append('| Source | '+' | '.join(f"[Fiche]({r['source_url']})" if r['source_url'] else 'Fiche non disponible pour ce millésime' for r in records)+' |')
+    if plan.get('differences_only') and not fields:output+=['','Aucune différence prouvée sur les rubriques demandées : les données identiques ou incomplètes ne sont pas présentées comme différentes.']
+    if any(r.get('missing') for r in records):output+=['','Comparaison partielle : seules les fiches disponibles sont renseignées. Aucun autre millésime ou modèle n’est substitué.']
+    if variant_note:output=[variant_note,'',*output]
+    if plan.get('candidate_variants'):
+        names=' ; '.join(m['brand']+' '+m['model'] for m in plan['candidate_variants'])
+        output=['Variante à confirmer : '+names+'. Ces fiches sont des candidates pour le nom demandé. Les valeurs ci-dessous appartiennent uniquement à ces variantes ; elles ne sont pas attribuées au modèle non qualifié.','',*output]
+    if 'price_eur' in fields and (re.search(r'lancement|sortie',folded(plan.get('source_question',''))) or 'launch_price' in plan.get('source_notes',[])):output+=['','Ces tarifs sont ceux indiqués dans les fiches des millésimes consultés. Leur date d’application et leur caractère de prix au lancement ne sont pas établis par ces fiches.']
+    if not plan.get('differences_only'):
+        converted=[(r,requested_conversions(r['record'],plan.get('source_question',''))) for r in records]
+        for r,text in converted:
+            if text:output+=['',r['brand']+' '+r['model']+f" ({r['year']}) : "+text]
+    for r in records:
+        if r.get('missing'):continue
+        requested_labels=[(key,pattern) for key,pattern in [('Longueur','longueur'),('Largeur','largeur'),('Empattement','empattement'),('Garde au sol','garde au sol'),('Réserve distincte','reserve')] if re.search(pattern,query)]
+        for label,pattern in requested_labels:
+            if not any(re.search(pattern,folded(row['label'])) for row in r['record']['spec_rows']):
+                extra=get_supplemental_rows(conn,{key:r[key] for key in ('brand','model','year')},'ground_clearance') if pattern=='garde au sol' else []
+                output+=['',r['brand']+' '+r['model']+f" ({r['year']}) — {label} : non documenté dans la fiche Motoplanète."+(' '+supplemental_text(extra) if extra else '')]
+        if re.search(r'indices?',query) and 'wheels' in fields:output+=['','Indices de charge/vitesse : non documentés sauf mention explicite dans les dimensions de pneus citées.']
+        if 'equipment' in fields and re.search(r'bidirection|up.?down',query):
+            proofs=[row for row in r['record']['spec_rows'] if re.search(r'shifter|quick.?shift',folded(row['label']+' '+row['value'])) and re.search(r'bidirection|up.?down',folded(row['value']))]
+            output+=['',r['brand']+' '+r['model']+f" ({r['year']}) — Shifter bidirectionnel : "+(quote(proofs) if proofs else 'non confirmé par une mention explicite dans cette fiche.')]
+        if re.search(r'modes? de (?:conduite|pilotage)',query):
+            proofs=[row for row in r['record']['spec_rows'] if re.search(r'\bmodes?\b',folded(row['label']+' '+row['value']))]
+            output+=['',r['brand']+' '+r['model']+f" ({r['year']}) — Modes de conduite : "+(quote(proofs) if proofs else 'non documentés dans cette fiche.')]
+        if 'suspension' in fields:
+            if re.search(r'pilote|semi.acti|suspension.*electronique',query):
+                proofs=[row for row in r['record']['spec_rows'] if re.search(r'pilot[ée]|semi.acti|suspension.*electronique',folded(row['label']+' '+row['value']))]
+                standard=proofs and all(p['section']=='Équipement de série' and not re.search(r'\b(?:sans|pas|non|option)\b',folded(p['value'])) for p in proofs)
+                status='de série, selon la section source' if standard else 'en option, selon la mention source' if proofs and all(re.search(r'\ben option\b',folded(p['value'])) for p in proofs) else 'inconnu sans qualification explicite'
+                output+=['',r['brand']+' '+r['model']+f" ({r['year']}) — Pilotage / semi-actif : "+quote(proofs)+' ; statut '+status+'.']
+            for part in ['Train avant','Train arrière']:
+                for item in ['précharge','compression','détente']:
+                    if re.search(folded(item),query):
+                        proof=[row for row in r['record']['spec_rows'] if row['section']==part and re.search(folded(item),folded(row['label']+' '+row['value']))]
+                        output+=['',r['brand']+' '+r['model']+f" ({r['year']}) — {part}, {item} : "+(quote(proof) if proof else 'inconnu / non documenté')]
     if 'seat_height_mm' in fields and re.search(r'selles?.*(?:propose|option|serie)',query):output+=['','Les hauteurs de selle citées ne prouvent pas que des selles accessoires soient comprises. Si aucune selle optionnelle ou de série n’est explicitement documentée dans les preuves d’équipement, sa disponibilité et son statut restent inconnus.']
     if plan.get('market_unknown'):output+=['','Ces équipements sont ceux de la fiche source. Son rattachement au marché technique France n’est pas établi ; je ne l’atteste pas à partir d’un tarif français.']
     if plan.get('variant_unknown'):output+=['','La fiche peut regrouper boîte manuelle et DCT : les valeurs citées ne garantissent pas une autonomie propre à la seule variante manuelle.']
@@ -265,14 +384,56 @@ def render_details(conn,plan):
             type_text='tous pleins faits / en ordre de marche' if common=='weight_wet_kg' else 'à sec'
             calculation_question+=' ; poids '+type_text
             output+=['','Comparaison du poids '+type_text+' documenté dans les deux fiches ; aucun mélange entre poids sec et poids pleins faits.']
-    calculations=comparison_calculations(calculation_question,records)
+    calculations=comparison_calculations(calculation_question,records) if len(records)<=2 else 'Plusieurs variantes : les chiffres restent séparés ; précise deux fiches pour un écart entre deux motos.' if calculation_question else ''
+    if len(records)>2 and re.search(r'ratio|rapport|ch/kg',folded(calculation_question)):
+        from bikefinder_rag.catalog.measures import project
+        ratios=['| Fiche | Ratio calculé | Source |','|---|---|---|']
+        for r in records:
+            values,_=project(r['record']);power=values['power_ch'];requested_type='weight_dry_kg' if re.search(r'\bsec\b',query) else 'weight_wet_kg' if re.search(r'pleins|ordre de marche',query) else None
+            for key in ([requested_type] if requested_type else ['weight_dry_kg','weight_wet_kg']):
+                weight=values[key];label='à sec' if key=='weight_dry_kg' else 'tous pleins faits / en ordre de marche'
+                value=f"{power:g} ch / {weight:g} kg = {power/weight:.3f} ch/kg ({label})".replace('.',',') if power is not None and weight is not None and weight>0 else 'Non calculable : puissance ou poids '+label+' non documenté'
+                ratios.append('| '+r['brand']+' '+r['model']+f" ({r['year']}) | "+value+f" | [Fiche]({r['source_url']}) |")
+        calculations='\n'.join(ratios)+'\n\nChaque ratio utilise le type de poids indiqué ; aucun classement entre poids sec et poids plein. Précise les deux versions et un type de poids commun pour les départager.'
     return '\n'.join(output)+('\n\n'+calculations if calculations else '')
 
-def route_question(conn,question,history=None):
+def named_suspension_count(conn,models,identity):
+    rows=[];seen=set()
+    for model in models:
+        year=model.get('year',identity.get('year'))
+        if year is None:return None
+        clauses,params=scope(model['brand'],model['model'],year)
+        found=_rows(conn,'SELECT f.* FROM technical_fiches f WHERE '+' AND '.join(clauses),params)
+        exact=[r for r in found if folded(r['model'])==folded(model['model'])]
+        found=exact or found
+        if len(found)!=1:return None
+        r=found[0]
+        if r['id'] in seen:continue
+        seen.add(r['id'])
+        proof=[p for p in r['record']['spec_rows'] if p['section']=='Équipement de série' and re.search(r'pilot|semi.acti',folded(p['label']+' '+p['value'])) and not re.search(r'\b(?:sans|pas|non|option)\b',folded(p['value']))]
+        rows.append((r,proof))
+    total=sum(bool(p) for r,p in rows)
+    output=[f"**{total} sur {len(rows)} fiches ont des suspensions pilotées / semi-actives explicitement documentées de série.** Les statuts inconnus ne sont pas comptés et ne prouvent pas une absence.",'','| Moto | Millésime | Statut documenté | Preuve | Source |','|---|---:|---|---|---|']
+    for r,p in rows:output.append(f"| {r['brand']} {r['model']} | {r['year']} | "+('de série' if p else 'inconnu')+' | '+quote(p)+f" | [Fiche]({r['source_url']}) |")
+    return '\n'.join(output)
+
+def route_question(conn,question,history=None,_category_context=None):
     started=time.perf_counter();result={'answer':None,'route':'unresolved','jev_calls':0,'plan':None}
     if re.search(r'\bsk-[a-z]|api[_ -]?key',question,re.I):
         result.update(answer='Ne colle pas de clé API dans les questions du chatbot.',route='clarification');return result
+    source_count=try_source_count(conn,question) if re.search(r'reservoir|rapports?|vitesses?|empattement|disques?|exclu|ecarte|hors |sans.*(?:bmw|yamaha|honda)|ducati.*(?:triumph|ktm)',folded(question)) else None
+    if source_count:
+        return {**result,**source_count,'plan':None,'pending':{'blocked':'source_count','question':question,'source_plan':source_count.get('plan'),'updates':[]},'seconds':time.perf_counter()-started}
     text=language(question)
+    if _category_context is None:
+        protected=[p for m in entities(conn,question)[0] for alias in aliases(m['brand'],m['model']) for p in spans(folded(question),alias)] if re.search(r'electri|categorie.*bikez',text) else []
+        category_mentions=categories_from_text(question,protected)
+        eligible=[m for m in category_mentions if m['category']=='electrique' or re.search(r'\bbikez\b',text)]
+        if eligible and len(category_mentions)==1:
+            mention=eligible[0];a,b=mention['span'];masked=question[:a]+question[b:]
+            if mention['negated']:masked=re.sub(r'\b(?:pas|sans|sauf|hors)\s+(?:de\s+)?(?=\s*(?:[,.?]|$))','',masked,flags=re.I)
+            masked=re.sub(r'\b(?:selon Bikez|catégorie source Bikez|catégories source Bikez)\b','',masked,flags=re.I)
+            return route_question(conn,masked,history,{'request':{'category':mention['category'],'negated':mention['negated']},'question':question})
     if (re.search(r'\bfisc[a-z]*\b',question,re.I) and not re.search(r'pas (?:la |les |de )?(?:puissance|chevaux) fisc',text)) or re.search(r'\d[eE][+-]?\d',question,re.I):
         result.update(answer='Précise une puissance moteur en ch/cv et des nombres ordinaires, sans notation scientifique ni puissance fiscale.',route='clarification');return result
     if re.search(r'prix|tarif|coute|coutent|budget|€|euros',text) and re.search(r'actuel|aujourd.hui|maintenant',text):
@@ -286,24 +447,35 @@ def route_question(conn,question,history=None):
         market_context=bool(entities(conn,question)[0] and re.search(r'abs|traction|shifter|equipement|puissance|couple|selle|poids|autonomie',text) and not re.search(r'pourquoi|conseille|fiabilite',text))
         if not market_context:
             result.update(answer='La disponibilité technique en France n’est pas établie par ces filtres ; un prix français ne suffit pas.',route='clarification');return result
-    if re.search(r'\d\s*(?:usd|dollars?|kw|hp|ps|lbs?|mph|litres?|liters?)\b|\$',text):
+    if re.search(r'(?<!\w)\d+(?:[.,]\d+)?\s*(?:usd|dollars?|kw|hp|ps|lbs?|mph|litres?|liters?)\b|\$',text):
         result.update(answer='Ce filtre demande une unité ou une conversion qui n’est pas prise en charge. Je peux filtrer les prix France en euros et la puissance documentée en ch/cv, sans conversion implicite.',route='clarification');return result
-    if re.search(r'\d\s*(?:cm(?![3³])\b|m\b|pouces?\b|inches?\b|miles?\b|l\b)',text):
+    if re.search(r'(?<!\w)\d+(?:[.,]\d+)?\s*(?:cm(?![3³])\b|m\b|pouces?\b|inches?\b|miles?\b|l\b)',text):
         result.update(answer='Précise la borne dans l’unité du catalogue : mm pour la selle, cc pour la cylindrée, km pour l’autonomie. Je ne fais pas de conversion implicite.',route='clarification');return result
     previous_assistant=next((m for m in reversed(history or []) if m.get('role')=='assistant'),{})
     pending=previous_assistant.get('_catalog_pending')
-    if pending and not entities(conn,question)[0] and (re.match(r'^(?:et\b|si\b|\d|pareil\b|idem\b|plutot\b|non\b|meme\b|donc\b|ok\b)',text.strip()) or re.search(r'\blaquelle\b|\bcelui\b|\bcelle\b',text)):
+    if pending and _category_context is None and not entities(conn,question)[0] and (re.match(r'^(?:et\b|si\b|\d|pareil\b|idem\b|plutot\b|non\b|meme\b|donc\b|ok\b)',text.strip()) or re.search(r'\blaquelle\b|\bcelui\b|\bcelle\b',text)):
         pending=deepcopy(pending);pending['updates']=[*pending.get('updates',[]),question][-6:]
         intro='Demande initiale conservée : « '+pending['question'][:350]+' ». Précisions reçues : '+ ' ; '.join('« '+q[:250]+' »' for q in pending['updates'])+'. '
-        limitation=('Le filtre de catégorie reste non disponible : aucun résultat partiel n’est présenté comme satisfaisant tous les critères.' if pending['blocked']=='category' else 'Les fiches exactes de ces modèles et millésimes ne sont pas disponibles dans ce catalogue. Je ne peux pas établir leur autonomie à cette vitesse, avec un passager ou dans une autre condition non documentée.')
+        if pending['blocked']=='source_count':
+            year_match=re.fullmatch(r'\s*(?:et\s+)?(?:en|pour)\s+(20\d{2}|19\d{2})\s*[?!.]*',text)
+            if year_match:
+                updated=re.sub(r'\b(?:18|19|20)\d{2}\s*(?:à|a|et|[-–])\s*(?:18|19|20)\d{2}\b',year_match[1]+' à '+year_match[1],pending['question'],count=1)
+                rerun=try_source_count(conn,updated)
+                if rerun:return {**result,**rerun,'plan':None,'pending':{**pending,'question':updated},'seconds':time.perf_counter()-started}
+            limitation='Ce compte conserve ses critères. Pour modifier une borne autre que le millésime, redonne la demande complète avec ses unités ; aucun critère n’est retiré.'
+        elif pending['blocked']=='category':limitation='Le filtre de catégorie reste non disponible : aucun résultat partiel n’est présenté comme satisfaisant tous les critères.'
+        else:
+            limitation='Les fiches exactes sous ces noms et millésimes ne sont pas identifiées. Précise leur intitulé de catalogue ; les informations des autres années ou variantes ne sont pas transférées.'
+            if re.search(r'autonomie|passager|vitesse',folded(pending['question']+' '+' '.join(pending['updates']))):limitation+=' Je ne peux pas établir une autonomie à une vitesse ou une charge non documentée.'
         result.update(answer=intro+limitation,route='clarification',pending=pending);return result
-    if re.search(r'\b(?:trails?|roadsters?|routieres?|sportives?|motos? electriques?)\b',text) and not re.search(r'compare|fiche|cylindree.*entre',text):
+    if _category_context is None and re.search(r'\b(?:trails?|roadsters?|routieres?|sportives?|motos? electriques?)\b',text) and not re.search(r'compare|fiche|cylindree.*entre',text):
         result.update(answer='Le filtre de catégorie (trail, roadster, routière, sportive ou électrique) n’est pas normalisé dans ce catalogue. Je ne le remplace pas par une liste toutes catégories. Précise des critères techniques documentés si tu souhaites poursuivre.',route='clarification',pending={'question':question,'blocked':'category','updates':[]});return result
     if re.search(r'je (?:fais|mesure).*m\d|j.fais.*m\d',text) and re.search(r'ca passe|galerer|galere|aux feux',text):
         result.update(answer='La hauteur de selle seule ne permet pas d’établir si tu poseras les pieds au sol. Cette appréciation n’est pas documentée par les fiches techniques ; je peux te donner la hauteur d’un modèle et d’un millésime précis.',route='clarification');return result
     last_assistant=next((m for m in reversed(history or []) if m.get('role')=='assistant'),{})
     previous=last_assistant.get('_catalog_plan')
-    followup=bool(re.match(r'^(?:et\b|pareil\b|idem\b|plutot\b|uniquement\b|seulement\b|ajoute\b|je parle\b|ah non\b|attends\b|donc\b|ok\b|la standard\b|meme\b)',folded(question).strip()) or re.fullmatch(r'(?:combien\s+)?(?:en|pour)\s+\d{4}\s*[?!.]*',text.strip()) or re.search(r'\bplutot\b|\bpardon\b|\bfinalement\b|\bdu coup\b|\blaquelle\b|\bla yam\b',text))
+    followup=bool(re.match(r'^(?:et\b|si\b|maintenant\b|sur ces\b|pareil\b|idem\b|plutot\b|uniquement\b|seulement\b|ajoute\b|je parle\b|ah non\b|attends\b|donc\b|ok\b|la standard\b|meme\b)',folded(question).strip()) or re.fullmatch(r'(?:combien\s+)?(?:en|pour)\s+\d{4}\s*[?!.]*',text.strip()) or re.search(r'\bplutot\b|\bpardon\b|\bfinalement\b|\bdu coup\b|\blaquelle\b|\bla yam\b',text))
+    if previous and (re.search(r'\b(?:cette capacite|cette moto|ce modele|cette fiche|meme version|aussi)\b',text) or re.match(r'^convertis\b',text)):followup=True
     if followup and not previous and history and '_catalog_plan' not in last_assistant:
         # Recover context from visible user turns after a server reload. This
         # replays routing/SQL only, never old generator calls or assistant prose.
@@ -318,11 +490,21 @@ def route_question(conn,question,history=None):
     if followup and not previous:
         result.update(answer='Le contexte précédent n’est pas disponible ou était ambigu. Redonne le millésime et les critères à conserver ; je n’élargis pas la recherche silencieusement.',route='clarification');return result
     models,brands=entities(conn,question)
+    if models and re.search(r'\bstandard\b',text) and re.search(r'africa twin',text):models=[m for m in models if not re.search(r'adventure sports',folded(m['model']))]
+    if followup and previous and re.search(r'version standard',text):
+        bases=[]
+        for m in previous.get('models',[]):
+            base=re.sub(r'\s+(?:R|RS|S|SP|Factory|EVO)$','',m['model'],flags=re.I)
+            candidates=[g for g in identities(conn)['groups'] if folded(g['brand'])==folded(m['brand']) and folded(g['model'])==folded(base) and previous.get('identity',{}).get('year') in g['years']]
+            bases += [{'brand':g['brand'],'model':g['model']} for g in candidates]
+        if bases:models=deepcopy(previous['models'])+bases
     if followup and previous and re.search(r'pas l.adventure sports',text):models=[m for m in previous.get('models',[]) if 'adventure sports' not in folded(m['model'])]
     if followup and previous and not models and previous.get('models'):models=deepcopy(previous['models'])
     numbers=literals(question,models)
     if any(n['value']<0 and n['role'] in FIELDS for n in numbers):
         result.update(answer='Les bornes techniques ou de prix doivent être positives. Aucun filtre n’a été exécuté.',route='clarification');return result
+    if any(n['role']=='unsupported_dimension' for n in numbers) and not models:
+        result.update(answer='La borne concerne une dimension différente de la hauteur de selle. Ce filtre n’est pas encore représentable ; je ne le remplace pas par une hauteur de selle.',route='clarification');return result
     if any(n['role']=='unspecified_weight' for n in numbers):
         result.update(answer='Souhaites-tu un poids à sec ou un poids tous pleins/en ordre de marche ? Je ne mélange pas ces mesures.',route='clarification');return result
     if len(models)==1 and re.search(r'nom.*suffit|identifier la fiche',text):
@@ -345,8 +527,9 @@ def route_question(conn,question,history=None):
     if followup and previous and not re.search(r'\b(?:liste|montre|combien|nombre|quelles|quels|compare|explique)\b',text):
         operation=previous.get('operation',operation)
     literal_equipment=[name for name in ['ABS','CBS','contrôle de traction','régulateur de vitesse','poignées chauffantes','shifter','TPMS','IMU','ride by wire','airbag'] if re.search(r'(?<!\w)'+re.escape(folded(name))+r'(?!\w)',text)]
-    semantic_equipment={'ABS':r'anti.?blocage|antiblocking','CBS':r'freinage.*(?:combine|couple)','contrôle de traction':r'traction control|\btcs\b','régulateur de vitesse':r'cruise control','poignées chauffantes':r'heated grips','shifter':r'quick.?shifter'}
+    semantic_equipment={'ABS':r'anti.?blocage|antiblocking','CBS':r'freinage.*(?:combine|couple)','contrôle de traction':r'traction control|\btcs\b|anti.?patinage','régulateur de vitesse':r'cruise control','poignées chauffantes':r'heated grips','shifter':r'quick.?shifter'}
     chosen_equipment=pick('equipment')
+    literal_equipment += [name for name,pattern in semantic_equipment.items() if name not in literal_equipment and re.search(pattern,text)]
     equipment_requested=bool(literal_equipment or (chosen_equipment in semantic_equipment and re.search(semantic_equipment[chosen_equipment],text)))
     if len(literal_equipment)>4:
         result.update(answer='Précise au maximum quatre équipements pour ce filtre.',route='clarification');return result
@@ -367,6 +550,10 @@ def route_question(conn,question,history=None):
             operation='count' if re.search(r'\bcombien\b',text) else 'filter'
             scope_kind='supported'
     requested_fields=[key for key in TOPICS if pick('field_'+key)=='yes' and key!='full' and (key!='equipment' or equipment_requested or re.search(r'equipements?|aides? electroniques|options?',text))]
+    explicit_conversion=bool(models and re.search(r'convert(?:is|ir|issez)|conversion',text) and re.search(r'\bkw\b|gallons?\s+americains?|gallons?\s+us\b',text) and not any(n['explicit_operator'] for n in numbers))
+    if explicit_conversion:
+        scope_kind='supported';operation='details'
+        requested_fields=['power_ch'] if re.search(r'\bkw\b',text) else ['reservoir']
     dct_at=text.find('dct');negative_dct=dct_at>=0 and negated_mention(text,dct_at)
     if models and (('dct' in text and not negative_dct) or re.search(r'\bselle basse\b',text)):
         year=next((int(n['value']) for n in numbers if n['role']=='year'),previous.get('identity',{}).get('year') if previous else None)
@@ -395,6 +582,14 @@ def route_question(conn,question,history=None):
     if market_context:
         scope_kind='supported';operation='comparison' if len(models)>1 else 'details'
     if negative_dct and models and re.search(r'autonomie',text):scope_kind='supported';operation='details'
+    factual_topics=r'fourche|suspension|frein|pneu|roue|reservoir|empattement|longueur|largeur|cylindree|couple|poids|hauteur|selle|transmission|boite|coloris|couleurs?|moteur'
+    if models and re.search(factual_topics,text) and not re.search(r'fiabilite|confort|caractere|garanti|conseille|consequences?|pourquoi|impact|homolog|a2|commercialis|vendu.*france',text) and all(n['role'] in ['year','model_number','user_context','undetermined'] and not n['explicit_operator'] for n in numbers):
+        if scope_kind=='unsupported' or operation=='complex':scope_kind='supported';operation='comparison' if len(models)>1 else 'details'
+    if followup and previous and models and re.search(r'\bcombien\b',text) and re.search(r'ces suspensions|semi.acti|pilote',text):
+        counted=named_suspension_count(conn,models,previous.get('identity',{}))
+        if counted:
+            plan={**deepcopy(previous),'operation':'count','named_suspension_count':True}
+            result.update(answer=counted,route='count',plan=plan,jev_calls=calls,cached=cached,raw=raw,seconds=time.perf_counter()-started);return result
     if scope_kind!='supported':result.update(answer=unsupported[scope_kind],route='clarification')
     elif operation=='complex':
         years={int(n['value']) for n in numbers if n['role']=='year'}
@@ -410,6 +605,19 @@ def route_question(conn,question,history=None):
         if models and re.search(r'\bstandard\b',text):plan['unresolved_variant']=False
         plan['variant_unknown']=bool(negative_dct or (re.search(r'boite manuelle',text) and re.search(r'africa twin',text)))
         plan['source_question']=question
+        if not followup or entities(conn,question)[0]:
+            plan['candidate_variants']=[]
+            for model in models:
+                primary=aliases(model['brand'],model['model'],False)
+                if not any(spans(folded(question),alias) for alias in primary):
+                    group=next((g for g in identities(conn)['groups'] if folded(g['brand'])==folded(model['brand']) and folded(g['model'])==folded(model['model'])),None)
+                    if group and not any(spans(folded(question),alias) for alias in group.get('primary_aliases',primary)) and re.search(r'\b(?:formula|carat|strike|factory|adventure sports|limited|edition|anniversary)\b',folded(model['model'])):
+                        plan['candidate_variants'].append(model)
+        if re.search(r'lancement|sortie',text):plan['source_notes']=list(dict.fromkeys([*plan.get('source_notes',[]),'launch_price']))
+        if _category_context:
+            plan['category_request']=_category_context['request'];plan['source_question']=_category_context['question']
+        if re.search(r'manqu|pas le prix|pas la hauteur|sans prix|non renseigne',text) and re.search(r'a part|perdre|garde|conserve',text):
+            plan['include_unknown_fields']=[key for key,pattern in [('price_eur','prix'),('seat_height_mm','hauteur|selle')] if re.search(pattern,text)]
         plan['calculation_question']=question if is_arithmetic_question(question) else ''
         plan['operation']=operation
         secondary=re.search(r'\b(cardan|courroie|chaine)\b',text)
@@ -439,6 +647,8 @@ def route_question(conn,question,history=None):
                 result.update(answer='Une recherche multi-marques nécessite de préciser si tu veux une union ou une comparaison.',route='clarification');return result
             if len(brands)==1:plan['identity']['brand']=brands[0]
         years=[int(n['value']) for n in numbers if n['role']=='year']
+        if followup and previous and operation=='comparison' and len(set(years))==1 and previous.get('identity',{}).get('year') and years[0]!=previous['identity']['year'] and len(plan['models'])==1:
+            plan['models']=[{**plan['models'][0],'year':previous['identity']['year']},{**plan['models'][0],'year':years[0]}];years=[previous['identity']['year'],years[0]]
         conditions=[];invalid=False
         for n in numbers:
             if n['role'] in ['year','model_number','user_context']:continue
@@ -466,9 +676,13 @@ def route_question(conn,question,history=None):
             plan['identity'].pop('year',None);plan['identity'].update(min_year=lo,max_year=hi)
         elif len(set(years))>1 and operation=='comparison' and len(plan['models'])==1:
             plan['models']=[{**plan['models'][0],'year':y} for y in dict.fromkeys(years)];plan['identity'].pop('year',None)
+        elif len(set(years))>1 and operation=='comparison' and {m.get('year') for m in plan['models']}==set(years):
+            plan['identity'].pop('year',None)
         elif len(set(years))>1 and operation=='comparison':
-            assigned=[]
-            for model in plan['models']:
+            family=source_year_bindings(conn,plan['models'],text,years)
+            assigned=family if family is not None else []
+            if family==[]:invalid=True
+            for model in ([] if family is not None else plan['models']):
                 mentions=[(a,b) for alias in aliases(model['brand'],model['model']) for a,b in spans(text,alias)]
                 if not mentions:invalid=True;continue
                 start,end=max(mentions,key=lambda p:p[1]-p[0]);suffix=text[end:]
@@ -480,7 +694,7 @@ def route_question(conn,question,history=None):
                     possible=source_years & set(years)
                     if len(possible)==1:date=next(iter(possible))
                 assigned.append({**model,'year':date})
-            if len(assigned)==len(plan['models']):plan['models']=assigned;plan['identity'].pop('year',None)
+            if assigned and (family is not None or len(assigned)==len(plan['models'])):plan['models']=assigned;plan['identity'].pop('year',None)
         elif len(set(years))>1:invalid=True
         elif years:
             old_year=plan['identity'].get('year')
@@ -489,14 +703,18 @@ def route_question(conn,question,history=None):
             else:
                 plan['identity'].update(year=years[0]);plan['identity'].pop('min_year',None);plan['identity'].pop('max_year',None)
         plan['conditions']=merge_conditions(plan['conditions'],conditions,replace=bool(re.search(r'repars|recommence|remplace.*criteres|oublie.*criteres',text)))
-        cues={'price_eur':r'prix|tarif|cout|neuf|euros|balles','power_ch':r'puissance|chevaux|\bch\b|bourrins|canassons','torque_nm':r'couple|\bnm\b','displacement_ccm':r'cylindree|\bcc\b|cm3','seat_height_mm':r'selle|hauteur','weight_dry_kg':r'poids|poid\b|leger|pese','weight_wet_kg':r'poids|poid\b|leger|pese','autonomy_km':r'autonomie|avec un plein|ira le plus loin','suspension':r'suspension|fourche|amortisseur|reglage','braking':r'frein','transmission':r'transmission|cardan|chaine|courroie|boite|dct','cooling':r'refroid','equipment':r'equipement|options?|abs|shifter|poignees|regulateur|tpms|imu|airbag','full':r'fiche|complete|integrale'}
+        cues={'price_eur':r'prix|tarif|cout|neuf|euros|balles','power_ch':r'puissance|chevaux|\bch\b|bourrins|canassons','torque_nm':r'couple|\bnm\b','displacement_ccm':r'cylindree|\bcc\b|cm3','seat_height_mm':r'selle|hauteur','weight_dry_kg':r'poids|poid\b|leger|pese','weight_wet_kg':r'poids|poid\b|leger|pese','autonomy_km':r'autonomie|avec un plein|ira le plus loin','suspension':r'suspension|fourche|amortisseur|reglage|precharge|compression|detente','braking':r'frein','transmission':r'transmission|cardan|chaine|courroie|boite|dct|rapports','cooling':r'refroid','equipment':r'equipement|options?|abs|shifter|poignees|regulateur|tpms|imu|airbag','reservoir':r'reservoir|reserve','dimensions':r'longueur|largeur|empattement|dimensions|garde au sol','wheels':r'pneus?|roues?|pressions?','engine':r'architecture|type de moteur|motorisation|cylindres|soupapes|injection|carburateur','colors':r'couleurs?|coloris|livrees?','performance':r'vitesse max|consommation|consomme|litres.*100|0 a 100','full':r'fiche|complete|integrale'}
         fields=[key for key in TOPICS if re.search(cues[key],text)]
+        if followup and previous and re.search(r'garde seulement|uniquement.*differences?|seulement.*differences?',text):
+            fields=previous.get('fields',fields);plan['differences_only']=True
         if re.search(r'chiffres|donnees techniques|caracteristiques',text) and operation in ['details','comparison'] and not fields:
             fields=['displacement_ccm','power_ch','torque_nm','weight_dry_kg','weight_wet_kg','seat_height_mm','price_eur']
         if len(fields)>1 and 'full' in fields and not re.search(r'complete|integrale|toutes les caracteristiques|tout le contenu',text):fields.remove('full')
+        if re.search(r'suspension.*(?:pilot|semi.acti|electronique)',text) and not literal_equipment and 'equipment' in fields:fields.remove('equipment')
         if fields:
             if followup and previous and previous.get('unresolved_variant') and not re.search(r'juste|seulement|uniquement',text):plan['fields']=list(dict.fromkeys([*previous.get('fields',[]),*fields]))
             else:plan['fields']=fields
+        if plan.get('category_request',{}).get('category')=='electrique' and 'engine' not in plan['fields']:plan['fields'].append('engine')
         equipment=literal_equipment[0] if not models and len(literal_equipment)==1 else pick('equipment') if equipment_requested else 'none'
         if len(literal_equipment)>1 and operation in ['filter','count']:
             plan['equipment']=None

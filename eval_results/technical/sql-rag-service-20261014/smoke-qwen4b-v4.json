@@ -1,0 +1,617 @@
+{
+  "created_utc": "2026-10-14T13:06:25.164348+00:00",
+  "mode": "smoke",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "corpus_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "pack_manifest_sha256": "39e662dc853814ccc9523606ec50e7d4bd9d9947324630dfc96b497bbb8bef42",
+  "service_sha256": "2b359269854ac16e9c173da584a63f8be9a2eb5c1ba97df2cfc7028fb583a54c",
+  "adapter_sha256": "fd72c22f425b498796150a93192833176617db543b23954464b5ccf0941e0a54",
+  "session_sha256": "2a7c0c5c21cf6bce921f6916856738f8f01716c4e02a437020394a6726e6990a",
+  "retrieval_sha256": "f4bc7c6c536a97fb1d8cb45d244359c2067ad585e61edd5ed442fc7af9d1150d",
+  "preparation_seconds": 9.253313916968182,
+  "model_warmup": {
+    "model": "qwen3.5:4b",
+    "total_seconds": 6.417419292,
+    "load_seconds": 0.012757542,
+    "input_tokens": 3158
+  },
+  "streamed": false,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Quelle est la hauteur de selle de la Honda CB 500 F 2020 ?",
+      "status": "completed",
+      "error": null,
+      "answer": "La hauteur de selle de la Honda CB 500 F 2020 est de **785 mm**. Cette valeur figure dans la fiche technique du modèle, section Châssis.",
+      "final": {
+        "answer": "La hauteur de selle de la Honda CB 500 F 2020 est de **785 mm**. Cette valeur figure dans la fiche technique du modèle, section Châssis.",
+        "claims": [
+          {
+            "evidence_ids": [
+              "555a2d677db34a14:row:2"
+            ],
+            "text": "Hauteur de selle : 785 mm"
+          }
+        ],
+        "missing": [],
+        "needs_clarification": false
+      },
+      "calls": [
+        {
+          "id": "call_a0t69pba",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Honda CB 500 F 2020"
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 171.22
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 171.22
+          },
+          "seconds": 0.17125774989835918
+        },
+        {
+          "id": "call_arnj5d2p",
+          "name": "get_fiches",
+          "arguments": {
+            "object_ids": [
+              "555a2d677db34a14"
+            ],
+            "fields": [
+              "seat_height_mm"
+            ]
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [
+                    {
+                      "id": "555a2d677db34a14:section:0",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Châssis",
+                      "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                      "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:0",
+                      "kind": "passage"
+                    }
+                  ],
+                  "original_rows": [
+                    {
+                      "label": "Cadre",
+                      "section": "Châssis",
+                      "value": "en acier de type Diamant"
+                    },
+                    {
+                      "label": "Réservoir",
+                      "section": "Châssis",
+                      "value": "17,10 litres"
+                    },
+                    {
+                      "label": "Hauteur de selle",
+                      "section": "Châssis",
+                      "value": "785 mm"
+                    },
+                    {
+                      "label": "Longueur",
+                      "section": "Châssis",
+                      "value": "2 080 mm"
+                    },
+                    {
+                      "label": "Largeur",
+                      "section": "Châssis",
+                      "value": "790 mm"
+                    },
+                    {
+                      "label": "Hauteur min",
+                      "section": "Châssis",
+                      "value": "1 060 mm"
+                    },
+                    {
+                      "label": "Empattement",
+                      "section": "Châssis",
+                      "value": "1 410 mm"
+                    },
+                    {
+                      "label": "Poids tous pleins faits",
+                      "section": "Châssis",
+                      "value": "189 kg"
+                    }
+                  ]
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                }
+              },
+              {
+                "id": "555a2d677db34a14:section:0",
+                "object_id": "555a2d677db34a14",
+                "section": "Châssis",
+                "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:0",
+                "kind": "passage"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "555a2d677db34a14"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 1.652
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [
+                    {
+                      "id": "555a2d677db34a14:section:0",
+                      "object_id": "555a2d677db34a14",
+                      "section": "Châssis",
+                      "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                      "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                      "brand": "Honda",
+                      "model": "CB 500 F",
+                      "year": 2020,
+                      "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                      "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                      "evidence_id": "555a2d677db34a14:section:0",
+                      "kind": "passage"
+                    }
+                  ],
+                  "original_rows": [
+                    {
+                      "label": "Cadre",
+                      "section": "Châssis",
+                      "value": "en acier de type Diamant"
+                    },
+                    {
+                      "label": "Réservoir",
+                      "section": "Châssis",
+                      "value": "17,10 litres"
+                    },
+                    {
+                      "label": "Hauteur de selle",
+                      "section": "Châssis",
+                      "value": "785 mm"
+                    },
+                    {
+                      "label": "Longueur",
+                      "section": "Châssis",
+                      "value": "2 080 mm"
+                    },
+                    {
+                      "label": "Largeur",
+                      "section": "Châssis",
+                      "value": "790 mm"
+                    },
+                    {
+                      "label": "Hauteur min",
+                      "section": "Châssis",
+                      "value": "1 060 mm"
+                    },
+                    {
+                      "label": "Empattement",
+                      "section": "Châssis",
+                      "value": "1 410 mm"
+                    },
+                    {
+                      "label": "Poids tous pleins faits",
+                      "section": "Châssis",
+                      "value": "189 kg"
+                    }
+                  ]
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                }
+              },
+              {
+                "id": "555a2d677db34a14:section:0",
+                "object_id": "555a2d677db34a14",
+                "section": "Châssis",
+                "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+                "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "evidence_id": "555a2d677db34a14:section:0",
+                "kind": "passage"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "555a2d677db34a14"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 1.652
+          },
+          "seconds": 0.001663832925260067
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_a0t69pba",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "Honda CB 500 F 2020"
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3173,
+            "output_tokens": 37,
+            "cost_usd": null,
+            "load_seconds": 0.006492458,
+            "native_model_seconds": 3.916822167
+          },
+          "model": "qwen3.5:4b",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_arnj5d2p",
+                "function": {
+                  "index": 0,
+                  "name": "get_fiches",
+                  "arguments": {
+                    "object_ids": [
+                      "555a2d677db34a14"
+                    ],
+                    "fields": [
+                      "seat_height_mm"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3663,
+            "output_tokens": 60,
+            "cost_usd": null,
+            "load_seconds": 0.013762125,
+            "native_model_seconds": 3.675432584
+          },
+          "model": "qwen3.5:4b",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 3,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_h5bju10k",
+                "function": {
+                  "index": 0,
+                  "name": "submit_answer",
+                  "arguments": {
+                    "answer": "La hauteur de selle de la Honda CB 500 F 2020 est de **785 mm**. Cette valeur figure dans la fiche technique du modèle, section Châssis.",
+                    "claims": [
+                      {
+                        "evidence_ids": [
+                          "555a2d677db34a14:row:2"
+                        ],
+                        "text": "Hauteur de selle : 785 mm"
+                      }
+                    ],
+                    "missing": [],
+                    "needs_clarification": false
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 5095,
+            "output_tokens": 149,
+            "cost_usd": null,
+            "load_seconds": 0.007929,
+            "native_model_seconds": 10.02466675
+          },
+          "model": "qwen3.5:4b",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "555a2d677db34a14:identity",
+          "kind": "source_row",
+          "id": "555a2d677db34a14",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:2",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "row": {
+            "label": "Hauteur de selle",
+            "section": "Châssis",
+            "value": "785 mm"
+          }
+        },
+        {
+          "id": "555a2d677db34a14:section:0",
+          "object_id": "555a2d677db34a14",
+          "section": "Châssis",
+          "text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+          "text_sha256": "ddb9bb80a4f32d9e2061bf89f2b73f6efc1f96a5cf23ba86bc2035ba2e88271c",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "evidence_id": "555a2d677db34a14:section:0",
+          "kind": "passage"
+        }
+      ],
+      "timing": {
+        "full_answer_seconds": 17.798896167078055,
+        "model_seconds": 17.62518529209774,
+        "tool_seconds": 0.17292158282361925,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 11931,
+        "output_tokens": 246,
+        "cost_usd": null,
+        "peak_memory_bytes": 1787002880,
+        "requests": [
+          {
+            "input_tokens": 3173,
+            "output_tokens": 37,
+            "cost_usd": null,
+            "load_seconds": 0.006492458,
+            "native_model_seconds": 3.916822167
+          },
+          {
+            "input_tokens": 3663,
+            "output_tokens": 60,
+            "cost_usd": null,
+            "load_seconds": 0.013762125,
+            "native_model_seconds": 3.675432584
+          },
+          {
+            "input_tokens": 5095,
+            "output_tokens": 149,
+            "cost_usd": null,
+            "load_seconds": 0.007929,
+            "native_model_seconds": 10.02466675
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 1200,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": true,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "case_id": "smoke",
+      "repeat": 1,
+      "candidate_id": "ollama:qwen3.5:4b"
+    }
+  ]
+}

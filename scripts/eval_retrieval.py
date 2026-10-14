@@ -43,8 +43,6 @@ from bikefinder_rag.db.client import get_connection
 from bikefinder_rag.embeddings.embedder import embed_text, embed_texts
 from bikefinder_rag.eval.provenance import collect_provenance, dated_report_path
 
-TOTAL_CHUNKS_SQL = "SELECT count(*) FROM review_chunks"
-
 THEMES = [
     ("fuel economy / mileage", "how good is the fuel economy and mileage", r"mileage|fuel consumption|km/l|mpg"),
     ("vibration at speed", "does the engine vibrate a lot at speed", r"vibrat"),
