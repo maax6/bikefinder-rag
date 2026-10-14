@@ -1,0 +1,734 @@
+{
+  "timestamp": "2026-10-14T02:00:51.769498+00:00",
+  "front_url": "http://127.0.0.1:7863/",
+  "method": "Actual fresh Gradio session matched to its allowlisted server receipt; passages checked against read-only live SQL; targeted root-authored cases, not an independent benchmark",
+  "results": [
+    {
+      "id": "original",
+      "question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?",
+      "brands": [
+        "Honda",
+        "BMW"
+      ],
+      "kind": "research",
+      "seconds": 58.58198733301833,
+      "checks": {
+        "actual_frontend_receipt": true,
+        "all_passages_match_live_sql": true,
+        "no_year_input_required": true,
+        "local_planner": true,
+        "actual_tools": true,
+        "local_writer": true,
+        "requested_families": true,
+        "cited_families": true,
+        "missing_visible": true
+      },
+      "receipt": {
+        "question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?",
+        "answer": "Les passages fournis ne permettent pas d'établir la date de disponibilité d'une boîte automatique sur les Goldwing Honda. [Honda GL 1500 GOLDWING (1988)](https://www.motoplanete.com/honda/676/GL-1500-GOLDWING-1988/contact.html); [Honda GL 1500 GOLDWING (1989)](https://www.motoplanete.com/honda/677/GL-1500-GOLDWING-1989/contact.html); [Honda GL 1500 GOLDWING (1990)](https://www.motoplanete.com/honda/678/GL-1500-GOLDWING-1990/contact.html)\n\nLes passages fournis ne permettent pas d'établir la date de disponibilité d'une boîte automatique sur les RT BMW. [BMW R 850 RT (1998)](https://www.motoplanete.com/bmw/4172/R-850-RT-1998/contact.html); [BMW R 850 RT (1999)](https://www.motoplanete.com/bmw/4173/R-850-RT-1999/contact.html); [BMW R 850 RT (2000)](https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Les millésimes documentés dans ce catalogue ne prouvent pas une date officielle de lancement ni la disponibilité de chaque version ou option.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+        "seconds": 58.53705008409452,
+        "timestamp": "2026-10-14T02:00:51.733493+00:00",
+        "_catalog_plan": {
+          "operation": "research",
+          "source_question": "Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?",
+          "a2_context": false
+        },
+        "_catalog_pending": null,
+        "_catalog_route": "rag_mistral_partial",
+        "_catalog_seconds": 56.14913124998566,
+        "_catalog_jev_calls": 1,
+        "_catalog_evidence": {
+          "retrieval_executed": true,
+          "sources": [
+            {
+              "object_id": "6a599f26a1900186",
+              "brand": "Honda",
+              "model": "GL 1500 GOLDWING",
+              "year": 1988,
+              "source_url": "https://www.motoplanete.com/honda/676/GL-1500-GOLDWING-1988/contact.html",
+              "source_sha256": "447dbf478147b75eaae97befb297c252fd27e1a4bd0816e4d3c7d4e1b4bcc36f",
+              "identity_validation": "SQL primary key, canonical name, actual year and source hash; year discovered in catalogue",
+              "coverage": {},
+              "passages": [
+                {
+                  "id": "6a599f26a1900186:section:2",
+                  "object_id": "6a599f26a1900186",
+                  "brand": "Honda",
+                  "model": "GL 1500 GOLDWING",
+                  "year": 1988,
+                  "source_url": "https://www.motoplanete.com/honda/676/GL-1500-GOLDWING-1988/contact.html",
+                  "source_sha256": "447dbf478147b75eaae97befb297c252fd27e1a4bd0816e4d3c7d4e1b4bcc36f",
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                  "text": "Honda GL 1500 GOLDWING 1988\nTransmission\nboîte à 5 rapports; Secondaire par cardan"
+                }
+              ]
+            },
+            {
+              "object_id": "227832fe22a1ac1a",
+              "brand": "Honda",
+              "model": "GL 1500 GOLDWING",
+              "year": 1989,
+              "source_url": "https://www.motoplanete.com/honda/677/GL-1500-GOLDWING-1989/contact.html",
+              "source_sha256": "7da79de9c9cf5f5ecff95748d82491aabcdf68e63f5fddc4ef588112d1d22193",
+              "identity_validation": "SQL primary key, canonical name, actual year and source hash; year discovered in catalogue",
+              "coverage": {},
+              "passages": [
+                {
+                  "id": "227832fe22a1ac1a:section:2",
+                  "object_id": "227832fe22a1ac1a",
+                  "brand": "Honda",
+                  "model": "GL 1500 GOLDWING",
+                  "year": 1989,
+                  "source_url": "https://www.motoplanete.com/honda/677/GL-1500-GOLDWING-1989/contact.html",
+                  "source_sha256": "7da79de9c9cf5f5ecff95748d82491aabcdf68e63f5fddc4ef588112d1d22193",
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                  "text": "Honda GL 1500 GOLDWING 1989\nTransmission\nboîte à 5 rapports; Secondaire par cardan"
+                }
+              ]
+            },
+            {
+              "object_id": "59933becf595e57a",
+              "brand": "Honda",
+              "model": "GL 1500 GOLDWING",
+              "year": 1990,
+              "source_url": "https://www.motoplanete.com/honda/678/GL-1500-GOLDWING-1990/contact.html",
+              "source_sha256": "5d7f9ab2e6f14052b686e23937793524a13b023a883e5465cf21967393543432",
+              "identity_validation": "SQL primary key, canonical name, actual year and source hash; year discovered in catalogue",
+              "coverage": {},
+              "passages": [
+                {
+                  "id": "59933becf595e57a:section:2",
+                  "object_id": "59933becf595e57a",
+                  "brand": "Honda",
+                  "model": "GL 1500 GOLDWING",
+                  "year": 1990,
+                  "source_url": "https://www.motoplanete.com/honda/678/GL-1500-GOLDWING-1990/contact.html",
+                  "source_sha256": "5d7f9ab2e6f14052b686e23937793524a13b023a883e5465cf21967393543432",
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                  "text": "Honda GL 1500 GOLDWING 1990\nTransmission\nboîte à 5 rapports; Secondaire par cardan"
+                }
+              ]
+            },
+            {
+              "object_id": "a5214092f0253162",
+              "brand": "BMW",
+              "model": "R 850 RT",
+              "year": 1998,
+              "source_url": "https://www.motoplanete.com/bmw/4172/R-850-RT-1998/contact.html",
+              "source_sha256": "58f07b37226726333a91dcd80a07efa3d1842fede094301a5db7d28d2f038392",
+              "identity_validation": "SQL primary key, canonical name, actual year and source hash; year discovered in catalogue",
+              "coverage": {},
+              "passages": [
+                {
+                  "id": "a5214092f0253162:section:2",
+                  "object_id": "a5214092f0253162",
+                  "brand": "BMW",
+                  "model": "R 850 RT",
+                  "year": 1998,
+                  "source_url": "https://www.motoplanete.com/bmw/4172/R-850-RT-1998/contact.html",
+                  "source_sha256": "58f07b37226726333a91dcd80a07efa3d1842fede094301a5db7d28d2f038392",
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                  "text": "BMW R 850 RT 1998\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par cardan"
+                }
+              ]
+            },
+            {
+              "object_id": "2612df5e1938227c",
+              "brand": "BMW",
+              "model": "R 850 RT",
+              "year": 1999,
+              "source_url": "https://www.motoplanete.com/bmw/4173/R-850-RT-1999/contact.html",
+              "source_sha256": "7ca5a380964dd20176f19ed23fe8597d297fd5f7994f27887ba6ff8e116ea1c4",
+              "identity_validation": "SQL primary key, canonical name, actual year and source hash; year discovered in catalogue",
+              "coverage": {},
+              "passages": [
+                {
+                  "id": "2612df5e1938227c:section:2",
+                  "object_id": "2612df5e1938227c",
+                  "brand": "BMW",
+                  "model": "R 850 RT",
+                  "year": 1999,
+                  "source_url": "https://www.motoplanete.com/bmw/4173/R-850-RT-1999/contact.html",
+                  "source_sha256": "7ca5a380964dd20176f19ed23fe8597d297fd5f7994f27887ba6ff8e116ea1c4",
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                  "text": "BMW R 850 RT 1999\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par cardan"
+                }
+              ]
+            },
+            {
+              "object_id": "b5a15d8c221957ce",
+              "brand": "BMW",
+              "model": "R 850 RT",
+              "year": 2000,
+              "source_url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html",
+              "source_sha256": "78a399257eccea301bef0230adf1b042815dd2a631aef5407d0bfbcbaef23a2d",
+              "identity_validation": "SQL primary key, canonical name, actual year and source hash; year discovered in catalogue",
+              "coverage": {},
+              "passages": [
+                {
+                  "id": "b5a15d8c221957ce:section:2",
+                  "object_id": "b5a15d8c221957ce",
+                  "brand": "BMW",
+                  "model": "R 850 RT",
+                  "year": 2000,
+                  "source_url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html",
+                  "source_sha256": "78a399257eccea301bef0230adf1b042815dd2a631aef5407d0bfbcbaef23a2d",
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                  "text": "BMW R 850 RT 2000\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par cardan"
+                }
+              ]
+            }
+          ],
+          "missing": [
+            {
+              "kind": "authority",
+              "message": "Les millésimes documentés dans ce catalogue ne prouvent pas une date officielle de lancement ni la disponibilité de chaque version ou option."
+            }
+          ],
+          "research_scopes": [
+            {
+              "scope_id": "S1",
+              "query": "boîte automatique",
+              "mode": "earliest_mention",
+              "terms": [
+                "transmission",
+                "automatique",
+                "boîte",
+                "transmission automatique"
+              ],
+              "searched_fiches": 64,
+              "searched_passages": 636,
+              "matching_mentions": 72,
+              "earliest_matching_mention_year": 1988,
+              "scope_note": "Dates de fiches conservées ; aucune date officielle de lancement ni absence réelle établie.",
+              "passages": [
+                {
+                  "id": "6a599f26a1900186:section:2",
+                  "object_id": "6a599f26a1900186",
+                  "brand": "Honda",
+                  "model": "GL 1500 GOLDWING",
+                  "year": 1988,
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                  "source_url": "https://www.motoplanete.com/honda/676/GL-1500-GOLDWING-1988/contact.html"
+                },
+                {
+                  "id": "227832fe22a1ac1a:section:2",
+                  "object_id": "227832fe22a1ac1a",
+                  "brand": "Honda",
+                  "model": "GL 1500 GOLDWING",
+                  "year": 1989,
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                  "source_url": "https://www.motoplanete.com/honda/677/GL-1500-GOLDWING-1989/contact.html"
+                },
+                {
+                  "id": "59933becf595e57a:section:2",
+                  "object_id": "59933becf595e57a",
+                  "brand": "Honda",
+                  "model": "GL 1500 GOLDWING",
+                  "year": 1990,
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                  "source_url": "https://www.motoplanete.com/honda/678/GL-1500-GOLDWING-1990/contact.html"
+                }
+              ],
+              "missing": [],
+              "retrieval": {
+                "index": "verified_local_index",
+                "documents": 636,
+                "model_revision": "5617a9f61b028005a4858fdac845db406aefb181"
+              }
+            },
+            {
+              "scope_id": "S2",
+              "query": "boîte automatique",
+              "mode": "earliest_mention",
+              "terms": [
+                "transmission",
+                "automatique",
+                "boîte",
+                "transmission automatique"
+              ],
+              "searched_fiches": 38,
+              "searched_passages": 369,
+              "matching_mentions": 38,
+              "earliest_matching_mention_year": 1998,
+              "scope_note": "Dates de fiches conservées ; aucune date officielle de lancement ni absence réelle établie.",
+              "passages": [
+                {
+                  "id": "a5214092f0253162:section:2",
+                  "object_id": "a5214092f0253162",
+                  "brand": "BMW",
+                  "model": "R 850 RT",
+                  "year": 1998,
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                  "source_url": "https://www.motoplanete.com/bmw/4172/R-850-RT-1998/contact.html"
+                },
+                {
+                  "id": "2612df5e1938227c:section:2",
+                  "object_id": "2612df5e1938227c",
+                  "brand": "BMW",
+                  "model": "R 850 RT",
+                  "year": 1999,
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                  "source_url": "https://www.motoplanete.com/bmw/4173/R-850-RT-1999/contact.html"
+                },
+                {
+                  "id": "b5a15d8c221957ce:section:2",
+                  "object_id": "b5a15d8c221957ce",
+                  "brand": "BMW",
+                  "model": "R 850 RT",
+                  "year": 2000,
+                  "section": "Transmission",
+                  "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                  "source_url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html"
+                }
+              ],
+              "missing": [],
+              "retrieval": {
+                "index": "verified_local_index",
+                "documents": 369,
+                "model_revision": "5617a9f61b028005a4858fdac845db406aefb181"
+              }
+            }
+          ],
+          "legal_certification": false
+        },
+        "_catalog_research": {
+          "backend": "ollama",
+          "local_planner_calls": 1,
+          "tool_calls": 2,
+          "steps": [
+            {
+              "model": {
+                "model": "mistral-small3.2",
+                "done_reason": "stop",
+                "prompt_eval_count": 643,
+                "eval_count": 178,
+                "total_duration": 24870548209,
+                "load_duration": 22360125,
+                "prompt_eval_duration": 196082000,
+                "eval_duration": 24557985000
+              },
+              "plan": {
+                "calls": [
+                  {
+                    "tool": "research_catalog",
+                    "arguments": {
+                      "brand": "Honda",
+                      "model_query": "Goldwing",
+                      "query": "boîte automatique",
+                      "mode": "earliest_mention",
+                      "terms": [
+                        "transmission",
+                        "automatique",
+                        "boîte",
+                        "transmission automatique"
+                      ]
+                    }
+                  },
+                  {
+                    "tool": "research_catalog",
+                    "arguments": {
+                      "brand": "BMW",
+                      "model_query": "RT",
+                      "query": "boîte automatique",
+                      "mode": "earliest_mention",
+                      "terms": [
+                        "transmission",
+                        "automatique",
+                        "boîte",
+                        "transmission automatique"
+                      ]
+                    }
+                  }
+                ],
+                "ready_to_answer": true
+              },
+              "results": [
+                {
+                  "tool": "research_catalog",
+                  "arguments": {
+                    "brand": "Honda",
+                    "model_query": "Goldwing",
+                    "query": "boîte automatique",
+                    "mode": "earliest_mention",
+                    "terms": [
+                      "transmission",
+                      "automatique",
+                      "boîte",
+                      "transmission automatique"
+                    ]
+                  },
+                  "result": {
+                    "scope_id": "S1",
+                    "query": "boîte automatique",
+                    "mode": "earliest_mention",
+                    "terms": [
+                      "transmission",
+                      "automatique",
+                      "boîte",
+                      "transmission automatique"
+                    ],
+                    "searched_fiches": 64,
+                    "searched_passages": 636,
+                    "matching_mentions": 72,
+                    "earliest_matching_mention_year": 1988,
+                    "scope_note": "Dates de fiches conservées ; aucune date officielle de lancement ni absence réelle établie.",
+                    "passages": [
+                      {
+                        "id": "6a599f26a1900186:section:2",
+                        "object_id": "6a599f26a1900186",
+                        "brand": "Honda",
+                        "model": "GL 1500 GOLDWING",
+                        "year": 1988,
+                        "section": "Transmission",
+                        "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                        "source_url": "https://www.motoplanete.com/honda/676/GL-1500-GOLDWING-1988/contact.html"
+                      },
+                      {
+                        "id": "227832fe22a1ac1a:section:2",
+                        "object_id": "227832fe22a1ac1a",
+                        "brand": "Honda",
+                        "model": "GL 1500 GOLDWING",
+                        "year": 1989,
+                        "section": "Transmission",
+                        "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                        "source_url": "https://www.motoplanete.com/honda/677/GL-1500-GOLDWING-1989/contact.html"
+                      },
+                      {
+                        "id": "59933becf595e57a:section:2",
+                        "object_id": "59933becf595e57a",
+                        "brand": "Honda",
+                        "model": "GL 1500 GOLDWING",
+                        "year": 1990,
+                        "section": "Transmission",
+                        "original_text": "boîte à 5 rapports; Secondaire par cardan",
+                        "source_url": "https://www.motoplanete.com/honda/678/GL-1500-GOLDWING-1990/contact.html"
+                      }
+                    ],
+                    "missing": [],
+                    "retrieval": {
+                      "index": "verified_local_index",
+                      "documents": 636,
+                      "model_revision": "5617a9f61b028005a4858fdac845db406aefb181"
+                    },
+                    "brand": "Honda",
+                    "model_query": "Goldwing",
+                    "variants": [
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1500 GOLDWING",
+                        "first_year": 1988,
+                        "last_year": 2000,
+                        "fiches": 13
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING",
+                        "first_year": 2001,
+                        "last_year": 2016,
+                        "fiches": 16
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING avec AIRBAG",
+                        "first_year": 2007,
+                        "last_year": 2011,
+                        "fiches": 5
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING F6B",
+                        "first_year": 2013,
+                        "last_year": 2017,
+                        "fiches": 4
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "1800 GOLDWING F6C Valkyrie",
+                        "first_year": 2014,
+                        "last_year": 2015,
+                        "fiches": 2
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING 40ème anniversaire",
+                        "first_year": 2015,
+                        "last_year": 2015,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING F6B 40me anniversaire",
+                        "first_year": 2015,
+                        "last_year": 2015,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING Std bagger",
+                        "first_year": 2018,
+                        "last_year": 2018,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING Tour",
+                        "first_year": 2018,
+                        "last_year": 2021,
+                        "fiches": 4
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING Tour DCT/Airbag",
+                        "first_year": 2018,
+                        "last_year": 2026,
+                        "fiches": 8
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING bagger",
+                        "first_year": 2019,
+                        "last_year": 2019,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING DCT",
+                        "first_year": 2020,
+                        "last_year": 2026,
+                        "fiches": 6
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING DCT 50ème anniversaire",
+                        "first_year": 2025,
+                        "last_year": 2025,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "Honda",
+                        "model": "GL 1800 GOLDWING Tour DCT/Airbag 50ème anniversaire",
+                        "first_year": 2025,
+                        "last_year": 2025,
+                        "fiches": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "tool": "research_catalog",
+                  "arguments": {
+                    "brand": "BMW",
+                    "model_query": "RT",
+                    "query": "boîte automatique",
+                    "mode": "earliest_mention",
+                    "terms": [
+                      "transmission",
+                      "automatique",
+                      "boîte",
+                      "transmission automatique"
+                    ]
+                  },
+                  "result": {
+                    "scope_id": "S2",
+                    "query": "boîte automatique",
+                    "mode": "earliest_mention",
+                    "terms": [
+                      "transmission",
+                      "automatique",
+                      "boîte",
+                      "transmission automatique"
+                    ],
+                    "searched_fiches": 38,
+                    "searched_passages": 369,
+                    "matching_mentions": 38,
+                    "earliest_matching_mention_year": 1998,
+                    "scope_note": "Dates de fiches conservées ; aucune date officielle de lancement ni absence réelle établie.",
+                    "passages": [
+                      {
+                        "id": "a5214092f0253162:section:2",
+                        "object_id": "a5214092f0253162",
+                        "brand": "BMW",
+                        "model": "R 850 RT",
+                        "year": 1998,
+                        "section": "Transmission",
+                        "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                        "source_url": "https://www.motoplanete.com/bmw/4172/R-850-RT-1998/contact.html"
+                      },
+                      {
+                        "id": "2612df5e1938227c:section:2",
+                        "object_id": "2612df5e1938227c",
+                        "brand": "BMW",
+                        "model": "R 850 RT",
+                        "year": 1999,
+                        "section": "Transmission",
+                        "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                        "source_url": "https://www.motoplanete.com/bmw/4173/R-850-RT-1999/contact.html"
+                      },
+                      {
+                        "id": "b5a15d8c221957ce:section:2",
+                        "object_id": "b5a15d8c221957ce",
+                        "brand": "BMW",
+                        "model": "R 850 RT",
+                        "year": 2000,
+                        "section": "Transmission",
+                        "original_text": "boîte à 5 rapports , manuelle; Secondaire par cardan",
+                        "source_url": "https://www.motoplanete.com/bmw/4174/R-850-RT-2000/contact.html"
+                      }
+                    ],
+                    "missing": [],
+                    "retrieval": {
+                      "index": "verified_local_index",
+                      "documents": 369,
+                      "model_revision": "5617a9f61b028005a4858fdac845db406aefb181"
+                    },
+                    "brand": "BMW",
+                    "model_query": "RT",
+                    "variants": [
+                      {
+                        "brand": "BMW",
+                        "model": "R 850 RT",
+                        "first_year": 1998,
+                        "last_year": 2006,
+                        "fiches": 9
+                      },
+                      {
+                        "brand": "BMW",
+                        "model": "R 1150 RT",
+                        "first_year": 2001,
+                        "last_year": 2004,
+                        "fiches": 4
+                      },
+                      {
+                        "brand": "BMW",
+                        "model": "R 1200 RT",
+                        "first_year": 2005,
+                        "last_year": 2018,
+                        "fiches": 14
+                      },
+                      {
+                        "brand": "BMW",
+                        "model": "R 1200 RT 90 ans",
+                        "first_year": 2013,
+                        "last_year": 2013,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "BMW",
+                        "model": "R 1250 RT",
+                        "first_year": 2019,
+                        "last_year": 2025,
+                        "fiches": 7
+                      },
+                      {
+                        "brand": "BMW",
+                        "model": "R 1250 RT Exclusive",
+                        "first_year": 2020,
+                        "last_year": 2020,
+                        "fiches": 1
+                      },
+                      {
+                        "brand": "BMW",
+                        "model": "R 1300 RT",
+                        "first_year": 2025,
+                        "last_year": 2026,
+                        "fiches": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "seconds": 56.14913124998566
+        },
+        "_catalog_generation": {
+          "backend": "ollama",
+          "orchestrator": "langchain_ollama",
+          "published": true,
+          "call_attempted": true,
+          "context_sha256": "fdb2b82088f99c175f4e51b8c8da3d1221820c2a23fd8e85ce7380d2c4365e8a",
+          "model": "mistral-small3.2",
+          "done_reason": "stop",
+          "prompt_eval_count": 1801,
+          "eval_count": 98,
+          "total_duration": 21845730000,
+          "load_duration": 30405333,
+          "prompt_eval_duration": 7502665000,
+          "eval_duration": 14187219000,
+          "candidate": {
+            "claims": [
+              {
+                "text": "Les passages fournis ne permettent pas d'établir la date de disponibilité d'une boîte automatique sur les Goldwing Honda.",
+                "sources": [
+                  "P1",
+                  "P2",
+                  "P3"
+                ]
+              },
+              {
+                "text": "Les passages fournis ne permettent pas d'établir la date de disponibilité d'une boîte automatique sur les RT BMW.",
+                "sources": [
+                  "P4",
+                  "P5",
+                  "P6"
+                ]
+              }
+            ]
+          },
+          "proof_check": {
+            "accepted": true,
+            "verified_claim_indices": [
+              0,
+              1
+            ],
+            "coverage_verified": false,
+            "jev_calls": 1,
+            "verdicts": {
+              "claim_0": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "claim_1": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.99,
+                  "unsupported": 0.01
+                },
+                "confidence": 0.98
+              },
+              "answer_coverage": {
+                "type": "choice",
+                "choice": "supported",
+                "probabilities": {
+                  "supported": 0.85,
+                  "unsupported": 0.15
+                },
+                "confidence": 0.7
+              }
+            }
+          },
+          "mode": "written",
+          "seconds": 22.551878415979445
+        }
+      }
+    }
+  ]
+}

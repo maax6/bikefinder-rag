@@ -1,0 +1,8 @@
+{"method":"Root-authored validation cases frozen before the first run of the new research path; this is a targeted validation, not an independent general benchmark","cases":[
+{"id":"original","question":"Sur les goldwing honda et sur les RT BMW c'est à partir de quelle année les boites automatiques ?","brands":["Honda","BMW"],"kind":"research"},
+{"id":"honda","question":"Sans fixer un millésime, retrouve dans les fiches Gold Wing Honda les plus anciennes mentions d'une boîte robotisée à double embrayage. Distingue une année documentée d'une date de lancement.","brands":["Honda"],"kind":"research"},
+{"id":"bmw","question":"Cherche parmi les BMW RT, sans année imposée, une preuve de boîte automatique ou robotisée. Si les fiches décrivent uniquement une boîte manuelle et un shifter, explique ce qu'on ne peut pas conclure.","brands":["BMW"],"kind":"research"},
+{"id":"both_rephrased","question":"Compare l'historique des boîtes des RT BMW et des Gold Wing Honda. Quels millésimes du catalogue documentent une automatisation et quelles preuves nous manquent ?","brands":["Honda","BMW"],"kind":"research"},
+{"id":"unknown_edition","question":"Honda Gold Wing édition Galaxie : trouve une fiche de cette édition avec une boîte automatique, sans substituer une autre version.","brands":[],"kind":"unknown_identity"},
+{"id":"sql_control","question":"Combien de Yamaha de 2020 ont l'ABS et un shifter de série ?","brands":[],"kind":"sql"}
+]}

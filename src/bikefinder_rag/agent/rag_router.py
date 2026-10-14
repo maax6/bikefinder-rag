@@ -220,6 +220,18 @@ def route_question(conn, question, history=None):
         return legacy.route_question(conn, question, history)
     if re.search(r"\bsk-[a-z]|api[_ -]?key", question, re.I):
         return legacy.route_question(conn, question, history)
+    # Discovery must precede the exact-fiche router: the year may be an output.
+    # Counts/calculations and explicit single-fiche consultations retain their
+    # established paths; research sessions can continue through this interface.
+    if os.getenv("BIKEFINDER_CATALOG_RESEARCH", "0") == "1":
+        models, brands = legacy.entities(conn, question)
+        years = [n for n in legacy.literals(question, models) if n["role"] == "year"]
+        discovery = bool(re.search(r"depuis quand|a partir de quelle|premier.{0,30}(?:annee|millesime)|quelles? (?:versions?|variantes?)", legacy.folded(question)))
+        continuation = any(m.get("_catalog_research") for m in (history or [])[-2:])
+        structured = bool(re.search(r"\b(?:combien de|compte|filtre|liste)\b", legacy.folded(question)) or legacy.is_arithmetic_question(question))
+        if not structured and ((not years and (models or brands)) or discovery or continuation):
+            from bikefinder_rag.agent.catalog_research import answer_question
+            return answer_question(conn, question, history)
     started = time.perf_counter()
     previous = next((m.get("_catalog_plan") for m in reversed(history or []) if m.get("role") == "assistant"), None)
     text = legacy.folded(question)

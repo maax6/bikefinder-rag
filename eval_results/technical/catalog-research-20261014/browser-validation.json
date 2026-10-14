@@ -1,0 +1,17 @@
+{
+  "method": "Question entered and submitted through the browser UI; visible prose and URLs inspected with DOM snapshot and screenshot; matching latest allowlisted server receipt; SQL checks performed separately without a second model call",
+  "receipt": "browser-original-receipt.json",
+  "screenshot": "frontend-original.png",
+  "seconds": 137.3317673749989,
+  "all_sources_match_live_sql": true,
+  "checked_source_count": 7,
+  "verified_claim_indices": [
+    0,
+    1
+  ],
+  "mode": "mixed",
+  "tests": {
+    "passed": 1040,
+    "skipped": 8
+  }
+}

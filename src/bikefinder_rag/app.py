@@ -23,6 +23,9 @@ from bikefinder_rag.agent.loop import (
 from bikefinder_rag.db.client import get_connection
 
 
+CATALOG_RESEARCH_ENABLED = BACKEND == "ollama" and os.getenv("BIKEFINDER_CATALOG_RESEARCH") == "1"
+
+
 def _is_retry(message: str) -> bool:
     text = unicodedata.normalize("NFKD", message).encode("ascii", "ignore").decode().lower()
     text = re.sub(r"[^a-z\s]", "", text)
@@ -121,13 +124,25 @@ def chat(message: str, chat_history: list, api_key: str, agent_history: list):
 
 with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
     gr.Markdown(
-        "# 🏍️ Bikefinder — catalogue technique\n"
-        "Consultez une fiche par modèle et **millésime**, ou comparez plusieurs motos "
-        "d'une même année. Précisez la marque, le modèle, l'année et, si vous la "
-        "connaissez, la variante. Demandez les unités et les sources des caractéristiques."
+        ("# 🏍️ Bikefinder — catalogue technique\n"
+         "Explorez une famille de motos sans année imposée. Pour une fiche précise, "
+         "indiquez le millésime et la variante. Les réponses présentent les sources et les preuves manquantes.")
+        if CATALOG_RESEARCH_ENABLED else
+        ("# 🏍️ Bikefinder — catalogue technique\n"
+         "Consultez une fiche par modèle et **millésime**, ou comparez plusieurs motos "
+         "d'une même année. Précisez la marque, le modèle, l'année et, si vous la "
+         "connaissez, la variante. Demandez les unités et les sources des caractéristiques.")
     )
     if BACKEND == "ollama":
-        if os.getenv('BIKEFINDER_JEV_ROUTER')=='1':
+        if CATALOG_RESEARCH_ENABLED:
+            gr.Markdown(
+                "**Recherche locale** : Mistral choisit les recherches dans les fiches et rédige à partir des passages retrouvés. "
+                "Les noms, variantes et années sont vérifiés dans le catalogue local.\n\n"
+                "**Jev** est le seul service distant : il contrôle les preuves et les phrases proposées. "
+                "La question et les extraits nécessaires lui sont transmis. Une vérification insuffisante conserve les faits sources et signale les manques.\n\n"
+                "Les recherches peuvent prendre plus d’une minute. Aucune clé à saisir ici."
+            )
+        elif os.getenv('BIKEFINDER_JEV_ROUTER')=='1':
             gr.Markdown('**Mode rapide** : Jev comprend la demande, puis le catalogue local fournit les réponses factuelles. Les questions et, pour vérifier une synthèse, les extraits nécessaires sont transmis au service distant Jev.')
             gr.Markdown(f'**POC local** : `{OLLAMA_MODEL}` sert uniquement aux synthèses nécessaires. Budget de génération : {float(os.getenv("CATALOG_SYNTHESIS_TIMEOUT_SECONDS","30")):g} s, puis affichage des faits sources si la synthèse est trop lente ou non vérifiable. Aucune clé à saisir ici.')
         else:
@@ -163,7 +178,8 @@ with gr.Blocks(title="Bikefinder — catalogue technique") as demo:
     chatbot = gr.Chatbot(label="Questions techniques")
     msg = gr.Textbox(
         label="Votre question",
-        placeholder="Fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance, couple, poids et sources ?",
+        placeholder=("Une moto ou une famille, votre question…" if CATALOG_RESEARCH_ENABLED
+                     else "Fiche technique de la Suzuki GSF 1200 N Bandit de 2000 : puissance, couple, poids et sources ?"),
     )
     question_examples = gr.Examples(
         examples=[

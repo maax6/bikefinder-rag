@@ -343,6 +343,7 @@ def run_agent(conn, client: Anthropic | None, user_message: str, history: list[d
                        "_catalog_route":result['route'],"_catalog_seconds":result.get('seconds'),
                        "_catalog_jev_calls":result.get('jev_calls',0),
                        "_catalog_evidence":result.get('evidence'),
+                       "_catalog_research":result.get('research'),
                        "_catalog_generation":result.get('generation')}
             return answer,[*routing_history,{"role":"user","content":user_message},completed]
         if result['route']=='mistral_required':

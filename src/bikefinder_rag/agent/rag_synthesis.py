@@ -4,6 +4,7 @@ The writer never selects identities, retrieves extra data, executes tools or
 publishes URLs. Citation labels and missing-proof notices belong to the caller.
 """
 import hashlib
+from copy import deepcopy
 from decimal import Decimal
 import json
 import math
@@ -51,27 +52,31 @@ def local_url(value):
     return value.rstrip("/")
 
 
-def generate(question, passages, limits):
-    """LangChain transport only: local Ollama, no tools, cache or tracing."""
+def invoke_local(system, payload, schema, *, num_predict=700, timeout_seconds=None):
+    """Shared loopback-only Mistral transport; callers execute tools themselves."""
     from langchain_ollama import ChatOllama
     from langsmith import tracing_context
     host = local_url(os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434"))
     timeout = float(os.getenv("CATALOG_SYNTHESIS_TIMEOUT_SECONDS", "60"))
     if not math.isfinite(timeout) or timeout <= 0:
         raise ValueError("Invalid local generation timeout")
+    if timeout_seconds is not None:
+        if not math.isfinite(timeout_seconds) or timeout_seconds <= 0:
+            raise ValueError("Local turn deadline expired")
+        timeout = min(timeout, timeout_seconds)
     model = os.getenv("OLLAMA_MODEL", "mistral-small3.2")
     if model not in {"mistral-small3.2", "mistral-small3.2:latest"}:
         raise ValueError("The RAG writer requires the configured local Mistral model")
-    user = json.dumps({"question": question, "passages": passages, "limits": limits}, ensure_ascii=False)
+    user = json.dumps(payload, ensure_ascii=False)
     if len(user) > 24000:
         raise ValueError("Evidence exceeds the bounded context; no silent truncation")
     llm = ChatOllama(model=model, base_url=host, temperature=0, num_ctx=8192,
-                     num_predict=700, format=SCHEMA, keep_alive="20m", cache=False,
+                     num_predict=num_predict, format=schema, keep_alive="20m", cache=False,
                      client_kwargs={"timeout": timeout, "trust_env": False, "follow_redirects": False}, callbacks=[])
     # The non-streaming HTTP read has a bounded timeout. No token stream can
     # silently keep resetting the read deadline; no LangSmith export is enabled.
     with tracing_context(enabled=False, parent=False):
-        reply = llm.invoke([("system", SYSTEM), ("human", user)], stream=False,
+        reply = llm.invoke([("system", system), ("human", user)], stream=False,
                            config={"callbacks": []})
     metadata = {k: reply.response_metadata[k] for k in ["model", "done_reason", "prompt_eval_count",
         "eval_count", "total_duration", "load_duration", "prompt_eval_duration", "eval_duration"]
@@ -79,6 +84,32 @@ def generate(question, passages, limits):
     if metadata.get("done_reason") == "length":
         raise ValueError("Truncated local answer")
     return json.loads(reply.content), metadata
+
+
+def generate(question, passages, limits):
+    """Local writer; research metadata describes scope, never a launch date."""
+    limits = dict(limits)
+    timeout = limits.pop("_timeout_seconds", None)
+    system = SYSTEM
+    if limits.get("research"):
+        system += ("\nTu réponds après une recherche dans plusieurs millésimes. "
+                   "Réponds en deux paragraphes courts, au plus 100 mots au total. "
+                   "Pour une date recherchée, écris 'Une fiche de [année] pour [nom exact de la variante] décrit ...'. "
+                   "Commence par la plus ancienne fiche pertinente fournie, même si elle emploie un autre vocabulaire que la question. "
+                   "Rapporte alors sa description exacte plutôt que de cacher cette preuve parce qu'un mot de la question n'apparaît pas. "
+                   "Évite 'disponible depuis' ou 'les motos de cette famille disposent depuis', qui implique une commercialisation ou toutes les variantes. "
+                   "Un sigle de mécanisme ne permet pas d'ajouter une définition absente du passage ; distingue une mention du sigle et une description explicite. "
+                   "Présente séparément chaque famille demandée. Une date retrouvée dans une fiche est un millésime documenté, "
+                   "jamais une date officielle de lancement. Pour une question 'depuis quand', cite la plus ancienne "
+                   "preuve fournie qui décrit le fait, en précisant 'dans notre catalogue'. "
+                   "Une boîte manuelle ou un shifter ne prouve pas une boîte automatique. "
+                   "L'absence de mention dans les fiches ne prouve pas l'absence d'une option réelle. "
+                   "N'invente aucun équipement ni aucune date qui ne sont établis par les passages.")
+    schema = deepcopy(SCHEMA)
+    if passages:
+        schema["properties"]["claims"]["items"]["properties"]["sources"]["items"]["enum"] = [p["id"] for p in passages]
+    return invoke_local(system, {"question": question, "passages": passages, "limits": limits}, schema,
+                        num_predict=350 if limits.get("research") else 700, timeout_seconds=timeout)
 
 
 def evidence_context(evidence):
@@ -221,7 +252,9 @@ def compose(question, result):
         generation["call_attempted"] = True
         payload, metadata = generate(question, context, {"missing": evidence.get("missing", []),
             "coverage": [{"object_id": s["object_id"], "fields": s.get("coverage", {})} for s in evidence["sources"]],
-            "legal_certification": False})
+            "legal_certification": False, "research": [{k: v for k, v in s.items() if k in {"query", "searched_fiches", "searched_passages", "scope_note", "missing"}}
+                                                        for s in evidence.get("research_scopes", [])],
+            "_timeout_seconds": evidence.get("research_remaining_seconds")})
         generation.update(metadata, candidate=payload)
         claims = validate_claims(payload, context)
         notices = missing_notices(result)
