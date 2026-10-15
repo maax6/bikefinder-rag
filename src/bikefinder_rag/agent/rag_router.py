@@ -243,8 +243,7 @@ def route_question(conn, question, history=None):
     started = time.perf_counter()
     previous = next((m.get("_catalog_plan") for m in reversed(history or []) if m.get("role") == "assistant"), None)
     text = legacy.folded(question)
-    followup = bool(re.match(r"^(?:et\b|idem\b|pareil\b|celle\b|celui\b|meme\b|en \d{4}\b)", text.strip())
-                    or re.search(r"\b(?:cette moto|ce modele|meme version|cette fiche)\b", text))
+    followup = legacy.is_followup(question)
     previous = previous if followup and previous else {}
     a2 = bool(re.search(r"\ba2\b", text) or previous.get("a2_context"))
     if not a2:

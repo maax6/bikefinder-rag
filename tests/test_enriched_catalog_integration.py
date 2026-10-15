@@ -100,6 +100,43 @@ def test_scoped_bge_retrieval_and_cache(catalog,monkeypatch):
     assert len(calls)==1
     assert execute_tool(conn,'search_technical',{'query':'distance','model':'Test N','year':1999})==[]
 
+
+def test_aggregate_reads_entire_sql_population_and_source_coverage(catalog):
+    from bikefinder_rag.catalog.aggregates import render_aggregate
+    from psycopg.types.json import Jsonb
+    conn, _ = catalog
+    for id, value in [('n', 700), ('s', 900), ('unknown', None)]:
+        record = {'spec_rows': [{'section': 'Moteur', 'label': '', 'value': f'{value} cc'}] if value else []}
+        with conn.cursor() as cur:
+            cur.execute('UPDATE technical_fiches SET record=%s WHERE id=%s', [Jsonb(record), id])
+    plan = {'identity': {'brand': 'Honda', 'year': 2000}, 'conditions': [],
+            'aggregate': {'operation': 'max', 'fields': ['displacement_ccm']}}
+    answer = render_aggregate(conn, plan)
+    assert '900 cc' in answer and '2/3' in answer and 'Test S' in answer
+    plan['aggregate']['operation'] = 'mean'
+    assert '800 cc' in render_aggregate(conn, plan)
+
+
+def test_aggregate_exact_model_does_not_include_other_variants(catalog):
+    from bikefinder_rag.catalog.aggregates import render_aggregate
+    conn, _ = catalog
+    plan = {'identity': {}, 'models': [{'brand': 'Honda', 'model': 'Test N', 'year': 2000},
+                                     {'brand': 'Honda', 'model': 'Test N', 'year': 1999}],
+            'aggregate': {'operation': 'mean', 'fields': ['torque_nm']}}
+    answer = render_aggregate(conn, plan)
+    assert '1/1' in answer and '10 Nm' in answer and 'incomplète' in answer and '1999' in answer
+    assert 'Test S' not in answer and 'Test Future' not in answer
+
+
+def test_catalog_pagination_has_no_duplicates_and_preserves_filters(catalog):
+    from bikefinder_rag.catalog.measures import filtered
+    conn, _ = catalog
+    first = filtered(conn, [], {'brand': 'Honda', 'year': 2000}, limit=2)
+    second = filtered(conn, [], {'brand': 'Honda', 'year': 2000}, limit=2, offset=2)
+    assert len(first) == 2 and len(second) == 1
+    assert len({r['id'] for r in first + second}) == 3
+    assert all(r['year'] == 2000 for r in first + second)
+
 def test_price_power_filters_are_strict_and_exclude_stale_projections(catalog):
     from bikefinder_rag.catalog.measures import rebuild,filtered
     from psycopg.types.json import Jsonb

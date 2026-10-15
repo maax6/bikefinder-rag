@@ -14,6 +14,23 @@ def language(text):
     return text
 
 
+def is_followup(text):
+    """Continuation cues shared by source and structured routing.
+
+    A cue only requests reuse; callers still require the last valid plan and
+    must not resurrect an older plan after an ambiguous turn.
+    """
+    text = language(text).strip()
+    return bool(re.match(r'^(?:et\b|si\b|maintenant\b|sur ces\b|pareil\b|idem\b|plutot\b|uniquement\b|seulement\b|ajoute\b|je parle\b|ah non\b|attends\b|donc\b|ok\b|la standard\b|meme\b|celle\b|celui\b|celles\b|ceux\b)', text)
+                or re.fullmatch(r'(?:combien\s+)?(?:en|pour)\s+\d{4}\s*[?!.]*', text)
+                or re.search(r'\b(?:plutot|pardon|finalement|du coup|laquelle|la yam|cette moto|ce modele|cette fiche|meme version)\b', text)
+                or re.search(r'\b(?:les?\s+)?(?:\d+\s+)?suivant(?:e|es|s)?\b|\bla suite\b', text))
+
+
+def next_page_requested(text):
+    return bool(re.search(r'\b(?:\d+\s+)?suivant(?:e|es|s)?\b|\bla suite\b', language(text)))
+
+
 def aliases(brand,model,include_family=True):
     compact=lambda s:re.sub(r'[^a-z0-9]','',folded(s))
     short=re.sub(r'^\d+(?:[.,]\d+)?\s+','',model)

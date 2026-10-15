@@ -60,9 +60,10 @@ def rebuild(conn):
         cur.execute('CREATE INDEX IF NOT EXISTS technical_price_power ON technical_measures(price_eur,power_ch)')
     return {'objects':len(output),'version':VERSION}
 
-def filtered(conn,conditions,identity=None,equipment=None,status='standard',count=False,limit=10,order_by=None,secondary=None,equipment_filters=None,object_ids=None,unknown_fields=None,missing_only=False):
+def filtered(conn,conditions,identity=None,equipment=None,status='standard',count=False,limit=10,order_by=None,secondary=None,equipment_filters=None,object_ids=None,unknown_fields=None,missing_only=False,offset=0):
     from bikefinder_rag.catalog.enriched import scope,_rows
     identity=identity or {};clauses,params=scope(**identity)
+    if type(offset) is not int or offset < 0:raise ValueError('Offset must be a nonnegative integer')
     if object_ids is not None:
         if not isinstance(object_ids,list) or any(not isinstance(value,str) or not value for value in object_ids):
             raise ValueError('Object scope must be a list of nonempty IDs')
@@ -114,7 +115,7 @@ def filtered(conn,conditions,identity=None,equipment=None,status='standard',coun
     join='JOIN' if conditions or order_by or missing_only else 'LEFT JOIN'
     base=' FROM technical_fiches f '+join+' technical_measures m ON m.object_id=f.id AND m.source_sha256=f.source_sha256 WHERE '+' AND '.join(clauses)
     if count:return _rows(conn,'SELECT count(*) AS count'+base,params)[0]['count']
-    rows=_rows(conn,'SELECT f.id,f.brand,f.model,f.year,f.source_url,f.record,m.*'+base+' ORDER BY '+ordering+' LIMIT %s',params+[limit])
+    rows=_rows(conn,'SELECT f.id,f.brand,f.model,f.year,f.source_url,f.record,m.*'+base+' ORDER BY '+ordering+' LIMIT %s'+(' OFFSET %s' if offset else ''),params+[limit]+([offset] if offset else []))
     for row in rows:
         if row.get('proof') is None:row['proof']={}
     return rows

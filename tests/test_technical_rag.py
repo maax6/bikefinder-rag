@@ -88,6 +88,25 @@ def test_sources_preserve_values_qualifiers_and_identity(local_rag):
     assert all(p["object_id"] == "exact" and p["year"] == 2025 for p in result["evidence"]["sources"][0]["passages"])
 
 
+def test_approximate_power_has_retrieved_proof_and_no_false_missing_notice(local_rag, fiche):
+    fiche['record']['spec_rows'][0] = {'section': 'Moteur', 'label': '', 'value': '≈ 62 ch'}
+    fiche['record']['technical_sections'][1]['text'] = 'Puissance : ≈ 62 ch'
+    check = lambda *args: {'fields': {'power_ch': 'complete'}, 'jev_calls': 0}
+    result = rag.answer_from_sources(object(), 'Puissance approximative ?', plan(['power_ch']), check)
+    assert '≈ 62 ch' in result['answer']
+    assert result['evidence']['sources'][0]['coverage']['power_ch']['covered']
+    assert not any(m.get('field') == 'power_ch' for m in result['evidence']['missing'])
+
+
+def test_equipment_suspension_row_requires_its_actual_source_passage(local_rag, fiche):
+    row = {'section': 'Équipement de série', 'label': 'Suspensions', 'value': 'Réglage électronique des suspensions'}
+    fiche['record']['spec_rows'].append(row)
+    fiche['record']['technical_sections'].append({'section': row['section'], 'text': row['value']})
+    result = rag.answer_from_sources(object(), 'Compare les suspensions', plan(['suspension']))
+    assert row['value'] in result['answer']
+    assert any(p['original_text'] == row['value'] for p in result['evidence']['sources'][0]['passages'])
+
+
 def test_source_cache_reuses_documents_but_encodes_every_question(local_rag):
     first = rag.answer_from_sources(object(), "Quelle puissance pour A2 ?", plan())
     second = rag.answer_from_sources(object(), "Quelle mention A2 ?", plan())
