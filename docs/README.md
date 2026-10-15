@@ -6,7 +6,9 @@ les décisions dans leur contexte daté.
 
 Le [service SQL + RAG et sa comparaison local/cloud](sql-rag-tools-and-comparison.md) dispose de six outils et de deux passes enregistrées ; son raccordement au chat reste à réaliser.
 
-Dernier essai : [pilote contrastif BGE-M3 avec LoRA — 15 octobre](bge-lora-pilote-20261015.md). Entraînement local sur 512 questions, puis réindexation complète. Couverture hybride de 60/64 à 61/64 sur le nouveau test et de 66/92 à 78/92 sur les anciens cas, mais neuf pertes de preuves : adaptateur non activé.
+Dernier bilan : [corrections du vrai chat — 15 octobre](bilan-chat-20261015.md), avec [annexe HTML avant/après](benchmark-chat-20261015.html). BGE-M3 d’origine conservé ; 25/36 → 36/36 réponses satisfaisantes sur le lot comparable, puis 15/15 tours supplémentaires, dont le prix moyen. Le cas XJ6 A2 reste partiel ; les limites de relecture et de latence sont explicites.
+
+Essai précédent : [pilote contrastif BGE-M3 avec LoRA — 15 octobre](bge-lora-pilote-20261015.md). Entraînement local sur 512 questions, puis réindexation complète. Couverture hybride de 60/64 à 61/64 sur le nouveau test et de 66/92 à 78/92 sur les anciens cas, mais neuf pertes de preuves : adaptateur non activé.
 
 L’[annexe HTML interactive du fine-tuning](benchmark-finetuning.html) reprend ces résultats avec les 156 questions, les passages avant/après, douze exemples d’apprentissage et les exports JSON/CSV. Elle fonctionne hors ligne et dispose d’un lien depuis le benchmark principal.
 
@@ -16,7 +18,7 @@ Essai précédent : [confirmation de la fusion BGE sur 64 questions inédites �
 
 Derniers essais locaux : [Mistral seul, Jev et comparaison des embeddings — 14 octobre](mistral-jev-et-embeddings-20261014.md). Ils distinguent les délais de génération, les erreurs du routeur, les HTTP 429 et le classement des passages. Le [benchmark local de recherche précédent](technical-retrieval-benchmark-20261013.md) reste une étude distincte ; l'[issue #4](https://github.com/maax6/bikefinder-rag/issues/4) conserve le bilan de cette phase.
 
-**Prochain jalon : [validation du parcours complet](phase-test-20261015.md)** — régressions connues, nouveau lot indépendant, réponses réelles et raccordement du service au chat. Cette phase n’est pas encore exécutée.
+**Prochain jalon : [validation indépendante du parcours complet](phase-test-20261015.md)** — prolonger la campagne exploratoire exécutée par un lot relu indépendamment et valider le raccordement du service commun au chat.
 
 ## Pour travailler sur le projet
 

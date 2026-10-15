@@ -1,8 +1,13 @@
 # Prochaine phase : validation du parcours complet
 
 Plan préparé le 15 octobre 2026 à la clôture du [bilan #4](https://github.com/maax6/bikefinder-rag/issues/4).
-**Cette phase n’a pas encore été exécutée.** La publication des rapports ne lance
-aucun entraînement, changement du chat ou appel de modèle.
+**Campagne exploratoire puis corrections exécutées le 15 octobre 2026 :**
+[Bilan avant/après via le vrai chat, avec BGE-M3 d’origine](bilan-chat-20261015.md).
+Le lot comparable passe de 25/36 à 36/36 réponses satisfaisantes ; 15 tours
+supplémentaires passent, dont trois sur le prix moyen. Aucune régression de
+contenu observée sur les 42 tours appariés ; le cas XJ6 A2 reste partiel.
+Le plan ci-dessous reste la cible de validation complète : cette campagne
+ne remplace pas le lot final relu indépendamment ni le raccordement du service commun.
 
 ## Point de départ
 

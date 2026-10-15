@@ -6,6 +6,7 @@ localement sur un Mac M5 / 32 Go, avec SQL, BGE-M3, Jev et Mistral.
 
 ## Voir les résultats
 
+- **[Bilan du vrai chat : avant / après](https://maax6.github.io/bikefinder-rag/benchmark-chat-20261015.html)** — réponses, erreurs, temps et prix moyen, avec BGE-M3 d’origine.
 - **[Benchmark interactif SQL + RAG](https://maax6.github.io/bikefinder-rag/benchmark.html)** — huit modèles, deux passes, réponses, sources, temps et coûts.
 - **[Annexe : fine-tuning de BGE-M3](https://maax6.github.io/bikefinder-rag/benchmark-finetuning.html)** — comparaison avant/après, 156 questions inspectables et erreurs détaillées.
 
@@ -13,14 +14,9 @@ Ces pages se consultent sans compte ni installation.
 
 ## Où on en est — 15 octobre 2026
 
-- Le snapshot utilisé contient **11 478 fiches et 105 687 passages techniques**. Le corpus complet, les index et les modèles restent locaux.
-- Le chat existant combine Jev, SQL et, lorsque la recherche documentaire est activée, BGE-M3 puis Mistral local. Le nouveau service commun SQL + RAG a été évalué séparément ; son raccordement au chat reste à faire.
-- **BGE-M3 d’origine est conservé.** La fusion ajustée et le pilote LoRA améliorent certains scores, mais perdent des preuves utiles. Aucun des deux n’est activé dans le chat.
-
-Le fine-tuning porte sur 512 questions d’apprentissage. En recherche hybride,
-la couverture complète passe de 60 à 61 sur 64 questions inédites et de 66 à 78
-sur 92 anciens cas, avec neuf questions qui perdent une preuve. Ces chiffres
-mesurent la recherche de passages, pas la qualité finale des réponses du bot.
+- **11 478 fiches et 105 687 passages techniques** ; corpus complet, index et modèles locaux.
+- Le chat corrige les valeurs perdues, maximums, moyennes — dont les prix de catalogue France — et suivis de conversation. **25/36 → 36/36 réponses satisfaisantes** sur le lot de régression ; **15/15 tours supplémentaires**, sans régression de contenu observée sur les 42 tours comparables. Relecture par le même agent, sans validation humaine indépendante.
+- **BGE-M3 d’origine est conservé.** Fusion ajustée et LoRA restent isolés à cause de pertes de preuves. Le service commun SQL + RAG a été évalué séparément ; son raccordement au chat reste à faire.
 
 ## Lancer le chat local
 
@@ -35,19 +31,18 @@ AGENT_BACKEND=ollama BIKEFINDER_JEV_ROUTER=1 BIKEFINDER_JEV_RAG=1 PYTHONPATH=src
 
 Ouvrir <http://127.0.0.1:7860>. Un clone seul ne contient pas le corpus complet.
 
-## Prochaine étape : tester le parcours complet
+## Prochaine étape
 
-Le **[plan de validation](docs/phase-test-20261015.md)** sépare les régressions
-connues, les nouvelles questions et le raccordement au chat. Il faut mesurer
-les réponses réellement produites, leurs preuves, les délais et les coûts avant
-de retenir une nouvelle configuration. Le [bilan de la phase d’expérimentation](https://github.com/maax6/bikefinder-rag/issues/4)
-est conservé dans l’issue #4.
+Faire relire un nouveau lot indépendant, améliorer les avertissements, la
+clarification XJ6 A2 et les délais de rédaction. Le **[plan de validation](docs/phase-test-20261015.md)**
+détaille la suite ; le [bilan des expérimentations](https://github.com/maax6/bikefinder-rag/issues/4)
+reste dans l’issue #4.
 
 [Documentation](docs/README.md) · [Architecture](docs/reference/architecture.md) ·
 [Scripts](scripts/README.md) · [Évaluations et tests](docs/guides/evaluation.md)
 
-Validation du 15 octobre : **1 201 tests réussis, 8 ignorés**. Les tests logiciels
-ne constituent pas un score de précision du chatbot.
+Validation : **1 232 tests réussis + 11 tests SQL réussis séparément**.
+Les tests logiciels ne constituent pas un score de précision du chatbot.
 
 Code sous [licence MIT](LICENSE). Les données tierces conservent les conditions
 de leurs sources ; la licence du code n’accorde pas leur redistribution.
