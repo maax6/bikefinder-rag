@@ -26,6 +26,9 @@ data/nhtsa/
 # Coverage/validation reports are kept under eval_results/technical instead.
 data/technical/
 
+# Isolated routing caches are local; experiment receipts remain versioned.
+eval_results/technical/**/isolated-cache/
+
 # Space data artifact (pushed to HF via LFS, not to GitHub)
 deploy/pgdata.tar.gz
 

@@ -1,0 +1,19 @@
+{
+  "chosen_config": "weighted_rrf80",
+  "development_score": {
+    "config": "weighted_rrf80",
+    "questions": 11,
+    "hit_at1": 0.7272727272727273,
+    "recall_at10": 0.7121212121212122,
+    "ndcg_at10": 0.6427952154396698,
+    "all_groups_at10": 0.5454545454545454,
+    "hit_at1_cases": 8.0,
+    "complete_at10_cases": 6.0,
+    "median_seconds": 0.040268916985951364,
+    "max_seconds": 0.056933959014713764,
+    "identical_rankings_over_repeats": true
+  },
+  "rule": "Development only: maximize complete required groups at10, then hit@1, then nDCG@10; tied configs prefer lower median time",
+  "verification_labels_used_for_selection": false,
+  "protocol_sha256": "cc294384f63596bd54abe650dc244fd329839a14e5314479036b684587a62ea8"
+}

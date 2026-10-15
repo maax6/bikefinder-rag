@@ -1,0 +1,96 @@
+{
+  "purpose": "Diagnostic only: supply correct annotated identities to separate global scope errors from passage ranking. Identity resolution by the bot is NOT evaluated.",
+  "oracle_scope_used": true,
+  "eligible_for_candidate_selection": false,
+  "rows": [
+    {
+      "question_id": "N07",
+      "oracle_scope_object_ids": [
+        "ea8331c72ff1d845"
+      ],
+      "candidate_passages": 10,
+      "ranking": [
+        "ea8331c72ff1d845:section:2",
+        "ea8331c72ff1d845:section:9",
+        "ea8331c72ff1d845:section:5",
+        "ea8331c72ff1d845:section:3",
+        "ea8331c72ff1d845:section:7",
+        "ea8331c72ff1d845:section:4",
+        "ea8331c72ff1d845:section:6",
+        "ea8331c72ff1d845:section:8",
+        "ea8331c72ff1d845:section:1",
+        "ea8331c72ff1d845:section:0"
+      ],
+      "metrics": {
+        "judged_gold_count": 2,
+        "ranked_count": 10,
+        "judgements_complete_global": false,
+        "unjudged_fraction_at10": 0.8,
+        "recall_at1": 0.5,
+        "hit_at1": 1.0,
+        "recall_at3": 1.0,
+        "hit_at3": 1.0,
+        "recall_at5": 1.0,
+        "hit_at5": 1.0,
+        "recall_at10": 1.0,
+        "hit_at10": 1.0,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 1.0,
+        "group_coverage_at1": 0.5,
+        "all_groups_at1": 0.0,
+        "group_coverage_at3": 1.0,
+        "all_groups_at3": 1.0,
+        "group_coverage_at5": 1.0,
+        "all_groups_at5": 1.0,
+        "group_coverage_at10": 1.0,
+        "all_groups_at10": 1.0
+      }
+    },
+    {
+      "question_id": "N08",
+      "oracle_scope_object_ids": [
+        "330083be410a87e9",
+        "ea8331c72ff1d845"
+      ],
+      "candidate_passages": 20,
+      "ranking": [
+        "ea8331c72ff1d845:section:2",
+        "ea8331c72ff1d845:section:9",
+        "ea8331c72ff1d845:section:0",
+        "ea8331c72ff1d845:section:8",
+        "ea8331c72ff1d845:section:7",
+        "ea8331c72ff1d845:section:5",
+        "ea8331c72ff1d845:section:4",
+        "ea8331c72ff1d845:section:6",
+        "ea8331c72ff1d845:section:1",
+        "330083be410a87e9:section:0"
+      ],
+      "metrics": {
+        "judged_gold_count": 2,
+        "ranked_count": 10,
+        "judgements_complete_global": false,
+        "unjudged_fraction_at10": 0.8,
+        "recall_at1": 0.0,
+        "hit_at1": 0.0,
+        "recall_at3": 0.5,
+        "hit_at3": 1.0,
+        "recall_at5": 0.5,
+        "hit_at5": 1.0,
+        "recall_at10": 1.0,
+        "hit_at10": 1.0,
+        "mrr_at10": 0.3333333333333333,
+        "ndcg_at10": 0.4838128831667769,
+        "group_coverage_at1": 0.0,
+        "all_groups_at1": 0.0,
+        "group_coverage_at3": 0.5,
+        "all_groups_at3": 0.0,
+        "group_coverage_at5": 0.5,
+        "all_groups_at5": 0.0,
+        "group_coverage_at10": 1.0,
+        "all_groups_at10": 1.0
+      }
+    }
+  ],
+  "source_unchanged": true,
+  "remote_api_calls": 0
+}

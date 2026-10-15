@@ -1,0 +1,1638 @@
+{
+  "cases": [
+    {
+      "id": "HOLDOUT-004",
+      "split": "check",
+      "category": "dimensions_mass_basis",
+      "question": "Pour la Royal-Enfield 450 Himalayan 2024, quelles sont les deux hauteurs de selle et les masses à sec et prête à rouler indiquées ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "a694ca2a26252015"
+      ],
+      "gold_passages": [
+        {
+          "id": "a694ca2a26252015:section:0",
+          "grade": 2,
+          "reason": "Contient la plage de selle et les deux libellés de masse."
+        }
+      ],
+      "required_groups": [
+        [
+          "a694ca2a26252015:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Selle réglable entre 825 et 845 mm ; poids à sec 181 kg ; poids tous pleins faits 196 kg."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Conserver le libellé tous pleins faits pour la seconde masse ; ne pas attribuer la différence à un composant précis."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "a694ca2a26252015:section:0",
+          "object_id": "a694ca2a26252015",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "section": "Châssis",
+          "quote": "Cadre : tubulaire en acier; Réservoir : 17 litres; Hauteur de selle réglable entre 825 mm et 845 mm; Longueur : 2 245 mm; Largeur : 852 mm; Hauteur min : 1 316 mm; Empattement : 1 510 mm; Poids à sec : 181 kg; Poids tous pleins faits : 196 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "wrong_section_mass_basis",
+        "explanation_fr": "Un passage moteur ne couvre pas selle/poids. Conserver séparément 181 kg à sec et 196 kg tous pleins faits dans Châssis.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "a694ca2a26252015",
+          "brand": "Royal-Enfield",
+          "model": "450 Himalayan",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Royal-Enfield",
+          "id": "a694ca2a26252015:section:0",
+          "model": "450 Himalayan",
+          "object_id": "a694ca2a26252015",
+          "original_text": "Cadre : tubulaire en acier; Réservoir : 17 litres; Hauteur de selle réglable entre 825 mm et 845 mm; Longueur : 2 245 mm; Largeur : 852 mm; Hauteur min : 1 316 mm; Empattement : 1 510 mm; Poids à sec : 181 kg; Poids tous pleins faits : 196 kg",
+          "section": "Châssis",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2024\nChâssis\nCadre : tubulaire en acier; Réservoir : 17 litres; Hauteur de selle réglable entre 825 mm et 845 mm; Longueur : 2 245 mm; Largeur : 852 mm; Hauteur min : 1 316 mm; Empattement : 1 510 mm; Poids à sec : 181 kg; Poids tous pleins faits : 196 kg",
+          "text_sha256": "de59778ba87fa87aee63caa8cff78c94edb89feca8347963b680b16270cf43f7",
+          "year": 2024
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 1,
+          "label": "other_section_in_requested_identity_review_needed",
+          "training_negative_approved": false,
+          "brand": "Royal-Enfield",
+          "id": "a694ca2a26252015:section:4",
+          "model": "450 Himalayan",
+          "object_id": "a694ca2a26252015",
+          "original_text": "Monocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 452 cc (Alésage * course: 84 x 81,5 mm); 40 ch à 8 000 tr/min; 4,20 mkg à 5 500 tr/min; Rapport poids / puissance : 4.53 kg/ch; Rapport poids / couple : 43.1 kg/mkg; Compression : 11.5:1; Emission CO² : 76 g/km",
+          "section": "Moteur",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2024\nMoteur\nMonocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 452 cc (Alésage * course: 84 x 81,5 mm); 40 ch à 8 000 tr/min; 4,20 mkg à 5 500 tr/min; Rapport poids / puissance : 4.53 kg/ch; Rapport poids / couple : 43.1 kg/mkg; Compression : 11.5:1; Emission CO² : 76 g/km",
+          "text_sha256": "3dcb7867fc8f671ccefc59b4a9d30b85bbfff05ad0c5a06d0e0400f9e980d212",
+          "year": 2024
+        },
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Royal-Enfield",
+          "id": "ad1cadc7de95e217:section:4",
+          "model": "450 Himalayan",
+          "object_id": "ad1cadc7de95e217",
+          "original_text": "Monocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 452 cc (Alésage * course: 84 x 81,5 mm); 40 ch à 8 000 tr/min; 4,20 mkg à 5 500 tr/min; Rapport poids / puissance : 4.53 kg/ch; Rapport poids / couple : 43.1 kg/mkg; Compression : 11.5:1; Système de démarrage : électrique; Emission CO² : 76 g/km; Émission sonore : 91 db",
+          "section": "Moteur",
+          "source_sha256": "f489cbad90a418ae57b7a4b2f6772801c76f959e78d0a07a16a62e8e5d0e29d2",
+          "source_url": "https://www.motoplanete.com/royal-enfield/12147/450-Himalayan-2026/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2026\nMoteur\nMonocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 452 cc (Alésage * course: 84 x 81,5 mm); 40 ch à 8 000 tr/min; 4,20 mkg à 5 500 tr/min; Rapport poids / puissance : 4.53 kg/ch; Rapport poids / couple : 43.1 kg/mkg; Compression : 11.5:1; Système de démarrage : électrique; Emission CO² : 76 g/km; Émission sonore : 91 db",
+          "text_sha256": "fc997f68b367c7e6b32f1a0ebfdf1c81d95c07347acb693c68cb31174232909b",
+          "year": 2026
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 1.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 1.0,
+        "group_coverage_at1": 0.0,
+        "group_coverage_at10": 1.0,
+        "group_coverage_at3": 0.0,
+        "group_coverage_at5": 1.0,
+        "hit_at1": 0.0,
+        "hit_at10": 1.0,
+        "hit_at3": 0.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 1,
+        "judgements_complete_global": false,
+        "mrr_at10": 0.2,
+        "ndcg_at10": 0.38685280723454163,
+        "ranked_count": 10,
+        "recall_at1": 0.0,
+        "recall_at10": 1.0,
+        "recall_at3": 0.0,
+        "recall_at5": 1.0,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "a694ca2a26252015:section:4",
+        "ad1cadc7de95e217:section:4",
+        "75ec63edc171c1bc:section:4",
+        "ad1cadc7de95e217:section:0",
+        "a694ca2a26252015:section:0",
+        "113f4e8610de43ba:section:4",
+        "a694ca2a26252015:section:7",
+        "a694ca2a26252015:section:5",
+        "098a354c9eba0726:section:4",
+        "a694ca2a26252015:section:3"
+      ]
+    },
+    {
+      "id": "HOLDOUT-008",
+      "split": "check",
+      "category": "dimensions_engine",
+      "question": "La Suzuki GSX-8R 800 de 2024 fait vraiment 800 cm³ ? Et à quelle hauteur se trouve la selle, avec quel réservoir ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e5ae298425ec85ab"
+      ],
+      "gold_passages": [
+        {
+          "id": "e5ae298425ec85ab:section:4",
+          "grade": 2,
+          "reason": "Donne la cylindrée exacte."
+        },
+        {
+          "id": "e5ae298425ec85ab:section:0",
+          "grade": 2,
+          "reason": "Donne hauteur de selle et réservoir."
+        }
+      ],
+      "required_groups": [
+        [
+          "e5ae298425ec85ab:section:4"
+        ],
+        [
+          "e5ae298425ec85ab:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "776 cc ; selle 810 mm ; réservoir 14 litres."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e5ae298425ec85ab:section:4",
+          "object_id": "e5ae298425ec85ab",
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1",
+          "section": "Moteur",
+          "quote": "Bicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.32 kg/ch; Rapport poids / couple : environ 24.05 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km"
+        },
+        {
+          "passage_id": "e5ae298425ec85ab:section:0",
+          "object_id": "e5ae298425ec85ab",
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1",
+          "section": "Châssis",
+          "quote": "Cadre : structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 810 mm; Longueur : 2 150 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Empattement : 1 465 mm; Poids tous pleins faits : 205 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "wrong_year_incomplete",
+        "explanation_fr": "L'édition anniversaire 2026 ou la fiche 2025 ne prouve pas les valeurs 2024 ; il faut moteur et châssis pour 776 cc, selle et réservoir.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "e5ae298425ec85ab",
+          "brand": "Suzuki",
+          "model": "GSX-8R 800",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Suzuki",
+          "id": "e5ae298425ec85ab:section:4",
+          "model": "GSX-8R 800",
+          "object_id": "e5ae298425ec85ab",
+          "original_text": "Bicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.32 kg/ch; Rapport poids / couple : environ 24.05 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km",
+          "section": "Moteur",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1",
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "text": "Suzuki GSX-8R 800 2024\nMoteur\nBicylindre parallèle , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 776 cc (Alésage * course: 84 x 70 mm); 83 ch à 8 500 tr/min; 8 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.32 kg/ch; Rapport poids / couple : environ 24.05 kg/mkg; Compression : 12.8 : 1; Emission CO² : 99 g/km",
+          "text_sha256": "fc812734aa29e1c55b86c4754410f5d535d3cc58355d8152e26e142304eb7d8f",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Suzuki",
+          "id": "e5ae298425ec85ab:section:0",
+          "model": "GSX-8R 800",
+          "object_id": "e5ae298425ec85ab",
+          "original_text": "Cadre : structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 810 mm; Longueur : 2 150 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Empattement : 1 465 mm; Poids tous pleins faits : 205 kg",
+          "section": "Châssis",
+          "source_sha256": "f1377caad584b84da2b658a690f8dc749c61b9921e85dff0ac9ec867947b1eb1",
+          "source_url": "https://www.motoplanete.com/suzuki/10088/GSX-8R-800-2024/contact.html",
+          "text": "Suzuki GSX-8R 800 2024\nChâssis\nCadre : structure en tubes d'acier; Réservoir : 14 litres; Hauteur de selle : 810 mm; Longueur : 2 150 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Empattement : 1 465 mm; Poids tous pleins faits : 205 kg",
+          "text_sha256": "d7b0cd5ef9d43175169571d6f09fbf8357e7a3661c40efe0e41867beb3bfb3d6",
+          "year": 2024
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 1,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Suzuki",
+          "id": "7d421688d6cdf817:section:0",
+          "model": "GSX-8R 800 Edition Anniversaire",
+          "object_id": "7d421688d6cdf817",
+          "original_text": "Selle biplaces; Cadre : structure en tubes d'acier; Réservoir : 14 litres; Capacité d'huile : 3,90 litres; Hauteur de selle : 810 mm; Longueur : 2 155 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Garde au sol min : 145 mm Empattement : 1 465 mm Poids tous pleins faits : 205 kg",
+          "section": "Châssis",
+          "source_sha256": "924aec7818172dbca2fd8a7946922a075ff22c159ca68bc683796ace12bae5f8",
+          "source_url": "https://www.motoplanete.com/suzuki/12117/GSX-8R-800-Edition-Anniversaire-2026/contact.html",
+          "text": "Suzuki GSX-8R 800 Edition Anniversaire 2026\nChâssis\nSelle biplaces; Cadre : structure en tubes d'acier; Réservoir : 14 litres; Capacité d'huile : 3,90 litres; Hauteur de selle : 810 mm; Longueur : 2 155 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Garde au sol min : 145 mm Empattement : 1 465 mm Poids tous pleins faits : 205 kg",
+          "text_sha256": "d8299246accc38ce21c1d4353d971541b72a5d7f563b0fe32809ad498a974765",
+          "year": 2026
+        },
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Suzuki",
+          "id": "ab101598296196a1:section:0",
+          "model": "GSX-8R 800",
+          "object_id": "ab101598296196a1",
+          "original_text": "Selle biplaces; Cadre : structure en tubes d'acier; Réservoir : 14 litres; Capacité d'huile : 3,90 litres; Hauteur de selle : 810 mm; Longueur : 2 155 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Empattement : 1 465 mm; Poids tous pleins faits : 205 kg",
+          "section": "Châssis",
+          "source_sha256": "9737aade0b1fdca9b6fe4fbfc59e4e86dc8c764694b91e5a7dd6f6e822883e5c",
+          "source_url": "https://www.motoplanete.com/suzuki/10813/GSX-8R-800-2025/contact.html",
+          "text": "Suzuki GSX-8R 800 2025\nChâssis\nSelle biplaces; Cadre : structure en tubes d'acier; Réservoir : 14 litres; Capacité d'huile : 3,90 litres; Hauteur de selle : 810 mm; Longueur : 2 155 mm; Largeur : 770 mm; Hauteur min : 1 135 mm; Empattement : 1 465 mm; Poids tous pleins faits : 205 kg",
+          "text_sha256": "4e6077923c9e311f3cae678021e078d276890a3ac1ee55567a3d5ea021f68ccf",
+          "year": 2025
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 0.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 0.0,
+        "group_coverage_at1": 0.0,
+        "group_coverage_at10": 0.5,
+        "group_coverage_at3": 0.0,
+        "group_coverage_at5": 0.5,
+        "hit_at1": 0.0,
+        "hit_at10": 1.0,
+        "hit_at3": 0.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 2,
+        "judgements_complete_global": false,
+        "mrr_at10": 0.25,
+        "ndcg_at10": 0.26406812257259094,
+        "ranked_count": 10,
+        "recall_at1": 0.0,
+        "recall_at10": 0.5,
+        "recall_at3": 0.0,
+        "recall_at5": 0.5,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "7d421688d6cdf817:section:0",
+        "ab101598296196a1:section:0",
+        "e19a8eeef8d2e6af:section:0",
+        "e5ae298425ec85ab:section:0",
+        "f5bb5945265002d8:section:0",
+        "61050e7f0c70e87d:section:0",
+        "ebbd035f47fc67a1:section:0",
+        "4c98751c8c19b978:section:0",
+        "5765c96daf20b5db:section:0",
+        "d699e8b8d747b332:section:0"
+      ]
+    },
+    {
+      "id": "HOLDOUT-012",
+      "split": "check",
+      "category": "engine_dimensions",
+      "question": "La Harley-Davidson RH 975 Nightster 2024 a quel angle entre ses deux cylindres, et quelle hauteur de selle ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "d646e539b110fb4b"
+      ],
+      "gold_passages": [
+        {
+          "id": "d646e539b110fb4b:section:4",
+          "grade": 2,
+          "reason": "Donne l’architecture en V à 60°."
+        },
+        {
+          "id": "d646e539b110fb4b:section:0",
+          "grade": 2,
+          "reason": "Donne la hauteur de selle."
+        }
+      ],
+      "required_groups": [
+        [
+          "d646e539b110fb4b:section:4"
+        ],
+        [
+          "d646e539b110fb4b:section:0"
+        ]
+      ],
+      "expected_facts": [
+        "Bicylindre en V à 60° ; selle 705 mm."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "d646e539b110fb4b:section:4",
+          "object_id": "d646e539b110fb4b",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976",
+          "section": "Moteur",
+          "quote": "Bicylindre en V à 60° , 4 temps; Injection; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 975 cc (Alésage * course: 97 x 66 mm); 89 ch à 7 500 tr/min; 9,70 mkg à 5 750 tr/min; Rapport poids / puissance : 2.37 kg/ch; Rapport poids / couple : 21.75 kg/mkg; Compression : 12 : 1; Emission CO² : 128 g/km"
+        },
+        {
+          "passage_id": "d646e539b110fb4b:section:0",
+          "object_id": "d646e539b110fb4b",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976",
+          "section": "Châssis",
+          "quote": "Cadre : Structures en tubes d'acier; Réservoir : 11,70 litres; Hauteur de selle : 705 mm; Longueur : 2 250 mm; Largeur : 836 mm; Hauteur min : 1 108 mm; Empattement : 1 545 mm; Poids à sec : 211 kg; Poids tous pleins faits : 221 kg"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "missing_second_topic",
+        "explanation_fr": "Le moteur répond à l'angle de 60°, mais la hauteur de selle est dans Châssis ; ne pas s'arrêter au premier bon passage.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "d646e539b110fb4b",
+          "brand": "Harley-Davidson",
+          "model": "RH 975 Nightster",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Harley-Davidson",
+          "id": "d646e539b110fb4b:section:4",
+          "model": "RH 975 Nightster",
+          "object_id": "d646e539b110fb4b",
+          "original_text": "Bicylindre en V à 60° , 4 temps; Injection; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 975 cc (Alésage * course: 97 x 66 mm); 89 ch à 7 500 tr/min; 9,70 mkg à 5 750 tr/min; Rapport poids / puissance : 2.37 kg/ch; Rapport poids / couple : 21.75 kg/mkg; Compression : 12 : 1; Emission CO² : 128 g/km",
+          "section": "Moteur",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "text": "Harley-Davidson RH 975 Nightster 2024\nMoteur\nBicylindre en V à 60° , 4 temps; Injection; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 975 cc (Alésage * course: 97 x 66 mm); 89 ch à 7 500 tr/min; 9,70 mkg à 5 750 tr/min; Rapport poids / puissance : 2.37 kg/ch; Rapport poids / couple : 21.75 kg/mkg; Compression : 12 : 1; Emission CO² : 128 g/km",
+          "text_sha256": "67f8f955e856bc9cef0771930fb243d8e3a5f066abc3762f202f8937190baab9",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Harley-Davidson",
+          "id": "d646e539b110fb4b:section:0",
+          "model": "RH 975 Nightster",
+          "object_id": "d646e539b110fb4b",
+          "original_text": "Cadre : Structures en tubes d'acier; Réservoir : 11,70 litres; Hauteur de selle : 705 mm; Longueur : 2 250 mm; Largeur : 836 mm; Hauteur min : 1 108 mm; Empattement : 1 545 mm; Poids à sec : 211 kg; Poids tous pleins faits : 221 kg",
+          "section": "Châssis",
+          "source_sha256": "4c750bca564cd823deb90dbcb72dc72522959bef5497f95f8b9d61147bd49976",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10262/RH-975-Nightster-2024/contact.html",
+          "text": "Harley-Davidson RH 975 Nightster 2024\nChâssis\nCadre : Structures en tubes d'acier; Réservoir : 11,70 litres; Hauteur de selle : 705 mm; Longueur : 2 250 mm; Largeur : 836 mm; Hauteur min : 1 108 mm; Empattement : 1 545 mm; Poids à sec : 211 kg; Poids tous pleins faits : 221 kg",
+          "text_sha256": "d05ce0bf3afd4afecef5d6702d9a7a1b52fa55a0098f77f3c59aa7de7d320a9a",
+          "year": 2024
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Harley-Davidson",
+          "id": "030bd8d030d19064:section:4",
+          "model": "RH 975 S Nightster Special",
+          "object_id": "030bd8d030d19064",
+          "original_text": "Bicylindre en V à 60° , 4 temps; Injection; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 975 cc (Alésage * course: 97 x 66 mm); 89 ch à 7 500 tr/min; 9,70 mkg à 5 750 tr/min; Rapport poids / puissance : 2.43 kg/ch; Rapport poids / couple : 22.27 kg/mkg; Compression : 12 : 1; Emission CO² : 128 g/km",
+          "section": "Moteur",
+          "source_sha256": "a325c4157e5cd55180a055ad6a7e5bb2e8cefadcf987e5dc89b5e433ca3995f2",
+          "source_url": "https://www.motoplanete.com/harley-davidson/10263/RH-975-S-Nightster-Special-2024/contact.html",
+          "text": "Harley-Davidson RH 975 S Nightster Special 2024\nMoteur\nBicylindre en V à 60° , 4 temps; Injection; Refroidissement : liquide; 2 ACT, disribution variable; 4 soupapes par cylindre; 975 cc (Alésage * course: 97 x 66 mm); 89 ch à 7 500 tr/min; 9,70 mkg à 5 750 tr/min; Rapport poids / puissance : 2.43 kg/ch; Rapport poids / couple : 22.27 kg/mkg; Compression : 12 : 1; Emission CO² : 128 g/km",
+          "text_sha256": "9f7b3c1a7c4823f8902a53fd4fd9686cbcabfde102dd89858a6ea9d0126de250",
+          "year": 2024
+        },
+        {
+          "historical_dense_rank": 3,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Harley-Davidson",
+          "id": "aa875368936b1b7a:section:0",
+          "model": "RH 975 Nightster",
+          "object_id": "aa875368936b1b7a",
+          "original_text": "Selle biplaces; Cadre : Structures en tubes d'acier; Réservoir : 11,70 litres; Capacité d'huile : 4,50 litres; Hauteur de selle : 705 mm; Longueur : 2 250 mm; Largeur : 840 mm; Hauteur min : 1 108 mm; Garde au sol min : 110 mm Empattement : 1 545 mm Poids à sec : 211 kg Poids tous pleins faits : 220 kg",
+          "section": "Châssis",
+          "source_sha256": "5eaa3e29867ca70436a5bd475cc6ea26555079e894c5955d66f13f14fb9c24b6",
+          "source_url": "https://www.motoplanete.com/harley-davidson/11752/RH-975-Nightster-2026/contact.html",
+          "text": "Harley-Davidson RH 975 Nightster 2026\nChâssis\nSelle biplaces; Cadre : Structures en tubes d'acier; Réservoir : 11,70 litres; Capacité d'huile : 4,50 litres; Hauteur de selle : 705 mm; Longueur : 2 250 mm; Largeur : 840 mm; Hauteur min : 1 108 mm; Garde au sol min : 110 mm Empattement : 1 545 mm Poids à sec : 211 kg Poids tous pleins faits : 220 kg",
+          "text_sha256": "afeef5dc18f01fcd5df84d9090f9bf8c3cf674a0e48081b3b8d0cb74ea073a62",
+          "year": 2026
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 0.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 0.0,
+        "group_coverage_at1": 0.5,
+        "group_coverage_at10": 0.5,
+        "group_coverage_at3": 0.5,
+        "group_coverage_at5": 0.5,
+        "hit_at1": 1.0,
+        "hit_at10": 1.0,
+        "hit_at3": 1.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 2,
+        "judgements_complete_global": false,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 0.6131471927654584,
+        "ranked_count": 10,
+        "recall_at1": 0.5,
+        "recall_at10": 0.5,
+        "recall_at3": 0.5,
+        "recall_at5": 0.5,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "d646e539b110fb4b:section:4",
+        "030bd8d030d19064:section:4",
+        "aa875368936b1b7a:section:0",
+        "8c9f3f67b330241e:section:4",
+        "88e4d9a76e710e2e:section:0",
+        "aa875368936b1b7a:section:4",
+        "88e4d9a76e710e2e:section:4",
+        "a081b0f49b5f40c6:section:4",
+        "84fdf3454b6c906a:section:4",
+        "08d3abbca3c285a7:section:4"
+      ]
+    },
+    {
+      "id": "HOLDOUT-022",
+      "split": "check",
+      "category": "equipment_multi_evidence",
+      "question": "Sur une Suzuki GSX-8S 800 2024, le contrôle de traction et le shifter sont mentionnés ? Pour le shifter, quelle précision donne la transmission ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "3c7991fb5c47484a"
+      ],
+      "gold_passages": [
+        {
+          "id": "3c7991fb5c47484a:section:5",
+          "grade": 2,
+          "reason": "Contient contrôle de traction et shifter."
+        },
+        {
+          "id": "3c7991fb5c47484a:section:2",
+          "grade": 2,
+          "reason": "Précise shifter de série dans une boîte manuelle six rapports."
+        }
+      ],
+      "required_groups": [
+        [
+          "3c7991fb5c47484a:section:5"
+        ],
+        [
+          "3c7991fb5c47484a:section:2"
+        ]
+      ],
+      "expected_facts": [
+        "Contrôle de traction et shifter listés ; boîte manuelle à 6 rapports avec shifter de série."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "3c7991fb5c47484a:section:5",
+          "object_id": "3c7991fb5c47484a",
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre; Contrôle de traction; Embrayage anti-dribble"
+        },
+        {
+          "passage_id": "3c7991fb5c47484a:section:2",
+          "object_id": "3c7991fb5c47484a",
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "missing_qualification",
+        "explanation_fr": "La transmission seule ne prouve pas la mention du contrôle de traction ; conserver aussi la liste des équipements 2024.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "3c7991fb5c47484a",
+          "brand": "Suzuki",
+          "model": "GSX-8S 800",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Suzuki",
+          "id": "3c7991fb5c47484a:section:5",
+          "model": "GSX-8S 800",
+          "object_id": "3c7991fb5c47484a",
+          "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre; Contrôle de traction; Embrayage anti-dribble",
+          "section": "Équipement de série",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "text": "Suzuki GSX-8S 800 2024\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 3; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Aide au démarrage; Aide à la manoeuvre; Contrôle de traction; Embrayage anti-dribble",
+          "text_sha256": "99019220911b0533d313ee2f2466ad384346e004769f1ee0e0475e71b454a335",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Suzuki",
+          "id": "3c7991fb5c47484a:section:2",
+          "model": "GSX-8S 800",
+          "object_id": "3c7991fb5c47484a",
+          "original_text": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "section": "Transmission",
+          "source_sha256": "617ff415c53e1d2c7ed14747c8993a2980326e0c37226390cecdbc143113ee1c",
+          "source_url": "https://www.motoplanete.com/suzuki/10161/GSX-8S-800-2024/contact.html",
+          "text": "Suzuki GSX-8S 800 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "text_sha256": "9f4828fac6768e844ae8adb1a333f7e941fea34e17f7f87855d85149e2de4ecc",
+          "year": 2024
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Suzuki",
+          "id": "d699e8b8d747b332:section:2",
+          "model": "GSX-8S 800 édition Kevin Schwantz",
+          "object_id": "d699e8b8d747b332",
+          "original_text": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "section": "Transmission",
+          "source_sha256": "645efea95f4bbc21526ea3f5b46f3fa262aa9a9e43ecfaf9f554fdb88edd228c",
+          "source_url": "https://www.motoplanete.com/suzuki/10010/GSX-8S-800-edition-Kevin-Schwantz-2023/contact.html",
+          "text": "Suzuki GSX-8S 800 édition Kevin Schwantz 2023\nTransmission\nboîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "text_sha256": "b89ef6b28bd33fafee492fb0c8f46279751cfd216b9d0a4a34bc444b493548ac",
+          "year": 2023
+        },
+        {
+          "historical_dense_rank": 3,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Suzuki",
+          "id": "f5bb5945265002d8:section:2",
+          "model": "800 GSX-8R Legend Edition",
+          "object_id": "f5bb5945265002d8",
+          "original_text": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "section": "Transmission",
+          "source_sha256": "a45107852249a65784f39c3ffd437038174be8435d2fad05dd249033710706da",
+          "source_url": "https://www.motoplanete.com/suzuki/10841/800-GSX-8R-Legend-Edition-2024/contact.html",
+          "text": "Suzuki 800 GSX-8R Legend Edition 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "text_sha256": "b1ffdc3d2f1c5df6983d55b1812f43f5886aa7b28f2568af2273146405d8689c",
+          "year": 2024
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 0.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 0.0,
+        "group_coverage_at1": 0.5,
+        "group_coverage_at10": 0.5,
+        "group_coverage_at3": 0.5,
+        "group_coverage_at5": 0.5,
+        "hit_at1": 1.0,
+        "hit_at10": 1.0,
+        "hit_at3": 1.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 2,
+        "judgements_complete_global": false,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 0.6131471927654584,
+        "ranked_count": 10,
+        "recall_at1": 0.5,
+        "recall_at10": 0.5,
+        "recall_at3": 0.5,
+        "recall_at5": 0.5,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "3c7991fb5c47484a:section:2",
+        "d699e8b8d747b332:section:2",
+        "f5bb5945265002d8:section:2",
+        "e5ae298425ec85ab:section:2",
+        "61050e7f0c70e87d:section:2",
+        "ebbd035f47fc67a1:section:2",
+        "3c7991fb5c47484a:section:3",
+        "5c6fadb053a66c3e:section:2",
+        "7d421688d6cdf817:section:2",
+        "d699e8b8d747b332:section:3"
+      ]
+    },
+    {
+      "id": "HOLDOUT-026",
+      "split": "check",
+      "category": "colours",
+      "question": "La Triumph 660 Trident 2025 est citée en bleu uni ou en bleu avec une autre couleur ? Donne les combinaisons écrites.",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "0ce7454d1b7fa796"
+      ],
+      "gold_passages": [
+        {
+          "id": "0ce7454d1b7fa796:section:9",
+          "grade": 2,
+          "reason": "Énumère les combinaisons de couleurs exactes."
+        }
+      ],
+      "required_groups": [
+        [
+          "0ce7454d1b7fa796:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "Bleu / noir, jaune / noir, rouge / noir, noir."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "La désignation bleu / noir doit être conservée ; ne pas réduire les bicolores à leur couleur principale."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "0ce7454d1b7fa796:section:9",
+          "object_id": "0ce7454d1b7fa796",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "section": "Coloris",
+          "quote": "Coloris : bleu / noir; Coloris : jaune / noir; Coloris : rouge / noir; Coloris : noir"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "colour_control",
+        "explanation_fr": "Le résultat correct bleu/noir doit rester prioritaire ; la Tribute Edition n'établit pas toutes les combinaisons de la version visée.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "0ce7454d1b7fa796",
+          "brand": "Triumph",
+          "model": "660 Trident",
+          "year": 2025,
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "0ce7454d1b7fa796:section:9",
+          "model": "660 Trident",
+          "object_id": "0ce7454d1b7fa796",
+          "original_text": "Coloris : bleu / noir; Coloris : jaune / noir; Coloris : rouge / noir; Coloris : noir",
+          "section": "Coloris",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "text": "Triumph 660 Trident 2025\nColoris\nColoris : bleu / noir; Coloris : jaune / noir; Coloris : rouge / noir; Coloris : noir",
+          "text_sha256": "078e48e9896f648118e652a350edb7cf3906cb76480044d2b8a4d413d5a1a2c6",
+          "year": 2025
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Triumph",
+          "id": "49d6ef0875131f2f:section:9",
+          "model": "660 Trident Tribute Edition",
+          "object_id": "49d6ef0875131f2f",
+          "original_text": "Coloris : bleu / noir",
+          "section": "Coloris",
+          "source_sha256": "a55e37500b57b3933a7c8882f41ffd50424160d4d92da41b779811f1d0237310",
+          "source_url": "https://www.motoplanete.com/triumph/11290/660-Trident-Tribute-Edition-2025/contact.html",
+          "text": "Triumph 660 Trident Tribute Edition 2025\nColoris\nColoris : bleu / noir",
+          "text_sha256": "f1a3f74d7302870129c53f1aa2ebca2953446c85bc8c12ade5bf1d6eaa3de11d",
+          "year": 2025
+        },
+        {
+          "historical_dense_rank": 3,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Triumph",
+          "id": "d465caee3ef392ee:section:9",
+          "model": "660 Trident Tribute Edition",
+          "object_id": "d465caee3ef392ee",
+          "original_text": "Coloris : bleu / blanc / rouge",
+          "section": "Coloris",
+          "source_sha256": "0a5306270ecb27c6c3c238e504a7bfa80811fbe6029c4cd24b0f9a57aa11fb15",
+          "source_url": "https://www.motoplanete.com/triumph/10543/660-Trident-Tribute-Edition-2024/contact.html",
+          "text": "Triumph 660 Trident Tribute Edition 2024\nColoris\nColoris : bleu / blanc / rouge",
+          "text_sha256": "5591ea92835e85c53c8c88b3da73f27ac538ac23517413976e1483b9f25e474e",
+          "year": 2024
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 1.0,
+        "all_groups_at10": 1.0,
+        "all_groups_at3": 1.0,
+        "all_groups_at5": 1.0,
+        "group_coverage_at1": 1.0,
+        "group_coverage_at10": 1.0,
+        "group_coverage_at3": 1.0,
+        "group_coverage_at5": 1.0,
+        "hit_at1": 1.0,
+        "hit_at10": 1.0,
+        "hit_at3": 1.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 1,
+        "judgements_complete_global": false,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 1.0,
+        "ranked_count": 10,
+        "recall_at1": 1.0,
+        "recall_at10": 1.0,
+        "recall_at3": 1.0,
+        "recall_at5": 1.0,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "0ce7454d1b7fa796:section:9",
+        "49d6ef0875131f2f:section:9",
+        "d465caee3ef392ee:section:9",
+        "70a4fabcce8702e5:section:9",
+        "0ce7454d1b7fa796:section:4",
+        "2973af16198fdb41:section:9",
+        "49d6ef0875131f2f:section:4",
+        "0ce7454d1b7fa796:section:5",
+        "0ce7454d1b7fa796:section:2",
+        "fcf32ec6745cf8a9:section:4"
+      ]
+    },
+    {
+      "id": "HOLDOUT-033",
+      "split": "check",
+      "category": "a2_exact_variant",
+      "question": "Sur la Triumph 765 Street Triple R A2 2025, quels chevaux et quelle cylindrée sont écrits, et que dit la rubrique permis ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "e1eb267f9d1f697b"
+      ],
+      "gold_passages": [
+        {
+          "id": "e1eb267f9d1f697b:section:4",
+          "grade": 2,
+          "reason": "Donne 765 cc et 94 ch pour cette identité A2 exacte."
+        },
+        {
+          "id": "e1eb267f9d1f697b:section:6",
+          "grade": 2,
+          "reason": "Donne le libellé A2 et la liste des permis."
+        }
+      ],
+      "required_groups": [
+        [
+          "e1eb267f9d1f697b:section:4"
+        ],
+        [
+          "e1eb267f9d1f697b:section:6"
+        ]
+      ],
+      "expected_facts": [
+        "765 cc ; 94 ch à 10 100 tr/min ; accessible au permis A2 ou bridable à 47.5ch / 35 Kw ; permis A, A2."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "Le A2 du nom du modèle ne démontre pas que la puissance inscrite est celle d’un exemplaire déjà bridé."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "e1eb267f9d1f697b:section:4",
+          "object_id": "e1eb267f9d1f697b",
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c",
+          "section": "Moteur",
+          "quote": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 94 ch à 10 100 tr/min; 7,20 mkg à 8 750 tr/min; Rapport poids / puissance : environ 1.87 kg/ch; Rapport poids / couple : environ 24.4 kg/mkg; Compression : 13,25 : 1; Emission CO² : 120 g/km"
+        },
+        {
+          "passage_id": "e1eb267f9d1f697b:section:6",
+          "object_id": "e1eb267f9d1f697b",
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c",
+          "section": "Infos pratiques",
+          "quote": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "exact_a2_variant_control",
+        "explanation_fr": "La R A2 annonce 94 ch ; la R voisine 120 ch. Conserver moteur et mention de permis, sans certifier un exemplaire.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "e1eb267f9d1f697b",
+          "brand": "Triumph",
+          "model": "765 Street Triple R A2",
+          "year": 2025,
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "e1eb267f9d1f697b:section:4",
+          "model": "765 Street Triple R A2",
+          "object_id": "e1eb267f9d1f697b",
+          "original_text": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 94 ch à 10 100 tr/min; 7,20 mkg à 8 750 tr/min; Rapport poids / puissance : environ 1.87 kg/ch; Rapport poids / couple : environ 24.4 kg/mkg; Compression : 13,25 : 1; Emission CO² : 120 g/km",
+          "section": "Moteur",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c",
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "text": "Triumph 765 Street Triple R A2 2025\nMoteur\n3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 94 ch à 10 100 tr/min; 7,20 mkg à 8 750 tr/min; Rapport poids / puissance : environ 1.87 kg/ch; Rapport poids / couple : environ 24.4 kg/mkg; Compression : 13,25 : 1; Emission CO² : 120 g/km",
+          "text_sha256": "81c35bcbba912e09e53baae5fb0783a32336dbddacbadec7e617d667e7d5d5b2",
+          "year": 2025
+        },
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "e1eb267f9d1f697b:section:6",
+          "model": "765 Street Triple R A2",
+          "object_id": "e1eb267f9d1f697b",
+          "original_text": "Véhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+          "section": "Infos pratiques",
+          "source_sha256": "e1fdbff936fec71651355103c0e243f3d67a8e33b574dcac4806a5f663df2d9c",
+          "source_url": "https://www.motoplanete.com/triumph/10695/765-Street-Triple-R--A2-2025/contact.html",
+          "text": "Triumph 765 Street Triple R A2 2025\nInfos pratiques\nVéhicule accessible au permis A2 ou bridable à 47.5ch / 35 Kw; La moto est accessible aux permis : A, A2",
+          "text_sha256": "d6759874594d6e5ecde986d08422afff2aea113c2262d4cd48677c488c5d1d0c",
+          "year": 2025
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Triumph",
+          "id": "4a41f060667a4657:section:4",
+          "model": "765 Street Triple R",
+          "object_id": "4a41f060667a4657",
+          "original_text": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 120 ch à 11 500 tr/min; 8,20 mkg à 9 500 tr/min; Rapport poids / puissance : environ 1.46 kg/ch; Rapport poids / couple : environ 21.42 kg/mkg; Compression : 13,25 : 1; Emission CO² : 120 g/km",
+          "section": "Moteur",
+          "source_sha256": "7f415a0b75635721f5f1e31c339478affef3db79aefde325d9381fc0d875fd91",
+          "source_url": "https://www.motoplanete.com/triumph/10607/765-Street-Triple-R-2025/contact.html",
+          "text": "Triumph 765 Street Triple R 2025\nMoteur\n3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 120 ch à 11 500 tr/min; 8,20 mkg à 9 500 tr/min; Rapport poids / puissance : environ 1.46 kg/ch; Rapport poids / couple : environ 21.42 kg/mkg; Compression : 13,25 : 1; Emission CO² : 120 g/km",
+          "text_sha256": "0dd7fbb3d1778c34518ff16d137aa03274de5c22260161c6a228ffc7a8b20486",
+          "year": 2025
+        },
+        {
+          "historical_dense_rank": 4,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Triumph",
+          "id": "c28516902dad7523:section:4",
+          "model": "765 Street Triple R",
+          "object_id": "c28516902dad7523",
+          "original_text": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 118 ch à 12 000 tr/min; 7,90 mkg à 9 400 tr/min; Rapport poids / puissance : 1.42 kg/ch; Rapport poids / couple : 21.27 kg/mkg; Compression : 12.5 : 1; Emission CO² : 119 g/km",
+          "section": "Moteur",
+          "source_sha256": "869bfa8c0cab7caccce1a5d73df3c0dd912f408806e5e45f2a5abb504952acc6",
+          "source_url": "https://www.motoplanete.com/triumph/9125/765-Street-Triple-R-2022/contact.html",
+          "text": "Triumph 765 Street Triple R 2022\nMoteur\n3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 765 cc (Alésage * course: 77.99 x 53.4 mm); 118 ch à 12 000 tr/min; 7,90 mkg à 9 400 tr/min; Rapport poids / puissance : 1.42 kg/ch; Rapport poids / couple : 21.27 kg/mkg; Compression : 12.5 : 1; Emission CO² : 119 g/km",
+          "text_sha256": "99997bf445787586011eafdb01b2c39a91136f3c6976ffc4ab65e0707a1234b1",
+          "year": 2022
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 1.0,
+        "all_groups_at3": 1.0,
+        "all_groups_at5": 1.0,
+        "group_coverage_at1": 0.5,
+        "group_coverage_at10": 1.0,
+        "group_coverage_at3": 1.0,
+        "group_coverage_at5": 1.0,
+        "hit_at1": 1.0,
+        "hit_at10": 1.0,
+        "hit_at3": 1.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 2,
+        "judgements_complete_global": false,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 0.9197207891481876,
+        "ranked_count": 10,
+        "recall_at1": 0.5,
+        "recall_at10": 1.0,
+        "recall_at3": 1.0,
+        "recall_at5": 1.0,
+        "unjudged_fraction_at10": 0.8
+      },
+      "historical_dense_top10_ids": [
+        "e1eb267f9d1f697b:section:4",
+        "4a41f060667a4657:section:4",
+        "e1eb267f9d1f697b:section:6",
+        "c28516902dad7523:section:4",
+        "5f7ece8be6386257:section:4",
+        "8a0f27858c91f7a2:section:4",
+        "f3ec384573e0a72a:section:4",
+        "6ad0adca5bfb6800:section:4",
+        "7a963fff2819e870:section:4",
+        "fb99ca4c7eb01f27:section:4"
+      ]
+    },
+    {
+      "id": "HOLDOUT-034",
+      "split": "check",
+      "category": "a2_missing_source_mention",
+      "question": "Je regarde une Royal-Enfield Meteor 350 2024 avec mon A2. Quelle puissance donne la fiche et cite-t-elle ce permis, sans faire une déduction réglementaire ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "9932cf3c8b15ee49"
+      ],
+      "gold_passages": [
+        {
+          "id": "9932cf3c8b15ee49:section:4",
+          "grade": 2,
+          "reason": "Donne 20 ch à 6 100 tr/min."
+        },
+        {
+          "id": "9932cf3c8b15ee49:section:6",
+          "grade": 2,
+          "reason": "La liste de permis donne seulement A."
+        }
+      ],
+      "required_groups": [
+        [
+          "9932cf3c8b15ee49:section:4"
+        ],
+        [
+          "9932cf3c8b15ee49:section:6"
+        ]
+      ],
+      "expected_facts": [
+        "20 ch à 6 100 tr/min ; seule la mention A est présente dans Infos pratiques."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "Une mention A2 ou de bridage sur Motoplanete ne prouve ni une homologation, ni l’existence d’un kit précis, ni la configuration légale d’un exemplaire. Aucun corpus juridique officiel ou certificat constructeur n’est fourni.",
+        "Le permis A2 n’est pas documenté pour cette fiche ; son silence ne constitue pas un refus d’éligibilité."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "9932cf3c8b15ee49:section:4",
+          "object_id": "9932cf3c8b15ee49",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "section": "Moteur",
+          "quote": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km"
+        },
+        {
+          "passage_id": "9932cf3c8b15ee49:section:6",
+          "object_id": "9932cf3c8b15ee49",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "section": "Infos pratiques",
+          "quote": "La moto est accessible aux permis : A"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 10
+      },
+      "annotation": {
+        "error_type": "missing_second_topic_source_limit",
+        "explanation_fr": "La puissance 20 ch n'établit pas A2 ; restituer la rubrique ne mentionnant que A, sans transformer ce silence en incompatibilité réglementaire.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "9932cf3c8b15ee49",
+          "brand": "Royal-Enfield",
+          "model": "Meteor 350",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Royal-Enfield",
+          "id": "9932cf3c8b15ee49:section:4",
+          "model": "Meteor 350",
+          "object_id": "9932cf3c8b15ee49",
+          "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km",
+          "section": "Moteur",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "text": "Royal-Enfield Meteor 350 2024\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km",
+          "text_sha256": "0bd47a6313fa0dd3d140f3908ed11aa6eabcec47110a65f6fc52ceeae67e5ea7",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Royal-Enfield",
+          "id": "9932cf3c8b15ee49:section:6",
+          "model": "Meteor 350",
+          "object_id": "9932cf3c8b15ee49",
+          "original_text": "La moto est accessible aux permis : A",
+          "section": "Infos pratiques",
+          "source_sha256": "7811db87f2a4bdfa0641e15c580a1e13ab57c55349b09cc5b6283b17f067d0a7",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10288/Meteor-350-2024/contact.html",
+          "text": "Royal-Enfield Meteor 350 2024\nInfos pratiques\nLa moto est accessible aux permis : A",
+          "text_sha256": "952c9f9a9cc5fdbf5a3bb361d4ab7852206b1685b2dfc3506cd46fbd9ecbb15d",
+          "year": 2024
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 2,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Royal-Enfield",
+          "id": "9b9fa6fd48a80d63:section:4",
+          "model": "Meteor 350 Aurora",
+          "object_id": "9b9fa6fd48a80d63",
+          "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.46 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km",
+          "section": "Moteur",
+          "source_sha256": "1307f4c800b238b09af4065b0aeccdac664833ab4b6f5b5bdb9c15d5a0135092",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10285/Meteor-350-Aurora-2024/contact.html",
+          "text": "Royal-Enfield Meteor 350 Aurora 2024\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.46 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km",
+          "text_sha256": "7e1e144ea1907c746fd068ff53137bfb1bddd437f68c8c6eb385809162b5f63c",
+          "year": 2024
+        },
+        {
+          "historical_dense_rank": 3,
+          "label": "outside_requested_identity_not_universally_irrelevant",
+          "training_negative_approved": false,
+          "brand": "Royal-Enfield",
+          "id": "0bcc78b5c63433ae:section:4",
+          "model": "Meteor 350 Stellar",
+          "object_id": "0bcc78b5c63433ae",
+          "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1",
+          "section": "Moteur",
+          "source_sha256": "b9ee5d24644adf9d2c578f35098c266b9afea47aabc7eca572cbf77046275c8d",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10287/Meteor-350-Stellar-2024/contact.html",
+          "text": "Royal-Enfield Meteor 350 Stellar 2024\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1",
+          "text_sha256": "e2bfd9da46008391193aca08bfbf3c495858b5fcdc19cd6607a93576989a6258",
+          "year": 2024
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 0.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 0.0,
+        "group_coverage_at1": 0.5,
+        "group_coverage_at10": 0.5,
+        "group_coverage_at3": 0.5,
+        "group_coverage_at5": 0.5,
+        "hit_at1": 1.0,
+        "hit_at10": 1.0,
+        "hit_at3": 1.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 2,
+        "judgements_complete_global": false,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 0.6131471927654584,
+        "ranked_count": 10,
+        "recall_at1": 0.5,
+        "recall_at10": 0.5,
+        "recall_at3": 0.5,
+        "recall_at5": 0.5,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "9932cf3c8b15ee49:section:4",
+        "9b9fa6fd48a80d63:section:4",
+        "0bcc78b5c63433ae:section:4",
+        "0b6905c88de4fd57:section:4",
+        "6e50b221b2381aaf:section:4",
+        "5e5a8c7b0483a3db:section:4",
+        "47642c72176ce48a:section:4",
+        "151808f30f3e6f44:section:4",
+        "140fe2bb38f49101:section:4",
+        "23318028aa648a5c:section:4"
+      ]
+    },
+    {
+      "id": "HOLDOUT-040",
+      "split": "check",
+      "category": "comparison_equipment_years",
+      "question": "La Triumph 660 Trident 2025 apporte quoi par rapport à la 2024 pour le shifter, le régulateur et le nombre de modes de conduite, selon les fiches ?",
+      "answerability": "answerable",
+      "supplied_scope_object_ids": [
+        "2973af16198fdb41",
+        "0ce7454d1b7fa796"
+      ],
+      "gold_passages": [
+        {
+          "id": "2973af16198fdb41:section:2",
+          "grade": 2,
+          "reason": "Statut optionnel du shifter 2024."
+        },
+        {
+          "id": "0ce7454d1b7fa796:section:2",
+          "grade": 2,
+          "reason": "Statut de série du shifter 2025."
+        },
+        {
+          "id": "2973af16198fdb41:section:5",
+          "grade": 2,
+          "reason": "Deux modes et liste d’équipements 2024."
+        },
+        {
+          "id": "0ce7454d1b7fa796:section:5",
+          "grade": 2,
+          "reason": "Trois modes, régulateur et shifter listés en 2025."
+        }
+      ],
+      "required_groups": [
+        [
+          "2973af16198fdb41:section:2"
+        ],
+        [
+          "0ce7454d1b7fa796:section:2"
+        ],
+        [
+          "2973af16198fdb41:section:5"
+        ],
+        [
+          "0ce7454d1b7fa796:section:5"
+        ]
+      ],
+      "expected_facts": [
+        "2024 : shifter en option, 2 modes, régulateur non cité ; 2025 : shifter de série, 3 modes, régulateur de vitesse cité."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle.",
+        "Le fait que le régulateur ne soit pas extrait en 2024 ne prouve pas l’absence sur toute configuration 2024."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "2973af16198fdb41:section:2",
+          "object_id": "2973af16198fdb41",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "0ce7454d1b7fa796:section:2",
+          "object_id": "0ce7454d1b7fa796",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "section": "Transmission",
+          "quote": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne"
+        },
+        {
+          "passage_id": "2973af16198fdb41:section:5",
+          "object_id": "2973af16198fdb41",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 2; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble"
+        },
+        {
+          "passage_id": "0ce7454d1b7fa796:section:5",
+          "object_id": "0ce7454d1b7fa796",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "section": "Équipement de série",
+          "quote": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; ABS Cornering; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Contrôle de traction; Embrayage anti-dribble"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_given",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      },
+      "annotation": {
+        "error_type": "incomplete_comparison_qualification",
+        "explanation_fr": "Conserver les deux années et transmission/équipements utiles : shifter option en 2024, série en 2025 ; régulateur 2024 non cité, pas déclaré absent.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "2973af16198fdb41",
+          "brand": "Triumph",
+          "model": "660 Trident",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1"
+        },
+        {
+          "object_id": "0ce7454d1b7fa796",
+          "brand": "Triumph",
+          "model": "660 Trident",
+          "year": 2025,
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "2973af16198fdb41:section:2",
+          "model": "660 Trident",
+          "object_id": "2973af16198fdb41",
+          "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+          "section": "Transmission",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "text": "Triumph 660 Trident 2024\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+          "text_sha256": "6990bf572482efea28b9f59605b28bd455243530733fa30d5bab2ff6f61c2394",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "0ce7454d1b7fa796:section:2",
+          "model": "660 Trident",
+          "object_id": "0ce7454d1b7fa796",
+          "original_text": "boîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "section": "Transmission",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "text": "Triumph 660 Trident 2025\nTransmission\nboîte à 6 rapports , manuelle - shifter de série; Secondaire par chaîne",
+          "text_sha256": "cbcbc313b539eb136388df8647a62bba3b86998d9c7c41c9ee30474edf76db8e",
+          "year": 2025
+        },
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "2973af16198fdb41:section:5",
+          "model": "660 Trident",
+          "object_id": "2973af16198fdb41",
+          "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 2; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble",
+          "section": "Équipement de série",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "text": "Triumph 660 Trident 2024\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 2; Jantes aluminium; Indicateur de vitesse engagée; Contrôle de traction; Embrayage anti-dribble",
+          "text_sha256": "84503b8bdc64052609c48c4b3c3cdf2c90be24570d24969e9e1f7bac533caaf3",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Triumph",
+          "id": "0ce7454d1b7fa796:section:5",
+          "model": "660 Trident",
+          "object_id": "0ce7454d1b7fa796",
+          "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 3; ABS Cornering; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Contrôle de traction; Embrayage anti-dribble",
+          "section": "Équipement de série",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "text": "Triumph 660 Trident 2025\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 3; ABS Cornering; Jantes aluminium; Shifter; Indicateur de vitesse engagée; Régulateur de vitesse; Bluetooth; Contrôle de traction; Embrayage anti-dribble",
+          "text_sha256": "beaee780f9f563df63e717499946557db6fc52d61edba7741fe81f5c63413c7a",
+          "year": 2025
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 2,
+          "label": "other_section_in_requested_identity_review_needed",
+          "training_negative_approved": false,
+          "brand": "Triumph",
+          "id": "2973af16198fdb41:section:4",
+          "model": "660 Trident",
+          "object_id": "2973af16198fdb41",
+          "original_text": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 660 cc (Alésage * course: 74 x 51.1 mm); 81 ch à 10 250 tr/min; 6,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.18 kg/ch; Rapport poids / couple : environ 26.73 kg/mkg; Compression : 11.95 : 1; Emission CO² : 107 g/km",
+          "section": "Moteur",
+          "source_sha256": "0810c75433dc1878b0d9514a8f8bf163b361efbbf56802cd631224093b3ebfe1",
+          "source_url": "https://www.motoplanete.com/triumph/9920/660-Trident-2024/contact.html",
+          "text": "Triumph 660 Trident 2024\nMoteur\n3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 660 cc (Alésage * course: 74 x 51.1 mm); 81 ch à 10 250 tr/min; 6,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.18 kg/ch; Rapport poids / couple : environ 26.73 kg/mkg; Compression : 11.95 : 1; Emission CO² : 107 g/km",
+          "text_sha256": "bdd44b82c3f996686408c49962b54b32faf31eaf2c62ff2bff6df9a7dcc8e38c",
+          "year": 2024
+        },
+        {
+          "historical_dense_rank": 3,
+          "label": "other_section_in_requested_identity_review_needed",
+          "training_negative_approved": false,
+          "brand": "Triumph",
+          "id": "0ce7454d1b7fa796:section:4",
+          "model": "660 Trident",
+          "object_id": "0ce7454d1b7fa796",
+          "original_text": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 660 cc (Alésage * course: 74 x 51.1 mm); 81 ch à 10 250 tr/min; 6,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.19 kg/ch; Rapport poids / couple : environ 26.88 kg/mkg; Compression : 11.95 : 1; Emission CO² : 107 g/km",
+          "section": "Moteur",
+          "source_sha256": "dcba9c134ff81063934634e9a9879c87ef73d5aa6c88e007feb652c666000c60",
+          "source_url": "https://www.motoplanete.com/triumph/10851/660-Trident-2025/contact.html",
+          "text": "Triumph 660 Trident 2025\nMoteur\n3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 660 cc (Alésage * course: 74 x 51.1 mm); 81 ch à 10 250 tr/min; 6,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.19 kg/ch; Rapport poids / couple : environ 26.88 kg/mkg; Compression : 11.95 : 1; Emission CO² : 107 g/km",
+          "text_sha256": "aac958dd5ab146816e0cd1010dbc3bf116f58f26db099c2c55c18470633a5d71",
+          "year": 2025
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 0.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 0.0,
+        "group_coverage_at1": 0.25,
+        "group_coverage_at10": 0.75,
+        "group_coverage_at3": 0.25,
+        "group_coverage_at5": 0.5,
+        "hit_at1": 1.0,
+        "hit_at10": 1.0,
+        "hit_at3": 1.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 4,
+        "judgements_complete_global": false,
+        "mrr_at10": 1.0,
+        "ndcg_at10": 0.6975637657739948,
+        "ranked_count": 10,
+        "recall_at1": 0.25,
+        "recall_at10": 0.75,
+        "recall_at3": 0.25,
+        "recall_at5": 0.5,
+        "unjudged_fraction_at10": 0.7
+      },
+      "historical_dense_top10_ids": [
+        "0ce7454d1b7fa796:section:5",
+        "2973af16198fdb41:section:4",
+        "0ce7454d1b7fa796:section:4",
+        "2973af16198fdb41:section:5",
+        "d465caee3ef392ee:section:5",
+        "2973af16198fdb41:section:2",
+        "0b27f48bd538f5f5:section:4",
+        "70a4fabcce8702e5:section:5",
+        "49d6ef0875131f2f:section:5",
+        "0b27f48bd538f5f5:section:2"
+      ]
+    },
+    {
+      "id": "HOLDOUT-044",
+      "split": "check",
+      "category": "identity_ambiguity_year_colours",
+      "question": "On me propose une Royal-Enfield 450 Himalayan blanche, année oubliée. Entre les fiches 2024 et 2025, laquelle cite le blanc, et cela suffit-il à dater la moto ?",
+      "answerability": "partial",
+      "supplied_scope_object_ids": [
+        "a694ca2a26252015",
+        "75ec63edc171c1bc"
+      ],
+      "gold_passages": [
+        {
+          "id": "a694ca2a26252015:section:9",
+          "grade": 2,
+          "reason": "Liste de coloris 2024 sans mention blanc."
+        },
+        {
+          "id": "75ec63edc171c1bc:section:9",
+          "grade": 2,
+          "reason": "Liste de coloris 2025 avec mention blanc."
+        }
+      ],
+      "required_groups": [
+        [
+          "a694ca2a26252015:section:9"
+        ],
+        [
+          "75ec63edc171c1bc:section:9"
+        ]
+      ],
+      "expected_facts": [
+        "La fiche 2025 cite blanc ; la fiche 2024 cite bleu, jaune / noir, vert, beige et rouge / gris sans blanc."
+      ],
+      "expected_limits": [
+        "Les jugements sont exhaustifs uniquement pour les fiches fournies dans le périmètre ; des passages équivalents d’autres fiches ne sont pas déclarés non pertinents globalement.",
+        "Les valeurs sont celles de la fiche Motoplanete figée, avec ses libellés et unités ; elles ne constituent pas une vérification indépendante du constructeur ni une spécification distincte par marché.",
+        "L’absence d’un équipement ou d’un coloris dans cette extraction ne prouve pas son indisponibilité réelle.",
+        "La couleur seule ne date pas un exemplaire : année, marché, peinture ajoutée et identité complète restent inconnus. Les deux candidats sont un périmètre de comparaison, pas toute l’histoire mondiale du modèle."
+      ],
+      "source_refs": [
+        {
+          "passage_id": "a694ca2a26252015:section:9",
+          "object_id": "a694ca2a26252015",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "section": "Coloris",
+          "quote": "Coloris : bleu; Coloris : jaune / noir; Coloris : vert; Coloris : beige; Coloris : rouge / gris"
+        },
+        {
+          "passage_id": "75ec63edc171c1bc:section:9",
+          "object_id": "75ec63edc171c1bc",
+          "source_url": "https://www.motoplanete.com/royal-enfield/11248/450-Himalayan-2025/contact.html",
+          "source_sha256": "836f397fc3ee2221eded9f73567402712444c3572b741c9c63cc66536c06ef14",
+          "section": "Coloris",
+          "quote": "Coloris : blanc; Coloris : jaune / noir; Coloris : gris; Coloris : rouge / gris; Coloris : beige"
+        }
+      ],
+      "judgements_complete_within_supplied_scope": true,
+      "judgements_complete_global": false,
+      "scope_protocol": "identity_ambiguity_supplied_candidate_set",
+      "annotation_review": {
+        "all_scope_sections_reviewed": true,
+        "reviewed_section_count": 20
+      },
+      "identity_ambiguity": {
+        "missing_identity_field": "année du véhicule",
+        "candidate_set_is_exhaustive_globally": false
+      },
+      "annotation": {
+        "error_type": "wrong_section_ambiguous_year",
+        "explanation_fr": "Les passages moteur/permis ne prouvent pas les coloris ; comparer les deux rubriques Coloris et conserver la limite sur la datation de l'exemplaire.",
+        "review": "Assistant source review using existing source-only annotations; no independent human review",
+        "training_ready": false
+      },
+      "expected_identities": [
+        {
+          "object_id": "a694ca2a26252015",
+          "brand": "Royal-Enfield",
+          "model": "450 Himalayan",
+          "year": 2024,
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9"
+        },
+        {
+          "object_id": "75ec63edc171c1bc",
+          "brand": "Royal-Enfield",
+          "model": "450 Himalayan",
+          "year": 2025,
+          "source_url": "https://www.motoplanete.com/royal-enfield/11248/450-Himalayan-2025/contact.html",
+          "source_sha256": "836f397fc3ee2221eded9f73567402712444c3572b741c9c63cc66536c06ef14"
+        }
+      ],
+      "positive_evidence": [
+        {
+          "grade": 2,
+          "brand": "Royal-Enfield",
+          "id": "a694ca2a26252015:section:9",
+          "model": "450 Himalayan",
+          "object_id": "a694ca2a26252015",
+          "original_text": "Coloris : bleu; Coloris : jaune / noir; Coloris : vert; Coloris : beige; Coloris : rouge / gris",
+          "section": "Coloris",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2024\nColoris\nColoris : bleu; Coloris : jaune / noir; Coloris : vert; Coloris : beige; Coloris : rouge / gris",
+          "text_sha256": "db32a4dd4ef75a1b2c357c6f9e05710318a16178488bd4cd835c267b0c65b25d",
+          "year": 2024
+        },
+        {
+          "grade": 2,
+          "brand": "Royal-Enfield",
+          "id": "75ec63edc171c1bc:section:9",
+          "model": "450 Himalayan",
+          "object_id": "75ec63edc171c1bc",
+          "original_text": "Coloris : blanc; Coloris : jaune / noir; Coloris : gris; Coloris : rouge / gris; Coloris : beige",
+          "section": "Coloris",
+          "source_sha256": "836f397fc3ee2221eded9f73567402712444c3572b741c9c63cc66536c06ef14",
+          "source_url": "https://www.motoplanete.com/royal-enfield/11248/450-Himalayan-2025/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2025\nColoris\nColoris : blanc; Coloris : jaune / noir; Coloris : gris; Coloris : rouge / gris; Coloris : beige",
+          "text_sha256": "5cb76e378701689f2dc9e7f47e365c2a9ed81809cef3a57121ddb59c51be1006",
+          "year": 2025
+        }
+      ],
+      "confusable_passages": [
+        {
+          "historical_dense_rank": 1,
+          "label": "other_section_in_requested_identity_review_needed",
+          "training_negative_approved": false,
+          "brand": "Royal-Enfield",
+          "id": "a694ca2a26252015:section:4",
+          "model": "450 Himalayan",
+          "object_id": "a694ca2a26252015",
+          "original_text": "Monocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 452 cc (Alésage * course: 84 x 81,5 mm); 40 ch à 8 000 tr/min; 4,20 mkg à 5 500 tr/min; Rapport poids / puissance : 4.53 kg/ch; Rapport poids / couple : 43.1 kg/mkg; Compression : 11.5:1; Emission CO² : 76 g/km",
+          "section": "Moteur",
+          "source_sha256": "a6777e007b3d8749bb10904439ad7f8a9ca89680bf61a3c3c2088574900aecc9",
+          "source_url": "https://www.motoplanete.com/royal-enfield/10210/450-Himalayan-2024/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2024\nMoteur\nMonocylindre , 4 temps; Injection Ø 42 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 452 cc (Alésage * course: 84 x 81,5 mm); 40 ch à 8 000 tr/min; 4,20 mkg à 5 500 tr/min; Rapport poids / puissance : 4.53 kg/ch; Rapport poids / couple : 43.1 kg/mkg; Compression : 11.5:1; Emission CO² : 76 g/km",
+          "text_sha256": "3dcb7867fc8f671ccefc59b4a9d30b85bbfff05ad0c5a06d0e0400f9e980d212",
+          "year": 2024
+        },
+        {
+          "historical_dense_rank": 2,
+          "label": "other_section_in_requested_identity_review_needed",
+          "training_negative_approved": false,
+          "brand": "Royal-Enfield",
+          "id": "75ec63edc171c1bc:section:6",
+          "model": "450 Himalayan",
+          "object_id": "75ec63edc171c1bc",
+          "original_text": "La moto est accessible aux permis : A; Pays de fabrication : Inde",
+          "section": "Infos pratiques",
+          "source_sha256": "836f397fc3ee2221eded9f73567402712444c3572b741c9c63cc66536c06ef14",
+          "source_url": "https://www.motoplanete.com/royal-enfield/11248/450-Himalayan-2025/contact.html",
+          "text": "Royal-Enfield 450 Himalayan 2025\nInfos pratiques\nLa moto est accessible aux permis : A; Pays de fabrication : Inde",
+          "text_sha256": "c0e2a5e729e9639530c113b7539c62a81899c475a7c7a776c6cbef9ce5978afd",
+          "year": 2025
+        }
+      ],
+      "historical_dense_metrics": {
+        "all_groups_at1": 0.0,
+        "all_groups_at10": 0.0,
+        "all_groups_at3": 0.0,
+        "all_groups_at5": 0.0,
+        "group_coverage_at1": 0.0,
+        "group_coverage_at10": 0.5,
+        "group_coverage_at3": 0.0,
+        "group_coverage_at5": 0.5,
+        "hit_at1": 0.0,
+        "hit_at10": 1.0,
+        "hit_at3": 0.0,
+        "hit_at5": 1.0,
+        "judged_gold_count": 2,
+        "judgements_complete_global": false,
+        "mrr_at10": 0.2,
+        "ndcg_at10": 0.23719771276929622,
+        "ranked_count": 10,
+        "recall_at1": 0.0,
+        "recall_at10": 0.5,
+        "recall_at3": 0.0,
+        "recall_at5": 0.5,
+        "unjudged_fraction_at10": 0.9
+      },
+      "historical_dense_top10_ids": [
+        "a694ca2a26252015:section:4",
+        "75ec63edc171c1bc:section:6",
+        "75ec63edc171c1bc:section:4",
+        "f05ebd8fedb59ab0:section:6",
+        "75ec63edc171c1bc:section:9",
+        "ad1cadc7de95e217:section:6",
+        "a694ca2a26252015:section:6",
+        "ad1cadc7de95e217:section:4",
+        "ad1cadc7de95e217:section:7",
+        "f05ebd8fedb59ab0:section:4"
+      ]
+    }
+  ]
+}

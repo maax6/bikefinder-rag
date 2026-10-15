@@ -1,0 +1,329 @@
+{
+  "version": "bikefinder-sql-rag-v2",
+  "cases": [
+    {
+      "id": "Q01",
+      "split": "dev",
+      "kind": "sql_count",
+      "turns": [
+        "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?"
+      ]
+    },
+    {
+      "id": "Q02",
+      "split": "dev",
+      "kind": "sql_count",
+      "turns": [
+        "Compte les fiches Honda de 2020 avec ABS de série."
+      ]
+    },
+    {
+      "id": "Q03",
+      "split": "reserved",
+      "kind": "sql_count",
+      "turns": [
+        "Combien de fiches BMW de 2020 proposent un régulateur de vitesse en option ?"
+      ]
+    },
+    {
+      "id": "Q04",
+      "split": "dev",
+      "kind": "sql_count",
+      "turns": [
+        "Combien de fiches de 2020 ont une hauteur de selle strictement inférieure à 800 mm ?"
+      ]
+    },
+    {
+      "id": "Q05",
+      "split": "dev",
+      "kind": "sql_count",
+      "turns": [
+        "Compte les fiches de 2020 avec une cylindrée entre 450 et 700 cc inclus et l'ABS de série."
+      ]
+    },
+    {
+      "id": "Q06",
+      "split": "reserved",
+      "kind": "sql_count",
+      "turns": [
+        "Combien de fiches Yamaha de 2020 ont un statut ABS inconnu ?"
+      ]
+    },
+    {
+      "id": "Q07",
+      "split": "dev",
+      "kind": "sql_count",
+      "turns": [
+        "Compte les fiches Honda de 2020 dont le poids en ordre de marche n'est pas renseigné sous forme comparable."
+      ]
+    },
+    {
+      "id": "Q08",
+      "split": "dev",
+      "kind": "sql_count",
+      "turns": [
+        "Combien de fiches BMW entre 2018 et 2020 inclus ont une cylindrée d'au moins 1000 cc ?"
+      ]
+    },
+    {
+      "id": "Q09",
+      "split": "reserved",
+      "kind": "fiche",
+      "turns": [
+        "Quelle est la hauteur de selle de la Honda CB 500 F 2020 ?"
+      ]
+    },
+    {
+      "id": "Q10",
+      "split": "dev",
+      "kind": "fiche",
+      "turns": [
+        "Quelle cylindrée indique la fiche de la Yamaha MT-07 2020 ?"
+      ]
+    },
+    {
+      "id": "Q11",
+      "split": "dev",
+      "kind": "fiche",
+      "turns": [
+        "Donne les poids à sec et tous pleins faits de la Ducati Multistrada 1200 standard 2011."
+      ]
+    },
+    {
+      "id": "Q12",
+      "split": "reserved",
+      "kind": "fiche",
+      "turns": [
+        "Quelle autonomie donne la fiche de la Honda ST 1100 Pan European 2000, et est-elle mesurée ?"
+      ]
+    },
+    {
+      "id": "Q13",
+      "split": "dev",
+      "kind": "fiche",
+      "turns": [
+        "Quel tarif français est indiqué dans la fiche de la Honda CB 500 F 2020 ?"
+      ]
+    },
+    {
+      "id": "Q14",
+      "split": "dev",
+      "kind": "fiche",
+      "turns": [
+        "L'ABS de la Ducati Multistrada 1200 standard 2011 est-il de série ou en option ?"
+      ]
+    },
+    {
+      "id": "Q15",
+      "split": "reserved",
+      "kind": "fiche",
+      "turns": [
+        "Quels rapports et quelle transmission secondaire indique la BMW R 1250 RT standard 2020 ?"
+      ]
+    },
+    {
+      "id": "Q16",
+      "split": "dev",
+      "kind": "fiche",
+      "turns": [
+        "Quelle puissance et quel couple donne la Yamaha MT-07 2020 ?"
+      ]
+    },
+    {
+      "id": "Q17",
+      "split": "dev",
+      "kind": "comparison",
+      "turns": [
+        "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart."
+      ]
+    },
+    {
+      "id": "Q18",
+      "split": "reserved",
+      "kind": "comparison",
+      "turns": [
+        "Compare la cylindrée et la puissance de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020."
+      ]
+    },
+    {
+      "id": "Q19",
+      "split": "dev",
+      "kind": "comparison",
+      "turns": [
+        "Compare les poids à sec et en ordre de marche de la Ducati Multistrada 1200 standard 2011 et de la Honda ST 1100 Pan European 2000."
+      ]
+    },
+    {
+      "id": "Q20",
+      "split": "reserved",
+      "kind": "comparison",
+      "turns": [
+        "Compare l'autonomie estimée de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020, avec les réserves des fiches."
+      ]
+    },
+    {
+      "id": "Q21",
+      "split": "dev",
+      "kind": "comparison",
+      "turns": [
+        "Compare les tarifs français indiqués dans les fiches de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020."
+      ]
+    },
+    {
+      "id": "Q22",
+      "split": "dev",
+      "kind": "comparison",
+      "turns": [
+        "Compare la cylindrée et la hauteur de selle de la Gold Wing Tour DCT/Airbag 2018 et de la BMW R 1250 RT standard 2020."
+      ]
+    },
+    {
+      "id": "Q23",
+      "split": "reserved",
+      "kind": "rag",
+      "turns": [
+        "Comment la fiche décrit-elle la boîte de la Gold Wing Tour DCT/Airbag 2018 et sa marche arrière ?"
+      ]
+    },
+    {
+      "id": "Q24",
+      "split": "dev",
+      "kind": "rag",
+      "turns": [
+        "Quelles différences de transmission indiquent la Gold Wing Tour DCT/Airbag 2018 et la BMW R 1250 RT standard 2020 ?"
+      ]
+    },
+    {
+      "id": "Q25",
+      "split": "reserved",
+      "kind": "rag",
+      "turns": [
+        "Comment la fiche de la BMW R 1250 RT standard 2020 décrit-elle ses suspensions avant et arrière ?"
+      ]
+    },
+    {
+      "id": "Q26",
+      "split": "dev",
+      "kind": "rag",
+      "turns": [
+        "Que décrit la fiche de la Honda CB 500 F 2020 concernant le moteur et son refroidissement ?"
+      ]
+    },
+    {
+      "id": "Q27",
+      "split": "dev",
+      "kind": "rag",
+      "turns": [
+        "Quel est le plus ancien millésime de Gold Wing avec une mention DCT dans les transmissions de notre base, et sur quelle variante ?"
+      ]
+    },
+    {
+      "id": "Q28",
+      "split": "reserved",
+      "kind": "rag",
+      "turns": [
+        "Résume le freinage avant et arrière de la Ducati Multistrada 1200 standard 2011, sans mélanger avec la version S."
+      ]
+    },
+    {
+      "id": "Q29",
+      "split": "reserved",
+      "kind": "discovery",
+      "turns": [
+        "Quelles variantes de Gold Wing sont présentes dans notre catalogue en 2018 ?"
+      ]
+    },
+    {
+      "id": "Q30",
+      "split": "dev",
+      "kind": "discovery",
+      "turns": [
+        "Quels millésimes de Honda CB 500 F sont présents dans notre base ?"
+      ]
+    },
+    {
+      "id": "Q31",
+      "split": "dev",
+      "kind": "discovery",
+      "turns": [
+        "Quelles variantes de Kawasaki Z 650 avons-nous pour 2020 ?"
+      ]
+    },
+    {
+      "id": "Q32",
+      "split": "reserved",
+      "kind": "discovery",
+      "turns": [
+        "Quelles variantes de BMW R 1250 RT avons-nous en 2020 ?"
+      ]
+    },
+    {
+      "id": "Q33",
+      "split": "reserved",
+      "kind": "missing",
+      "turns": [
+        "Quel est le prix d'occasion actuel en France d'une Honda CB 500 F 2020 ?"
+      ]
+    },
+    {
+      "id": "Q34",
+      "split": "dev",
+      "kind": "missing",
+      "turns": [
+        "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 a-t-elle un régulateur ?"
+      ]
+    },
+    {
+      "id": "Q35",
+      "split": "reserved",
+      "kind": "ambiguity",
+      "turns": [
+        "Quel est le poids de la Kawasaki Z 650 de 2020 ?"
+      ]
+    },
+    {
+      "id": "Q36",
+      "split": "dev",
+      "kind": "missing",
+      "turns": [
+        "Peux-tu certifier qu'un exemplaire de Yamaha MT-07 2020 est légalement conduisible avec mon permis A2 ?"
+      ]
+    },
+    {
+      "id": "Q37",
+      "split": "dev",
+      "kind": "conversation",
+      "turns": [
+        "Liste les Yamaha de 2020 avec ABS et shifter de série, avec les sources.",
+        "Parmi celles-ci, combien ont une selle strictement sous 850 mm ?"
+      ]
+    },
+    {
+      "id": "Q38",
+      "split": "reserved",
+      "kind": "conversation",
+      "turns": [
+        "Quelle hauteur de selle pour la Honda CB 500 F 2020 ?",
+        "Compare celle-ci à la Yamaha MT-07 2020 sur ce critère."
+      ]
+    },
+    {
+      "id": "Q39",
+      "split": "dev",
+      "kind": "conversation",
+      "turns": [
+        "Décris la transmission de la Ducati Multistrada 1200 standard 2011.",
+        "Et l'ABS, de série ou en option sur celle-ci ?"
+      ]
+    },
+    {
+      "id": "Q40",
+      "split": "reserved",
+      "kind": "pagination",
+      "turns": [
+        "Liste les fiches Honda de 2020 par ordre alphabétique du modèle, cinq par page.",
+        "Montre la page suivante."
+      ]
+    }
+  ]
+}

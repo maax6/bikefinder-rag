@@ -1,0 +1,28 @@
+[
+  {
+    "config": "current_rrf40",
+    "questions": 64,
+    "hit_at1": 0.6875,
+    "recall_at10": 0.88671875,
+    "ndcg_at10": 0.7456757100244783,
+    "all_groups_at10": 0.765625,
+    "hit_at1_cases": 44.0,
+    "complete_at10_cases": 49.0,
+    "median_seconds": 0.03991837502690032,
+    "max_seconds": 0.09515662502963096,
+    "identical_rankings_over_repeats": true
+  },
+  {
+    "config": "weighted_rrf80",
+    "questions": 64,
+    "hit_at1": 0.734375,
+    "recall_at10": 0.91015625,
+    "ndcg_at10": 0.7810428456536201,
+    "all_groups_at10": 0.84375,
+    "hit_at1_cases": 47.0,
+    "complete_at10_cases": 54.0,
+    "median_seconds": 0.04034487495664507,
+    "max_seconds": 0.08381312503479421,
+    "identical_rankings_over_repeats": true
+  }
+]

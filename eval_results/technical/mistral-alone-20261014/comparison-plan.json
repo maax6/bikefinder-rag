@@ -1,0 +1,30 @@
+{
+  "experiment": "Mistral alone vs existing Jev workflow",
+  "status": "executed_with_provider_failures",
+  "local_model": "mistral-small3.2:latest",
+  "local_digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+  "service": "six read-only common SQL/BM25/BGE tools; no shell or unrestricted file access",
+  "comparison_warning": "Jev is a structured decision model, not a general prose/tool agent. Compare complete workflows, not pretend it supports the same chat-completions protocol.",
+  "quality": "answer correctness, source support, completeness, unknowns, identity, citations; completion is not correctness",
+  "latency": "model/index startup separate from warm full-answer time, preserve timeouts",
+  "cost": "local API cost zero; electricity and hardware amortization unmeasured. Remote cost includes all model rounds and transmitted tool results; missing usage is not zero.",
+  "cloud_budget": "Explicitly authorized 0.50 USD total, including outputs and uncertain requests",
+  "source_prices_usd_per_million": {
+    "typesafe/jev-1.13": {
+      "input": 0.042,
+      "output": 0,
+      "source": "https://openrouter.ai/typesafe/jev-1.13/api"
+    },
+    "mistralai/mistral-small-2603": {
+      "input": 0.15,
+      "output": 0.6,
+      "source": "https://openrouter.ai/mistralai/mistral-small-2603/pricing"
+    }
+  },
+  "price_examples_not_measured": {
+    "jev_single_10000_input": 0.00042,
+    "mistral_small4_single_10000_input_1000_output": 0.0021
+  },
+  "scope": "new experiment only; old benchmark passes unchanged",
+  "latest_summary": "summary.json"
+}

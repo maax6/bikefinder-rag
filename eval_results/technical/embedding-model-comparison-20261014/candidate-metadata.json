@@ -1,0 +1,20 @@
+[
+  {
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "gated": false,
+    "license": "apache-2.0"
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+    "gated": false,
+    "license": "apache-2.0"
+  },
+  {
+    "model": "intfloat/multilingual-e5-large-instruct",
+    "revision": "274baa43b0e13e37fafa6428dbc7938e62e5c439",
+    "gated": false,
+    "license": "mit"
+  }
+]

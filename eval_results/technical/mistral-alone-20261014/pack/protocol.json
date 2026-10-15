@@ -1,0 +1,107 @@
+{
+  "status": "prepared_not_executed",
+  "date": "2026-10-14",
+  "architecture": "single conversational model with six common read-only tools; same service for local and cloud",
+  "comparison_modes": {
+    "end_to_end": "Primary comparison: each candidate sees only prompt/questions/tool schemas and chooses its own calls against the same frozen service.",
+    "fixed_evidence": "Secondary writer-only comparison with identical saved evidence; report separately, never claim it measures tool selection."
+  },
+  "corpus": {
+    "snapshot": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/enrichment-full-20261012/pass2/catalogue.enriched.sqlite3",
+    "sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+    "counts": {
+      "fiches": 11478,
+      "passages": 105687,
+      "spec_rows": 411954
+    },
+    "scope": "Motoplanete enriched snapshot only; manufacturer additions excluded from v1 equally for every candidate."
+  },
+  "retrieval": {
+    "mode": "hybrid",
+    "embedding_model": "BAAI/bge-m3",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+    "lexical": "Reuse frozen benchmark tokenization and BM25 parameters from index protocol; no per-model retrieval changes.",
+    "fusion": "RRF with k=60, 40 lexical and 40 dense candidates, scope-filter BEFORE ranking, default 8 passages; no reranker in v1.",
+    "prepared_index": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/index",
+    "file_sha256": {
+      "documents.jsonl": "bcc9f203216441cc6691e7017aac6d69ab729a04071889289cfbc6db2253bf56",
+      "vectors.npy": "49a5e8cd289ce6489a0192ce0686cf6eb5a8a4ea45be60e7d87558939dd9b8c4",
+      "protocol.json": "794187e95dbe38604e9704115a2102b5d97fcb18a94686c492b512bb23070642",
+      "index-manifest.json": "b2f255b320e3c03b19d873ceae7ce87ed39a8d1ba6ed6719e52eacca0f6abb56",
+      "lexical-postings.npz": "e89868eb2aca64e25cfd9df13507185de598a8902e4ff2636ceb57b92cf71fc0",
+      "lexical-vocabulary.json": "504387f6ca4d15d058bbc3e5558f7fe4b3d5115fa7b62e65cac6b65a7c84acc0"
+    },
+    "activation_requirement": "Validate each indexed passage against snapshot identity/text/hash before activation; file hashes alone do not establish corpus consistency.",
+    "literal": "Exhaustive SQL word/phrase matching with stable year/identity ordering and pagination, independent of semantic scores."
+  },
+  "budget": {
+    "model_rounds_per_turn": 6,
+    "total_tool_calls_per_turn": 8,
+    "context_characters": 32000,
+    "context_truncation": "Lossless source/identity deduplication first; deterministic disclosed history reduction only if the retained32k tool context is exceeded.",
+    "max_output_tokens_per_turn": 2400,
+    "timeout_seconds_per_turn": 30,
+    "tools_sql_timeout_seconds": 3,
+    "tools_retrieval_timeout_seconds": 5,
+    "targets_seconds": {
+      "simple": 5,
+      "complex": 10
+    },
+    "policy": "Per user turn: six actual model calls, eight query tools, thirty seconds. At most one explicit format repair within these same calls, no invented reference repair or hidden network retries.",
+    "per_result_context_characters": 24000
+  },
+  "fairness": {
+    "same_prompt_tools_corpus": true,
+    "same_run_order": true,
+    "prepared_document_vectors_allowed": true,
+    "answer_and_query_result_caches": false,
+    "fresh_session_per_case": true,
+    "preserve_conversation_within_case": true,
+    "no_web": true,
+    "provider_notes": "Pin exact version/tag/digest, runtime, quantization, effort/thinking setting, token limits and prices before execution. Normalize provider wire formats only; record unsupported capabilities.",
+    "system_warmup": "Only generic prompt/tool/index warmup, no evaluation questions; measure separately. Warm primary runs and cold startup separately."
+  },
+  "evaluation": {
+    "cases": 40,
+    "dev": 24,
+    "reserved": 16,
+    "reserved_status": "Internal reserved split, author-visible, not independent holdout.",
+    "repeats": 3,
+    "random_seed": 20261014,
+    "gate_before_live_runs": "Implement common executor and provider adapters; validate oracle/passage consistency; human review reference rubrics; freeze versions and prices.",
+    "review": "Blind answer review with candidate labels removed; automatic exact count/ID/value/citation checks plus semantic factual support and requested coverage review.",
+    "primary": "Useful, complete and correct answer within target, per task category, including missing-data cases.",
+    "metrics": [
+      "correctness",
+      "requested_fact_coverage",
+      "identity_and_year",
+      "citation_integrity",
+      "claim_support",
+      "clarification_appropriateness",
+      "ttft_if_streamed",
+      "first_useful_result_seconds",
+      "full_answer_seconds",
+      "model_seconds",
+      "tool_seconds",
+      "tool_calls",
+      "tokens",
+      "actual_cost_usd",
+      "local_peak_memory_bytes",
+      "timeouts",
+      "errors"
+    ],
+    "aggregation": "Report correctness and useful-within-target rate, median and p95 total time, all failures and cost per successful answer; by candidate/category, warm/cold separated; three repeats are not confidence intervals.",
+    "references_visibility": "references.private.json is a local file, not access-controlled. Never load it, rubrics, split labels or witnesses into model input. Adapters allowlist model-inputs, prompt and tools only.",
+    "reserved_execution": "Dev for adaptation; freeze final code/config before reserved. Preserve first runs and later versions separately; no patch-and-replay presented as first-pass accuracy."
+  },
+  "implementation_gaps": [
+    "Common executor for the six specified tools",
+    "Provider adapters and observed receipts",
+    "Blind semantic review and reference validation"
+  ],
+  "comparison_revision": {
+    "baseline_pack_manifest_sha256": "39e662dc853814ccc9523606ec50e7d4bd9d9947324630dfc96b497bbb8bef42",
+    "same_questions_and_references": true,
+    "scope": "Eight model development pilot, one new pass, fresh2USD input budget."
+  }
+}

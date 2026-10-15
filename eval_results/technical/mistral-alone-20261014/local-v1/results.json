@@ -1,0 +1,2582 @@
+{
+  "created_utc": "2026-10-14T20:23:30.327857+00:00",
+  "maximum_total_api_usd": 0.5,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?",
+      "status": "completed",
+      "error": null,
+      "answer": "La recherche est en cours.",
+      "final": {
+        "answer": "La recherche est en cours.",
+        "claims": [],
+        "missing": [],
+        "needs_clarification": true
+      },
+      "calls": [],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": ""
+          },
+          "usage": {
+            "input_tokens": 3001,
+            "output_tokens": 76,
+            "cost_usd": null,
+            "load_seconds": 0.002217875,
+            "native_model_seconds": 10.519651083
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "```json\n{\n  \"answer\": \"La recherche est en cours.\",\n  \"claims\": [],\n  \"missing\": [],\n  \"needs_clarification\": true\n}\n```",
+          "native": {
+            "role": "assistant",
+            "content": "```json\n{\n  \"answer\": \"La recherche est en cours.\",\n  \"claims\": [],\n  \"missing\": [],\n  \"needs_clarification\": true\n}\n```"
+          },
+          "usage": {
+            "input_tokens": 3086,
+            "output_tokens": 39,
+            "cost_usd": null,
+            "load_seconds": 0.003470792,
+            "native_model_seconds": 19.219933542
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [
+        {
+          "round": 1,
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "kind": "schema_or_truncation",
+          "invalid_native_terminal_removed_from_history": false
+        }
+      ],
+      "timing": {
+        "full_answer_seconds": 29.75158075010404,
+        "model_seconds": 29.749873957014643,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 6087,
+        "output_tokens": 115,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3001,
+            "output_tokens": 76,
+            "cost_usd": null,
+            "load_seconds": 0.002217875,
+            "native_model_seconds": 10.519651083
+          },
+          {
+            "input_tokens": 3086,
+            "output_tokens": 39,
+            "cost_usd": null,
+            "load_seconds": 0.003470792,
+            "native_model_seconds": 19.219933542
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": true,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q01"
+    },
+    {
+      "turn": 1,
+      "question": "Quelle cylindrée indique la fiche de la Yamaha MT-07 2020 ?",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_sy2s5lfl",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Yamaha MT-07 2020",
+            "scope": {
+              "brand": "Yamaha",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "MT-07"
+              ]
+            }
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "4fbfc9bd85ffa460",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                  "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "id": "4fbfc9bd85ffa460",
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "MT-07"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 532.177
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "4fbfc9bd85ffa460",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2020,
+                  "evidence_id": "4fbfc9bd85ffa460:identity"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "4fbfc9bd85ffa460",
+                "subject": "Yamaha 700 MT-07 (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "MT-07"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "sources": {
+              "4fbfc9bd85ffa460": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.5328429579967633
+        },
+        {
+          "id": "call_br55j5rt",
+          "name": "get_fiches",
+          "arguments": {
+            "equipment_names": [],
+            "identities": [
+              {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020
+              }
+            ],
+            "fields": [
+              "engine_displacement"
+            ],
+            "sections": []
+          },
+          "result": {
+            "status": "invalid_arguments",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "error": "arguments: unsupported or missing keys",
+              "argument": "arguments",
+              "allowed_keys": [
+                "object_ids",
+                "fields",
+                "sections",
+                "equipment_names"
+              ],
+              "missing_keys": [
+                "object_ids"
+              ],
+              "unsupported_keys": [
+                "identities"
+              ]
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 0,
+              "searched_passages": null,
+              "exhaustive": false,
+              "truncation_reason": "invalid_arguments"
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 0.441
+          },
+          "delivered_result": {
+            "status": "invalid_arguments",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "error": "arguments: unsupported or missing keys",
+              "argument": "arguments",
+              "allowed_keys": [
+                "object_ids",
+                "fields",
+                "sections",
+                "equipment_names"
+              ],
+              "missing_keys": [
+                "object_ids"
+              ],
+              "unsupported_keys": [
+                "identities"
+              ]
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 0,
+              "searched_passages": null,
+              "exhaustive": false,
+              "truncation_reason": "invalid_arguments"
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {},
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.00046133401338011026
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_sy2s5lfl",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "Yamaha MT-07 2020",
+                    "scope": {
+                      "brand": "Yamaha",
+                      "max_year": 2020,
+                      "min_year": 2020,
+                      "model_tokens": [
+                        "MT-07"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3001,
+            "output_tokens": 63,
+            "cost_usd": null,
+            "load_seconds": 0.003639125,
+            "native_model_seconds": 10.394057042
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_br55j5rt",
+                "function": {
+                  "index": 0,
+                  "name": "get_fiches",
+                  "arguments": {
+                    "equipment_names": [],
+                    "identities": [
+                      {
+                        "brand": "Yamaha",
+                        "model": "700 MT-07",
+                        "year": 2020
+                      }
+                    ],
+                    "fields": [
+                      "engine_displacement"
+                    ],
+                    "sections": []
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 1398,
+            "output_tokens": 59,
+            "cost_usd": null,
+            "load_seconds": 0.018867041,
+            "native_model_seconds": 12.647351375
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "4fbfc9bd85ffa460:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "4fbfc9bd85ffa460",
+          "subject": "Yamaha 700 MT-07 (2020)"
+        }
+      ],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 2301,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "call_sy2s5lfl",
+            "before_characters": 1008,
+            "after_characters": 1313,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "get_fiches",
+            "call_id": "call_br55j5rt",
+            "before_characters": 567,
+            "after_characters": 988,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 30.01392529194709,
+        "model_seconds": 29.47761804203037,
+        "tool_seconds": 0.5333042920101434,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 4399,
+        "output_tokens": 122,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3001,
+            "output_tokens": 63,
+            "cost_usd": null,
+            "load_seconds": 0.003639125,
+            "native_model_seconds": 10.394057042
+          },
+          {
+            "input_tokens": 1398,
+            "output_tokens": 59,
+            "cost_usd": null,
+            "load_seconds": 0.018867041,
+            "native_model_seconds": 12.647351375
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q10"
+    },
+    {
+      "turn": 1,
+      "question": "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart.",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_dcdedk9b",
+          "name": "query_catalog",
+          "arguments": {
+            "page_size": 10,
+            "mode": "list",
+            "scope": {
+              "brand": "Honda",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "CB",
+                "500",
+                "F"
+              ]
+            },
+            "fields": [
+              "seat_height_mm"
+            ]
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "total_matches": 1,
+              "rows": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": []
+                }
+              ],
+              "aggregate_evidence_id": "aggregate:9b7b477b50926af9dba30a11",
+              "unknown_exclusions": []
+            },
+            "evidence": [
+              {
+                "evidence_id": "aggregate:9b7b477b50926af9dba30a11",
+                "kind": "aggregate",
+                "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+                "criteria": {
+                  "scope": {
+                    "brand": "Honda",
+                    "max_year": 2020,
+                    "min_year": 2020,
+                    "model_tokens": [
+                      "CB",
+                      "500",
+                      "F"
+                    ]
+                  }
+                },
+                "sql": "SELECT f.id FROM fiches f WHERE 1=1 AND folded(f.brand)=folded(?) AND f.year >= ? AND f.year <= ? AND identity_match(?,f.model) AND identity_match(?,f.model) AND identity_match(?,f.model)",
+                "parameters": [
+                  "Honda",
+                  2020,
+                  2020,
+                  "CB",
+                  "500",
+                  "F"
+                ],
+                "count": 1
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                }
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 542.337
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "total_matches": 1,
+              "rows": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "evidence_id": "555a2d677db34a14:identity"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": []
+                }
+              ],
+              "aggregate_evidence_id": "aggregate:9b7b477b50926af9dba30a11",
+              "unknown_exclusions": [],
+              "page_scope": {
+                "object_ids": [
+                  "555a2d677db34a14"
+                ],
+                "returned": 1,
+                "total_matches": 1,
+                "all_matches_in_page": true,
+                "identity_evidence_ids": [
+                  "555a2d677db34a14:identity"
+                ],
+                "criteria": {
+                  "scope": {
+                    "brand": "Honda",
+                    "max_year": 2020,
+                    "min_year": 2020,
+                    "model_tokens": [
+                      "CB",
+                      "500",
+                      "F"
+                    ]
+                  }
+                }
+              }
+            },
+            "evidence": [
+              {
+                "evidence_id": "aggregate:9b7b477b50926af9dba30a11",
+                "kind": "aggregate",
+                "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+                "criteria": {
+                  "scope": {
+                    "brand": "Honda",
+                    "max_year": 2020,
+                    "min_year": 2020,
+                    "model_tokens": [
+                      "CB",
+                      "500",
+                      "F"
+                    ]
+                  }
+                },
+                "count": 1
+              },
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                },
+                "subject": "Honda CB 500 F (2020)"
+              },
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "claim_scope": "identity_only",
+                "subject": "Honda CB 500 F (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "sources": {
+              "555a2d677db34a14": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.5423668749863282
+        },
+        {
+          "id": "call_0zbxu980",
+          "name": "query_catalog",
+          "arguments": {
+            "scope": {
+              "brand": "Yamaha",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "MT-07"
+              ]
+            },
+            "fields": [
+              "seat_height_mm"
+            ],
+            "page_size": 10,
+            "mode": "list"
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "total_matches": 1,
+              "rows": [
+                {
+                  "identity": {
+                    "id": "4fbfc9bd85ffa460",
+                    "brand": "Yamaha",
+                    "model": "700 MT-07",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                    "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 805.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "4fbfc9bd85ffa460:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": []
+                }
+              ],
+              "aggregate_evidence_id": "aggregate:e9129568dcb0dfe2b2cf4653",
+              "unknown_exclusions": []
+            },
+            "evidence": [
+              {
+                "evidence_id": "aggregate:e9129568dcb0dfe2b2cf4653",
+                "kind": "aggregate",
+                "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+                "criteria": {
+                  "scope": {
+                    "brand": "Yamaha",
+                    "max_year": 2020,
+                    "min_year": 2020,
+                    "model_tokens": [
+                      "MT-07"
+                    ]
+                  }
+                },
+                "sql": "SELECT f.id FROM fiches f WHERE 1=1 AND folded(f.brand)=folded(?) AND f.year >= ? AND f.year <= ? AND identity_match(?,f.model)",
+                "parameters": [
+                  "Yamaha",
+                  2020,
+                  2020,
+                  "MT-07"
+                ],
+                "count": 1
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:row:2",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "805 mm"
+                }
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "MT-07"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 22.631
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "total_matches": 1,
+              "rows": [
+                {
+                  "identity": {
+                    "id": "4fbfc9bd85ffa460",
+                    "brand": "Yamaha",
+                    "model": "700 MT-07",
+                    "year": 2020,
+                    "evidence_id": "4fbfc9bd85ffa460:identity"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 805.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "4fbfc9bd85ffa460:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": []
+                }
+              ],
+              "aggregate_evidence_id": "aggregate:e9129568dcb0dfe2b2cf4653",
+              "unknown_exclusions": [],
+              "page_scope": {
+                "object_ids": [
+                  "4fbfc9bd85ffa460"
+                ],
+                "returned": 1,
+                "total_matches": 1,
+                "all_matches_in_page": true,
+                "identity_evidence_ids": [
+                  "4fbfc9bd85ffa460:identity"
+                ],
+                "criteria": {
+                  "scope": {
+                    "brand": "Yamaha",
+                    "max_year": 2020,
+                    "min_year": 2020,
+                    "model_tokens": [
+                      "MT-07"
+                    ]
+                  }
+                }
+              }
+            },
+            "evidence": [
+              {
+                "evidence_id": "aggregate:e9129568dcb0dfe2b2cf4653",
+                "kind": "aggregate",
+                "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+                "criteria": {
+                  "scope": {
+                    "brand": "Yamaha",
+                    "max_year": 2020,
+                    "min_year": 2020,
+                    "model_tokens": [
+                      "MT-07"
+                    ]
+                  }
+                },
+                "count": 1
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:row:2",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "805 mm"
+                },
+                "subject": "Yamaha 700 MT-07 (2020)"
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "claim_scope": "identity_only",
+                "subject": "Yamaha 700 MT-07 (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "MT-07"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "sources": {
+              "4fbfc9bd85ffa460": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.022636584006249905
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_dcdedk9b",
+                "function": {
+                  "index": 0,
+                  "name": "query_catalog",
+                  "arguments": {
+                    "page_size": 10,
+                    "mode": "list",
+                    "scope": {
+                      "brand": "Honda",
+                      "max_year": 2020,
+                      "min_year": 2020,
+                      "model_tokens": [
+                        "CB",
+                        "500",
+                        "F"
+                      ]
+                    },
+                    "fields": [
+                      "seat_height_mm"
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "call_0zbxu980",
+                "function": {
+                  "index": 1,
+                  "name": "query_catalog",
+                  "arguments": {
+                    "scope": {
+                      "brand": "Yamaha",
+                      "max_year": 2020,
+                      "min_year": 2020,
+                      "model_tokens": [
+                        "MT-07"
+                      ]
+                    },
+                    "fields": [
+                      "seat_height_mm"
+                    ],
+                    "page_size": 10,
+                    "mode": "list"
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3018,
+            "output_tokens": 141,
+            "cost_usd": null,
+            "load_seconds": 0.011013458,
+            "native_model_seconds": 20.344790291
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "aggregate:9b7b477b50926af9dba30a11",
+          "kind": "aggregate",
+          "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+          "criteria": {
+            "scope": {
+              "brand": "Honda",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "CB",
+                "500",
+                "F"
+              ]
+            }
+          },
+          "count": 1
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:2",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "row": {
+            "label": "Hauteur de selle",
+            "section": "Châssis",
+            "value": "785 mm"
+          },
+          "subject": "Honda CB 500 F (2020)"
+        },
+        {
+          "evidence_id": "555a2d677db34a14:identity",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "claim_scope": "identity_only",
+          "subject": "Honda CB 500 F (2020)"
+        },
+        {
+          "evidence_id": "aggregate:e9129568dcb0dfe2b2cf4653",
+          "kind": "aggregate",
+          "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+          "criteria": {
+            "scope": {
+              "brand": "Yamaha",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "MT-07"
+              ]
+            }
+          },
+          "count": 1
+        },
+        {
+          "evidence_id": "4fbfc9bd85ffa460:row:2",
+          "kind": "source_row",
+          "object_id": "4fbfc9bd85ffa460",
+          "row": {
+            "label": "Hauteur de selle",
+            "section": "Châssis",
+            "value": "805 mm"
+          },
+          "subject": "Yamaha 700 MT-07 (2020)"
+        },
+        {
+          "evidence_id": "4fbfc9bd85ffa460:identity",
+          "kind": "source_row",
+          "object_id": "4fbfc9bd85ffa460",
+          "claim_scope": "identity_only",
+          "subject": "Yamaha 700 MT-07 (2020)"
+        }
+      ],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 4504,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "query_catalog",
+            "call_id": "call_dcdedk9b",
+            "before_characters": 1762,
+            "after_characters": 2256,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "query_catalog",
+            "call_id": "call_0zbxu980",
+            "before_characters": 1689,
+            "after_characters": 2248,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 30.00488295906689,
+        "model_seconds": 29.438587916083634,
+        "tool_seconds": 0.5650034589925781,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 3018,
+        "output_tokens": 141,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3018,
+            "output_tokens": 141,
+            "cost_usd": null,
+            "load_seconds": 0.011013458,
+            "native_model_seconds": 20.344790291
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q17"
+    },
+    {
+      "turn": 1,
+      "question": "Quelles différences de transmission indiquent la Gold Wing Tour DCT/Airbag 2018 et la BMW R 1250 RT standard 2020 ?",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_gfr3fste",
+          "name": "resolve_models",
+          "arguments": {
+            "scope": {
+              "brand": "Honda",
+              "max_year": 2018,
+              "min_year": 2018,
+              "model_tokens": [
+                "Gold Wing Tour DCT/Airbag"
+              ]
+            },
+            "query": "Gold Wing Tour DCT/Airbag 2018"
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "c0a73ac3d40825ff",
+                  "brand": "Honda",
+                  "model": "GL 1800 GOLDWING Tour DCT/Airbag",
+                  "year": 2018,
+                  "source_url": "https://www.motoplanete.com/honda/6859/GL-1800-GOLDWING-Tour-DCTAirbag-2018/contact.html",
+                  "source_sha256": "154574a371141d9caeb00f132283ef28dab6ce63115d60b6cecb77ee485278d2"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "c0a73ac3d40825ff:identity",
+                "kind": "source_row",
+                "id": "c0a73ac3d40825ff",
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING Tour DCT/Airbag",
+                "year": 2018,
+                "source_url": "https://www.motoplanete.com/honda/6859/GL-1800-GOLDWING-Tour-DCTAirbag-2018/contact.html",
+                "source_sha256": "154574a371141d9caeb00f132283ef28dab6ce63115d60b6cecb77ee485278d2"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2018,
+                "min_year": 2018,
+                "model_tokens": [
+                  "Gold Wing Tour DCT/Airbag"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 616.331
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "c0a73ac3d40825ff",
+                  "brand": "Honda",
+                  "model": "GL 1800 GOLDWING Tour DCT/Airbag",
+                  "year": 2018,
+                  "evidence_id": "c0a73ac3d40825ff:identity"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "c0a73ac3d40825ff:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "c0a73ac3d40825ff",
+                "subject": "Honda GL 1800 GOLDWING Tour DCT/Airbag (2018)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2018,
+                "min_year": 2018,
+                "model_tokens": [
+                  "Gold Wing Tour DCT/Airbag"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "sources": {
+              "c0a73ac3d40825ff": {
+                "brand": "Honda",
+                "model": "GL 1800 GOLDWING Tour DCT/Airbag",
+                "year": 2018,
+                "source_url": "https://www.motoplanete.com/honda/6859/GL-1800-GOLDWING-Tour-DCTAirbag-2018/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.6163512079510838
+        },
+        {
+          "id": "call_fz0jv466",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "BMW R 1250 RT standard 2020",
+            "scope": {
+              "brand": "BMW",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "R 1250 RT standard"
+              ]
+            }
+          },
+          "result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [],
+              "total_candidates": 0,
+              "ambiguity": false,
+              "next_action": "Report this identity as missing or ask for clarification. Removing a variant/year token changes the requested identity."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "BMW",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "R 1250 RT standard"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 24.793
+          },
+          "delivered_result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [],
+              "total_candidates": 0,
+              "ambiguity": false,
+              "next_action": "Report this identity as missing or ask for clarification. Removing a variant/year token changes the requested identity."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "BMW",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "R 1250 RT standard"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {},
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.02479829196818173
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_gfr3fste",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "scope": {
+                      "brand": "Honda",
+                      "max_year": 2018,
+                      "min_year": 2018,
+                      "model_tokens": [
+                        "Gold Wing Tour DCT/Airbag"
+                      ]
+                    },
+                    "query": "Gold Wing Tour DCT/Airbag 2018"
+                  }
+                }
+              },
+              {
+                "id": "call_fz0jv466",
+                "function": {
+                  "index": 1,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "BMW R 1250 RT standard 2020",
+                    "scope": {
+                      "brand": "BMW",
+                      "max_year": 2020,
+                      "min_year": 2020,
+                      "model_tokens": [
+                        "R 1250 RT standard"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3018,
+            "output_tokens": 135,
+            "cost_usd": null,
+            "load_seconds": 0.01008525,
+            "native_model_seconds": 22.504970416
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "c0a73ac3d40825ff:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "c0a73ac3d40825ff",
+          "subject": "Honda GL 1800 GOLDWING Tour DCT/Airbag (2018)"
+        }
+      ],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 2457,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "call_gfr3fste",
+            "before_characters": 1113,
+            "after_characters": 1419,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "call_fz0jv466",
+            "before_characters": 618,
+            "after_characters": 1038,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 30.003124332986772,
+        "model_seconds": 29.361425998969935,
+        "tool_seconds": 0.6411494999192655,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 3018,
+        "output_tokens": 135,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3018,
+            "output_tokens": 135,
+            "cost_usd": null,
+            "load_seconds": 0.01008525,
+            "native_model_seconds": 22.504970416
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q24"
+    },
+    {
+      "turn": 1,
+      "question": "Quel est le plus ancien millésime de Gold Wing avec une mention DCT dans les transmissions de notre base, et sur quelle variante ?",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_sw8vea0l",
+          "name": "search_passages",
+          "arguments": {
+            "order": "year_asc",
+            "query": "DCT",
+            "mode": "literal",
+            "scope": {
+              "brand": "Honda",
+              "model_tokens": [
+                "Gold Wing"
+              ]
+            },
+            "sections": [
+              "Transmission"
+            ]
+          },
+          "result": {
+            "status": "invalid_arguments",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "error": "Literal search requires literal_terms",
+              "argument": "arguments.literal_terms",
+              "required": "One to eight explicit words/phrases, matched with OR within the requested scope.",
+              "next_action": "Supply literal_terms; use hybrid mode for a natural-language relevance query."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 0,
+              "searched_passages": null,
+              "exhaustive": false,
+              "truncation_reason": "invalid_arguments"
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 104.582
+          },
+          "delivered_result": {
+            "status": "invalid_arguments",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "error": "Literal search requires literal_terms",
+              "argument": "arguments.literal_terms",
+              "required": "One to eight explicit words/phrases, matched with OR within the requested scope.",
+              "next_action": "Supply literal_terms; use hybrid mode for a natural-language relevance query."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {},
+              "searched_fiches": 0,
+              "searched_passages": null,
+              "exhaustive": false,
+              "truncation_reason": "invalid_arguments"
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {},
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.1046066660201177
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "Je cherche d'abord les fiches de Gold Wing avec une mention de transmission DCT, puis je trie les résultats par année croissante pour trouver le plus ancien millésime documenté.",
+          "native": {
+            "role": "assistant",
+            "content": "Je cherche d'abord les fiches de Gold Wing avec une mention de transmission DCT, puis je trie les résultats par année croissante pour trouver le plus ancien millésime documenté.",
+            "tool_calls": [
+              {
+                "id": "call_sw8vea0l",
+                "function": {
+                  "index": 0,
+                  "name": "search_passages",
+                  "arguments": {
+                    "order": "year_asc",
+                    "query": "DCT",
+                    "mode": "literal",
+                    "scope": {
+                      "brand": "Honda",
+                      "model_tokens": [
+                        "Gold Wing"
+                      ]
+                    },
+                    "sections": [
+                      "Transmission"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3008,
+            "output_tokens": 93,
+            "cost_usd": null,
+            "load_seconds": 0.002792958,
+            "native_model_seconds": 13.132144833
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "Je cherche les fiches de Gold Wing avec une mention de transmission DCT, puis je trie les résultats par année croissante pour trouver le plus ancien millésime documenté.",
+          "native": {
+            "role": "assistant",
+            "content": "Je cherche les fiches de Gold Wing avec une mention de transmission DCT, puis je trie les résultats par année croissante pour trouver le plus ancien millésime documenté."
+          },
+          "usage": {
+            "input_tokens": 1197,
+            "output_tokens": 38,
+            "cost_usd": null,
+            "load_seconds": 0.004013125,
+            "native_model_seconds": 7.078280542
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 1057,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "search_passages",
+            "call_id": "call_sw8vea0l",
+            "before_characters": 638,
+            "after_characters": 1057,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [
+        {
+          "round": 2,
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "kind": "schema_or_truncation",
+          "invalid_native_terminal_removed_from_history": false
+        }
+      ],
+      "timing": {
+        "full_answer_seconds": 30.004848124925047,
+        "model_seconds": 29.89961583307013,
+        "tool_seconds": 0.1046066660201177,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 4205,
+        "output_tokens": 131,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3008,
+            "output_tokens": 93,
+            "cost_usd": null,
+            "load_seconds": 0.002792958,
+            "native_model_seconds": 13.132144833
+          },
+          {
+            "input_tokens": 1197,
+            "output_tokens": 38,
+            "cost_usd": null,
+            "load_seconds": 0.004013125,
+            "native_model_seconds": 7.078280542
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q27"
+    },
+    {
+      "turn": 1,
+      "question": "Quelles variantes de Kawasaki Z 650 avons-nous pour 2020 ?",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_w2zzo8zi",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Kawasaki Z 650",
+            "scope": {
+              "brand": "Kawasaki",
+              "max_year": 2020,
+              "min_year": 2020
+            }
+          },
+          "result": {
+            "status": "ambiguous",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "133a77effceb50fb",
+                  "brand": "Kawasaki",
+                  "model": "Z 650",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/kawasaki/8216/Z-650-2020/contact.html",
+                  "source_sha256": "548bd9aba97e638029aea885d383df3ddae15d5b544ae7fcbcd4e45d0927b890"
+                },
+                {
+                  "id": "f0abf559176623ef",
+                  "brand": "Kawasaki",
+                  "model": "Z 650 Performance",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/kawasaki/8905/Z-650-Performance-2020/contact.html",
+                  "source_sha256": "3f99ee61f26f118f70ed3abad6fda0a51a9ce128cebde5c89e9eff49ba9b804c"
+                }
+              ],
+              "total_candidates": 2,
+              "ambiguity": true
+            },
+            "evidence": [
+              {
+                "evidence_id": "133a77effceb50fb:identity",
+                "kind": "source_row",
+                "id": "133a77effceb50fb",
+                "brand": "Kawasaki",
+                "model": "Z 650",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/kawasaki/8216/Z-650-2020/contact.html",
+                "source_sha256": "548bd9aba97e638029aea885d383df3ddae15d5b544ae7fcbcd4e45d0927b890"
+              },
+              {
+                "evidence_id": "f0abf559176623ef:identity",
+                "kind": "source_row",
+                "id": "f0abf559176623ef",
+                "brand": "Kawasaki",
+                "model": "Z 650 Performance",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/kawasaki/8905/Z-650-Performance-2020/contact.html",
+                "source_sha256": "3f99ee61f26f118f70ed3abad6fda0a51a9ce128cebde5c89e9eff49ba9b804c"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Kawasaki",
+                "max_year": 2020,
+                "min_year": 2020
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 2,
+              "total": 2,
+              "next_cursor": null
+            },
+            "timing_ms": 577.348
+          },
+          "delivered_result": {
+            "status": "ambiguous",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "133a77effceb50fb",
+                  "brand": "Kawasaki",
+                  "model": "Z 650",
+                  "year": 2020,
+                  "evidence_id": "133a77effceb50fb:identity"
+                },
+                {
+                  "id": "f0abf559176623ef",
+                  "brand": "Kawasaki",
+                  "model": "Z 650 Performance",
+                  "year": 2020,
+                  "evidence_id": "f0abf559176623ef:identity"
+                }
+              ],
+              "total_candidates": 2,
+              "ambiguity": true
+            },
+            "evidence": [
+              {
+                "evidence_id": "133a77effceb50fb:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "133a77effceb50fb",
+                "subject": "Kawasaki Z 650 (2020)"
+              },
+              {
+                "evidence_id": "f0abf559176623ef:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "f0abf559176623ef",
+                "subject": "Kawasaki Z 650 Performance (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Kawasaki",
+                "max_year": 2020,
+                "min_year": 2020
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 2,
+              "total": 2,
+              "next_cursor": null
+            },
+            "sources": {
+              "133a77effceb50fb": {
+                "brand": "Kawasaki",
+                "model": "Z 650",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/kawasaki/8216/Z-650-2020/contact.html"
+              },
+              "f0abf559176623ef": {
+                "brand": "Kawasaki",
+                "model": "Z 650 Performance",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/kawasaki/8905/Z-650-Performance-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.5773779170121998
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_w2zzo8zi",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "Kawasaki Z 650",
+                    "scope": {
+                      "brand": "Kawasaki",
+                      "max_year": 2020,
+                      "min_year": 2020
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 2999,
+            "output_tokens": 49,
+            "cost_usd": null,
+            "load_seconds": 0.007019166,
+            "native_model_seconds": 10.61377075
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "133a77effceb50fb:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "133a77effceb50fb",
+          "subject": "Kawasaki Z 650 (2020)"
+        },
+        {
+          "evidence_id": "f0abf559176623ef:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "f0abf559176623ef",
+          "subject": "Kawasaki Z 650 Performance (2020)"
+        }
+      ],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 1759,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "call_w2zzo8zi",
+            "before_characters": 1567,
+            "after_characters": 1759,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 30.003362208022736,
+        "model_seconds": 29.425490458030254,
+        "tool_seconds": 0.5773779170121998,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 2999,
+        "output_tokens": 49,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 2999,
+            "output_tokens": 49,
+            "cost_usd": null,
+            "load_seconds": 0.007019166,
+            "native_model_seconds": 10.61377075
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q31"
+    },
+    {
+      "turn": 1,
+      "question": "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 a-t-elle un régulateur ?",
+      "status": "completed",
+      "error": null,
+      "answer": "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 est inconnue.",
+      "final": {
+        "answer": "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 est inconnue.",
+        "claims": [],
+        "missing": [
+          {
+            "subject": "Honda CB 500 F édition ZXQ-FICTIVE-999 2020",
+            "reason": "unknown"
+          }
+        ],
+        "needs_clarification": false
+      },
+      "calls": [
+        {
+          "id": "call_nbgzk67i",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Honda CB 500 F édition ZXQ-FICTIVE-999 2020",
+            "scope": {
+              "brand": "Honda",
+              "max_year": 2020,
+              "min_year": 2020,
+              "model_tokens": [
+                "CB",
+                "500",
+                "F",
+                "édition",
+                "ZXQ-FICTIVE-999"
+              ]
+            }
+          },
+          "result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [],
+              "total_candidates": 0,
+              "ambiguity": false,
+              "next_action": "Report this identity as missing or ask for clarification. Removing a variant/year token changes the requested identity."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F",
+                  "édition",
+                  "ZXQ-FICTIVE-999"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 46.627
+          },
+          "delivered_result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [],
+              "total_candidates": 0,
+              "ambiguity": false,
+              "next_action": "Report this identity as missing or ask for clarification. Removing a variant/year token changes the requested identity."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "max_year": 2020,
+                "min_year": 2020,
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F",
+                  "édition",
+                  "ZXQ-FICTIVE-999"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {},
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.046635584090836346
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_nbgzk67i",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "Honda CB 500 F édition ZXQ-FICTIVE-999 2020",
+                    "scope": {
+                      "brand": "Honda",
+                      "max_year": 2020,
+                      "min_year": 2020,
+                      "model_tokens": [
+                        "CB",
+                        "500",
+                        "F",
+                        "édition",
+                        "ZXQ-FICTIVE-999"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3014,
+            "output_tokens": 96,
+            "cost_usd": null,
+            "load_seconds": 0.004708791,
+            "native_model_seconds": 13.4844505
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        },
+        {
+          "round": 2,
+          "text": "{\"answer\": \"La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 est inconnue.\",\"claims\": [], \"missing\": [{\"subject\": \"Honda CB 500 F édition ZXQ-FICTIVE-999 2020\", \"reason\": \"unknown\"}], \"needs_clarification\": false}",
+          "native": {
+            "role": "assistant",
+            "content": "{\"answer\": \"La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 est inconnue.\",\"claims\": [], \"missing\": [{\"subject\": \"Honda CB 500 F édition ZXQ-FICTIVE-999 2020\", \"reason\": \"unknown\"}], \"needs_clarification\": false}"
+          },
+          "usage": {
+            "input_tokens": 1282,
+            "output_tokens": 89,
+            "cost_usd": null,
+            "load_seconds": 0.001499375,
+            "native_model_seconds": 14.88205425
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 1062,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "call_nbgzk67i",
+            "before_characters": 642,
+            "after_characters": 1062,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 28.421562292031012,
+        "model_seconds": 28.374383791000582,
+        "tool_seconds": 0.046635584090836346,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 4296,
+        "output_tokens": 185,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3014,
+            "output_tokens": 96,
+            "cost_usd": null,
+            "load_seconds": 0.004708791,
+            "native_model_seconds": 13.4844505
+          },
+          {
+            "input_tokens": 1282,
+            "output_tokens": 89,
+            "cost_usd": null,
+            "load_seconds": 0.001499375,
+            "native_model_seconds": 14.88205425
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": true,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q34"
+    },
+    {
+      "turn": 1,
+      "question": "Liste les Yamaha de 2020 avec ABS et shifter de série, avec les sources.",
+      "status": "timeout",
+      "error": "Turn deadline or provider timeout reached",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "call_adac5fgd",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Yamaha 2020 ABS shifter",
+            "scope": {
+              "brand": "Yamaha",
+              "max_year": 2020,
+              "min_year": 2020
+            }
+          },
+          "result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [],
+              "total_candidates": 0,
+              "ambiguity": false,
+              "next_action": "Report this identity as missing or ask for clarification. Removing a variant/year token changes the requested identity."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 49.308
+          },
+          "delivered_result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [],
+              "total_candidates": 0,
+              "ambiguity": false,
+              "next_action": "Report this identity as missing or ask for clarification. Removing a variant/year token changes the requested identity."
+            },
+            "evidence": [],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "max_year": 2020,
+                "min_year": 2020
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {},
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.04932091699447483
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_adac5fgd",
+                "function": {
+                  "index": 0,
+                  "name": "resolve_models",
+                  "arguments": {
+                    "query": "Yamaha 2020 ABS shifter",
+                    "scope": {
+                      "brand": "Yamaha",
+                      "max_year": 2020,
+                      "min_year": 2020
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 3001,
+            "output_tokens": 52,
+            "cost_usd": null,
+            "load_seconds": 0.002316125,
+            "native_model_seconds": 19.926750375
+          },
+          "model": "mistral-small3.2:latest",
+          "finish_reason": "stop"
+        }
+      ],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 1003,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "call_adac5fgd",
+            "before_characters": 583,
+            "after_characters": 1003,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 30.0047179160174,
+        "model_seconds": 29.954851208021864,
+        "tool_seconds": 0.04932091699447483,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 3001,
+        "output_tokens": 52,
+        "cost_usd": null,
+        "peak_memory_bytes": 1605369856,
+        "requests": [
+          {
+            "input_tokens": 3001,
+            "output_tokens": 52,
+            "cost_usd": null,
+            "load_seconds": 0.002316125,
+            "native_model_seconds": 19.926750375
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "ollama",
+        "model": "mistral-small3.2:latest",
+        "settings": {
+          "num_ctx": 16384,
+          "num_predict": 2400,
+          "temperature": 0,
+          "think": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q37"
+    }
+  ],
+  "scope": "Known eight-case development replay, not an independent generalization test",
+  "comparability": "Two common-tool agents versus existing Jev decisions + SQL renderer; workflow differences are explicit",
+  "pack_sha256": "39f72d3dc05e02a9016bddbb0368745a12d2bf4ed9a20d45ac643c084cd13a9e",
+  "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "script_sha256": "3c53e8a24e0be047aeea91e3726c15c7fc85b87e1819f7c691963d581e8fe5f6",
+  "timeout_seconds": 30,
+  "local_api_cost_usd": 0,
+  "electricity_and_amortization": "not measured",
+  "paid_requests": [],
+  "conservative_total_debit_usd": 0,
+  "service_preparation_seconds": 9.650503291981295,
+  "local_warmup": {
+    "model": "mistral-small3.2:latest",
+    "total_seconds": 2.089379458,
+    "load_seconds": 0.030011166,
+    "input_tokens": 2986
+  },
+  "status": "local_executed_semantic_review_pending"
+}

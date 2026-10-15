@@ -1,0 +1,38 @@
+{
+  "status": "executed_with_provider_failures",
+  "initial_review": "review-v1.json",
+  "additional_execution": "remote-paced-v2/results.json",
+  "additional_outcomes": [
+    {
+      "case": "Q01",
+      "category": "provider_failure",
+      "error": "openrouter HTTP 429"
+    },
+    {
+      "case": "Q17",
+      "category": "provider_failure",
+      "error": "openrouter HTTP 429"
+    },
+    {
+      "case": "Q24",
+      "category": "provider_failure",
+      "error": "openrouter HTTP 429"
+    },
+    {
+      "case": "Q27",
+      "category": "provider_failure",
+      "error": "openrouter HTTP 429"
+    }
+  ],
+  "cost": {
+    "maximum_authorized_usd": 0.5,
+    "known_total_usd": 0.00395427,
+    "conservative_total_usd": 0.16218027000000002,
+    "requests_without_cost": 11,
+    "all_paid_requests": 26,
+    "local_api_cost_usd": 0,
+    "electricity_amortization": "not measured"
+  },
+  "conclusion": "Local Mistral is not better under this 30-second configuration. Jev is faster but retains workflow errors. Mistral Small 4 quality comparison is inconclusive because of HTTP429 even with spacing; one successful answer is correct.",
+  "scope": "Known development replay, not general accuracy; no change to deployed chat or previous benchmark HTML."
+}

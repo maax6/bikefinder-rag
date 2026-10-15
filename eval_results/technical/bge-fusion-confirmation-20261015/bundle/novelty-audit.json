@@ -1,0 +1,301 @@
+{
+  "files": [
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle/check.annotations.json",
+      "sha256": "45ecd8854ba883a87274b3e81f53f9be0b818803289aeb486050e2a4bc7aae27"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle/coverage_audit.annotations.json",
+      "sha256": "89dd7ce6f8fcaa8c5071b63583986ab65a1a9de271e2c6c6d3b79556870b5381"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle/dev.annotations.json",
+      "sha256": "e848c24af879ef70d8520ffe14e35a814912ed01d86a4e654ce34236c63779cb"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle-v2/check.annotations.json",
+      "sha256": "b849d13609e00d6808de2be9b94a342824b5138a36d36797f6b480bad6fb7dc1"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle-v2/coverage_audit.annotations.json",
+      "sha256": "89dd7ce6f8fcaa8c5071b63583986ab65a1a9de271e2c6c6d3b79556870b5381"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle-v2/dev.annotations.json",
+      "sha256": "e848c24af879ef70d8520ffe14e35a814912ed01d86a4e654ce34236c63779cb"
+    },
+    {
+      "path": "eval_results/technical/catalog-experiment-20261014/questions.json",
+      "sha256": "60a325664a3d691c9771019533ee2cda9bb49fd33cb110149a8cb8c9a93c4894"
+    },
+    {
+      "path": "eval_results/technical/catalog-research-20261014/questions.json",
+      "sha256": "b70fd3d4ca617469628aef0055645fdd7d092ad68019043fa893ec6bf831c7c9"
+    },
+    {
+      "path": "eval_results/technical/free_chat_all_questions_20261013.json",
+      "sha256": "ef3db353fe63de640135a234f2f1ff0e6880ef1db3a4a533599e6423443ab967"
+    },
+    {
+      "path": "eval_results/technical/free_chat_questions_20261013.json",
+      "sha256": "de6dfcc4301e03c2ef325378978ab2da117dc20fa6a70804272aeeaebc26b87c"
+    },
+    {
+      "path": "eval_results/technical/free_chat_transfer_questions_20261013.json",
+      "sha256": "2138bdce3a0459f90c586a21adaca6eb9a82eedee03c228e804fdce6fe4126b5"
+    },
+    {
+      "path": "eval_results/technical/fresh_chat_questions_20261013.json",
+      "sha256": "6ae89be8e4c784c57cd12067e1afab948b5d026605b9084afdcc361ee06bc428"
+    },
+    {
+      "path": "eval_results/technical/jev-rag-20261013/questions.frozen.json",
+      "sha256": "3557a95acf0734c3646e04419f34896319524c8ea4380893ca06e03b9a82a729"
+    },
+    {
+      "path": "eval_results/technical/jev_user_question_20261013.json",
+      "sha256": "d59a23bdb82e4b7a30d4b40bca60ec15c37d8e42cc8d1a9060d446d5c80a96af"
+    },
+    {
+      "path": "eval_results/technical/mistral-alone-20261014/pack/questions.json",
+      "sha256": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/browser-questions.json",
+      "sha256": "7a25f16d93a97c47621717f30192c3d13d3b60e839635d1854407d35b586a1d8"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/questions.json",
+      "sha256": "9f2c630eb7b62d8061e9c0bfb0ba7bed2ba2102a074bd743754aef1f104ba707"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/regression-questions.json",
+      "sha256": "fa8c609f9a54ecd43ca5f71703bdf8607f1c51bc6583178577b12f131d075bc3"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/targeted-regression-questions.json",
+      "sha256": "edaa04b98e8b86ed793e3ce69a01dc8eb4cbe85593dfc98d6e053bd1a724912a"
+    },
+    {
+      "path": "eval_results/technical/retrieval-benchmark-20261013/questions-dev.json",
+      "sha256": "b593c8232bc8a960ca3cbea1bbcc45e7af9b2c1495a4ff391bc540fd5ea162ba"
+    },
+    {
+      "path": "eval_results/technical/retrieval-benchmark-20261013/questions-holdout.json",
+      "sha256": "64b0331bcca034eefaf146d172e0141128f8ba61164e3e771181d1d5a827abb3"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014/questions.json",
+      "sha256": "e47d247bd59bf668a25124a9680b595874e5e62b4229b90faaf0e5674ac4acc9"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v2/questions.json",
+      "sha256": "e47d247bd59bf668a25124a9680b595874e5e62b4229b90faaf0e5674ac4acc9"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v3/questions.json",
+      "sha256": "e47d247bd59bf668a25124a9680b595874e5e62b4229b90faaf0e5674ac4acc9"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v4/questions.json",
+      "sha256": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v5/questions.json",
+      "sha256": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8"
+    },
+    {
+      "path": "eval_results/technical/unseen_chat_questions_20261013.json",
+      "sha256": "51cdf837c06643665e6448ad70e0cc5626fe5e726d763ca37109c53c79b1c9cf"
+    }
+  ],
+  "prior_target_ids_excluded": [
+    "0053ed60ac009b1a",
+    "02d3dd07d44cc430",
+    "030bd8d030d19064",
+    "044cfbe09d8c22a5",
+    "05b1efa574ef1264",
+    "08413f04a1acc6df",
+    "0bcc78b5c63433ae",
+    "0ce7454d1b7fa796",
+    "1145a40178537481",
+    "162856e7d117ed50",
+    "16e03bf9b38a2949",
+    "21606eee41941d98",
+    "26976d151574533e",
+    "284312cf0b7a7ed2",
+    "2973af16198fdb41",
+    "2a224bbc503cf279",
+    "2c919bf81f79967b",
+    "2f3029ce1e32cf71",
+    "2f30b910489d97b2",
+    "319eb3c024ccddd0",
+    "330083be410a87e9",
+    "362d75eab533950e",
+    "37dbe9facb439707",
+    "3b8816ad7d7982d1",
+    "3c7991fb5c47484a",
+    "3cc9b91ec07c4148",
+    "3e55aa0449409147",
+    "4198bdff2e6960a3",
+    "482906d5f5f75ca3",
+    "49d6ef0875131f2f",
+    "4a1aafa4f4cf6001",
+    "4a41f060667a4657",
+    "4d902be1a67428c8",
+    "4f1e896b22928213",
+    "4f8d7d5ecf54bd0c",
+    "507e76e937b8921f",
+    "593360357e043c46",
+    "5b3f65c9e5525fa6",
+    "5ba13c4387c23c17",
+    "5f8c8c61b3eeb916",
+    "5fc29da37183ee6c",
+    "6227564fdba62dba",
+    "68a36cc1471e7eff",
+    "696aa9589ef8dd6f",
+    "6a2a16e0dd2163af",
+    "6e32b3574417e76e",
+    "7083c7b76384fa71",
+    "742092215aabb9f1",
+    "75ec63edc171c1bc",
+    "7a5b8fd86298628a",
+    "7ac85eaa82d54a1f",
+    "7d421688d6cdf817",
+    "7d541ca9f7fcb48a",
+    "7f56455a0f88ed24",
+    "8087ed49454ca6d6",
+    "82dd348011a65e84",
+    "82de97d8bd7c06a4",
+    "89486136f6838f45",
+    "8ddbd548b0409857",
+    "9932cf3c8b15ee49",
+    "9b9fa6fd48a80d63",
+    "9c06a50dd48f827e",
+    "9f28a7ef72cefd32",
+    "a0386692164cbb7e",
+    "a23f1df05a428c00",
+    "a30f5db21011a187",
+    "a52e5daef588b88d",
+    "a6285da9386c3bc6",
+    "a694ca2a26252015",
+    "a9101f05724f519a",
+    "aa875368936b1b7a",
+    "aaa5c7ffd0a53d40",
+    "ab101598296196a1",
+    "ad1cadc7de95e217",
+    "adc61111646f273b",
+    "b2c29c5805fef512",
+    "b5a15d8c221957ce",
+    "b8b2de9d55edcc60",
+    "bee3c7dd647a8e92",
+    "beec28ae1c46a795",
+    "c28516902dad7523",
+    "ca659e852f01b07e",
+    "d0795676152e69de",
+    "d1564f68413d4aeb",
+    "d265440b3c2379f5",
+    "d465caee3ef392ee",
+    "d646e539b110fb4b",
+    "d699e8b8d747b332",
+    "d9414b83ba74ecd5",
+    "e1eb267f9d1f697b",
+    "e2a30cec3f5b4c2d",
+    "e365d4365c979509",
+    "e5ae298425ec85ab",
+    "e9af1f5138f3d6a9",
+    "ea8331c72ff1d845",
+    "eb337e430e4513b5",
+    "ec5d9933968050a4",
+    "eccb8de7bd99daa9",
+    "ef8e89b807d75b3d",
+    "f14ed8fc72b18473",
+    "f33f15b781aa31a0",
+    "f5bb5945265002d8"
+  ],
+  "fresh_target_ids": [
+    "01b6df1322920030",
+    "026da38e5a24ae75",
+    "0b6a3f887ee3f148",
+    "0b7c5ded8fe31e7f",
+    "0c7404bfdc201505",
+    "0e2d869dc6799eca",
+    "0f96a01d2046d856",
+    "108c385753b0332f",
+    "109bd846fc3445db",
+    "1a5b2d72cc93133e",
+    "1b23c7b9f81410a2",
+    "1bbf912d46aae173",
+    "201658af6c480152",
+    "21a2fa1b012f9343",
+    "227243e6b2cce98c",
+    "22f6ed5ff7916ad4",
+    "26defe0d4d7d497c",
+    "27003013c1c512d9",
+    "2a47e0b575c7f48a",
+    "2bf40d387e070553",
+    "2e57294f46663dcc",
+    "3488bbf7316aa993",
+    "3db98e98d44c3816",
+    "40ab493352359e87",
+    "422835768b8da1e3",
+    "4279d7660c725dcf",
+    "47b888c2f970a58e",
+    "47c4a486cde4c2f5",
+    "5420102a9d65dea5",
+    "55f73d0aa95334e6",
+    "5c48e42396e15325",
+    "5e5330dc5fc8def6",
+    "5fdb3e216fc0a610",
+    "69d0ea01ee08a8b3",
+    "6c10bf71f854ae8f",
+    "7c72bb615948c759",
+    "7efa16ab42f1a828",
+    "7f1d1ca576d02ee6",
+    "89c62373f59cd888",
+    "912bdbfbded01baa",
+    "92297b61e07fa1a0",
+    "937dc3ad85d6f08d",
+    "93939777909ac645",
+    "9573224910cec907",
+    "95d5d9b221f95313",
+    "96aeb1856602e791",
+    "9cdb199998b1fff4",
+    "9ecfece19935cadd",
+    "a09feaef4e9c6999",
+    "a32a5986306ec795",
+    "a6f29c9ff79df8a4",
+    "a83c3557b87eb30e",
+    "a8599125730980ac",
+    "aa28a9ce94350a21",
+    "ab3ac2c2b35134a9",
+    "abd22659791ffc5f",
+    "b3164f61fcd443e6",
+    "b46bdb0bc8804e1d",
+    "b4f199eb24970a26",
+    "b63a5055cb062268",
+    "b733b6ae57d72686",
+    "bc6ec551968fe03e",
+    "c19435e203240f9f",
+    "ccd3a7aeb9192cd7",
+    "ce7a2107c6c8b0b8",
+    "d0d0ce3981f0ac04",
+    "d2aaa4d880076c31",
+    "d738aa384c66a311",
+    "da2836066c4c41ba",
+    "dce6e16078eb1ad9",
+    "dd0877b1710e7d0e",
+    "dff8609f8ec312a6",
+    "ed62aefd27658316",
+    "f239170ef089a0b0",
+    "f23a603af863d7fa",
+    "f4d0a740adab1dc7",
+    "f69f90885a3db845",
+    "fb094a0d97053ab4",
+    "fb247986995c194a",
+    "fbda8009a2c9a94c"
+  ],
+  "target_overlap": [],
+  "exact_question_overlap": [],
+  "limit": "File-based novelty, not a claim of unseen model families or unpublished real user questions."
+}

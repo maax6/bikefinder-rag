@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-15",
+  "summaries": {
+    "fresh": [
+      {
+        "config": "current_rrf40",
+        "questions": 64,
+        "hit_at1": 0.6875,
+        "recall_at10": 0.88671875,
+        "ndcg_at10": 0.7456757100244783,
+        "all_groups_at10": 0.765625,
+        "hit_at1_cases": 44.0,
+        "complete_at10_cases": 49.0,
+        "median_seconds": 0.03991837502690032,
+        "max_seconds": 0.09515662502963096,
+        "identical_rankings_over_repeats": true
+      },
+      {
+        "config": "weighted_rrf80",
+        "questions": 64,
+        "hit_at1": 0.734375,
+        "recall_at10": 0.91015625,
+        "ndcg_at10": 0.7810428456536201,
+        "all_groups_at10": 0.84375,
+        "hit_at1_cases": 47.0,
+        "complete_at10_cases": 54.0,
+        "median_seconds": 0.04034487495664507,
+        "max_seconds": 0.08381312503479421,
+        "identical_rankings_over_repeats": true
+      }
+    ],
+    "regression": [
+      {
+        "config": "current_rrf40",
+        "questions": 28,
+        "hit_at1": 0.6785714285714286,
+        "recall_at10": 0.7619047619047619,
+        "ndcg_at10": 0.6491380249756517,
+        "all_groups_at10": 0.6071428571428571,
+        "hit_at1_cases": 19.0,
+        "complete_at10_cases": 17.0,
+        "median_seconds": 0.039853062480688095,
+        "max_seconds": 0.06105954200029373,
+        "identical_rankings_over_repeats": true
+      },
+      {
+        "config": "weighted_rrf80",
+        "questions": 28,
+        "hit_at1": 0.7142857142857143,
+        "recall_at10": 0.8154761904761906,
+        "ndcg_at10": 0.6917637055121002,
+        "all_groups_at10": 0.7142857142857143,
+        "hit_at1_cases": 20.0,
+        "complete_at10_cases": 20.0,
+        "median_seconds": 0.040205291530583054,
+        "max_seconds": 0.058269749977625906,
+        "identical_rankings_over_repeats": true
+      }
+    ]
+  },
+  "paired": {
+    "fresh": {
+      "complete_wins": 6,
+      "complete_losses": 1,
+      "net_complete_gain": 5,
+      "cases_with_lost_required_groups": [
+        "F020",
+        "F023",
+        "F058"
+      ],
+      "first_hit_wins": 6,
+      "first_hit_losses": 3,
+      "one_sided_paired_exact_p": 0.0625
+    },
+    "regression": {
+      "complete_wins": 4,
+      "complete_losses": 1,
+      "net_complete_gain": 3,
+      "cases_with_lost_required_groups": [
+        "HOLDOUT-022"
+      ],
+      "first_hit_wins": 1,
+      "first_hit_losses": 0,
+      "one_sided_paired_exact_p": 0.1875
+    }
+  },
+  "decision": {
+    "eligible_for_chat_integration": false,
+    "checks": {
+      "fresh_complete_gain_at_least_five": true,
+      "no_required_group_loss": false,
+      "no_first_hit_count_decline": true,
+      "paired_p_at_most_005": false,
+      "latency_within_bound": true,
+      "integrity_parity_and_determinism": true
+    },
+    "failed_checks": [
+      "no_required_group_loss",
+      "paired_p_at_most_005"
+    ]
+  },
+  "testing": {
+    "result": "1196 passed, 8 skipped in 13.65s",
+    "log_sha256": "c5f1475f84cb21f37f3477fc536e9a6d0815aeb9b5f909af4524885eae910239",
+    "command": "PYTHONPATH=src BIKEFINDER_JEV_ROUTER=0 BIKEFINDER_JEV_RAG=0 BIKEFINDER_CATALOG_RESEARCH=0 BIKEFINDER_CATALOG_EXPERIMENT=0 .venv/bin/python -m pytest -q",
+    "log_created_utc": "2026-10-14T23:37:00.097485+00:00",
+    "log_modified_utc": "2026-10-14T23:37:14.353786+00:00",
+    "latency_caveat": "Code tests overlapped final seconds of repeat 2; shared machine, indicative latency only."
+  },
+  "runtime_changed": false,
+  "model_training_steps": 0,
+  "remote_api_calls": 0,
+  "api_cost_usd": 0,
+  "report": "../../../docs/bge-fusion-confirmation-20261015.md"
+}

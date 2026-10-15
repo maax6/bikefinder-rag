@@ -1,0 +1,19 @@
+{
+  "reviewed_utc": "2026-10-14T23:36:29.797326+00:00",
+  "before_any_retrieval": true,
+  "question_or_evidence_ids_changed": false,
+  "review": "Read all 64 questions and extracted facts before inference. Unknown colours/dimensions relabelled partial; approximate and power-type qualifiers retained. Original pre-review bundle preserved.",
+  "partial_cases": [
+    "F006",
+    "F014",
+    "F019",
+    "F024",
+    "F027",
+    "F031",
+    "F035",
+    "F039",
+    "F043",
+    "F048"
+  ],
+  "final_protocol_sha256": "1878332e42cd649123b368dd47a388b124d1273cc6d062de023cb0bdd69a1699"
+}

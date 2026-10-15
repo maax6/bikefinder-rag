@@ -1,0 +1,195 @@
+{
+  "basis": "Manual assistant review after all candidate executions, against frozen source-linked references; no independent human panel.",
+  "generalization": "Known development cases; single run per case; no general accuracy claim.",
+  "reviews": [
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q01",
+      "turn": 1,
+      "category": "incorrect",
+      "reason": "Final submission says the search is in progress, without a count or a tool call."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q10",
+      "turn": 1,
+      "category": "timeout",
+      "reason": "No completed final answer within the identical 30-second turn budget."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q17",
+      "turn": 1,
+      "category": "timeout",
+      "reason": "No completed final answer within the identical 30-second turn budget."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q24",
+      "turn": 1,
+      "category": "timeout",
+      "reason": "No completed final answer within the identical 30-second turn budget."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q27",
+      "turn": 1,
+      "category": "timeout",
+      "reason": "No completed final answer within the identical 30-second turn budget."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q31",
+      "turn": 1,
+      "category": "timeout",
+      "reason": "No completed final answer within the identical 30-second turn budget."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q34",
+      "turn": 1,
+      "category": "partial",
+      "reason": "Correctly reports nonexistent edition without substitution; does not explicitly answer the equipment unknown."
+    },
+    {
+      "candidate": "ollama:mistral-small3.2:latest",
+      "case_id": "Q37",
+      "turn": 1,
+      "category": "timeout",
+      "reason": "No completed final answer within the identical 30-second turn budget."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q01",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q10",
+      "turn": 1,
+      "category": "correct",
+      "reason": "689 cm3 with valid MT-07 2020 source evidence."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q17",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q24",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q27",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q31",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q34",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q37",
+      "turn": 1,
+      "category": "provider_failure",
+      "reason": "HTTP 429; no final answer. This does not measure intrinsic reasoning quality."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q01",
+      "turn": 1,
+      "category": "correct",
+      "reason": "Correct source count 8."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q10",
+      "turn": 1,
+      "category": "correct",
+      "reason": "Correct 689 cc and source."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q17",
+      "turn": 1,
+      "category": "correct",
+      "reason": "785/805 mm and correct 20 mm difference."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q24",
+      "turn": 1,
+      "category": "incorrect",
+      "reason": "Claims absent catalog fiches although both requested identities exist."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q27",
+      "turn": 1,
+      "category": "incorrect",
+      "reason": "Asks for the year instead of finding earliest documented DCT mention."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q31",
+      "turn": 1,
+      "category": "correct",
+      "reason": "Both documented Z650 2020 variants returned."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q34",
+      "turn": 1,
+      "category": "incorrect",
+      "reason": "Silently uses standard CB500F source instead of rejecting fictional edition."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q37",
+      "turn": 1,
+      "category": "correct",
+      "reason": "Correct list of eight."
+    },
+    {
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q37",
+      "turn": 2,
+      "category": "incorrect",
+      "reason": "Follow-up loses Yamaha/2020/ABS/shifter scope and returns 8697 rather than 3."
+    }
+  ],
+  "cost": {
+    "maximum_authorized_usd": 0.5,
+    "known_total_usd": 0.00395427,
+    "conservative_total_usd": 0.10727727000000001,
+    "requests_without_cost": 7,
+    "local_api_cost": 0,
+    "electricity_amortization": "not measured"
+  },
+  "corpus_equivalence": {
+    "postgres_fiches": 11478,
+    "sqlite_fiches": 11478,
+    "postgres_passages": 105687,
+    "all_ids_and_source_hashes_match": true
+  }
+}

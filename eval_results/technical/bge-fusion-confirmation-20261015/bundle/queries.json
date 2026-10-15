@@ -1,0 +1,464 @@
+{
+  "cases": [
+    {
+      "id": "F001",
+      "split": "fresh",
+      "question": "Sur Yamaha XJR 1300 (2003), quelle hauteur de selle et quelle contenance de réservoir sont annoncées ?"
+    },
+    {
+      "id": "F002",
+      "split": "fresh",
+      "question": "Kawasaki ZRX 1200 R (2003) : peux-tu relever puissance et couple avec leurs unités et les régimes indiqués ?"
+    },
+    {
+      "id": "F003",
+      "split": "fresh",
+      "question": "Pour Honda CB 500 (2000), combien de rapports comporte la boîte et comment la roue arrière est-elle entraînée ?"
+    },
+    {
+      "id": "F004",
+      "split": "fresh",
+      "question": "Quel frein et quel type de fourche trouve-t-on à l'avant de Suzuki 600 GSX-R Edition Speciale Tourist Trophy (2007), selon sa fiche ?"
+    },
+    {
+      "id": "F005",
+      "split": "fresh",
+      "question": "Je cherche le frein et la suspension arrière de BMW R 1200 GS (2006). Que donne la fiche ?"
+    },
+    {
+      "id": "F006",
+      "split": "fresh",
+      "question": "Quelles teintes sont proposées sur la fiche de Triumph 800 BONNEVILLE (2004) ? Garde ce millésime précis."
+    },
+    {
+      "id": "F007",
+      "split": "fresh",
+      "question": "Pour Ducati 999 R (2005), relève la cylindrée réelle et le mode de refroidissement du moteur."
+    },
+    {
+      "id": "F008",
+      "split": "fresh",
+      "question": "Harley-Davidson 1584 DYNA FAT BOB FXDF (2010) : donne la hauteur de selle et les masses documentées, en précisant à sec ou tous pleins faits."
+    },
+    {
+      "id": "F009",
+      "split": "fresh",
+      "question": "Sur KTM 150 XC-W (2019), quelle hauteur de selle et quelle contenance de réservoir sont annoncées ?"
+    },
+    {
+      "id": "F010",
+      "split": "fresh",
+      "question": "Aprilia TUONO V4 1100 Factory (2016) : peux-tu relever puissance et couple avec leurs unités et les régimes indiqués ?"
+    },
+    {
+      "id": "F011",
+      "split": "fresh",
+      "question": "Pour MV-Agusta 800 DRAGSTER RR (2015), combien de rapports comporte la boîte et comment la roue arrière est-elle entraînée ?"
+    },
+    {
+      "id": "F012",
+      "split": "fresh",
+      "question": "Quel frein et quel type de fourche trouve-t-on à l'avant de Moto-Guzzi 1400 Eldorado (2019), selon sa fiche ?"
+    },
+    {
+      "id": "F013",
+      "split": "fresh",
+      "question": "Je cherche le frein et la suspension arrière de Indian 1133 Scout Tiffany Blue (2019). Que donne la fiche ?"
+    },
+    {
+      "id": "F014",
+      "split": "fresh",
+      "question": "Quelles teintes sont proposées sur la fiche de Benelli TnT 899 Cafe Racer (2011) ? Garde ce millésime précis."
+    },
+    {
+      "id": "F015",
+      "split": "fresh",
+      "question": "Pour Mash 400 Five Hundred Von Dutch (2015), relève la cylindrée réelle et le mode de refroidissement du moteur."
+    },
+    {
+      "id": "F016",
+      "split": "fresh",
+      "question": "Bimota 800 TESI 3D RaceCafe (2016) : donne la hauteur de selle et les masses documentées, en précisant à sec ou tous pleins faits."
+    },
+    {
+      "id": "F017",
+      "split": "fresh",
+      "question": "Morini 450 Alltrhike (2026) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F018",
+      "split": "fresh",
+      "question": "Pour Royal-Enfield Classic 350 (2022), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F019",
+      "split": "fresh",
+      "question": "Sur Victory (USA) 1700 BOARDWALK (2015), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F020",
+      "split": "fresh",
+      "question": "Décris les freins avant et arrière de Norton 1200 V4 CR (2023), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F021",
+      "split": "fresh",
+      "question": "Pour Cagiva 1000 X-TRA RAPTOR (2005), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F022",
+      "split": "fresh",
+      "question": "CFMOTO 800 MT Touring Limited Edition (2022) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F023",
+      "split": "fresh",
+      "question": "Pour Zero Motorcycles DS (2026), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F024",
+      "split": "fresh",
+      "question": "Buell Hammerhead 1190 RX (2021) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F025",
+      "split": "fresh",
+      "question": "Yamaha FZ6 600 S2 (2007) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F026",
+      "split": "fresh",
+      "question": "Pour Kawasaki 500 GPZ (2004), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F027",
+      "split": "fresh",
+      "question": "Sur Honda CBR 125 R (2007), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F028",
+      "split": "fresh",
+      "question": "Décris les freins avant et arrière de Suzuki SV 1000 N (2006), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F029",
+      "split": "fresh",
+      "question": "Pour BMW R 1200 C (2000), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F030",
+      "split": "fresh",
+      "question": "Triumph 955i SPEED TRIPLE (2001) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F031",
+      "split": "fresh",
+      "question": "Combien de litres contient le réservoir de Ducati 1098 (2007) et dans quels coloris cette fiche la présente-t-elle ?"
+    },
+    {
+      "id": "F032",
+      "split": "fresh",
+      "question": "Harley-Davidson CVO 1800 SOFTAIL CONVERTIBLE FLSTSE (2010) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F033",
+      "split": "fresh",
+      "question": "KTM 125 SX (2014) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F034",
+      "split": "fresh",
+      "question": "Pour Aprilia RS 660 prototype (2019), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F035",
+      "split": "fresh",
+      "question": "Sur MV-Agusta 800 BRUTALE (2016), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F036",
+      "split": "fresh",
+      "question": "Décris les freins avant et arrière de Moto-Guzzi STELVIO 1200 8V NTX (2012), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F037",
+      "split": "fresh",
+      "question": "Pour Indian FTR 1200 S (2020), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F038",
+      "split": "fresh",
+      "question": "Benelli 500 Leoncino Trail (2017) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F039",
+      "split": "fresh",
+      "question": "Combien de litres contient le réservoir de Mash 400 Five Hundred Chromium (2020) et dans quels coloris cette fiche la présente-t-elle ?"
+    },
+    {
+      "id": "F040",
+      "split": "fresh",
+      "question": "Bimota DB8 ORONERO (2016) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F041",
+      "split": "fresh",
+      "question": "Morini Seiemmezzo 650 SCR (2024) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F042",
+      "split": "fresh",
+      "question": "Pour Royal-Enfield Super Meteor 650 (2024), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F043",
+      "split": "fresh",
+      "question": "Sur Victory (USA) 1200 OCTANE (2016), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F044",
+      "split": "fresh",
+      "question": "Décris les freins avant et arrière de Norton 961 Commando Sport MK III (2024), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F045",
+      "split": "fresh",
+      "question": "Pour Cagiva 125 SUPERCITY (2000), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F046",
+      "split": "fresh",
+      "question": "CFMOTO 700 CL-X Heritage (2021) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F047",
+      "split": "fresh",
+      "question": "Pour Zero Motorcycles DSR Black Forest Edition (2020), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F048",
+      "split": "fresh",
+      "question": "Buell Super Cruiser 1190 x RSD (2025) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F049",
+      "split": "fresh",
+      "question": "Compare Yamaha XJ6 600 Diversion F (2011) et Yamaha XJ6 600 Diversion F (2014) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F050",
+      "split": "fresh",
+      "question": "Compare Kawasaki KLE 500 (2002) et Kawasaki KLE 500 (2003) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F051",
+      "split": "fresh",
+      "question": "Compare Honda CB 600 F HORNET (2014) et Honda CB 600 F HORNET (2012) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F052",
+      "split": "fresh",
+      "question": "Compare Suzuki GSX-R 1000 (2003) et Suzuki GSX-R 1000 (2004) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F053",
+      "split": "fresh",
+      "question": "Compare BMW R 1200 GS (2018) et BMW R 1200 GS (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F054",
+      "split": "fresh",
+      "question": "Compare Triumph 2500 Rocket III R (2020) et Triumph 2500 Rocket III R (2021) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F055",
+      "split": "fresh",
+      "question": "Compare Ducati 821 Hyperstrada (2014) et Ducati 821 Hyperstrada (2013) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F056",
+      "split": "fresh",
+      "question": "Compare Harley-Davidson CVO 1920 Limited FLHTKSE (2020) et Harley-Davidson CVO 1920 Limited FLHTKSE (2021) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F057",
+      "split": "fresh",
+      "question": "Compare KTM 450 EXC-F Six Days (2017) et KTM 450 SX-F Factory (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F058",
+      "split": "fresh",
+      "question": "Compare Aprilia 1100 TUONO V4 Factory Limited Edition USA (2023) et Aprilia 1100 TUONO V4 (2023) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F059",
+      "split": "fresh",
+      "question": "Compare MV-Agusta Brutale 1090 Corsa (2014) et MV-Agusta Brutale 1090 R (2014) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F060",
+      "split": "fresh",
+      "question": "Compare Moto-Guzzi V7 750 Classic (2009) et Moto-Guzzi V7 750 Cafe Classic (2009) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F061",
+      "split": "fresh",
+      "question": "Compare Indian 1811 CHIEFTAIN Jack Daniel's (2017) et Indian 1811 CHIEFTAIN (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F062",
+      "split": "fresh",
+      "question": "Compare Benelli TRK 502 (2025) et Benelli TRK 502 X (2025) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F063",
+      "split": "fresh",
+      "question": "Compare Mash X-Ride 650 Trail (2024) et Mash X-Ride 50 (2024) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F064",
+      "split": "fresh",
+      "question": "Compare Bimota DB7 1098 (2009) et Bimota DB7 1098 Oro Nero (2009) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "HOLDOUT-001",
+      "split": "regression",
+      "question": "La CFMOTO 450 MT 2024 n’a pas une selle fixe ? Donne-moi aussi son encombrement en longueur et sa masse annoncée."
+    },
+    {
+      "id": "HOLDOUT-005",
+      "split": "regression",
+      "question": "La Moto-Guzzi 850 V7 Stone 2024 roule avec une chaîne ? Et son moteur refroidit à l’eau ou à l’air ?"
+    },
+    {
+      "id": "HOLDOUT-007",
+      "split": "regression",
+      "question": "La Yamaha MT-09 900 Y-AMT 2024 change quoi face à la MT-09 900 2024 : la boîte seulement, ou aussi la cylindrée et la puissance ?"
+    },
+    {
+      "id": "HOLDOUT-010",
+      "split": "regression",
+      "question": "J’ai besoin de la largeur de la BMW R 1250 GS 2023 et de sa plage de réglage de selle, pas de l’Adventure."
+    },
+    {
+      "id": "HOLDOUT-015",
+      "split": "regression",
+      "question": "Si je prends une KTM 790 Duke 2024, le système pour passer les rapports sans débrayer est compris ou marqué en option ?"
+    },
+    {
+      "id": "HOLDOUT-016",
+      "split": "regression",
+      "question": "La Ducati Monster SP 2024 a bien l’aide au départ arrêté et un shifter fourni ? La fiche précise s’il marche aussi en descendant les vitesses ?"
+    },
+    {
+      "id": "HOLDOUT-023",
+      "split": "regression",
+      "question": "Pour le Honda Forza 750 2024, tu peux confirmer la prise USB et le démarrage sans clé à partir de la fiche ?"
+    },
+    {
+      "id": "HOLDOUT-028",
+      "split": "regression",
+      "question": "Quels coloris sont réellement écrits pour la Ducati Monster standard 2024 ? Je ne veux pas ceux de la SP."
+    },
+    {
+      "id": "HOLDOUT-038",
+      "split": "regression",
+      "question": "Honda CRF 1100 L Africa Twin 2024 et Adventure Sports 2024 : laquelle a une roue avant de 19 pouces, et leurs selles se règlent entre quelles hauteurs ?"
+    },
+    {
+      "id": "HOLDOUT-039",
+      "split": "regression",
+      "question": "Kawasaki Z 900 2024 contre Z 900 SE 2024 : la fiche cite-t-elle Brembo pour les deux, et les dimensions de fourche et de disques avant diffèrent-elles ?"
+    },
+    {
+      "id": "HOLDOUT-041",
+      "split": "regression",
+      "question": "Pour les Yamaha Tracer 9 GT et GT+ de 2024, la base parle-t-elle d’une boîte automatique et d’un radar sur les deux ?"
+    },
+    {
+      "id": "HOLDOUT-004",
+      "split": "regression",
+      "question": "Pour la Royal-Enfield 450 Himalayan 2024, quelles sont les deux hauteurs de selle et les masses à sec et prête à rouler indiquées ?"
+    },
+    {
+      "id": "HOLDOUT-008",
+      "split": "regression",
+      "question": "La Suzuki GSX-8R 800 de 2024 fait vraiment 800 cm³ ? Et à quelle hauteur se trouve la selle, avec quel réservoir ?"
+    },
+    {
+      "id": "HOLDOUT-012",
+      "split": "regression",
+      "question": "La Harley-Davidson RH 975 Nightster 2024 a quel angle entre ses deux cylindres, et quelle hauteur de selle ?"
+    },
+    {
+      "id": "HOLDOUT-022",
+      "split": "regression",
+      "question": "Sur une Suzuki GSX-8S 800 2024, le contrôle de traction et le shifter sont mentionnés ? Pour le shifter, quelle précision donne la transmission ?"
+    },
+    {
+      "id": "HOLDOUT-026",
+      "split": "regression",
+      "question": "La Triumph 660 Trident 2025 est citée en bleu uni ou en bleu avec une autre couleur ? Donne les combinaisons écrites."
+    },
+    {
+      "id": "HOLDOUT-033",
+      "split": "regression",
+      "question": "Sur la Triumph 765 Street Triple R A2 2025, quels chevaux et quelle cylindrée sont écrits, et que dit la rubrique permis ?"
+    },
+    {
+      "id": "HOLDOUT-034",
+      "split": "regression",
+      "question": "Je regarde une Royal-Enfield Meteor 350 2024 avec mon A2. Quelle puissance donne la fiche et cite-t-elle ce permis, sans faire une déduction réglementaire ?"
+    },
+    {
+      "id": "HOLDOUT-040",
+      "split": "regression",
+      "question": "La Triumph 660 Trident 2025 apporte quoi par rapport à la 2024 pour le shifter, le régulateur et le nombre de modes de conduite, selon les fiches ?"
+    },
+    {
+      "id": "HOLDOUT-044",
+      "split": "regression",
+      "question": "On me propose une Royal-Enfield 450 Himalayan blanche, année oubliée. Entre les fiches 2024 et 2025, laquelle cite le blanc, et cela suffit-il à dater la moto ?"
+    },
+    {
+      "id": "N01",
+      "split": "regression",
+      "question": "La Benelli TRK 702 de 2024 fait-elle exactement 702 cm³, et quel volume de réservoir sa fiche annonce-t-elle ?"
+    },
+    {
+      "id": "N02",
+      "split": "regression",
+      "question": "Pour la Benelli TRK 702 de 2024, quels coloris sont écrits et la liste des équipements cite-t-elle une prise pour charger par USB ?"
+    },
+    {
+      "id": "N03",
+      "split": "regression",
+      "question": "Norden 901 et Norden 901 Expedition, toutes deux Husqvarna de 2024 : compare leurs plages de hauteur de selle et leurs masses à sec, sans mélanger avec les masses pleins faits."
+    },
+    {
+      "id": "N04",
+      "split": "regression",
+      "question": "Sur la Husqvarna Norden 901 Expedition 2024, le shifter est-il de série ou en option et la fiche cite-t-elle une selle et des poignées chauffantes ?"
+    },
+    {
+      "id": "N05",
+      "split": "regression",
+      "question": "MV-Agusta 800 Brutale RR 2024 : donne le couple avec son régime et la hauteur de selle. Pour la masse, la fiche fournit-elle le poids à sec et celui tous pleins faits ?"
+    },
+    {
+      "id": "N06",
+      "split": "regression",
+      "question": "Compare seulement les puissances et leurs régimes des MV-Agusta 1000 Brutale RR et 800 Brutale R de 2024. Je veux bien la R pour la 800, pas la RR."
+    },
+    {
+      "id": "N07",
+      "split": "regression",
+      "question": "Sur l'Indian 1133 Scout Bobber de 2024, la transmission secondaire est-elle par chaîne ou courroie et quels coloris sont listés ?"
+    },
+    {
+      "id": "N08",
+      "split": "regression",
+      "question": "Entre l'Indian 1133 Scout et la 1133 Scout Bobber de 2024, les fiches donnent-elles les mêmes longueur et largeur ? Compare ces dimensions, sans prendre la Bobber Twenty."
+    }
+  ]
+}

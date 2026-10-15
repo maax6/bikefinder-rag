@@ -1,0 +1,8 @@
+{
+  "bge_files_match_frozen_revision": true,
+  "reranker_files_match_frozen_revision": true,
+  "index_artifacts_match_manifest": true,
+  "protected_top10_verified_rows": 114,
+  "remote_api_calls": 0,
+  "training_steps": 0
+}

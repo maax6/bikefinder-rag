@@ -1,0 +1,15 @@
+{
+  "eligible_for_chat_integration": false,
+  "checks": {
+    "fresh_complete_gain_at_least_five": true,
+    "no_required_group_loss": false,
+    "no_first_hit_count_decline": true,
+    "paired_p_at_most_005": false,
+    "latency_within_bound": true,
+    "integrity_parity_and_determinism": true
+  },
+  "failed_checks": [
+    "no_required_group_loss",
+    "paired_p_at_most_005"
+  ]
+}

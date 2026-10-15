@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-10-14T20:19:34.161320+00:00",
+  "status": "prepared_not_executed",
+  "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "preparer_sha256": "6e1cdc7cb4704c73a92bedfc411ead267c835069a537b9321b209661b8833dcb",
+  "contract_source_sha256": "96b03461abb7fb5b61c34ef55f1db7ff675fde18611bcb21c206d0b36f4c03c4",
+  "numeric_parser_sha256": "39e7a8c16c621d6b9eb0d9930e75f98f21276f674f276e9ba63a3dc29af06d7b",
+  "files": {
+    "answer-channel.json": "6fd6af56781ed0373a3f7725a1aa577a79ac791be8c176b499ab8e2e4bd78b80",
+    "candidates.json": "ce44ae46c449c284294d4cf658b590df9ade6688f9ed2d4d589f114ed4e77aba",
+    "model-inputs.json": "4b5894a8b0f7ef25de00b7089d129b1067c19127703d345731fa962e3acff496",
+    "protocol.json": "5428eca636e4cc1f00e62e1d9840d29afbadec0592cd16c4b06f3ddaa8f1e835",
+    "questions.json": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8",
+    "references.private.json": "718b74566f73466defee8acd1fc00e95ab34e8beb83625a2f8188f90765b8139",
+    "result.schema.json": "223a1a6cf784f6d0ba3e9e8c48a9eb0a8aef5e654b8882cf5e786a133c9728ec",
+    "run-plan.json": "c5b16747201f97fcbc26d1bd5e5c711dd04a9311db695fe908a35fd44f1e8266",
+    "system-prompt.txt": "076ebce459e619ecde5161b191c9b3d769758053e967966c5aeeaf898f07c033",
+    "tools.json": "68eb7278e525f9301450bad3c287cde60bd5950f2cf755b4740f3bc43df2b6c9"
+  },
+  "baseline_manifest_sha256": "a624accf267fc4dca36dbe3470ffddd4b85c6248fda9257cd72f8f62037c0058",
+  "revision_reason": "Post-pass2 citation-channel description; unchanged source, questions, prompt and limits. New local experiment, not a historical rerun."
+}

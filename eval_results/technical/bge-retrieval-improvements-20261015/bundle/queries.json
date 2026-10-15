@@ -1,0 +1,124 @@
+{
+  "cases": [
+    {
+      "id": "HOLDOUT-001",
+      "split": "dev",
+      "question": "La CFMOTO 450 MT 2024 n’a pas une selle fixe ? Donne-moi aussi son encombrement en longueur et sa masse annoncée."
+    },
+    {
+      "id": "HOLDOUT-005",
+      "split": "dev",
+      "question": "La Moto-Guzzi 850 V7 Stone 2024 roule avec une chaîne ? Et son moteur refroidit à l’eau ou à l’air ?"
+    },
+    {
+      "id": "HOLDOUT-007",
+      "split": "dev",
+      "question": "La Yamaha MT-09 900 Y-AMT 2024 change quoi face à la MT-09 900 2024 : la boîte seulement, ou aussi la cylindrée et la puissance ?"
+    },
+    {
+      "id": "HOLDOUT-010",
+      "split": "dev",
+      "question": "J’ai besoin de la largeur de la BMW R 1250 GS 2023 et de sa plage de réglage de selle, pas de l’Adventure."
+    },
+    {
+      "id": "HOLDOUT-015",
+      "split": "dev",
+      "question": "Si je prends une KTM 790 Duke 2024, le système pour passer les rapports sans débrayer est compris ou marqué en option ?"
+    },
+    {
+      "id": "HOLDOUT-016",
+      "split": "dev",
+      "question": "La Ducati Monster SP 2024 a bien l’aide au départ arrêté et un shifter fourni ? La fiche précise s’il marche aussi en descendant les vitesses ?"
+    },
+    {
+      "id": "HOLDOUT-023",
+      "split": "dev",
+      "question": "Pour le Honda Forza 750 2024, tu peux confirmer la prise USB et le démarrage sans clé à partir de la fiche ?"
+    },
+    {
+      "id": "HOLDOUT-028",
+      "split": "dev",
+      "question": "Quels coloris sont réellement écrits pour la Ducati Monster standard 2024 ? Je ne veux pas ceux de la SP."
+    },
+    {
+      "id": "HOLDOUT-038",
+      "split": "dev",
+      "question": "Honda CRF 1100 L Africa Twin 2024 et Adventure Sports 2024 : laquelle a une roue avant de 19 pouces, et leurs selles se règlent entre quelles hauteurs ?"
+    },
+    {
+      "id": "HOLDOUT-039",
+      "split": "dev",
+      "question": "Kawasaki Z 900 2024 contre Z 900 SE 2024 : la fiche cite-t-elle Brembo pour les deux, et les dimensions de fourche et de disques avant diffèrent-elles ?"
+    },
+    {
+      "id": "HOLDOUT-041",
+      "split": "dev",
+      "question": "Pour les Yamaha Tracer 9 GT et GT+ de 2024, la base parle-t-elle d’une boîte automatique et d’un radar sur les deux ?"
+    },
+    {
+      "id": "HOLDOUT-004",
+      "split": "check",
+      "question": "Pour la Royal-Enfield 450 Himalayan 2024, quelles sont les deux hauteurs de selle et les masses à sec et prête à rouler indiquées ?"
+    },
+    {
+      "id": "HOLDOUT-008",
+      "split": "check",
+      "question": "La Suzuki GSX-8R 800 de 2024 fait vraiment 800 cm³ ? Et à quelle hauteur se trouve la selle, avec quel réservoir ?"
+    },
+    {
+      "id": "HOLDOUT-012",
+      "split": "check",
+      "question": "La Harley-Davidson RH 975 Nightster 2024 a quel angle entre ses deux cylindres, et quelle hauteur de selle ?"
+    },
+    {
+      "id": "HOLDOUT-022",
+      "split": "check",
+      "question": "Sur une Suzuki GSX-8S 800 2024, le contrôle de traction et le shifter sont mentionnés ? Pour le shifter, quelle précision donne la transmission ?"
+    },
+    {
+      "id": "HOLDOUT-026",
+      "split": "check",
+      "question": "La Triumph 660 Trident 2025 est citée en bleu uni ou en bleu avec une autre couleur ? Donne les combinaisons écrites."
+    },
+    {
+      "id": "HOLDOUT-033",
+      "split": "check",
+      "question": "Sur la Triumph 765 Street Triple R A2 2025, quels chevaux et quelle cylindrée sont écrits, et que dit la rubrique permis ?"
+    },
+    {
+      "id": "HOLDOUT-034",
+      "split": "check",
+      "question": "Je regarde une Royal-Enfield Meteor 350 2024 avec mon A2. Quelle puissance donne la fiche et cite-t-elle ce permis, sans faire une déduction réglementaire ?"
+    },
+    {
+      "id": "HOLDOUT-040",
+      "split": "check",
+      "question": "La Triumph 660 Trident 2025 apporte quoi par rapport à la 2024 pour le shifter, le régulateur et le nombre de modes de conduite, selon les fiches ?"
+    },
+    {
+      "id": "HOLDOUT-044",
+      "split": "check",
+      "question": "On me propose une Royal-Enfield 450 Himalayan blanche, année oubliée. Entre les fiches 2024 et 2025, laquelle cite le blanc, et cela suffit-il à dater la moto ?"
+    },
+    {
+      "id": "HOLDOUT-045",
+      "split": "coverage_audit",
+      "question": "Retrouve le certificat officiel de bridage A2 de la KTM 790 Duke 2024 et son numéro d’homologation français."
+    },
+    {
+      "id": "HOLDOUT-046",
+      "split": "coverage_audit",
+      "question": "Pour la Honda NC 750 X 2024, donne le schéma constructeur du connecteur du calculateur avec le numéro de broche du capteur de béquille."
+    },
+    {
+      "id": "HOLDOUT-048",
+      "split": "coverage_audit",
+      "question": "Pour une BMW R 1250 GS 2023 destinée aux États-Unis, retrouve dans les documents BMW la masse remorquable homologuée et la référence du document."
+    },
+    {
+      "id": "HOLDOUT-049",
+      "split": "coverage_audit",
+      "question": "Quel intervalle en kilomètres le manuel d’atelier Kawasaki prescrit-il pour contrôler le jeu aux soupapes d’une Ninja 500 2024 ?"
+    }
+  ]
+}

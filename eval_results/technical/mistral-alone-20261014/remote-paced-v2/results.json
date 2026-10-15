@@ -1,0 +1,633 @@
+{
+  "created_utc": "2026-10-14T20:32:33.964560+00:00",
+  "maximum_total_api_usd": 0.5,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 0.7928103329613805,
+        "model_seconds": 0.7927790830144659,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1792573440,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false,
+          "minimum_request_gap_seconds": 2.0
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q01"
+    },
+    {
+      "turn": 1,
+      "question": "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart.",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 1.5975599159719422,
+        "model_seconds": 1.597520750015974,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1792573440,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false,
+          "minimum_request_gap_seconds": 2.0
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q17"
+    },
+    {
+      "turn": 1,
+      "question": "Quelles différences de transmission indiquent la Gold Wing Tour DCT/Airbag 2018 et la BMW R 1250 RT standard 2020 ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 2.0082765839761123,
+        "model_seconds": 2.008224125020206,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1792573440,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false,
+          "minimum_request_gap_seconds": 2.0
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q24"
+    },
+    {
+      "turn": 1,
+      "question": "Quel est le plus ancien millésime de Gold Wing avec une mention DCT dans les transmissions de notre base, et sur quelle variante ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 2.0068938340991735,
+        "model_seconds": 2.0067827919265255,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1792573440,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false,
+          "minimum_request_gap_seconds": 2.0
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q27"
+    }
+  ],
+  "scope": "Known eight-case development replay, not an independent generalization test",
+  "comparability": "Two common-tool agents versus existing Jev decisions + SQL renderer; workflow differences are explicit",
+  "pack_sha256": "39f72d3dc05e02a9016bddbb0368745a12d2bf4ed9a20d45ac643c084cd13a9e",
+  "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "script_sha256": "fbac8cb16a307423c12b6c099d9858e0be998e5c90bdbfef2d94a28b444c4769",
+  "timeout_seconds": 30,
+  "local_api_cost_usd": 0,
+  "electricity_and_amortization": "not measured",
+  "prior_receipt_sha256": "39770199cbc9c19cbee9fb176615481ee3d4c34d8411dcbeec05416dcce39004",
+  "cloud_inventory": {
+    "id": "mistralai/mistral-small-2603",
+    "pricing": {
+      "prompt": "0.00000015",
+      "completion": "0.0000006",
+      "input_cache_read": "0.000000015"
+    },
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "max_tokens",
+      "presence_penalty",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_p"
+    ],
+    "context_length": 262144
+  },
+  "paid_requests": [
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36084,
+      "reserved_usd": 0.0137052,
+      "debit_usd": 0.0137052,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36066,
+      "reserved_usd": 0.013699799999999998,
+      "debit_usd": 0.00066945,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4231,
+        "completion_tokens": 58,
+        "total_tokens": 4289,
+        "cost": 0.00066945,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00066945,
+          "upstream_inference_prompt_cost": 0.00063465,
+          "upstream_inference_completions_cost": 3.48e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00066945
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 39772,
+      "reserved_usd": 0.014811599999999998,
+      "debit_usd": 0.00017412,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4788,
+        "completion_tokens": 40,
+        "total_tokens": 4828,
+        "cost": 0.00017412,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4208,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00017412,
+          "upstream_inference_prompt_cost": 0.00015012,
+          "upstream_inference_completions_cost": 2.4e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00017412
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 44102,
+      "reserved_usd": 0.0161106,
+      "debit_usd": 0.00025002,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 5470,
+        "completion_tokens": 122,
+        "total_tokens": 5592,
+        "cost": 0.00025002,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4768,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00025002,
+          "upstream_inference_prompt_cost": 0.00017682,
+          "upstream_inference_completions_cost": 7.32e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00025002
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36140,
+      "reserved_usd": 0.013721999999999998,
+      "debit_usd": 0.00010128,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4248,
+        "completion_tokens": 50,
+        "total_tokens": 4298,
+        "cost": 0.00010128,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4192,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010128,
+          "upstream_inference_prompt_cost": 7.128e-05,
+          "upstream_inference_completions_cost": 3e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00010128
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 39138,
+      "reserved_usd": 0.0146214,
+      "debit_usd": 0.00018546,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4650,
+        "completion_tokens": 97,
+        "total_tokens": 4747,
+        "cost": 0.00018546,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4224,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00018546,
+          "upstream_inference_prompt_cost": 0.00012726,
+          "upstream_inference_completions_cost": 5.82e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00018546
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 54292,
+      "reserved_usd": 0.0191676,
+      "debit_usd": 0.0011472,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 7428,
+        "completion_tokens": 55,
+        "total_tokens": 7483,
+        "cost": 0.0011472,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011472,
+          "upstream_inference_prompt_cost": 0.0011142,
+          "upstream_inference_completions_cost": 3.3e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.0011472
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 60488,
+      "reserved_usd": 0.0210264,
+      "debit_usd": 0.0210264,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36178,
+      "reserved_usd": 0.0137334,
+      "debit_usd": 0.0137334,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36208,
+      "reserved_usd": 0.013742399999999998,
+      "debit_usd": 0.013742399999999998,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36062,
+      "reserved_usd": 0.013698599999999998,
+      "debit_usd": 0.013698599999999998,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36098,
+      "reserved_usd": 0.0137094,
+      "debit_usd": 0.0137094,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36092,
+      "reserved_usd": 0.0137076,
+      "debit_usd": 0.0137076,
+      "status": "pending"
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 30706,
+      "reserved_usd": 0.001289652,
+      "debit_usd": 0.000146748,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3494,
+        "output_tokens": 953,
+        "cost": 0.000146748
+      },
+      "reported_cost_usd": 0.000146748
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31610,
+      "reserved_usd": 0.0013276200000000003,
+      "debit_usd": 0.000154056,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3668,
+        "output_tokens": 953,
+        "cost": 0.000154056
+      },
+      "reported_cost_usd": 0.000154056
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 33194,
+      "reserved_usd": 0.0013941480000000002,
+      "debit_usd": 0.000168924,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4022,
+        "output_tokens": 953,
+        "cost": 0.000168924
+      },
+      "reported_cost_usd": 0.000168924
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 32146,
+      "reserved_usd": 0.0013501320000000002,
+      "debit_usd": 0.000159978,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3809,
+        "output_tokens": 954,
+        "cost": 0.000159978
+      },
+      "reported_cost_usd": 0.000159978
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31772,
+      "reserved_usd": 0.001334424,
+      "debit_usd": 0.000152754,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3637,
+        "output_tokens": 953,
+        "cost": 0.000152754
+      },
+      "reported_cost_usd": 0.000152754
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31630,
+      "reserved_usd": 0.0013284600000000003,
+      "debit_usd": 0.000154434,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3677,
+        "output_tokens": 953,
+        "cost": 0.000154434
+      },
+      "reported_cost_usd": 0.000154434
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 34698,
+      "reserved_usd": 0.0014573160000000002,
+      "debit_usd": 0.000178458,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4249,
+        "output_tokens": 1127,
+        "cost": 0.000178458
+      },
+      "reported_cost_usd": 0.000178458
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 30698,
+      "reserved_usd": 0.0012893160000000002,
+      "debit_usd": 0.00014658,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3490,
+        "output_tokens": 953,
+        "cost": 0.00014658
+      },
+      "reported_cost_usd": 0.00014658
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 33234,
+      "reserved_usd": 0.0013958280000000002,
+      "debit_usd": 0.000164808,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3924,
+        "output_tokens": 1124,
+        "cost": 0.000164808
+      },
+      "reported_cost_usd": 0.000164808
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36084,
+      "reserved_usd": 0.0137052,
+      "debit_usd": 0.0137052,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36140,
+      "reserved_usd": 0.013721999999999998,
+      "debit_usd": 0.013721999999999998,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36178,
+      "reserved_usd": 0.0137334,
+      "debit_usd": 0.0137334,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36208,
+      "reserved_usd": 0.013742399999999998,
+      "debit_usd": 0.013742399999999998,
+      "status": "pending"
+    }
+  ],
+  "conservative_total_debit_usd": 0.16218027000000002,
+  "service_preparation_seconds": 8.036978624993935,
+  "status": "executed_semantic_review_pending"
+}

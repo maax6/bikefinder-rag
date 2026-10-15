@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-14T22:45:02.188469+00:00",
+  "protocol_sha256": "212aa55eae530b0bbd6ae270c23e5b6e29946125badd0e0fe2a0be8a68eec2fe",
+  "script_sha256": "79ef001a2d9fcbad9595bc56c035807bf98a126d9b5087ac8385fc5489885df9",
+  "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "preparation_seconds": 7.998898957972415,
+  "document_count": 105687,
+  "remote_api_calls": 0,
+  "model_training_steps": 0,
+  "bge_device": "mps:0",
+  "bge_dtype": "torch.float32",
+  "reranker_dtype": "torch.float16",
+  "oracle_scope_used": false,
+  "baseline_parity": [
+    {
+      "query": "Honda boîte de vitesses",
+      "identical_top10": true
+    },
+    {
+      "query": "hauteur de selle réglable",
+      "identical_top10": true
+    },
+    {
+      "query": "ABS shifter en option",
+      "identical_top10": true
+    }
+  ],
+  "source_unchanged": true,
+  "index_manifest_unchanged": true,
+  "status": "completed_no_training_no_activation",
+  "total_seconds": 91.62438024999574
+}

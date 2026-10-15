@@ -1,0 +1,114 @@
+{
+  "created_utc": "2026-10-14T22:49:11.396951+00:00",
+  "date": "2026-10-15",
+  "status": "frozen_before_new_candidate_execution",
+  "index": "/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/retrieval-benchmark-20261013/index",
+  "index_manifest_sha256": "b2f255b320e3c03b19d873ceae7ce87ed39a8d1ba6ed6719e52eacca0f6abb56",
+  "document_count": 105687,
+  "document_sha256": "bcc9f203216441cc6691e7017aac6d69ab729a04071889289cfbc6db2253bf56",
+  "configs": [
+    {
+      "id": "current_rrf40",
+      "pool": 40,
+      "dense_weight": 1,
+      "lexical_weight": 1,
+      "rerank": false
+    },
+    {
+      "id": "weighted_rrf80",
+      "pool": 80,
+      "dense_weight": 2,
+      "lexical_weight": 1,
+      "rerank": false
+    },
+    {
+      "id": "current_top10_rerank",
+      "pool": 40,
+      "dense_weight": 1,
+      "lexical_weight": 1,
+      "rerank": true,
+      "rerank_top": 10
+    },
+    {
+      "id": "weighted80_top10_rerank",
+      "pool": 80,
+      "dense_weight": 2,
+      "lexical_weight": 1,
+      "rerank": true,
+      "rerank_top": 10
+    }
+  ],
+  "repeats": 3,
+  "seed": 20261015,
+  "rrf_constant": 60,
+  "k": 10,
+  "brands": {
+    "dev": [
+      "BMW",
+      "CFMOTO",
+      "Ducati",
+      "Honda",
+      "KTM",
+      "Kawasaki",
+      "Moto-Guzzi",
+      "Yamaha"
+    ],
+    "check": [
+      "Benelli",
+      "Husqvarna",
+      "Indian",
+      "MV-Agusta"
+    ]
+  },
+  "case_counts": {
+    "dev": 11,
+    "check": 8,
+    "coverage_audit": 4
+  },
+  "model_inputs": "Only question text and canonical indexed source documents; no oracle identity, labels or references",
+  "selection_rule": "Development only: maximize complete required groups at10, then hit@1, then nDCG@10; tied configs prefer lower median time",
+  "selection_constraint": "Verification labels are interpreted for scoring only after selection.json is saved; their fingerprints are checked beforehand.",
+  "baseline": "Exact current FrozenRetrieval algorithm: 40 per branch, positive BM25 scores only, equal RRF weights, constant 60",
+  "precision": "BGE query encoder float32 from current embedder; stored document vectors remain frozen original float16-computed normalized float32. Reranker float16 MPS, max_length512",
+  "limits": [
+    "Development questions were already observed; follow-up hypothesis follows v1 verification failure.",
+    "New verification questions were source-authored and frozen before their first retrieval, but not independently authored.",
+    "Several verification questions share fiches; eight questions do not mean eight independent motorcycles.",
+    "Global judgments are incomplete; unjudged passages are not automatically irrelevant.",
+    "No training, cloud inference, chat activation or source/index mutation."
+  ],
+  "files_sha256": {
+    "coverage_audit.annotations.json": "89dd7ce6f8fcaa8c5071b63583986ab65a1a9de271e2c6c6d3b79556870b5381",
+    "dev.annotations.json": "e848c24af879ef70d8520ffe14e35a814912ed01d86a4e654ce34236c63779cb",
+    "queries.json": "00113b80e338feac6d74a702a7076bdf62ffd9bcf286225e9e64311aec6a36e3",
+    "check.annotations.json": "b849d13609e00d6808de2be9b94a342824b5138a36d36797f6b480bad6fb7dc1"
+  },
+  "index_artifacts": {
+    "documents.jsonl": {
+      "bytes": 76355660,
+      "sha256": "bcc9f203216441cc6691e7017aac6d69ab729a04071889289cfbc6db2253bf56"
+    },
+    "lexical-postings.npz": {
+      "bytes": 19056180,
+      "sha256": "e89868eb2aca64e25cfd9df13507185de598a8902e4ff2636ceb57b92cf71fc0"
+    },
+    "lexical-vocabulary.json": {
+      "bytes": 146542,
+      "sha256": "504387f6ca4d15d058bbc3e5558f7fe4b3d5115fa7b62e65cac6b65a7c84acc0"
+    },
+    "protocol.json": {
+      "bytes": 6465,
+      "sha256": "794187e95dbe38604e9704115a2102b5d97fcb18a94686c492b512bb23070642"
+    },
+    "vectors.npy": {
+      "bytes": 432894080,
+      "sha256": "49a5e8cd289ce6489a0192ce0686cf6eb5a8a4ea45be60e7d87558939dd9b8c4"
+    }
+  },
+  "baseline_bundle_sha256": "212aa55eae530b0bbd6ae270c23e5b6e29946125badd0e0fe2a0be8a68eec2fe",
+  "hypothesis": "Rerank only the ten passages already retained by each parent retrieval; preserve their entire proof set while improving order.",
+  "verification_origin": "Eight source-authored new formulations, four brands absent from development; same author, eight distinct fiches with reuse across questions, no independent panel.",
+  "previous_experiment": "v1 wide reranking improved first hit but reduced verification completeness. v1 is preserved and not re-scored.",
+  "verification_unique_fiches": 8,
+  "pre_execution_correction": "Source count and answerability labels corrected before the first new question execution; no retrieval results were opened."
+}

@@ -1,0 +1,5225 @@
+{
+  "created_utc": "2026-10-14T20:27:50.170316+00:00",
+  "maximum_total_api_usd": 0.5,
+  "results": [
+    {
+      "turn": 1,
+      "question": "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 1.1194780829828233,
+        "model_seconds": 1.1194118750281632,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1667448832,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q01"
+    },
+    {
+      "turn": 1,
+      "question": "Quelle cylindrée indique la fiche de la Yamaha MT-07 2020 ?",
+      "status": "completed",
+      "error": null,
+      "answer": "| Modèle | Cylindrée |\n|--------|-----------|\n| Yamaha MT-07 (2020) | 689 cm³ |",
+      "final": {
+        "answer": "| Modèle | Cylindrée |\n|--------|-----------|\n| Yamaha MT-07 (2020) | 689 cm³ |",
+        "claims": [
+          {
+            "evidence_ids": [
+              "4fbfc9bd85ffa460:row:23"
+            ],
+            "text": "La fiche de la Yamaha MT-07 2020 indique une cylindrée de 689 cm³."
+          }
+        ],
+        "missing": [],
+        "needs_clarification": false
+      },
+      "calls": [
+        {
+          "id": "DK9ChI0yS",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Yamaha MT-07",
+            "scope": {
+              "brand": "Yamaha",
+              "model_tokens": [
+                "MT-07"
+              ],
+              "min_year": 2020,
+              "max_year": 2020
+            }
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "4fbfc9bd85ffa460",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                  "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "id": "4fbfc9bd85ffa460",
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "model_tokens": [
+                  "MT-07"
+                ],
+                "min_year": 2020,
+                "max_year": 2020
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "timing_ms": 516.015
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "4fbfc9bd85ffa460",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2020,
+                  "evidence_id": "4fbfc9bd85ffa460:identity"
+                }
+              ],
+              "total_candidates": 1,
+              "ambiguity": false
+            },
+            "evidence": [
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "4fbfc9bd85ffa460",
+                "subject": "Yamaha 700 MT-07 (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "model_tokens": [
+                  "MT-07"
+                ],
+                "min_year": 2020,
+                "max_year": 2020
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 1,
+              "total": 1,
+              "next_cursor": null
+            },
+            "sources": {
+              "4fbfc9bd85ffa460": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.5160503750666976
+        },
+        {
+          "id": "WqWysiGyi",
+          "name": "get_fiches",
+          "arguments": {
+            "object_ids": [
+              "4fbfc9bd85ffa460"
+            ],
+            "fields": [
+              "displacement_ccm"
+            ],
+            "sections": []
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "4fbfc9bd85ffa460",
+                    "brand": "Yamaha",
+                    "model": "700 MT-07",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                    "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+                  },
+                  "measures": {
+                    "displacement_ccm": {
+                      "value": 689.0,
+                      "unit": "cc",
+                      "evidence_ids": [
+                        "4fbfc9bd85ffa460:row:23"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [],
+                  "original_rows": [
+                    {
+                      "label": "",
+                      "section": "Moteur",
+                      "value": "689 cc (Alésage * course: 80 x 68.6 mm)"
+                    }
+                  ]
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "4fbfc9bd85ffa460:row:23",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26",
+                "row": {
+                  "label": "",
+                  "section": "Moteur",
+                  "value": "689 cc (Alésage * course: 80 x 68.6 mm)"
+                }
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "4fbfc9bd85ffa460"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 1.483
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "4fbfc9bd85ffa460",
+                    "brand": "Yamaha",
+                    "model": "700 MT-07",
+                    "year": 2020,
+                    "evidence_id": "4fbfc9bd85ffa460:identity"
+                  },
+                  "measures": {
+                    "displacement_ccm": {
+                      "value": 689.0,
+                      "unit": "cc",
+                      "evidence_ids": [
+                        "4fbfc9bd85ffa460:row:23"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [],
+                  "original_rows": []
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "4fbfc9bd85ffa460:row:23",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "row": {
+                  "label": "",
+                  "section": "Moteur",
+                  "value": "689 cc (Alésage * course: 80 x 68.6 mm)"
+                },
+                "subject": "Yamaha 700 MT-07 (2020)"
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "claim_scope": "identity_only",
+                "subject": "Yamaha 700 MT-07 (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "4fbfc9bd85ffa460"
+                ]
+              },
+              "searched_fiches": 1,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {
+              "4fbfc9bd85ffa460": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.0014927920419722795
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": null,
+            "refusal": null,
+            "reasoning": null,
+            "tool_calls": [
+              {
+                "type": "function",
+                "index": 0,
+                "id": "DK9ChI0yS",
+                "function": {
+                  "name": "resolve_models",
+                  "arguments": "{\"query\": \"Yamaha MT-07\", \"scope\": {\"brand\": \"Yamaha\", \"model_tokens\": [\"MT-07\"], \"min_year\": 2020, \"max_year\": 2020}}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 4231,
+            "output_tokens": 58,
+            "cost_usd": 0.00066945,
+            "request_id": "gen-1792009680-VTg1FbUYMIEEufO1UKz7",
+            "upstream_provider": "Mistral"
+          },
+          "model": "mistralai/mistral-small-2603",
+          "finish_reason": "tool_calls"
+        },
+        {
+          "round": 2,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": null,
+            "refusal": null,
+            "reasoning": null,
+            "tool_calls": [
+              {
+                "type": "function",
+                "index": 0,
+                "id": "WqWysiGyi",
+                "function": {
+                  "name": "get_fiches",
+                  "arguments": "{\"object_ids\": [\"4fbfc9bd85ffa460\"], \"fields\": [\"displacement_ccm\"], \"sections\": []}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 4788,
+            "output_tokens": 40,
+            "cost_usd": 0.00017412,
+            "request_id": "gen-1792009681-d8CQfju3ANR7tq1n4Bv3",
+            "upstream_provider": "Mistral"
+          },
+          "model": "mistralai/mistral-small-2603",
+          "finish_reason": "tool_calls"
+        },
+        {
+          "round": 3,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": null,
+            "refusal": null,
+            "reasoning": null,
+            "tool_calls": [
+              {
+                "type": "function",
+                "index": 0,
+                "id": "oSEg3KLlF",
+                "function": {
+                  "name": "submit_answer",
+                  "arguments": "{\"answer\": \"| Modèle | Cylindrée |\\n|--------|-----------|\\n| Yamaha MT-07 (2020) | 689 cm³ |\", \"claims\": [{\"text\": \"La fiche de la Yamaha MT-07 2020 indique une cylindrée de 689 cm³.\", \"evidence_ids\": [\"4fbfc9bd85ffa460:row:23\"]}], \"missing\": [], \"needs_clarification\": false}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 5470,
+            "output_tokens": 122,
+            "cost_usd": 0.00025002,
+            "request_id": "gen-1792009682-BYmCjJsgjHpCnMmJJSYo",
+            "upstream_provider": "Mistral"
+          },
+          "model": "mistralai/mistral-small-2603",
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "4fbfc9bd85ffa460:identity",
+          "kind": "source_row",
+          "object_id": "4fbfc9bd85ffa460",
+          "claim_scope": "identity_only",
+          "subject": "Yamaha 700 MT-07 (2020)"
+        },
+        {
+          "evidence_id": "4fbfc9bd85ffa460:row:23",
+          "kind": "source_row",
+          "object_id": "4fbfc9bd85ffa460",
+          "row": {
+            "label": "",
+            "section": "Moteur",
+            "value": "689 cc (Alésage * course: 80 x 68.6 mm)"
+          },
+          "subject": "Yamaha 700 MT-07 (2020)"
+        }
+      ],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 2984,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "DK9ChI0yS",
+            "before_characters": 1008,
+            "after_characters": 1313,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "get_fiches",
+            "call_id": "WqWysiGyi",
+            "before_characters": 1229,
+            "after_characters": 1628,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 3.900473291054368,
+        "model_seconds": 3.382099209120497,
+        "tool_seconds": 0.5175431671086699,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 14489,
+        "output_tokens": 220,
+        "cost_usd": 0.0010935900000000002,
+        "peak_memory_bytes": 1667448832,
+        "requests": [
+          {
+            "input_tokens": 4231,
+            "output_tokens": 58,
+            "cost_usd": 0.00066945,
+            "request_id": "gen-1792009680-VTg1FbUYMIEEufO1UKz7",
+            "upstream_provider": "Mistral"
+          },
+          {
+            "input_tokens": 4788,
+            "output_tokens": 40,
+            "cost_usd": 0.00017412,
+            "request_id": "gen-1792009681-d8CQfju3ANR7tq1n4Bv3",
+            "upstream_provider": "Mistral"
+          },
+          {
+            "input_tokens": 5470,
+            "output_tokens": 122,
+            "cost_usd": 0.00025002,
+            "request_id": "gen-1792009682-BYmCjJsgjHpCnMmJJSYo",
+            "upstream_provider": "Mistral"
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": true,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q10"
+    },
+    {
+      "turn": 1,
+      "question": "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart.",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [
+        {
+          "id": "rXbP0pUDa",
+          "name": "compare_fiches",
+          "arguments": {
+            "object_ids": [
+              "Honda_CB_500_F_2020",
+              "Yamaha_MT-07_2020"
+            ],
+            "fields": [
+              "seat_height_mm"
+            ]
+          },
+          "result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "matrix": [],
+              "deltas": []
+            },
+            "evidence": [],
+            "missing": [
+              {
+                "subject": "Honda_CB_500_F_2020",
+                "field": "identity",
+                "reason": "Unknown fiche ID; no substitution"
+              },
+              {
+                "subject": "Yamaha_MT-07_2020",
+                "field": "identity",
+                "reason": "Unknown fiche ID; no substitution"
+              }
+            ],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "Honda_CB_500_F_2020",
+                  "Yamaha_MT-07_2020"
+                ]
+              },
+              "searched_fiches": 0,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 0.196
+          },
+          "delivered_result": {
+            "status": "not_found",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "matrix": [],
+              "deltas": []
+            },
+            "evidence": [],
+            "missing": [
+              {
+                "subject": "Honda_CB_500_F_2020",
+                "field": "identity",
+                "reason": "Unknown fiche ID; no substitution"
+              },
+              {
+                "subject": "Yamaha_MT-07_2020",
+                "field": "identity",
+                "reason": "Unknown fiche ID; no substitution"
+              }
+            ],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "Honda_CB_500_F_2020",
+                  "Yamaha_MT-07_2020"
+                ]
+              },
+              "searched_fiches": 0,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {},
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.00020579190459102392
+        },
+        {
+          "id": "6C4FNVB3U",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Honda CB 500 F",
+            "scope": {
+              "brand": "Honda",
+              "model_tokens": [
+                "CB",
+                "500",
+                "F"
+              ]
+            },
+            "page_size": 5
+          },
+          "result": {
+            "status": "ambiguous",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "8a4034da0ac189fd",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/honda/9689/CB-500-F-2023/contact.html",
+                  "source_sha256": "47e7b7d7e76ddaf170dfd05ca36d5b82bd06cf1d94416812afffe6ab637da503"
+                },
+                {
+                  "id": "aaac27c37592b9cc",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2022,
+                  "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+                  "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1"
+                },
+                {
+                  "id": "496a038abc9da8b7",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2021,
+                  "source_url": "https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html",
+                  "source_sha256": "1c24ebf753b51b105240dce84c9c85460d105f75e4cd9a763a503d01fbd2e686"
+                },
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                  "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                },
+                {
+                  "id": "f938f51077e8484e",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2019,
+                  "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+                  "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4"
+                }
+              ],
+              "total_candidates": 12,
+              "ambiguity": true
+            },
+            "evidence": [
+              {
+                "evidence_id": "8a4034da0ac189fd:identity",
+                "kind": "source_row",
+                "id": "8a4034da0ac189fd",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2023,
+                "source_url": "https://www.motoplanete.com/honda/9689/CB-500-F-2023/contact.html",
+                "source_sha256": "47e7b7d7e76ddaf170dfd05ca36d5b82bd06cf1d94416812afffe6ab637da503"
+              },
+              {
+                "evidence_id": "aaac27c37592b9cc:identity",
+                "kind": "source_row",
+                "id": "aaac27c37592b9cc",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2022,
+                "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+                "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1"
+              },
+              {
+                "evidence_id": "496a038abc9da8b7:identity",
+                "kind": "source_row",
+                "id": "496a038abc9da8b7",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2021,
+                "source_url": "https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html",
+                "source_sha256": "1c24ebf753b51b105240dce84c9c85460d105f75e4cd9a763a503d01fbd2e686"
+              },
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "id": "555a2d677db34a14",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+              },
+              {
+                "evidence_id": "f938f51077e8484e:identity",
+                "kind": "source_row",
+                "id": "f938f51077e8484e",
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2019,
+                "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+                "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 5,
+              "total": 12,
+              "next_cursor": "ce2b4918f2794df59576b3db39fbafb9"
+            },
+            "timing_ms": 39.038
+          },
+          "delivered_result": {
+            "status": "ambiguous",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "8a4034da0ac189fd",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2023,
+                  "evidence_id": "8a4034da0ac189fd:identity"
+                },
+                {
+                  "id": "aaac27c37592b9cc",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2022,
+                  "evidence_id": "aaac27c37592b9cc:identity"
+                },
+                {
+                  "id": "496a038abc9da8b7",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2021,
+                  "evidence_id": "496a038abc9da8b7:identity"
+                },
+                {
+                  "id": "555a2d677db34a14",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2020,
+                  "evidence_id": "555a2d677db34a14:identity"
+                },
+                {
+                  "id": "f938f51077e8484e",
+                  "brand": "Honda",
+                  "model": "CB 500 F",
+                  "year": 2019,
+                  "evidence_id": "f938f51077e8484e:identity"
+                }
+              ],
+              "total_candidates": 12,
+              "ambiguity": true
+            },
+            "evidence": [
+              {
+                "evidence_id": "8a4034da0ac189fd:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "8a4034da0ac189fd",
+                "subject": "Honda CB 500 F (2023)"
+              },
+              {
+                "evidence_id": "aaac27c37592b9cc:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "aaac27c37592b9cc",
+                "subject": "Honda CB 500 F (2022)"
+              },
+              {
+                "evidence_id": "496a038abc9da8b7:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "496a038abc9da8b7",
+                "subject": "Honda CB 500 F (2021)"
+              },
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "555a2d677db34a14",
+                "subject": "Honda CB 500 F (2020)"
+              },
+              {
+                "evidence_id": "f938f51077e8484e:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "f938f51077e8484e",
+                "subject": "Honda CB 500 F (2019)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Honda",
+                "model_tokens": [
+                  "CB",
+                  "500",
+                  "F"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 5,
+              "total": 12,
+              "next_cursor": "ce2b4918f2794df59576b3db39fbafb9"
+            },
+            "sources": {
+              "8a4034da0ac189fd": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2023,
+                "source_url": "https://www.motoplanete.com/honda/9689/CB-500-F-2023/contact.html"
+              },
+              "aaac27c37592b9cc": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2022,
+                "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html"
+              },
+              "496a038abc9da8b7": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2021,
+                "source_url": "https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html"
+              },
+              "555a2d677db34a14": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html"
+              },
+              "f938f51077e8484e": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2019,
+                "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.039044750039465725
+        },
+        {
+          "id": "zk94Ples9",
+          "name": "resolve_models",
+          "arguments": {
+            "query": "Yamaha MT-07",
+            "scope": {
+              "brand": "Yamaha",
+              "model_tokens": [
+                "MT",
+                "07"
+              ]
+            },
+            "page_size": 5
+          },
+          "result": {
+            "status": "ambiguous",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "f440f7d38f051638",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07 Grand Prix de France",
+                  "year": 2025,
+                  "source_url": "https://www.motoplanete.com/yamaha/11575/700-MT-07-Grand-Prix-de-France-2025/contact.html",
+                  "source_sha256": "78726e873b335ada29727008f49e72dd8349bd1ec3656ec60d476d26c6d386eb"
+                },
+                {
+                  "id": "16d3bb8fb28ae890",
+                  "brand": "Yamaha",
+                  "model": "MT-07 Pure 700",
+                  "year": 2024,
+                  "source_url": "https://www.motoplanete.com/yamaha/10115/MT-07-Pure-700-2024/contact.html",
+                  "source_sha256": "f5005a834f7f0ea05a54069d2e78c02ee096323c1ee1bf0f451e2d2c6303a99e"
+                },
+                {
+                  "id": "2fb6700cc149c4bc",
+                  "brand": "Yamaha",
+                  "model": "MT-07 Pure 700",
+                  "year": 2023,
+                  "source_url": "https://www.motoplanete.com/yamaha/9617/MT-07-Pure-700-2023/contact.html",
+                  "source_sha256": "3f3ac5fd9be5254103501fdf28c79e59f90c90b933bdee257b63d7f6feb2487c"
+                },
+                {
+                  "id": "9719b20c19beb6cd",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2021,
+                  "source_url": "https://www.motoplanete.com/yamaha/8553/700-MT-07-2021/contact.html",
+                  "source_sha256": "bbc06a098acf6e85d5c94db286060e3d7be180dea6e9a02e7a1980fc7ff861b9"
+                },
+                {
+                  "id": "4fbfc9bd85ffa460",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2020,
+                  "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                  "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+                }
+              ],
+              "total_candidates": 10,
+              "ambiguity": true
+            },
+            "evidence": [
+              {
+                "evidence_id": "f440f7d38f051638:identity",
+                "kind": "source_row",
+                "id": "f440f7d38f051638",
+                "brand": "Yamaha",
+                "model": "700 MT-07 Grand Prix de France",
+                "year": 2025,
+                "source_url": "https://www.motoplanete.com/yamaha/11575/700-MT-07-Grand-Prix-de-France-2025/contact.html",
+                "source_sha256": "78726e873b335ada29727008f49e72dd8349bd1ec3656ec60d476d26c6d386eb"
+              },
+              {
+                "evidence_id": "16d3bb8fb28ae890:identity",
+                "kind": "source_row",
+                "id": "16d3bb8fb28ae890",
+                "brand": "Yamaha",
+                "model": "MT-07 Pure 700",
+                "year": 2024,
+                "source_url": "https://www.motoplanete.com/yamaha/10115/MT-07-Pure-700-2024/contact.html",
+                "source_sha256": "f5005a834f7f0ea05a54069d2e78c02ee096323c1ee1bf0f451e2d2c6303a99e"
+              },
+              {
+                "evidence_id": "2fb6700cc149c4bc:identity",
+                "kind": "source_row",
+                "id": "2fb6700cc149c4bc",
+                "brand": "Yamaha",
+                "model": "MT-07 Pure 700",
+                "year": 2023,
+                "source_url": "https://www.motoplanete.com/yamaha/9617/MT-07-Pure-700-2023/contact.html",
+                "source_sha256": "3f3ac5fd9be5254103501fdf28c79e59f90c90b933bdee257b63d7f6feb2487c"
+              },
+              {
+                "evidence_id": "9719b20c19beb6cd:identity",
+                "kind": "source_row",
+                "id": "9719b20c19beb6cd",
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2021,
+                "source_url": "https://www.motoplanete.com/yamaha/8553/700-MT-07-2021/contact.html",
+                "source_sha256": "bbc06a098acf6e85d5c94db286060e3d7be180dea6e9a02e7a1980fc7ff861b9"
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "id": "4fbfc9bd85ffa460",
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "model_tokens": [
+                  "MT",
+                  "07"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 5,
+              "total": 10,
+              "next_cursor": "691a018bc53e4cda926e1ff8e59e9068"
+            },
+            "timing_ms": 26.026
+          },
+          "delivered_result": {
+            "status": "ambiguous",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "candidates": [
+                {
+                  "id": "f440f7d38f051638",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07 Grand Prix de France",
+                  "year": 2025,
+                  "evidence_id": "f440f7d38f051638:identity"
+                },
+                {
+                  "id": "16d3bb8fb28ae890",
+                  "brand": "Yamaha",
+                  "model": "MT-07 Pure 700",
+                  "year": 2024,
+                  "evidence_id": "16d3bb8fb28ae890:identity"
+                },
+                {
+                  "id": "2fb6700cc149c4bc",
+                  "brand": "Yamaha",
+                  "model": "MT-07 Pure 700",
+                  "year": 2023,
+                  "evidence_id": "2fb6700cc149c4bc:identity"
+                },
+                {
+                  "id": "9719b20c19beb6cd",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2021,
+                  "evidence_id": "9719b20c19beb6cd:identity"
+                },
+                {
+                  "id": "4fbfc9bd85ffa460",
+                  "brand": "Yamaha",
+                  "model": "700 MT-07",
+                  "year": 2020,
+                  "evidence_id": "4fbfc9bd85ffa460:identity"
+                }
+              ],
+              "total_candidates": 10,
+              "ambiguity": true
+            },
+            "evidence": [
+              {
+                "evidence_id": "f440f7d38f051638:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "f440f7d38f051638",
+                "subject": "Yamaha 700 MT-07 Grand Prix de France (2025)"
+              },
+              {
+                "evidence_id": "16d3bb8fb28ae890:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "16d3bb8fb28ae890",
+                "subject": "Yamaha MT-07 Pure 700 (2024)"
+              },
+              {
+                "evidence_id": "2fb6700cc149c4bc:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "2fb6700cc149c4bc",
+                "subject": "Yamaha MT-07 Pure 700 (2023)"
+              },
+              {
+                "evidence_id": "9719b20c19beb6cd:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "9719b20c19beb6cd",
+                "subject": "Yamaha 700 MT-07 (2021)"
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "claim_scope": "identity_only",
+                "object_id": "4fbfc9bd85ffa460",
+                "subject": "Yamaha 700 MT-07 (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "brand": "Yamaha",
+                "model_tokens": [
+                  "MT",
+                  "07"
+                ]
+              },
+              "searched_fiches": 11478,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 5,
+              "total": 10,
+              "next_cursor": "691a018bc53e4cda926e1ff8e59e9068"
+            },
+            "sources": {
+              "f440f7d38f051638": {
+                "brand": "Yamaha",
+                "model": "700 MT-07 Grand Prix de France",
+                "year": 2025,
+                "source_url": "https://www.motoplanete.com/yamaha/11575/700-MT-07-Grand-Prix-de-France-2025/contact.html"
+              },
+              "16d3bb8fb28ae890": {
+                "brand": "Yamaha",
+                "model": "MT-07 Pure 700",
+                "year": 2024,
+                "source_url": "https://www.motoplanete.com/yamaha/10115/MT-07-Pure-700-2024/contact.html"
+              },
+              "2fb6700cc149c4bc": {
+                "brand": "Yamaha",
+                "model": "MT-07 Pure 700",
+                "year": 2023,
+                "source_url": "https://www.motoplanete.com/yamaha/9617/MT-07-Pure-700-2023/contact.html"
+              },
+              "9719b20c19beb6cd": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2021,
+                "source_url": "https://www.motoplanete.com/yamaha/8553/700-MT-07-2021/contact.html"
+              },
+              "4fbfc9bd85ffa460": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.02603083406575024
+        },
+        {
+          "id": "H1JNZ4hyf",
+          "name": "get_fiches",
+          "arguments": {
+            "object_ids": [
+              "555a2d677db34a14",
+              "4fbfc9bd85ffa460"
+            ],
+            "fields": [
+              "seat_height_mm"
+            ],
+            "sections": []
+          },
+          "result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                    "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [],
+                  "original_rows": [
+                    {
+                      "label": "Hauteur de selle",
+                      "section": "Châssis",
+                      "value": "785 mm"
+                    }
+                  ]
+                },
+                {
+                  "identity": {
+                    "id": "4fbfc9bd85ffa460",
+                    "brand": "Yamaha",
+                    "model": "700 MT-07",
+                    "year": 2020,
+                    "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                    "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 805.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "4fbfc9bd85ffa460:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [],
+                  "original_rows": [
+                    {
+                      "label": "Hauteur de selle",
+                      "section": "Châssis",
+                      "value": "805 mm"
+                    }
+                  ]
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+                "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                }
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:row:2",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html",
+                "source_sha256": "17d06f314935bd51494d856fe0c78d2996b3d9260235977f6476c2e8e6c20b26",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "805 mm"
+                }
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "555a2d677db34a14",
+                  "4fbfc9bd85ffa460"
+                ]
+              },
+              "searched_fiches": 2,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "timing_ms": 3.737
+          },
+          "delivered_result": {
+            "status": "ok",
+            "snapshot_id": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+            "payload": {
+              "fiches": [
+                {
+                  "identity": {
+                    "id": "555a2d677db34a14",
+                    "brand": "Honda",
+                    "model": "CB 500 F",
+                    "year": 2020,
+                    "evidence_id": "555a2d677db34a14:identity"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 785.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "555a2d677db34a14:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [],
+                  "original_rows": []
+                },
+                {
+                  "identity": {
+                    "id": "4fbfc9bd85ffa460",
+                    "brand": "Yamaha",
+                    "model": "700 MT-07",
+                    "year": 2020,
+                    "evidence_id": "4fbfc9bd85ffa460:identity"
+                  },
+                  "measures": {
+                    "seat_height_mm": {
+                      "value": 805.0,
+                      "unit": "mm",
+                      "evidence_ids": [
+                        "4fbfc9bd85ffa460:row:2"
+                      ],
+                      "qualification": null
+                    }
+                  },
+                  "equipment": [],
+                  "passages": [],
+                  "original_rows": []
+                }
+              ]
+            },
+            "evidence": [
+              {
+                "evidence_id": "555a2d677db34a14:row:2",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "785 mm"
+                },
+                "subject": "Honda CB 500 F (2020)"
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:row:2",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "row": {
+                  "label": "Hauteur de selle",
+                  "section": "Châssis",
+                  "value": "805 mm"
+                },
+                "subject": "Yamaha 700 MT-07 (2020)"
+              },
+              {
+                "evidence_id": "555a2d677db34a14:identity",
+                "kind": "source_row",
+                "object_id": "555a2d677db34a14",
+                "claim_scope": "identity_only",
+                "subject": "Honda CB 500 F (2020)"
+              },
+              {
+                "evidence_id": "4fbfc9bd85ffa460:identity",
+                "kind": "source_row",
+                "object_id": "4fbfc9bd85ffa460",
+                "claim_scope": "identity_only",
+                "subject": "Yamaha 700 MT-07 (2020)"
+              }
+            ],
+            "missing": [],
+            "coverage": {
+              "requested_scope": {
+                "object_ids": [
+                  "555a2d677db34a14",
+                  "4fbfc9bd85ffa460"
+                ]
+              },
+              "searched_fiches": 2,
+              "searched_passages": null,
+              "exhaustive": true,
+              "truncation_reason": null
+            },
+            "pagination": {
+              "returned": 0,
+              "total": 0,
+              "next_cursor": null
+            },
+            "sources": {
+              "555a2d677db34a14": {
+                "brand": "Honda",
+                "model": "CB 500 F",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html"
+              },
+              "4fbfc9bd85ffa460": {
+                "brand": "Yamaha",
+                "model": "700 MT-07",
+                "year": 2020,
+                "source_url": "https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html"
+              }
+            },
+            "view": {
+              "format": "catalogue-compact-v2",
+              "raw_receipt_retained": true,
+              "audit_fields_omitted": true,
+              "duplicate_source_text_referenced": true,
+              "identity_labels_inline": true,
+              "identity_proofs_scope": "identity_only",
+              "original_equipment_sources_citable": true,
+              "source_identity_and_url_lookup": "sources[object_id or identity.id]",
+              "decision_policy_lookup": "classification_policies[policy_id]",
+              "content_omitted": false,
+              "protected_fields": []
+            }
+          },
+          "seconds": 0.0037482919869944453
+        }
+      ],
+      "model_responses": [
+        {
+          "round": 1,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": null,
+            "refusal": null,
+            "reasoning": null,
+            "tool_calls": [
+              {
+                "type": "function",
+                "index": 0,
+                "id": "rXbP0pUDa",
+                "function": {
+                  "name": "compare_fiches",
+                  "arguments": "{\"object_ids\": [\"Honda_CB_500_F_2020\", \"Yamaha_MT-07_2020\"], \"fields\": [\"seat_height_mm\"]}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 4248,
+            "output_tokens": 50,
+            "cost_usd": 0.00010128,
+            "request_id": "gen-1792009684-turRMHEdVb1Mo78i3BQZ",
+            "upstream_provider": "Mistral"
+          },
+          "model": "mistralai/mistral-small-2603",
+          "finish_reason": "tool_calls"
+        },
+        {
+          "round": 2,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": null,
+            "refusal": null,
+            "reasoning": null,
+            "tool_calls": [
+              {
+                "type": "function",
+                "index": 0,
+                "id": "6C4FNVB3U",
+                "function": {
+                  "name": "resolve_models",
+                  "arguments": "{\"query\": \"Honda CB 500 F\", \"scope\": {\"brand\": \"Honda\", \"model_tokens\": [\"CB\", \"500\", \"F\"]}, \"page_size\": 5}"
+                }
+              },
+              {
+                "type": "function",
+                "index": 1,
+                "id": "zk94Ples9",
+                "function": {
+                  "name": "resolve_models",
+                  "arguments": "{\"query\": \"Yamaha MT-07\", \"scope\": {\"brand\": \"Yamaha\", \"model_tokens\": [\"MT\", \"07\"]}, \"page_size\": 5}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 4650,
+            "output_tokens": 97,
+            "cost_usd": 0.00018546,
+            "request_id": "gen-1792009684-18nylFG23x25DJx3sTIU",
+            "upstream_provider": "Mistral"
+          },
+          "model": "mistralai/mistral-small-2603",
+          "finish_reason": "tool_calls"
+        },
+        {
+          "round": 3,
+          "text": "",
+          "native": {
+            "role": "assistant",
+            "content": null,
+            "refusal": null,
+            "reasoning": null,
+            "tool_calls": [
+              {
+                "type": "function",
+                "index": 0,
+                "id": "H1JNZ4hyf",
+                "function": {
+                  "name": "get_fiches",
+                  "arguments": "{\"object_ids\": [\"555a2d677db34a14\", \"4fbfc9bd85ffa460\"], \"fields\": [\"seat_height_mm\"], \"sections\": []}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "input_tokens": 7428,
+            "output_tokens": 55,
+            "cost_usd": 0.0011472,
+            "request_id": "gen-1792009686-XO0SvvHIogIexiND5brM",
+            "upstream_provider": "Mistral"
+          },
+          "model": "mistralai/mistral-small-2603",
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "8a4034da0ac189fd:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "8a4034da0ac189fd",
+          "subject": "Honda CB 500 F (2023)"
+        },
+        {
+          "evidence_id": "aaac27c37592b9cc:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "aaac27c37592b9cc",
+          "subject": "Honda CB 500 F (2022)"
+        },
+        {
+          "evidence_id": "496a038abc9da8b7:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "496a038abc9da8b7",
+          "subject": "Honda CB 500 F (2021)"
+        },
+        {
+          "evidence_id": "555a2d677db34a14:identity",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "claim_scope": "identity_only",
+          "subject": "Honda CB 500 F (2020)"
+        },
+        {
+          "evidence_id": "f938f51077e8484e:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "f938f51077e8484e",
+          "subject": "Honda CB 500 F (2019)"
+        },
+        {
+          "evidence_id": "f440f7d38f051638:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "f440f7d38f051638",
+          "subject": "Yamaha 700 MT-07 Grand Prix de France (2025)"
+        },
+        {
+          "evidence_id": "16d3bb8fb28ae890:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "16d3bb8fb28ae890",
+          "subject": "Yamaha MT-07 Pure 700 (2024)"
+        },
+        {
+          "evidence_id": "2fb6700cc149c4bc:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "2fb6700cc149c4bc",
+          "subject": "Yamaha MT-07 Pure 700 (2023)"
+        },
+        {
+          "evidence_id": "9719b20c19beb6cd:identity",
+          "kind": "source_row",
+          "claim_scope": "identity_only",
+          "object_id": "9719b20c19beb6cd",
+          "subject": "Yamaha 700 MT-07 (2021)"
+        },
+        {
+          "evidence_id": "4fbfc9bd85ffa460:identity",
+          "kind": "source_row",
+          "object_id": "4fbfc9bd85ffa460",
+          "claim_scope": "identity_only",
+          "subject": "Yamaha 700 MT-07 (2020)"
+        },
+        {
+          "evidence_id": "555a2d677db34a14:row:2",
+          "kind": "source_row",
+          "object_id": "555a2d677db34a14",
+          "row": {
+            "label": "Hauteur de selle",
+            "section": "Châssis",
+            "value": "785 mm"
+          },
+          "subject": "Honda CB 500 F (2020)"
+        },
+        {
+          "evidence_id": "4fbfc9bd85ffa460:row:2",
+          "kind": "source_row",
+          "object_id": "4fbfc9bd85ffa460",
+          "row": {
+            "label": "Hauteur de selle",
+            "section": "Châssis",
+            "value": "805 mm"
+          },
+          "subject": "Yamaha 700 MT-07 (2020)"
+        }
+      ],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 9643,
+        "compression_events": [
+          {
+            "kind": "tool_result_view",
+            "tool": "compare_fiches",
+            "call_id": "rXbP0pUDa",
+            "before_characters": 612,
+            "after_characters": 1033,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "6C4FNVB3U",
+            "before_characters": 3155,
+            "after_characters": 3009,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "resolve_models",
+            "call_id": "zk94Ples9",
+            "before_characters": 3319,
+            "after_characters": 3171,
+            "content_omitted": false,
+            "omissions": {}
+          },
+          {
+            "kind": "tool_result_view",
+            "tool": "get_fiches",
+            "call_id": "H1JNZ4hyf",
+            "before_characters": 2024,
+            "after_characters": 2430,
+            "content_omitted": false,
+            "omissions": {}
+          }
+        ]
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 4.369332958012819,
+        "model_seconds": 4.299041040823795,
+        "tool_seconds": 0.06902966799680144,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": 16326,
+        "output_tokens": 202,
+        "cost_usd": 0.0014339399999999999,
+        "peak_memory_bytes": 1667448832,
+        "requests": [
+          {
+            "input_tokens": 4248,
+            "output_tokens": 50,
+            "cost_usd": 0.00010128,
+            "request_id": "gen-1792009684-turRMHEdVb1Mo78i3BQZ",
+            "upstream_provider": "Mistral"
+          },
+          {
+            "input_tokens": 4650,
+            "output_tokens": 97,
+            "cost_usd": 0.00018546,
+            "request_id": "gen-1792009684-18nylFG23x25DJx3sTIU",
+            "upstream_provider": "Mistral"
+          },
+          {
+            "input_tokens": 7428,
+            "output_tokens": 55,
+            "cost_usd": 0.0011472,
+            "request_id": "gen-1792009686-XO0SvvHIogIexiND5brM",
+            "upstream_provider": "Mistral"
+          }
+        ]
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q17"
+    },
+    {
+      "turn": 1,
+      "question": "Quelles différences de transmission indiquent la Gold Wing Tour DCT/Airbag 2018 et la BMW R 1250 RT standard 2020 ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 0.8040239589754492,
+        "model_seconds": 0.803953625028953,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1667448832,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q24"
+    },
+    {
+      "turn": 1,
+      "question": "Quel est le plus ancien millésime de Gold Wing avec une mention DCT dans les transmissions de notre base, et sur quelle variante ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 0.6866660420782864,
+        "model_seconds": 0.686582291033119,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1667448832,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q27"
+    },
+    {
+      "turn": 1,
+      "question": "Quelles variantes de Kawasaki Z 650 avons-nous pour 2020 ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 0.579318750067614,
+        "model_seconds": 0.5791609999723732,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1667448832,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q31"
+    },
+    {
+      "turn": 1,
+      "question": "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 a-t-elle un régulateur ?",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 0.6726341251051053,
+        "model_seconds": 0.6725512079428881,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1667448832,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q34"
+    },
+    {
+      "turn": 1,
+      "question": "Liste les Yamaha de 2020 avec ABS et shifter de série, avec les sources.",
+      "status": "error",
+      "error": "openrouter HTTP 429",
+      "answer": "",
+      "final": null,
+      "calls": [],
+      "model_responses": [],
+      "evidence": [],
+      "context": {
+        "limit_characters": 32000,
+        "per_result_limit_characters": 24000,
+        "before_characters": 0,
+        "retained_characters": 0,
+        "compression_events": []
+      },
+      "format_repairs": [],
+      "timing": {
+        "full_answer_seconds": 0.4831982080359012,
+        "model_seconds": 0.4830997079843655,
+        "tool_seconds": 0.0,
+        "ttft_seconds": null,
+        "first_useful_result_seconds": null
+      },
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost_usd": null,
+        "peak_memory_bytes": 1667448832,
+        "requests": []
+      },
+      "adapter": {
+        "provider": "openrouter",
+        "model": "mistralai/mistral-small-2603",
+        "settings": {
+          "max_tokens": 2400,
+          "reasoning_effort": "none",
+          "allow_fallbacks": false
+        }
+      },
+      "judgments": {
+        "correct": null,
+        "complete": null,
+        "citations_valid": null,
+        "claims_supported": null,
+        "reviewer": null
+      },
+      "candidate": "openrouter:mistralai/mistral-small-2603",
+      "case_id": "Q37"
+    },
+    {
+      "routing": {
+        "answer": "**8 fiches correspondent dans le catalogue.** Équipements : ABS — de série, shifter — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+        "route": "count",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {
+            "brand": "Yamaha",
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [],
+          "fields": [
+            "equipment"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "count",
+          "equipment_filters": [
+            {
+              "equipment": "ABS",
+              "status": "standard"
+            },
+            {
+              "equipment": "shifter",
+              "status": "standard"
+            }
+          ]
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 1,
+                "recognized": 0,
+                "unresolved": 0
+              },
+              "confidence": 1
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "count",
+              "probabilities": {
+                "filter": 0.01,
+                "count": 0.97,
+                "details": 0,
+                "comparison": 0,
+                "clarify": 0,
+                "unsupported": 0.02,
+                "complex": 0
+              },
+              "confidence": 0.96
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.9,
+                "used_price": 0,
+                "market": 0.02,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.03,
+                "contradictory": 0.05
+              },
+              "confidence": 0.88
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "ABS",
+              "probabilities": {
+                "none": 0.01,
+                "ABS": 0.83,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0.16,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.81
+            },
+            "status": {
+              "type": "choice",
+              "choice": "standard",
+              "probabilities": {
+                "standard": 0.58,
+                "optional": 0.01,
+                "explicitly_absent": 0,
+                "unknown": 0.41
+              },
+              "confidence": 0.44
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.19,
+                "no": 0.81
+              },
+              "confidence": 0.62
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.67,
+                "no": 0.33
+              },
+              "confidence": 0.34
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.42,
+                "no": 0.58
+              },
+              "confidence": 0.16
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            }
+          },
+          "usage": {
+            "input_tokens": 3494,
+            "output_tokens": 953,
+            "cost": 0.000146748
+          },
+          "id": "gen-dec-1792009694-U3luTsA1a4tatEN0TR5Q",
+          "provider": "TypeSafe"
+        },
+        "seconds": 2.6642897920683026
+      },
+      "answer": "**8 fiches correspondent dans le catalogue.** Équipements : ABS — de série, shifter — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q01",
+      "turn": 1,
+      "question": "Combien de fiches Yamaha de 2020 indiquent ABS et shifter de série ?",
+      "full_answer_seconds": 2.664297458017245
+    },
+    {
+      "routing": {
+        "answer": "| Caractéristique | Yamaha 700 MT-07 (2020) |\n|---|---|\n| Cylindrée (cc) | Moteur — 689 cc (Alésage * course: 80 x 68.6 mm) |\n| Source | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |",
+        "route": "details",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {
+            "brand": "Yamaha",
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Yamaha",
+              "model": "700 MT-07"
+            }
+          ],
+          "fields": [
+            "displacement_ccm"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Quelle cylindrée indique la fiche de la Yamaha MT-07 2020 ?",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "details"
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "none": 0,
+                "recognized": 0.97,
+                "unresolved": 0.03
+              },
+              "confidence": 0.95
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "details",
+              "probabilities": {
+                "filter": 0,
+                "count": 0,
+                "details": 0.99,
+                "comparison": 0,
+                "clarify": 0.01,
+                "unsupported": 0,
+                "complex": 0
+              },
+              "confidence": 0.99
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.97,
+                "used_price": 0,
+                "market": 0.01,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.01,
+                "contradictory": 0.01
+              },
+              "confidence": 0.96
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 0.9400000000000001,
+                "ABS": 0.06,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.93
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.08,
+                "optional": 0,
+                "explicitly_absent": 0,
+                "unknown": 0.92
+              },
+              "confidence": 0.89
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.16,
+                "no": 0.84
+              },
+              "confidence": 0.68
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 1,
+                "no": 0
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.09,
+                "no": 0.91
+              },
+              "confidence": 0.82
+            }
+          },
+          "usage": {
+            "input_tokens": 3668,
+            "output_tokens": 953,
+            "cost": 0.000154056
+          },
+          "id": "gen-dec-1792009694-8K14ROwh5GmBxkK0Cy8h",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.24079991597682238
+      },
+      "answer": "| Caractéristique | Yamaha 700 MT-07 (2020) |\n|---|---|\n| Cylindrée (cc) | Moteur — 689 cc (Alésage * course: 80 x 68.6 mm) |\n| Source | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q10",
+      "turn": 1,
+      "question": "Quelle cylindrée indique la fiche de la Yamaha MT-07 2020 ?",
+      "full_answer_seconds": 0.2408041669987142
+    },
+    {
+      "routing": {
+        "answer": "| Caractéristique | Honda CB 500 F (2020) | Yamaha 700 MT-07 (2020) |\n|---|---|---|\n| Hauteur de selle (mm) | Châssis — Hauteur de selle : 785 mm | Châssis — Hauteur de selle : 805 mm |\n| Source | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Écart — Hauteur de selle | \\|785 − 805\\| = 20 mm. Ordre : Honda CB 500 F (2020) ; Yamaha 700 MT-07 (2020). |\n| Sources des valeurs de catalogue | [Honda CB 500 F (2020)](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) ; [Yamaha 700 MT-07 (2020)](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |",
+        "route": "comparison",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CB 500 F"
+            },
+            {
+              "brand": "Yamaha",
+              "model": "700 MT-07"
+            }
+          ],
+          "fields": [
+            "seat_height_mm"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart.",
+          "candidate_variants": [],
+          "calculation_question": "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart.",
+          "operation": "comparison"
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "none": 0,
+                "recognized": 1,
+                "unresolved": 0
+              },
+              "confidence": 1
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "comparison",
+              "probabilities": {
+                "filter": 0,
+                "count": 0,
+                "details": 0,
+                "comparison": 1,
+                "clarify": 0,
+                "unsupported": 0,
+                "complex": 0
+              },
+              "confidence": 1
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.98,
+                "used_price": 0,
+                "market": 0.01,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.01,
+                "contradictory": 0
+              },
+              "confidence": 0.98
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 0.96,
+                "ABS": 0.04,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.96
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.1,
+                "optional": 0,
+                "explicitly_absent": 0,
+                "unknown": 0.9
+              },
+              "confidence": 0.87
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.11,
+                "no": 0.89
+              },
+              "confidence": 0.78
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.97,
+                "no": 0.03
+              },
+              "confidence": 0.94
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.16,
+                "no": 0.84
+              },
+              "confidence": 0.68
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            }
+          },
+          "usage": {
+            "input_tokens": 4022,
+            "output_tokens": 953,
+            "cost": 0.000168924
+          },
+          "id": "gen-dec-1792009694-LKyJs7AYQkbea10yHY4B",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.2740315420087427
+      },
+      "answer": "| Caractéristique | Honda CB 500 F (2020) | Yamaha 700 MT-07 (2020) |\n|---|---|---|\n| Hauteur de selle (mm) | Châssis — Hauteur de selle : 785 mm | Châssis — Hauteur de selle : 805 mm |\n| Source | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Écart — Hauteur de selle | \\|785 − 805\\| = 20 mm. Ordre : Honda CB 500 F (2020) ; Yamaha 700 MT-07 (2020). |\n| Sources des valeurs de catalogue | [Honda CB 500 F (2020)](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) ; [Yamaha 700 MT-07 (2020)](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q17",
+      "turn": 1,
+      "question": "Compare la hauteur de selle de la Honda CB 500 F 2020 et de la Yamaha MT-07 2020. Donne l'écart.",
+      "full_answer_seconds": 0.2740397499874234
+    },
+    {
+      "routing": {
+        "answer": "Aucune fiche Motoplanète documentée pour les modèles et millésimes demandés. Je ne remplace pas ces millésimes par d’autres années.",
+        "route": "details",
+        "jev_calls": 1,
+        "plan": {
+          "operation": "details",
+          "identity": {
+            "year": 2018
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "BMW",
+              "model": "R 1250 RT"
+            }
+          ],
+          "fields": [
+            "transmission"
+          ],
+          "source_notes": [
+            "dct"
+          ],
+          "equipment": null,
+          "status": "standard"
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "none": 0.02,
+                "recognized": 0.62,
+                "unresolved": 0.36
+              },
+              "confidence": 0.43
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "comparison",
+              "probabilities": {
+                "filter": 0,
+                "count": 0,
+                "details": 0,
+                "comparison": 0.9,
+                "clarify": 0.01,
+                "unsupported": 0.09,
+                "complex": 0
+              },
+              "confidence": 0.88
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.84,
+                "used_price": 0,
+                "market": 0.02,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.11,
+                "contradictory": 0.03
+              },
+              "confidence": 0.81
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "airbag",
+              "probabilities": {
+                "none": 0.38,
+                "ABS": 0.02,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0.08,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0.52
+              },
+              "confidence": 0.47
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.35,
+                "optional": 0.01,
+                "explicitly_absent": 0.02,
+                "unknown": 0.62
+              },
+              "confidence": 0.49
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.07,
+                "no": 0.93
+              },
+              "confidence": 0.86
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.9,
+                "no": 0.1
+              },
+              "confidence": 0.8
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            }
+          },
+          "usage": {
+            "input_tokens": 3809,
+            "output_tokens": 954,
+            "cost": 0.000159978
+          },
+          "id": "gen-dec-1792009695-KcruKzXSdqeNbBXIi02c",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.33704908401705325
+      },
+      "answer": "Aucune fiche Motoplanète documentée pour les modèles et millésimes demandés. Je ne remplace pas ces millésimes par d’autres années.",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q24",
+      "turn": 1,
+      "question": "Quelles différences de transmission indiquent la Gold Wing Tour DCT/Airbag 2018 et la BMW R 1250 RT standard 2020 ?",
+      "full_answer_seconds": 0.3370670420117676
+    },
+    {
+      "routing": {
+        "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+        "route": "clarification",
+        "jev_calls": 1,
+        "plan": {
+          "operation": "details",
+          "identity": {
+            "year": null
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "GL 1800 GOLDWING"
+            },
+            {
+              "brand": "Honda",
+              "model": "GL 1500 GOLDWING"
+            }
+          ],
+          "fields": [
+            "transmission"
+          ],
+          "source_notes": [
+            "dct"
+          ],
+          "equipment": null,
+          "status": "standard"
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "none": 0.04,
+                "recognized": 0.94,
+                "unresolved": 0.02
+              },
+              "confidence": 0.91
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "unsupported",
+              "probabilities": {
+                "filter": 0.3,
+                "count": 0,
+                "details": 0.11,
+                "comparison": 0.07,
+                "clarify": 0.1,
+                "unsupported": 0.41000000000000003,
+                "complex": 0.01
+              },
+              "confidence": 0.31
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.79,
+                "used_price": 0,
+                "market": 0.03,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.17,
+                "contradictory": 0.01
+              },
+              "confidence": 0.76
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 0.75,
+                "ABS": 0.02,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0.23,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.72
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.11,
+                "optional": 0.02,
+                "explicitly_absent": 0,
+                "unknown": 0.87
+              },
+              "confidence": 0.83
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.08,
+                "no": 0.92
+              },
+              "confidence": 0.84
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.59,
+                "no": 0.41
+              },
+              "confidence": 0.18
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            }
+          },
+          "usage": {
+            "input_tokens": 3637,
+            "output_tokens": 953,
+            "cost": 0.000152754
+          },
+          "id": "gen-dec-1792009695-e9olDTrTrBmdRk7IvqMd",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.26510445901658386
+      },
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q27",
+      "turn": 1,
+      "question": "Quel est le plus ancien millésime de Gold Wing avec une mention DCT dans les transmissions de notre base, et sur quelle variante ?",
+      "full_answer_seconds": 0.2651092909509316
+    },
+    {
+      "routing": {
+        "answer": "**2 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Kawasaki Z 650 | 2020 | [Fiche](https://www.motoplanete.com/kawasaki/8216/Z-650-2020/contact.html) |\n| Kawasaki Z 650 Performance | 2020 | [Fiche](https://www.motoplanete.com/kawasaki/8905/Z-650-Performance-2020/contact.html) |",
+        "route": "filter",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {
+            "model": "Z 650",
+            "brand": "Kawasaki",
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Kawasaki",
+              "model": "Z 650"
+            }
+          ],
+          "fields": [],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Quelles variantes de Kawasaki Z 650 avons-nous pour 2020 ?",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "filter"
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "none": 0,
+                "recognized": 1,
+                "unresolved": 0
+              },
+              "confidence": 1
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "filter",
+              "probabilities": {
+                "filter": 0.78,
+                "count": 0.01,
+                "details": 0.12000000000000001,
+                "comparison": 0.02,
+                "clarify": 0.06,
+                "unsupported": 0.01,
+                "complex": 0
+              },
+              "confidence": 0.74
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.95,
+                "used_price": 0,
+                "market": 0.02,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.02,
+                "contradictory": 0.01
+              },
+              "confidence": 0.94
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 0.95,
+                "ABS": 0.05,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.94
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.06,
+                "optional": 0,
+                "explicitly_absent": 0,
+                "unknown": 0.94
+              },
+              "confidence": 0.92
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.12,
+                "no": 0.88
+              },
+              "confidence": 0.76
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            }
+          },
+          "usage": {
+            "input_tokens": 3677,
+            "output_tokens": 953,
+            "cost": 0.000154434
+          },
+          "id": "gen-dec-1792009695-KtVgYF2iVdJPDa9KBwpH",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.2602184999268502
+      },
+      "answer": "**2 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Kawasaki Z 650 | 2020 | [Fiche](https://www.motoplanete.com/kawasaki/8216/Z-650-2020/contact.html) |\n| Kawasaki Z 650 Performance | 2020 | [Fiche](https://www.motoplanete.com/kawasaki/8905/Z-650-Performance-2020/contact.html) |",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q31",
+      "turn": 1,
+      "question": "Quelles variantes de Kawasaki Z 650 avons-nous pour 2020 ?",
+      "full_answer_seconds": 0.2602273339871317
+    },
+    {
+      "routing": {
+        "answer": "| Caractéristique | Honda CB 500 F (2020) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |",
+        "route": "details",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {
+            "brand": "Honda",
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [
+            {
+              "brand": "Honda",
+              "model": "CB 500 F"
+            }
+          ],
+          "fields": [
+            "equipment"
+          ],
+          "equipment": "régulateur de vitesse",
+          "status": "unknown",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 a-t-elle un régulateur ?",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "details",
+          "requested_equipment": [
+            "régulateur de vitesse"
+          ]
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "recognized",
+              "probabilities": {
+                "none": 0.01,
+                "recognized": 0.56,
+                "unresolved": 0.43
+              },
+              "confidence": 0.34
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "details",
+              "probabilities": {
+                "filter": 0,
+                "count": 0,
+                "details": 0.42,
+                "comparison": 0,
+                "clarify": 0.21,
+                "unsupported": 0.37,
+                "complex": 0
+              },
+              "confidence": 0.32
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.84,
+                "used_price": 0,
+                "market": 0.02,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.12,
+                "contradictory": 0.02
+              },
+              "confidence": 0.81
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "régulateur de vitesse",
+              "probabilities": {
+                "none": 0.03,
+                "ABS": 0,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0.97,
+                "poignées chauffantes": 0,
+                "shifter": 0,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.97
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.23,
+                "optional": 0,
+                "explicitly_absent": 0,
+                "unknown": 0.77
+              },
+              "confidence": 0.69
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.36,
+                "no": 0.64
+              },
+              "confidence": 0.28
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "n1_field": {
+              "type": "choice",
+              "choice": "ignore",
+              "probabilities": {
+                "price_eur": 0,
+                "power_ch": 0,
+                "torque_nm": 0,
+                "displacement_ccm": 0,
+                "seat_height_mm": 0,
+                "weight_dry_kg": 0,
+                "weight_wet_kg": 0,
+                "autonomy_km": 0,
+                "year": 0,
+                "ignore": 1
+              },
+              "confidence": 1
+            },
+            "n1_op": {
+              "type": "choice",
+              "choice": "ignore",
+              "probabilities": {
+                "<": 0,
+                "<=": 0,
+                ">": 0,
+                ">=": 0,
+                "=": 0.26,
+                "ignore": 0.74
+              },
+              "confidence": 0.69
+            }
+          },
+          "usage": {
+            "input_tokens": 4249,
+            "output_tokens": 1127,
+            "cost": 0.000178458
+          },
+          "id": "gen-dec-1792009695-Y0r4TS7B3veOoIZZdxst",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.4361540419049561
+      },
+      "answer": "| Caractéristique | Honda CB 500 F (2020) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q34",
+      "turn": 1,
+      "question": "La Honda CB 500 F édition ZXQ-FICTIVE-999 de 2020 a-t-elle un régulateur ?",
+      "full_answer_seconds": 0.43616495898459107
+    },
+    {
+      "routing": {
+        "answer": "**8 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Yamaha 1000 MT-10 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 850 MT-09 SP | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer GT | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha MT-10 SP | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha YZF-R1 1000 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/7975/YZF-R1-1000-2020/contact.html) |\n| Yamaha YZF-R1 1000 Pirovano Replica | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8512/YZF-R1-1000-Pirovano-Replica-2020/contact.html) |\n| Yamaha YZF-R1M 1000 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/7976/YZF-R1M-1000-2020/contact.html) |\n| Yamaha YZF-R6 600 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8068/YZF-R6-600-2020/contact.html) |\n\nÉquipements filtrés ensemble : ABS — de série, shifter — de série.",
+        "route": "filter",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {
+            "brand": "Yamaha",
+            "year": 2020
+          },
+          "conditions": [],
+          "models": [],
+          "fields": [
+            "equipment"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Liste les Yamaha de 2020 avec ABS et shifter de série, avec les sources.",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "filter",
+          "equipment_filters": [
+            {
+              "equipment": "ABS",
+              "status": "standard"
+            },
+            {
+              "equipment": "shifter",
+              "status": "standard"
+            }
+          ]
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 1,
+                "recognized": 0,
+                "unresolved": 0
+              },
+              "confidence": 1
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "filter",
+              "probabilities": {
+                "filter": 0.98,
+                "count": 0,
+                "details": 0,
+                "comparison": 0,
+                "clarify": 0,
+                "unsupported": 0.02,
+                "complex": 0
+              },
+              "confidence": 0.98
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.88,
+                "used_price": 0,
+                "market": 0.07,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.02,
+                "contradictory": 0.03
+              },
+              "confidence": 0.86
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "ABS",
+              "probabilities": {
+                "none": 0,
+                "ABS": 0.85,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0.15,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.83
+            },
+            "status": {
+              "type": "choice",
+              "choice": "standard",
+              "probabilities": {
+                "standard": 0.89,
+                "optional": 0,
+                "explicitly_absent": 0,
+                "unknown": 0.11
+              },
+              "confidence": 0.85
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.02,
+                "no": 0.98
+              },
+              "confidence": 0.96
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.06,
+                "no": 0.94
+              },
+              "confidence": 0.88
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.67,
+                "no": 0.33
+              },
+              "confidence": 0.34
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.53,
+                "no": 0.47
+              },
+              "confidence": 0.06
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            }
+          },
+          "usage": {
+            "input_tokens": 3490,
+            "output_tokens": 953,
+            "cost": 0.00014658
+          },
+          "id": "gen-dec-1792009696-gEEXcubmz1nPlg12u1Ux",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.26667462498880923
+      },
+      "answer": "**8 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Yamaha 1000 MT-10 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 850 MT-09 SP | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer GT | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha MT-10 SP | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha YZF-R1 1000 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/7975/YZF-R1-1000-2020/contact.html) |\n| Yamaha YZF-R1 1000 Pirovano Replica | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8512/YZF-R1-1000-Pirovano-Replica-2020/contact.html) |\n| Yamaha YZF-R1M 1000 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/7976/YZF-R1M-1000-2020/contact.html) |\n| Yamaha YZF-R6 600 | 2020 | [Fiche](https://www.motoplanete.com/yamaha/8068/YZF-R6-600-2020/contact.html) |\n\nÉquipements filtrés ensemble : ABS — de série, shifter — de série.",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q37",
+      "turn": 1,
+      "question": "Liste les Yamaha de 2020 avec ABS et shifter de série, avec les sources.",
+      "full_answer_seconds": 0.2666823749896139
+    },
+    {
+      "routing": {
+        "answer": "**8697 fiches correspondent dans le catalogue.**",
+        "route": "count",
+        "jev_calls": 1,
+        "plan": {
+          "identity": {},
+          "conditions": [
+            {
+              "field": "seat_height_mm",
+              "op": "<",
+              "value": 850.0
+            }
+          ],
+          "models": [],
+          "fields": [
+            "seat_height_mm"
+          ],
+          "equipment": null,
+          "status": "standard",
+          "market_unknown": false,
+          "variant_unknown": false,
+          "source_question": "Parmi celles-ci, combien ont une selle strictement sous 850 mm ?",
+          "candidate_variants": [],
+          "calculation_question": "",
+          "operation": "count"
+        },
+        "cached": false,
+        "raw": {
+          "model": "typesafe/jev-1.13-20260917",
+          "answers": {
+            "identity_binding": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 0.99,
+                "recognized": 0,
+                "unresolved": 0.01
+              },
+              "confidence": 0.98
+            },
+            "operation": {
+              "type": "choice",
+              "choice": "count",
+              "probabilities": {
+                "filter": 0.01,
+                "count": 0.96,
+                "details": 0,
+                "comparison": 0,
+                "clarify": 0.01,
+                "unsupported": 0.02,
+                "complex": 0
+              },
+              "confidence": 0.95
+            },
+            "scope": {
+              "type": "choice",
+              "choice": "supported",
+              "probabilities": {
+                "supported": 0.95,
+                "used_price": 0,
+                "market": 0.01,
+                "a2": 0,
+                "weight_type": 0,
+                "unsupported": 0.03,
+                "contradictory": 0.01
+              },
+              "confidence": 0.94
+            },
+            "equipment": {
+              "type": "choice",
+              "choice": "none",
+              "probabilities": {
+                "none": 0.9400000000000001,
+                "ABS": 0.06,
+                "CBS": 0,
+                "contrôle de traction": 0,
+                "régulateur de vitesse": 0,
+                "poignées chauffantes": 0,
+                "shifter": 0,
+                "TPMS": 0,
+                "IMU": 0,
+                "ride by wire": 0,
+                "airbag": 0
+              },
+              "confidence": 0.93
+            },
+            "status": {
+              "type": "choice",
+              "choice": "unknown",
+              "probabilities": {
+                "standard": 0.07,
+                "optional": 0,
+                "explicitly_absent": 0,
+                "unknown": 0.93
+              },
+              "confidence": 0.91
+            },
+            "field_price_eur": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_power_ch": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_torque_nm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.59,
+                "no": 0.41
+              },
+              "confidence": 0.18
+            },
+            "field_displacement_ccm": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_seat_height_mm": {
+              "type": "choice",
+              "choice": "yes",
+              "probabilities": {
+                "yes": 0.93,
+                "no": 0.07
+              },
+              "confidence": 0.86
+            },
+            "field_weight_dry_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_weight_wet_kg": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_autonomy_km": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_equipment": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.04,
+                "no": 0.96
+              },
+              "confidence": 0.92
+            },
+            "field_suspension": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_braking": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_transmission": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.03,
+                "no": 0.97
+              },
+              "confidence": 0.94
+            },
+            "field_cooling": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_reservoir": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_dimensions": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.05,
+                "no": 0.95
+              },
+              "confidence": 0.9
+            },
+            "field_wheels": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_engine": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0,
+                "no": 1
+              },
+              "confidence": 1
+            },
+            "field_colors": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_performance": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.01,
+                "no": 0.99
+              },
+              "confidence": 0.98
+            },
+            "field_full": {
+              "type": "choice",
+              "choice": "no",
+              "probabilities": {
+                "yes": 0.15,
+                "no": 0.85
+              },
+              "confidence": 0.7
+            },
+            "n0_field": {
+              "type": "choice",
+              "choice": "seat_height_mm",
+              "probabilities": {
+                "price_eur": 0,
+                "power_ch": 0,
+                "torque_nm": 0,
+                "displacement_ccm": 0,
+                "seat_height_mm": 1,
+                "weight_dry_kg": 0,
+                "weight_wet_kg": 0,
+                "autonomy_km": 0,
+                "year": 0,
+                "ignore": 0
+              },
+              "confidence": 1
+            },
+            "n0_op": {
+              "type": "choice",
+              "choice": "<",
+              "probabilities": {
+                "<": 1,
+                "<=": 0,
+                ">": 0,
+                ">=": 0,
+                "=": 0,
+                "ignore": 0
+              },
+              "confidence": 1
+            }
+          },
+          "usage": {
+            "input_tokens": 3924,
+            "output_tokens": 1124,
+            "cost": 0.000164808
+          },
+          "id": "gen-dec-1792009696-rO2uA8avJozF4s5bXdJq",
+          "provider": "TypeSafe"
+        },
+        "seconds": 0.28060391591861844
+      },
+      "answer": "**8697 fiches correspondent dans le catalogue.**",
+      "status": "returned",
+      "candidate": "existing-jev-workflow",
+      "case_id": "Q37",
+      "turn": 2,
+      "question": "Parmi celles-ci, combien ont une selle strictement sous 850 mm ?",
+      "full_answer_seconds": 0.28061337501276284
+    }
+  ],
+  "scope": "Known eight-case development replay, not an independent generalization test",
+  "comparability": "Two common-tool agents versus existing Jev decisions + SQL renderer; workflow differences are explicit",
+  "pack_sha256": "39f72d3dc05e02a9016bddbb0368745a12d2bf4ed9a20d45ac643c084cd13a9e",
+  "source_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "script_sha256": "48694d3b1470171232a5a321904e63e916b7844ad1d49876e59b47ad36696cdb",
+  "timeout_seconds": 30,
+  "local_api_cost_usd": 0,
+  "electricity_and_amortization": "not measured",
+  "cloud_inventory": {
+    "id": "mistralai/mistral-small-2603",
+    "pricing": {
+      "prompt": "0.00000015",
+      "completion": "0.0000006",
+      "input_cache_read": "0.000000015"
+    },
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "max_tokens",
+      "presence_penalty",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_p"
+    ],
+    "context_length": 262144
+  },
+  "paid_requests": [
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36084,
+      "reserved_usd": 0.0137052,
+      "debit_usd": 0.0137052,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36066,
+      "reserved_usd": 0.013699799999999998,
+      "debit_usd": 0.00066945,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4231,
+        "completion_tokens": 58,
+        "total_tokens": 4289,
+        "cost": 0.00066945,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00066945,
+          "upstream_inference_prompt_cost": 0.00063465,
+          "upstream_inference_completions_cost": 3.48e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00066945
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 39772,
+      "reserved_usd": 0.014811599999999998,
+      "debit_usd": 0.00017412,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4788,
+        "completion_tokens": 40,
+        "total_tokens": 4828,
+        "cost": 0.00017412,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4208,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00017412,
+          "upstream_inference_prompt_cost": 0.00015012,
+          "upstream_inference_completions_cost": 2.4e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00017412
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 44102,
+      "reserved_usd": 0.0161106,
+      "debit_usd": 0.00025002,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 5470,
+        "completion_tokens": 122,
+        "total_tokens": 5592,
+        "cost": 0.00025002,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4768,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00025002,
+          "upstream_inference_prompt_cost": 0.00017682,
+          "upstream_inference_completions_cost": 7.32e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00025002
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36140,
+      "reserved_usd": 0.013721999999999998,
+      "debit_usd": 0.00010128,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4248,
+        "completion_tokens": 50,
+        "total_tokens": 4298,
+        "cost": 0.00010128,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4192,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00010128,
+          "upstream_inference_prompt_cost": 7.128e-05,
+          "upstream_inference_completions_cost": 3e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00010128
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 39138,
+      "reserved_usd": 0.0146214,
+      "debit_usd": 0.00018546,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 4650,
+        "completion_tokens": 97,
+        "total_tokens": 4747,
+        "cost": 0.00018546,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 4224,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00018546,
+          "upstream_inference_prompt_cost": 0.00012726,
+          "upstream_inference_completions_cost": 5.82e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.00018546
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 54292,
+      "reserved_usd": 0.0191676,
+      "debit_usd": 0.0011472,
+      "status": "response_received",
+      "usage": {
+        "prompt_tokens": 7428,
+        "completion_tokens": 55,
+        "total_tokens": 7483,
+        "cost": 0.0011472,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0011472,
+          "upstream_inference_prompt_cost": 0.0011142,
+          "upstream_inference_completions_cost": 3.3e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "reported_cost_usd": 0.0011472
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 60488,
+      "reserved_usd": 0.0210264,
+      "debit_usd": 0.0210264,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36178,
+      "reserved_usd": 0.0137334,
+      "debit_usd": 0.0137334,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36208,
+      "reserved_usd": 0.013742399999999998,
+      "debit_usd": 0.013742399999999998,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36062,
+      "reserved_usd": 0.013698599999999998,
+      "debit_usd": 0.013698599999999998,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36098,
+      "reserved_usd": 0.0137094,
+      "debit_usd": 0.0137094,
+      "status": "pending"
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "input_token_bound": 36092,
+      "reserved_usd": 0.0137076,
+      "debit_usd": 0.0137076,
+      "status": "pending"
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 30706,
+      "reserved_usd": 0.001289652,
+      "debit_usd": 0.000146748,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3494,
+        "output_tokens": 953,
+        "cost": 0.000146748
+      },
+      "reported_cost_usd": 0.000146748
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31610,
+      "reserved_usd": 0.0013276200000000003,
+      "debit_usd": 0.000154056,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3668,
+        "output_tokens": 953,
+        "cost": 0.000154056
+      },
+      "reported_cost_usd": 0.000154056
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 33194,
+      "reserved_usd": 0.0013941480000000002,
+      "debit_usd": 0.000168924,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4022,
+        "output_tokens": 953,
+        "cost": 0.000168924
+      },
+      "reported_cost_usd": 0.000168924
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 32146,
+      "reserved_usd": 0.0013501320000000002,
+      "debit_usd": 0.000159978,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3809,
+        "output_tokens": 954,
+        "cost": 0.000159978
+      },
+      "reported_cost_usd": 0.000159978
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31772,
+      "reserved_usd": 0.001334424,
+      "debit_usd": 0.000152754,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3637,
+        "output_tokens": 953,
+        "cost": 0.000152754
+      },
+      "reported_cost_usd": 0.000152754
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31630,
+      "reserved_usd": 0.0013284600000000003,
+      "debit_usd": 0.000154434,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3677,
+        "output_tokens": 953,
+        "cost": 0.000154434
+      },
+      "reported_cost_usd": 0.000154434
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 34698,
+      "reserved_usd": 0.0014573160000000002,
+      "debit_usd": 0.000178458,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4249,
+        "output_tokens": 1127,
+        "cost": 0.000178458
+      },
+      "reported_cost_usd": 0.000178458
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 30698,
+      "reserved_usd": 0.0012893160000000002,
+      "debit_usd": 0.00014658,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3490,
+        "output_tokens": 953,
+        "cost": 0.00014658
+      },
+      "reported_cost_usd": 0.00014658
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 33234,
+      "reserved_usd": 0.0013958280000000002,
+      "debit_usd": 0.000164808,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3924,
+        "output_tokens": 1124,
+        "cost": 0.000164808
+      },
+      "reported_cost_usd": 0.000164808
+    }
+  ],
+  "conservative_total_debit_usd": 0.10727727000000001,
+  "service_preparation_seconds": 8.38168104190845,
+  "status": "executed_semantic_review_pending"
+}

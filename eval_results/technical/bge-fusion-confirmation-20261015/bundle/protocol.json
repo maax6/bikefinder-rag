@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-10-14T23:36:02.477980+00:00",
+  "status": "frozen_before_first_retrieval",
+  "configs": [
+    {
+      "id": "current_rrf40",
+      "pool": 40,
+      "dense_weight": 1,
+      "lexical_weight": 1,
+      "rerank": false
+    },
+    {
+      "id": "weighted_rrf80",
+      "pool": 80,
+      "dense_weight": 2,
+      "lexical_weight": 1,
+      "rerank": false
+    }
+  ],
+  "k": 10,
+  "rrf_constant": 60,
+  "repeats": 3,
+  "shuffle_seed": 20261015,
+  "cohort_counts": {
+    "fresh": 64,
+    "regression": 28
+  },
+  "fiches": 80,
+  "brand_counts": {
+    "Yamaha": 4,
+    "Kawasaki": 4,
+    "Honda": 4,
+    "Suzuki": 4,
+    "BMW": 4,
+    "Triumph": 4,
+    "Ducati": 4,
+    "Harley-Davidson": 4,
+    "KTM": 4,
+    "Aprilia": 4,
+    "MV-Agusta": 4,
+    "Moto-Guzzi": 4,
+    "Indian": 4,
+    "Benelli": 4,
+    "Mash": 4,
+    "Bimota": 4,
+    "Morini": 2,
+    "Royal-Enfield": 2,
+    "Victory (USA)": 2,
+    "Norton": 2,
+    "Cagiva": 2,
+    "CFMOTO": 2,
+    "Zero Motorcycles": 2,
+    "Buell": 2
+  },
+  "years": {
+    "2000": 3,
+    "2001": 1,
+    "2002": 1,
+    "2003": 4,
+    "2004": 3,
+    "2005": 2,
+    "2006": 2,
+    "2007": 4,
+    "2009": 4,
+    "2010": 2,
+    "2011": 2,
+    "2012": 2,
+    "2013": 1,
+    "2014": 6,
+    "2015": 3,
+    "2016": 5,
+    "2017": 6,
+    "2018": 1,
+    "2019": 4,
+    "2020": 5,
+    "2021": 4,
+    "2022": 2,
+    "2023": 3,
+    "2024": 5,
+    "2025": 3,
+    "2026": 2
+  },
+  "categories": {
+    "single_section": 16,
+    "multiple_sections": 32,
+    "year_comparison": 8,
+    "nearby_model_comparison": 8
+  },
+  "selection": "Candidate fixed from previous run-v2; no development/tuning on this new lot.",
+  "promotion_rule": {
+    "fresh_complete_gain_minimum": 5,
+    "required_group_losses_any_case": 0,
+    "hit_at1_count_must_not_decline_in_either_cohort": true,
+    "one_sided_paired_exact_p_maximum": 0.05,
+    "max_median_latency": "max(baseline * 1.25, baseline + 0.010 seconds)",
+    "integrity_parity_and_determinism_required": true
+  },
+  "model_inputs": "Question text only, global 105687 passages, no oracle IDs/labels/answers.",
+  "limits": [
+    "Stratified, template-based assistant-authored questions, not an independent human evaluation.",
+    "Target fiches are disjoint within the new lot and from inventoried previous questions; families can recur.",
+    "Partial relevance annotations; exact source passage coverage is not final answer accuracy.",
+    "Known evidence includes explicit unknown markers; retrieving these markers does not establish an unknown fact. No abstention, scope resolution, multi-turn or chat generation measurement.",
+    "Three latency repetitions do not create additional independent questions.",
+    "Paired exact p-value is descriptive: same-brand/family questions can remain correlated."
+  ],
+  "index_manifest_sha256": "b2f255b320e3c03b19d873ceae7ce87ed39a8d1ba6ed6719e52eacca0f6abb56",
+  "files_sha256": {
+    "fresh.annotations.json": "c04195bf5f216d3b5a55e2e478ff9d1737f0818db4085b7129d86f282d61a38f",
+    "novelty-audit.json": "6e72c56a842dd53a579fc57355fb89064994f2ccf541e1a2a5f700736b6878b4",
+    "queries.json": "533987b4a58675c26036981e65058147f5b0e5e32eb98ca966fba6c7872b2ebe",
+    "regression.annotations.json": "6d57fbc23b80e5d5375cc1036eb4274683048485cd8b3df5594180183ab90862",
+    "questions-annotees.md": "7eeed89e51c4f058840eb9c0c2a1fb2b0b6fc7d5b07e9f12372f492c9e6f2524"
+  }
+}

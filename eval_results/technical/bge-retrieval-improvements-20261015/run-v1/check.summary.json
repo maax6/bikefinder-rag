@@ -1,0 +1,80 @@
+[
+  {
+    "config": "dense",
+    "questions": 9,
+    "hit_at1": 0.6666666666666666,
+    "recall_at10": 0.6944444444444444,
+    "ndcg_at10": 0.5938716417549985,
+    "all_groups_at10": 0.3333333333333333,
+    "hit_at1_cases": 6.0,
+    "complete_at10_cases": 3.0,
+    "median_seconds": 0.03890170902013779,
+    "max_seconds": 0.05497499997727573,
+    "identical_rankings_over_repeats": true
+  },
+  {
+    "config": "current_rrf40",
+    "questions": 9,
+    "hit_at1": 0.6666666666666666,
+    "recall_at10": 0.8888888888888888,
+    "ndcg_at10": 0.7324575893081318,
+    "all_groups_at10": 0.7777777777777778,
+    "hit_at1_cases": 6.0,
+    "complete_at10_cases": 7.0,
+    "median_seconds": 0.04215183400083333,
+    "max_seconds": 0.053918707999400795,
+    "identical_rankings_over_repeats": true
+  },
+  {
+    "config": "weighted_rrf40",
+    "questions": 9,
+    "hit_at1": 0.7777777777777778,
+    "recall_at10": 0.8888888888888888,
+    "ndcg_at10": 0.7651533649171043,
+    "all_groups_at10": 0.7777777777777778,
+    "hit_at1_cases": 7.0,
+    "complete_at10_cases": 7.0,
+    "median_seconds": 0.043055874994024634,
+    "max_seconds": 0.06443454104010016,
+    "identical_rankings_over_repeats": true
+  },
+  {
+    "config": "weighted_rrf80",
+    "questions": 9,
+    "hit_at1": 0.7777777777777778,
+    "recall_at10": 0.9444444444444444,
+    "ndcg_at10": 0.7723279365061805,
+    "all_groups_at10": 0.8888888888888888,
+    "hit_at1_cases": 7.0,
+    "complete_at10_cases": 8.0,
+    "median_seconds": 0.04189329198561609,
+    "max_seconds": 0.0551947079366073,
+    "identical_rankings_over_repeats": true
+  },
+  {
+    "config": "rerank40",
+    "questions": 9,
+    "hit_at1": 1.0,
+    "recall_at10": 0.8333333333333334,
+    "ndcg_at10": 0.7924558172047801,
+    "all_groups_at10": 0.6666666666666666,
+    "hit_at1_cases": 9.0,
+    "complete_at10_cases": 6.0,
+    "median_seconds": 0.4222042920300737,
+    "max_seconds": 0.5274275410920382,
+    "identical_rankings_over_repeats": true
+  },
+  {
+    "config": "rerank80",
+    "questions": 9,
+    "hit_at1": 1.0,
+    "recall_at10": 0.8333333333333334,
+    "ndcg_at10": 0.7886967349782695,
+    "all_groups_at10": 0.6666666666666666,
+    "hit_at1_cases": 9.0,
+    "complete_at10_cases": 6.0,
+    "median_seconds": 0.7584947920404375,
+    "max_seconds": 0.8418388339923695,
+    "identical_rankings_over_repeats": true
+  }
+]

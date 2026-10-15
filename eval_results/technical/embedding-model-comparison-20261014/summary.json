@@ -1,0 +1,238 @@
+{
+  "status": "local_pilot_completed",
+  "corpus_passages": 4096,
+  "total_questions": 50,
+  "questions_with_judged_evidence": 44,
+  "known_questions": true,
+  "full_global_corpus_benchmark": false,
+  "remote_api_cost_usd": 0,
+  "results": [
+    {
+      "candidate": "bge",
+      "summary": [
+        {
+          "scope": "supplied",
+          "method": "lexical",
+          "positive_questions": 44,
+          "hit_at1": 0.5227272727272727,
+          "recall_at5": 0.6742424242424242,
+          "recall_at10": 0.9337121212121211,
+          "mrr_at10": 0.6531204906204905,
+          "all_groups_at10": 0.8863636363636364,
+          "median_seconds": 0.00014187500346451998
+        },
+        {
+          "scope": "supplied",
+          "method": "dense",
+          "positive_questions": 44,
+          "hit_at1": 0.9090909090909091,
+          "recall_at5": 0.9412878787878788,
+          "recall_at10": 0.9962121212121212,
+          "mrr_at10": 0.9450757575757575,
+          "all_groups_at10": 1.0,
+          "median_seconds": 0.015666167018935084
+        },
+        {
+          "scope": "supplied",
+          "method": "hybrid",
+          "positive_questions": 44,
+          "hit_at1": 0.9090909090909091,
+          "recall_at5": 0.9034090909090909,
+          "recall_at10": 0.9753787878787878,
+          "mrr_at10": 0.9401515151515152,
+          "all_groups_at10": 0.9090909090909091,
+          "median_seconds": 0.015835188038181514
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "lexical",
+          "positive_questions": 44,
+          "hit_at1": 0.36363636363636365,
+          "recall_at5": 0.393939393939394,
+          "recall_at10": 0.5681818181818182,
+          "mrr_at10": 0.4759650072150072,
+          "all_groups_at10": 0.4090909090909091,
+          "median_seconds": 0.0002447914448566735
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "dense",
+          "positive_questions": 44,
+          "hit_at1": 0.6136363636363636,
+          "recall_at5": 0.7064393939393939,
+          "recall_at10": 0.8371212121212122,
+          "mrr_at10": 0.7303030303030303,
+          "all_groups_at10": 0.6818181818181818,
+          "median_seconds": 0.015833771030884236
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "hybrid",
+          "positive_questions": 44,
+          "hit_at1": 0.6818181818181818,
+          "recall_at5": 0.6666666666666666,
+          "recall_at10": 0.7518939393939393,
+          "mrr_at10": 0.7784090909090909,
+          "all_groups_at10": 0.6136363636363636,
+          "median_seconds": 0.016081896552350372
+        }
+      ],
+      "document_encoding_seconds": null,
+      "dimensions": 1024,
+      "max_document_tokens": 272,
+      "max_query_tokens": 48
+    },
+    {
+      "candidate": "qwen",
+      "summary": [
+        {
+          "scope": "supplied",
+          "method": "lexical",
+          "positive_questions": 44,
+          "hit_at1": 0.5227272727272727,
+          "recall_at5": 0.6742424242424242,
+          "recall_at10": 0.9337121212121211,
+          "mrr_at10": 0.6531204906204905,
+          "all_groups_at10": 0.8863636363636364,
+          "median_seconds": 0.00016235449584200978
+        },
+        {
+          "scope": "supplied",
+          "method": "dense",
+          "positive_questions": 44,
+          "hit_at1": 0.8863636363636364,
+          "recall_at5": 0.918560606060606,
+          "recall_at10": 0.9867424242424242,
+          "mrr_at10": 0.9261363636363636,
+          "all_groups_at10": 0.9772727272727273,
+          "median_seconds": 0.03285512502770871
+        },
+        {
+          "scope": "supplied",
+          "method": "hybrid",
+          "positive_questions": 44,
+          "hit_at1": 0.8409090909090909,
+          "recall_at5": 0.8693181818181818,
+          "recall_at10": 0.9715909090909091,
+          "mrr_at10": 0.9003787878787878,
+          "all_groups_at10": 0.9090909090909091,
+          "median_seconds": 0.033032187493517995
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "lexical",
+          "positive_questions": 44,
+          "hit_at1": 0.36363636363636365,
+          "recall_at5": 0.393939393939394,
+          "recall_at10": 0.5681818181818182,
+          "mrr_at10": 0.4759650072150072,
+          "all_groups_at10": 0.4090909090909091,
+          "median_seconds": 0.0002666044747456908
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "dense",
+          "positive_questions": 44,
+          "hit_at1": 0.7727272727272727,
+          "recall_at5": 0.7007575757575757,
+          "recall_at10": 0.8522727272727273,
+          "mrr_at10": 0.8524891774891774,
+          "all_groups_at10": 0.7272727272727273,
+          "median_seconds": 0.03582556248875335
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "hybrid",
+          "positive_questions": 44,
+          "hit_at1": 0.5909090909090909,
+          "recall_at5": 0.6571969696969696,
+          "recall_at10": 0.7405303030303029,
+          "mrr_at10": 0.7356060606060606,
+          "all_groups_at10": 0.5454545454545454,
+          "median_seconds": 0.03607935452600941
+        }
+      ],
+      "document_encoding_seconds": 87.29658516589552,
+      "dimensions": 1024,
+      "max_document_tokens": 279,
+      "max_query_tokens": 84
+    },
+    {
+      "candidate": "e5",
+      "summary": [
+        {
+          "scope": "supplied",
+          "method": "lexical",
+          "positive_questions": 44,
+          "hit_at1": 0.5227272727272727,
+          "recall_at5": 0.6742424242424242,
+          "recall_at10": 0.9337121212121211,
+          "mrr_at10": 0.6531204906204905,
+          "all_groups_at10": 0.8863636363636364,
+          "median_seconds": 0.00017508299788460135
+        },
+        {
+          "scope": "supplied",
+          "method": "dense",
+          "positive_questions": 44,
+          "hit_at1": 0.9772727272727273,
+          "recall_at5": 0.9375,
+          "recall_at10": 0.9943181818181818,
+          "mrr_at10": 0.9886363636363636,
+          "all_groups_at10": 0.9772727272727273,
+          "median_seconds": 0.021298937033861876
+        },
+        {
+          "scope": "supplied",
+          "method": "hybrid",
+          "positive_questions": 44,
+          "hit_at1": 0.7954545454545454,
+          "recall_at5": 0.9109848484848484,
+          "recall_at10": 0.9753787878787878,
+          "mrr_at10": 0.8882575757575757,
+          "all_groups_at10": 0.9318181818181818,
+          "median_seconds": 0.021520624519325793
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "lexical",
+          "positive_questions": 44,
+          "hit_at1": 0.36363636363636365,
+          "recall_at5": 0.393939393939394,
+          "recall_at10": 0.5681818181818182,
+          "mrr_at10": 0.4759650072150072,
+          "all_groups_at10": 0.4090909090909091,
+          "median_seconds": 0.0002780834911391139
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "dense",
+          "positive_questions": 44,
+          "hit_at1": 0.5,
+          "recall_at5": 0.6666666666666666,
+          "recall_at10": 0.8068181818181818,
+          "mrr_at10": 0.6399891774891775,
+          "all_groups_at10": 0.6363636363636364,
+          "median_seconds": 0.024310312466695905
+        },
+        {
+          "scope": "candidate_subset",
+          "method": "hybrid",
+          "positive_questions": 44,
+          "hit_at1": 0.6590909090909091,
+          "recall_at5": 0.6439393939393939,
+          "recall_at10": 0.8162878787878788,
+          "mrr_at10": 0.7532738095238094,
+          "all_groups_at10": 0.7045454545454546,
+          "median_seconds": 0.024620604468509555
+        }
+      ],
+      "document_encoding_seconds": 21.007761957938783,
+      "dimensions": 1024,
+      "max_document_tokens": 272,
+      "max_query_tokens": 82
+    }
+  ],
+  "conclusion": "Qwen improves first-ranked judged evidence on this reduced candidate pool; E5 improves first rank within supplied identity scopes; BGE retains strongest complete group coverage at10 in supplied scopes. Do not migrate based only on this selected known-case pilot.",
+  "next_step": "Full 105687-passage comparison and new independent questions, before switching any active index."
+}
