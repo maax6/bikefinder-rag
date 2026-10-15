@@ -1,0 +1,46 @@
+{
+  "checked_utc": "2026-10-15T01:01:12.842009+00:00",
+  "artifact": "docs/benchmark-finetuning.html",
+  "artifact_sha256": "47cfdb7487154c1e848bc085fb8db8f575505309b7f3b835b520e8a4e866d9fc",
+  "size_bytes": 1821514,
+  "deterministic_rebuild": true,
+  "canonical_metrics_recomputed": true,
+  "offline_packaging_no_external_assets": true,
+  "examined_browser": "Codex in-app browser / localhost",
+  "chart_combinations_verified": 8,
+  "case_explorer": {
+    "hybrid_losses": 9,
+    "dense_losses": 11,
+    "search_fantic": 11,
+    "pagination": "13–24 / 156",
+    "empty_state_verified": true,
+    "proof_dialog_verified": "TEST-0015, motor rank 4 -> outside top10"
+  },
+  "training_examples": 12,
+  "exports": {
+    "csv_rows": 312,
+    "json_cases": 156,
+    "json_source_passages": 2946,
+    "export_equals_embedded": true
+  },
+  "responsive": {
+    "viewport_width": 390,
+    "document_width": 375,
+    "dialog_width": 359,
+    "no_document_overflow": true
+  },
+  "console_errors": [],
+  "main_benchmark_payload_unchanged": {
+    "original_data_hashes": [
+      "ad4c55c027167841474dedf4a7363e6b7a1c6c81dd7ccd87efbf2cd9b1369795"
+    ],
+    "after_data_hashes": [
+      "ad4c55c027167841474dedf4a7363e6b7a1c6c81dd7ccd87efbf2cd9b1369795"
+    ]
+  },
+  "main_to_appendix_navigation_verified": true,
+  "direct_file_url_browser_test": "Not performed: browser policy only allows HTTP(S). No workaround attempted.",
+  "print_css_present": true,
+  "print_dialog_tested": false,
+  "published": false
+}
