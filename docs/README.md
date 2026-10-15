@@ -4,9 +4,19 @@ Le [README du dépôt](../README.md) présente le projet et son prochain jalon.
 Les guides décrivent les opérations ; les rapports conservent les mesures et
 les décisions dans leur contexte daté.
 
-Nouvelle conception : [outils SQL et RAG et comparaison local/cloud](sql-rag-tools-and-comparison.md). Le contrat et le lot commun de quarante cas sont préparés ; le nouveau service et les essais de modèles restent à raccorder et exécuter.
+Le [service SQL + RAG et sa comparaison local/cloud](sql-rag-tools-and-comparison.md) dispose de six outils et de deux passes enregistrées ; son raccordement au chat reste à réaliser.
 
-Dernier résultat : [benchmark local de recherche — 13 octobre 2026](technical-retrieval-benchmark-20261013.md), lié à l'[issue #3](https://github.com/maax6/bikefinder-rag/issues/3). Prochaine étape : raccordement RAG au parcours Jev avec contrôles d'identité et de preuves.
+Dernier essai : [pilote contrastif BGE-M3 avec LoRA — 15 octobre](bge-lora-pilote-20261015.md). Entraînement local sur 512 questions, puis réindexation complète. Couverture hybride de 60/64 à 61/64 sur le nouveau test et de 66/92 à 78/92 sur les anciens cas, mais neuf pertes de preuves : adaptateur non activé.
+
+L’[annexe HTML interactive du fine-tuning](benchmark-finetuning.html) reprend ces résultats avec les 156 questions, les passages avant/après, douze exemples d’apprentissage et les exports JSON/CSV. Elle fonctionne hors ligne et dispose d’un lien depuis le benchmark principal.
+
+Essai précédent : [confirmation de la fusion BGE sur 64 questions inédites — 15 octobre](bge-fusion-confirmation-20261015.md). Couverture complète de 49/64 à 54/64, mais quatre pertes de preuves sur les lots nouveau et ancien : fusion non intégrée au chat.
+
+Étude précédente : [améliorations de recherche avec BGE-M3 conservé](bge-m3-ameliorations-recherche-20261015.md). Lot d'erreurs annotées, comparaison sur tous les passages et huit questions nouvelles, sans entraînement.
+
+Derniers essais locaux : [Mistral seul, Jev et comparaison des embeddings — 14 octobre](mistral-jev-et-embeddings-20261014.md). Ils distinguent les délais de génération, les erreurs du routeur, les HTTP 429 et le classement des passages. Le [benchmark local de recherche précédent](technical-retrieval-benchmark-20261013.md) reste une étude distincte ; l'[issue #4](https://github.com/maax6/bikefinder-rag/issues/4) conserve le bilan de cette phase.
+
+**Prochain jalon : [validation du parcours complet](phase-test-20261015.md)** — régressions connues, nouveau lot indépendant, réponses réelles et raccordement du service au chat. Cette phase n’est pas encore exécutée.
 
 ## Pour travailler sur le projet
 
@@ -30,8 +40,9 @@ Dernier résultat : [benchmark local de recherche — 13 octobre 2026](technical
 - [POC SQL, BGE-M3, Jev et Mistral : mesures et limites](hybrid-poc-results.md)
 
 Une expérience concluante n'implique pas que toutes ses briques sont connectées
-au chat. L'architecture actuelle précise notamment que la voie Jev sélectionne
-des lignes de fiches sans appeler encore la recherche BGE technique.
+au chat. Avec l'option RAG activée, certaines lectures de fiches exactes consultent
+BGE-M3 puis Mistral local ; le service commun testé séparément n'est pas encore
+raccordé à cette interface.
 
 ## Conception et historique
 

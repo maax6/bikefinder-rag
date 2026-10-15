@@ -10,10 +10,11 @@ expérience ou un snapshot isolé. **Historique** désigne l'ancien parcours Bik
 les avis et leurs évaluations ; ces outils restent utiles à sa reproduction.
 Ce statut ne signifie pas qu'un outil s'exécute automatiquement.
 
-Jev est le seul service d'inférence distant autorisé. Les anciennes options
-Anthropic/OpenRouter générique restent dans certains outils historiques ; elles
-ne font pas partie du prochain travail. Les collecteurs et chargeurs qui
-téléchargent des données sont des opérations de préparation séparées du chat.
+Le chat existant utilise Jev comme service d'inférence distant. Les comparaisons
+de modèles distants sont des expériences séparées, avec leurs propres données
+autorisées et plafonds ; leur présence ne change pas le backend du chat. Les
+collecteurs et chargeurs téléchargent des données pendant une préparation
+séparée du chat.
 
 ## Catalogue technique : collecte, audit et import
 
@@ -94,7 +95,27 @@ un index isolé, compare BM25/BGE/hybride/reranking et profile l'encodage à la
 demande sur le développement. [Rapport du 13 octobre](../docs/technical-retrieval-benchmark-20261013.md)
 et [commandes de reproduction](../eval_results/technical/retrieval-benchmark-20261013/README.md).
 
+## Expériences des 14–15 octobre 2026
+
+Ces scripts conservent leurs résultats dans des dossiers datés. Ils ne modifient
+pas automatiquement le modèle ni la recherche du chat.
+
+| Outil | Fonction |
+|---|---|
+| [`compare_mistral_jev.py`](compare_mistral_jev.py) | Comparer les parcours Mistral/Jev ; les modes distants utilisent un budget explicite |
+| [`compare_technical_embeddings.py`](compare_technical_embeddings.py) | Comparer BGE-M3, Qwen et E5 sur un sous-ensemble figé |
+| [`improve_bge_retrieval.py`](improve_bge_retrieval.py) | Étudier fusion et reranking sur les erreurs annotées |
+| [`validate_bge_fusion.py`](validate_bge_fusion.py) | Confirmer la fusion sur un nouveau lot, avec contrôle des pertes de preuves |
+| [`train_bge_contrastive.py`](train_bge_contrastive.py) | Préparer, entraîner et évaluer le pilote LoRA local, avec index isolé |
+| [`render_bge_finetuning.py`](render_bge_finetuning.py) | Générer l’annexe HTML depuis les résultats vérifiés, sans inférence |
+| [`render_sql_rag_benchmark.py`](render_sql_rag_benchmark.py) | Générer le benchmark HTML des modèles et son lien d’annexe |
+
+Rapports et décisions : [index de documentation](../docs/README.md).
+Les poids, vecteurs et dépendances optionnelles restent dans les dossiers locaux
+ignorés par Git. Les annotations, protocoles et résultats sont versionnés.
+
 ## Évaluations de la boucle historique
+
 
 | Outil | Couche mesurée |
 |---|---|

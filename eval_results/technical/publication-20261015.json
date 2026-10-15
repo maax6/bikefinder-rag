@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-15T01:07:34.323248+00:00",
+  "scope": "Pre-publication software and documentation checks; no new inference or training",
+  "tests": {
+    "passed": 1201,
+    "skipped": 8,
+    "seconds": 14.69,
+    "command": "PYTHONPATH=src HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 BIKEFINDER_JEV_ROUTER=0 BIKEFINDER_JEV_RAG=0 BIKEFINDER_CATALOG_RESEARCH=0 BIKEFINDER_CATALOG_EXPERIMENT=0 .venv/bin/python -m pytest -q"
+  },
+  "readme_lines": 53,
+  "published_previous_readme_lines": 137,
+  "local_documentation_links_checked": [
+    "README.md",
+    "docs/README.md",
+    "docs/phase-test-20261015.md",
+    "docs/bge-lora-pilote-20261015.md",
+    "scripts/README.md",
+    "eval_results/README.md"
+  ],
+  "html_sha256": "47cfdb7487154c1e848bc085fb8db8f575505309b7f3b835b520e8a4e866d9fc",
+  "html_cases": 156,
+  "runtime_src_changes": [],
+  "new_inference_calls": 0,
+  "new_remote_api_cost_usd": 0
+}

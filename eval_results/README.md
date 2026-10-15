@@ -46,9 +46,20 @@ du tour de chat ; ne pas additionner ou comparer des temps aux périmètres
 différents. Les [notes des essais du 13 octobre](../docs/jev-partial-improvements.md)
 précisent les premiers passages, les corrections et les réutilisations de cache.
 
-Le prochain benchmark mots clés / BGE-M3 / hybride / reranking reste à exécuter.
-Les anciens JSON ne constituent pas ses résultats ; son lot inédit et son
-snapshot devront être identifiés avant le premier essai.
+Le [benchmark technique du 13 octobre](../docs/technical-retrieval-benchmark-20261013.md)
+a comparé BM25, BGE-M3, hybride et reranking. Les études suivantes conservent
+leurs propres lots et décisions :
+
+| Résultats datés | Périmètre |
+|---|---|
+| [Mistral seul / Jev](technical/mistral-alone-20261014/summary.json) | Parcours, délais, erreurs et budget |
+| [Comparaison d’embeddings](technical/embedding-model-comparison-20261014/summary.json) | Sous-ensemble de 4 096 passages |
+| [Améliorations BGE-M3](../docs/bge-m3-ameliorations-recherche-20261015.md) | Erreurs annotées, fusion et reranking |
+| [Confirmation de la fusion](technical/bge-fusion-confirmation-20261015/run-v1/decision.json) | 64 nouvelles questions et 28 anciens cas ; non promue |
+| [Pilote contrastif LoRA](technical/bge-lora-pilot-20261015/summary.json) | 512 questions d’apprentissage, 156 d’évaluation ; non activé |
+
+La [prochaine phase de validation](../docs/phase-test-20261015.md) doit mesurer
+les réponses finales sur un nouveau lot indépendant et le parcours réel du chat.
 
 Les nouveaux scripts écrivent un **fichier daté distinct** et ajoutent des
 métadonnées : date UTC, révision Git et état du checkout, versions,
