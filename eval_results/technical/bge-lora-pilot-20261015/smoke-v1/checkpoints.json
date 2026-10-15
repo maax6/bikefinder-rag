@@ -1,0 +1,12 @@
+[
+  {
+    "epoch": 1,
+    "dev_loss": 1.0576820522546768,
+    "train_loss": 1.4369790613651277,
+    "path": "data/technical/bge-lora-pilot-20261015/smoke-v1/epoch-1",
+    "files_sha256": {
+      "adapter_model.safetensors": "536daeba8a0f593637b39ec899721b03861b59e6fdf6e83d9609902edc1a5483",
+      "adapter_config.json": "52dac9c40caa8c42f148c299783029ebb061b36a567c88bf64d77ca626c083c7"
+    }
+  }
+]

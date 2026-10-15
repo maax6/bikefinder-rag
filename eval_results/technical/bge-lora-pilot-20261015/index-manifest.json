@@ -1,0 +1,41 @@
+{
+  "completed_utc": "2026-10-15T00:48:16.822836+00:00",
+  "documents": 105687,
+  "dimensions": 1024,
+  "document_sha256": "bcc9f203216441cc6691e7017aac6d69ab729a04071889289cfbc6db2253bf56",
+  "vectors_sha256": "a5d6017078db23eef7343f59012a453c5aa594a26fbe9b2e9bd6812eb6921e65",
+  "base_model": {
+    "content_sha256": "abfff3f64e1e257a3f76286e13358376f19772afb22f42804d31c8a5619108c9",
+    "file_sha256": {
+      "1_Pooling/config.json": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+      "config.json": "26159e7ad065073448460117eb24b7a4572f6f4e78eadff65dc0a11c052449fa",
+      "config_sentence_transformers.json": "1eef72430e7194a1e59680e635aed81ffa083f05668dbc5bb1c56c04c0999c38",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "pytorch_model.bin": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38",
+      "sentence_bert_config.json": "eb9b44b13c0f52a3b3685c3b1cbdea1ba8b04bea123b98f61610048940776eb1",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+      "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+      "tokenizer.json": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+      "tokenizer_config.json": "a62b2b6784f990259fddef5f16388693a8043be4f69179e6a5257eeb3f9abac4"
+    },
+    "path": "/Users/m4ks/.cache/huggingface/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+  },
+  "adapter_path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-2",
+  "adapter_files_sha256": {
+    "adapter_model.safetensors": "1c95f0395c2b05640d46b424f45be9814f605eac89687440025fd4de0f20ed55",
+    "adapter_config.json": "0f3b829b124a17cde597636aed9845052562a3820bb45bb1943b41782d7bdf59"
+  },
+  "dtype": "float16 model, normalized float32 storage",
+  "max_tokens_observed": 272,
+  "encoding_seconds": 516.5663492920576,
+  "training_result_sha256": "637f67590ac3a562d1f81a76a06414ac83daeecca32ef2684328d780a676e13c",
+  "protocol_sha256": "d9deef8eda2f72757f5e84199f3a52432c3ef157c8e7956cabdb2fcf9ea44194",
+  "status": "complete_isolated_index",
+  "script_sha256": "36ae66f5151c8372ca04059959c67c2843902651c76e8b6c12507ad425e0a3dd",
+  "base_encoding_control": {
+    "sample_documents": 32,
+    "min_cosine": 0.9999998807907104,
+    "max_abs_error": 0.00011539459228515625
+  }
+}

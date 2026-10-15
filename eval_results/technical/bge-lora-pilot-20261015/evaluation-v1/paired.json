@@ -1,0 +1,1546 @@
+[
+  {
+    "id": "TEST-0001",
+    "split": "test",
+    "question": "Pour Gilera RC 600 (1991), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0002",
+    "split": "test",
+    "question": "Que sait-on de la puissance délivrée et du couple de Kymco Visar (2017), avec leurs régimes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0003",
+    "split": "test",
+    "question": "Comment BSA 350 Bantam (2026) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0004",
+    "split": "test",
+    "question": "Je veux comparer le freinage des deux roues de Fantic XEF 125 Performance (2025). Relève les dimensions disponibles.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0005",
+    "split": "test",
+    "question": "Le nom de Morbidelli C1002V (2025) peut être commercial : relève les cc et les litres de réservoir dans sa fiche.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0006",
+    "split": "test",
+    "question": "À quelle hauteur s'assoit-on sur GASGAS RX 450 F Replica (2023), et quel couple son moteur fournit-il selon la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0007",
+    "split": "test",
+    "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Gilera 600 Nordwest (1993) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0008",
+    "split": "test",
+    "question": "Quelles teintes la fiche de Kymco Sky Town 125 (2025) propose-t-elle pour ce millésime précis ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0009",
+    "split": "test",
+    "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de BSA 650 Gold Star (2026) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0010",
+    "split": "test",
+    "question": "À l'arrière de Fantic Caballero 500 Scrambler (2025), que décrit la fiche pour amortir et freiner ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0011",
+    "split": "test",
+    "question": "Pour Morbidelli C652V (2026), relève le nombre de vitesses ainsi que la suspension avant.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0012",
+    "split": "test",
+    "question": "Pour GASGAS RX 450 F Replica (2023), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0013",
+    "split": "test",
+    "question": "Comment Gilera 125 COGUAR (2001) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0014",
+    "split": "test",
+    "question": "Je veux comparer le freinage des deux roues de Kymco 125 Quannon (2007). Relève les dimensions disponibles.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0015",
+    "split": "test",
+    "question": "Le nom de BSA 650 Scrambler (2026) peut être commercial : relève les cc et les litres de réservoir dans sa fiche.",
+    "lost_groups": [
+      [
+        "c5aa244360f284d0:section:4"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "TEST-0016",
+    "split": "test",
+    "question": "À quelle hauteur s'assoit-on sur Fantic XMF 125 Performance (2025), et quel couple son moteur fournit-il selon la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0017",
+    "split": "test",
+    "question": "Pour Morbidelli C652V (2026), donne les valeurs de puissance et de masse en gardant les libellés d'origine.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0018",
+    "split": "test",
+    "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de GASGAS ES 700 (2022) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0019",
+    "split": "test",
+    "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Gilera 125 CX (1992) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0020",
+    "split": "test",
+    "question": "À l'arrière de Kymco 125 Quannon (2009), que décrit la fiche pour amortir et freiner ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0021",
+    "split": "test",
+    "question": "Pour BSA 650 Scrambler (2026), relève le nombre de vitesses ainsi que la suspension avant.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0022",
+    "split": "test",
+    "question": "Pour Fantic Caballero 700 Scrambler (2025), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0023",
+    "split": "test",
+    "question": "Que sait-on de la puissance délivrée et du couple de Morbidelli C652V (2026), avec leurs régimes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0024",
+    "split": "test",
+    "question": "Comment GASGAS RX 450 F Replica (2023) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0025",
+    "split": "test",
+    "question": "Le nom de Gilera 125 COGUAR (2001) peut être commercial : relève les cc et les litres de réservoir dans sa fiche.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "5b9235fa96c5ef97:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0026",
+    "split": "test",
+    "question": "À quelle hauteur s'assoit-on sur Kymco 125 Quannon (2010), et quel couple son moteur fournit-il selon la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0027",
+    "split": "test",
+    "question": "Pour BSA 650 Gold Star (2022), donne les valeurs de puissance et de masse en gardant les libellés d'origine.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "8849a2b90db73178:section:4"
+      ],
+      [
+        "8849a2b90db73178:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0028",
+    "split": "test",
+    "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Fantic Caballero 700 Scrambler (2024) ?",
+    "lost_groups": [
+      [
+        "12cc4b50c341d2d1:section:2"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "TEST-0029",
+    "split": "test",
+    "question": "Quelles teintes la fiche de Morbidelli T502XR (2026) propose-t-elle pour ce millésime précis ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0030",
+    "split": "test",
+    "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de GASGAS SM 700 (2024) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0031",
+    "split": "test",
+    "question": "Pour Gilera 600 Nordwest (1994), relève le nombre de vitesses ainsi que la suspension avant.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0032",
+    "split": "test",
+    "question": "Pour Kymco Visar (2019), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0033",
+    "split": "test",
+    "question": "Que sait-on de la puissance délivrée et du couple de BSA 650 Scrambler (2026), avec leurs régimes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0034",
+    "split": "test",
+    "question": "Comment Fantic Caballero 500 Scrambler (2025) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0035",
+    "split": "test",
+    "question": "Je veux comparer le freinage des deux roues de Morbidelli 850 V8 (1997). Relève les dimensions disponibles.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0036",
+    "split": "test",
+    "question": "Le nom de GASGAS 125 Pampera (2002) peut être commercial : relève les cc et les litres de réservoir dans sa fiche.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0037",
+    "split": "test",
+    "question": "Pour Gilera RC 600 (1990), donne les valeurs de puissance et de masse en gardant les libellés d'origine.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0038",
+    "split": "test",
+    "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Kymco 125 Quannon (2008) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0039",
+    "split": "test",
+    "question": "Quelles teintes la fiche de BSA 650 Gold Star (2023) propose-t-elle pour ce millésime précis ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0040",
+    "split": "test",
+    "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Fantic Caballero 700 Scrambler (2025) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0041",
+    "split": "test",
+    "question": "À l'arrière de Morbidelli Timeless 1200 (2026), que décrit la fiche pour amortir et freiner ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0042",
+    "split": "test",
+    "question": "Pour GASGAS ES 700 (2022), relève le nombre de vitesses ainsi que la suspension avant.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0043",
+    "split": "test",
+    "question": "Que sait-on de la puissance délivrée et du couple de Gilera 600 Nordwest (1993), avec leurs régimes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0044",
+    "split": "test",
+    "question": "Comment Kymco 125 Quannon (2010) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0045",
+    "split": "test",
+    "question": "Je veux comparer le freinage des deux roues de BSA 350 Thunderbolt (2026). Relève les dimensions disponibles.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0046",
+    "split": "test",
+    "question": "Le nom de Fantic XEF 125 Performance (2025) peut être commercial : relève les cc et les litres de réservoir dans sa fiche.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0047",
+    "split": "test",
+    "question": "À quelle hauteur s'assoit-on sur Morbidelli T125X (2025), et quel couple son moteur fournit-il selon la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0048",
+    "split": "test",
+    "question": "Pour GASGAS SM 700 (2024), donne les valeurs de puissance et de masse en gardant les libellés d'origine.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "f997f4f83bc5e421:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0049",
+    "split": "test",
+    "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Gilera 125 COGUAR (1999) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0050",
+    "split": "test",
+    "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Kymco 125 Quannon (2010) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0051",
+    "split": "test",
+    "question": "À l'arrière de BSA 350 Thunderbolt (2026), que décrit la fiche pour amortir et freiner ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0052",
+    "split": "test",
+    "question": "Pour Fantic Caballero 500 Scrambler (2025), relève le nombre de vitesses ainsi que la suspension avant.",
+    "lost_groups": [
+      [
+        "2bb8cd25b397ad68:section:2"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "TEST-0053",
+    "split": "test",
+    "question": "Pour Morbidelli T502 (2026), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0054",
+    "split": "test",
+    "question": "Que sait-on de la puissance délivrée et du couple de GASGAS ES 700 (2022), avec leurs régimes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0055",
+    "split": "test",
+    "question": "Je veux comparer le freinage des deux roues de Gilera 600 Nordwest (1994). Relève les dimensions disponibles.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0056",
+    "split": "test",
+    "question": "Le nom de Kymco Visar (2019) peut être commercial : relève les cc et les litres de réservoir dans sa fiche.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "aa670381dc516267:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0057",
+    "split": "test",
+    "question": "À quelle hauteur s'assoit-on sur BSA 650 Scrambler (2026), et quel couple son moteur fournit-il selon la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0058",
+    "split": "test",
+    "question": "Pour Fantic XEF 125 Performance (2025), donne les valeurs de puissance et de masse en gardant les libellés d'origine.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0059",
+    "split": "test",
+    "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Morbidelli T125X (2025) ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0060",
+    "split": "test",
+    "question": "Quelles teintes la fiche de GASGAS EC 450F (2025) propose-t-elle pour ce millésime précis ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0061",
+    "split": "test",
+    "question": "À l'arrière de Gilera 125 CX (1991), que décrit la fiche pour amortir et freiner ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0062",
+    "split": "test",
+    "question": "Pour Kymco 125 Quannon (2007), relève le nombre de vitesses ainsi que la suspension avant.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0063",
+    "split": "test",
+    "question": "Pour BSA 650 Gold Star (2024), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "TEST-0064",
+    "split": "test",
+    "question": "Que sait-on de la puissance délivrée et du couple de Fantic Caballero 700 Scrambler (2023), avec leurs régimes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F001",
+    "split": "regression",
+    "question": "Sur Yamaha XJR 1300 (2003), quelle hauteur de selle et quelle contenance de réservoir sont annoncées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F002",
+    "split": "regression",
+    "question": "Kawasaki ZRX 1200 R (2003) : peux-tu relever puissance et couple avec leurs unités et les régimes indiqués ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F003",
+    "split": "regression",
+    "question": "Pour Honda CB 500 (2000), combien de rapports comporte la boîte et comment la roue arrière est-elle entraînée ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F004",
+    "split": "regression",
+    "question": "Quel frein et quel type de fourche trouve-t-on à l'avant de Suzuki 600 GSX-R Edition Speciale Tourist Trophy (2007), selon sa fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F005",
+    "split": "regression",
+    "question": "Je cherche le frein et la suspension arrière de BMW R 1200 GS (2006). Que donne la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F006",
+    "split": "regression",
+    "question": "Quelles teintes sont proposées sur la fiche de Triumph 800 BONNEVILLE (2004) ? Garde ce millésime précis.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F007",
+    "split": "regression",
+    "question": "Pour Ducati 999 R (2005), relève la cylindrée réelle et le mode de refroidissement du moteur.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F008",
+    "split": "regression",
+    "question": "Harley-Davidson 1584 DYNA FAT BOB FXDF (2010) : donne la hauteur de selle et les masses documentées, en précisant à sec ou tous pleins faits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F009",
+    "split": "regression",
+    "question": "Sur KTM 150 XC-W (2019), quelle hauteur de selle et quelle contenance de réservoir sont annoncées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F010",
+    "split": "regression",
+    "question": "Aprilia TUONO V4 1100 Factory (2016) : peux-tu relever puissance et couple avec leurs unités et les régimes indiqués ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F011",
+    "split": "regression",
+    "question": "Pour MV-Agusta 800 DRAGSTER RR (2015), combien de rapports comporte la boîte et comment la roue arrière est-elle entraînée ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F012",
+    "split": "regression",
+    "question": "Quel frein et quel type de fourche trouve-t-on à l'avant de Moto-Guzzi 1400 Eldorado (2019), selon sa fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F013",
+    "split": "regression",
+    "question": "Je cherche le frein et la suspension arrière de Indian 1133 Scout Tiffany Blue (2019). Que donne la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F014",
+    "split": "regression",
+    "question": "Quelles teintes sont proposées sur la fiche de Benelli TnT 899 Cafe Racer (2011) ? Garde ce millésime précis.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F015",
+    "split": "regression",
+    "question": "Pour Mash 400 Five Hundred Von Dutch (2015), relève la cylindrée réelle et le mode de refroidissement du moteur.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F016",
+    "split": "regression",
+    "question": "Bimota 800 TESI 3D RaceCafe (2016) : donne la hauteur de selle et les masses documentées, en précisant à sec ou tous pleins faits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F017",
+    "split": "regression",
+    "question": "Morini 450 Alltrhike (2026) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F018",
+    "split": "regression",
+    "question": "Pour Royal-Enfield Classic 350 (2022), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "b733b6ae57d72686:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F019",
+    "split": "regression",
+    "question": "Sur Victory (USA) 1700 BOARDWALK (2015), quelle transmission finale est indiquée et quelles couleurs sont listées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F020",
+    "split": "regression",
+    "question": "Décris les freins avant et arrière de Norton 1200 V4 CR (2023), avec leurs dimensions lorsqu'elles sont présentes.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F021",
+    "split": "regression",
+    "question": "Pour Cagiva 1000 X-TRA RAPTOR (2005), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F022",
+    "split": "regression",
+    "question": "CFMOTO 800 MT Touring Limited Edition (2022) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F023",
+    "split": "regression",
+    "question": "Pour Zero Motorcycles DS (2026), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "b3164f61fcd443e6:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F024",
+    "split": "regression",
+    "question": "Buell Hammerhead 1190 RX (2021) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F025",
+    "split": "regression",
+    "question": "Yamaha FZ6 600 S2 (2007) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F026",
+    "split": "regression",
+    "question": "Pour Kawasaki 500 GPZ (2004), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "227243e6b2cce98c:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F027",
+    "split": "regression",
+    "question": "Sur Honda CBR 125 R (2007), quelle transmission finale est indiquée et quelles couleurs sont listées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F028",
+    "split": "regression",
+    "question": "Décris les freins avant et arrière de Suzuki SV 1000 N (2006), avec leurs dimensions lorsqu'elles sont présentes.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F029",
+    "split": "regression",
+    "question": "Pour BMW R 1200 C (2000), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F030",
+    "split": "regression",
+    "question": "Triumph 955i SPEED TRIPLE (2001) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F031",
+    "split": "regression",
+    "question": "Combien de litres contient le réservoir de Ducati 1098 (2007) et dans quels coloris cette fiche la présente-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F032",
+    "split": "regression",
+    "question": "Harley-Davidson CVO 1800 SOFTAIL CONVERTIBLE FLSTSE (2010) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F033",
+    "split": "regression",
+    "question": "KTM 125 SX (2014) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F034",
+    "split": "regression",
+    "question": "Pour Aprilia RS 660 prototype (2019), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F035",
+    "split": "regression",
+    "question": "Sur MV-Agusta 800 BRUTALE (2016), quelle transmission finale est indiquée et quelles couleurs sont listées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F036",
+    "split": "regression",
+    "question": "Décris les freins avant et arrière de Moto-Guzzi STELVIO 1200 8V NTX (2012), avec leurs dimensions lorsqu'elles sont présentes.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F037",
+    "split": "regression",
+    "question": "Pour Indian FTR 1200 S (2020), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F038",
+    "split": "regression",
+    "question": "Benelli 500 Leoncino Trail (2017) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F039",
+    "split": "regression",
+    "question": "Combien de litres contient le réservoir de Mash 400 Five Hundred Chromium (2020) et dans quels coloris cette fiche la présente-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F040",
+    "split": "regression",
+    "question": "Bimota DB8 ORONERO (2016) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F041",
+    "split": "regression",
+    "question": "Morini Seiemmezzo 650 SCR (2024) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F042",
+    "split": "regression",
+    "question": "Pour Royal-Enfield Super Meteor 650 (2024), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F043",
+    "split": "regression",
+    "question": "Sur Victory (USA) 1200 OCTANE (2016), quelle transmission finale est indiquée et quelles couleurs sont listées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F044",
+    "split": "regression",
+    "question": "Décris les freins avant et arrière de Norton 961 Commando Sport MK III (2024), avec leurs dimensions lorsqu'elles sont présentes.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "f4d0a740adab1dc7:section:1"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F045",
+    "split": "regression",
+    "question": "Pour Cagiva 125 SUPERCITY (2000), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "fbda8009a2c9a94c:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F046",
+    "split": "regression",
+    "question": "CFMOTO 700 CL-X Heritage (2021) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "a09feaef4e9c6999:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F047",
+    "split": "regression",
+    "question": "Pour Zero Motorcycles DSR Black Forest Edition (2020), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F048",
+    "split": "regression",
+    "question": "Buell Super Cruiser 1190 x RSD (2025) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F049",
+    "split": "regression",
+    "question": "Compare Yamaha XJ6 600 Diversion F (2011) et Yamaha XJ6 600 Diversion F (2014) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F050",
+    "split": "regression",
+    "question": "Compare Kawasaki KLE 500 (2002) et Kawasaki KLE 500 (2003) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F051",
+    "split": "regression",
+    "question": "Compare Honda CB 600 F HORNET (2014) et Honda CB 600 F HORNET (2012) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F052",
+    "split": "regression",
+    "question": "Compare Suzuki GSX-R 1000 (2003) et Suzuki GSX-R 1000 (2004) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [
+      [
+        "27003013c1c512d9:section:4"
+      ]
+    ],
+    "gained_groups": [
+      [
+        "da2836066c4c41ba:section:2"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F053",
+    "split": "regression",
+    "question": "Compare BMW R 1200 GS (2018) et BMW R 1200 GS (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [
+      [
+        "422835768b8da1e3:section:0"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F054",
+    "split": "regression",
+    "question": "Compare Triumph 2500 Rocket III R (2020) et Triumph 2500 Rocket III R (2021) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [
+      [
+        "a83c3557b87eb30e:section:4"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F055",
+    "split": "regression",
+    "question": "Compare Ducati 821 Hyperstrada (2014) et Ducati 821 Hyperstrada (2013) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F056",
+    "split": "regression",
+    "question": "Compare Harley-Davidson CVO 1920 Limited FLHTKSE (2020) et Harley-Davidson CVO 1920 Limited FLHTKSE (2021) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F057",
+    "split": "regression",
+    "question": "Compare KTM 450 EXC-F Six Days (2017) et KTM 450 SX-F Factory (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F058",
+    "split": "regression",
+    "question": "Compare Aprilia 1100 TUONO V4 Factory Limited Edition USA (2023) et Aprilia 1100 TUONO V4 (2023) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [
+      [
+        "2a47e0b575c7f48a:section:4"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F059",
+    "split": "regression",
+    "question": "Compare MV-Agusta Brutale 1090 Corsa (2014) et MV-Agusta Brutale 1090 R (2014) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F060",
+    "split": "regression",
+    "question": "Compare Moto-Guzzi V7 750 Classic (2009) et Moto-Guzzi V7 750 Cafe Classic (2009) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F061",
+    "split": "regression",
+    "question": "Compare Indian 1811 CHIEFTAIN Jack Daniel's (2017) et Indian 1811 CHIEFTAIN (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "026da38e5a24ae75:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F062",
+    "split": "regression",
+    "question": "Compare Benelli TRK 502 (2025) et Benelli TRK 502 X (2025) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "0f96a01d2046d856:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "F063",
+    "split": "regression",
+    "question": "Compare Mash X-Ride 650 Trail (2024) et Mash X-Ride 50 (2024) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "3db98e98d44c3816:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "F064",
+    "split": "regression",
+    "question": "Compare Bimota DB7 1098 (2009) et Bimota DB7 1098 Oro Nero (2009) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "HOLDOUT-001",
+    "split": "regression",
+    "question": "La CFMOTO 450 MT 2024 n’a pas une selle fixe ? Donne-moi aussi son encombrement en longueur et sa masse annoncée.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-005",
+    "split": "regression",
+    "question": "La Moto-Guzzi 850 V7 Stone 2024 roule avec une chaîne ? Et son moteur refroidit à l’eau ou à l’air ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "d0795676152e69de:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-007",
+    "split": "regression",
+    "question": "La Yamaha MT-09 900 Y-AMT 2024 change quoi face à la MT-09 900 2024 : la boîte seulement, ou aussi la cylindrée et la puissance ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "5f8c8c61b3eeb916:section:4"
+      ],
+      [
+        "2a224bbc503cf279:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-010",
+    "split": "regression",
+    "question": "J’ai besoin de la largeur de la BMW R 1250 GS 2023 et de sa plage de réglage de selle, pas de l’Adventure.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "4d902be1a67428c8:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-015",
+    "split": "regression",
+    "question": "Si je prends une KTM 790 Duke 2024, le système pour passer les rapports sans débrayer est compris ou marqué en option ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-016",
+    "split": "regression",
+    "question": "La Ducati Monster SP 2024 a bien l’aide au départ arrêté et un shifter fourni ? La fiche précise s’il marche aussi en descendant les vitesses ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-023",
+    "split": "regression",
+    "question": "Pour le Honda Forza 750 2024, tu peux confirmer la prise USB et le démarrage sans clé à partir de la fiche ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-028",
+    "split": "regression",
+    "question": "Quels coloris sont réellement écrits pour la Ducati Monster standard 2024 ? Je ne veux pas ceux de la SP.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-038",
+    "split": "regression",
+    "question": "Honda CRF 1100 L Africa Twin 2024 et Adventure Sports 2024 : laquelle a une roue avant de 19 pouces, et leurs selles se règlent entre quelles hauteurs ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "16e03bf9b38a2949:section:1"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "HOLDOUT-039",
+    "split": "regression",
+    "question": "Kawasaki Z 900 2024 contre Z 900 SE 2024 : la fiche cite-t-elle Brembo pour les deux, et les dimensions de fourche et de disques avant diffèrent-elles ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "4a1aafa4f4cf6001:section:1"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-041",
+    "split": "regression",
+    "question": "Pour les Yamaha Tracer 9 GT et GT+ de 2024, la base parle-t-elle d’une boîte automatique et d’un radar sur les deux ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "6e32b3574417e76e:section:5"
+      ],
+      [
+        "593360357e043c46:section:5"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-004",
+    "split": "regression",
+    "question": "Pour la Royal-Enfield 450 Himalayan 2024, quelles sont les deux hauteurs de selle et les masses à sec et prête à rouler indiquées ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-008",
+    "split": "regression",
+    "question": "La Suzuki GSX-8R 800 de 2024 fait vraiment 800 cm³ ? Et à quelle hauteur se trouve la selle, avec quel réservoir ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "HOLDOUT-012",
+    "split": "regression",
+    "question": "La Harley-Davidson RH 975 Nightster 2024 a quel angle entre ses deux cylindres, et quelle hauteur de selle ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "d646e539b110fb4b:section:4"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-022",
+    "split": "regression",
+    "question": "Sur une Suzuki GSX-8S 800 2024, le contrôle de traction et le shifter sont mentionnés ? Pour le shifter, quelle précision donne la transmission ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-026",
+    "split": "regression",
+    "question": "La Triumph 660 Trident 2025 est citée en bleu uni ou en bleu avec une autre couleur ? Donne les combinaisons écrites.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-033",
+    "split": "regression",
+    "question": "Sur la Triumph 765 Street Triple R A2 2025, quels chevaux et quelle cylindrée sont écrits, et que dit la rubrique permis ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "HOLDOUT-034",
+    "split": "regression",
+    "question": "Je regarde une Royal-Enfield Meteor 350 2024 avec mon A2. Quelle puissance donne la fiche et cite-t-elle ce permis, sans faire une déduction réglementaire ?",
+    "lost_groups": [
+      [
+        "9932cf3c8b15ee49:section:4"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "HOLDOUT-040",
+    "split": "regression",
+    "question": "La Triumph 660 Trident 2025 apporte quoi par rapport à la 2024 pour le shifter, le régulateur et le nombre de modes de conduite, selon les fiches ?",
+    "lost_groups": [
+      [
+        "0ce7454d1b7fa796:section:2"
+      ]
+    ],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "HOLDOUT-044",
+    "split": "regression",
+    "question": "On me propose une Royal-Enfield 450 Himalayan blanche, année oubliée. Entre les fiches 2024 et 2025, laquelle cite le blanc, et cela suffit-il à dater la moto ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N01",
+    "split": "regression",
+    "question": "La Benelli TRK 702 de 2024 fait-elle exactement 702 cm³, et quel volume de réservoir sa fiche annonce-t-elle ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 0.0,
+    "candidate_complete": 0.0
+  },
+  {
+    "id": "N02",
+    "split": "regression",
+    "question": "Pour la Benelli TRK 702 de 2024, quels coloris sont écrits et la liste des équipements cite-t-elle une prise pour charger par USB ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N03",
+    "split": "regression",
+    "question": "Norden 901 et Norden 901 Expedition, toutes deux Husqvarna de 2024 : compare leurs plages de hauteur de selle et leurs masses à sec, sans mélanger avec les masses pleins faits.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N04",
+    "split": "regression",
+    "question": "Sur la Husqvarna Norden 901 Expedition 2024, le shifter est-il de série ou en option et la fiche cite-t-elle une selle et des poignées chauffantes ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N05",
+    "split": "regression",
+    "question": "MV-Agusta 800 Brutale RR 2024 : donne le couple avec son régime et la hauteur de selle. Pour la masse, la fiche fournit-elle le poids à sec et celui tous pleins faits ?",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N06",
+    "split": "regression",
+    "question": "Compare seulement les puissances et leurs régimes des MV-Agusta 1000 Brutale RR et 800 Brutale R de 2024. Je veux bien la R pour la 800, pas la RR.",
+    "lost_groups": [],
+    "gained_groups": [],
+    "baseline_complete": 1.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N07",
+    "split": "regression",
+    "question": "Sur l'Indian 1133 Scout Bobber de 2024, la transmission secondaire est-elle par chaîne ou courroie et quels coloris sont listés ?",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "ea8331c72ff1d845:section:9"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  },
+  {
+    "id": "N08",
+    "split": "regression",
+    "question": "Entre l'Indian 1133 Scout et la 1133 Scout Bobber de 2024, les fiches donnent-elles les mêmes longueur et largeur ? Compare ces dimensions, sans prendre la Bobber Twenty.",
+    "lost_groups": [],
+    "gained_groups": [
+      [
+        "330083be410a87e9:section:0"
+      ],
+      [
+        "ea8331c72ff1d845:section:0"
+      ]
+    ],
+    "baseline_complete": 0.0,
+    "candidate_complete": 1.0
+  }
+]

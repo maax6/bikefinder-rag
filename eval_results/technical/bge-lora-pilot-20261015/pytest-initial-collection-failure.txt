@@ -1,0 +1,60 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_checkpointing.py _
+ImportError while importing test module '/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_checkpointing.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_checkpointing.py:18: in <module>
+    import evaluate
+E   ModuleNotFoundError: No module named 'evaluate'
+_ ERROR collecting data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_alst_ulysses_sp.py _
+ImportError while importing test module '/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_alst_ulysses_sp.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_alst_ulysses_sp.py:20: in <module>
+    from deepspeed.runtime.utils import move_to_device
+E   ModuleNotFoundError: No module named 'deepspeed'
+_ ERROR collecting data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_multiple_model.py _
+ImportError while importing test module '/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_multiple_model.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_multiple_model.py:25: in <module>
+    import evaluate
+E   ModuleNotFoundError: No module named 'evaluate'
+_ ERROR collecting data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_metrics.py _
+ImportError while importing test module '/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_metrics.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_metrics.py:21: in <module>
+    import evaluate
+E   ModuleNotFoundError: No module named 'evaluate'
+_ ERROR collecting data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_performance.py _
+ImportError while importing test module '/Users/m4ks/github/génération-à-enrichissement-contextuel/data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_performance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_performance.py:20: in <module>
+    import evaluate
+E   ModuleNotFoundError: No module named 'evaluate'
+=========================== short test summary info ============================
+ERROR data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_checkpointing.py
+ERROR data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_alst_ulysses_sp.py
+ERROR data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_ds_multiple_model.py
+ERROR data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_metrics.py
+ERROR data/technical/bge-training-runtime-20261015/accelerate/test_utils/scripts/external_deps/test_performance.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 5 errors during collection !!!!!!!!!!!!!!!!!!!!
+5 errors in 12.76s

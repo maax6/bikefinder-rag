@@ -1,0 +1,3664 @@
+{
+  "cases": [
+    {
+      "id": "TRAIN-0001",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior Lawrence (2026) ?"
+    },
+    {
+      "id": "TRAIN-0002",
+      "split": "train",
+      "question": "Puissance et couple de Voxan 1000 BLACK CLASSIC (2010) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0003",
+      "split": "train",
+      "question": "Sur QJ Motor SRK 600 (2026), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0004",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Hyosung GT 125 R (2008) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0005",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Daelim 125 VS (2001), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0006",
+      "split": "train",
+      "question": "Pour Derbi GPR 125 Racing (2005), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0007",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de MZ / MuZ 1000 SF SUPER FIGHTER Edition Spéciale (2005), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0008",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Orcal SK01 125 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0009",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Rieju Xplora 557 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0010",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda 750 STRIKE (2001) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0011",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Macbor XR5 500 Montana (2022) ?"
+    },
+    {
+      "id": "TRAIN-0012",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Brixton Cromwell 1200 (2022) ?"
+    },
+    {
+      "id": "TRAIN-0013",
+      "split": "train",
+      "question": "Puissance et couple de Brough Superior SS 100 MK2 (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0014",
+      "split": "train",
+      "question": "Sur Voxan 1000 CAFE RACER (2009), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0015",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de QJ Motor SRK 800 RR (2025) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0016",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Hyosung GV 300 S Bobber Evo (2024), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0017",
+      "split": "train",
+      "question": "Pour Daelim 125 ROADSPORT R (2008), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0018",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Derbi GPR 125 4T (2013), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0019",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour MZ / MuZ 125 RT (2006) ?"
+    },
+    {
+      "id": "TRAIN-0020",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Orcal Altimo 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0021",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Rieju Xplora 557 (2025) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0022",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Laverda 650 Ghost (1998) ?"
+    },
+    {
+      "id": "TRAIN-0023",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Macbor XR5 500 Montana (2022) ?"
+    },
+    {
+      "id": "TRAIN-0024",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brixton BX 125 (2018) ?"
+    },
+    {
+      "id": "TRAIN-0025",
+      "split": "train",
+      "question": "Sur Brough Superior SS 100 Salt Racer (2025), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0026",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Voxan 1000 ROADSTER (2001) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0027",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de QJ Motor SRK 125 S (2026), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0028",
+      "split": "train",
+      "question": "Pour Hyosung GV 300 S Bobber Evo (2023), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0029",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Daelim 125 ROADWIN (2009), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0030",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Derbi GPR 125 Racing (2004) ?"
+    },
+    {
+      "id": "TRAIN-0031",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 1000 ST SUPER TRAVELLER (2006) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0032",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Orcal Tabor 125 (2025) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0033",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Rieju MRT 50 Enduro (2023) ?"
+    },
+    {
+      "id": "TRAIN-0034",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Laverda SFC 1000 (2004) ?"
+    },
+    {
+      "id": "TRAIN-0035",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Macbor Rockster 125 EVO (2025) ?"
+    },
+    {
+      "id": "TRAIN-0036",
+      "split": "train",
+      "question": "Puissance et couple de Brixton Cromwell 1200 X (2025) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0037",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brough Superior Pendine Sand Racer (2020) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0038",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Voxan 1000 ROADSTER (2005), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0039",
+      "split": "train",
+      "question": "Pour QJ Motor SRK 800 Dark (2026), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0040",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Hyosung GT 125 R (2010), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0041",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Daelim VT Evolution (2004) ?"
+    },
+    {
+      "id": "TRAIN-0042",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi GPR 125 4T (2010) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0043",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 125 RT (2003) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0044",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Orcal Astor (2019) ?"
+    },
+    {
+      "id": "TRAIN-0045",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Rieju Century 125 (2019) ?"
+    },
+    {
+      "id": "TRAIN-0046",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Laverda 750 STRIKE (2000) ?"
+    },
+    {
+      "id": "TRAIN-0047",
+      "split": "train",
+      "question": "Puissance et couple de Macbor Rockster 125 EVO (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0048",
+      "split": "train",
+      "question": "Sur Brixton Cromwell 125 (2022), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0049",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brough Superior Lawrence (2022), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0050",
+      "split": "train",
+      "question": "Pour Voxan 1000 STREET SCRAMBLER (2010), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0051",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de QJ Motor SRT 125 DX (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0052",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Hyosung 125 GF (2000) ?"
+    },
+    {
+      "id": "TRAIN-0053",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 ROADSPORT R (2009) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0054",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi GPR 125 NUDE (2007) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0055",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour MZ / MuZ 125 RT (2007) ?"
+    },
+    {
+      "id": "TRAIN-0056",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Orcal SK01 125 (2024) ?"
+    },
+    {
+      "id": "TRAIN-0057",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Rieju Aventura 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0058",
+      "split": "train",
+      "question": "Puissance et couple de Laverda 750 S FORMULA (1999) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0059",
+      "split": "train",
+      "question": "Sur Macbor Rockster 410 (2025), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0060",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brixton Cromwell 1200 (2024) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0061",
+      "split": "train",
+      "question": "Pour Brough Superior Pendine Sand Racer (2026), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0062",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Voxan 1000 CAFE RACER (2009), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0063",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour QJ Motor SRK 800 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0064",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Hyosung GV 300 S Bobber (2022) ?"
+    },
+    {
+      "id": "TRAIN-0065",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 VS (1998) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0066",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Derbi GPR 125 NUDE (2005) ?"
+    },
+    {
+      "id": "TRAIN-0067",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur MZ / MuZ 125 RT (2008) ?"
+    },
+    {
+      "id": "TRAIN-0068",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Orcal Altimo 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0069",
+      "split": "train",
+      "question": "Puissance et couple de Rieju Xplora 557 (2025) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0070",
+      "split": "train",
+      "question": "Sur Laverda TTS 800 (1999), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0071",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Macbor XR5 510 Montana (2025) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0072",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brixton BX 125 (2018), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0073",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brough Superior SS 100 Salt Racer (2022), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0074",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Voxan 1000 CAFE RACER (2000) ?"
+    },
+    {
+      "id": "TRAIN-0075",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour QJ Motor SRK 800 Dark (2026) ?"
+    },
+    {
+      "id": "TRAIN-0076",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Hyosung XRX 125 (2006) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0077",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Daelim 125 VS (1997) ?"
+    },
+    {
+      "id": "TRAIN-0078",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Derbi GPR 125 NUDE (2005) ?"
+    },
+    {
+      "id": "TRAIN-0079",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de MZ / MuZ 125 RT (2004) ?"
+    },
+    {
+      "id": "TRAIN-0080",
+      "split": "train",
+      "question": "Puissance et couple de Orcal SK01 125 (2020) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0081",
+      "split": "train",
+      "question": "Sur Rieju MRT 50 Enduro (2023), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0082",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Laverda TTS 800 (1999) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0083",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Macbor XR5 500 Montana (2023), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0084",
+      "split": "train",
+      "question": "Pour Brixton Cromwell 1200 X (2026), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0085",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Brough Superior RMB01 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0086",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Voxan 1000 BLACK MAGIC (2010) ?"
+    },
+    {
+      "id": "TRAIN-0087",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de QJ Motor SRK 921 RR (2026) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0088",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Hyosung GV 300 S Bobber Evo (2023) ?"
+    },
+    {
+      "id": "TRAIN-0089",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Daelim 125 DAYSTAR (2011) ?"
+    },
+    {
+      "id": "TRAIN-0090",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Derbi 125 MULHACEN (2012) ?"
+    },
+    {
+      "id": "TRAIN-0091",
+      "split": "train",
+      "question": "Puissance et couple de MZ / MuZ 1000 S (2008) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0092",
+      "split": "train",
+      "question": "Sur Orcal NK01 (2022), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0093",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Rieju RS2 (2009) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0094",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Laverda 750 STRIKE (2001), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0095",
+      "split": "train",
+      "question": "Pour Macbor XR3 250 Montana (2026), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0096",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brixton Crossfire 500 (2021), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0097",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Brough Superior Anniversary Golden Dream (2023) ?"
+    },
+    {
+      "id": "TRAIN-0098",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Voxan VB1 1000 (2003) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0099",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour QJ Motor SRV 600 V4 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0100",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Hyosung GV 650 AQUILA (2005) ?"
+    },
+    {
+      "id": "TRAIN-0101",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Daelim 125 ROADWIN (2010) ?"
+    },
+    {
+      "id": "TRAIN-0102",
+      "split": "train",
+      "question": "Puissance et couple de Derbi 125 Terra Adventure (2010) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0103",
+      "split": "train",
+      "question": "Sur MZ / MuZ 125 RT (2005), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0104",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Orcal NK01 (2021) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0105",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Rieju Xplora 707 S (2026), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0106",
+      "split": "train",
+      "question": "Pour Laverda 750 STRIKE (2000), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0107",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Macbor Rockster 410 (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0108",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Brixton Cromwell 1200 (2023) ?"
+    },
+    {
+      "id": "TRAIN-0109",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brough Superior Anniversary Golden Dream (2026) ?"
+    },
+    {
+      "id": "TRAIN-0110",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Voxan 1000 BLACK MAGIC (2004) ?"
+    },
+    {
+      "id": "TRAIN-0111",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur QJ Motor SRT 700 SX Touring (2026) ?"
+    },
+    {
+      "id": "TRAIN-0112",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Hyosung COMET 125 (2003) ?"
+    },
+    {
+      "id": "TRAIN-0113",
+      "split": "train",
+      "question": "Puissance et couple de Daelim 125 ROADSPORT R (2007) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0114",
+      "split": "train",
+      "question": "Sur Derbi GPR 125 NUDE (2006), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0115",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de MZ / MuZ 125 RT (2006) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0116",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Orcal Astor (2016), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0117",
+      "split": "train",
+      "question": "Pour Rieju Xplora 557 X (2026), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0118",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Laverda 750 STRIKE (2001), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0119",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Macbor Eight Mile 125 LC (2026) ?"
+    },
+    {
+      "id": "TRAIN-0120",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Brixton Crossfire 500 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0121",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brough Superior SS 100 Bert le Vack (2021) ?"
+    },
+    {
+      "id": "TRAIN-0122",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Voxan 1000 BLACK MAGIC (2005) ?"
+    },
+    {
+      "id": "TRAIN-0123",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de QJ Motor SRK 600 RS (2025) ?"
+    },
+    {
+      "id": "TRAIN-0124",
+      "split": "train",
+      "question": "Puissance et couple de Hyosung XRX 125 (2004) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0125",
+      "split": "train",
+      "question": "Sur Daelim 125 ROADWIN (2008), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0126",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Derbi 125 TERRA (2008) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0127",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de MZ / MuZ 125 RT (2005), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0128",
+      "split": "train",
+      "question": "Pour Orcal SK01 125 (2024), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0129",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Rieju Century 125 (2019), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0130",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Laverda 750 S FORMULA (1998) ?"
+    },
+    {
+      "id": "TRAIN-0131",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Macbor Rockster Flat 125 EVO (2026) ?"
+    },
+    {
+      "id": "TRAIN-0132",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Brixton Cromwell 1200 (2024) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0133",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior SS 100 Salt Racer (2022) ?"
+    },
+    {
+      "id": "TRAIN-0134",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Voxan 1000 CAFE RACER (2009) ?"
+    },
+    {
+      "id": "TRAIN-0135",
+      "split": "train",
+      "question": "Puissance et couple de QJ Motor SRK 921 (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0136",
+      "split": "train",
+      "question": "Sur Hyosung GT 125 R (2010), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0137",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Daelim 125 ROADSPORT R (2011) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0138",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Derbi 125 MULHACEN (2011), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0139",
+      "split": "train",
+      "question": "Pour MZ / MuZ 1000 ST SUPER TRAVELLER (2008), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0140",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Orcal NK01 (2023), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0141",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Rieju RS2 (2007) ?"
+    },
+    {
+      "id": "TRAIN-0142",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda 650 Ghost (1999) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0143",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Macbor XR5 500 Montana (2023) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0144",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brixton Crossfire 500 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0145",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior SS 100 Salt Racer (2026) ?"
+    },
+    {
+      "id": "TRAIN-0146",
+      "split": "train",
+      "question": "Puissance et couple de Voxan VB1 1000 (2003) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0147",
+      "split": "train",
+      "question": "Sur QJ Motor SRK 600 RS (2026), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0148",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Hyosung GT 125 R (2007) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0149",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Daelim 125 DAYSTAR (2000), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0150",
+      "split": "train",
+      "question": "Pour Derbi 125 Terra Adventure (2009), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0151",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de MZ / MuZ 1000 S (2009), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0152",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Orcal Altimo 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0153",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Rieju Aventura 125 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0154",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda SFC 1000 (2004) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0155",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Macbor Eight Mile 125 LC (2025) ?"
+    },
+    {
+      "id": "TRAIN-0156",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Brixton Cromwell 1200 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0157",
+      "split": "train",
+      "question": "Puissance et couple de Brough Superior SS 100 MKII (2018) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0158",
+      "split": "train",
+      "question": "Sur Voxan 1000 CAFE RACER (2010), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0159",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de QJ Motor SRK 600 RS (2026) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0160",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Hyosung XRX 125 (2000), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0161",
+      "split": "train",
+      "question": "Pour Daelim 125 ROADWIN (2004), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0162",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Derbi 125 Terra Adventure (2011), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0163",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour MZ / MuZ 125 RT (2010) ?"
+    },
+    {
+      "id": "TRAIN-0164",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Orcal SK01 125 (2024) ?"
+    },
+    {
+      "id": "TRAIN-0165",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Rieju Xplora 707 S (2026) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0166",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Laverda 650 Ghost (1996) ?"
+    },
+    {
+      "id": "TRAIN-0167",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Macbor Eight Mile 125 LC (2025) ?"
+    },
+    {
+      "id": "TRAIN-0168",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brixton Crossfire 500 (2022) ?"
+    },
+    {
+      "id": "TRAIN-0169",
+      "split": "train",
+      "question": "Sur Brough Superior SS 100 Salt Racer (2020), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0170",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Voxan 1000 CAFE RACER (2009) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0171",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de QJ Motor SRK 800 RR (2025), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0172",
+      "split": "train",
+      "question": "Pour Hyosung XRX 125 (2000), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0173",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Daelim 125 VS (2001), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0174",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Derbi GPR 125 4T (2014) ?"
+    },
+    {
+      "id": "TRAIN-0175",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 1000 S (2009) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0176",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Orcal Astor (2017) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0177",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Rieju Xplora 707 X (2026) ?"
+    },
+    {
+      "id": "TRAIN-0178",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Laverda 750 STRIKE (1999) ?"
+    },
+    {
+      "id": "TRAIN-0179",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Macbor Shifter 125 EVO (2026) ?"
+    },
+    {
+      "id": "TRAIN-0180",
+      "split": "train",
+      "question": "Puissance et couple de Brixton Crossfire 500 (2024) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0181",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brough Superior Lawrence Nefud (2026) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0182",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Voxan 1000 ROADSTER (2007), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0183",
+      "split": "train",
+      "question": "Pour QJ Motor SRV 125 (2025), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0184",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Hyosung 125 GF (2003), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0185",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Daelim 125 ROADSPORT R (2010) ?"
+    },
+    {
+      "id": "TRAIN-0186",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi GPR 125 Racing (2004) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0187",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 1000 S (2006) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0188",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Orcal NK01 (2019) ?"
+    },
+    {
+      "id": "TRAIN-0189",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Rieju 125 RS3 (2011) ?"
+    },
+    {
+      "id": "TRAIN-0190",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Laverda 650 Ghost (1997) ?"
+    },
+    {
+      "id": "TRAIN-0191",
+      "split": "train",
+      "question": "Puissance et couple de Macbor Rockster 410 (2025) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0192",
+      "split": "train",
+      "question": "Sur Brixton Cromwell 1200 (2024), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0193",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brough Superior SS 100 Salt Racer (2024), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0194",
+      "split": "train",
+      "question": "Pour Voxan 1000 BLACK CLASSIC (2008), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0195",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de QJ Motor SRK 600 RS (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0196",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Hyosung COMET 125 (2005) ?"
+    },
+    {
+      "id": "TRAIN-0197",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 ROADWIN (2008) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0198",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi 125 TERRA (2008) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0199",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour MZ / MuZ 125 RT (2005) ?"
+    },
+    {
+      "id": "TRAIN-0200",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Orcal Astor (2017) ?"
+    },
+    {
+      "id": "TRAIN-0201",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Rieju Century 125 (2019) ?"
+    },
+    {
+      "id": "TRAIN-0202",
+      "split": "train",
+      "question": "Puissance et couple de Laverda 650 Ghost (1998) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0203",
+      "split": "train",
+      "question": "Sur Macbor Rockster 710 (2026), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0204",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brixton Crossfire 500 (2023) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0205",
+      "split": "train",
+      "question": "Pour Brough Superior SS 100 MKII (2020), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0206",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Voxan VB1 1000 Evo (2004), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0207",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour QJ Motor SRK 921 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0208",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Hyosung GV 300 S Bobber (2021) ?"
+    },
+    {
+      "id": "TRAIN-0209",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 ROADWIN (2005) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0210",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Derbi 125 Terra Adventure (2008) ?"
+    },
+    {
+      "id": "TRAIN-0211",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur MZ / MuZ 1000 SF SUPER FIGHTER Edition Spéciale (2005) ?"
+    },
+    {
+      "id": "TRAIN-0212",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Orcal NK01 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0213",
+      "split": "train",
+      "question": "Puissance et couple de Rieju Century 125 (2019) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0214",
+      "split": "train",
+      "question": "Sur Laverda 750 S FORMULA (1999), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0215",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Macbor XR5 500 Montana (2021) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0216",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brixton Cromwell 1200 (2024), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0217",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brough Superior Pendine Sand Racer (2023), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0218",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Voxan VX 10 (2010) ?"
+    },
+    {
+      "id": "TRAIN-0219",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour QJ Motor SRK 921 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0220",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Hyosung COMET 125 (2009) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0221",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Daelim 125 DAYSTAR (2006) ?"
+    },
+    {
+      "id": "TRAIN-0222",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Derbi GPR 125 4T (2013) ?"
+    },
+    {
+      "id": "TRAIN-0223",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de MZ / MuZ 125 RT (2007) ?"
+    },
+    {
+      "id": "TRAIN-0224",
+      "split": "train",
+      "question": "Puissance et couple de Orcal Astor (2022) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0225",
+      "split": "train",
+      "question": "Sur Rieju Century 125 (2019), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0226",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Laverda SFC 1000 (2004) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0227",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Macbor Rockster Flat 125 EVO (2026), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0228",
+      "split": "train",
+      "question": "Pour Brixton Crossfire 500 (2024), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0229",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Brough Superior Lawrence Dagger (2023) ?"
+    },
+    {
+      "id": "TRAIN-0230",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Voxan 1000 BLACK MAGIC (2005) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0231",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de QJ Motor SRV 125 (2025) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0232",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Hyosung 125 GF (1999) ?"
+    },
+    {
+      "id": "TRAIN-0233",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Daelim 125 ROADSPORT R (2011) ?"
+    },
+    {
+      "id": "TRAIN-0234",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Derbi 125 TERRA (2008) ?"
+    },
+    {
+      "id": "TRAIN-0235",
+      "split": "train",
+      "question": "Puissance et couple de MZ / MuZ 125 RT (2007) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0236",
+      "split": "train",
+      "question": "Sur Orcal NK01 (2023), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0237",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Rieju RS2 (2007) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0238",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Laverda 750 STRIKE (2002), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0239",
+      "split": "train",
+      "question": "Pour Macbor Rockster 125 EVO (2025), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0240",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brixton BX 125 (2016), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0241",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Brough Superior Lawrence Nefud (2025) ?"
+    },
+    {
+      "id": "TRAIN-0242",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Voxan 1000 SCRAMBLER (2007) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0243",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour QJ Motor SRK 800 RS (2026) ?"
+    },
+    {
+      "id": "TRAIN-0244",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Hyosung GT 125 R (2011) ?"
+    },
+    {
+      "id": "TRAIN-0245",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Daelim 125 VS (1997) ?"
+    },
+    {
+      "id": "TRAIN-0246",
+      "split": "train",
+      "question": "Puissance et couple de Derbi GPR 125 Racing (2005) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0247",
+      "split": "train",
+      "question": "Sur MZ / MuZ 1000 ST SUPER TRAVELLER (2006), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0248",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Orcal Tabor 125 (2026) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0249",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Rieju 125 RS3 (2012), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0250",
+      "split": "train",
+      "question": "Pour Laverda 650 Ghost (1996), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0251",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Macbor XR5 500 Montana (2022), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0252",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Brixton Cromwell 125 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0253",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brough Superior Lawrence (2026) ?"
+    },
+    {
+      "id": "TRAIN-0254",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Voxan 1000 CAFE RACER (2010) ?"
+    },
+    {
+      "id": "TRAIN-0255",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur QJ Motor SRK 800 RR (2026) ?"
+    },
+    {
+      "id": "TRAIN-0256",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Hyosung GT 125 R (2009) ?"
+    },
+    {
+      "id": "TRAIN-0257",
+      "split": "train",
+      "question": "Puissance et couple de Daelim 125 ROADWIN (2011) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0258",
+      "split": "train",
+      "question": "Sur Derbi GPR 125 4T (2009), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0259",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de MZ / MuZ 125 RT (2002) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0260",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Orcal Astor (2018), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0261",
+      "split": "train",
+      "question": "Pour Rieju Century 125 (2019), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0262",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Laverda 650 Ghost (1998), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0263",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Macbor Rockster 410 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0264",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Brixton Cromwell 1200 X (2024) ?"
+    },
+    {
+      "id": "TRAIN-0265",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brough Superior SS 100 Salt Racer (2023) ?"
+    },
+    {
+      "id": "TRAIN-0266",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Voxan 1000 BLACK MAGIC (2008) ?"
+    },
+    {
+      "id": "TRAIN-0267",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de QJ Motor SRK 421 RR (2026) ?"
+    },
+    {
+      "id": "TRAIN-0268",
+      "split": "train",
+      "question": "Puissance et couple de Hyosung GT 125 R (2006) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0269",
+      "split": "train",
+      "question": "Sur Daelim VT Evolution (1999), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0270",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Derbi GPR 125 4T (2009) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0271",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de MZ / MuZ 1000 S (2009), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0272",
+      "split": "train",
+      "question": "Pour Orcal NK01 (2022), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0273",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Rieju Xplora 707 S (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0274",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Laverda 750 STRIKE (2002) ?"
+    },
+    {
+      "id": "TRAIN-0275",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Macbor Montana XR1 125 evo (2025) ?"
+    },
+    {
+      "id": "TRAIN-0276",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Brixton Cromwell 1200 X (2026) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0277",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior Lawrence Nefud (2023) ?"
+    },
+    {
+      "id": "TRAIN-0278",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Voxan 1000 ROADSTER (1999) ?"
+    },
+    {
+      "id": "TRAIN-0279",
+      "split": "train",
+      "question": "Puissance et couple de QJ Motor SRT 450 RX (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0280",
+      "split": "train",
+      "question": "Sur Hyosung COMET 650 (2004), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0281",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Daelim 125 VS (2001) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0282",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Derbi GPR 125 4T (2010), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0283",
+      "split": "train",
+      "question": "Pour MZ / MuZ 1000 S (2006), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0284",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Orcal Astor (2017), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0285",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Rieju Aventura 500 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0286",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda 650 Ghost (1998) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0287",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Macbor XR5 500 Montana (2020) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0288",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brixton Cromwell 1200 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0289",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior SS 100 Salt Racer (2025) ?"
+    },
+    {
+      "id": "TRAIN-0290",
+      "split": "train",
+      "question": "Puissance et couple de Voxan 1000 ROADSTER (2007) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0291",
+      "split": "train",
+      "question": "Sur QJ Motor SRT 900 SX Touring (2025), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0292",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Hyosung XRX 125 (2001) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0293",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Daelim 125 DAYSTAR (2009), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0294",
+      "split": "train",
+      "question": "Pour Derbi 125 TERRA (2008), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0295",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de MZ / MuZ 125 RT (2002), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0296",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Orcal Tabor 125 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0297",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Rieju Xplora 707 S (2026) ?"
+    },
+    {
+      "id": "TRAIN-0298",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda 750 STRIKE (2002) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0299",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Macbor XR5 510 Montana (2025) ?"
+    },
+    {
+      "id": "TRAIN-0300",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Brixton Cromwell 1200 X (2025) ?"
+    },
+    {
+      "id": "TRAIN-0301",
+      "split": "train",
+      "question": "Puissance et couple de Brough Superior SS 100 (2017) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0302",
+      "split": "train",
+      "question": "Sur Voxan 1000 CAFE RACER (2001), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0303",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de QJ Motor SRK 921 (2026) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0304",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Hyosung COMET 125 (2005), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0305",
+      "split": "train",
+      "question": "Pour Daelim 125 ROADWIN (2011), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0306",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Derbi GPR 125 Racing (2006), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0307",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour MZ / MuZ 1000 S (2008) ?"
+    },
+    {
+      "id": "TRAIN-0308",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Orcal NK01 (2020) ?"
+    },
+    {
+      "id": "TRAIN-0309",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Rieju 125 RS3 (2012) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0310",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Laverda SFC 1000 (2004) ?"
+    },
+    {
+      "id": "TRAIN-0311",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Macbor Rockster Flat 125 EVO (2026) ?"
+    },
+    {
+      "id": "TRAIN-0312",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brixton Cromwell 1200 (2024) ?"
+    },
+    {
+      "id": "TRAIN-0313",
+      "split": "train",
+      "question": "Sur Brough Superior Anniversary Golden Dream (2024), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0314",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Voxan 1000 SCRAMBLER (2004) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0315",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de QJ Motor SRK 125 R (2025), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0316",
+      "split": "train",
+      "question": "Pour Hyosung XRX 125 (2001), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0317",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Daelim 125 VS (2003), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0318",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Derbi 125 MULHACEN (2013) ?"
+    },
+    {
+      "id": "TRAIN-0319",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 125 RT (2009) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0320",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Orcal NK01 (2020) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0321",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Rieju RS2 (2006) ?"
+    },
+    {
+      "id": "TRAIN-0322",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Laverda 750 STRIKE (2000) ?"
+    },
+    {
+      "id": "TRAIN-0323",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Macbor Rockster 710 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0324",
+      "split": "train",
+      "question": "Puissance et couple de Brixton Crossfire 500 (2023) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0325",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brough Superior Pendine Sand Racer (2023) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0326",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Voxan 1000 CAFE RACER (2008), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0327",
+      "split": "train",
+      "question": "Pour QJ Motor SRK 800 RR (2024), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0328",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Hyosung GV 650 AQUILA (2009), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0329",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Daelim 125 DAYSTAR (2002) ?"
+    },
+    {
+      "id": "TRAIN-0330",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi GPR 125 NUDE (2005) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0331",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 1000 ST SUPER TRAVELLER (2008) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0332",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Orcal NK01 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0333",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Rieju Xplora 557 S (2026) ?"
+    },
+    {
+      "id": "TRAIN-0334",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Laverda 650 Ghost (1998) ?"
+    },
+    {
+      "id": "TRAIN-0335",
+      "split": "train",
+      "question": "Puissance et couple de Macbor Eight Mile 125 LC (2025) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0336",
+      "split": "train",
+      "question": "Sur Brixton BX 125 (2018), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0337",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brough Superior Lawrence Nefud (2024), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0338",
+      "split": "train",
+      "question": "Pour Voxan 1000 SCRAMBLER (2004), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0339",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de QJ Motor SRK 1000 (2025), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0340",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Hyosung XRX 125 (2001) ?"
+    },
+    {
+      "id": "TRAIN-0341",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 ROADWIN (2010) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0342",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi 125 Terra Adventure (2011) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0343",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour MZ / MuZ 125 RT (2006) ?"
+    },
+    {
+      "id": "TRAIN-0344",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Orcal NK01 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0345",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Rieju 125 RS3 (2012) ?"
+    },
+    {
+      "id": "TRAIN-0346",
+      "split": "train",
+      "question": "Puissance et couple de Laverda 750 STRIKE (2001) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0347",
+      "split": "train",
+      "question": "Sur Macbor Rockster 125 EVO (2026), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0348",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brixton Cromwell 1200 X (2024) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0349",
+      "split": "train",
+      "question": "Pour Brough Superior SS 100 MKII (2018), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0350",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Voxan 1000 CAFE RACER (2001), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0351",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour QJ Motor SRV 125 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0352",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Hyosung GV 300 S Bobber (2020) ?"
+    },
+    {
+      "id": "TRAIN-0353",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 DAYSTAR (2011) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0354",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Derbi GPR 125 4T (2009) ?"
+    },
+    {
+      "id": "TRAIN-0355",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur MZ / MuZ 1000 S (2008) ?"
+    },
+    {
+      "id": "TRAIN-0356",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Orcal Tabor 125 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0357",
+      "split": "train",
+      "question": "Puissance et couple de Rieju 125 RS3 (2011) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0358",
+      "split": "train",
+      "question": "Sur Laverda 650 Ghost (1999), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0359",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Macbor Eight Mile 125 LC (2025) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0360",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brixton Cromwell 1200 X (2025), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0361",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brough Superior Lawrence Nefud (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0362",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Voxan 1000 BLACK MAGIC (2009) ?"
+    },
+    {
+      "id": "TRAIN-0363",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour QJ Motor SRK 800 RR (2024) ?"
+    },
+    {
+      "id": "TRAIN-0364",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Hyosung GV 650 AQUILA (2006) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0365",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Daelim 125 ROADWIN (2010) ?"
+    },
+    {
+      "id": "TRAIN-0366",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Derbi GPR 125 4T (2011) ?"
+    },
+    {
+      "id": "TRAIN-0367",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de MZ / MuZ 1000 SF SUPER FIGHTER (2009) ?"
+    },
+    {
+      "id": "TRAIN-0368",
+      "split": "train",
+      "question": "Puissance et couple de Orcal SK01 125 (2024) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0369",
+      "split": "train",
+      "question": "Sur Rieju Aventura 307 Rally (2025), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0370",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Laverda 750 S FORMULA (2001) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0371",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Macbor Rockster Flat 125 EVO (2025), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0372",
+      "split": "train",
+      "question": "Pour Brixton BX 125 (2019), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0373",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Brough Superior SS 100 MKII (2020) ?"
+    },
+    {
+      "id": "TRAIN-0374",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Voxan 1000 SCRAMBLER (2004) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0375",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de QJ Motor SRT 600 SX Touring (2025) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0376",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Hyosung GV 650 AQUILA (2007) ?"
+    },
+    {
+      "id": "TRAIN-0377",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Daelim 125 ROADWIN (2005) ?"
+    },
+    {
+      "id": "TRAIN-0378",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Derbi GPR 125 NUDE (2007) ?"
+    },
+    {
+      "id": "TRAIN-0379",
+      "split": "train",
+      "question": "Puissance et couple de MZ / MuZ 1000 SF SUPER FIGHTER (2005) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0380",
+      "split": "train",
+      "question": "Sur Orcal NK01 (2018), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0381",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Rieju Aventura 307 Rally (2025) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0382",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Laverda 650 Ghost (1998), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0383",
+      "split": "train",
+      "question": "Pour Macbor Montana XR1 125 evo (2025), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0384",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brixton Cromwell 1200 X (2024), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0385",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Brough Superior Anniversary Golden Dream (2025) ?"
+    },
+    {
+      "id": "TRAIN-0386",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Voxan 1000 STREET SCRAMBLER (2004) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0387",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour QJ Motor SRK 600 RS (2025) ?"
+    },
+    {
+      "id": "TRAIN-0388",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Hyosung COMET 125 (2004) ?"
+    },
+    {
+      "id": "TRAIN-0389",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Daelim 125 DAYSTAR (2009) ?"
+    },
+    {
+      "id": "TRAIN-0390",
+      "split": "train",
+      "question": "Puissance et couple de Derbi GPR 125 NUDE (2005) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0391",
+      "split": "train",
+      "question": "Sur MZ / MuZ 1000 SF SUPER FIGHTER (2008), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0392",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Orcal Tabor 125 (2024) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0393",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Rieju Aventura 307 Rally (2025), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0394",
+      "split": "train",
+      "question": "Pour Laverda 750 S FORMULA (1999), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0395",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Macbor XR3 250 Montana (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0396",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Brixton BX 125 (2016) ?"
+    },
+    {
+      "id": "TRAIN-0397",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brough Superior Anniversary (2019) ?"
+    },
+    {
+      "id": "TRAIN-0398",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Voxan 1000 STREET SCRAMBLER (2010) ?"
+    },
+    {
+      "id": "TRAIN-0399",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur QJ Motor SRK 700 (2024) ?"
+    },
+    {
+      "id": "TRAIN-0400",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Hyosung 125 GF (2002) ?"
+    },
+    {
+      "id": "TRAIN-0401",
+      "split": "train",
+      "question": "Puissance et couple de Daelim 125 DAYSTAR (2004) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0402",
+      "split": "train",
+      "question": "Sur Derbi GPR 125 4T (2014), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0403",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de MZ / MuZ 125 RT (2010) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0404",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Orcal NK01 (2022), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0405",
+      "split": "train",
+      "question": "Pour Rieju 125 RS3 (2011), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0406",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Laverda 750 S FORMULA (2001), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0407",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Macbor XR5 500 Montana (2020) ?"
+    },
+    {
+      "id": "TRAIN-0408",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Brixton Crossfire 500 (2024) ?"
+    },
+    {
+      "id": "TRAIN-0409",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brough Superior Lawrence Nefud (2025) ?"
+    },
+    {
+      "id": "TRAIN-0410",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Voxan 1000 BLACK MAGIC (2004) ?"
+    },
+    {
+      "id": "TRAIN-0411",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de QJ Motor SRK 125 S (2026) ?"
+    },
+    {
+      "id": "TRAIN-0412",
+      "split": "train",
+      "question": "Puissance et couple de Hyosung GV 300 S Bobber (2020) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0413",
+      "split": "train",
+      "question": "Sur Daelim 125 ROADWIN (2007), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0414",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Derbi GPR 125 Racing (2004) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0415",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de MZ / MuZ 125 RT (2003), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0416",
+      "split": "train",
+      "question": "Pour Orcal NK01 (2019), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0417",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Rieju Xplora 707 (2025), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0418",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Laverda 650 Ghost (1997) ?"
+    },
+    {
+      "id": "TRAIN-0419",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Macbor Montana XR1 125 evo (2026) ?"
+    },
+    {
+      "id": "TRAIN-0420",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Brixton Cromwell 1200 (2023) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0421",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior SS 100 MK2 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0422",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Voxan 1000 ROADSTER (2001) ?"
+    },
+    {
+      "id": "TRAIN-0423",
+      "split": "train",
+      "question": "Puissance et couple de QJ Motor SRK 800 (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0424",
+      "split": "train",
+      "question": "Sur Hyosung GT 125 R (2009), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0425",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Daelim 125 ROADWIN (2004) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0426",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Derbi GPR 125 4T (2013), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0427",
+      "split": "train",
+      "question": "Pour MZ / MuZ 125 RT (2008), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0428",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Orcal Astor (2020), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0429",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Rieju Aventura 307 Rally (2025) ?"
+    },
+    {
+      "id": "TRAIN-0430",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda 750 STRIKE (1999) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0431",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Macbor Rockster 710 (2026) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0432",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Brixton Cromwell 125 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0433",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brough Superior SS 100 Salt Racer (2023) ?"
+    },
+    {
+      "id": "TRAIN-0434",
+      "split": "train",
+      "question": "Puissance et couple de Voxan 1000 BLACK MAGIC (2004) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0435",
+      "split": "train",
+      "question": "Sur QJ Motor SRK 1000 (2025), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0436",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Hyosung GV 300 S Bobber (2020) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0437",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Daelim 125 ROADSPORT R (2007), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0438",
+      "split": "train",
+      "question": "Pour Derbi 125 Terra Adventure (2008), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0439",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de MZ / MuZ 125 RT (2007), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0440",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Orcal Astor (2018) ?"
+    },
+    {
+      "id": "TRAIN-0441",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Rieju Aventura 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0442",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Laverda 650 Ghost (1996) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0443",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Macbor Rockster 125 EVO (2025) ?"
+    },
+    {
+      "id": "TRAIN-0444",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Brixton Cromwell 1200 (2023) ?"
+    },
+    {
+      "id": "TRAIN-0445",
+      "split": "train",
+      "question": "Puissance et couple de Brough Superior Lawrence Dagger (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0446",
+      "split": "train",
+      "question": "Sur Voxan 1000 ROADSTER (2006), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0447",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de QJ Motor SRK 125 S (2024) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0448",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Hyosung XRX 125 (2003), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0449",
+      "split": "train",
+      "question": "Pour Daelim 125 ROADWIN (2010), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0450",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Derbi GPR 125 Racing (2004), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0451",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour MZ / MuZ 1000 S (2006) ?"
+    },
+    {
+      "id": "TRAIN-0452",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Orcal SK01 125 (2022) ?"
+    },
+    {
+      "id": "TRAIN-0453",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Rieju Xplora 557 X (2026) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0454",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Laverda 750 S FORMULA (2000) ?"
+    },
+    {
+      "id": "TRAIN-0455",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Macbor Shifter 125 EVO (2026) ?"
+    },
+    {
+      "id": "TRAIN-0456",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Brixton Cromwell 125 (2021) ?"
+    },
+    {
+      "id": "TRAIN-0457",
+      "split": "train",
+      "question": "Sur Brough Superior Lawrence Ultimate (2023), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0458",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Voxan 1000 BLACK CLASSIC (2010) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0459",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de QJ Motor SRV 125 (2026), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0460",
+      "split": "train",
+      "question": "Pour Hyosung COMET 650 (2004), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0461",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Daelim 125 DAYSTAR (2011), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0462",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Derbi GPR 125 Racing (2006) ?"
+    },
+    {
+      "id": "TRAIN-0463",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 125 RT (2004) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0464",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Orcal Astor (2020) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0465",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Rieju 125 RS3 (2011) ?"
+    },
+    {
+      "id": "TRAIN-0466",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Laverda 750 STRIKE (2002) ?"
+    },
+    {
+      "id": "TRAIN-0467",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Macbor Rockster Flat 125 EVO (2026) ?"
+    },
+    {
+      "id": "TRAIN-0468",
+      "split": "train",
+      "question": "Puissance et couple de Brixton BX 125 (2018) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0469",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brough Superior Anniversary (2019) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0470",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Voxan VB1 1000 (2003), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0471",
+      "split": "train",
+      "question": "Pour QJ Motor SRK 800 RR (2025), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0472",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Hyosung GT 125 R (2006), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0473",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Daelim 125 ROADWIN (2005) ?"
+    },
+    {
+      "id": "TRAIN-0474",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi 659 MULHACEN (2008) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0475",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de MZ / MuZ 1000 SF SUPER FIGHTER Edition Spéciale (2005) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0476",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Orcal Tabor 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0477",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Rieju Aventura 307 Rally (2025) ?"
+    },
+    {
+      "id": "TRAIN-0478",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Laverda 750 S FORMULA (1998) ?"
+    },
+    {
+      "id": "TRAIN-0479",
+      "split": "train",
+      "question": "Puissance et couple de Macbor XR5 510 Montana (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0480",
+      "split": "train",
+      "question": "Sur Brixton BX 125 (2017), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0481",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brough Superior Lawrence Dagger (2025), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0482",
+      "split": "train",
+      "question": "Pour Voxan 1000 BLACK CLASSIC (2010), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0483",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de QJ Motor SRK 1051 RR (2026), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0484",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Hyosung GT 125 R (2007) ?"
+    },
+    {
+      "id": "TRAIN-0485",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 VS (2002) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0486",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Derbi GPR 125 4T (2012) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0487",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour MZ / MuZ 125 RT (2001) ?"
+    },
+    {
+      "id": "TRAIN-0488",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Orcal Altimo 125 (2025) ?"
+    },
+    {
+      "id": "TRAIN-0489",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Rieju Xplora 707 S (2026) ?"
+    },
+    {
+      "id": "TRAIN-0490",
+      "split": "train",
+      "question": "Puissance et couple de Laverda 750 STRIKE (2000) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0491",
+      "split": "train",
+      "question": "Sur Macbor Rockster Flat 125 EVO (2025), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0492",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Brixton Cromwell 1200 X (2025) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0493",
+      "split": "train",
+      "question": "Pour Brough Superior Pendine Sand Racer (2018), indique hauteur de selle et couple avec son régime si disponible."
+    },
+    {
+      "id": "TRAIN-0494",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Voxan VB1 1000 (2002), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0495",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour QJ Motor SRK 421 RR (2026) ?"
+    },
+    {
+      "id": "TRAIN-0496",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour Hyosung GV 300 S Bobber Evo (2024) ?"
+    },
+    {
+      "id": "TRAIN-0497",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Daelim 125 DAYSTAR (2006) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0498",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Derbi 659 MULHACEN (2008) ?"
+    },
+    {
+      "id": "TRAIN-0499",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur MZ / MuZ 1000 SF SUPER FIGHTER (2009) ?"
+    },
+    {
+      "id": "TRAIN-0500",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de Orcal SK01 125 (2024) ?"
+    },
+    {
+      "id": "TRAIN-0501",
+      "split": "train",
+      "question": "Puissance et couple de Rieju Xplora 707 X (2026) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "TRAIN-0502",
+      "split": "train",
+      "question": "Sur Laverda 650 Ghost (1998), combien de rapports et quel entraînement final sont indiqués ?"
+    },
+    {
+      "id": "TRAIN-0503",
+      "split": "train",
+      "question": "Quels freins avant et arrière la fiche de Macbor Rockster 710 (2026) décrit-elle ?"
+    },
+    {
+      "id": "TRAIN-0504",
+      "split": "train",
+      "question": "Quelle est la cylindrée réelle de Brixton Cromwell 125 (2021), et quel volume de réservoir est écrit ?"
+    },
+    {
+      "id": "TRAIN-0505",
+      "split": "train",
+      "question": "Relève la puissance et les poids documentés de Brough Superior SS 100 MKII (2018), avec la distinction sec/pleins."
+    },
+    {
+      "id": "TRAIN-0506",
+      "split": "train",
+      "question": "Quel refroidissement et quelle transmission secondaire sont cités pour Voxan 1000 ROADSTER (2000) ?"
+    },
+    {
+      "id": "TRAIN-0507",
+      "split": "train",
+      "question": "Quels coloris sont explicitement listés pour QJ Motor SRV 600 V4 (2026) ?"
+    },
+    {
+      "id": "TRAIN-0508",
+      "split": "train",
+      "question": "Décris la fourche et le frein avant de Hyosung GV 650 AQUILA (2010) à partir de la fiche."
+    },
+    {
+      "id": "TRAIN-0509",
+      "split": "train",
+      "question": "Quel frein et quelle suspension arrière sont indiqués pour Daelim 125 VS (2002) ?"
+    },
+    {
+      "id": "TRAIN-0510",
+      "split": "train",
+      "question": "Combien de rapports et quel type de fourche trouve-t-on sur Derbi 125 TERRA (2008) ?"
+    },
+    {
+      "id": "TRAIN-0511",
+      "split": "train",
+      "question": "Quelle hauteur de selle et quelle capacité de réservoir indique la fiche de MZ / MuZ 125 RT (2002) ?"
+    },
+    {
+      "id": "TRAIN-0512",
+      "split": "train",
+      "question": "Puissance et couple de Orcal NK01 (2019) : relève les valeurs, unités et régimes annoncés."
+    },
+    {
+      "id": "DEV-0001",
+      "split": "dev",
+      "question": "Pour Kove 800X Rally (2026), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "DEV-0002",
+      "split": "dev",
+      "question": "Que sait-on de la puissance délivrée et du couple de Zontes 125 Hyper Trail (2025), avec leurs régimes ?"
+    },
+    {
+      "id": "DEV-0003",
+      "split": "dev",
+      "question": "Comment Ural 750 Transsib TPAHCCN6 (2018) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "DEV-0004",
+      "split": "dev",
+      "question": "Je veux comparer le freinage des deux roues de FB Mondial Pagani 300 Sport Classic (2019). Relève les dimensions disponibles."
+    },
+    {
+      "id": "DEV-0005",
+      "split": "dev",
+      "question": "À quelle hauteur s'assoit-on sur Kove 450 Rally Standard (2024), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "DEV-0006",
+      "split": "dev",
+      "question": "Pour Zontes 350 T (2025), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "DEV-0007",
+      "split": "dev",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Ural 750 Wolf (2005) ?"
+    },
+    {
+      "id": "DEV-0008",
+      "split": "dev",
+      "question": "Quelles teintes la fiche de FB Mondial Piega 452 (2025) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "DEV-0009",
+      "split": "dev",
+      "question": "À l'arrière de Kove 450 R (2025), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "DEV-0010",
+      "split": "dev",
+      "question": "Pour Zontes 125 Scrambler X (2025), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "DEV-0011",
+      "split": "dev",
+      "question": "Pour Ural SCRAMBLER (2015), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "DEV-0012",
+      "split": "dev",
+      "question": "Que sait-on de la puissance délivrée et du couple de FB Mondial Pagani 125 Sport Classic (2019), avec leurs régimes ?"
+    },
+    {
+      "id": "DEV-0013",
+      "split": "dev",
+      "question": "Je veux comparer le freinage des deux roues de Kove 510X (2026). Relève les dimensions disponibles."
+    },
+    {
+      "id": "DEV-0014",
+      "split": "dev",
+      "question": "Le nom de Zontes 125 C2 (2025) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "DEV-0015",
+      "split": "dev",
+      "question": "À quelle hauteur s'assoit-on sur Ural TWD (2016), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "DEV-0016",
+      "split": "dev",
+      "question": "Pour FB Mondial 1000 PIEGA (2003), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "DEV-0017",
+      "split": "dev",
+      "question": "Quelles teintes la fiche de Kove NK 125 R (2025) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "DEV-0018",
+      "split": "dev",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Zontes 703 RR (2025) ?"
+    },
+    {
+      "id": "DEV-0019",
+      "split": "dev",
+      "question": "À l'arrière de Ural 750 Gear Up GEO Limited Edition (2021), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "DEV-0020",
+      "split": "dev",
+      "question": "Pour FB Mondial HPS 125 (2021), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "DEV-0021",
+      "split": "dev",
+      "question": "Que sait-on de la puissance délivrée et du couple de Kove 350 RR (2026), avec leurs régimes ?"
+    },
+    {
+      "id": "DEV-0022",
+      "split": "dev",
+      "question": "Comment Zontes 125 Hyper Trail (2025) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "DEV-0023",
+      "split": "dev",
+      "question": "Je veux comparer le freinage des deux roues de Ural 750 Gear Up GEO Limited Edition (2021). Relève les dimensions disponibles."
+    },
+    {
+      "id": "DEV-0024",
+      "split": "dev",
+      "question": "Le nom de FB Mondial 1000 Piega Evo (2004) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "DEV-0025",
+      "split": "dev",
+      "question": "Pour Kove 800X GT (2026), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "DEV-0026",
+      "split": "dev",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Zontes 125 Hyper Trail (2025) ?"
+    },
+    {
+      "id": "DEV-0027",
+      "split": "dev",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Ural SPORTSMAN (2016) ?"
+    },
+    {
+      "id": "DEV-0028",
+      "split": "dev",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de FB Mondial 1000 NUDA RZ (2004) ?"
+    },
+    {
+      "id": "DEV-0029",
+      "split": "dev",
+      "question": "Pour Kove 450 Rally Standard (2024), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "DEV-0030",
+      "split": "dev",
+      "question": "Pour Zontes 350 T (2025), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "DEV-0031",
+      "split": "dev",
+      "question": "Que sait-on de la puissance délivrée et du couple de Ural 650 (1992), avec leurs régimes ?"
+    },
+    {
+      "id": "DEV-0032",
+      "split": "dev",
+      "question": "Comment FB Mondial HPS 300 Hipster (2019) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "DEV-0033",
+      "split": "dev",
+      "question": "Le nom de Kove 450RR (2026) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "DEV-0034",
+      "split": "dev",
+      "question": "À quelle hauteur s'assoit-on sur Zontes 125 Urban (2025), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "DEV-0035",
+      "split": "dev",
+      "question": "Pour Ural 750 Adventure Prikljucenie (2019), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "DEV-0036",
+      "split": "dev",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de FB Mondial HPS 125 Hipster (2020) ?"
+    },
+    {
+      "id": "DEV-0037",
+      "split": "dev",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Kove 450 R (2026) ?"
+    },
+    {
+      "id": "DEV-0038",
+      "split": "dev",
+      "question": "À l'arrière de Zontes 125 Roadster R (2025), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "DEV-0039",
+      "split": "dev",
+      "question": "Pour Ural CT (2016), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "DEV-0040",
+      "split": "dev",
+      "question": "Pour FB Mondial Hipster 300 (2018), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "DEV-0041",
+      "split": "dev",
+      "question": "Comment Kove 800X Pro (2025) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "DEV-0042",
+      "split": "dev",
+      "question": "Je veux comparer le freinage des deux roues de Zontes 125 C2 (2025). Relève les dimensions disponibles."
+    },
+    {
+      "id": "DEV-0043",
+      "split": "dev",
+      "question": "Le nom de Ural AIR Limited Edition (2018) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "DEV-0044",
+      "split": "dev",
+      "question": "À quelle hauteur s'assoit-on sur FB Mondial 1000 PIEGA (2003), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "DEV-0045",
+      "split": "dev",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Kove 450 Rally Standard (2026) ?"
+    },
+    {
+      "id": "DEV-0046",
+      "split": "dev",
+      "question": "Quelles teintes la fiche de Zontes 350 T (2024) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "DEV-0047",
+      "split": "dev",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Ural RETRO (2016) ?"
+    },
+    {
+      "id": "DEV-0048",
+      "split": "dev",
+      "question": "À l'arrière de FB Mondial HPS 125 Hipster (2020), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "DEV-0049",
+      "split": "dev",
+      "question": "Pour Kove 625X GT (2026), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "DEV-0050",
+      "split": "dev",
+      "question": "Que sait-on de la puissance délivrée et du couple de Zontes 125 Roadster R (2021), avec leurs régimes ?"
+    },
+    {
+      "id": "DEV-0051",
+      "split": "dev",
+      "question": "Comment Ural 650 (1992) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "DEV-0052",
+      "split": "dev",
+      "question": "Je veux comparer le freinage des deux roues de FB Mondial Hipster 300 (2018). Relève les dimensions disponibles."
+    },
+    {
+      "id": "DEV-0053",
+      "split": "dev",
+      "question": "À quelle hauteur s'assoit-on sur Kove 800X Rally (2026), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "DEV-0054",
+      "split": "dev",
+      "question": "Pour Zontes 125 C2 (2025), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "DEV-0055",
+      "split": "dev",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Ural 750 Transsib TPAHCCN6 (2018) ?"
+    },
+    {
+      "id": "DEV-0056",
+      "split": "dev",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de FB Mondial Hipster 300 (2018) ?"
+    },
+    {
+      "id": "DEV-0057",
+      "split": "dev",
+      "question": "À l'arrière de Kove 800X Rally (2026), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "DEV-0058",
+      "split": "dev",
+      "question": "Pour Zontes 125 Roadster R (2023), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "DEV-0059",
+      "split": "dev",
+      "question": "Pour Ural RETRO (2016), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "DEV-0060",
+      "split": "dev",
+      "question": "Que sait-on de la puissance délivrée et du couple de FB Mondial Hipster 125 (2018), avec leurs régimes ?"
+    },
+    {
+      "id": "DEV-0061",
+      "split": "dev",
+      "question": "Je veux comparer le freinage des deux roues de Kove 450 R (2025). Relève les dimensions disponibles."
+    },
+    {
+      "id": "DEV-0062",
+      "split": "dev",
+      "question": "Le nom de Zontes 125 GK (2025) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "DEV-0063",
+      "split": "dev",
+      "question": "À quelle hauteur s'assoit-on sur Ural 750 Wolf (2005), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "DEV-0064",
+      "split": "dev",
+      "question": "Pour FB Mondial HPS 125 Hipster (2019), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "TEST-0001",
+      "split": "test",
+      "question": "Pour Gilera RC 600 (1991), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "TEST-0002",
+      "split": "test",
+      "question": "Que sait-on de la puissance délivrée et du couple de Kymco Visar (2017), avec leurs régimes ?"
+    },
+    {
+      "id": "TEST-0003",
+      "split": "test",
+      "question": "Comment BSA 350 Bantam (2026) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "TEST-0004",
+      "split": "test",
+      "question": "Je veux comparer le freinage des deux roues de Fantic XEF 125 Performance (2025). Relève les dimensions disponibles."
+    },
+    {
+      "id": "TEST-0005",
+      "split": "test",
+      "question": "Le nom de Morbidelli C1002V (2025) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "TEST-0006",
+      "split": "test",
+      "question": "À quelle hauteur s'assoit-on sur GASGAS RX 450 F Replica (2023), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "TEST-0007",
+      "split": "test",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Gilera 600 Nordwest (1993) ?"
+    },
+    {
+      "id": "TEST-0008",
+      "split": "test",
+      "question": "Quelles teintes la fiche de Kymco Sky Town 125 (2025) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "TEST-0009",
+      "split": "test",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de BSA 650 Gold Star (2026) ?"
+    },
+    {
+      "id": "TEST-0010",
+      "split": "test",
+      "question": "À l'arrière de Fantic Caballero 500 Scrambler (2025), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "TEST-0011",
+      "split": "test",
+      "question": "Pour Morbidelli C652V (2026), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "TEST-0012",
+      "split": "test",
+      "question": "Pour GASGAS RX 450 F Replica (2023), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "TEST-0013",
+      "split": "test",
+      "question": "Comment Gilera 125 COGUAR (2001) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "TEST-0014",
+      "split": "test",
+      "question": "Je veux comparer le freinage des deux roues de Kymco 125 Quannon (2007). Relève les dimensions disponibles."
+    },
+    {
+      "id": "TEST-0015",
+      "split": "test",
+      "question": "Le nom de BSA 650 Scrambler (2026) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "TEST-0016",
+      "split": "test",
+      "question": "À quelle hauteur s'assoit-on sur Fantic XMF 125 Performance (2025), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "TEST-0017",
+      "split": "test",
+      "question": "Pour Morbidelli C652V (2026), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "TEST-0018",
+      "split": "test",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de GASGAS ES 700 (2022) ?"
+    },
+    {
+      "id": "TEST-0019",
+      "split": "test",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Gilera 125 CX (1992) ?"
+    },
+    {
+      "id": "TEST-0020",
+      "split": "test",
+      "question": "À l'arrière de Kymco 125 Quannon (2009), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "TEST-0021",
+      "split": "test",
+      "question": "Pour BSA 650 Scrambler (2026), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "TEST-0022",
+      "split": "test",
+      "question": "Pour Fantic Caballero 700 Scrambler (2025), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "TEST-0023",
+      "split": "test",
+      "question": "Que sait-on de la puissance délivrée et du couple de Morbidelli C652V (2026), avec leurs régimes ?"
+    },
+    {
+      "id": "TEST-0024",
+      "split": "test",
+      "question": "Comment GASGAS RX 450 F Replica (2023) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "TEST-0025",
+      "split": "test",
+      "question": "Le nom de Gilera 125 COGUAR (2001) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "TEST-0026",
+      "split": "test",
+      "question": "À quelle hauteur s'assoit-on sur Kymco 125 Quannon (2010), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "TEST-0027",
+      "split": "test",
+      "question": "Pour BSA 650 Gold Star (2022), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "TEST-0028",
+      "split": "test",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Fantic Caballero 700 Scrambler (2024) ?"
+    },
+    {
+      "id": "TEST-0029",
+      "split": "test",
+      "question": "Quelles teintes la fiche de Morbidelli T502XR (2026) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "TEST-0030",
+      "split": "test",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de GASGAS SM 700 (2024) ?"
+    },
+    {
+      "id": "TEST-0031",
+      "split": "test",
+      "question": "Pour Gilera 600 Nordwest (1994), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "TEST-0032",
+      "split": "test",
+      "question": "Pour Kymco Visar (2019), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "TEST-0033",
+      "split": "test",
+      "question": "Que sait-on de la puissance délivrée et du couple de BSA 650 Scrambler (2026), avec leurs régimes ?"
+    },
+    {
+      "id": "TEST-0034",
+      "split": "test",
+      "question": "Comment Fantic Caballero 500 Scrambler (2025) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "TEST-0035",
+      "split": "test",
+      "question": "Je veux comparer le freinage des deux roues de Morbidelli 850 V8 (1997). Relève les dimensions disponibles."
+    },
+    {
+      "id": "TEST-0036",
+      "split": "test",
+      "question": "Le nom de GASGAS 125 Pampera (2002) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "TEST-0037",
+      "split": "test",
+      "question": "Pour Gilera RC 600 (1990), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "TEST-0038",
+      "split": "test",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Kymco 125 Quannon (2008) ?"
+    },
+    {
+      "id": "TEST-0039",
+      "split": "test",
+      "question": "Quelles teintes la fiche de BSA 650 Gold Star (2023) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "TEST-0040",
+      "split": "test",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Fantic Caballero 700 Scrambler (2025) ?"
+    },
+    {
+      "id": "TEST-0041",
+      "split": "test",
+      "question": "À l'arrière de Morbidelli Timeless 1200 (2026), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "TEST-0042",
+      "split": "test",
+      "question": "Pour GASGAS ES 700 (2022), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "TEST-0043",
+      "split": "test",
+      "question": "Que sait-on de la puissance délivrée et du couple de Gilera 600 Nordwest (1993), avec leurs régimes ?"
+    },
+    {
+      "id": "TEST-0044",
+      "split": "test",
+      "question": "Comment Kymco 125 Quannon (2010) transmet-elle le mouvement à la roue et combien de vitesses sa boîte comporte-t-elle ?"
+    },
+    {
+      "id": "TEST-0045",
+      "split": "test",
+      "question": "Je veux comparer le freinage des deux roues de BSA 350 Thunderbolt (2026). Relève les dimensions disponibles."
+    },
+    {
+      "id": "TEST-0046",
+      "split": "test",
+      "question": "Le nom de Fantic XEF 125 Performance (2025) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "TEST-0047",
+      "split": "test",
+      "question": "À quelle hauteur s'assoit-on sur Morbidelli T125X (2025), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "TEST-0048",
+      "split": "test",
+      "question": "Pour GASGAS SM 700 (2024), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "TEST-0049",
+      "split": "test",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Gilera 125 COGUAR (1999) ?"
+    },
+    {
+      "id": "TEST-0050",
+      "split": "test",
+      "question": "Quel matériel de suspension et de freinage est indiqué à l'avant de Kymco 125 Quannon (2010) ?"
+    },
+    {
+      "id": "TEST-0051",
+      "split": "test",
+      "question": "À l'arrière de BSA 350 Thunderbolt (2026), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "TEST-0052",
+      "split": "test",
+      "question": "Pour Fantic Caballero 500 Scrambler (2025), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "TEST-0053",
+      "split": "test",
+      "question": "Pour Morbidelli T502 (2026), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "TEST-0054",
+      "split": "test",
+      "question": "Que sait-on de la puissance délivrée et du couple de GASGAS ES 700 (2022), avec leurs régimes ?"
+    },
+    {
+      "id": "TEST-0055",
+      "split": "test",
+      "question": "Je veux comparer le freinage des deux roues de Gilera 600 Nordwest (1994). Relève les dimensions disponibles."
+    },
+    {
+      "id": "TEST-0056",
+      "split": "test",
+      "question": "Le nom de Kymco Visar (2019) peut être commercial : relève les cc et les litres de réservoir dans sa fiche."
+    },
+    {
+      "id": "TEST-0057",
+      "split": "test",
+      "question": "À quelle hauteur s'assoit-on sur BSA 650 Scrambler (2026), et quel couple son moteur fournit-il selon la fiche ?"
+    },
+    {
+      "id": "TEST-0058",
+      "split": "test",
+      "question": "Pour Fantic XEF 125 Performance (2025), donne les valeurs de puissance et de masse en gardant les libellés d'origine."
+    },
+    {
+      "id": "TEST-0059",
+      "split": "test",
+      "question": "Comment sont décrits le refroidissement du moteur et l'entraînement final de Morbidelli T125X (2025) ?"
+    },
+    {
+      "id": "TEST-0060",
+      "split": "test",
+      "question": "Quelles teintes la fiche de GASGAS EC 450F (2025) propose-t-elle pour ce millésime précis ?"
+    },
+    {
+      "id": "TEST-0061",
+      "split": "test",
+      "question": "À l'arrière de Gilera 125 CX (1991), que décrit la fiche pour amortir et freiner ?"
+    },
+    {
+      "id": "TEST-0062",
+      "split": "test",
+      "question": "Pour Kymco 125 Quannon (2007), relève le nombre de vitesses ainsi que la suspension avant."
+    },
+    {
+      "id": "TEST-0063",
+      "split": "test",
+      "question": "Pour BSA 650 Gold Star (2024), donne la distance selle-sol et le volume de carburant embarqué, tels qu'ils sont écrits."
+    },
+    {
+      "id": "TEST-0064",
+      "split": "test",
+      "question": "Que sait-on de la puissance délivrée et du couple de Fantic Caballero 700 Scrambler (2023), avec leurs régimes ?"
+    },
+    {
+      "id": "F001",
+      "split": "regression",
+      "question": "Sur Yamaha XJR 1300 (2003), quelle hauteur de selle et quelle contenance de réservoir sont annoncées ?"
+    },
+    {
+      "id": "F002",
+      "split": "regression",
+      "question": "Kawasaki ZRX 1200 R (2003) : peux-tu relever puissance et couple avec leurs unités et les régimes indiqués ?"
+    },
+    {
+      "id": "F003",
+      "split": "regression",
+      "question": "Pour Honda CB 500 (2000), combien de rapports comporte la boîte et comment la roue arrière est-elle entraînée ?"
+    },
+    {
+      "id": "F004",
+      "split": "regression",
+      "question": "Quel frein et quel type de fourche trouve-t-on à l'avant de Suzuki 600 GSX-R Edition Speciale Tourist Trophy (2007), selon sa fiche ?"
+    },
+    {
+      "id": "F005",
+      "split": "regression",
+      "question": "Je cherche le frein et la suspension arrière de BMW R 1200 GS (2006). Que donne la fiche ?"
+    },
+    {
+      "id": "F006",
+      "split": "regression",
+      "question": "Quelles teintes sont proposées sur la fiche de Triumph 800 BONNEVILLE (2004) ? Garde ce millésime précis."
+    },
+    {
+      "id": "F007",
+      "split": "regression",
+      "question": "Pour Ducati 999 R (2005), relève la cylindrée réelle et le mode de refroidissement du moteur."
+    },
+    {
+      "id": "F008",
+      "split": "regression",
+      "question": "Harley-Davidson 1584 DYNA FAT BOB FXDF (2010) : donne la hauteur de selle et les masses documentées, en précisant à sec ou tous pleins faits."
+    },
+    {
+      "id": "F009",
+      "split": "regression",
+      "question": "Sur KTM 150 XC-W (2019), quelle hauteur de selle et quelle contenance de réservoir sont annoncées ?"
+    },
+    {
+      "id": "F010",
+      "split": "regression",
+      "question": "Aprilia TUONO V4 1100 Factory (2016) : peux-tu relever puissance et couple avec leurs unités et les régimes indiqués ?"
+    },
+    {
+      "id": "F011",
+      "split": "regression",
+      "question": "Pour MV-Agusta 800 DRAGSTER RR (2015), combien de rapports comporte la boîte et comment la roue arrière est-elle entraînée ?"
+    },
+    {
+      "id": "F012",
+      "split": "regression",
+      "question": "Quel frein et quel type de fourche trouve-t-on à l'avant de Moto-Guzzi 1400 Eldorado (2019), selon sa fiche ?"
+    },
+    {
+      "id": "F013",
+      "split": "regression",
+      "question": "Je cherche le frein et la suspension arrière de Indian 1133 Scout Tiffany Blue (2019). Que donne la fiche ?"
+    },
+    {
+      "id": "F014",
+      "split": "regression",
+      "question": "Quelles teintes sont proposées sur la fiche de Benelli TnT 899 Cafe Racer (2011) ? Garde ce millésime précis."
+    },
+    {
+      "id": "F015",
+      "split": "regression",
+      "question": "Pour Mash 400 Five Hundred Von Dutch (2015), relève la cylindrée réelle et le mode de refroidissement du moteur."
+    },
+    {
+      "id": "F016",
+      "split": "regression",
+      "question": "Bimota 800 TESI 3D RaceCafe (2016) : donne la hauteur de selle et les masses documentées, en précisant à sec ou tous pleins faits."
+    },
+    {
+      "id": "F017",
+      "split": "regression",
+      "question": "Morini 450 Alltrhike (2026) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F018",
+      "split": "regression",
+      "question": "Pour Royal-Enfield Classic 350 (2022), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F019",
+      "split": "regression",
+      "question": "Sur Victory (USA) 1700 BOARDWALK (2015), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F020",
+      "split": "regression",
+      "question": "Décris les freins avant et arrière de Norton 1200 V4 CR (2023), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F021",
+      "split": "regression",
+      "question": "Pour Cagiva 1000 X-TRA RAPTOR (2005), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F022",
+      "split": "regression",
+      "question": "CFMOTO 800 MT Touring Limited Edition (2022) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F023",
+      "split": "regression",
+      "question": "Pour Zero Motorcycles DS (2026), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F024",
+      "split": "regression",
+      "question": "Buell Hammerhead 1190 RX (2021) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F025",
+      "split": "regression",
+      "question": "Yamaha FZ6 600 S2 (2007) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F026",
+      "split": "regression",
+      "question": "Pour Kawasaki 500 GPZ (2004), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F027",
+      "split": "regression",
+      "question": "Sur Honda CBR 125 R (2007), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F028",
+      "split": "regression",
+      "question": "Décris les freins avant et arrière de Suzuki SV 1000 N (2006), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F029",
+      "split": "regression",
+      "question": "Pour BMW R 1200 C (2000), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F030",
+      "split": "regression",
+      "question": "Triumph 955i SPEED TRIPLE (2001) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F031",
+      "split": "regression",
+      "question": "Combien de litres contient le réservoir de Ducati 1098 (2007) et dans quels coloris cette fiche la présente-t-elle ?"
+    },
+    {
+      "id": "F032",
+      "split": "regression",
+      "question": "Harley-Davidson CVO 1800 SOFTAIL CONVERTIBLE FLSTSE (2010) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F033",
+      "split": "regression",
+      "question": "KTM 125 SX (2014) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F034",
+      "split": "regression",
+      "question": "Pour Aprilia RS 660 prototype (2019), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F035",
+      "split": "regression",
+      "question": "Sur MV-Agusta 800 BRUTALE (2016), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F036",
+      "split": "regression",
+      "question": "Décris les freins avant et arrière de Moto-Guzzi STELVIO 1200 8V NTX (2012), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F037",
+      "split": "regression",
+      "question": "Pour Indian FTR 1200 S (2020), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F038",
+      "split": "regression",
+      "question": "Benelli 500 Leoncino Trail (2017) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F039",
+      "split": "regression",
+      "question": "Combien de litres contient le réservoir de Mash 400 Five Hundred Chromium (2020) et dans quels coloris cette fiche la présente-t-elle ?"
+    },
+    {
+      "id": "F040",
+      "split": "regression",
+      "question": "Bimota DB8 ORONERO (2016) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F041",
+      "split": "regression",
+      "question": "Morini Seiemmezzo 650 SCR (2024) : le nom commercial ne suffit pas, je veux la cylindrée en cc et la capacité du réservoir."
+    },
+    {
+      "id": "F042",
+      "split": "regression",
+      "question": "Pour Royal-Enfield Super Meteor 650 (2024), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F043",
+      "split": "regression",
+      "question": "Sur Victory (USA) 1200 OCTANE (2016), quelle transmission finale est indiquée et quelles couleurs sont listées ?"
+    },
+    {
+      "id": "F044",
+      "split": "regression",
+      "question": "Décris les freins avant et arrière de Norton 961 Commando Sport MK III (2024), avec leurs dimensions lorsqu'elles sont présentes."
+    },
+    {
+      "id": "F045",
+      "split": "regression",
+      "question": "Pour Cagiva 125 SUPERCITY (2000), je voudrais la hauteur de selle ainsi que le couple moteur et son régime s'il est renseigné."
+    },
+    {
+      "id": "F046",
+      "split": "regression",
+      "question": "CFMOTO 700 CL-X Heritage (2021) : quel refroidissement moteur et quel entraînement secondaire sont décrits ?"
+    },
+    {
+      "id": "F047",
+      "split": "regression",
+      "question": "Pour Zero Motorcycles DSR Black Forest Edition (2020), relève la puissance et les poids disponibles avec leur type. Ne calcule pas de rapport poids/puissance."
+    },
+    {
+      "id": "F048",
+      "split": "regression",
+      "question": "Buell Super Cruiser 1190 x RSD (2025) : indique le nombre de rapports et la suspension avant avec son débattement s'il est écrit."
+    },
+    {
+      "id": "F049",
+      "split": "regression",
+      "question": "Compare Yamaha XJ6 600 Diversion F (2011) et Yamaha XJ6 600 Diversion F (2014) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F050",
+      "split": "regression",
+      "question": "Compare Kawasaki KLE 500 (2002) et Kawasaki KLE 500 (2003) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F051",
+      "split": "regression",
+      "question": "Compare Honda CB 600 F HORNET (2014) et Honda CB 600 F HORNET (2012) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F052",
+      "split": "regression",
+      "question": "Compare Suzuki GSX-R 1000 (2003) et Suzuki GSX-R 1000 (2004) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F053",
+      "split": "regression",
+      "question": "Compare BMW R 1200 GS (2018) et BMW R 1200 GS (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F054",
+      "split": "regression",
+      "question": "Compare Triumph 2500 Rocket III R (2020) et Triumph 2500 Rocket III R (2021) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F055",
+      "split": "regression",
+      "question": "Compare Ducati 821 Hyperstrada (2014) et Ducati 821 Hyperstrada (2013) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F056",
+      "split": "regression",
+      "question": "Compare Harley-Davidson CVO 1920 Limited FLHTKSE (2020) et Harley-Davidson CVO 1920 Limited FLHTKSE (2021) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F057",
+      "split": "regression",
+      "question": "Compare KTM 450 EXC-F Six Days (2017) et KTM 450 SX-F Factory (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F058",
+      "split": "regression",
+      "question": "Compare Aprilia 1100 TUONO V4 Factory Limited Edition USA (2023) et Aprilia 1100 TUONO V4 (2023) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F059",
+      "split": "regression",
+      "question": "Compare MV-Agusta Brutale 1090 Corsa (2014) et MV-Agusta Brutale 1090 R (2014) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F060",
+      "split": "regression",
+      "question": "Compare Moto-Guzzi V7 750 Classic (2009) et Moto-Guzzi V7 750 Cafe Classic (2009) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F061",
+      "split": "regression",
+      "question": "Compare Indian 1811 CHIEFTAIN Jack Daniel's (2017) et Indian 1811 CHIEFTAIN (2017) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F062",
+      "split": "regression",
+      "question": "Compare Benelli TRK 502 (2025) et Benelli TRK 502 X (2025) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F063",
+      "split": "regression",
+      "question": "Compare Mash X-Ride 650 Trail (2024) et Mash X-Ride 50 (2024) : leurs hauteurs de selle et capacités de réservoir sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "F064",
+      "split": "regression",
+      "question": "Compare Bimota DB7 1098 (2009) et Bimota DB7 1098 Oro Nero (2009) : leurs puissances et transmissions secondaires sont-elles identiques ? Sépare les deux fiches."
+    },
+    {
+      "id": "HOLDOUT-001",
+      "split": "regression",
+      "question": "La CFMOTO 450 MT 2024 n’a pas une selle fixe ? Donne-moi aussi son encombrement en longueur et sa masse annoncée."
+    },
+    {
+      "id": "HOLDOUT-005",
+      "split": "regression",
+      "question": "La Moto-Guzzi 850 V7 Stone 2024 roule avec une chaîne ? Et son moteur refroidit à l’eau ou à l’air ?"
+    },
+    {
+      "id": "HOLDOUT-007",
+      "split": "regression",
+      "question": "La Yamaha MT-09 900 Y-AMT 2024 change quoi face à la MT-09 900 2024 : la boîte seulement, ou aussi la cylindrée et la puissance ?"
+    },
+    {
+      "id": "HOLDOUT-010",
+      "split": "regression",
+      "question": "J’ai besoin de la largeur de la BMW R 1250 GS 2023 et de sa plage de réglage de selle, pas de l’Adventure."
+    },
+    {
+      "id": "HOLDOUT-015",
+      "split": "regression",
+      "question": "Si je prends une KTM 790 Duke 2024, le système pour passer les rapports sans débrayer est compris ou marqué en option ?"
+    },
+    {
+      "id": "HOLDOUT-016",
+      "split": "regression",
+      "question": "La Ducati Monster SP 2024 a bien l’aide au départ arrêté et un shifter fourni ? La fiche précise s’il marche aussi en descendant les vitesses ?"
+    },
+    {
+      "id": "HOLDOUT-023",
+      "split": "regression",
+      "question": "Pour le Honda Forza 750 2024, tu peux confirmer la prise USB et le démarrage sans clé à partir de la fiche ?"
+    },
+    {
+      "id": "HOLDOUT-028",
+      "split": "regression",
+      "question": "Quels coloris sont réellement écrits pour la Ducati Monster standard 2024 ? Je ne veux pas ceux de la SP."
+    },
+    {
+      "id": "HOLDOUT-038",
+      "split": "regression",
+      "question": "Honda CRF 1100 L Africa Twin 2024 et Adventure Sports 2024 : laquelle a une roue avant de 19 pouces, et leurs selles se règlent entre quelles hauteurs ?"
+    },
+    {
+      "id": "HOLDOUT-039",
+      "split": "regression",
+      "question": "Kawasaki Z 900 2024 contre Z 900 SE 2024 : la fiche cite-t-elle Brembo pour les deux, et les dimensions de fourche et de disques avant diffèrent-elles ?"
+    },
+    {
+      "id": "HOLDOUT-041",
+      "split": "regression",
+      "question": "Pour les Yamaha Tracer 9 GT et GT+ de 2024, la base parle-t-elle d’une boîte automatique et d’un radar sur les deux ?"
+    },
+    {
+      "id": "HOLDOUT-004",
+      "split": "regression",
+      "question": "Pour la Royal-Enfield 450 Himalayan 2024, quelles sont les deux hauteurs de selle et les masses à sec et prête à rouler indiquées ?"
+    },
+    {
+      "id": "HOLDOUT-008",
+      "split": "regression",
+      "question": "La Suzuki GSX-8R 800 de 2024 fait vraiment 800 cm³ ? Et à quelle hauteur se trouve la selle, avec quel réservoir ?"
+    },
+    {
+      "id": "HOLDOUT-012",
+      "split": "regression",
+      "question": "La Harley-Davidson RH 975 Nightster 2024 a quel angle entre ses deux cylindres, et quelle hauteur de selle ?"
+    },
+    {
+      "id": "HOLDOUT-022",
+      "split": "regression",
+      "question": "Sur une Suzuki GSX-8S 800 2024, le contrôle de traction et le shifter sont mentionnés ? Pour le shifter, quelle précision donne la transmission ?"
+    },
+    {
+      "id": "HOLDOUT-026",
+      "split": "regression",
+      "question": "La Triumph 660 Trident 2025 est citée en bleu uni ou en bleu avec une autre couleur ? Donne les combinaisons écrites."
+    },
+    {
+      "id": "HOLDOUT-033",
+      "split": "regression",
+      "question": "Sur la Triumph 765 Street Triple R A2 2025, quels chevaux et quelle cylindrée sont écrits, et que dit la rubrique permis ?"
+    },
+    {
+      "id": "HOLDOUT-034",
+      "split": "regression",
+      "question": "Je regarde une Royal-Enfield Meteor 350 2024 avec mon A2. Quelle puissance donne la fiche et cite-t-elle ce permis, sans faire une déduction réglementaire ?"
+    },
+    {
+      "id": "HOLDOUT-040",
+      "split": "regression",
+      "question": "La Triumph 660 Trident 2025 apporte quoi par rapport à la 2024 pour le shifter, le régulateur et le nombre de modes de conduite, selon les fiches ?"
+    },
+    {
+      "id": "HOLDOUT-044",
+      "split": "regression",
+      "question": "On me propose une Royal-Enfield 450 Himalayan blanche, année oubliée. Entre les fiches 2024 et 2025, laquelle cite le blanc, et cela suffit-il à dater la moto ?"
+    },
+    {
+      "id": "N01",
+      "split": "regression",
+      "question": "La Benelli TRK 702 de 2024 fait-elle exactement 702 cm³, et quel volume de réservoir sa fiche annonce-t-elle ?"
+    },
+    {
+      "id": "N02",
+      "split": "regression",
+      "question": "Pour la Benelli TRK 702 de 2024, quels coloris sont écrits et la liste des équipements cite-t-elle une prise pour charger par USB ?"
+    },
+    {
+      "id": "N03",
+      "split": "regression",
+      "question": "Norden 901 et Norden 901 Expedition, toutes deux Husqvarna de 2024 : compare leurs plages de hauteur de selle et leurs masses à sec, sans mélanger avec les masses pleins faits."
+    },
+    {
+      "id": "N04",
+      "split": "regression",
+      "question": "Sur la Husqvarna Norden 901 Expedition 2024, le shifter est-il de série ou en option et la fiche cite-t-elle une selle et des poignées chauffantes ?"
+    },
+    {
+      "id": "N05",
+      "split": "regression",
+      "question": "MV-Agusta 800 Brutale RR 2024 : donne le couple avec son régime et la hauteur de selle. Pour la masse, la fiche fournit-elle le poids à sec et celui tous pleins faits ?"
+    },
+    {
+      "id": "N06",
+      "split": "regression",
+      "question": "Compare seulement les puissances et leurs régimes des MV-Agusta 1000 Brutale RR et 800 Brutale R de 2024. Je veux bien la R pour la 800, pas la RR."
+    },
+    {
+      "id": "N07",
+      "split": "regression",
+      "question": "Sur l'Indian 1133 Scout Bobber de 2024, la transmission secondaire est-elle par chaîne ou courroie et quels coloris sont listés ?"
+    },
+    {
+      "id": "N08",
+      "split": "regression",
+      "question": "Entre l'Indian 1133 Scout et la 1133 Scout Bobber de 2024, les fiches donnent-elles les mêmes longueur et largeur ? Compare ces dimensions, sans prendre la Bobber Twenty."
+    }
+  ]
+}

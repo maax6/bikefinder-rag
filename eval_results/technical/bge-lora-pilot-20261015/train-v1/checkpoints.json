@@ -1,0 +1,22 @@
+[
+  {
+    "epoch": 1,
+    "dev_loss": 0.482458533719182,
+    "train_loss": 0.8721881974488497,
+    "path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-1",
+    "files_sha256": {
+      "adapter_model.safetensors": "f9387a66cf6b7c162f2bd7905114e888b0a10041e0fe2431cbd6dcd29db79535",
+      "adapter_config.json": "0f3b829b124a17cde597636aed9845052562a3820bb45bb1943b41782d7bdf59"
+    }
+  },
+  {
+    "epoch": 2,
+    "dev_loss": 0.4339670013869181,
+    "train_loss": 0.3191575803066371,
+    "path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-2",
+    "files_sha256": {
+      "adapter_model.safetensors": "1c95f0395c2b05640d46b424f45be9814f605eac89687440025fd4de0f20ed55",
+      "adapter_config.json": "0f3b829b124a17cde597636aed9845052562a3820bb45bb1943b41782d7bdf59"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-10-15T00:26:29.999728+00:00",
+  "protocol_sha256": "d9deef8eda2f72757f5e84199f3a52432c3ef157c8e7956cabdb2fcf9ea44194",
+  "base_model_verified": true,
+  "max_input_tokens": 161,
+  "files_sha256": {
+    "dev.json": "cd0725a0ca6f8f5dccfe54e5d684cba8b5f66c92bc6464bc947df5a7a3d38d77",
+    "train.json": "a8043c9ac635b64d9a8c49e9df75abf5004d78da70ab01c461439892927c8baf"
+  },
+  "remote_api_calls": 0,
+  "negative_reasons": {
+    "different_explicit_model_or_year": 1537,
+    "same_identity_no_requested_fact_in_section": 511
+  }
+}

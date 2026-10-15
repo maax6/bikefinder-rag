@@ -1,0 +1,238 @@
+{
+  "created_utc": "2026-10-15T00:25:28.294411+00:00",
+  "status": "source_cases_frozen_before_mining_or_training",
+  "hyperparameters": {
+    "seed": 20261015,
+    "epochs": 2,
+    "batch_queries": 2,
+    "learning_rate": 3e-05,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "temperature": 0.05,
+    "max_tokens": 384,
+    "gradient_clip": 1.0,
+    "explicit_negatives": 4,
+    "loss": "mean over positives of cross-entropy against that positive and four explicit negatives; no in-batch negatives",
+    "checkpoint_selection": "lowest validation contrastive loss among epoch checkpoints; test and regression labels never used",
+    "dense_pool": 40,
+    "lexical_pool": 40,
+    "dense_weight": 1,
+    "lexical_weight": 1,
+    "rrf_constant": 60
+  },
+  "counts": {
+    "train": 512,
+    "dev": 64,
+    "test": 64,
+    "regression": 92
+  },
+  "brands": {
+    "train": [
+      "Brixton",
+      "Brough Superior",
+      "Daelim",
+      "Derbi",
+      "Hyosung",
+      "Laverda",
+      "MZ / MuZ",
+      "Macbor",
+      "Orcal",
+      "QJ Motor",
+      "Rieju",
+      "Voxan"
+    ],
+    "dev": [
+      "FB Mondial",
+      "Kove",
+      "Ural",
+      "Zontes"
+    ],
+    "test": [
+      "BSA",
+      "Fantic",
+      "GASGAS",
+      "Gilera",
+      "Kymco",
+      "Morbidelli"
+    ],
+    "regression": [
+      "Aprilia",
+      "BMW",
+      "Benelli",
+      "Bimota",
+      "Buell",
+      "CFMOTO",
+      "Cagiva",
+      "Ducati",
+      "Harley-Davidson",
+      "Honda",
+      "Husqvarna",
+      "Indian",
+      "KTM",
+      "Kawasaki",
+      "MV-Agusta",
+      "Mash",
+      "Morini",
+      "Moto-Guzzi",
+      "Norton",
+      "Royal-Enfield",
+      "Suzuki",
+      "Triumph",
+      "Victory (USA)",
+      "Yamaha",
+      "Zero Motorcycles"
+    ]
+  },
+  "unique_fiches": {
+    "train": 267,
+    "dev": 46,
+    "test": 40,
+    "regression": 112
+  },
+  "documents_sha256": "bcc9f203216441cc6691e7017aac6d69ab729a04071889289cfbc6db2253bf56",
+  "index_manifest_sha256": "b2f255b320e3c03b19d873ceae7ce87ed39a8d1ba6ed6719e52eacca0f6abb56",
+  "base_model": {
+    "content_sha256": "abfff3f64e1e257a3f76286e13358376f19772afb22f42804d31c8a5619108c9",
+    "file_sha256": {
+      "1_Pooling/config.json": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+      "config.json": "26159e7ad065073448460117eb24b7a4572f6f4e78eadff65dc0a11c052449fa",
+      "config_sentence_transformers.json": "1eef72430e7194a1e59680e635aed81ffa083f05668dbc5bb1c56c04c0999c38",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "pytorch_model.bin": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38",
+      "sentence_bert_config.json": "eb9b44b13c0f52a3b3685c3b1cbdea1ba8b04bea123b98f61610048940776eb1",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+      "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+      "tokenizer.json": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+      "tokenizer_config.json": "a62b2b6784f990259fddef5f16388693a8043be4f69179e6a5257eeb3f9abac4"
+    },
+    "path": "/Users/m4ks/.cache/huggingface/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+  },
+  "prior_question_inventory": [
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle/check.annotations.json",
+      "sha256": "45ecd8854ba883a87274b3e81f53f9be0b818803289aeb486050e2a4bc7aae27"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle/coverage_audit.annotations.json",
+      "sha256": "89dd7ce6f8fcaa8c5071b63583986ab65a1a9de271e2c6c6d3b79556870b5381"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle/dev.annotations.json",
+      "sha256": "e848c24af879ef70d8520ffe14e35a814912ed01d86a4e654ce34236c63779cb"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle-v2/check.annotations.json",
+      "sha256": "b849d13609e00d6808de2be9b94a342824b5138a36d36797f6b480bad6fb7dc1"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle-v2/coverage_audit.annotations.json",
+      "sha256": "89dd7ce6f8fcaa8c5071b63583986ab65a1a9de271e2c6c6d3b79556870b5381"
+    },
+    {
+      "path": "eval_results/technical/bge-retrieval-improvements-20261015/bundle-v2/dev.annotations.json",
+      "sha256": "e848c24af879ef70d8520ffe14e35a814912ed01d86a4e654ce34236c63779cb"
+    },
+    {
+      "path": "eval_results/technical/catalog-experiment-20261014/questions.json",
+      "sha256": "60a325664a3d691c9771019533ee2cda9bb49fd33cb110149a8cb8c9a93c4894"
+    },
+    {
+      "path": "eval_results/technical/catalog-research-20261014/questions.json",
+      "sha256": "b70fd3d4ca617469628aef0055645fdd7d092ad68019043fa893ec6bf831c7c9"
+    },
+    {
+      "path": "eval_results/technical/free_chat_all_questions_20261013.json",
+      "sha256": "ef3db353fe63de640135a234f2f1ff0e6880ef1db3a4a533599e6423443ab967"
+    },
+    {
+      "path": "eval_results/technical/free_chat_questions_20261013.json",
+      "sha256": "de6dfcc4301e03c2ef325378978ab2da117dc20fa6a70804272aeeaebc26b87c"
+    },
+    {
+      "path": "eval_results/technical/free_chat_transfer_questions_20261013.json",
+      "sha256": "2138bdce3a0459f90c586a21adaca6eb9a82eedee03c228e804fdce6fe4126b5"
+    },
+    {
+      "path": "eval_results/technical/fresh_chat_questions_20261013.json",
+      "sha256": "6ae89be8e4c784c57cd12067e1afab948b5d026605b9084afdcc361ee06bc428"
+    },
+    {
+      "path": "eval_results/technical/jev-rag-20261013/questions.frozen.json",
+      "sha256": "3557a95acf0734c3646e04419f34896319524c8ea4380893ca06e03b9a82a729"
+    },
+    {
+      "path": "eval_results/technical/jev_user_question_20261013.json",
+      "sha256": "d59a23bdb82e4b7a30d4b40bca60ec15c37d8e42cc8d1a9060d446d5c80a96af"
+    },
+    {
+      "path": "eval_results/technical/mistral-alone-20261014/pack/questions.json",
+      "sha256": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/browser-questions.json",
+      "sha256": "7a25f16d93a97c47621717f30192c3d13d3b60e839635d1854407d35b586a1d8"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/questions.json",
+      "sha256": "9f2c630eb7b62d8061e9c0bfb0ba7bed2ba2102a074bd743754aef1f104ba707"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/regression-questions.json",
+      "sha256": "fa8c609f9a54ecd43ca5f71703bdf8607f1c51bc6583178577b12f131d075bc3"
+    },
+    {
+      "path": "eval_results/technical/rag-mistral-20261014/targeted-regression-questions.json",
+      "sha256": "edaa04b98e8b86ed793e3ce69a01dc8eb4cbe85593dfc98d6e053bd1a724912a"
+    },
+    {
+      "path": "eval_results/technical/retrieval-benchmark-20261013/questions-dev.json",
+      "sha256": "b593c8232bc8a960ca3cbea1bbcc45e7af9b2c1495a4ff391bc540fd5ea162ba"
+    },
+    {
+      "path": "eval_results/technical/retrieval-benchmark-20261013/questions-holdout.json",
+      "sha256": "64b0331bcca034eefaf146d172e0141128f8ba61164e3e771181d1d5a827abb3"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014/questions.json",
+      "sha256": "e47d247bd59bf668a25124a9680b595874e5e62b4229b90faaf0e5674ac4acc9"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v2/questions.json",
+      "sha256": "e47d247bd59bf668a25124a9680b595874e5e62b4229b90faaf0e5674ac4acc9"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v3/questions.json",
+      "sha256": "e47d247bd59bf668a25124a9680b595874e5e62b4229b90faaf0e5674ac4acc9"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v4/questions.json",
+      "sha256": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8"
+    },
+    {
+      "path": "eval_results/technical/sql-rag-comparison-20261014-v5/questions.json",
+      "sha256": "8cbe0fb4b73f0f2b021c4d83ec3a904d7327db8b4d5a7b5c3a8df7bf36bfe9f8"
+    },
+    {
+      "path": "eval_results/technical/unseen_chat_questions_20261013.json",
+      "sha256": "51cdf837c06643665e6448ad70e0cc5626fe5e726d763ca37109c53c79b1c9cf"
+    }
+  ],
+  "source_checks": "Question contains exact canonical model/year; each expected quote is a verbatim source substring. Multiple useful sections all remain positive.",
+  "negative_policy": "Mine only within the same split brands. Identity mismatch is negative only for the explicit requested model/year. Same-identity sections qualify only when none of the requested fact patterns occurs. Never use held-out brands as training negatives.",
+  "limitations": [
+    "Assistant-written templates and automatically verified labels, not 512 independent human judgements.",
+    "Brands are disjoint across all four cohorts; training brands are smaller catalogue manufacturers, so coverage is biased.",
+    "Repeated fiches within a split; examples are not statistically independent.",
+    "Exact-source ranking only; no guarantees of final chat answer correctness, abstention or identity resolution."
+  ],
+  "inference_promotion": "Require improved complete@10 on the new test, no lost required groups on test/regression and no decline of first-hit counts. No automatic activation.",
+  "files_sha256": {
+    "regression.json": "649997d099db31212b7d2613ca3f41fbeaed093df78148bfe5a93bf14baf5f89",
+    "test.json": "c9d6a7a6e1873f6f02a91f2f1ef61131390e637c6af0447786209c3a30c2a48c",
+    "dev.json": "f38814c4656e96719b31c8d76d737ec369cd49548586088904a825dc3839bf2c",
+    "queries.json": "0c729c176718453ec8d26a49b447adea95427ec8fc52f51bb163439af59fb65b",
+    "train.json": "089982ea08f2c840d20770fc81a9bda1eb80f2298cb14191603d2989c057257f"
+  }
+}

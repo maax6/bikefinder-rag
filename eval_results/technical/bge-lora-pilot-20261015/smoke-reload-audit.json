@@ -1,0 +1,8 @@
+{
+  "selected_dev_loss": 1.0576820522546768,
+  "reloaded_dev_loss": 1.0576820522546768,
+  "reloaded_loss_matches": true,
+  "merged_layers": 48,
+  "merge_max_abs_error": 2.0489096641540527e-07,
+  "adapter_load_and_merge_verified": true
+}

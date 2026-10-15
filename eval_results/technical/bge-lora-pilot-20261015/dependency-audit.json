@@ -1,0 +1,23 @@
+{
+  "recorded_utc": "2026-10-15T00:36:50.123993+00:00",
+  "source_files_sha256": {
+    "scripts/train_bge_contrastive.py": "45367410d64a5bde0bf5efb85897e899e2c84cee357abc7e9911c1e7d2d59238",
+    "scripts/validate_bge_fusion.py": "394a2519d8764fb39f0a645e6e7681b20b1cd3264b90deb804d68e827448217c",
+    "scripts/benchmark_technical_retrieval.py": "9b67837b6ea17693711698317326ae767148b246530e1cc73efd743b289a1b0c",
+    "scripts/requirements-bge-training.txt": "ae1e594a4eac5191954acc642d8267c135d4d0cdc9c92fdd0fcb69a86290a79d",
+    "src/bikefinder_rag/embeddings/embedder.py": "c7cc7317a27645e402f2c7996819179890d273d11ad925723ef8d5511c1b648c",
+    "src/bikefinder_rag/catalog/sql_rag_retrieval.py": "f4bc7c6c536a97fb1d8cb45d244359c2067ad585e61edd5ed442fc7af9d1150d"
+  },
+  "runtime_install_directory": "data/technical/bge-training-runtime-20261015",
+  "runtime_changed_in_chat_venv": false,
+  "large_model_and_vector_artifacts_ignored_by_git": true,
+  "final_recorded_utc": "2026-10-15T00:50:35.145671+00:00",
+  "initial_source_files_sha256": {
+    "scripts/train_bge_contrastive.py": "36ae66f5151c8372ca04059959c67c2843902651c76e8b6c12507ad425e0a3dd",
+    "scripts/validate_bge_fusion.py": "394a2519d8764fb39f0a645e6e7681b20b1cd3264b90deb804d68e827448217c",
+    "scripts/benchmark_technical_retrieval.py": "9b67837b6ea17693711698317326ae767148b246530e1cc73efd743b289a1b0c",
+    "scripts/requirements-bge-training.txt": "ae1e594a4eac5191954acc642d8267c135d4d0cdc9c92fdd0fcb69a86290a79d",
+    "src/bikefinder_rag/embeddings/embedder.py": "c7cc7317a27645e402f2c7996819179890d273d11ad925723ef8d5511c1b648c",
+    "src/bikefinder_rag/catalog/sql_rag_retrieval.py": "f4bc7c6c536a97fb1d8cb45d244359c2067ad585e61edd5ed442fc7af9d1150d"
+  }
+}

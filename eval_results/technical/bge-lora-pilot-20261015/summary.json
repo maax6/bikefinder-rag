@@ -1,0 +1,117 @@
+{
+  "completed_utc": "2026-10-15T00:50:56.690960+00:00",
+  "status": "pilot_completed_not_promoted",
+  "train_questions": 512,
+  "validation_questions": 64,
+  "new_test_questions": 64,
+  "regression_questions": 92,
+  "trainable_parameters": 786432,
+  "optimizer_steps": 512,
+  "training_seconds": 656.0340931250248,
+  "index_seconds": 516.5663492920576,
+  "indexed_passages": 105687,
+  "selected_checkpoint": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-2",
+  "retrieval_results": [
+    {
+      "split": "test",
+      "method": "dense",
+      "model": "base",
+      "questions": 64,
+      "complete_cases": 56.0,
+      "hit_at1_cases": 57.0,
+      "mean_recall_at10": 0.9296875
+    },
+    {
+      "split": "test",
+      "method": "dense",
+      "model": "lora",
+      "questions": 64,
+      "complete_cases": 52.0,
+      "hit_at1_cases": 62.0,
+      "mean_recall_at10": 0.90625
+    },
+    {
+      "split": "test",
+      "method": "hybrid",
+      "model": "base",
+      "questions": 64,
+      "complete_cases": 60.0,
+      "hit_at1_cases": 30.0,
+      "mean_recall_at10": 0.9609375
+    },
+    {
+      "split": "test",
+      "method": "hybrid",
+      "model": "lora",
+      "questions": 64,
+      "complete_cases": 61.0,
+      "hit_at1_cases": 52.0,
+      "mean_recall_at10": 0.9765625
+    },
+    {
+      "split": "regression",
+      "method": "dense",
+      "model": "base",
+      "questions": 92,
+      "complete_cases": 63.0,
+      "hit_at1_cases": 71.0,
+      "mean_recall_at10": 0.8478260869565217
+    },
+    {
+      "split": "regression",
+      "method": "dense",
+      "model": "lora",
+      "questions": 92,
+      "complete_cases": 81.0,
+      "hit_at1_cases": 83.0,
+      "mean_recall_at10": 0.9384057971014493
+    },
+    {
+      "split": "regression",
+      "method": "hybrid",
+      "model": "base",
+      "questions": 92,
+      "complete_cases": 66.0,
+      "hit_at1_cases": 63.0,
+      "mean_recall_at10": 0.8487318840579711
+    },
+    {
+      "split": "regression",
+      "method": "hybrid",
+      "model": "lora",
+      "questions": 92,
+      "complete_cases": 78.0,
+      "hit_at1_cases": 74.0,
+      "mean_recall_at10": 0.931159420289855
+    }
+  ],
+  "promotion_checks": {
+    "new_test_complete_gain": true,
+    "no_lost_evidence": false,
+    "no_first_hit_decline": true,
+    "dev_loss_improved": true,
+    "base_files_unchanged": true
+  },
+  "questions_losing_evidence": 9,
+  "complete_to_incomplete": 7,
+  "eligible_for_integration": false,
+  "activated": false,
+  "remote_api_calls": 0,
+  "remote_api_usd": 0,
+  "tests": {
+    "passed": 1201,
+    "skipped": 8,
+    "seconds": 27.51,
+    "command": "PYTHONPATH=src BIKEFINDER_JEV_ROUTER=0 BIKEFINDER_JEV_RAG=0 BIKEFINDER_CATALOG_RESEARCH=0 BIKEFINDER_CATALOG_EXPERIMENT=0 .venv/bin/python -m pytest tests -q",
+    "initial_collection_failure": "Unscoped pytest discovered vendored Accelerate upstream tests. Configured testpaths=[tests] and verified default collection separately.",
+    "default_collection_count": 1209
+  },
+  "report": "docs/bge-lora-pilote-20261015.md",
+  "limitations": [
+    "Assistant-written templates and automatically verified labels, not 512 independent human judgements.",
+    "Brands are disjoint across all four cohorts; training brands are smaller catalogue manufacturers, so coverage is biased.",
+    "Repeated fiches within a split; examples are not statistically independent.",
+    "Exact-source ranking only; no guarantees of final chat answer correctness, abstention or identity resolution.",
+    "Single latency pass; no robust latency comparison. Full-index retrieval, not a live chat test."
+  ]
+}

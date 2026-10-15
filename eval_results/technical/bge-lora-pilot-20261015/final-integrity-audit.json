@@ -1,0 +1,47 @@
+{
+  "recorded_utc": "2026-10-15T00:50:35.147029+00:00",
+  "original_index_artifacts_unchanged": {
+    "documents.jsonl": true,
+    "lexical-postings.npz": true,
+    "lexical-vocabulary.json": true,
+    "protocol.json": true,
+    "vectors.npy": true
+  },
+  "candidate_vector_sha256": "a5d6017078db23eef7343f59012a453c5aa594a26fbe9b2e9bd6812eb6921e65",
+  "candidate_shape": [
+    105687,
+    1024
+  ],
+  "candidate_dtype": "float32",
+  "candidate_all_finite": true,
+  "candidate_norm_min": 0.9997557997703552,
+  "candidate_norm_max": 1.000484585762024,
+  "archived_script_bindings": {
+    "train-v1": true,
+    "smoke-v1": true,
+    "index-v1": true
+  },
+  "tracked_src_diff": [],
+  "large_artifacts_git_ignored": [
+    "data/technical/bge-lora-pilot-20261015/index-v1/vectors.npy",
+    "data/technical/bge-lora-pilot-20261015/train-v1/epoch-2/adapter_model.safetensors"
+  ],
+  "saved_adapter_files_verified": [
+    {
+      "path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-1/adapter_model.safetensors",
+      "sha256": "f9387a66cf6b7c162f2bd7905114e888b0a10041e0fe2431cbd6dcd29db79535"
+    },
+    {
+      "path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-1/adapter_config.json",
+      "sha256": "0f3b829b124a17cde597636aed9845052562a3820bb45bb1943b41782d7bdf59"
+    },
+    {
+      "path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-2/adapter_model.safetensors",
+      "sha256": "1c95f0395c2b05640d46b424f45be9814f605eac89687440025fd4de0f20ed55"
+    },
+    {
+      "path": "data/technical/bge-lora-pilot-20261015/train-v1/epoch-2/adapter_config.json",
+      "sha256": "0f3b829b124a17cde597636aed9845052562a3820bb45bb1943b41782d7bdf59"
+    }
+  ]
+}
