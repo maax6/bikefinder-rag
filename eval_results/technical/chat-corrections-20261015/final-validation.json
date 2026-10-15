@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-15T16:45:55.645681+00:00",
+  "source_files_unchanged_during_final_campaign": true,
+  "final_submissions": 63,
+  "intermediate_submissions": 48,
+  "html_reproducible": true,
+  "html_sha256": "66cd888aaa22aa434676458086d6a44cb34a259b0f89ce674d254c8b0fba35ee",
+  "interactive_price_filter": "3 matching responses verified in browser",
+  "observer_stopped_pid": 57903,
+  "normal_corrected_chat_pid": 62568,
+  "normal_corrected_chat_url": "http://127.0.0.1:7861/",
+  "original_user_chat_preserved": "http://127.0.0.1:7860/",
+  "committed": false,
+  "published": false
+}

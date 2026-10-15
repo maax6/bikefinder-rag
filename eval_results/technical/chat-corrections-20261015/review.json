@@ -1,0 +1,352 @@
+{
+  "grades": [
+    {
+      "key": "first/Q01/1",
+      "verdict": "correct",
+      "note": "≈ 62 ch restitués avec le caractère approximatif ; aucune fausse absence ajoutée."
+    },
+    {
+      "key": "first/Q02/1",
+      "verdict": "correct",
+      "note": "805 mm et 13 litres, deux valeurs et bonne fiche."
+    },
+    {
+      "key": "first/Q03/1",
+      "verdict": "correct",
+      "note": "Cardan et refroidissement liquide exacts. Avertissement de couverture encore inutilement prudent."
+    },
+    {
+      "key": "first/Q04/1",
+      "verdict": "correct",
+      "note": "Les deux pneus sont présents dans le tableau sourcé. La rédaction est rejetée et remplacée par les données exactes ; dimensions supplémentaires et avertissements superflus."
+    },
+    {
+      "key": "first/Q05/1",
+      "verdict": "correct",
+      "note": "Fourche de 41 mm, débattement avant et arrière de 150 mm. Avertissement de couverture superflu."
+    },
+    {
+      "key": "first/Q06/1",
+      "verdict": "correct",
+      "note": "197 kg tous pleins ; poids sec explicitement inconnu, sans confusion entre les deux."
+    },
+    {
+      "key": "first/Q07/1",
+      "verdict": "correct",
+      "note": "Avant 330 mm et 4 pistons, arrière 230 mm et simple piston ; source exacte."
+    },
+    {
+      "key": "first/Q08/1",
+      "verdict": "correct",
+      "note": "4,60 mkg à 6 000 tr/min. Valeurs exactes malgré un complément redondant et des avertissements de couverture."
+    },
+    {
+      "key": "first/Q09/1",
+      "verdict": "correct",
+      "note": "Poignées chauffantes de série et régulateur inconnu visibles dans la réponse finale et le tableau."
+    },
+    {
+      "key": "first/Q10/1",
+      "verdict": "correct",
+      "note": "Comparaison des deux variantes incluant désormais le réglage électronique de série sur la S. Tableau complet après expiration de Mistral."
+    },
+    {
+      "key": "first/Q11/1",
+      "verdict": "justified_limit",
+      "note": "Poids tous pleins absent des deux fiches ; les 191 kg restent explicitement un poids à sec."
+    },
+    {
+      "key": "first/Q12/1",
+      "verdict": "correct",
+      "note": "125 et 111 ch attribués aux bonnes variantes ; différence de 14 ch."
+    },
+    {
+      "key": "first/Q13/1",
+      "verdict": "correct",
+      "note": "Maximum 1 043 cc sur 42/42 cylindrées ; les six ex æquo sont cités."
+    },
+    {
+      "key": "first/Q14/1",
+      "verdict": "correct",
+      "note": "Minimum documenté 785 mm, quatre ex æquo ; couverture 18/20 et exclusions explicites."
+    },
+    {
+      "key": "first/Q15/1",
+      "verdict": "correct",
+      "note": "48 ch = 144/3 ; trois millésimes 2020, 2021 et 2022 cités."
+    },
+    {
+      "key": "first/Q16/1",
+      "verdict": "correct",
+      "note": "47 fiches Triumph 2022 ; unité de comptage conforme."
+    },
+    {
+      "key": "first/Q17/1",
+      "verdict": "correct",
+      "note": "34 fiches Yamaha 2022 avec ABS de série ; inconnus exclus."
+    },
+    {
+      "key": "first/Q18/1",
+      "verdict": "correct",
+      "note": "Les dix fiches attendues respectent les deux bornes inclusives ; types de poids séparés."
+    },
+    {
+      "key": "first/Q19/1",
+      "verdict": "correct",
+      "note": "Royal-Enfield identifié sans imposer un millésime ; année de la source clairement expliquée."
+    },
+    {
+      "key": "first/Q20/1",
+      "verdict": "justified_limit",
+      "note": "Distingue CV fiscaux et puissance moteur ; limite documentaire adaptée, sans inventer de formule fiscale."
+    },
+    {
+      "key": "first/Q21/1",
+      "verdict": "correct",
+      "note": "Permis A et 20,20 ch à 6 100 tr/min fidèles à la fiche ; aucune certification individuelle A2."
+    },
+    {
+      "key": "first/Q22/1",
+      "verdict": "justified_limit",
+      "note": "Édition fictive non remplacée silencieusement par la W 800 standard."
+    },
+    {
+      "key": "first/Q23/1",
+      "verdict": "justified_limit",
+      "note": "Millésime 2007 absent ; aucune substitution par une autre année."
+    },
+    {
+      "key": "first/Q24/1",
+      "verdict": "justified_limit",
+      "note": "Explique que la fiche ABS ne permet pas de garantir l’absence de chute."
+    },
+    {
+      "key": "first/D01/1",
+      "verdict": "correct",
+      "note": "48 ch et 499,60 cc correctement attribués à la Benelli 2022."
+    },
+    {
+      "key": "first/D01/2",
+      "verdict": "correct",
+      "note": "Le couple et le régime sont restitués avec modèle et année conservés ; avertissement superflu."
+    },
+    {
+      "key": "first/D02/1",
+      "verdict": "correct",
+      "note": "Demande le millésime avant de répondre sur le réservoir."
+    },
+    {
+      "key": "first/D02/2",
+      "verdict": "correct",
+      "note": "« Celle de 2022 » conserve le modèle : 17,20 L, sans fausse variante 2026. Tableau après expiration du rédacteur."
+    },
+    {
+      "key": "first/D03/1",
+      "verdict": "correct",
+      "note": "Cinq premières fiches sur dix, ordre et positions explicites."
+    },
+    {
+      "key": "first/D03/2",
+      "verdict": "correct",
+      "note": "Fiches 6 à 10, mêmes critères, aucune répétition des cinq précédentes."
+    },
+    {
+      "key": "first/D04/1",
+      "verdict": "correct",
+      "note": "Dix Suzuki 2022 à plus de 100 ch ; valeurs et sources affichées."
+    },
+    {
+      "key": "first/D04/2",
+      "verdict": "correct",
+      "note": "Le suivi conserve les critères et compte les mêmes dix fiches."
+    },
+    {
+      "key": "first/D05/1",
+      "verdict": "correct",
+      "note": "221 kg tous pleins sur la bonne W 800 2022 ; notes de couverture encombrantes."
+    },
+    {
+      "key": "first/D05/2",
+      "verdict": "justified_limit",
+      "note": "Poids sec marqué non documenté ; les 221 kg restent tous pleins, identité conservée."
+    },
+    {
+      "key": "first/D06/1",
+      "verdict": "correct",
+      "note": "48 ch pour 2020, bonne source."
+    },
+    {
+      "key": "first/D06/2",
+      "verdict": "correct",
+      "note": "Année changée à 2022, modèle conservé, 48 ch ; tableau exact après expiration du rédacteur."
+    },
+    {
+      "key": "first/K01/1",
+      "verdict": "correct",
+      "note": "Yamaha directement identifié sans millésime imposé."
+    },
+    {
+      "key": "first/K02/1",
+      "verdict": "justified_limit",
+      "note": "Limite documentaire pertinente et demande pays/catégorie ; plus de consigne de conversion hors sujet."
+    },
+    {
+      "key": "first/K03/1",
+      "verdict": "partial",
+      "note": "Limite A2 prudente, mais demande encore modèle et millésime déjà donnés au lieu de clarifier Naked, Diversion ou Diversion F. Défaut conservé et visible."
+    },
+    {
+      "key": "first/K04/1",
+      "verdict": "correct",
+      "note": "Maximum 1 298 cc sur 43/43 fiches ; les deux FJR ex æquo sont citées."
+    },
+    {
+      "key": "first/K05/1",
+      "verdict": "correct",
+      "note": "214 kg à sec et 244 kg tous pleins pour la Bandit 2000."
+    },
+    {
+      "key": "first/K05/2",
+      "verdict": "correct",
+      "note": "Demande la population de la moyenne en rappelant Bandit 2000 ; sec et pleins restent distincts."
+    },
+    {
+      "key": "warm_repeat/Q01/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud : ≈ 62 ch restitués avec le caractère approximatif ; aucune fausse absence ajoutée."
+    },
+    {
+      "key": "warm_repeat/Q03/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud : Cardan et refroidissement liquide exacts. Avertissement de couverture encore inutilement prudent."
+    },
+    {
+      "key": "warm_repeat/Q12/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud : 125 et 111 ch attribués aux bonnes variantes ; différence de 14 ch."
+    },
+    {
+      "key": "warm_repeat/Q16/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud : 47 fiches Triumph 2022 ; unité de comptage conforme."
+    },
+    {
+      "key": "warm_repeat/Q19/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud : Royal-Enfield identifié sans imposer un millésime ; année de la source clairement expliquée."
+    },
+    {
+      "key": "warm_repeat/Q22/1",
+      "verdict": "justified_limit",
+      "note": "Répétition à chaud : Édition fictive non remplacée silencieusement par la W 800 standard."
+    },
+    {
+      "key": "first/H01/1",
+      "verdict": "correct",
+      "note": "Maximum 1 833 cc, trois Goldwing ex æquo, couverture 28/28."
+    },
+    {
+      "key": "first/H02/1",
+      "verdict": "correct",
+      "note": "Minimum 705 mm, trois Vulcan S ex æquo, couverture 49/49."
+    },
+    {
+      "key": "first/H03/1",
+      "verdict": "correct",
+      "note": "2000 et 2001 : moyenne sèche 214 kg et moyenne tous pleins 244 kg, chacune sur 2/2 valeurs."
+    },
+    {
+      "key": "first/H04/1",
+      "verdict": "correct",
+      "note": "Moyenne sèche impossible (0/3), moyenne tous pleins 189 kg (3/3) ; inconnus exclus."
+    },
+    {
+      "key": "first/H05/1",
+      "verdict": "justified_limit",
+      "note": "1990 signalé absent ; 48 ch calculés sur la seule fiche disponible 2022, population explicitement incomplète et sans années intermédiaires."
+    },
+    {
+      "key": "first/H06/1",
+      "verdict": "correct",
+      "note": "La puissance ≈ 62 ch de 2021 conserve son approximation ; avertissement de couverture superflu."
+    },
+    {
+      "key": "first/H07/1",
+      "verdict": "correct",
+      "note": "Demande le millésime de la Leoncino."
+    },
+    {
+      "key": "first/H07/2",
+      "verdict": "correct",
+      "note": "La réponse « 2022. » garde la moto et le champ réservoir : 12,70 litres ; complément redondant."
+    },
+    {
+      "key": "first/H08/1",
+      "verdict": "correct",
+      "note": "Trois premières Triumph 2022 sur 47 ; ordre explicite."
+    },
+    {
+      "key": "first/H08/2",
+      "verdict": "correct",
+      "note": "Trois suivantes, positions 4 à 6 ; aucune répétition, mêmes filtres."
+    },
+    {
+      "key": "first/H09/1",
+      "verdict": "correct",
+      "note": "Demande explicitement la population de la moyenne au lieu d’imposer une année."
+    },
+    {
+      "key": "first/H09/2",
+      "verdict": "correct",
+      "note": "2000 et 2001 complètent le contexte ; moyenne de 214 kg à sec sur deux fiches."
+    },
+    {
+      "key": "first/P01/1",
+      "verdict": "correct",
+      "note": "522 771 €/42 = 12 446,929 € affichés ; 42 prix connus sur 43, tarifs France de base, inconnus exclus."
+    },
+    {
+      "key": "first/P02/1",
+      "verdict": "correct",
+      "note": "6 399 + 6 499 + 6 799 = 19 697 € ; moyenne 6 565,667 €, trois millésimes et tarifs France de base."
+    },
+    {
+      "key": "first/P03/1",
+      "verdict": "justified_limit",
+      "note": "Les tarifs de catalogue ne sont pas substitués aux prix actuels d’occasion ; clarification pertinente."
+    }
+  ],
+  "conclusion": "Les valeurs perdues, extrema, moyennes et suivis testés sont corrigés avec BGE-M3 d’origine. Le lot comparable passe de 25 à 36 réponses satisfaisantes sur 36 ; aucune régression de contenu observée sur les 42 tours appariés. Les 15 tours supplémentaires sont satisfaisants. Cela valide ces cas, pas toutes les formulations possibles.",
+  "findings": [
+    {
+      "title": "Valeurs et équipements conservés",
+      "detail": "≈ 62 ch reste approximatif. La comparaison Mandello inclut les suspensions électroniques de la S. Les poids à sec et tous pleins restent séparés."
+    },
+    {
+      "title": "Maximums, minimums et moyennes calculés sur toute la population",
+      "detail": "Les calculs ne portent plus sur une page de résultats. Ils montrent la couverture, les valeurs absentes et tous les ex æquo. Les données absentes ne deviennent jamais des zéros."
+    },
+    {
+      "title": "Prix moyen inclus",
+      "detail": "Yamaha 2020 : 12 446,93 € sur 42 prix connus parmi 43 fiches ; CB 500 F 2020–2022 : 6 565,67 € sur trois prix. Montants arrondis ici au centime ; le chat affiche trois décimales. Ce sont les tarifs France de base du catalogue, pas des prix actuels ni d’occasion."
+    },
+    {
+      "title": "Contexte et pagination",
+      "detail": "Le chat reprend le modèle après « Celle de 2022 » ou « 2022. », poursuit la liste sans doublon et clarifie la population d’une moyenne en conservant le contexte précédent."
+    },
+    {
+      "title": "Un défaut connu reste visible",
+      "detail": "La demande de bridage XJ6 A2 2011 reste partielle : la limite documentaire est correcte, mais la clarification devrait porter sur la variante. Plusieurs réponses exactes gardent aussi des avertissements de couverture trop génériques."
+    }
+  ],
+  "limitations": [
+    "La première campagne initiale est conservée intégralement. Une passe intermédiaire de 48 soumissions a révélé deux défauts résiduels (génération 2022 et accord masculin de « moyen »). Elle est archivée dans iteration-1 ; après correction, les 48 soumissions ont été rejouées au complet. Son coût est inclus.",
+    "Les résultats finaux comptent 63 soumissions : 36 tours du lot initial, 6 tours issus des captures, 6 répétitions, 12 tours supplémentaires figés puis 3 tests de prix moyen. Avec la passe intermédiaire, cette correction totalise 111 soumissions.",
+    "Les 36 premières demandes et les captures sont désormais un lot de régression connu. Les 15 tours supplémentaires restent proches des familles et fiches travaillées ; ils ne constituent pas une validation indépendante ou une preuve de généralisation.",
+    "Une réponse est jugée satisfaisante si les valeurs, identités et sources demandées sont justes, ou si la limite/clarification est pertinente. Des tableaux de secours corrects peuvent réussir malgré une expiration de rédaction ou une présentation maladroite. Ces défauts sont signalés par cas.",
+    "Les gains portent sur le routage, les calculs, l’extraction et le contexte. BGE-M3 n’a été ni remplacé ni réentraîné. Les réponses déterministes sur le catalogue ne démontrent pas une meilleure intelligence du modèle.",
+    "Les agrégats concernent les fiches du catalogue : variantes et millésimes comptent chacun une fois, sans pondération par les ventes. Prix France de base uniquement ; valeurs approximatives, intervalles, contradictions et absences exclus. Les poids et unités restent distincts.",
+    "La relecture compare les réponses aux sources figées, sans expertise constructeur indépendante. Une validation humaine sur un nouveau lot et un travail sur les avertissements et la latence restent à prévoir."
+  ],
+  "timing_note": "Mesure de la soumission à la réponse complète, hors création du client. Le second passage bénéficie de caches et de modèles déjà chauds ; la baisse ne peut pas être attribuée entièrement au code. Les calculs déterministes évitent la rédaction locale, alors que certains parcours BGE/Mistral attendent encore environ 30 secondes avant un tableau de secours. P95 au rang supérieur, échantillons petits."
+}

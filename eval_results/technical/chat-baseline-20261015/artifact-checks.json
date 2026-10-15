@@ -1,0 +1,9 @@
+{
+  "results_and_unique_grades": 48,
+  "frozen_pack_sha256_valid": true,
+  "standalone_html_bundle_exact": true,
+  "deterministic_render": true,
+  "no_remote_assets_or_api_key_detected": true,
+  "html_bytes": 556383,
+  "html_sha256": "2fe6e5a3e9e4224661199790dcaa778067f37fa61bca2dc82ee7a69519043b08"
+}

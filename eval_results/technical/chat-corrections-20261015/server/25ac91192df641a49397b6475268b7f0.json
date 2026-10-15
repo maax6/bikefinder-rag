@@ -1,0 +1,22 @@
+{
+  "id": "25ac91192df641a49397b6475268b7f0",
+  "question": "Quel est le prix moyen actuel en occasion des Yamaha de 2020 ?",
+  "started_at": "2026-10-15T16:41:12.310444+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Les fiches donnent des prix de catalogue documentés, pas des prix neufs actuels ni des annonces. Veux-tu utiliser ces prix de catalogue ?",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.00011958298273384571
+}

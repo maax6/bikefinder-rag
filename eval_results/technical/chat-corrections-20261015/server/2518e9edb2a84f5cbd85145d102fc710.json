@@ -1,0 +1,61 @@
+{
+  "id": "2518e9edb2a84f5cbd85145d102fc710",
+  "question": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+  "started_at": "2026-10-15T16:40:13.736585+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3588,
+        "output_tokens": 967,
+        "cost": 0.000150696
+      },
+      "seconds": 0.40643549989908934,
+      "reserved_usd": 0.0026517120000000005,
+      "debit_usd": 0.000150696
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Calcul sur **49 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 49/49 valeurs numériques univoques documentées.\n**Minimum : 705 mm** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki 650 VULCAN S (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/8896/650-VULCAN-S-2022/contact.html) |\n| Kawasaki 650 VULCAN S Performance (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9194/650-VULCAN-S-Performance-2022/contact.html) |\n| Kawasaki 650 VULCAN S Tourer (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9193/650-VULCAN-S-Tourer-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Kawasaki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "seat_height_mm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "min",
+        "fields": [
+          "seat_height_mm"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.5922219171188772,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.5927449590526521
+}

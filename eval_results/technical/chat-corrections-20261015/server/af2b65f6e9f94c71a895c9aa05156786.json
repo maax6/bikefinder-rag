@@ -1,0 +1,230 @@
+{
+  "id": "af2b65f6e9f94c71a895c9aa05156786",
+  "question": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+  "started_at": "2026-10-15T16:36:44.854824+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Benelli",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Benelli",
+          "model": "500 LEONCINO"
+        }
+      ],
+      "fields": [
+        "power_ch",
+        "displacement_ccm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral",
+    "_catalog_seconds": 16.01105916709639,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "14267bc1c68d0fc7",
+          "brand": "Benelli",
+          "model": "500 Leoncino",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+          "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "14267bc1c68d0fc7:section:4"
+              ]
+            },
+            "displacement_ccm": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "14267bc1c68d0fc7:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "14267bc1c68d0fc7:section:4",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 37 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 499,60 cc (Alésage * course: 69 x 66.8 mm); 48 ch à 8 500 tr/min; 4,60 mkg à 6 000 tr/min; Rapport poids / puissance : 3.88 kg/ch; Rapport poids / couple : 40.43 kg/mkg; Compression : 11.5 : 1; Emission CO² : 98 g/km",
+              "text": "Benelli 500 Leoncino 2022\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 37 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 499,60 cc (Alésage * course: 69 x 66.8 mm); 48 ch à 8 500 tr/min; 4,60 mkg à 6 000 tr/min; Rapport poids / puissance : 3.88 kg/ch; Rapport poids / couple : 40.43 kg/mkg; Compression : 11.5 : 1; Emission CO² : 98 g/km",
+              "score": 0.795310378074646,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:1",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 50 mm, déb : 125 mm; Freinage : 2 disques Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.2 bars",
+              "text": "Benelli 500 Leoncino 2022\nTrain avant\nFourche téléhydraulique inversée Ø 50 mm, déb : 125 mm; Freinage : 2 disques Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.2 bars",
+              "score": 0.7189184427261353,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:7",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 170 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 302 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Benelli 500 Leoncino 2022\nPerformances\nVitesse max : environ 170 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 302 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.71595299243927,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:3",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur, déb : 128 mm; Freinage : 1 disque Ø 260 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.5 bars",
+              "text": "Benelli 500 Leoncino 2022\nTrain arrière\nMono-amortisseur, déb : 128 mm; Freinage : 1 disque Ø 260 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.5 bars",
+              "score": 0.714812159538269,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:2",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "text": "Benelli 500 Leoncino 2022\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.7121320962905884,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 3.3294782042503357e-07,
+          "query_encoding_seconds": 0.4470316250808537,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "14267bc1c68d0fc7",
+          "proof_check": {
+            "fields": {
+              "power_ch": "complete",
+              "displacement_ccm": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.007239791098982096
+          }
+        }
+      ],
+      "seconds": 0.45810874993912876,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "3ad4fab1ece0e0c0199f23a9a85c7e19f4825a8fc9617ebaa59550a37494c4fa",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1497,
+      "eval_count": 67,
+      "total_duration": 15493818708,
+      "load_duration": 13784167,
+      "prompt_eval_duration": 6047579000,
+      "eval_duration": 8262525000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.97,
+              "unsupported": 0.03
+            },
+            "confidence": 0.94
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 15.514064457966015
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 16.01186112500727
+}

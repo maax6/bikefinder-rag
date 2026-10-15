@@ -1,0 +1,211 @@
+{
+  "id": "06f2b3154c984b4eaae36fe0707e962f",
+  "question": "Quel couple et quel régime sont annoncés pour la Benelli 500 Leoncino de 2022 ?",
+  "started_at": "2026-10-15T15:40:24.780548+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3695,
+        "output_tokens": 953,
+        "cost": 0.00015519
+      },
+      "seconds": 0.3580256251152605,
+      "reserved_usd": 0.0026675040000000002,
+      "debit_usd": 0.00015519
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1090,
+        "output_tokens": 40,
+        "cost": 4.578e-05
+      },
+      "seconds": 0.32401891611516476,
+      "reserved_usd": 0.0007415520000000001,
+      "debit_usd": 4.578e-05
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |\n\n**Preuves manquantes :** Couple documenté (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Preuves manquantes ou non vérifiées :**\n- Benelli 500 Leoncino (2022) — Couple documenté (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « couple ».",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Benelli",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Benelli",
+          "model": "500 LEONCINO"
+        }
+      ],
+      "fields": [
+        "torque_nm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quel couple et quel régime sont annoncés pour la Benelli 500 Leoncino de 2022 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 32.3227592499461,
+    "_catalog_jev_calls": 2,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "14267bc1c68d0fc7",
+          "brand": "Benelli",
+          "model": "500 Leoncino",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+          "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "torque_nm": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "14267bc1c68d0fc7:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "14267bc1c68d0fc7:section:4",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 37 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 499,60 cc (Alésage * course: 69 x 66.8 mm); 48 ch à 8 500 tr/min; 4,60 mkg à 6 000 tr/min; Rapport poids / puissance : 3.88 kg/ch; Rapport poids / couple : 40.43 kg/mkg; Compression : 11.5 : 1; Emission CO² : 98 g/km",
+              "text": "Benelli 500 Leoncino 2022\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 37 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 499,60 cc (Alésage * course: 69 x 66.8 mm); 48 ch à 8 500 tr/min; 4,60 mkg à 6 000 tr/min; Rapport poids / puissance : 3.88 kg/ch; Rapport poids / couple : 40.43 kg/mkg; Compression : 11.5 : 1; Emission CO² : 98 g/km",
+              "score": 0.6364443898200989,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:2",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "text": "Benelli 500 Leoncino 2022\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.5921839475631714,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:8",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Tarifs",
+              "original_text": "France — Version de base : 6 299 € *",
+              "text": "Benelli 500 Leoncino 2022\nTarifs\nFrance — Version de base : 6 299 € *",
+              "score": 0.5740467309951782,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:9",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Benelli 500 Leoncino 2022\nColoris\nColoris : non défini",
+              "score": 0.572376549243927,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:0",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Châssis",
+              "original_text": "Cadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg",
+              "text": "Benelli 500 Leoncino 2022\nChâssis\nCadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg",
+              "score": 0.5696742534637451,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "14267bc1c68d0fc7",
+          "field": "torque_nm",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « couple ».",
+          "requested_terms": [
+            "couple"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": false,
+          "document_encoding_seconds": 1.4716941250953823,
+          "query_encoding_seconds": 0.06806974997743964,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "14267bc1c68d0fc7",
+          "proof_check": {
+            "fields": {
+              "torque_nm": "unverified"
+            },
+            "jev_calls": 1,
+            "seconds": 0.3265919170808047
+          }
+        }
+      ],
+      "seconds": 1.8690817500464618,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "73d0df8314b707a917b7bf656385d1b4ea04c70e58295e9c51858902d56a1bf5",
+      "error": "ReadTimeout",
+      "seconds": 30.01651995908469
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 32.323043334065005
+}

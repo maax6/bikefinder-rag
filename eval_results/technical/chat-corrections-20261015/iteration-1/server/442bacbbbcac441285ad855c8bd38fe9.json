@@ -1,0 +1,40 @@
+{
+  "id": "442bacbbbcac441285ad855c8bd38fe9",
+  "question": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+  "started_at": "2026-10-15T16:30:16.780207+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "**47 fiches correspondent dans le catalogue.**",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "count"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "count",
+    "_catalog_seconds": 0.04541704198345542,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.045561457984149456
+}

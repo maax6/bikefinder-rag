@@ -1,0 +1,244 @@
+{
+  "id": "ee1f40a01123481a87ecdf2a7b753658",
+  "question": "Et son couple, au régime annoncé ?",
+  "started_at": "2026-10-15T16:27:15.447295+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3777,
+        "output_tokens": 967,
+        "cost": 0.000158634
+      },
+      "seconds": 0.44433320802636445,
+      "reserved_usd": 0.0027357120000000004,
+      "debit_usd": 0.000158634
+    }
+  ],
+  "history_messages": 2,
+  "answer": "Le couple maximal de la Benelli 500 Leoncino 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Benelli 500 Leoncino (2022) — Couple documenté (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « couple ».\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Benelli",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Benelli",
+          "model": "500 LEONCINO"
+        }
+      ],
+      "fields": [
+        "torque_nm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Et son couple, au régime annoncé ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 16.569596874993294,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "14267bc1c68d0fc7",
+          "brand": "Benelli",
+          "model": "500 Leoncino",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+          "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "torque_nm": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "14267bc1c68d0fc7:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "14267bc1c68d0fc7:section:4",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 37 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 499,60 cc (Alésage * course: 69 x 66.8 mm); 48 ch à 8 500 tr/min; 4,60 mkg à 6 000 tr/min; Rapport poids / puissance : 3.88 kg/ch; Rapport poids / couple : 40.43 kg/mkg; Compression : 11.5 : 1; Emission CO² : 98 g/km",
+              "text": "Benelli 500 Leoncino 2022\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 37 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 499,60 cc (Alésage * course: 69 x 66.8 mm); 48 ch à 8 500 tr/min; 4,60 mkg à 6 000 tr/min; Rapport poids / puissance : 3.88 kg/ch; Rapport poids / couple : 40.43 kg/mkg; Compression : 11.5 : 1; Emission CO² : 98 g/km",
+              "score": 0.34579333662986755,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:2",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "text": "Benelli 500 Leoncino 2022\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.3193818926811218,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:3",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur, déb : 128 mm; Freinage : 1 disque Ø 260 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.5 bars",
+              "text": "Benelli 500 Leoncino 2022\nTrain arrière\nMono-amortisseur, déb : 128 mm; Freinage : 1 disque Ø 260 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.5 bars",
+              "score": 0.3107379674911499,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:7",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 170 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 302 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Benelli 500 Leoncino 2022\nPerformances\nVitesse max : environ 170 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 302 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.31041309237480164,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:0",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Châssis",
+              "original_text": "Cadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg",
+              "text": "Benelli 500 Leoncino 2022\nChâssis\nCadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg",
+              "score": 0.3068438768386841,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "14267bc1c68d0fc7",
+          "field": "torque_nm",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « couple ».",
+          "requested_terms": [
+            "couple"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.2479722499847412e-07,
+          "query_encoding_seconds": 0.47221741708926857,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "14267bc1c68d0fc7",
+          "proof_check": {
+            "fields": {
+              "torque_nm": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0009261670056730509
+          }
+        }
+      ],
+      "seconds": 0.4771980831865221,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "aaa45bff8c2f553a7d75d7853062ba961ce6104e194ba3548405bb8b0fd1410d",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1543,
+      "eval_count": 58,
+      "total_duration": 15526881500,
+      "load_duration": 6617083,
+      "prompt_eval_duration": 6924993000,
+      "eval_duration": 8522343999,
+      "candidate": {
+        "claims": [
+          {
+            "text": "Le couple maximal de la Benelli 500 Leoncino 2022 est de 4,60 mkg à 6 000 tr/min.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": false,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.96,
+              "unsupported": 0.04
+            },
+            "confidence": 0.92
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.72,
+              "unsupported": 0.28
+            },
+            "confidence": 0.44
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 15.548032499849796
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 16.570236291969195
+}

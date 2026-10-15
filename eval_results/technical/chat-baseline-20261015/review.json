@@ -1,0 +1,315 @@
+{
+  "status": "reviewed",
+  "grades": [
+    {
+      "key": "first/Q01/1",
+      "verdict": "failure",
+      "note": "La fiche dit ≈ 62 ch, et le passage Moteur est classé premier par BGE. L’extracteur rejette le signe ≈ et la réponse affirme à tort « non documenté ». Rédaction expirée à 30 s."
+    },
+    {
+      "key": "first/Q02/1",
+      "verdict": "correct",
+      "note": "805 mm et 13 litres, identité 2022 et source exactes."
+    },
+    {
+      "key": "first/Q03/1",
+      "verdict": "correct",
+      "note": "Cardan et refroidissement liquide correctement sourcés. Avertissement de couverture inutile malgré les deux faits présents."
+    },
+    {
+      "key": "first/Q04/1",
+      "verdict": "correct",
+      "note": "Les pneus avant 100/90-19 et arrière 130/80-18 sont justes. Rendu de secours après rejet de la rédaction ; dimensions du châssis hors sujet et avertissements encombrants."
+    },
+    {
+      "key": "first/Q05/1",
+      "verdict": "correct",
+      "note": "Fourche inversée Ø41 mm, 150 mm avant et arrière, mono-amortisseur : données source correctes. Synthèse expirée et retour au tableau."
+    },
+    {
+      "key": "first/Q06/1",
+      "verdict": "correct",
+      "note": "197 kg tous pleins et poids sec non documenté : catégories bien séparées. La rédaction expire, mais le tableau répond."
+    },
+    {
+      "key": "first/Q07/1",
+      "verdict": "correct",
+      "note": "Freins avant 330 mm/4 pistons et arrière 230 mm/simple piston : valeurs conformes aux deux rubriques source."
+    },
+    {
+      "key": "first/Q08/1",
+      "verdict": "correct",
+      "note": "4,60 mkg à 6 000 tr/min, sans conversion inventée. Tableau correct après expiration de la rédaction."
+    },
+    {
+      "key": "first/Q09/1",
+      "verdict": "correct",
+      "note": "Poignées chauffantes de série et régulateur inconnu/non documenté. La synthèse partielle est complétée par le tableau exact ; elle ne transforme pas une absence de mention en absence réelle."
+    },
+    {
+      "key": "first/Q10/1",
+      "verdict": "partial",
+      "note": "Variantes correctement séparées et données mécaniques justes. Le réglage électronique des suspensions de la S est omis alors que le passage Équipement de série est livré au rang 5 ; la comparaison reste incomplète."
+    },
+    {
+      "key": "first/Q11/1",
+      "verdict": "justified_limit",
+      "note": "Les deux poids tous pleins sont correctement indiqués non documentés. Les 191 kg à sec restent dans leur propre catégorie : aucune comparaison wet inventée."
+    },
+    {
+      "key": "first/Q12/1",
+      "verdict": "correct",
+      "note": "125 ch et 111 ch, différence absolue 14 ch, deux sources exactes. Calcul Python préservé sans rédaction Mistral."
+    },
+    {
+      "key": "first/Q13/1",
+      "verdict": "failure",
+      "note": "Renvoie les 20 premières fiches sur 42, sans maximum ni liste exhaustive des six ex æquo à 1 043 cc. La consigne de maximum est perdue avant toute recherche BGE."
+    },
+    {
+      "key": "first/Q14/1",
+      "verdict": "failure",
+      "note": "Renvoie toutes les fiches sans identifier le minimum de 785 mm ni les quatre ex æquo. Les valeurs sont présentes, mais l’opération demandée n’est pas effectuée."
+    },
+    {
+      "key": "first/Q15/1",
+      "verdict": "failure",
+      "note": "Refuse des millésimes et une moyenne pourtant explicitement définis. Les trois valeurs source de 48 ch permettent une moyenne de 48 ch."
+    },
+    {
+      "key": "first/Q16/1",
+      "verdict": "correct",
+      "note": "47 fiches Triumph 2022 : compte identique à la référence indépendante du snapshot."
+    },
+    {
+      "key": "first/Q17/1",
+      "verdict": "correct",
+      "note": "34 fiches Yamaha 2022 avec ABS de série : résultat conforme aux preuves d’équipement du corpus."
+    },
+    {
+      "key": "first/Q18/1",
+      "verdict": "failure",
+      "note": "Déclare les bornes ambiguës malgré 800 mm et 200 kg tous pleins clairement spécifiés ; aucune sélection des dix fiches attendues."
+    },
+    {
+      "key": "first/Q19/1",
+      "verdict": "failure",
+      "note": "Demande inutilement une année pour identifier Royal-Enfield comme constructeur de l’Interceptor 650."
+    },
+    {
+      "key": "first/Q20/1",
+      "verdict": "failure",
+      "note": "Confond une question sur deux concepts avec une conversion de puissance. La limite du catalogue devrait être expliquée dans les termes de la question."
+    },
+    {
+      "key": "first/Q21/1",
+      "verdict": "correct",
+      "note": "Puissance 20,20 ch et mention de permis A reprises de la fiche, absence de mention A2 explicitée sans conclure à une incompatibilité ni certifier l’exemplaire."
+    },
+    {
+      "key": "first/Q22/1",
+      "verdict": "justified_limit",
+      "note": "L’édition fictive Nebula n’est pas remplacée par une W 800 standard. Clarification d’identité pertinente."
+    },
+    {
+      "key": "first/Q23/1",
+      "verdict": "justified_limit",
+      "note": "Aucune fiche Honda NT1100 2007 : aucune substitution à 2022 et absence correctement signalée."
+    },
+    {
+      "key": "first/Q24/1",
+      "verdict": "failure",
+      "note": "La réponse énumère suspensions, freins et puissance sans répondre à la question sur la garantie de ne pas tomber. Elle ne promet pas la sécurité, mais n’explicite pas la limite demandée."
+    },
+    {
+      "key": "first/D01/1",
+      "verdict": "correct",
+      "note": "48 ch à 8 500 tr/min et 499,60 cc : fiche Benelli correcte, source liée."
+    },
+    {
+      "key": "first/D01/2",
+      "verdict": "correct",
+      "note": "La relance conserve Benelli 500 Leoncino 2022 et restitue 4,60 mkg à 6 000 tr/min. Avertissement de couverture superflu."
+    },
+    {
+      "key": "first/D02/1",
+      "verdict": "correct",
+      "note": "Demander le millésime pour le réservoir est une clarification pertinente."
+    },
+    {
+      "key": "first/D02/2",
+      "verdict": "failure",
+      "note": "Après « Celle de 2022 », le chat redemande marque et modèle au lieu de reprendre Triumph Tiger Sport 660. La clarification ne se résout pas."
+    },
+    {
+      "key": "first/D03/1",
+      "verdict": "correct",
+      "note": "Cinq fiches exactes parmi les dix Royal-Enfield 2022, dans l’ordre alphabétique. Taille de sélection visible ; l’invitation à affiner plutôt qu’à paginer reste maladroite."
+    },
+    {
+      "key": "first/D03/2",
+      "verdict": "failure",
+      "note": "La demande des cinq suivantes perd le périmètre Royal-Enfield 2022 et ne fournit aucune page suivante."
+    },
+    {
+      "key": "first/D04/1",
+      "verdict": "correct",
+      "note": "Les dix Suzuki 2022 de plus de 100 ch correspondent à la sélection source."
+    },
+    {
+      "key": "first/D04/2",
+      "verdict": "correct",
+      "note": "Le compte conserve la marque, l’année et la borne >100 ch : dix fiches, sans élargissement."
+    },
+    {
+      "key": "first/D05/1",
+      "verdict": "correct",
+      "note": "221 kg tous pleins, bonne fiche et source. L’avertissement sur le poids sec est superflu pour ce premier tour."
+    },
+    {
+      "key": "first/D05/2",
+      "verdict": "justified_limit",
+      "note": "Le contexte W800 2022 est conservé. La note indique explicitement que le poids sec n’est pas documenté ; les 221 kg restent tous pleins. Réponse inutilement indirecte."
+    },
+    {
+      "key": "first/D06/1",
+      "verdict": "correct",
+      "note": "Honda CB500F 2020 : 48 ch à 8 600 tr/min, source exacte."
+    },
+    {
+      "key": "first/D06/2",
+      "verdict": "correct",
+      "note": "La relance conserve le modèle et change bien le millésime vers 2022. Valeur correcte de 48 ch à 8 600 tr/min dans le tableau de secours."
+    },
+    {
+      "key": "first/K01/1",
+      "verdict": "failure",
+      "note": "Le blocage de la capture est reproduit : un millésime est demandé pour un simple constructeur."
+    },
+    {
+      "key": "first/K02/1",
+      "verdict": "failure",
+      "note": "Message de conversion hors sujet reproduit ; aucun appel BGE ni Jev sur ce tour."
+    },
+    {
+      "key": "first/K03/1",
+      "verdict": "partial",
+      "note": "La limite sur l’homologation individuelle est pertinente, mais le chat ne résout pas « XJ6 2011 » et redemande modèle/millésime. Il devrait proposer les trois variantes présentes pour préciser le besoin technique."
+    },
+    {
+      "key": "first/K04/1",
+      "verdict": "failure",
+      "note": "La liste de 43 fiches, tronquée à 20, remplace encore le maximum demandé. Les FJR à 1 298 cc sont dans la réponse mais ne sont pas identifiées comme maximum."
+    },
+    {
+      "key": "first/K05/1",
+      "verdict": "correct",
+      "note": "Contexte reconstitué : 214 kg à sec et 244 kg tous pleins pour la Bandit 2000, correctement sourcés."
+    },
+    {
+      "key": "first/K05/2",
+      "verdict": "failure",
+      "note": "Le chat redemande le millésime déjà fourni. Il devrait clarifier la population de la moyenne, tout en conservant le contexte et les deux types de poids."
+    },
+    {
+      "key": "warm_repeat/Q01/1",
+      "verdict": "partial",
+      "note": "À chaud, Mistral retrouve bien ≈ 62 ch dans le passage. Mais le message ajouté affirme toujours « Non documenté » : contradiction interne. Cette répétition ne remplace pas l’échec de la première passe."
+    },
+    {
+      "key": "warm_repeat/Q03/1",
+      "verdict": "correct",
+      "note": "Cardan et liquide corrects ; mêmes réserves de couverture, temps réduit de 32,14 à 17,91 s."
+    },
+    {
+      "key": "warm_repeat/Q12/1",
+      "verdict": "correct",
+      "note": "Calcul 14 ch et deux sources conservés ; résultat inchangé à chaud."
+    },
+    {
+      "key": "warm_repeat/Q16/1",
+      "verdict": "correct",
+      "note": "Compte de 47 fiches inchangé, cette fois servi avec décision en cache."
+    },
+    {
+      "key": "warm_repeat/Q19/1",
+      "verdict": "failure",
+      "note": "La demande de millésime inutile persiste à chaud."
+    },
+    {
+      "key": "warm_repeat/Q22/1",
+      "verdict": "justified_limit",
+      "note": "L’édition fictive reste refusée sans substitution."
+    }
+  ],
+  "screenshots": [
+    {
+      "question": "Constructeur de la Ténéré 700",
+      "scope": "Oui, cœur du catalogue.",
+      "assessment": "Répondre Yamaha à partir des identités. Une année est utile pour une caractéristique variable, pas pour identifier cette marque."
+    },
+    {
+      "question": "Puissance fiscale : comment la calculer ?",
+      "scope": "Sujet pédagogique adjacent, au-delà des fiches actuelles.",
+      "assessment": "Comprendre une demande d’explication. Préciser pays, catégorie de véhicule et règles applicables avec une source officielle ; ne pas l’interpréter comme une conversion de puissance moteur."
+    },
+    {
+      "question": "Type de bridage d’une XJ6 A2 2011",
+      "scope": "Oui pour les mentions techniques ; conditionnel pour le kit et l’homologation.",
+      "assessment": "Clarifier Naked, Diversion ou Diversion F. Lire les mentions disponibles et préciser ce que les fiches ne prouvent pas. Un type de kit ou une configuration homologuée demande une preuve adaptée à la variante et au marché."
+    },
+    {
+      "question": "Cylindrée maximale des Yamaha de 2020",
+      "scope": "Oui, pleinement.",
+      "assessment": "Calculer MAX dans le périmètre du catalogue et donner tous les ex æquo. Ici les références annotées donnent 1 298 cc pour les FJR 1300 A et Ultimate Edition ; une liste de 43 fiches ne répond pas."
+    },
+    {
+      "question": "Poids moyen de la Bandit après une fiche de 2000",
+      "scope": "Oui, avec clarification du périmètre de la moyenne.",
+      "assessment": "Garder le contexte de 2000 et demander quelles années/variantes ou observations moyenner. Séparer sec et tous pleins, indiquer le nombre de valeurs et les manquants. Ne pas simplement redemander un millésime déjà présent."
+    }
+  ],
+  "limitations": [
+    "Questions écrites et relues par le même agent : première campagne exploratoire, pas un test final indépendant. Le contrôle de nouveauté porte sur les formulations exactes normalisées dans les JSON historiques, pas sur toutes les familles de motos.",
+    "Les dialogues et certaines questions partagent des fiches. Les 36 demandes inédites ne sont pas 36 observations statistiquement indépendantes. Les références de Q11 ont été corrigées avant le premier appel, en conservant le brouillon et son empreinte.",
+    "Les captures documentent une ancienne instance démarrée le 13 octobre. Les mesures portent sur une nouvelle instance du même vrai chat, chargée depuis le code courant. K05 reconstitue le contexte visible du screenshot ; la conversation originale complète n’est pas disponible.",
+    "Mode rapide existant, BGE-M3 original, Jev 1.13 et Mistral Small 3.2 local. Ce test ne mesure pas le service commun SQL+RAG isolé ni un modèle fine-tuné.",
+    "Les appels passent par la véritable entrée Gradio /chat et son état de session. Aucun résultat du routeur n’est substitué à la réponse. Les traces internes sont observées autour du parcours réel.",
+    "Fiches, années et empreintes sources PostgreSQL identiques au snapshot SQLite annoté : 11 478 fiches, 105 687 passages. Les données sont issues du catalogue collecté, sans vérification des spécifications auprès des constructeurs.",
+    "Une passe puis six répétitions choisies à l’avance. Caches conservés, premier chargement distingué ; pas de mesure de temps au premier token ni de charge multi-utilisateur contrôlée.",
+    "Correcte signifie que la réponse finale satisfait les faits demandés et cite les bonnes fiches, même si elle revient à un tableau après échec de rédaction. Les limites pertinentes sont comptées séparément des réponses factuelles complètes.",
+    "Aucune correction du chat pendant la campagne. Les cas sont maintenant connus et pourront servir à la régression ; ils ne doivent pas être réutilisés comme test final inédit après réglage."
+  ],
+  "conclusion": "Les lectures de fiches donnent souvent les bons faits. Les calculs de maximum ou de moyenne, certaines relances et les questions simples d’identité restent fragiles. Les traces orientent d’abord vers la compréhension de la demande, l’extraction des preuves et le temps de rédaction, avant un nouvel entraînement de BGE.",
+  "findings": [
+    {
+      "title": "Les opérations demandées se perdent avant la recherche.",
+      "detail": "Q13/Q14 renvoient des listes sans maximum ni minimum ; Q15 refuse une moyenne de trois années explicitement nommées ; Q18 bloque deux bornes définies ; Q19 demande une année pour identifier un constructeur. Ces tours n’appellent pas BGE. Les comptes Q16/Q17 et la soustraction Q12 sont en revanche exacts."
+    },
+    {
+      "title": "Des preuves récupérées disparaissent après BGE.",
+      "detail": "Q01 : le passage contenant « ≈ 62 ch » arrive au rang 1, mais selected_rows exige un chiffre en début de valeur et l’écarte. Q10 : le réglage électronique des suspensions de la Mandello S est présent dans un passage livré au rang 5, puis omis de la comparaison. Ce sont deux pertes observées après récupération des textes."
+    },
+    {
+      "title": "Le classement seul ne suffit pas non plus.",
+      "detail": "Sur Q10, les rubriques Train avant et Train arrière de la Mandello S arrivent aux rangs 7 et 9. Le mécanisme existant ajoute ces rubriques obligatoires au contexte. Le résultat concerne donc BGE avec contrôle des champs et preuves, pas BGE dense seul."
+    },
+    {
+      "title": "La conversation dépend encore trop de la formulation.",
+      "detail": "Quatre dialogues sur six aboutissent sur leurs deux tours. « Et combien ? » garde bien le filtre ; « Celle de 2022 » après une clarification et « Les cinq suivantes » perdent le contexte. Le code courant reconnaît les relances par des motifs de texte qui ne couvrent pas ces formulations."
+    },
+    {
+      "title": "La rédaction locale coûte du temps même pour des faits simples.",
+      "detail": "Plusieurs synthèses atteignent le délai de 30 secondes, puis la réponse revient aux données sources. Des avertissements de couverture se répètent alors que les valeurs sont correctes. Ils sont distingués des erreurs factuelles dans la notation."
+    },
+    {
+      "title": "Les limites du catalogue doivent répondre à la vraie question.",
+      "detail": "L’édition fictive et le millésime absent sont correctement refusés ; le poids sec n’est pas confondu avec le poids tous pleins. Mais les mots « fiscaux » déclenchent un message de conversion hors sujet, et Q24 répond par des caractéristiques au lieu de traiter la demande de garantie de sécurité."
+    },
+    {
+      "title": "Priorités pour la prochaine passe.",
+      "detail": "Ajouter des opérations explicites d’identité, maximum/minimum/moyenne et pagination ; rendre les relances indépendantes de quelques mots d’ouverture ; préserver les valeurs qualifiées et les preuves situées dans plusieurs rubriques ; mesurer une réponse factuelle immédiate avant rédaction optionnelle. Corriger sur les cas devenus connus, puis évaluer sur un autre lot inédit avant toute promotion."
+    }
+  ],
+  "timing_note": "Premier tour : 47,29 s, dont 11,46 s pour le chargement/encodage documentaire BGE et 30,33 s de tentative de rédaction. La répétition de ce cas prend 22,59 s et produit une réponse contradictoire (62 ch, puis « non documenté »). Le gain à chaud ne corrige donc pas le défaut d’extraction. Sur les six répétitions, les cas courts utilisent le cache des décisions ; les rédactions restent à 17,91 et 22,59 s."
+}

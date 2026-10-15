@@ -1,0 +1,40 @@
+{
+  "id": "5d76b2dd5c714eb29ae1cc29c83d5487",
+  "question": "Quelle marque fabrique l’Interceptor 650 ?",
+  "started_at": "2026-10-15T15:48:10.180671+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Interceptor 650"
+        }
+      ],
+      "fields": [],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle marque fabrique l’Interceptor 650 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.0587135418318212,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.05884945788420737
+}

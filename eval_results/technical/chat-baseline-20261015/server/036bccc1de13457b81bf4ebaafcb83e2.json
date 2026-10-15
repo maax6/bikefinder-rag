@@ -1,0 +1,60 @@
+{
+  "id": "036bccc1de13457b81bf4ebaafcb83e2",
+  "question": "Liste les Suzuki de 2022 de plus de 100 ch.",
+  "started_at": "2026-10-15T15:45:01.974392+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4006,
+        "output_tokens": 1123,
+        "cost": 0.000168252
+      },
+      "seconds": 0.34972245804965496,
+      "reserved_usd": 0.0028129920000000003,
+      "debit_usd": 0.000168252
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.\n\n| Moto | Millésime | Puissance (ch) | Source |\n|---|---:|---|---|\n| Suzuki 1000 Katana | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9273/1000-Katana-2022/contact.html) |\n| Suzuki 1050 V-Strom | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9198/1050-V-Strom-2022/contact.html) |\n| Suzuki 1050 V-Strom XT | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9197/1050-V-Strom-XT-2022/contact.html) |\n| Suzuki 1050 V-Strom XT World Adventure | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9511/1050-V-Strom-XT-World-Adventure-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9084/GSX-1300-R-Hayabusa-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Bol d’Or | 2022 | Moteur — 192 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9616/GSX-1300-R-Hayabusa-Bol-dOr-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Yoshimura SERT Motul Replica | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9508/GSX-1300-R-Hayabusa-Yoshimura-SERT-Motul-Replica-2022/contact.html) |\n| Suzuki GSX-S 1000 | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9199/GSX-S-1000-2022/contact.html) |\n| Suzuki GSX-S 1000 GT | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8932/GSX-S-1000-GT-2022/contact.html) |\n| Suzuki GSX-S 1000 Power Edition | 2022 | Moteur — 158,80 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9509/GSX-S-1000-Power-Edition-2022/contact.html) |",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [
+        {
+          "field": "power_ch",
+          "op": ">",
+          "value": 100.0
+        }
+      ],
+      "models": [],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Liste les Suzuki de 2022 de plus de 100 ch.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.4165260421577841,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.41671958402730525
+}

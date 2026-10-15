@@ -1,0 +1,215 @@
+{
+  "id": "0e7b8a775f2042d9b52c8c3a3f9d864b",
+  "question": "Pour la Suzuki SV 650 de 2022, donne séparément le poids sec et le poids tous pleins faits ; marque inconnu ce que la fiche ne donne pas.",
+  "started_at": "2026-10-15T16:23:11.716302+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3786,
+        "output_tokens": 967,
+        "cost": 0.000159012
+      },
+      "seconds": 0.4021419589407742,
+      "reserved_usd": 0.0027328560000000005,
+      "debit_usd": 0.000159012
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Suzuki SV 650 (2022) |\n|---|---|\n| Poids à sec (kg) | Non documenté dans cette fiche |\n| Poids en ordre de marche / pleins faits (kg) | Châssis — Poids tous pleins faits : 197 kg |\n| Source | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n\n**Preuves manquantes :** Poids à sec (kg) — Non documenté dans les passages de cette fiche; Poids en ordre de marche / pleins faits (kg) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Preuves manquantes ou non vérifiées :**\n- Suzuki SV 650 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n- Suzuki SV 650 (2022) — Poids en ordre de marche / pleins faits (kg) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « poids sec et le poids tous pleins ».",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Suzuki",
+          "model": "SV 650"
+        }
+      ],
+      "fields": [
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Pour la Suzuki SV 650 de 2022, donne séparément le poids sec et le poids tous pleins faits ; marque inconnu ce que la fiche ne donne pas.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 31.585068666841835,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "64166fc5f0c0f09f",
+          "brand": "Suzuki",
+          "model": "SV 650",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html",
+          "source_sha256": "f5e54a0592fb959fe1f88109aaebac6f7bb8bd4e55e54c03afb649fa57aec030",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "weight_dry_kg": {
+              "covered": false,
+              "source_passages_available": false,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": []
+            },
+            "weight_wet_kg": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "64166fc5f0c0f09f:section:0"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "64166fc5f0c0f09f:section:4",
+              "object_id": "64166fc5f0c0f09f",
+              "brand": "Suzuki",
+              "model": "SV 650",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html",
+              "source_sha256": "f5e54a0592fb959fe1f88109aaebac6f7bb8bd4e55e54c03afb649fa57aec030",
+              "section": "Moteur",
+              "original_text": "Bicylindre en L à 90° , 4 temps; Injection Ø 39 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 645 cc (Alésage * course: 81 x 62.6 mm); 73 ch à 8 500 tr/min; 6,40 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.52 kg/ch; Rapport poids / couple : environ 28.76 kg/mkg; Compression : 11.2 : 1; Emission CO² : 96 g/km",
+              "text": "Suzuki SV 650 2022\nMoteur\nBicylindre en L à 90° , 4 temps; Injection Ø 39 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 645 cc (Alésage * course: 81 x 62.6 mm); 73 ch à 8 500 tr/min; 6,40 mkg à 6 800 tr/min; Rapport poids / puissance : environ 2.52 kg/ch; Rapport poids / couple : environ 28.76 kg/mkg; Compression : 11.2 : 1; Emission CO² : 96 g/km",
+              "score": 0.6852961778640747,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "64166fc5f0c0f09f:section:0",
+              "object_id": "64166fc5f0c0f09f",
+              "brand": "Suzuki",
+              "model": "SV 650",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html",
+              "source_sha256": "f5e54a0592fb959fe1f88109aaebac6f7bb8bd4e55e54c03afb649fa57aec030",
+              "section": "Châssis",
+              "original_text": "Cadre : treillis tubulaire en acier; Réservoir : 14,50 litres; Hauteur de selle : 785 mm; Longueur : 2 140 mm; Largeur : 760 mm; Hauteur min : 1 090 mm; Empattement : 1 445 mm; Poids tous pleins faits : 197 kg",
+              "text": "Suzuki SV 650 2022\nChâssis\nCadre : treillis tubulaire en acier; Réservoir : 14,50 litres; Hauteur de selle : 785 mm; Longueur : 2 140 mm; Largeur : 760 mm; Hauteur min : 1 090 mm; Empattement : 1 445 mm; Poids tous pleins faits : 197 kg",
+              "score": 0.6798519492149353,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "64166fc5f0c0f09f:section:3",
+              "object_id": "64166fc5f0c0f09f",
+              "brand": "Suzuki",
+              "model": "SV 650",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html",
+              "source_sha256": "f5e54a0592fb959fe1f88109aaebac6f7bb8bd4e55e54c03afb649fa57aec030",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier 2 pistons; Roue arrière : 160 / 60 - 17; Pression : 2.5 bars",
+              "text": "Suzuki SV 650 2022\nTrain arrière\nMono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier 2 pistons; Roue arrière : 160 / 60 - 17; Pression : 2.5 bars",
+              "score": 0.6306109428405762,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "64166fc5f0c0f09f:section:1",
+              "object_id": "64166fc5f0c0f09f",
+              "brand": "Suzuki",
+              "model": "SV 650",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html",
+              "source_sha256": "f5e54a0592fb959fe1f88109aaebac6f7bb8bd4e55e54c03afb649fa57aec030",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø 41 mm; Freinage : 2 disques Ø 290 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.25 bars",
+              "text": "Suzuki SV 650 2022\nTrain avant\nFourche téléhydraulique Ø 41 mm; Freinage : 2 disques Ø 290 mm, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.25 bars",
+              "score": 0.6300979256629944,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "64166fc5f0c0f09f:section:9",
+              "object_id": "64166fc5f0c0f09f",
+              "brand": "Suzuki",
+              "model": "SV 650",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html",
+              "source_sha256": "f5e54a0592fb959fe1f88109aaebac6f7bb8bd4e55e54c03afb649fa57aec030",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Suzuki SV 650 2022\nColoris\nColoris : non défini",
+              "score": 0.6286249160766602,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "64166fc5f0c0f09f",
+          "field": "weight_dry_kg",
+          "message": "Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».",
+          "requested_terms": [
+            "poids sec"
+          ]
+        },
+        {
+          "kind": "field",
+          "object_id": "64166fc5f0c0f09f",
+          "field": "weight_wet_kg",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « poids sec et le poids tous pleins ».",
+          "requested_terms": [
+            "poids sec et le poids tous pleins"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.50060111284256e-07,
+          "query_encoding_seconds": 1.0574335001874715,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "64166fc5f0c0f09f",
+          "proof_check": {
+            "fields": {
+              "weight_dry_kg": "unverified",
+              "weight_wet_kg": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.01178108318708837
+          }
+        }
+      ],
+      "seconds": 1.0785169161390513,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "5e23458a2003837576eab9948911ce59206caf8bef690b21f3e6a52c31983360",
+      "error": "ReadTimeout",
+      "seconds": 30.021929958136752
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 31.58525195810944
+}

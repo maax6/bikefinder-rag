@@ -1,0 +1,736 @@
+{
+  "created_at": "2026-10-15T16:40:11.951978+00:00",
+  "questions_sha256": "19439e0e7bb491f25054a8c964568572b525420ae5266146a80744f2b0ab6801",
+  "url": "http://127.0.0.1:7861/",
+  "results": [
+    {
+      "id": "H01",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Dans les fiches Honda du millésime 2020, trouve la cylindrée maximale et toutes les versions à égalité.",
+      "expected": "{\"value\": 1833.0, \"unit\": \"cc\", \"winners\": [\"Honda GL 1800 GOLDWING Tour DCT/Airbag 2020\", \"Honda GL 1800 GOLDWING Tour 2020\", \"Honda GL 1800 GOLDWING DCT 2020\"], \"documented\": 28, \"total\": 28}",
+      "object_ids": [
+        "519f3f23c2bad64b",
+        "118e13ebc382e2c0",
+        "357985e319da3616",
+        "891251fea8a27888",
+        "2549b6041bc86282",
+        "0269b85ebd6d6fef",
+        "bfcc31412074c54e",
+        "ff2053e022370ce9",
+        "8eeba8997eb852b3",
+        "cbdf061dfc73ab66",
+        "535fb0f53c04a14f",
+        "555a2d677db34a14",
+        "e4a1838a062bbdf9",
+        "e5fd3a17e06875a7",
+        "bbfae363c2577cc1",
+        "c2fe3f8743b122dc",
+        "f23391949af6ded3",
+        "7170530f4abf091f",
+        "3265a3dea595af8b",
+        "bffe5fecc7a30dc5",
+        "8fec20236f7ef723",
+        "01a7b405b476253a",
+        "e3bfc1696be9183a",
+        "3052ea2f4b017fb2",
+        "c55d6c7242c35d38",
+        "874aef4cbf33ad6f",
+        "9d8ed5d4e259e8ef",
+        "8d50c82d067a081c"
+      ],
+      "client_setup_seconds": 0.04277754109352827,
+      "started_at": "2026-10-15T16:40:11.996222+00:00",
+      "answer": "Calcul sur **28 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 28/28 valeurs numériques univoques documentées.\n**Maximum : 1833 cc** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda GL 1800 GOLDWING DCT (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8648/GL-1800-GOLDWING-DCT-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8647/GL-1800-GOLDWING-Tour-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour DCT/Airbag (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8286/GL-1800-GOLDWING-Tour-DCTAirbag-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Dans les fiches Honda du millésime 2020, trouve la cylindrée maximale et toutes les versions à égalité.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **28 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 28/28 valeurs numériques univoques documentées.\n**Maximum : 1833 cc** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda GL 1800 GOLDWING DCT (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8648/GL-1800-GOLDWING-DCT-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8647/GL-1800-GOLDWING-Tour-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour DCT/Airbag (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8286/GL-1800-GOLDWING-Tour-DCTAirbag-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.6909135000314564
+    },
+    {
+      "id": "H02",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+      "expected": "{\"value\": 705.0, \"unit\": \"mm\", \"winners\": [\"Kawasaki 650 VULCAN S 2022\", \"Kawasaki 650 VULCAN S Tourer 2022\", \"Kawasaki 650 VULCAN S Performance 2022\"], \"documented\": 49, \"total\": 49}",
+      "object_ids": [
+        "5ce5ff61c1c32167",
+        "f4f007bdd40a1b6c",
+        "9c80f70dcf6a74a9",
+        "b4f4091ff9b501b4",
+        "06193fc7f0faba8e",
+        "9284806b10203c67",
+        "fd9ee5555c689a01",
+        "25b0ba1331a04e56",
+        "0257fb7a0bfade4a",
+        "831db45d08190250",
+        "4a89df62737a1a4f",
+        "e8a540c817756064",
+        "57b3af5c8a732bf8",
+        "590503a0336347eb",
+        "f038cc4c9f9ddc86",
+        "04309227806e6887",
+        "67ccd0b104047573",
+        "f7c504073cbd3ef2",
+        "d3c4a0f3c19d0e64",
+        "095336d2e362ed8c",
+        "28f802f5f8b78f0e",
+        "05aa6086fc0e5e13",
+        "fdfea482bab60899",
+        "9379ac8dde02c308",
+        "246291787337e179",
+        "b4553c5c1d14d946",
+        "8f20fabcf17be8d2",
+        "0f549ddd33cb7d3f",
+        "7247882c7d387198",
+        "3fe78677f1a7ed7a",
+        "15d0fcf7ab8fae2e",
+        "50ab97fd29539dcb",
+        "096e960815dd7bec",
+        "ce0a006ac9052892",
+        "3473eafbed2984cc",
+        "b5b4c81be87ed90a",
+        "c14f7fd709893f32",
+        "72d839e418e44cd9",
+        "96454e817c2f01b9",
+        "d3c3c3ee756ceb38",
+        "d82fa05e0049d5fb",
+        "d5aec2df287c6159",
+        "276da201327480f0",
+        "d24345fab4642111",
+        "5432543708b361b0",
+        "90e3f25ea30c3101",
+        "4bef39fd8fea80f8",
+        "8078c67311a22d24",
+        "61b8f0f1124f6d01"
+      ],
+      "client_setup_seconds": 0.02152029098942876,
+      "started_at": "2026-10-15T16:40:13.716180+00:00",
+      "answer": "Calcul sur **49 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 49/49 valeurs numériques univoques documentées.\n**Minimum : 705 mm** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki 650 VULCAN S (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/8896/650-VULCAN-S-2022/contact.html) |\n| Kawasaki 650 VULCAN S Performance (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9194/650-VULCAN-S-Performance-2022/contact.html) |\n| Kawasaki 650 VULCAN S Tourer (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9193/650-VULCAN-S-Tourer-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **49 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 49/49 valeurs numériques univoques documentées.\n**Minimum : 705 mm** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki 650 VULCAN S (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/8896/650-VULCAN-S-2022/contact.html) |\n| Kawasaki 650 VULCAN S Performance (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9194/650-VULCAN-S-Performance-2022/contact.html) |\n| Kawasaki 650 VULCAN S Tourer (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9193/650-VULCAN-S-Tourer-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.6259601670317352
+    },
+    {
+      "id": "H03",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Pour la Suzuki GSF 1200 Bandit, calcule séparément le poids moyen à sec et tous pleins sur 2000 et 2001, une fiche par millésime.",
+      "expected": "Deux moyennes distinctes : 214 kg à sec et 244 kg tous pleins, chacune 2/2 fiches, deux sources exactes.",
+      "object_ids": [
+        "269c34c7d6325a60",
+        "9223cdadb1e9ea0b"
+      ],
+      "client_setup_seconds": 0.014131624950096011,
+      "started_at": "2026-10-15T16:40:15.359363+00:00",
+      "answer": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\n**Poids tous pleins / en ordre de marche** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 244 kg** (488 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Suzuki GSF 1200 Bandit, calcule séparément le poids moyen à sec et tous pleins sur 2000 et 2001, une fiche par millésime.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\n**Poids tous pleins / en ordre de marche** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 244 kg** (488 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.5057983750011772
+    },
+    {
+      "id": "H04",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Sur les Honda CB 500 F de 2020, 2021 et 2022, donne le poids moyen sec puis le poids moyen en ordre de marche.",
+      "expected": "Sec : aucune valeur, ne pas calculer zéro. Wet : 189 kg sur 3/3 fiches. Sources et dénominateurs distincts.",
+      "object_ids": [
+        "555a2d677db34a14",
+        "496a038abc9da8b7",
+        "aaac27c37592b9cc"
+      ],
+      "client_setup_seconds": 0.019470375031232834,
+      "started_at": "2026-10-15T16:40:16.895247+00:00",
+      "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 0/3 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\nCalcul non établi : aucune valeur exploitable pour cette mesure.\n\n**Poids tous pleins / en ordre de marche** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 189 kg** (567 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur les Honda CB 500 F de 2020, 2021 et 2022, donne le poids moyen sec puis le poids moyen en ordre de marche.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 0/3 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\nCalcul non établi : aucune valeur exploitable pour cette mesure.\n\n**Poids tous pleins / en ordre de marche** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 189 kg** (567 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.4933150000870228
+    },
+    {
+      "id": "H05",
+      "turn": 1,
+      "group": "holdout",
+      "category": "absence",
+      "pass": "first",
+      "question": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+      "expected": "1990 absent : population incomplète signalée. 2022 = 48 ch ; moyenne sur la seule fiche disponible explicitement partielle, ou clarification sans substitution.",
+      "object_ids": [
+        "aaac27c37592b9cc"
+      ],
+      "client_setup_seconds": 0.017523166025057435,
+      "started_at": "2026-10-15T16:40:18.410288+00:00",
+      "answer": "Calcul sur **1 fiches du catalogue**, dans la population demandée.\nPopulation incomplète : fiche(s) absente(s) — Honda CB 500 F (1990).\n\n**Puissance** — 1/1 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (48 / 1 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **1 fiches du catalogue**, dans la population demandée.\nPopulation incomplète : fiche(s) absente(s) — Honda CB 500 F (1990).\n\n**Puissance** — 1/1 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (48 / 1 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.5188026248943061
+    },
+    {
+      "id": "H06",
+      "turn": 1,
+      "group": "holdout",
+      "category": "lecture",
+      "pass": "first",
+      "question": "La fiche de la Honda CRF 450 R 2021 donne-t-elle une puissance précise ou approximative ? Cite la valeur telle quelle.",
+      "expected": "Reprendre la ligne source avec son approximation, sans la rendre exacte.",
+      "object_ids": [
+        "1290657f06d4de12"
+      ],
+      "client_setup_seconds": 0.02083879103884101,
+      "started_at": "2026-10-15T16:40:19.952096+00:00",
+      "answer": "La fiche de la Honda CRF 450 R 2021 indique une puissance approximative de ≈ 62 ch. [Honda CRF 450 R (2021)](https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Honda CRF 450 R (2021) — Puissance documentée (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « puissance ».",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche de la Honda CRF 450 R 2021 donne-t-elle une puissance précise ou approximative ? Cite la valeur telle quelle.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche de la Honda CRF 450 R 2021 indique une puissance approximative de ≈ 62 ch. [Honda CRF 450 R (2021)](https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Honda CRF 450 R (2021) — Puissance documentée (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « puissance ».",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 14.7683820000384
+    },
+    {
+      "id": "H07",
+      "turn": 1,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Quel réservoir possède la Benelli 500 Leoncino ?",
+      "expected": "Demander le millésime et conserver le modèle, sans choisir une année.",
+      "object_ids": [],
+      "client_setup_seconds": 0.015312375035136938,
+      "started_at": "2026-10-15T16:40:34.973297+00:00",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel réservoir possède la Benelli 500 Leoncino ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.45840483298525214
+    },
+    {
+      "id": "H07",
+      "turn": 2,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "2022.",
+      "expected": "Même Benelli 500 Leoncino 2022, réservoir 12,70 litres, source exacte.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T16:40:35.433861+00:00",
+      "answer": "La Benelli 500 Leoncino 2022 a un réservoir de 12,70 litres. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 12,70 litres |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel réservoir possède la Benelli 500 Leoncino ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Benelli 500 Leoncino 2022 a un réservoir de 12,70 litres. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 12,70 litres |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 13.690482457866892
+    },
+    {
+      "id": "H08",
+      "turn": 1,
+      "group": "holdout",
+      "category": "pagination",
+      "pass": "first",
+      "question": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+      "expected": "Trois fiches Triumph 2022, ordre stable et total visible.",
+      "object_ids": [
+        "b5bd374c2664b0bf",
+        "36284b2fa2f285fc",
+        "4c62cff120b3f382",
+        "f2de3b90d65b8480",
+        "6808049e8b1d55ad",
+        "d9bba6fc5859d8fe",
+        "7f49cfbef8008365",
+        "6245ed4b345dfdd7",
+        "b33413df9954fdf1",
+        "58daaf9554f763b7",
+        "8c5f02800030a13d",
+        "40e47024ba87bd44",
+        "cceafe4f838d387f",
+        "6ffe5a6e4ebeb75d",
+        "f3a10b06230392f9",
+        "a9f37935126e79fb",
+        "b558db6d5b68b344",
+        "1187a2ba797b4541",
+        "ce6693aac0c729d8",
+        "55ce354cb4b4b28d",
+        "c5b45c9575db1a62",
+        "d667a72ef19069a8",
+        "0b27f48bd538f5f5",
+        "fb99ca4c7eb01f27",
+        "c28516902dad7523",
+        "658209ee58099d4e",
+        "07c4797d1e41486e",
+        "7780244c2319511b",
+        "7d52416bf5219602",
+        "764f985b8dfcbb77",
+        "157e666e3b848619",
+        "85d86e852da7c654",
+        "b16a4f511dcdf9d2",
+        "1986484d8cd17bf5",
+        "1516ed4e2ad15fec",
+        "03915c659646f7fc",
+        "056c81e218d8cf22",
+        "85503cbb6e0eae54",
+        "89352852a40f6ab0",
+        "6df098b65275a7a3",
+        "8e10e2d81a8687d3",
+        "eb64a9b9e00ad095",
+        "49353e6068a0763e",
+        "747825ee12549552",
+        "23782339693e0f41",
+        "95c853ec2d0c290b",
+        "0757ad363b2955af"
+      ],
+      "client_setup_seconds": 0.021877290913835168,
+      "started_at": "2026-10-15T16:40:50.002991+00:00",
+      "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.44774674996733665
+    },
+    {
+      "id": "H08",
+      "turn": 2,
+      "group": "holdout",
+      "category": "pagination",
+      "pass": "first",
+      "question": "Et les trois suivantes.",
+      "expected": "Trois nouvelles fiches de la même sélection, sans doublon ; positions 4 à 6.",
+      "object_ids": [
+        "b5bd374c2664b0bf",
+        "36284b2fa2f285fc",
+        "4c62cff120b3f382",
+        "f2de3b90d65b8480",
+        "6808049e8b1d55ad",
+        "d9bba6fc5859d8fe",
+        "7f49cfbef8008365",
+        "6245ed4b345dfdd7",
+        "b33413df9954fdf1",
+        "58daaf9554f763b7",
+        "8c5f02800030a13d",
+        "40e47024ba87bd44",
+        "cceafe4f838d387f",
+        "6ffe5a6e4ebeb75d",
+        "f3a10b06230392f9",
+        "a9f37935126e79fb",
+        "b558db6d5b68b344",
+        "1187a2ba797b4541",
+        "ce6693aac0c729d8",
+        "55ce354cb4b4b28d",
+        "c5b45c9575db1a62",
+        "d667a72ef19069a8",
+        "0b27f48bd538f5f5",
+        "fb99ca4c7eb01f27",
+        "c28516902dad7523",
+        "658209ee58099d4e",
+        "07c4797d1e41486e",
+        "7780244c2319511b",
+        "7d52416bf5219602",
+        "764f985b8dfcbb77",
+        "157e666e3b848619",
+        "85d86e852da7c654",
+        "b16a4f511dcdf9d2",
+        "1986484d8cd17bf5",
+        "1516ed4e2ad15fec",
+        "03915c659646f7fc",
+        "056c81e218d8cf22",
+        "85503cbb6e0eae54",
+        "89352852a40f6ab0",
+        "6df098b65275a7a3",
+        "8e10e2d81a8687d3",
+        "eb64a9b9e00ad095",
+        "49353e6068a0763e",
+        "747825ee12549552",
+        "23782339693e0f41",
+        "95c853ec2d0c290b",
+        "0757ad363b2955af"
+      ],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T16:40:50.453110+00:00",
+      "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville T 120 \"1959 Legends Custom Edition\" | 2022 | [Fiche](https://www.motoplanete.com/triumph/9348/1200-Bonneville-T-120-1959-Legends-Custom-Edition-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black | 2022 | [Fiche](https://www.motoplanete.com/triumph/9139/1200-Bonneville-T-120-Black-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8992/1200-Bonneville-T-120-Black-Gold-Line-2022/contact.html) |\n\nFiches 4 à 6 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et les trois suivantes.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville T 120 \"1959 Legends Custom Edition\" | 2022 | [Fiche](https://www.motoplanete.com/triumph/9348/1200-Bonneville-T-120-1959-Legends-Custom-Edition-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black | 2022 | [Fiche](https://www.motoplanete.com/triumph/9139/1200-Bonneville-T-120-Black-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8992/1200-Bonneville-T-120-Black-Gold-Line-2022/contact.html) |\n\nFiches 4 à 6 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.5115889159496874
+    },
+    {
+      "id": "H09",
+      "turn": 1,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+      "expected": "Clarifier la population de la moyenne, conserver modèle et type de poids.",
+      "object_ids": [],
+      "client_setup_seconds": 0.020037249894812703,
+      "started_at": "2026-10-15T16:40:51.986170+00:00",
+      "answer": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.060018250020220876
+    },
+    {
+      "id": "H09",
+      "turn": 2,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Les millésimes 2000 et 2001.",
+      "expected": "Moyenne 214 kg à sec, 2/2 fiches, aucune confusion avec 244 kg tous pleins.",
+      "object_ids": [
+        "269c34c7d6325a60",
+        "9223cdadb1e9ea0b"
+      ],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T16:40:52.046781+00:00",
+      "answer": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les millésimes 2000 et 2001.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.49020679178647697
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-15T16:40:53.540714+00:00"
+}

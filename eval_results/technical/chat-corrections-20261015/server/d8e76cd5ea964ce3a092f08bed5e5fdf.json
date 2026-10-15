@@ -1,0 +1,244 @@
+{
+  "id": "d8e76cd5ea964ce3a092f08bed5e5fdf",
+  "question": "Et le poids sec, est-il aussi documenté dans cette fiche ?",
+  "started_at": "2026-10-15T16:38:00.253859+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "La fiche mentionne le poids tous pleins faits de la Kawasaki W 800 2022, qui est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n- Kawasaki W 800 (2022) — Poids en ordre de marche / pleins faits (kg) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Kawasaki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Kawasaki",
+          "model": "W 800"
+        }
+      ],
+      "fields": [
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Et le poids sec, est-il aussi documenté dans cette fiche ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 8.706914958078414,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "f4f007bdd40a1b6c",
+          "brand": "Kawasaki",
+          "model": "W 800",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+          "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "weight_dry_kg": {
+              "covered": false,
+              "source_passages_available": false,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": []
+            },
+            "weight_wet_kg": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "f4f007bdd40a1b6c:section:0"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "f4f007bdd40a1b6c:section:4",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Moteur",
+              "original_text": "Bicylindre Vertical , 4 temps; Injection Ø 34 mm; Refroidissement : par air; 1 ACT; 4 soupapes par cylindre; 773 cc (Alésage * course: 77 x 83 mm); 48 ch à 6 000 tr/min; 6,40 mkg à 4 800 tr/min; Rapport poids / puissance : environ 4.33 kg/ch; Rapport poids / couple : environ 32.45 kg/mkg; Compression : 8.4 : 1",
+              "text": "Kawasaki W 800 2022\nMoteur\nBicylindre Vertical , 4 temps; Injection Ø 34 mm; Refroidissement : par air; 1 ACT; 4 soupapes par cylindre; 773 cc (Alésage * course: 77 x 83 mm); 48 ch à 6 000 tr/min; 6,40 mkg à 4 800 tr/min; Rapport poids / puissance : environ 4.33 kg/ch; Rapport poids / couple : environ 32.45 kg/mkg; Compression : 8.4 : 1",
+              "score": 0.4139767289161682,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:0",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Châssis",
+              "original_text": "Cadre : Double berceau acier; Réservoir : 15 litres; Hauteur de selle : 790 mm; Longueur : 2 190 mm; Largeur : 790 mm; Hauteur min : 1 075 mm; Empattement : 1 465 mm; Poids tous pleins faits : 221 kg",
+              "text": "Kawasaki W 800 2022\nChâssis\nCadre : Double berceau acier; Réservoir : 15 litres; Hauteur de selle : 790 mm; Longueur : 2 190 mm; Largeur : 790 mm; Hauteur min : 1 075 mm; Empattement : 1 465 mm; Poids tous pleins faits : 221 kg",
+              "score": 0.409173846244812,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:3",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux, déb : 107 mm; Freinage : 1 disque Ø 270 mm, étrier 2 pistons; Roue arrière : 130 / 80 - 18; Pression : 2.25 bars",
+              "text": "Kawasaki W 800 2022\nTrain arrière\n2 amortisseurs latéraux, déb : 107 mm; Freinage : 1 disque Ø 270 mm, étrier 2 pistons; Roue arrière : 130 / 80 - 18; Pression : 2.25 bars",
+              "score": 0.3510991930961609,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:1",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø 41 mm, déb : 130 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 100 / 90 - 19; Pression : 2 bars",
+              "text": "Kawasaki W 800 2022\nTrain avant\nFourche téléhydraulique Ø 41 mm, déb : 130 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 100 / 90 - 19; Pression : 2 bars",
+              "score": 0.3464280366897583,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:6",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A",
+              "text": "Kawasaki W 800 2022\nInfos pratiques\nLa moto est accessible aux permis : A",
+              "score": 0.3423234820365906,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "f4f007bdd40a1b6c",
+          "field": "weight_dry_kg",
+          "message": "Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».",
+          "requested_terms": [
+            "poids sec"
+          ]
+        },
+        {
+          "kind": "field",
+          "object_id": "f4f007bdd40a1b6c",
+          "field": "weight_wet_kg",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 8.288770914077759e-08,
+          "query_encoding_seconds": 0.3135718749836087,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "f4f007bdd40a1b6c",
+          "proof_check": {
+            "fields": {
+              "weight_dry_kg": "unverified",
+              "weight_wet_kg": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0025822080206125975
+          }
+        }
+      ],
+      "seconds": 0.31913829199038446,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "4cd2e9f7a3d170e5a4aed87b62dff8b358b21f48adc18d7cd6697b329c7ce4c1",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1633,
+      "eval_count": 54,
+      "total_duration": 8281804125,
+      "load_duration": 13071791,
+      "prompt_eval_duration": 162471000,
+      "eval_duration": 7117054000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La fiche mentionne le poids tous pleins faits de la Kawasaki W 800 2022, qui est de 221 kg.",
+            "sources": [
+              "P2"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": false,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.99,
+              "unsupported": 0.01
+            },
+            "confidence": 0.98
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.71,
+              "unsupported": 0.29
+            },
+            "confidence": 0.42
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 8.300045291893184
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 8.707141457824036
+}

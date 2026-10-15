@@ -1,0 +1,40 @@
+{
+  "id": "d35d5a423854421881bbcc646b403a2f",
+  "question": "Combien de fiches Yamaha de 2022 documentent un ABS de série ?",
+  "started_at": "2026-10-15T16:36:22.111435+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "**34 fiches correspondent dans le catalogue.** Équipements : ABS — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Yamaha",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "equipment"
+      ],
+      "equipment": "ABS",
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Combien de fiches Yamaha de 2022 documentent un ABS de série ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "count"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "count",
+    "_catalog_seconds": 0.04222012497484684,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.042323125060647726
+}

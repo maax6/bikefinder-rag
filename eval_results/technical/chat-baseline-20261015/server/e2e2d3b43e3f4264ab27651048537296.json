@@ -1,0 +1,51 @@
+{
+  "id": "e2e2d3b43e3f4264ab27651048537296",
+  "question": "Celle de 2022.",
+  "started_at": "2026-10-15T15:44:58.470229+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3462,
+        "output_tokens": 954,
+        "cost": 0.000145404
+      },
+      "seconds": 0.33573033288121223,
+      "reserved_usd": 0.0025598160000000003,
+      "debit_usd": 0.000145404
+    }
+  ],
+  "history_messages": 2,
+  "answer": "Précise la marque et le modèle de la moto pour retrouver la bonne fiche.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Celle de 2022.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "clarify"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.38587170909158885,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.3859994581434876
+}

@@ -1,0 +1,261 @@
+{
+  "id": "6996de2327d54a0ab244db656e93c1b6",
+  "question": "Décris les suspensions avant et arrière de la Triumph Tiger Sport 660 de 2022, avec les débattements documentés.",
+  "started_at": "2026-10-15T16:33:57.484128+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 2350,
+        "output_tokens": 94,
+        "cost": 9.87e-05
+      },
+      "seconds": 0.6779539580456913,
+      "reserved_usd": 0.0013594560000000002,
+      "debit_usd": 9.87e-05
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La suspension avant de la Triumph Tiger Sport 660 de 2022 est une fourche téléhydraulique inversée de 41 mm de diamètre avec un débattement de 150 mm. [Triumph Tiger Sport 660 (2022)](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html)\n\nLa suspension arrière est un mono-amortisseur avec un débattement de 150 mm. [Triumph Tiger Sport 660 (2022)](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Triumph Tiger Sport 660 (2022) — Suspensions et réglages avant/arrière — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « suspensions ».\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Triumph",
+          "model": "Tiger Sport 660"
+        }
+      ],
+      "fields": [
+        "suspension"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Décris les suspensions avant et arrière de la Triumph Tiger Sport 660 de 2022, avec les débattements documentés.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 14.461651457939297,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "4c62cff120b3f382",
+          "brand": "Triumph",
+          "model": "Tiger Sport 660",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html",
+          "source_sha256": "cce09ab68f16189ce6ee793e67a6953189bf23b49b05078deabe18f24c371376",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "suspension": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "4c62cff120b3f382:section:1",
+                "4c62cff120b3f382:section:3"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "4c62cff120b3f382:section:1",
+              "object_id": "4c62cff120b3f382",
+              "brand": "Triumph",
+              "model": "Tiger Sport 660",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html",
+              "source_sha256": "cce09ab68f16189ce6ee793e67a6953189bf23b49b05078deabe18f24c371376",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 41 mm, déb : 150 mm; Freinage : 2 disques Ø 310 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.3 bars",
+              "text": "Triumph Tiger Sport 660 2022\nTrain avant\nFourche téléhydraulique inversée Ø 41 mm, déb : 150 mm; Freinage : 2 disques Ø 310 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.3 bars",
+              "score": 0.7379955053329468,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4c62cff120b3f382:section:4",
+              "object_id": "4c62cff120b3f382",
+              "brand": "Triumph",
+              "model": "Tiger Sport 660",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html",
+              "source_sha256": "cce09ab68f16189ce6ee793e67a6953189bf23b49b05078deabe18f24c371376",
+              "section": "Moteur",
+              "original_text": "3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 660 cc (Alésage * course: 74 x 51.1 mm); 81 ch à 10 250 tr/min; 6,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.36 kg/ch; Rapport poids / couple : environ 28.94 kg/mkg; Compression : 11.95 : 1; Emission CO² : 107 g/km",
+              "text": "Triumph Tiger Sport 660 2022\nMoteur\n3 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 660 cc (Alésage * course: 74 x 51.1 mm); 81 ch à 10 250 tr/min; 6,60 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.36 kg/ch; Rapport poids / couple : environ 28.94 kg/mkg; Compression : 11.95 : 1; Emission CO² : 107 g/km",
+              "score": 0.7247467041015625,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4c62cff120b3f382:section:3",
+              "object_id": "4c62cff120b3f382",
+              "brand": "Triumph",
+              "model": "Tiger Sport 660",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html",
+              "source_sha256": "cce09ab68f16189ce6ee793e67a6953189bf23b49b05078deabe18f24c371376",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur, déb : 150 mm; Freinage : 1 disque Ø 255 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.5 bars",
+              "text": "Triumph Tiger Sport 660 2022\nTrain arrière\nMono-amortisseur, déb : 150 mm; Freinage : 1 disque Ø 255 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.5 bars",
+              "score": 0.7192530632019043,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4c62cff120b3f382:section:5",
+              "object_id": "4c62cff120b3f382",
+              "brand": "Triumph",
+              "model": "Tiger Sport 660",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html",
+              "source_sha256": "cce09ab68f16189ce6ee793e67a6953189bf23b49b05078deabe18f24c371376",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS",
+              "text": "Triumph Tiger Sport 660 2022\nÉquipement de série\nAssistance au freinage : ABS",
+              "score": 0.7001619338989258,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4c62cff120b3f382:section:2",
+              "object_id": "4c62cff120b3f382",
+              "brand": "Triumph",
+              "model": "Tiger Sport 660",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html",
+              "source_sha256": "cce09ab68f16189ce6ee793e67a6953189bf23b49b05078deabe18f24c371376",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+              "text": "Triumph Tiger Sport 660 2022\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par chaîne",
+              "score": 0.7001028060913086,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "4c62cff120b3f382",
+          "field": "suspension",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « suspensions ».",
+          "requested_terms": [
+            "suspensions"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.0815059542655945e-07,
+          "query_encoding_seconds": 0.24603400006890297,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "4c62cff120b3f382",
+          "proof_check": {
+            "fields": {
+              "suspension": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0004229999613016844
+          }
+        }
+      ],
+      "seconds": 0.24950095801614225,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "50178681ddd5de9c912ee6935104aa98badbf628a321bed06548f248933802f4",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1532,
+      "eval_count": 101,
+      "total_duration": 13473030000,
+      "load_duration": 2828542,
+      "prompt_eval_duration": 145358000,
+      "eval_duration": 12440838000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La suspension avant de la Triumph Tiger Sport 660 de 2022 est une fourche téléhydraulique inversée de 41 mm de diamètre avec un débattement de 150 mm.",
+            "sources": [
+              "P1"
+            ]
+          },
+          {
+            "text": "La suspension arrière est un mono-amortisseur avec un débattement de 150 mm.",
+            "sources": [
+              "P3"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0,
+          1
+        ],
+        "coverage_verified": false,
+        "jev_calls": 1,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.99,
+              "unsupported": 0.01
+            },
+            "confidence": 0.98
+          },
+          "claim_1": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.99,
+              "unsupported": 0.01
+            },
+            "confidence": 0.98
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.79,
+              "unsupported": 0.21
+            },
+            "confidence": 0.58
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 14.165276165818796
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 14.462251292075962
+}

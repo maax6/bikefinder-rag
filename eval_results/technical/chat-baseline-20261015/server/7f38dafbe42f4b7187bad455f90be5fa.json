@@ -1,0 +1,54 @@
+{
+  "id": "7f38dafbe42f4b7187bad455f90be5fa",
+  "question": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+  "started_at": "2026-10-15T15:42:48.667470+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3500,
+        "output_tokens": 953,
+        "cost": 0.000147
+      },
+      "seconds": 0.3744261250831187,
+      "reserved_usd": 0.0025892160000000005,
+      "debit_usd": 0.000147
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**47 fiches correspondent dans le catalogue.**",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "count"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "count",
+    "_catalog_seconds": 0.43572554201819,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.43589533399790525
+}

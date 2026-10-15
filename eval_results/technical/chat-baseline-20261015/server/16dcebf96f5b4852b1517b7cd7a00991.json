@@ -1,0 +1,54 @@
+{
+  "id": "16dcebf96f5b4852b1517b7cd7a00991",
+  "question": "Quelle est la plus grosse cylindrée documentée chez Kawasaki pour 2021 ? Donne toutes les fiches ex æquo, dans ce catalogue seulement.",
+  "started_at": "2026-10-15T15:42:44.062521+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3513,
+        "output_tokens": 953,
+        "cost": 0.000147546
+      },
+      "seconds": 0.32742204098030925,
+      "reserved_usd": 0.0025932480000000003,
+      "debit_usd": 0.000147546
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**42 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Cylindrée (cc) | Source |\n|---|---:|---|---|\n| Kawasaki 650 VULCAN S | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8547/650-VULCAN-S-2021/contact.html) |\n| Kawasaki 650 VULCAN S Performance | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8877/650-VULCAN-S-Performance-2021/contact.html) |\n| Kawasaki 650 VULCAN S Tourer | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8650/650-VULCAN-S-Tourer-2021/contact.html) |\n| Kawasaki 800 Meguro K3 | 2021 | Moteur — 773 cc (Alésage * course: 77 x 83 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8588/800-Meguro-K3-2021/contact.html) |\n| Kawasaki KX 250 | 2021 | Moteur — 249 cc (Alésage * course: 78 x 52.2 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8411/KX-250-2021/contact.html) |\n| Kawasaki KX 450 | 2021 | Moteur — 449 cc (Alésage * course: 96 x 62.1 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8412/KX-450-2021/contact.html) |\n| Kawasaki KX 65 | 2021 | Moteur — 64 cc (Alésage * course: 44.5 x 41.6 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8914/KX-65-2021/contact.html) |\n| Kawasaki Ninja 1000 SX | 2021 | Moteur — 1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8489/Ninja-1000-SX-2021/contact.html) |\n| Kawasaki Ninja 1000 SX Performance Tourer | 2021 | Moteur — 1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9500/Ninja-1000-SX-Performance-Tourer-2021/contact.html) |\n| Kawasaki Ninja 1000 ZX-10R | 2021 | Moteur — 998 cc (Alésage * course: 76 x 55 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8601/Ninja-1000-ZX-10R-2021/contact.html) |\n| Kawasaki Ninja 1000 ZX-10R Performance | 2021 | Moteur — 998 cc (Alésage * course: 76 x 55 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9492/Ninja-1000-ZX-10R-Performance-2021/contact.html) |\n| Kawasaki Ninja 1000 ZX-10RR | 2021 | Moteur — 998 cc (Alésage * course: 76 x 55 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8768/Ninja-1000-ZX-10RR-2021/contact.html) |\n| Kawasaki Ninja 125 | 2021 | Moteur — 125 cc (Alésage * course: 58 x 47.2 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8557/Ninja-125-2021/contact.html) |\n| Kawasaki Ninja 125 Performance | 2021 | Moteur — 125 cc (Alésage * course: 58 x 47.2 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9181/Ninja-125-Performance-2021/contact.html) |\n| Kawasaki Ninja 650 | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8511/Ninja-650-2021/contact.html) |\n| Kawasaki Ninja 650 Elf Vent Vert | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8616/Ninja-650-Elf-Vent-Vert-2021/contact.html) |\n| Kawasaki Ninja 650 Performance | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9188/Ninja-650-Performance-2021/contact.html) |\n| Kawasaki Ninja 650 Tourer | 2021 | Moteur — 649 cc (Alésage * course: 83 x 60 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9185/Ninja-650-Tourer-2021/contact.html) |\n| Kawasaki NINJA H2R | 2021 | Moteur — 998 cc (Alésage * course: 76 x 55 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8661/NINJA-H2R-2021/contact.html) |\n| Kawasaki VERSYS 1000 S | 2021 | Moteur — 1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8507/VERSYS-1000-S-2021/contact.html) |\n\nSélection de 20 fiches sur 42. Affine les critères pour réduire la liste.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Kawasaki",
+        "year": 2021
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "displacement_ccm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle est la plus grosse cylindrée documentée chez Kawasaki pour 2021 ? Donne toutes les fiches ex æquo, dans ce catalogue seulement.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.42741775000467896,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4276287911925465
+}

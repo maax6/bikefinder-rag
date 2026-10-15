@@ -1,0 +1,222 @@
+{
+  "id": "80f70f5a1e35467281a87c2241c2a2c7",
+  "question": "Pour la KTM 390 Adventure de 2022, compare le frein avant et le frein arrière : diamètre et étriers.",
+  "started_at": "2026-10-15T16:34:34.965384+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Le frein avant de la KTM 390 Adventure de 2022 dispose d'un disque de Ø 330 mm avec un étrier à 4 pistons. Le frein arrière, quant à lui, a un disque de Ø 230 mm et un étrier à simple piston. [KTM 390 Adventure (2022)](https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "KTM",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "KTM",
+          "model": "390 Adventure"
+        }
+      ],
+      "fields": [
+        "braking"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Pour la KTM 390 Adventure de 2022, compare le frein avant et le frein arrière : diamètre et étriers.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "comparison"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral",
+    "_catalog_seconds": 18.49443241697736,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "5fffee575224f842",
+          "brand": "KTM",
+          "model": "390 Adventure",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html",
+          "source_sha256": "d4b97182f73a85de4c1ec9a61c16691038ed7d5b0f31b65e7e6301e80b5f77d0",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "braking": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "5fffee575224f842:section:1",
+                "5fffee575224f842:section:3"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "5fffee575224f842:section:1",
+              "object_id": "5fffee575224f842",
+              "brand": "KTM",
+              "model": "390 Adventure",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html",
+              "source_sha256": "d4b97182f73a85de4c1ec9a61c16691038ed7d5b0f31b65e7e6301e80b5f77d0",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 43 mm WP / White Power (WP) , déb : 170 mm; Freinage : 1 disque Ø 330 mm, fixation radiale, étrier 4 pistons; Roue avant : 100 / 90 - 19",
+              "text": "KTM 390 Adventure 2022\nTrain avant\nFourche téléhydraulique inversée Ø 43 mm WP / White Power (WP) , déb : 170 mm; Freinage : 1 disque Ø 330 mm, fixation radiale, étrier 4 pistons; Roue avant : 100 / 90 - 19",
+              "score": 0.7468571662902832,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "5fffee575224f842:section:3",
+              "object_id": "5fffee575224f842",
+              "brand": "KTM",
+              "model": "390 Adventure",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html",
+              "source_sha256": "d4b97182f73a85de4c1ec9a61c16691038ed7d5b0f31b65e7e6301e80b5f77d0",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur WP / White Power (WP) , déb : 177 mm; Freinage : 1 disque Ø 230 mm, étrier simple piston; Roue arrière : 130 / 80 - 17",
+              "text": "KTM 390 Adventure 2022\nTrain arrière\nMono-amortisseur WP / White Power (WP) , déb : 177 mm; Freinage : 1 disque Ø 230 mm, étrier simple piston; Roue arrière : 130 / 80 - 17",
+              "score": 0.7391868233680725,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "5fffee575224f842:section:4",
+              "object_id": "5fffee575224f842",
+              "brand": "KTM",
+              "model": "390 Adventure",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html",
+              "source_sha256": "d4b97182f73a85de4c1ec9a61c16691038ed7d5b0f31b65e7e6301e80b5f77d0",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; injection Ø 38 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 373,20 cc (Alésage * course: 89 x 60 mm); 43 ch à 9 000 tr/min; 3,90 mkg à 7 000 tr/min; Rapport poids / puissance : 3.67 kg/ch; Rapport poids / couple : 40.51 kg/mkg; Compression : 12.6 : 1; Emission CO² : 78 g/km",
+              "text": "KTM 390 Adventure 2022\nMoteur\nMonocylindre , 4 temps; injection Ø 38 mm; Refroidissement : liquide; 2 ACT; 4 soupapes; 373,20 cc (Alésage * course: 89 x 60 mm); 43 ch à 9 000 tr/min; 3,90 mkg à 7 000 tr/min; Rapport poids / puissance : 3.67 kg/ch; Rapport poids / couple : 40.51 kg/mkg; Compression : 12.6 : 1; Emission CO² : 78 g/km",
+              "score": 0.6973695158958435,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "5fffee575224f842:section:2",
+              "object_id": "5fffee575224f842",
+              "brand": "KTM",
+              "model": "390 Adventure",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html",
+              "source_sha256": "d4b97182f73a85de4c1ec9a61c16691038ed7d5b0f31b65e7e6301e80b5f77d0",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "text": "KTM 390 Adventure 2022\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.6590604782104492,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "5fffee575224f842:section:0",
+              "object_id": "5fffee575224f842",
+              "brand": "KTM",
+              "model": "390 Adventure",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html",
+              "source_sha256": "d4b97182f73a85de4c1ec9a61c16691038ed7d5b0f31b65e7e6301e80b5f77d0",
+              "section": "Châssis",
+              "original_text": "Cadre : Treillis tubulaire en acier; Réservoir : 14,50 litres; Hauteur de selle : 855 mm; Empattement : 1 430 mm; Poids à sec : 158 kg; Poids tous pleins faits : 172 kg",
+              "text": "KTM 390 Adventure 2022\nChâssis\nCadre : Treillis tubulaire en acier; Réservoir : 14,50 litres; Hauteur de selle : 855 mm; Empattement : 1 430 mm; Poids à sec : 158 kg; Poids tous pleins faits : 172 kg",
+              "score": 0.6532473564147949,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 8.405186235904694e-08,
+          "query_encoding_seconds": 0.5564104160293937,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "5fffee575224f842",
+          "proof_check": {
+            "fields": {
+              "braking": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.016766125103458762
+          }
+        }
+      ],
+      "seconds": 0.5803482909686863,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "97517d33f3f0371faa1a212180a24288a401158b013c2650583cd5f65e34643b",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1447,
+      "eval_count": 91,
+      "total_duration": 17824491708,
+      "load_duration": 12425375,
+      "prompt_eval_duration": 6479008000,
+      "eval_duration": 11229194000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "Le frein avant de la KTM 390 Adventure de 2022 dispose d'un disque de Ø 330 mm avec un étrier à 4 pistons. Le frein arrière, quant à lui, a un disque de Ø 230 mm et un étrier à simple piston.",
+            "sources": [
+              "P1",
+              "P2"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.98,
+              "unsupported": 0.02
+            },
+            "confidence": 0.96
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 17.869890209054574
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 18.494553541997448
+}

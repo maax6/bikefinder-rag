@@ -1,0 +1,276 @@
+{
+  "id": "b37cd77ad15248dcbca3258312e1712d",
+  "question": "2022.",
+  "started_at": "2026-10-15T16:40:35.464775+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3804,
+        "output_tokens": 967,
+        "cost": 0.000159768
+      },
+      "seconds": 0.3443186669610441,
+      "reserved_usd": 0.00274008,
+      "debit_usd": 0.000159768
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1029,
+        "output_tokens": 40,
+        "cost": 4.3218e-05
+      },
+      "seconds": 0.3057145830243826,
+      "reserved_usd": 0.0007173600000000001,
+      "debit_usd": 4.3218e-05
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1833,
+        "output_tokens": 64,
+        "cost": 7.6986e-05
+      },
+      "seconds": 0.2994632499758154,
+      "reserved_usd": 0.0010441200000000002,
+      "debit_usd": 7.6986e-05
+    }
+  ],
+  "history_messages": 2,
+  "answer": "La Benelli 500 Leoncino 2022 a un réservoir de 12,70 litres. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 12,70 litres |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Benelli",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Benelli",
+          "model": "500 LEONCINO"
+        }
+      ],
+      "fields": [
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "2022.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 13.598111749859527,
+    "_catalog_jev_calls": 3,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "14267bc1c68d0fc7",
+          "brand": "Benelli",
+          "model": "500 Leoncino",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+          "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "reservoir": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "14267bc1c68d0fc7:section:0"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "14267bc1c68d0fc7:section:9",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Benelli 500 Leoncino 2022\nColoris\nColoris : non défini",
+              "score": 0.4363501965999603,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:2",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "text": "Benelli 500 Leoncino 2022\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.40991878509521484,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:8",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Tarifs",
+              "original_text": "France — Version de base : 6 299 € *",
+              "text": "Benelli 500 Leoncino 2022\nTarifs\nFrance — Version de base : 6 299 € *",
+              "score": 0.3964616060256958,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:7",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 170 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 302 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Benelli 500 Leoncino 2022\nPerformances\nVitesse max : environ 170 km/h; Consommation moyenne : 4,20 l/100km; Autonomie estimée : 302 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.37345176935195923,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:6",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A",
+              "text": "Benelli 500 Leoncino 2022\nInfos pratiques\nLa moto est accessible aux permis : A",
+              "score": 0.3726879954338074,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "14267bc1c68d0fc7:section:0",
+              "object_id": "14267bc1c68d0fc7",
+              "brand": "Benelli",
+              "model": "500 Leoncino",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html",
+              "source_sha256": "b8ee7a500f66940a9b397451a8fbf12038d1426d2a5c55bf1fd03ec11cce4514",
+              "section": "Châssis",
+              "original_text": "Cadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg",
+              "text": "Benelli 500 Leoncino 2022\nChâssis\nCadre : Treillis en tubes d'acier; Réservoir : 12,70 litres; Hauteur de selle : 815 mm; Longueur : 2 160 mm; Largeur : 875 mm; Hauteur min : 1 160 mm; Empattement : 1 460 mm; Poids à sec : 186 kg; Poids tous pleins faits : 207 kg",
+              "score": 0.30521315336227417,
+              "rank": 10,
+              "selection_reason": "required_field"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 8.288770914077759e-08,
+          "query_encoding_seconds": 0.9127796250395477,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "14267bc1c68d0fc7",
+          "proof_check": {
+            "fields": {
+              "reservoir": "complete"
+            },
+            "jev_calls": 1,
+            "seconds": 0.308933291118592
+          }
+        }
+      ],
+      "seconds": 1.2253693749662489,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "d190cdbe68401352b6be44bc3f323c020504cb9978b5cce0c059fe3f16ea86c9",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1369,
+      "eval_count": 48,
+      "total_duration": 11631320750,
+      "load_duration": 29751958,
+      "prompt_eval_duration": 4809828000,
+      "eval_duration": 6229244000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Benelli 500 Leoncino 2022 a un réservoir de 12,70 litres.",
+            "sources": [
+              "P6"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": false,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": false,
+        "jev_calls": 1,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "unsupported",
+            "probabilities": {
+              "supported": 0.24,
+              "unsupported": 0.76
+            },
+            "confidence": 0.52
+          }
+        }
+      },
+      "removed_claims": 0,
+      "mode": "mixed",
+      "seconds": 11.953009832883254
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 13.59904958307743
+}

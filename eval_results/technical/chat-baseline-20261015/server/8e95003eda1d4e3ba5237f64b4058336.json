@@ -1,0 +1,60 @@
+{
+  "id": "8e95003eda1d4e3ba5237f64b4058336",
+  "question": "Et combien de fiches cela représente-t-il ?",
+  "started_at": "2026-10-15T15:45:02.476868+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3560,
+        "output_tokens": 953,
+        "cost": 0.00014952
+      },
+      "seconds": 0.44579012505710125,
+      "reserved_usd": 0.0026088720000000004,
+      "debit_usd": 0.00014952
+    }
+  ],
+  "history_messages": 2,
+  "answer": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [
+        {
+          "field": "power_ch",
+          "op": ">",
+          "value": 100.0
+        }
+      ],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Et combien de fiches cela représente-t-il ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "count"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "count",
+    "_catalog_seconds": 0.5542256250046194,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.5543594998307526
+}

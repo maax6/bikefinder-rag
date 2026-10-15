@@ -1,0 +1,32 @@
+{
+  "test_server_pid": 41228,
+  "test_server_command_verified": true,
+  "original_chat_status": 200,
+  "ollama_after_status": 200,
+  "ollama_after": {
+    "models": [
+      {
+        "name": "mistral-small3.2:latest",
+        "model": "mistral-small3.2:latest",
+        "size": 15605348433,
+        "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "mistral3",
+          "families": [
+            "mistral3"
+          ],
+          "parameter_size": "24.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-15T18:08:05.766474+02:00",
+        "size_vram": 15605348433,
+        "context_length": 8192,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "html_preview_error": "ConnectionError",
+  "isolated_test_server_stop_requested": true
+}

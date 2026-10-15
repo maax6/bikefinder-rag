@@ -1,0 +1,54 @@
+{
+  "id": "1c09d9bfb74749aa87e9ffe9eb3c1e3f",
+  "question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+  "started_at": "2026-10-15T15:42:45.596353+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3496,
+        "output_tokens": 953,
+        "cost": 0.000146832
+      },
+      "seconds": 0.35999179212376475,
+      "reserved_usd": 0.0025823280000000005,
+      "debit_usd": 0.000146832
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**20 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Hauteur de selle (mm) | Source |\n|---|---:|---|---|\n| Suzuki 1000 Katana | 2022 | Châssis — Hauteur de selle : 825 mm | [Fiche](https://www.motoplanete.com/suzuki/9273/1000-Katana-2022/contact.html) |\n| Suzuki 1050 V-Strom | 2022 | Châssis — Hauteur de selle : 855 mm | [Fiche](https://www.motoplanete.com/suzuki/9198/1050-V-Strom-2022/contact.html) |\n| Suzuki 1050 V-Strom XT | 2022 | Châssis — Hauteur de selle réglable entre 850 mm et 870 mm | [Fiche](https://www.motoplanete.com/suzuki/9197/1050-V-Strom-XT-2022/contact.html) |\n| Suzuki 1050 V-Strom XT World Adventure | 2022 | Châssis — Hauteur de selle réglable entre 850 mm et 870 mm | [Fiche](https://www.motoplanete.com/suzuki/9511/1050-V-Strom-XT-World-Adventure-2022/contact.html) |\n| Suzuki DL 650 V-STROM | 2022 | Châssis — Hauteur de selle : 835 mm | [Fiche](https://www.motoplanete.com/suzuki/8962/DL-650-V-STROM-2022/contact.html) |\n| Suzuki DL 650 V-STROM XT | 2022 | Châssis — Hauteur de selle : 830 mm | [Fiche](https://www.motoplanete.com/suzuki/8964/DL-650-V-STROM-XT-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa | 2022 | Châssis — Hauteur de selle : 800 mm | [Fiche](https://www.motoplanete.com/suzuki/9084/GSX-1300-R-Hayabusa-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Bol d’Or | 2022 | Châssis — Hauteur de selle : 800 mm | [Fiche](https://www.motoplanete.com/suzuki/9616/GSX-1300-R-Hayabusa-Bol-dOr-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Yoshimura SERT Motul Replica | 2022 | Châssis — Hauteur de selle : 800 mm | [Fiche](https://www.motoplanete.com/suzuki/9508/GSX-1300-R-Hayabusa-Yoshimura-SERT-Motul-Replica-2022/contact.html) |\n| Suzuki GSX-R 125 | 2022 | Châssis — Hauteur de selle : 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9081/GSX-R-125-2022/contact.html) |\n| Suzuki GSX-S 1000 | 2022 | Châssis — Hauteur de selle : 810 mm | [Fiche](https://www.motoplanete.com/suzuki/9199/GSX-S-1000-2022/contact.html) |\n| Suzuki GSX-S 1000 GT | 2022 | Châssis — Hauteur de selle : 810 mm | [Fiche](https://www.motoplanete.com/suzuki/8932/GSX-S-1000-GT-2022/contact.html) |\n| Suzuki GSX-S 1000 Power Edition | 2022 | Châssis — Hauteur de selle : 810 mm | [Fiche](https://www.motoplanete.com/suzuki/9509/GSX-S-1000-Power-Edition-2022/contact.html) |\n| Suzuki GSX-S 125 | 2022 | Châssis — Hauteur de selle : 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9082/GSX-S-125-2022/contact.html) |\n| Suzuki GSX-S 950 | 2022 | Châssis — Hauteur de selle : 810 mm | [Fiche](https://www.motoplanete.com/suzuki/9196/GSX-S-950-2022/contact.html) |\n| Suzuki GSX-S 950 R'' Design | 2022 | Châssis — Hauteur de selle : 810 mm | [Fiche](https://www.motoplanete.com/suzuki/9417/GSX-S-950-R-Design-2022/contact.html) |\n| Suzuki RM-Z 250 | 2022 | Châssis — Hauteur de selle : 955 mm | [Fiche](https://www.motoplanete.com/suzuki/10633/RM-Z-250-2022/contact.html) |\n| Suzuki RM-Z 450 | 2022 | Châssis — Hauteur de selle : 960 mm | [Fiche](https://www.motoplanete.com/suzuki/10305/RM-Z-450-2022/contact.html) |\n| Suzuki SV 650 | 2022 | Châssis — Hauteur de selle : 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n| Suzuki SV 650 X | 2022 | Châssis — Hauteur de selle : 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9200/SV-650-X-2022/contact.html) |",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "seat_height_mm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.44866412482224405,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4488592080306262
+}

@@ -1,0 +1,61 @@
+{
+  "id": "a9bad38630f249069ecc25f6a52f72b3",
+  "question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+  "started_at": "2026-10-15T16:26:16.244141+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3576,
+        "output_tokens": 967,
+        "cost": 0.000150192
+      },
+      "seconds": 0.30840254202485085,
+      "reserved_usd": 0.0026426400000000004,
+      "debit_usd": 0.000150192
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Calcul sur **20 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 18/20 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Minimum : 785 mm** — 4 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSX-R 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9081/GSX-R-125-2022/contact.html) |\n| Suzuki GSX-S 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9082/GSX-S-125-2022/contact.html) |\n| Suzuki SV 650 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n| Suzuki SV 650 X (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9200/SV-650-X-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "seat_height_mm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "min",
+        "fields": [
+          "seat_height_mm"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.37788383290171623,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.3781577500049025
+}

@@ -1,0 +1,266 @@
+{
+  "id": "1755561273a943549804a1ccceb1947e",
+  "question": "La présence de l’ABS sur la Honda NT 1100 de 2022 garantit-elle que je ne peux pas tomber ?",
+  "started_at": "2026-10-15T15:43:32.288003+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3705,
+        "output_tokens": 953,
+        "cost": 0.00015561
+      },
+      "seconds": 0.32664595800451934,
+      "reserved_usd": 0.0026718720000000005,
+      "debit_usd": 0.00015561
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1729,
+        "output_tokens": 113,
+        "cost": 7.2618e-05
+      },
+      "seconds": 0.3942818338982761,
+      "reserved_usd": 0.0011639040000000001,
+      "debit_usd": 7.2618e-05
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n### Honda NT 1100 (2022)\n\n- **Suspensions et réglages avant/arrière — la fiche indique :** Train avant — Fourche téléhydraulique inversée Ø 43 mm, déb : 150 mm ; Train arrière — Mono-amortisseur, déb : 150 mm\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Freins avant/arrière — la fiche indique :** Train avant — Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons ; Train arrière — Freinage : 1 disque Ø 256 mm, étrier simple piston\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n- **Puissance documentée (unités source) — la fiche indique :** Moteur — 102 ch à 7 500 tr/min\n  La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée.\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html)\nPreuves retenues : Équipement de série, Performances, Moteur, Infos pratiques, Coloris, Train avant, Train arrière.\n\n**Preuves manquantes ou non vérifiées :**\n- Honda NT 1100 (2022) — Suspensions et réglages avant/arrière — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Honda NT 1100 (2022) — Freins avant/arrière — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Honda NT 1100 (2022) — Puissance documentée (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "complex",
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "NT 1100"
+        }
+      ],
+      "identity": {
+        "year": 2022
+      },
+      "conditions": [],
+      "equipment": null,
+      "status": "standard",
+      "fields": [
+        "suspension",
+        "braking",
+        "power_ch"
+      ]
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 31.917405375046656,
+    "_catalog_jev_calls": 2,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "13fd3b866069e1ee",
+          "brand": "Honda",
+          "model": "NT 1100",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+          "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "suspension": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "13fd3b866069e1ee:section:1",
+                "13fd3b866069e1ee:section:3"
+              ]
+            },
+            "braking": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "13fd3b866069e1ee:section:1",
+                "13fd3b866069e1ee:section:3"
+              ]
+            },
+            "power_ch": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "13fd3b866069e1ee:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "13fd3b866069e1ee:section:5",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS de série; Bluetooth; Poignées chauffantes",
+              "text": "Honda NT 1100 2022\nÉquipement de série\nAssistance au freinage : ABS de série; Bluetooth; Poignées chauffantes",
+              "score": 0.6144248247146606,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:7",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Performances",
+              "original_text": "Vitesse max : supérieur à 200 km/h; Consommation moyenne : 5 l/100km; Autonomie estimée : 408 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Honda NT 1100 2022\nPerformances\nVitesse max : supérieur à 200 km/h; Consommation moyenne : 5 l/100km; Autonomie estimée : 408 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.5881308913230896,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:4",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 1 084 cc (Alésage * course: 92 x 81.5 mm); 102 ch à 7 500 tr/min; 10,70 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.16 kg/ch; Rapport poids / couple : environ 20.62 kg/mkg; Compression : 10.1 : 1; Emission CO² : 112 g/km",
+              "text": "Honda NT 1100 2022\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 1 084 cc (Alésage * course: 92 x 81.5 mm); 102 ch à 7 500 tr/min; 10,70 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.16 kg/ch; Rapport poids / couple : environ 20.62 kg/mkg; Compression : 10.1 : 1; Emission CO² : 112 g/km",
+              "score": 0.5841959118843079,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:6",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A",
+              "text": "Honda NT 1100 2022\nInfos pratiques\nLa moto est accessible aux permis : A",
+              "score": 0.5757836103439331,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:9",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Honda NT 1100 2022\nColoris\nColoris : non défini",
+              "score": 0.5722607970237732,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:1",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 43 mm, déb : 150 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "text": "Honda NT 1100 2022\nTrain avant\nFourche téléhydraulique inversée Ø 43 mm, déb : 150 mm; Freinage : 2 disques Ø 310 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "score": 0.5448030233383179,
+              "rank": 10,
+              "selection_reason": "required_field"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:3",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur, déb : 150 mm; Freinage : 1 disque Ø 256 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+              "text": "Honda NT 1100 2022\nTrain arrière\nMono-amortisseur, déb : 150 mm; Freinage : 1 disque Ø 256 mm, étrier simple piston; Roue arrière : 180 / 55 - 17; Pression : 2.9 bars",
+              "score": 0.5549567937850952,
+              "rank": 8,
+              "selection_reason": "required_field"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "13fd3b866069e1ee",
+          "field": "suspension",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "13fd3b866069e1ee",
+          "field": "braking",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "13fd3b866069e1ee",
+          "field": "power_ch",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 3.3318065106868744e-07,
+          "query_encoding_seconds": 1.0978965831454843,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "13fd3b866069e1ee",
+          "proof_check": {
+            "fields": {
+              "suspension": "unverified",
+              "braking": "unverified",
+              "power_ch": "unverified"
+            },
+            "jev_calls": 1,
+            "seconds": 0.39829491591081023
+          }
+        }
+      ],
+      "seconds": 1.5056301658041775,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "b494e30b9dd31e39f0164475776fb0715689f9357264e8b85a5823d2f7d7bd08",
+      "error": "ReadTimeout",
+      "seconds": 30.0153925830964
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 31.918497334001586
+}

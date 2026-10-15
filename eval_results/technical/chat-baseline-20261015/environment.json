@@ -1,0 +1,15 @@
+{
+  "python": "3.11.15",
+  "machine": "arm64",
+  "system": "macOS-27.0.1-arm64-arm-64bit",
+  "packages": {
+    "gradio": "6.20.0",
+    "gradio_client": "2.5.0",
+    "sentence_transformers": "5.6.0",
+    "torch": "2.13.0",
+    "transformers": "5.13.0",
+    "psycopg": "3.3.4",
+    "langchain_ollama": "1.1.0"
+  },
+  "runtime_source_files_unchanged": true
+}

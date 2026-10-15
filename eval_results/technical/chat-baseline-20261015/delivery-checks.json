@@ -1,0 +1,18 @@
+{
+  "report": {
+    "status": 200,
+    "matches_saved_html": true,
+    "sha256": "2fe6e5a3e9e4224661199790dcaa778067f37fa61bca2dc82ee7a69519043b08"
+  },
+  "original_chat": {
+    "status": 200
+  },
+  "ui_checks": {
+    "default_unseen_visible": 36,
+    "unseen_failures_visible": 10,
+    "known_all_visible": 6,
+    "known_failures_visible": 4,
+    "answer_expansion_verified": true,
+    "narrow_panel_visual_checked": true
+  }
+}

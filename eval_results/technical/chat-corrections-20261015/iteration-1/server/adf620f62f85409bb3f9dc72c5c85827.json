@@ -1,0 +1,287 @@
+{
+  "id": "adf620f62f85409bb3f9dc72c5c85827",
+  "question": "Je regarde une Royal Enfield Classic 350 de 2022 pour le permis A2 : quelles mentions de permis et de puissance figurent réellement dans sa fiche ?",
+  "started_at": "2026-10-15T16:26:26.244654+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 2473,
+        "output_tokens": 94,
+        "cost": 0.000103866
+      },
+      "seconds": 0.3837360420729965,
+      "reserved_usd": 0.0014431200000000002,
+      "debit_usd": 0.000103866
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La fiche mentionne que la Royal Enfield Classic 350 de 2022 est accessible avec le permis A. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\nLa puissance de la Royal Enfield Classic 350 de 2022 est de 20,20 ch à 6 100 tr/min. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Royal-Enfield Classic 350 (2022) — Puissance documentée (unités source) — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « puissance ».\n- Royal-Enfield Classic 350 (2022) — Permis et mention de bridage dans la fiche, sans certification — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée\n- Royal-Enfield Classic 350 (2022) — Mention A2 — Mention A2 non retrouvée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "details",
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Classic 350",
+          "year": 2022
+        }
+      ],
+      "identity": {},
+      "conditions": [],
+      "fields": [
+        "power_ch",
+        "license"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "source_question": "Je regarde une Royal Enfield Classic 350 de 2022 pour le permis A2 : quelles mentions de permis et de puissance figurent réellement dans sa fiche ?",
+      "a2_context": true,
+      "legal_proof_required": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 23.311107583111152,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "b733b6ae57d72686",
+          "brand": "Royal-Enfield",
+          "model": "Classic 350",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+          "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "b733b6ae57d72686:section:4"
+              ]
+            },
+            "license": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "b733b6ae57d72686:section:6"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "b733b6ae57d72686:section:4",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.65 kg/ch; Rapport poids / couple : 67.24 kg/mkg; Compression : 9.5 : 1; Emission CO² : 63 g/km",
+              "text": "Royal-Enfield Classic 350 2022\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.65 kg/ch; Rapport poids / couple : 67.24 kg/mkg; Compression : 9.5 : 1; Emission CO² : 63 g/km",
+              "score": 0.7141899466514587,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:7",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 110 km/h; Consommation moyenne : 2,63 l/100km; Autonomie estimée : 494 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Royal-Enfield Classic 350 2022\nPerformances\nVitesse max : environ 110 km/h; Consommation moyenne : 2,63 l/100km; Autonomie estimée : 494 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.692040205001831,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:3",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 120 / 80 - 18",
+              "text": "Royal-Enfield Classic 350 2022\nTrain arrière\n2 amortisseurs latéraux; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 120 / 80 - 18",
+              "score": 0.6645233631134033,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:6",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A",
+              "text": "Royal-Enfield Classic 350 2022\nInfos pratiques\nLa moto est accessible aux permis : A",
+              "score": 0.649341344833374,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:2",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Royal-Enfield Classic 350 2022\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.633824348449707,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "b733b6ae57d72686",
+          "field": "power_ch",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « puissance ».",
+          "requested_terms": [
+            "puissance"
+          ]
+        },
+        {
+          "kind": "field",
+          "object_id": "b733b6ae57d72686",
+          "field": "license",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "b733b6ae57d72686",
+          "field": "a2_mention",
+          "message": "Mention A2 non retrouvée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 8.312053978443146e-08,
+          "query_encoding_seconds": 0.5450998339802027,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "b733b6ae57d72686",
+          "proof_check": {
+            "fields": {
+              "power_ch": "unverified",
+              "license": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.011198124848306179
+          }
+        }
+      ],
+      "seconds": 0.5678775000851601,
+      "source_kind": "technical_fiche",
+      "legal_certification": false,
+      "identity_interpretation": {
+        "type": "choice",
+        "choice": "recognized",
+        "probabilities": {
+          "recognized": 1,
+          "unresolved": 0
+        },
+        "confidence": 1
+      }
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "93522457c07e7d4e584a3c530c84f09d880c91507b7045a2fd9a9cbab5012cfe",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1628,
+      "eval_count": 98,
+      "total_duration": 22187100041,
+      "load_duration": 46698625,
+      "prompt_eval_duration": 8089507000,
+      "eval_duration": 13910558000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La fiche mentionne que la Royal Enfield Classic 350 de 2022 est accessible avec le permis A.",
+            "sources": [
+              "P4"
+            ]
+          },
+          {
+            "text": "La puissance de la Royal Enfield Classic 350 de 2022 est de 20,20 ch à 6 100 tr/min.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0,
+          1
+        ],
+        "coverage_verified": false,
+        "jev_calls": 1,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.98,
+              "unsupported": 0.02
+            },
+            "confidence": 0.96
+          },
+          "claim_1": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.99,
+              "unsupported": 0.01
+            },
+            "confidence": 0.98
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.57,
+              "unsupported": 0.43
+            },
+            "confidence": 0.14
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 22.702899541938677
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 23.311725415987894
+}

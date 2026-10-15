@@ -1,0 +1,32 @@
+{
+  "same_sqlite_postgres_source_hashes": true,
+  "fiches": 11478,
+  "passages": 105687,
+  "identity_sources_sha256": "98debbc5ffc4ae4e8f30141dc3b655903d6810ec25c2b28d20ba4fb963b4fd53",
+  "model": [
+    {
+      "name": "mistral-small3.2:latest",
+      "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+      "size": 15177384862,
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "mistral3",
+        "families": [
+          "mistral3"
+        ],
+        "parameter_size": "24.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 5120,
+        "runner": "ggml"
+      }
+    }
+  ],
+  "baseline_budget_debit": 0.008338512,
+  "retest_cap": 0.49,
+  "maximum_cumulative_debit": 0.498338512,
+  "final_retest_cap": 0.48,
+  "final_maximum_cumulative_debit": 0.488338512,
+  "cap_note": "Initial .49 cap lowered to .48 at final server restart; loaded ledger includes iteration-1 spend."
+}

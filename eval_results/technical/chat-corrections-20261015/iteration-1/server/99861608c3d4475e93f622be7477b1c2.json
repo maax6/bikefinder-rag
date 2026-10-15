@@ -1,0 +1,77 @@
+{
+  "id": "99861608c3d4475e93f622be7477b1c2",
+  "question": "Calcule la puissance moyenne de la Honda CB 500 F sur les trois millésimes 2020, 2021 et 2022, une fiche standard par année.",
+  "started_at": "2026-10-15T16:26:17.712701+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4523,
+        "output_tokens": 1136,
+        "cost": 0.000189966
+      },
+      "seconds": 0.36385945905931294,
+      "reserved_usd": 0.0030488640000000005,
+      "debit_usd": 0.000189966
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Puissance** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (144 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2021
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2022
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "unresolved_variant": false,
+      "variant_unknown": false,
+      "source_question": "Calcule la puissance moyenne de la Honda CB 500 F sur les trois millésimes 2020, 2021 et 2022, une fiche standard par année.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "power_ch"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.42185245896689594,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.42210500012151897
+}

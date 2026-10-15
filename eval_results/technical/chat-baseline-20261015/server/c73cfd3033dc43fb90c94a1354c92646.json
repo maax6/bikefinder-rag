@@ -1,0 +1,22 @@
+{
+  "id": "c73cfd3033dc43fb90c94a1354c92646",
+  "question": "Les chevaux fiscaux et les chevaux du moteur, est-ce la même mesure ?",
+  "started_at": "2026-10-15T15:42:55.007004+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Précise une puissance moteur en ch/cv et des nombres ordinaires, sans notation scientifique ni puissance fiscale.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.00025049992837011814
+}

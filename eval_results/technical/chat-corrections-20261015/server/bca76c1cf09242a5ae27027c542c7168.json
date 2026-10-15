@@ -1,0 +1,58 @@
+{
+  "id": "bca76c1cf09242a5ae27027c542c7168",
+  "question": "Quel réservoir possède la Benelli 500 Leoncino ?",
+  "started_at": "2026-10-15T16:40:35.000556+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3684,
+        "output_tokens": 967,
+        "cost": 0.000154728
+      },
+      "seconds": 0.32917533395811915,
+      "reserved_usd": 0.002694384,
+      "debit_usd": 0.000154728
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Benelli"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Benelli",
+          "model": "500 LEONCINO"
+        }
+      ],
+      "fields": [
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quel réservoir possède la Benelli 500 Leoncino ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.3683104591909796,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.36853920784778893
+}

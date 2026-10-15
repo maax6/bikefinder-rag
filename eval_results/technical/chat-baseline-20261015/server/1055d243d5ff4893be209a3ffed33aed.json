@@ -1,0 +1,55 @@
+{
+  "id": "1055d243d5ff4893be209a3ffed33aed",
+  "question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+  "started_at": "2026-10-15T15:44:59.941670+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4007,
+        "output_tokens": 1122,
+        "cost": 0.000168294
+      },
+      "seconds": 0.3544421249534935,
+      "reserved_usd": 0.002829624,
+      "debit_usd": 0.000168294
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield 410 Himalayan | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9287/410-Himalayan-2022/contact.html) |\n| Royal-Enfield 411 Scram | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9345/411-Scram-2022/contact.html) |\n| Royal-Enfield Classic 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html) |\n| Royal-Enfield Continental GT 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9284/Continental-GT-650-2022/contact.html) |\n| Royal-Enfield Continental GT 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9116/Continental-GT-650-120th-Anniversary-2022/contact.html) |\n\nSélection de 5 fiches sur 10. Affine les critères pour réduire la liste.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "limit": 5
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.4361382080242038,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4364005830138922
+}

@@ -1,0 +1,270 @@
+{
+  "id": "d1e379f9d5664b288e4d7ddb579a3d2d",
+  "question": "Donne les poids à sec et tous pleins faits de la Suzuki GSF 1200 Bandit de 2000.",
+  "started_at": "2026-10-15T15:46:56.750918+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3722,
+        "output_tokens": 953,
+        "cost": 0.000156324
+      },
+      "seconds": 0.3544955828692764,
+      "reserved_usd": 0.0026691840000000002,
+      "debit_usd": 0.000156324
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1461,
+        "output_tokens": 81,
+        "cost": 6.1362e-05
+      },
+      "seconds": 0.30807458399794996,
+      "reserved_usd": 0.0009643200000000002,
+      "debit_usd": 6.1362e-05
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 2001,
+        "output_tokens": 64,
+        "cost": 8.4042e-05
+      },
+      "seconds": 0.34561212500557303,
+      "reserved_usd": 0.00109956,
+      "debit_usd": 8.4042e-05
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La Suzuki GSF 1200 Bandit de 2000 pèse 214 kg à sec et 244 kg tous pleins faits. [Suzuki GSF 1200 BANDIT (2000)](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2000
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 BANDIT"
+        }
+      ],
+      "fields": [
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Donne les poids à sec et tous pleins faits de la Suzuki GSF 1200 Bandit de 2000.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral",
+    "_catalog_seconds": 25.900939208921045,
+    "_catalog_jev_calls": 3,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "269c34c7d6325a60",
+          "brand": "Suzuki",
+          "model": "GSF 1200 BANDIT",
+          "year": 2000,
+          "source_url": "https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html",
+          "source_sha256": "242c928b72d2b4c9ed431f79c78dc5e1f5bc1e6d11f84cc50ef4fcfcad063586",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "weight_dry_kg": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "269c34c7d6325a60:section:0"
+              ]
+            },
+            "weight_wet_kg": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "269c34c7d6325a60:section:0"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "269c34c7d6325a60:section:0",
+              "object_id": "269c34c7d6325a60",
+              "brand": "Suzuki",
+              "model": "GSF 1200 BANDIT",
+              "year": 2000,
+              "source_url": "https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html",
+              "source_sha256": "242c928b72d2b4c9ed431f79c78dc5e1f5bc1e6d11f84cc50ef4fcfcad063586",
+              "section": "Châssis",
+              "original_text": "Cadre : Double berceau tubulaire en acier; Réservoir : 20 litres; Hauteur de selle : 790 mm; Longueur : 2 070 mm; Largeur : 765 mm; Hauteur entre 1 100 mm et 1 220 mm; Empattement : 1 430 mm; Poids à sec : 214 kg; Poids tous pleins faits : 244 kg",
+              "text": "Suzuki GSF 1200 BANDIT 2000\nChâssis\nCadre : Double berceau tubulaire en acier; Réservoir : 20 litres; Hauteur de selle : 790 mm; Longueur : 2 070 mm; Largeur : 765 mm; Hauteur entre 1 100 mm et 1 220 mm; Empattement : 1 430 mm; Poids à sec : 214 kg; Poids tous pleins faits : 244 kg",
+              "score": 0.7237309217453003,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "269c34c7d6325a60:section:4",
+              "object_id": "269c34c7d6325a60",
+              "brand": "Suzuki",
+              "model": "GSF 1200 BANDIT",
+              "year": 2000,
+              "source_url": "https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html",
+              "source_sha256": "242c928b72d2b4c9ed431f79c78dc5e1f5bc1e6d11f84cc50ef4fcfcad063586",
+              "section": "Moteur",
+              "original_text": "4 cylindres en ligne , 4 temps; 4 carburateurs Ø 36 mm; Refroidissement : combiné air / huile; 2 ACT; 4 soupapes par cylindre; 1 157 cc (Alésage * course: 79 x 59 mm); 100 ch à 8 500 tr/min; 9,20 mkg à 6 500 tr/min; Rapport poids / puissance : 2.14 kg/ch; Rapport poids / couple : 23.26 kg/mkg; Compression : 9.5 : 1",
+              "text": "Suzuki GSF 1200 BANDIT 2000\nMoteur\n4 cylindres en ligne , 4 temps; 4 carburateurs Ø 36 mm; Refroidissement : combiné air / huile; 2 ACT; 4 soupapes par cylindre; 1 157 cc (Alésage * course: 79 x 59 mm); 100 ch à 8 500 tr/min; 9,20 mkg à 6 500 tr/min; Rapport poids / puissance : 2.14 kg/ch; Rapport poids / couple : 23.26 kg/mkg; Compression : 9.5 : 1",
+              "score": 0.70127934217453,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "269c34c7d6325a60:section:1",
+              "object_id": "269c34c7d6325a60",
+              "brand": "Suzuki",
+              "model": "GSF 1200 BANDIT",
+              "year": 2000,
+              "source_url": "https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html",
+              "source_sha256": "242c928b72d2b4c9ed431f79c78dc5e1f5bc1e6d11f84cc50ef4fcfcad063586",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø nc, déb : 130 mm; Freinage : 2 disques Ø 310 mm, étrier 6 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "text": "Suzuki GSF 1200 BANDIT 2000\nTrain avant\nFourche téléhydraulique Ø nc, déb : 130 mm; Freinage : 2 disques Ø 310 mm, étrier 6 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "score": 0.6798647046089172,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "269c34c7d6325a60:section:2",
+              "object_id": "269c34c7d6325a60",
+              "brand": "Suzuki",
+              "model": "GSF 1200 BANDIT",
+              "year": 2000,
+              "source_url": "https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html",
+              "source_sha256": "242c928b72d2b4c9ed431f79c78dc5e1f5bc1e6d11f84cc50ef4fcfcad063586",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports; Secondaire par chaîne",
+              "text": "Suzuki GSF 1200 BANDIT 2000\nTransmission\nboîte à 5 rapports; Secondaire par chaîne",
+              "score": 0.6722092628479004,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "269c34c7d6325a60:section:6",
+              "object_id": "269c34c7d6325a60",
+              "brand": "Suzuki",
+              "model": "GSF 1200 BANDIT",
+              "year": 2000,
+              "source_url": "https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html",
+              "source_sha256": "242c928b72d2b4c9ed431f79c78dc5e1f5bc1e6d11f84cc50ef4fcfcad063586",
+              "section": "Performances",
+              "original_text": "Vitesse max : 228 km/h; Accélération 0 à 100 km/h : 3,40 s; Consommation moyenne : 8,30 l/100km; Autonomie estimée : 241 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Suzuki GSF 1200 BANDIT 2000\nPerformances\nVitesse max : 228 km/h; Accélération 0 à 100 km/h : 3,40 s; Consommation moyenne : 8,30 l/100km; Autonomie estimée : 241 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.6567627191543579,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": false,
+          "document_encoding_seconds": 1.6496793748810887,
+          "query_encoding_seconds": 0.06066383281722665,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "269c34c7d6325a60",
+          "proof_check": {
+            "fields": {
+              "weight_dry_kg": "complete",
+              "weight_wet_kg": "complete"
+            },
+            "jev_calls": 1,
+            "seconds": 0.3114867080003023
+          }
+        }
+      ],
+      "seconds": 2.024556792108342,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "bad5feac809e8de8fab24102a2488cea6238561be87c7f3a985c0ca837cba95f",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1603,
+      "eval_count": 57,
+      "total_duration": 23074780333,
+      "load_duration": 6080166,
+      "prompt_eval_duration": 12411736000,
+      "eval_duration": 10528375000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Suzuki GSF 1200 Bandit de 2000 pèse 214 kg à sec et 244 kg tous pleins faits.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 1,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.98,
+              "unsupported": 0.02
+            },
+            "confidence": 0.96
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 23.44854454207234
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 25.901127291144803
+}

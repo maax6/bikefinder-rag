@@ -1,0 +1,68 @@
+{
+  "id": "441e37e01fe3458dadbb7f6ebf851aaa",
+  "question": "Quelle est la capacité du réservoir de la Honda NT 1100 de 2007 ?",
+  "started_at": "2026-10-15T15:43:30.536747+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3682,
+        "output_tokens": 953,
+        "cost": 0.000154644
+      },
+      "seconds": 0.5249601250980049,
+      "reserved_usd": 0.0026574240000000002,
+      "debit_usd": 0.000154644
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Fiche exacte non identifiée : Honda NT 1100 (2007). Aucune autre année ou variante substituée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2007
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "NT 1100"
+        }
+      ],
+      "fields": [
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle est la capacité du réservoir de la Honda NT 1100 de 2007 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6119762500748038,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [],
+      "missing": [
+        {
+          "kind": "identity",
+          "message": "Fiche exacte non identifiée : Honda NT 1100 (2007). Aucune autre année ou variante substituée."
+        }
+      ],
+      "retrieval_executed": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.6122217918746173
+}

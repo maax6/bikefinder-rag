@@ -1,0 +1,50 @@
+{
+  "id": "81fe9621a65b42fb898cf37e90fc14d3",
+  "question": "Les cinq suivantes, avec les mêmes critères.",
+  "started_at": "2026-10-15T15:45:00.424619+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3901,
+        "output_tokens": 1122,
+        "cost": 0.000163842
+      },
+      "seconds": 0.43312499998137355,
+      "reserved_usd": 0.0027857760000000002,
+      "debit_usd": 0.000163842
+    }
+  ],
+  "history_messages": 2,
+  "answer": "Précise au moins un millésime, une marque ou un critère technique pour filtrer le catalogue.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [],
+      "fields": [],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Les cinq suivantes, avec les mêmes critères.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "limit": 5
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.4895830841269344,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4897376250009984
+}

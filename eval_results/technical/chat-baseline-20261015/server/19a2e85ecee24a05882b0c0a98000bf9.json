@@ -1,0 +1,54 @@
+{
+  "id": "19a2e85ecee24a05882b0c0a98000bf9",
+  "question": "Quelle cylindrée maximale sur la marque yamaha en 2020",
+  "started_at": "2026-10-15T15:46:55.058016+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3480,
+        "output_tokens": 953,
+        "cost": 0.00014616
+      },
+      "seconds": 0.47208554204553366,
+      "reserved_usd": 0.0025730880000000003,
+      "debit_usd": 0.00014616
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**43 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Cylindrée (cc) | Source |\n|---|---:|---|---|\n| Yamaha 1000 MT-10 | 2020 | Moteur — 998 cc (Alésage * course: 79 x 50.9 mm) | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 700 MT-07 | 2020 | Moteur — 689 cc (Alésage * course: 80 x 68.6 mm) | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n| Yamaha 700 Ténéré | 2020 | Moteur — 689 cc (Alésage * course: 80 x 68.6 mm) | [Fiche](https://www.motoplanete.com/yamaha/8197/700-Tenere-2020/contact.html) |\n| Yamaha 700 Ténéré Rally | 2020 | Moteur — 689 cc (Alésage * course: 80 x 68.6 mm) | [Fiche](https://www.motoplanete.com/yamaha/8408/700-Tenere-Rally-2020/contact.html) |\n| Yamaha 700 Tracer | 2020 | Moteur — 689 cc (Alésage * course: 80 x 68.6 mm) | [Fiche](https://www.motoplanete.com/yamaha/8159/700-Tracer-2020/contact.html) |\n| Yamaha 847-R | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8409/847-R-2020/contact.html) |\n| Yamaha 850 MT-09 | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8173/850-MT-09-2020/contact.html) |\n| Yamaha 850 MT-09 SP | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8192/900-Tracer-2020/contact.html) |\n| Yamaha 900 Tracer GT | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha FJR 1300 A | 2020 | Moteur — 1 298 cc (Alésage * course: 79 x 66.2 mm) | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition | 2020 | Moteur — 1 298 cc (Alésage * course: 79 x 66.2 mm) | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n| Yamaha MT-03 320 | 2020 | Moteur — 321 cc (Alésage * course: 68 x 44.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8100/MT-03-320-2020/contact.html) |\n| Yamaha MT-10 SP | 2020 | Moteur — 998 cc (Alésage * course: 79 x 50.9 mm) | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha MT-125 | 2020 | Moteur — 124,70 cc (Alésage * course: 52 x 58.6 mm) | [Fiche](https://www.motoplanete.com/yamaha/8111/MT-125-2020/contact.html) |\n| Yamaha Niken 900 | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8300/Niken-900-2020/contact.html) |\n| Yamaha Niken 900 GT | 2020 | Moteur — 847 cc (Alésage * course: 78 x 59.1 mm) | [Fiche](https://www.motoplanete.com/yamaha/8301/Niken-900-GT-2020/contact.html) |\n| Yamaha SCR 950 | 2020 | Moteur — 942 cc (Alésage * course: 85 x 83 mm) | [Fiche](https://www.motoplanete.com/yamaha/8298/SCR-950-2020/contact.html) |\n| Yamaha WR 250 F | 2020 | Moteur — 250 cc (Alésage * course: 77 x 53.6 mm) | [Fiche](https://www.motoplanete.com/yamaha/8072/WR-250-F-2020/contact.html) |\n| Yamaha WR 450 F | 2020 | Moteur — 449 cc (Alésage * course: 97 x 60.8 mm) | [Fiche](https://www.motoplanete.com/yamaha/8071/WR-450-F-2020/contact.html) |\n\nSélection de 20 fiches sur 43. Affine les critères pour réduire la liste.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Yamaha",
+        "year": 2020
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "displacement_ccm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle cylindrée maximale sur la marque yamaha en 2020",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.610641417093575,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.610816832864657
+}

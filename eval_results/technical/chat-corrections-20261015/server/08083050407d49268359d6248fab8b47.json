@@ -1,0 +1,47 @@
+{
+  "id": "08083050407d49268359d6248fab8b47",
+  "question": "Et combien de fiches cela représente-t-il ?",
+  "started_at": "2026-10-15T16:37:51.079776+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [
+        {
+          "field": "power_ch",
+          "op": ">",
+          "value": 100.0
+        }
+      ],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Et combien de fiches cela représente-t-il ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "count",
+      "offset": 0
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "count",
+    "_catalog_seconds": 0.05973066599108279,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.059847583062946796
+}

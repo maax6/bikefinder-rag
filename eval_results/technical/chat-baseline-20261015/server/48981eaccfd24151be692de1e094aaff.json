@@ -1,0 +1,22 @@
+{
+  "id": "48981eaccfd24151be692de1e094aaff",
+  "question": "Comment se calcule une puissance fiscale en cv",
+  "started_at": "2026-10-15T15:46:52.829333+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Précise une puissance moteur en ch/cv et des nombres ordinaires, sans notation scientifique ni puissance fiscale.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0004248330369591713
+}

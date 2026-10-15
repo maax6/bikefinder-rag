@@ -1,0 +1,140 @@
+{
+  "quality_unseen": {
+    "failure": 10,
+    "correct": 21,
+    "partial": 1,
+    "justified_limit": 4
+  },
+  "quality_known": {
+    "failure": 4,
+    "partial": 1,
+    "correct": 1
+  },
+  "latency_first": {
+    "n": 42,
+    "median_seconds": 2.0233929589157924,
+    "p95_nearest_rank_seconds": 32.926150707993656,
+    "min_seconds": 0.06753833405673504,
+    "max_seconds": 47.289831874892116
+  },
+  "latency_unseen": {
+    "n": 36,
+    "median_seconds": 24.034939749981277,
+    "p95_nearest_rank_seconds": 33.07335433294065,
+    "min_seconds": 0.06753833405673504,
+    "max_seconds": 47.289831874892116
+  },
+  "latency_first_excluding_first_load": {
+    "n": 41,
+    "median_seconds": 0.8060465839225799,
+    "p95_nearest_rank_seconds": 32.580867333104834,
+    "min_seconds": 0.06753833405673504,
+    "max_seconds": 33.07335433294065
+  },
+  "latency_warm_repeat": {
+    "n": 6,
+    "median_seconds": 0.6021970210131258,
+    "p95_nearest_rank_seconds": 22.585289290873334,
+    "min_seconds": 0.11586124985478818,
+    "max_seconds": 22.585289290873334
+  },
+  "latency_rag_first": {
+    "n": 21,
+    "median_seconds": 31.814734666142613,
+    "p95_nearest_rank_seconds": 33.07335433294065,
+    "min_seconds": 3.240739333909005,
+    "max_seconds": 47.289831874892116
+  },
+  "latency_without_rag_first": {
+    "n": 21,
+    "median_seconds": 0.49359862483106554,
+    "p95_nearest_rank_seconds": 0.7050043749623001,
+    "min_seconds": 0.06753833405673504,
+    "max_seconds": 0.8060465839225799
+  },
+  "routes_first": {
+    "rag_mistral_fallback": 10,
+    "rag_mistral": 5,
+    "rag_mistral_partial": 5,
+    "rag_partial": 1,
+    "filter": 5,
+    "clarification": 13,
+    "count": 3
+  },
+  "retrieval_turns_first": 21,
+  "generation_attempts_first": 20,
+  "generation_published_first": 10,
+  "generation_errors_first": {
+    "ReadTimeout": 9,
+    "unverified_claims": 1
+  },
+  "remote_calls": 74,
+  "reported_cost_usd": 0.008338512000000001,
+  "conservative_debit_usd": 0.008338512000000001,
+  "api_errors": 0,
+  "latency_satisfactory_unseen": {
+    "n": 25,
+    "median_seconds": 25.408973917132244,
+    "p95_nearest_rank_seconds": 32.580867333104834,
+    "min_seconds": 0.4891207499895245,
+    "max_seconds": 33.07335433294065
+  },
+  "latency_failed_unseen": {
+    "n": 10,
+    "median_seconds": 0.5088225414510816,
+    "p95_nearest_rank_seconds": 47.289831874892116,
+    "min_seconds": 0.06753833405673504,
+    "max_seconds": 47.289831874892116
+  },
+  "required_field_additions_first": 5,
+  "quality_by_category_unseen": {
+    "absence": {
+      "justified_limit": 2
+    },
+    "agregation": {
+      "failure": 3
+    },
+    "calcul": {
+      "correct": 1
+    },
+    "clarification": {
+      "correct": 1,
+      "failure": 1
+    },
+    "comparaison": {
+      "partial": 1,
+      "justified_limit": 1
+    },
+    "compte": {
+      "correct": 2
+    },
+    "contexte": {
+      "correct": 7,
+      "justified_limit": 1
+    },
+    "equipement": {
+      "correct": 1
+    },
+    "filtre": {
+      "failure": 1
+    },
+    "hors_catalogue": {
+      "failure": 1
+    },
+    "identite": {
+      "failure": 1
+    },
+    "lecture": {
+      "failure": 1,
+      "correct": 7
+    },
+    "limite_sources": {
+      "correct": 1,
+      "failure": 1
+    },
+    "pagination": {
+      "correct": 1,
+      "failure": 1
+    }
+  }
+}

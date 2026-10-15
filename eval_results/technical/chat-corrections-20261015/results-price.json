@@ -1,0 +1,176 @@
+{
+  "created_at": "2026-10-15T16:41:09.209877+00:00",
+  "questions_sha256": "52cb797eb94c905ab4972dc54afc8b2a863a32bc98005eb4326ff2d842d6362f",
+  "url": "http://127.0.0.1:7861/",
+  "results": [
+    {
+      "id": "P01",
+      "turn": 1,
+      "group": "holdout",
+      "category": "prix_moyen",
+      "pass": "first",
+      "question": "Quel est le prix moyen de catalogue des Yamaha de 2020 ? Utilise les tarifs France de base et indique combien de prix sont connus.",
+      "expected": "{\"total_fiches\": 43, \"known_prices\": 42, \"sum_eur\": \"522771\", \"mean_eur\": \"12446.92857142857142857142857\", \"scope\": \"France, version de base, prix documentés du catalogue ; ni prix actuels ni annonces d’occasion ; inconnus exclus, pas zéro.\"}",
+      "object_ids": [
+        "c0ab5e8dd6cab495",
+        "67071ba01e4bc6c7",
+        "1474198cc3d01169",
+        "a87405a2e3c058bf",
+        "023b5a2a938bda74",
+        "53d9f42481551ce6",
+        "7563348d531528c1",
+        "0e7f5b6e5ec6b048",
+        "d4f89f69096690e2",
+        "df2bd273efac0d45",
+        "b3917611804afe9b",
+        "abadd05b9757ffc7",
+        "8911e6ec6d70185e",
+        "bda4d5b42c14a31c",
+        "9491c3d0e0a0e2a1",
+        "2f17d3b321d68294",
+        "029727cbed724ce7",
+        "e4a2f42d4eca3ce7",
+        "fa0f56ef15318e50",
+        "8fd31e197b0e0734",
+        "9a62a4f7e47cf67d",
+        "4fbfc9bd85ffa460",
+        "d51c2336299ebb74",
+        "386981a9ef9dc16e",
+        "4a0becebc6f3922e",
+        "09a848ed15ef7b87",
+        "2dd9c39da84e1c0f",
+        "b0a9b897bd2dea03",
+        "45c3f8f2ce7ca0de",
+        "33bd0e4ca9b05126",
+        "eb5bda28dd039c4c",
+        "b78bacbdfe07d783",
+        "26383bb3a070fa62",
+        "8ff283e632ee3535",
+        "a76537fa5f3d8910",
+        "c57adfe25518b91f",
+        "4d78b10704a03217",
+        "92fb8f77c977a6ed",
+        "d7ec399c5cc7e9d1",
+        "21e1b2941ea62445",
+        "3a6d86e6676ced34",
+        "594342907274fbd7",
+        "d859cb4119f77a81"
+      ],
+      "client_setup_seconds": 0.03514100005850196,
+      "started_at": "2026-10-15T16:41:09.246359+00:00",
+      "answer": "Calcul sur **43 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 42/43 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Moyenne arithmétique : 12446,929 €** (522771 / 42 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Yamaha 1000 MT-10 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 700 MT-07 (2020) | Tarifs — France — Version de base 7 099 € * | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n| Yamaha 700 Ténéré (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8197/700-Tenere-2020/contact.html) |\n| Yamaha 700 Ténéré Rally (2020) | Tarifs — France — Version de base 11 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8408/700-Tenere-Rally-2020/contact.html) |\n| Yamaha 700 Tracer (2020) | Tarifs — France — Version de base 8 799 € * | [Fiche](https://www.motoplanete.com/yamaha/8159/700-Tracer-2020/contact.html) |\n| Yamaha 850 MT-09 (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/8173/850-MT-09-2020/contact.html) |\n| Yamaha 850 MT-09 SP (2020) | Tarifs — France — Version de base 10 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer (2020) | Tarifs — France — Version de base 10 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8192/900-Tracer-2020/contact.html) |\n| Yamaha 900 Tracer GT (2020) | Tarifs — France — Version de base 12 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha FJR 1300 A (2020) | Tarifs — France — Version de base 17 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition (2020) | Tarifs — France — Version de base 19 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n| Yamaha MT-03 320 (2020) | Tarifs — France — Version de base 5 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8100/MT-03-320-2020/contact.html) |\n| Yamaha MT-10 SP (2020) | Tarifs — France — Version de base 15 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha MT-125 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8111/MT-125-2020/contact.html) |\n| Yamaha Niken 900 (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8300/Niken-900-2020/contact.html) |\n| Yamaha Niken 900 GT (2020) | Tarifs — France — Version de base 16 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8301/Niken-900-GT-2020/contact.html) |\n| Yamaha SCR 950 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8298/SCR-950-2020/contact.html) |\n| Yamaha WR 250 F (2020) | Tarifs — France — Version de base 8 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8072/WR-250-F-2020/contact.html) |\n| Yamaha WR 450 F (2020) | Tarifs — France — Version de base 9 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8071/WR-450-F-2020/contact.html) |\n| Yamaha XSR 700 (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8171/XSR-700-2020/contact.html) |\n| Yamaha XSR 700 XTribute (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8212/XSR-700-XTribute-2020/contact.html) |\n| Yamaha XSR 900 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |\n| Yamaha XSR 900 Yard Built - XR9 Carbona par Bottpower - (2020) | Tarifs — France — Version de base 14 974 € * | [Fiche](https://www.motoplanete.com/yamaha/8629/XSR-900-Yard-Built---XR9-Carbona-par-Bottpower---2020/contact.html) |\n| Yamaha XTZ 1200 Super Ténéré (2020) | Tarifs — France — Version de base 12 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8293/XTZ-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8294/XTZE-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré Raid Edition (2020) | Tarifs — France — Version de base 16 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8295/XTZE-1200-Super-Tenere-Raid-Edition-2020/contact.html) |\n| Yamaha XV 950 R (Bolt) (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8299/XV-950-R--Bolt-2020/contact.html) |\n| Yamaha YART YZF-R6 600 20th Anniversary (2020) | Tarifs — France — Version de base 19 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8386/YART-YZF-R6-600-20th-Anniversary-2020/contact.html) |\n| Yamaha YS 125 (2020) | Tarifs — France — Version de base 2 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8302/YS-125-2020/contact.html) |\n| Yamaha YZ 125 (2020) | Tarifs — France — Version de base 7 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7914/YZ-125-2020/contact.html) |\n| Yamaha YZ 250 (2020) | Tarifs — France — Version de base 8 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7913/YZ-250-2020/contact.html) |\n| Yamaha YZ 250 F (2020) | Tarifs — France — Version de base 8 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7912/YZ-250-F-2020/contact.html) |\n| Yamaha YZ 450 F (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/7911/YZ-450-F-2020/contact.html) |\n| Yamaha YZ 65 (2020) | Tarifs — France — Version de base 4 599 € * | [Fiche](https://www.motoplanete.com/yamaha/7916/YZ-65-2020/contact.html) |\n| Yamaha YZ 85 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7915/YZ-85-2020/contact.html) |\n| Yamaha YZF-R1 1000 (2020) | Tarifs — France — Version de base 19 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7975/YZF-R1-1000-2020/contact.html) |\n| Yamaha YZF-R1 1000 Petronas Replica (2020) | Tarifs — France — Version de base 46 000 € * | [Fiche](https://www.motoplanete.com/yamaha/8456/YZF-R1-1000-Petronas-Replica-2020/contact.html) |\n| Yamaha YZF-R1 1000 Pirovano Replica (2020) | Tarifs — France — Version de base 27 836 € * | [Fiche](https://www.motoplanete.com/yamaha/8512/YZF-R1-1000-Pirovano-Replica-2020/contact.html) |\n| Yamaha YZF-R 125 (2020) | Tarifs — France — Version de base 5 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8070/YZF-R-125-2020/contact.html) |\n| Yamaha YZF-R1M 1000 (2020) | Tarifs — France — Version de base 25 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7976/YZF-R1M-1000-2020/contact.html) |\n| Yamaha YZF-R3 300 (2020) | Tarifs — France — Version de base 5 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8069/YZF-R3-300-2020/contact.html) |\n| Yamaha YZF-R6 600 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8068/YZF-R6-600-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel est le prix moyen de catalogue des Yamaha de 2020 ? Utilise les tarifs France de base et indique combien de prix sont connus.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **43 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 42/43 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Moyenne arithmétique : 12446,929 €** (522771 / 42 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Yamaha 1000 MT-10 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 700 MT-07 (2020) | Tarifs — France — Version de base 7 099 € * | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n| Yamaha 700 Ténéré (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8197/700-Tenere-2020/contact.html) |\n| Yamaha 700 Ténéré Rally (2020) | Tarifs — France — Version de base 11 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8408/700-Tenere-Rally-2020/contact.html) |\n| Yamaha 700 Tracer (2020) | Tarifs — France — Version de base 8 799 € * | [Fiche](https://www.motoplanete.com/yamaha/8159/700-Tracer-2020/contact.html) |\n| Yamaha 850 MT-09 (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/8173/850-MT-09-2020/contact.html) |\n| Yamaha 850 MT-09 SP (2020) | Tarifs — France — Version de base 10 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer (2020) | Tarifs — France — Version de base 10 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8192/900-Tracer-2020/contact.html) |\n| Yamaha 900 Tracer GT (2020) | Tarifs — France — Version de base 12 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha FJR 1300 A (2020) | Tarifs — France — Version de base 17 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition (2020) | Tarifs — France — Version de base 19 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n| Yamaha MT-03 320 (2020) | Tarifs — France — Version de base 5 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8100/MT-03-320-2020/contact.html) |\n| Yamaha MT-10 SP (2020) | Tarifs — France — Version de base 15 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha MT-125 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8111/MT-125-2020/contact.html) |\n| Yamaha Niken 900 (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8300/Niken-900-2020/contact.html) |\n| Yamaha Niken 900 GT (2020) | Tarifs — France — Version de base 16 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8301/Niken-900-GT-2020/contact.html) |\n| Yamaha SCR 950 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8298/SCR-950-2020/contact.html) |\n| Yamaha WR 250 F (2020) | Tarifs — France — Version de base 8 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8072/WR-250-F-2020/contact.html) |\n| Yamaha WR 450 F (2020) | Tarifs — France — Version de base 9 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8071/WR-450-F-2020/contact.html) |\n| Yamaha XSR 700 (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8171/XSR-700-2020/contact.html) |\n| Yamaha XSR 700 XTribute (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8212/XSR-700-XTribute-2020/contact.html) |\n| Yamaha XSR 900 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |\n| Yamaha XSR 900 Yard Built - XR9 Carbona par Bottpower - (2020) | Tarifs — France — Version de base 14 974 € * | [Fiche](https://www.motoplanete.com/yamaha/8629/XSR-900-Yard-Built---XR9-Carbona-par-Bottpower---2020/contact.html) |\n| Yamaha XTZ 1200 Super Ténéré (2020) | Tarifs — France — Version de base 12 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8293/XTZ-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8294/XTZE-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré Raid Edition (2020) | Tarifs — France — Version de base 16 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8295/XTZE-1200-Super-Tenere-Raid-Edition-2020/contact.html) |\n| Yamaha XV 950 R (Bolt) (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8299/XV-950-R--Bolt-2020/contact.html) |\n| Yamaha YART YZF-R6 600 20th Anniversary (2020) | Tarifs — France — Version de base 19 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8386/YART-YZF-R6-600-20th-Anniversary-2020/contact.html) |\n| Yamaha YS 125 (2020) | Tarifs — France — Version de base 2 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8302/YS-125-2020/contact.html) |\n| Yamaha YZ 125 (2020) | Tarifs — France — Version de base 7 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7914/YZ-125-2020/contact.html) |\n| Yamaha YZ 250 (2020) | Tarifs — France — Version de base 8 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7913/YZ-250-2020/contact.html) |\n| Yamaha YZ 250 F (2020) | Tarifs — France — Version de base 8 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7912/YZ-250-F-2020/contact.html) |\n| Yamaha YZ 450 F (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/7911/YZ-450-F-2020/contact.html) |\n| Yamaha YZ 65 (2020) | Tarifs — France — Version de base 4 599 € * | [Fiche](https://www.motoplanete.com/yamaha/7916/YZ-65-2020/contact.html) |\n| Yamaha YZ 85 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7915/YZ-85-2020/contact.html) |\n| Yamaha YZF-R1 1000 (2020) | Tarifs — France — Version de base 19 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7975/YZF-R1-1000-2020/contact.html) |\n| Yamaha YZF-R1 1000 Petronas Replica (2020) | Tarifs — France — Version de base 46 000 € * | [Fiche](https://www.motoplanete.com/yamaha/8456/YZF-R1-1000-Petronas-Replica-2020/contact.html) |\n| Yamaha YZF-R1 1000 Pirovano Replica (2020) | Tarifs — France — Version de base 27 836 € * | [Fiche](https://www.motoplanete.com/yamaha/8512/YZF-R1-1000-Pirovano-Replica-2020/contact.html) |\n| Yamaha YZF-R 125 (2020) | Tarifs — France — Version de base 5 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8070/YZF-R-125-2020/contact.html) |\n| Yamaha YZF-R1M 1000 (2020) | Tarifs — France — Version de base 25 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7976/YZF-R1M-1000-2020/contact.html) |\n| Yamaha YZF-R3 300 (2020) | Tarifs — France — Version de base 5 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8069/YZF-R3-300-2020/contact.html) |\n| Yamaha YZF-R6 600 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8068/YZF-R6-600-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.5125342081300914
+    },
+    {
+      "id": "P02",
+      "turn": 1,
+      "group": "holdout",
+      "category": "prix_moyen",
+      "pass": "first",
+      "question": "Calcule le prix moyen de catalogue de la Honda CB 500 F sur 2020, 2021 et 2022, un tarif France de base par année.",
+      "expected": "{\"total_fiches\": 3, \"known_prices\": 3, \"sum_eur\": \"19697\", \"mean_eur\": \"6565.666666666666666666666667\", \"scope\": \"France, version de base, prix documentés du catalogue ; ni prix actuels ni annonces d’occasion ; inconnus exclus, pas zéro.\"}",
+      "object_ids": [
+        "555a2d677db34a14",
+        "496a038abc9da8b7",
+        "aaac27c37592b9cc"
+      ],
+      "client_setup_seconds": 0.023528374964371324,
+      "started_at": "2026-10-15T16:41:10.792805+00:00",
+      "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 6565,667 €** (19697 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Tarifs — France — Version de base 6 399 € * | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Tarifs — France — Version de base 6 499 € * | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Tarifs — France — Version de base 6 799 € * | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcule le prix moyen de catalogue de la Honda CB 500 F sur 2020, 2021 et 2022, un tarif France de base par année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 6565,667 €** (19697 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Tarifs — France — Version de base 6 399 € * | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Tarifs — France — Version de base 6 499 € * | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Tarifs — France — Version de base 6 799 € * | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.46805662498809397
+    },
+    {
+      "id": "P03",
+      "turn": 1,
+      "group": "holdout",
+      "category": "limite_prix",
+      "pass": "first",
+      "question": "Quel est le prix moyen actuel en occasion des Yamaha de 2020 ?",
+      "expected": "Signaler l’absence de prix d’annonces actuels ; ne pas leur substituer les prix de catalogue.",
+      "object_ids": [],
+      "client_setup_seconds": 0.015341749880462885,
+      "started_at": "2026-10-15T16:41:12.286748+00:00",
+      "answer": "Les fiches donnent des prix de catalogue documentés, pas des prix neufs actuels ni des annonces. Veux-tu utiliser ces prix de catalogue ?",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel est le prix moyen actuel en occasion des Yamaha de 2020 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les fiches donnent des prix de catalogue documentés, pas des prix neufs actuels ni des annonces. Veux-tu utiliser ces prix de catalogue ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06915233284235
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-15T16:41:13.358716+00:00"
+}

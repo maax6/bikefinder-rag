@@ -1,0 +1,234 @@
+{
+  "id": "aac2638f2dd2413f8c137e35548d0b2e",
+  "question": "Pour la Honda CRF 450 R de 2022, quelle puissance annonce la fiche ? Garde son éventuel caractère approximatif.",
+  "started_at": "2026-10-15T16:29:47.183810+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1837,
+        "output_tokens": 64,
+        "cost": 7.7154e-05
+      },
+      "seconds": 0.3254844159819186,
+      "reserved_usd": 0.001056552,
+      "debit_usd": 7.7154e-05
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La Honda CRF 450 R de 2022 annonce une puissance approximative de 62 ch. [Honda CRF 450 R (2022)](https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CRF 450 R"
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Pour la Honda CRF 450 R de 2022, quelle puissance annonce la fiche ? Garde son éventuel caractère approximatif.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral",
+    "_catalog_seconds": 13.789282375015318,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "61a09748fc4b4aa3",
+          "brand": "Honda",
+          "model": "CRF 450 R",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html",
+          "source_sha256": "fe82133ec4ae7e498dd480d6f2b016954f20f4ca87c5a6af1c3e6fb5f6c5d873",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "61a09748fc4b4aa3:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "61a09748fc4b4aa3:section:4",
+              "object_id": "61a09748fc4b4aa3",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html",
+              "source_sha256": "fe82133ec4ae7e498dd480d6f2b016954f20f4ca87c5a6af1c3e6fb5f6c5d873",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes; 449,70 cc (Alésage * course: 96 x 62.1 mm); ≈ 62 ch; Rapport poids / puissance : environ 1.67 kg/ch; Compression : 13.5 : 1",
+              "text": "Honda CRF 450 R 2022\nMoteur\nMonocylindre , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes; 449,70 cc (Alésage * course: 96 x 62.1 mm); ≈ 62 ch; Rapport poids / puissance : environ 1.67 kg/ch; Compression : 13.5 : 1",
+              "score": 0.7831432223320007,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "61a09748fc4b4aa3:section:0",
+              "object_id": "61a09748fc4b4aa3",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html",
+              "source_sha256": "fe82133ec4ae7e498dd480d6f2b016954f20f4ca87c5a6af1c3e6fb5f6c5d873",
+              "section": "Châssis",
+              "original_text": "Cadre : Double poutre et simple berceau dédoublé en aluminium; Réservoir : 6,30 litres; Hauteur de selle : 965 mm; Longueur : 2 182 mm; Largeur : 827 mm; Hauteur min : 1 267 mm; Empattement : 1 481 mm; Poids tous pleins faits : 110,60 kg",
+              "text": "Honda CRF 450 R 2022\nChâssis\nCadre : Double poutre et simple berceau dédoublé en aluminium; Réservoir : 6,30 litres; Hauteur de selle : 965 mm; Longueur : 2 182 mm; Largeur : 827 mm; Hauteur min : 1 267 mm; Empattement : 1 481 mm; Poids tous pleins faits : 110,60 kg",
+              "score": 0.7101545333862305,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "61a09748fc4b4aa3:section:1",
+              "object_id": "61a09748fc4b4aa3",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html",
+              "source_sha256": "fe82133ec4ae7e498dd480d6f2b016954f20f4ca87c5a6af1c3e6fb5f6c5d873",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 49 mm, déb : 310 mm; Freinage : 1 disque Ø 260 mm, étrier 2 pistons; Roue avant : 80 / 100 - 21",
+              "text": "Honda CRF 450 R 2022\nTrain avant\nFourche téléhydraulique inversée Ø 49 mm, déb : 310 mm; Freinage : 1 disque Ø 260 mm, étrier 2 pistons; Roue avant : 80 / 100 - 21",
+              "score": 0.6835678219795227,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "61a09748fc4b4aa3:section:3",
+              "object_id": "61a09748fc4b4aa3",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html",
+              "source_sha256": "fe82133ec4ae7e498dd480d6f2b016954f20f4ca87c5a6af1c3e6fb5f6c5d873",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 120 / 80 - 19",
+              "text": "Honda CRF 450 R 2022\nTrain arrière\nMono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 120 / 80 - 19",
+              "score": 0.6787278652191162,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "61a09748fc4b4aa3:section:2",
+              "object_id": "61a09748fc4b4aa3",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html",
+              "source_sha256": "fe82133ec4ae7e498dd480d6f2b016954f20f4ca87c5a6af1c3e6fb5f6c5d873",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Honda CRF 450 R 2022\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.6587269902229309,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6693957149982452e-07,
+          "query_encoding_seconds": 0.4854551670141518,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "61a09748fc4b4aa3",
+          "proof_check": {
+            "fields": {
+              "power_ch": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0006893330719321966
+          }
+        }
+      ],
+      "seconds": 0.4903633340727538,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "773dd8405e0382ede9cafc61133786767ccf4123a883944554afc45183ca5e81",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1410,
+      "eval_count": 46,
+      "total_duration": 12904463000,
+      "load_duration": 14594708,
+      "prompt_eval_duration": 5998989000,
+      "eval_duration": 5572498000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Honda CRF 450 R de 2022 annonce une puissance approximative de 62 ch.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 1,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.98,
+              "unsupported": 0.02
+            },
+            "confidence": 0.96
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 13.251447250135243
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 13.789429750060663
+}

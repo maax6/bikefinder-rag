@@ -1,0 +1,42 @@
+{
+  "id": "530e2a2c89944de98f754cf071c32c14",
+  "question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+  "started_at": "2026-10-15T16:37:49.687912+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield 410 Himalayan | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9287/410-Himalayan-2022/contact.html) |\n| Royal-Enfield 411 Scram | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9345/411-Scram-2022/contact.html) |\n| Royal-Enfield Classic 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html) |\n| Royal-Enfield Continental GT 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9284/Continental-GT-650-2022/contact.html) |\n| Royal-Enfield Continental GT 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9116/Continental-GT-650-120th-Anniversary-2022/contact.html) |\n\nFiches 1 à 5 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 5 fiches sur 10. Demande les suivantes pour continuer avec les mêmes critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 0,
+      "limit": 5
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.08139383303932846,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.08190237497910857
+}

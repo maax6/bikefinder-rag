@@ -1,0 +1,54 @@
+{
+  "id": "ffcf48dc077547a0a05b790617aab7f1",
+  "question": "Combien de fiches Yamaha de 2022 documentent un ABS de série ?",
+  "started_at": "2026-10-15T16:26:20.694588+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3570,
+        "output_tokens": 967,
+        "cost": 0.00014994
+      },
+      "seconds": 0.38180008390918374,
+      "reserved_usd": 0.0026377680000000004,
+      "debit_usd": 0.00014994
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**34 fiches correspondent dans le catalogue.** Équipements : ABS — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Yamaha",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "equipment"
+      ],
+      "equipment": "ABS",
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Combien de fiches Yamaha de 2022 documentent un ABS de série ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "count"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "count",
+    "_catalog_seconds": 0.445322124985978,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.44558816705830395
+}

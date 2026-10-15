@@ -1,0 +1,36 @@
+{
+  "id": "e444ec541dc2457ab807798a5ec3501e",
+  "question": "Liste les Honda de 2022 avec une selle au plus à 800 mm et un poids tous pleins faits au plus de 200 kg.",
+  "started_at": "2026-10-15T15:42:51.702583+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4548,
+        "output_tokens": 1297,
+        "cost": 0.000191016
+      },
+      "seconds": 0.6720835000742227,
+      "reserved_usd": 0.0030764160000000002,
+      "debit_usd": 0.000191016
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Je ne peux pas appliquer tous les nombres et bornes sans ambiguïté. Précise le millésime, les unités et les minimums/maximums ; aucun critère n’a été ignoré.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.7347028329968452,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.7348636668175459
+}

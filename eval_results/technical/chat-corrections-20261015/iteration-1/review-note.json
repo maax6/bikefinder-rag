@@ -1,0 +1,9 @@
+{
+  "status": "intermediate; superseded by full final rerun",
+  "remaining_errors": {
+    "D02/2": "Correct 17.20 litre value but spurious newer generation retained after year clarification; partial.",
+    "K05/2": "Masculine moyen missed by the average recognizer; failure."
+  },
+  "source_files_unchanged_during_this_pass": true,
+  "submissions": 48
+}

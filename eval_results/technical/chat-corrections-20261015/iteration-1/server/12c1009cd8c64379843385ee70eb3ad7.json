@@ -1,0 +1,56 @@
+{
+  "id": "12c1009cd8c64379843385ee70eb3ad7",
+  "question": "Les cinq suivantes, avec les mêmes critères.",
+  "started_at": "2026-10-15T16:28:07.502285+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4134,
+        "output_tokens": 1136,
+        "cost": 0.000173628
+      },
+      "seconds": 0.3676977090071887,
+      "reserved_usd": 0.0029161440000000003,
+      "debit_usd": 0.000173628
+    }
+  ],
+  "history_messages": 2,
+  "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield Interceptor 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9286/Interceptor-650-2022/contact.html) |\n| Royal-Enfield Interceptor 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9115/Interceptor-650-120th-Anniversary-2022/contact.html) |\n| Royal-Enfield Meteor 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |\n| Royal-Enfield Meteor 350 Stellar | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9949/Meteor-350-Stellar-2022/contact.html) |\n| Royal-Enfield Meteor 350 Supernova | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9947/Meteor-350-Supernova-2022/contact.html) |\n\nFiches 6 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nFin de la sélection avec ces critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Les cinq suivantes, avec les mêmes critères.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 5,
+      "limit": 5
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.4471429579425603,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4472971248906106
+}

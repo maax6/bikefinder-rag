@@ -1,0 +1,42 @@
+{
+  "id": "6f8f11212e4b4767960d81441a628f7b",
+  "question": "Les cinq suivantes, avec les mêmes critères.",
+  "started_at": "2026-10-15T16:37:49.798676+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield Interceptor 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9286/Interceptor-650-2022/contact.html) |\n| Royal-Enfield Interceptor 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9115/Interceptor-650-120th-Anniversary-2022/contact.html) |\n| Royal-Enfield Meteor 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |\n| Royal-Enfield Meteor 350 Stellar | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9949/Meteor-350-Stellar-2022/contact.html) |\n| Royal-Enfield Meteor 350 Supernova | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9947/Meteor-350-Supernova-2022/contact.html) |\n\nFiches 6 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nFin de la sélection avec ces critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Les cinq suivantes, avec les mêmes critères.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 5,
+      "limit": 5
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.0627151660155505,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.06284037511795759
+}

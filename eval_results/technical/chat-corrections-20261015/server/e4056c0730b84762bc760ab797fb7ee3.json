@@ -1,0 +1,71 @@
+{
+  "id": "e4056c0730b84762bc760ab797fb7ee3",
+  "question": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+  "started_at": "2026-10-15T16:40:18.434579+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3888,
+        "output_tokens": 967,
+        "cost": 0.000163296
+      },
+      "seconds": 0.40838137501850724,
+      "reserved_usd": 0.0027714960000000005,
+      "debit_usd": 0.000163296
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Calcul sur **1 fiches du catalogue**, dans la population demandée.\nPopulation incomplète : fiche(s) absente(s) — Honda CB 500 F (1990).\n\n**Puissance** — 1/1 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (48 / 1 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 1990
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2022
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "power_ch"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.45716508314944804,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.457768291933462
+}

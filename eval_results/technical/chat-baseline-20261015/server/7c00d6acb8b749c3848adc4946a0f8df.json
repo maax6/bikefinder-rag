@@ -1,0 +1,40 @@
+{
+  "id": "7c00d6acb8b749c3848adc4946a0f8df",
+  "question": "Donne le couple de la Kawasaki W 800 édition Nebula de 2022.",
+  "started_at": "2026-10-15T15:43:28.990282+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3699,
+        "output_tokens": 956,
+        "cost": 0.000155358
+      },
+      "seconds": 0.38087616697885096,
+      "reserved_usd": 0.0026683440000000004,
+      "debit_usd": 0.000155358
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": {
+      "question": "Donne le couple de la Kawasaki W 800 édition Nebula de 2022.",
+      "blocked": "source_identity",
+      "updates": []
+    },
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.44669791613705456,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4474681247957051
+}

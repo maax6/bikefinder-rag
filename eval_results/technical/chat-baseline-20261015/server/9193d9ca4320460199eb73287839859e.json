@@ -1,0 +1,54 @@
+{
+  "id": "9193d9ca4320460199eb73287839859e",
+  "question": "Quelle marque fabrique l’Interceptor 650 ?",
+  "started_at": "2026-10-15T15:42:53.544134+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3588,
+        "output_tokens": 953,
+        "cost": 0.000150696
+      },
+      "seconds": 0.32007616688497365,
+      "reserved_usd": 0.0026312160000000005,
+      "debit_usd": 0.000150696
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Interceptor 650"
+        }
+      ],
+      "fields": [],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle marque fabrique l’Interceptor 650 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.377715083071962,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.37784037506207824
+}

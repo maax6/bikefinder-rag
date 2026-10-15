@@ -1,0 +1,74 @@
+{
+  "regression_before": {
+    "failure": 10,
+    "correct": 21,
+    "partial": 1,
+    "justified_limit": 4
+  },
+  "regression_after": {
+    "correct": 30,
+    "justified_limit": 6
+  },
+  "known_after": {
+    "correct": 4,
+    "justified_limit": 1,
+    "partial": 1
+  },
+  "holdout": {
+    "correct": 13,
+    "justified_limit": 2
+  },
+  "paired_changes": {
+    "improved": 15,
+    "stable": 27
+  },
+  "regressed_keys": [],
+  "quality_before": 25,
+  "quality_after": 36,
+  "latency_before": {
+    "n": 36,
+    "median_seconds": 24.034939749981277,
+    "p95_seconds": 33.07335433294065,
+    "max_seconds": 47.289831874892116
+  },
+  "latency_after": {
+    "n": 36,
+    "median_seconds": 8.383821416995488,
+    "p95_seconds": 31.007653082953766,
+    "max_seconds": 31.18887404189445
+  },
+  "latency_holdout": {
+    "n": 15,
+    "median_seconds": 0.5057983750011772,
+    "p95_seconds": 14.7683820000384,
+    "max_seconds": 14.7683820000384
+  },
+  "latency_repeats": {
+    "n": 6,
+    "median_seconds": 0.3079590629786253,
+    "p95_seconds": 13.442610249854624,
+    "max_seconds": 13.442610249854624
+  },
+  "latency_after_rag": {
+    "n": 23,
+    "median_seconds": 14.49449683399871,
+    "p95_seconds": 31.007653082953766,
+    "max_seconds": 31.18887404189445
+  },
+  "generation_errors": {
+    "unverified_claims": 1,
+    "ReadTimeout": 3
+  },
+  "cost_retest_usd": 0.009547020000000002,
+  "cost_cumulative_usd": 0.017885532000000003,
+  "remote_requests": 64,
+  "api_errors": 0,
+  "dialogues": {
+    "D01": true,
+    "D02": true,
+    "D03": true,
+    "D04": true,
+    "D05": true,
+    "D06": true
+  }
+}

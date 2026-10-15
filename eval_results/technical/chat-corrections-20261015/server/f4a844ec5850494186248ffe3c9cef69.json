@@ -1,0 +1,257 @@
+{
+  "id": "f4a844ec5850494186248ffe3c9cef69",
+  "question": "La Moto Guzzi V 100 Mandello de 2022 transmet-elle par chaîne ou par cardan ? Et comment est refroidi son moteur ?",
+  "started_at": "2026-10-15T16:33:33.931200+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La Moto Guzzi V 100 Mandello de 2022 transmet par cardan. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)\n\nLe moteur de la Moto Guzzi V 100 Mandello de 2022 est refroidi par liquide. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)\n\n**Preuves manquantes ou non vérifiées :**\n- Moto-Guzzi V 100 Mandello (2022) — Boîte et transmission secondaire — La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « chaine; cardan ».\n\n**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Moto-Guzzi",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Moto-Guzzi",
+          "model": "V 100 Mandello"
+        }
+      ],
+      "fields": [
+        "transmission",
+        "cooling"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "La Moto Guzzi V 100 Mandello de 2022 transmet-elle par chaîne ou par cardan ? Et comment est refroidi son moteur ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 10.341885500121862,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "d5ebaf0240c24e05",
+          "brand": "Moto-Guzzi",
+          "model": "V 100 Mandello",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html",
+          "source_sha256": "18480f5a3c10534552492bf08b1f79ba0ae166fbaa6f550716927ace6914db69",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "transmission": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "d5ebaf0240c24e05:section:2"
+              ]
+            },
+            "cooling": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "d5ebaf0240c24e05:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "d5ebaf0240c24e05:section:2",
+              "object_id": "d5ebaf0240c24e05",
+              "brand": "Moto-Guzzi",
+              "model": "V 100 Mandello",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html",
+              "source_sha256": "18480f5a3c10534552492bf08b1f79ba0ae166fbaa6f550716927ace6914db69",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle - shifter en option; Secondaire par cardan",
+              "text": "Moto-Guzzi V 100 Mandello 2022\nTransmission\nboîte à 6 rapports , manuelle - shifter en option; Secondaire par cardan",
+              "score": 0.7109484672546387,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "d5ebaf0240c24e05:section:4",
+              "object_id": "d5ebaf0240c24e05",
+              "brand": "Moto-Guzzi",
+              "model": "V 100 Mandello",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html",
+              "source_sha256": "18480f5a3c10534552492bf08b1f79ba0ae166fbaa6f550716927ace6914db69",
+              "section": "Moteur",
+              "original_text": "Bicylindre en V transversal à 90° , 4 temps; Injection Ø 52 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 1 042 cc (Alésage * course: 96 x 72 mm); 115 ch à 8 700 tr/min; 10,70 mkg à 6 750 tr/min; Rapport poids / puissance : 1.84 kg/ch; Rapport poids / couple : 19.81 kg/mkg; Compression : 12.6 : 1; Emission CO² : 118 g/km",
+              "text": "Moto-Guzzi V 100 Mandello 2022\nMoteur\nBicylindre en V transversal à 90° , 4 temps; Injection Ø 52 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 1 042 cc (Alésage * course: 96 x 72 mm); 115 ch à 8 700 tr/min; 10,70 mkg à 6 750 tr/min; Rapport poids / puissance : 1.84 kg/ch; Rapport poids / couple : 19.81 kg/mkg; Compression : 12.6 : 1; Emission CO² : 118 g/km",
+              "score": 0.6748685240745544,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "d5ebaf0240c24e05:section:3",
+              "object_id": "d5ebaf0240c24e05",
+              "brand": "Moto-Guzzi",
+              "model": "V 100 Mandello",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html",
+              "source_sha256": "18480f5a3c10534552492bf08b1f79ba0ae166fbaa6f550716927ace6914db69",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur déporté + monobras; Réglage de la précharge et de la détente; Freinage : 1 disque Brembo Ø 280 mm, étrier 2 pistons; Roue arrière : 190 / 55 - 17",
+              "text": "Moto-Guzzi V 100 Mandello 2022\nTrain arrière\nMono-amortisseur déporté + monobras; Réglage de la précharge et de la détente; Freinage : 1 disque Brembo Ø 280 mm, étrier 2 pistons; Roue arrière : 190 / 55 - 17",
+              "score": 0.6548725366592407,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "d5ebaf0240c24e05:section:5",
+              "object_id": "d5ebaf0240c24e05",
+              "brand": "Moto-Guzzi",
+              "model": "V 100 Mandello",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html",
+              "source_sha256": "18480f5a3c10534552492bf08b1f79ba0ae166fbaa6f550716927ace6914db69",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; ABS Cornering; Jantes aluminium; Indicateur de vitesse engagée; Régulateur de vitesse; Prise USB; Contrôle de traction; Pare brise réglable électriquement; Centrale inertielle; Phares adaptatifs en virage; Contrôle du frein moteur",
+              "text": "Moto-Guzzi V 100 Mandello 2022\nÉquipement de série\nAssistance au freinage : ABS; Nombre de mode de conduite : 4; Taille de l'écran TFT couleur : 12,70 cm / 5 pouces; ABS Cornering; Jantes aluminium; Indicateur de vitesse engagée; Régulateur de vitesse; Prise USB; Contrôle de traction; Pare brise réglable électriquement; Centrale inertielle; Phares adaptatifs en virage; Contrôle du frein moteur",
+              "score": 0.6434782147407532,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "d5ebaf0240c24e05:section:1",
+              "object_id": "d5ebaf0240c24e05",
+              "brand": "Moto-Guzzi",
+              "model": "V 100 Mandello",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html",
+              "source_sha256": "18480f5a3c10534552492bf08b1f79ba0ae166fbaa6f550716927ace6914db69",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 41 mm; Réglage de la précharge et de la détente; Freinage : 2 disques Brembo Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+              "text": "Moto-Guzzi V 100 Mandello 2022\nTrain avant\nFourche téléhydraulique inversée Ø 41 mm; Réglage de la précharge et de la détente; Freinage : 2 disques Brembo Ø 320 mm, fixation radiale, étrier 4 pistons; Roue avant : 120 / 70 - 17",
+              "score": 0.6416138410568237,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "field",
+          "object_id": "d5ebaf0240c24e05",
+          "field": "transmission",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée Couverture non établie de l’ensemble des détails demandés : « chaine; cardan ».",
+          "requested_terms": [
+            "chaine",
+            "cardan"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6693957149982452e-07,
+          "query_encoding_seconds": 0.11353250010870397,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "d5ebaf0240c24e05",
+          "proof_check": {
+            "fields": {
+              "transmission": "unverified",
+              "cooling": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0030650419648736715
+          }
+        }
+      ],
+      "seconds": 0.11857099994085729,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "4d664e472d0de589ad6a040809b17bf2af29fcc32daf79c1875aa7e66dc2d23a",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1683,
+      "eval_count": 82,
+      "total_duration": 10175821791,
+      "load_duration": 7203083,
+      "prompt_eval_duration": 129491999,
+      "eval_duration": 9997406000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Moto Guzzi V 100 Mandello de 2022 transmet par cardan.",
+            "sources": [
+              "P1"
+            ]
+          },
+          {
+            "text": "Le moteur de la Moto Guzzi V 100 Mandello de 2022 est refroidi par liquide.",
+            "sources": [
+              "P2"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0,
+          1
+        ],
+        "coverage_verified": false,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.9,
+              "unsupported": 0.1
+            },
+            "confidence": 0.8
+          },
+          "claim_1": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.83,
+              "unsupported": 0.17
+            },
+            "confidence": 0.66
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 10.18545954185538
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 10.342042249860242
+}

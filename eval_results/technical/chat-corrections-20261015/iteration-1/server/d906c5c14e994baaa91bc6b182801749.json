@@ -1,0 +1,56 @@
+{
+  "id": "d906c5c14e994baaa91bc6b182801749",
+  "question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+  "started_at": "2026-10-15T16:28:07.011507+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4087,
+        "output_tokens": 1136,
+        "cost": 0.000171654
+      },
+      "seconds": 0.3721467920113355,
+      "reserved_usd": 0.0028899360000000005,
+      "debit_usd": 0.000171654
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield 410 Himalayan | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9287/410-Himalayan-2022/contact.html) |\n| Royal-Enfield 411 Scram | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9345/411-Scram-2022/contact.html) |\n| Royal-Enfield Classic 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html) |\n| Royal-Enfield Continental GT 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9284/Continental-GT-650-2022/contact.html) |\n| Royal-Enfield Continental GT 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9116/Continental-GT-650-120th-Anniversary-2022/contact.html) |\n\nFiches 1 à 5 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 5 fiches sur 10. Demande les suivantes pour continuer avec les mêmes critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 0,
+      "limit": 5
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.45512920804321766,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.4557664580643177
+}

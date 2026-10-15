@@ -1,0 +1,13 @@
+{
+  "command": "PYTHONPATH=src HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 BIKEFINDER_JEV_ROUTER=0 BIKEFINDER_JEV_RAG=0 BIKEFINDER_CATALOG_RESEARCH=0 BIKEFINDER_CATALOG_EXPERIMENT=0 .venv/bin/python -m pytest -q",
+  "passed": 1232,
+  "skipped": 11,
+  "seconds": 11.21,
+  "new_regression_checks": 29,
+  "sql_integration": {
+    "passed": 11,
+    "seconds": 0.57,
+    "isolated_schema": true
+  },
+  "invocation_note": "Direct pytest entry point failed to import scripts; canonical python -m pytest with project flags passed."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "830590a010fe4d79ae192f30e8537185",
+  "question": "Quelle type de bridage pour un XJ6 A2 2011",
+  "started_at": "2026-10-15T15:46:53.910179+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2. Précise un modèle et son millésime pour lire les mentions de sa fiche.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "missing": [
+        {
+          "kind": "authority",
+          "message": "Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2."
+        }
+      ],
+      "retrieval_executed": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.05319141712971032
+}

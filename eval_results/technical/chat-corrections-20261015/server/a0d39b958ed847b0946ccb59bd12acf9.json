@@ -1,0 +1,56 @@
+{
+  "id": "a0d39b958ed847b0946ccb59bd12acf9",
+  "question": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+  "started_at": "2026-10-15T16:40:50.030899+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4523,
+        "output_tokens": 1305,
+        "cost": 0.000189966
+      },
+      "seconds": 0.34557608398608863,
+      "reserved_usd": 0.0031006080000000004,
+      "debit_usd": 0.000189966
+    }
+  ],
+  "history_messages": 0,
+  "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 0,
+      "limit": 3
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.3914345840457827,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.39264841680414975
+}
