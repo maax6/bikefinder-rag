@@ -1,6 +1,18 @@
 # Prochaine phase : validation du parcours complet
 
 Plan préparé le 15 octobre 2026 à la clôture du [bilan #4](https://github.com/maax6/bikefinder-rag/issues/4).
+**Mise à jour du 16 octobre :** [XJ6, avertissements et qualité des réponses](benchmark-chat-20261016.html).
+Reprise de 57 tours, six répétitions et huit contrôles ciblés. Dix questions
+publiques et un dialogue XJ6 de deux tours ont ensuite été exécutés, puis XJ6
+a été rejoué après suppression d’un doublon A2 : 85 soumissions, grille sur
+30 réponses. Les questions publiques donnent 3 limites justifiées, 2 réponses
+partielles et 5 échecs. Les formulations sont externes ; la relecture reste
+celle de l’assistant et ne constitue pas une validation humaine indépendante.
+**Après correction des questions publiques :** les cinq échecs et deux réponses
+partielles obtiennent désormais une réponse sourcée ou une limite utile sur leur
+rejeu connu. Aucune perte de contenu sur les 69 tours comparables ; la rédaction
+Mistral ralentit à 28,2 s de médiane avec neuf expirations. Le nouveau bilan
+sépare ces limites des progrès fonctionnels et conserve la première passe.
 **Campagne exploratoire puis corrections exécutées le 15 octobre 2026 :**
 [Bilan avant/après via le vrai chat, avec BGE-M3 d’origine](bilan-chat-20261015.md).
 Le lot comparable passe de 25/36 à 36/36 réponses satisfaisantes ; 15 tours

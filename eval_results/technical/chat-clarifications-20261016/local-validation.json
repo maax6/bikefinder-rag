@@ -1,0 +1,13 @@
+{
+  "initial_targeted": "3 failed, 1 passed (before changes)",
+  "targeted": "89 passed",
+  "unit": "1242 passed, 11 skipped",
+  "sql": "11 passed, temporary isolated PostgreSQL schema",
+  "embedding": "BAAI/bge-m3 original revision unchanged",
+  "timestamp": "2026-10-15T23:12:13.253415+00:00",
+  "final_unit": "1253 passed, 11 skipped",
+  "presentation_reproduction": "2 failed, 11 passed; then 1 failed, 16 passed for unasked weight",
+  "final_sql": "11 passed earlier in temporary schema; no SQL changes since",
+  "a2_notice_reproduction": "1 failed, 3 passed before the last A2 notice fix",
+  "final_checked_at": "2026-10-15T23:36:47.120773+00:00"
+}

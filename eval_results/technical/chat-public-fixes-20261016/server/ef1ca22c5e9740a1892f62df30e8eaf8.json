@@ -1,0 +1,27 @@
+{
+  "id": "ef1ca22c5e9740a1892f62df30e8eaf8",
+  "question": "How does the V85 handle 80 on the highway ? Vibration wise. I love the look but I live where there’s open highway stretches to get to the nearest town and I keep being told it’s too busy hold that for long periods. But I really like the look .",
+  "started_at": "2026-10-16T01:11:17.816515+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Les fiches techniques ne permettent pas de conclure sur le ressenti des vibrations ou le confort sur autoroute. Un essai dans les conditions envisagées et des retours portant sur la même version seraient utiles. Pour lire les données du catalogue, précise la variante et le millésime ; si tu indiques une vitesse, précise son unité (km/h ou mph). Je ne déduis pas le ressenti des seules performances.\n\nQuelle variante souhaites-tu consulter : Moto-Guzzi V 85 TT; Moto-Guzzi V 85 TT Travel; Moto-Guzzi V 85 TT Guardia d'Onore; Moto-Guzzi V 85 TT Centenario; Moto-Guzzi V 85 Strada ? Précise aussi le millésime. ",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "catalog_boundary",
+    "_catalog_seconds": 0.007418542169034481,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "retrieval_executed": false,
+      "scope_topic": "riding_feel",
+      "response_kind": "deterministic_scope_explanation"
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.007493709214031696
+}

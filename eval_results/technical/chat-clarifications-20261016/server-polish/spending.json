@@ -1,0 +1,19 @@
+{
+  "ceiling_usd": 0.478996032,
+  "debit_usd": 7.644e-05,
+  "records": [
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 12426,
+      "reserved_usd": 0.001043784,
+      "debit_usd": 7.644e-05,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 1820,
+        "output_tokens": 64,
+        "cost": 7.644e-05
+      },
+      "reported_cost_usd": 7.644e-05
+    }
+  ]
+}

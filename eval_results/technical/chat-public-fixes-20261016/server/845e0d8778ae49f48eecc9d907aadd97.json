@@ -1,0 +1,27 @@
+{
+  "id": "845e0d8778ae49f48eecc9d907aadd97",
+  "question": "65 000 km pour une CB500F de 2018, est-ce convenable ?",
+  "started_at": "2026-10-16T01:11:16.716319+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Le kilométrage seul ne permet pas de juger l’état de cette moto. Les fiches ne donnent ni son historique d’entretien ni le résultat d’une inspection. Avant de décider, demande les factures et le suivi d’entretien, puis une inspection de l’exemplaire. Je peux comparer ses caractéristiques documentées, mais pas fixer un seuil de kilométrage fiable ni garantir son état.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "catalog_boundary",
+    "_catalog_seconds": 0.00019054184667766094,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "retrieval_executed": false,
+      "scope_topic": "condition",
+      "response_kind": "deterministic_scope_explanation"
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0003251249436289072
+}

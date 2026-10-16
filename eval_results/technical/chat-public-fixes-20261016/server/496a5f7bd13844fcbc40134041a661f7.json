@@ -1,0 +1,227 @@
+{
+  "id": "496a5f7bd13844fcbc40134041a661f7",
+  "question": "La fiche de la Honda CRF 450 R 2021 donne-t-elle une puissance précise ou approximative ? Cite la valeur telle quelle.",
+  "started_at": "2026-10-16T01:09:59.703619+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La fiche de la Honda CRF 450 R 2021 indique une puissance approximative de ≈ 62 ch. [Honda CRF 450 R (2021)](https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2021
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CRF 450 R"
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "La fiche de la Honda CRF 450 R 2021 donne-t-elle une puissance précise ou approximative ? Cite la valeur telle quelle.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 22.282028624787927,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "1290657f06d4de12",
+          "brand": "Honda",
+          "model": "CRF 450 R",
+          "year": 2021,
+          "source_url": "https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html",
+          "source_sha256": "b7e208e67e68200a43e2bf91c4578cdbece1e76c4085b5287782d14390b8a8fb",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "1290657f06d4de12:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "1290657f06d4de12:section:4",
+              "object_id": "1290657f06d4de12",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html",
+              "source_sha256": "b7e208e67e68200a43e2bf91c4578cdbece1e76c4085b5287782d14390b8a8fb",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes; 449,70 cc (Alésage * course: 96 x 62.1 mm); ≈ 62 ch; Rapport poids / puissance : environ 1.68 kg/ch; Compression : 13.5 : 1",
+              "text": "Honda CRF 450 R 2021\nMoteur\nMonocylindre , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes; 449,70 cc (Alésage * course: 96 x 62.1 mm); ≈ 62 ch; Rapport poids / puissance : environ 1.68 kg/ch; Compression : 13.5 : 1",
+              "score": 0.7285998463630676,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1290657f06d4de12:section:0",
+              "object_id": "1290657f06d4de12",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html",
+              "source_sha256": "b7e208e67e68200a43e2bf91c4578cdbece1e76c4085b5287782d14390b8a8fb",
+              "section": "Châssis",
+              "original_text": "Cadre : Double poutre et simple berceau dédoublé en aluminium; Réservoir : 6 litres; Hauteur de selle : 965 mm; Longueur : 2 182 mm; Largeur : 827 mm; Hauteur min : 1 267 mm; Empattement : 1 481 mm; Poids tous pleins faits : 110,60 kg",
+              "text": "Honda CRF 450 R 2021\nChâssis\nCadre : Double poutre et simple berceau dédoublé en aluminium; Réservoir : 6 litres; Hauteur de selle : 965 mm; Longueur : 2 182 mm; Largeur : 827 mm; Hauteur min : 1 267 mm; Empattement : 1 481 mm; Poids tous pleins faits : 110,60 kg",
+              "score": 0.6664576530456543,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1290657f06d4de12:section:1",
+              "object_id": "1290657f06d4de12",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html",
+              "source_sha256": "b7e208e67e68200a43e2bf91c4578cdbece1e76c4085b5287782d14390b8a8fb",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique inversée Ø 49 mm, déb : 310 mm; Freinage : 1 disque Ø 260 mm, étrier 2 pistons; Roue avant : 80 / 100 - 21",
+              "text": "Honda CRF 450 R 2021\nTrain avant\nFourche téléhydraulique inversée Ø 49 mm, déb : 310 mm; Freinage : 1 disque Ø 260 mm, étrier 2 pistons; Roue avant : 80 / 100 - 21",
+              "score": 0.6531071662902832,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1290657f06d4de12:section:3",
+              "object_id": "1290657f06d4de12",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html",
+              "source_sha256": "b7e208e67e68200a43e2bf91c4578cdbece1e76c4085b5287782d14390b8a8fb",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 120 / 80 - 19",
+              "text": "Honda CRF 450 R 2021\nTrain arrière\nMono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 120 / 80 - 19",
+              "score": 0.6422528028488159,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1290657f06d4de12:section:6",
+              "object_id": "1290657f06d4de12",
+              "brand": "Honda",
+              "model": "CRF 450 R",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html",
+              "source_sha256": "b7e208e67e68200a43e2bf91c4578cdbece1e76c4085b5287782d14390b8a8fb",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Honda CRF 450 R 2021\nColoris\nColoris : non défini",
+              "score": 0.637093186378479,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "verification",
+          "object_id": "1290657f06d4de12",
+          "field": "power_ch",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6693957149982452e-07,
+          "query_encoding_seconds": 1.0595595841296017,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "1290657f06d4de12",
+          "proof_check": {
+            "fields": {
+              "power_ch": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.012167999986559153
+          }
+        }
+      ],
+      "seconds": 1.0764443341176957,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "77885dc5d7a6d03b2d73095735322e8dca188296c1e8219f85a8978459a4e7d5",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1475,
+      "eval_count": 50,
+      "total_duration": 21112408917,
+      "load_duration": 19389584,
+      "prompt_eval_duration": 10770661000,
+      "eval_duration": 8923082000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La fiche de la Honda CRF 450 R 2021 indique une puissance approximative de ≈ 62 ch.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.9,
+              "unsupported": 0.1
+            },
+            "confidence": 0.8
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 21.14352066605352
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 22.282233625184745
+}

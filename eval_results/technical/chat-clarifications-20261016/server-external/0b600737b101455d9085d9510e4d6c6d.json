@@ -1,0 +1,36 @@
+{
+  "id": "0b600737b101455d9085d9510e4d6c6d",
+  "question": "Je ne sais pas si le bridage change les caractéristiques réelles de la moto (poids, consommation, comportement) ou si ça se limite à une simple limitation de puissance électronique/mécanique.",
+  "started_at": "2026-10-15T23:33:13.198449+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3520,
+        "output_tokens": 967,
+        "cost": 0.00014784
+      },
+      "seconds": 0.6008255418855697,
+      "reserved_usd": 0.0026307120000000003,
+      "debit_usd": 0.00014784
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Précise les modèles et un millésime explicite pour une explication fondée sur les fiches.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6411885838024318,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.6413385409396142
+}

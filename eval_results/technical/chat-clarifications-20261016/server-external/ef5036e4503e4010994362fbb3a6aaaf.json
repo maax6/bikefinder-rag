@@ -1,0 +1,56 @@
+{
+  "id": "ef5036e4503e4010994362fbb3a6aaaf",
+  "question": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+  "started_at": "2026-10-15T23:32:22.904962+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3707,
+        "output_tokens": 967,
+        "cost": 0.000155694
+      },
+      "seconds": 0.5909022921696305,
+      "reserved_usd": 0.002716392,
+      "debit_usd": 0.000155694
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F"
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 X"
+        }
+      ],
+      "fields": [],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "comparison"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6312702500727028,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": false,
+  "server_seconds": 0.6313606249168515
+}

@@ -1,0 +1,59 @@
+{
+  "id": "515f5510732840ee8edf2484456da4df",
+  "question": "xj6 de 2012 bridable à 35 ou 47 ch?",
+  "started_at": "2026-10-16T01:10:48.947313+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Quelle variante souhaites-tu consulter pour 2012 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "clarify",
+      "models": [],
+      "candidate_variants": [
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Diversion"
+        },
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Naked"
+        },
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Diversion F"
+        }
+      ],
+      "identity": {
+        "year": 2012
+      },
+      "fields": [
+        "license"
+      ],
+      "conditions": [],
+      "source_question": "xj6 de 2012 bridable à 35 ou 47 ch?",
+      "a2_context": true,
+      "variant_pending": true,
+      "clarification": "Quelle variante souhaites-tu consulter pour 2012 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire."
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "missing": [
+        {
+          "kind": "identity",
+          "message": "Variante à préciser"
+        }
+      ],
+      "retrieval_executed": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0516098749358207
+}

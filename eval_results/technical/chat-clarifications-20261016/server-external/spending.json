@@ -1,0 +1,188 @@
+{
+  "ceiling_usd": 0.478919592,
+  "debit_usd": 0.002006298,
+  "records": [
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 37006,
+      "reserved_usd": 0.003108504,
+      "debit_usd": 0.000193116,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4598,
+        "output_tokens": 1310,
+        "cost": 0.000193116
+      },
+      "reported_cost_usd": 0.000193116
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 33974,
+      "reserved_usd": 0.0028538160000000003,
+      "debit_usd": 0.000168504,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4012,
+        "output_tokens": 1139,
+        "cost": 0.000168504
+      },
+      "reported_cost_usd": 0.000168504
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 32338,
+      "reserved_usd": 0.002716392,
+      "debit_usd": 0.000155694,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3707,
+        "output_tokens": 967,
+        "cost": 0.000155694
+      },
+      "reported_cost_usd": 0.000155694
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 34198,
+      "reserved_usd": 0.0028726320000000004,
+      "debit_usd": 0.000169722,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4041,
+        "output_tokens": 1139,
+        "cost": 0.000169722
+      },
+      "reported_cost_usd": 0.000169722
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31738,
+      "reserved_usd": 0.0026659920000000003,
+      "debit_usd": 0.00015141,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3605,
+        "output_tokens": 967,
+        "cost": 0.00015141
+      },
+      "reported_cost_usd": 0.00015141
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 34872,
+      "reserved_usd": 0.002929248,
+      "debit_usd": 0.000176946,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4213,
+        "output_tokens": 1139,
+        "cost": 0.000176946
+      },
+      "reported_cost_usd": 0.000176946
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 13880,
+      "reserved_usd": 0.0011659200000000002,
+      "debit_usd": 7.4886e-05,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 1783,
+        "output_tokens": 113,
+        "cost": 7.4886e-05
+      },
+      "reported_cost_usd": 7.4886e-05
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 34334,
+      "reserved_usd": 0.0028840560000000003,
+      "debit_usd": 0.000169806,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4043,
+        "output_tokens": 1139,
+        "cost": 0.000169806
+      },
+      "reported_cost_usd": 0.000169806
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 36812,
+      "reserved_usd": 0.0030922080000000004,
+      "debit_usd": 0.000189084,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 4502,
+        "output_tokens": 1305,
+        "cost": 0.000189084
+      },
+      "reported_cost_usd": 0.000189084
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31966,
+      "reserved_usd": 0.0026851440000000004,
+      "debit_usd": 0.000152586,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3633,
+        "output_tokens": 967,
+        "cost": 0.000152586
+      },
+      "reported_cost_usd": 0.000152586
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 31318,
+      "reserved_usd": 0.0026307120000000003,
+      "debit_usd": 0.00014784,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3520,
+        "output_tokens": 967,
+        "cost": 0.00014784
+      },
+      "reported_cost_usd": 0.00014784
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 29528,
+      "reserved_usd": 0.0024803520000000003,
+      "debit_usd": 0.00014217,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 3385,
+        "output_tokens": 732,
+        "cost": 0.00014217
+      },
+      "reported_cost_usd": 0.00014217
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 8482,
+      "reserved_usd": 0.000712488,
+      "debit_usd": 4.1538e-05,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 989,
+        "output_tokens": 38,
+        "cost": 4.1538e-05
+      },
+      "reported_cost_usd": 4.1538e-05
+    },
+    {
+      "model": "typesafe/jev-1.13",
+      "input_token_bound": 12442,
+      "reserved_usd": 0.0010451280000000002,
+      "debit_usd": 7.2996e-05,
+      "status": "response_received",
+      "usage": {
+        "input_tokens": 1738,
+        "output_tokens": 64,
+        "cost": 7.2996e-05
+      },
+      "reported_cost_usd": 7.2996e-05
+    }
+  ]
+}

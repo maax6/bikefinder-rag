@@ -1,0 +1,27 @@
+{
+  "id": "a71fde31c71844118c0c5fde74d995af",
+  "question": "Vos conseils de 1ere moto pour les petits gabarits ? (1m61)",
+  "started_at": "2026-10-16T01:11:18.891894+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Pour préparer une sélection, je peux comparer la hauteur de selle et le poids documentés, en distinguant poids à sec et tous pleins faits. Ta taille seule ne permet pas de garantir les pieds au sol : l’ergonomie demande un essai. Quel est ton budget, ton permis, ton usage et les modèles ou millésimes envisagés ? Le budget du catalogue correspond aux prix de lancement documentés, pas aux annonces actuelles.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "catalog_boundary",
+    "_catalog_seconds": 0.0001435407903045416,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "retrieval_executed": false,
+      "scope_topic": "rider_fit",
+      "response_kind": "deterministic_scope_explanation"
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0002074588555842638
+}

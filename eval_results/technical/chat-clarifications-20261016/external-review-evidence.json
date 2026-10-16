@@ -1,0 +1,155 @@
+{
+  "checked_at": "2026-10-15T23:36:47.373345+00:00",
+  "database": "data/technical/enrichment-full-20261012/pass2/catalogue.enriched.sqlite3",
+  "database_sha256": "8439fe72ba5b44864f6408c0057ab1ba9f79f2faf04ae0fef67c50e4b576b5bd",
+  "checks": [
+    {
+      "query": "select brand,model,year from objects where model like '%XJ6%' and year=2012",
+      "rows": [
+        [
+          "Yamaha",
+          "XJ6 600 Naked",
+          2012
+        ],
+        [
+          "Yamaha",
+          "XJ6 600 Diversion",
+          2012
+        ],
+        [
+          "Yamaha",
+          "XJ6 600 Diversion F",
+          2012
+        ]
+      ]
+    },
+    {
+      "query": "select distinct brand,model from objects where brand='Honda' and (model like '%CX%' or model like '%650%')",
+      "rows": [
+        [
+          "Honda",
+          "VT 1300 CX FURY"
+        ],
+        [
+          "Honda",
+          "NT 650 V DEAUVILLE"
+        ],
+        [
+          "Honda",
+          "FMX 650"
+        ],
+        [
+          "Honda",
+          "XL 650 V TRANSALP"
+        ],
+        [
+          "Honda",
+          "FX 650 Vigor"
+        ],
+        [
+          "Honda",
+          "NX 650 Dominator"
+        ],
+        [
+          "Honda",
+          "CB 650 F"
+        ],
+        [
+          "Honda",
+          "CBR 650 F"
+        ],
+        [
+          "Honda",
+          "CB 650 F SP"
+        ],
+        [
+          "Honda",
+          "CB 650 F Swiss Limited Edition"
+        ],
+        [
+          "Honda",
+          "CX 650 Turbo"
+        ],
+        [
+          "Honda",
+          "CBR 650 R"
+        ],
+        [
+          "Honda",
+          "CB 650 R"
+        ],
+        [
+          "Honda",
+          "XRV 650 Africa Twin"
+        ],
+        [
+          "Honda",
+          "CB 650 R E-Clutch"
+        ],
+        [
+          "Honda",
+          "CBR 650 R E-Clutch"
+        ],
+        [
+          "Honda",
+          "PCX 125"
+        ]
+      ]
+    },
+    {
+      "query": "select brand,model,year from objects where model='CB 500 F' and year=2019",
+      "rows": [
+        [
+          "Honda",
+          "CB 500 F",
+          2019
+        ]
+      ]
+    },
+    {
+      "query": "select brand,model,min(year),max(year),count(*) from objects where model like '%V85%' or model like '%V 85%' group by brand,model",
+      "rows": [
+        [
+          "Moto-Guzzi",
+          "V 85 Strada",
+          2024,
+          2026,
+          3
+        ],
+        [
+          "Moto-Guzzi",
+          "V 85 TT",
+          2019,
+          2026,
+          8
+        ],
+        [
+          "Moto-Guzzi",
+          "V 85 TT Centenario",
+          2021,
+          2021,
+          1
+        ],
+        [
+          "Moto-Guzzi",
+          "V 85 TT Guardia d'Onore",
+          2022,
+          2022,
+          1
+        ],
+        [
+          "Moto-Guzzi",
+          "V 85 TT Travel",
+          2020,
+          2026,
+          7
+        ]
+      ]
+    }
+  ],
+  "oracle_correction": {
+    "case": "R02",
+    "frozen_expected_unchanged": true,
+    "finding": "CX 650 E absent; only CX 650 Turbo exists among CX 650 models. Generic absence response graded as justified limit, not a recognition failure."
+  }
+}

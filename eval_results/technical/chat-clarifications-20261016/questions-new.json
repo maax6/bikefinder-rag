@@ -1,0 +1,257 @@
+{
+  "created_at": "2026-10-15T23:12:13.253209+00:00",
+  "protocol": {
+    "purpose": "First external-wording test, not a representative rider study or blind independent evaluation. Selection by assistant; ten public questions, no generated templates. Original missing years/markets retained. Do not tune on these results before publishing first-pass errors.",
+    "reviewer": "Same coding assistant, not human or blinded. No external model judge.",
+    "rubric": {
+      "accuracy": "0 false claim; 1 ambiguous/unjustified; 2 faithful source or clear justified boundary",
+      "completeness": "0 core request missed; 1 partially addressed; 2 all requested facts or specific useful clarification",
+      "sources": "0 false/missing citation for factual claim; 1 partial traceability; 2 exact model/year/source or no factual claim needing a citation",
+      "usefulness": "0 generic/unhelpful; 1 usable but verbose/irrelevant warning; 2 concise direct answer or actionable next step"
+    },
+    "manual_grid_regression_keys": [
+      "Q01:1",
+      "Q02:1",
+      "Q03:1",
+      "Q04:1",
+      "Q05:1",
+      "Q06:1",
+      "Q07:1",
+      "Q08:1",
+      "Q09:1",
+      "Q10:1",
+      "Q11:1",
+      "Q12:1",
+      "Q21:1",
+      "D01:2",
+      "D02:2",
+      "D05:2",
+      "H06:1",
+      "H07:2",
+      "P01:1",
+      "P02:1"
+    ],
+    "manual_grid_external_keys": [
+      "R01:1",
+      "R02:1",
+      "R03:1",
+      "R04:1",
+      "R05:1",
+      "R06:1",
+      "R07:1",
+      "R08:1",
+      "R09:1",
+      "R10:1"
+    ],
+    "budget": "Cumulative previous known debit 0.017885532 USD; this observed campaign ceiling 0.48 USD; total <= 0.497885532 USD. Jev/OpenRouter only; Mistral local. New cases require scoped authorization before remote execution."
+  },
+  "cases": [
+    {
+      "id": "R01",
+      "group": "external_forum",
+      "category": "xj6_bridage",
+      "turns": [
+        {
+          "question": "xj6 de 2012 bridable à 35 ou 47 ch?",
+          "expected": "Demander la variante sans perdre 2012 ; ne pas certifier le bridage avec une fiche. Proposer la lecture des mentions et une vérification constructeur.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.jeuxvideo.com/forums/42-1000019-47113187-1-0-1-0-xj6-de-2012-bridable-a-35-ou-47-ch.htm",
+        "post_date": "2016-05-22",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Titre exact, sans ajout de A2.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R02",
+      "group": "external_forum",
+      "category": "reservoir",
+      "turns": [
+        {
+          "question": "CX 650 E : quelle est la contenance du réservoir d’essence ?",
+          "expected": "Modèle et E conservés ; demander le millésime pour une valeur sourcée ; aucune année inventée.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://cxclub.org/phpbb/viewtopic.php?f=24&t=14865",
+        "post_date": "2025-05-10",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Titre du fil + question exacte ; apostrophe typographique.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R03",
+      "group": "external_forum",
+      "category": "comparaison",
+      "turns": [
+        {
+          "question": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+          "expected": "Reconnaître les deux modèles ; demander les années pour comparer leurs fiches. Pas de caractéristiques inventées.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/Motardie/comments/17vbwvt",
+        "post_date": "2023-11-14",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Titre + première question exacts.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R04",
+      "group": "external_forum",
+      "category": "equipement_marche",
+      "turns": [
+        {
+          "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+          "expected": "Lire la fiche exacte 2019 ; distinguer ABS documenté et marché UK non certifié. Ne pas confondre option et série.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/HondaCB/comments/jchcso",
+        "post_date": "2020-10-16",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Question originale en anglais, marché UK conservé.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R05",
+      "group": "external_forum",
+      "category": "distribution",
+      "turns": [
+        {
+          "question": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+          "expected": "Ne pas confondre distribution et transmission finale ; demander le millésime si nécessaire pour la fiche, pas de cardan inventé.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://boxersflats.forumactif.org/t11030p40-et-pourquoi-pas-une-ninet",
+        "post_date": "2024-12-14",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Question originale exacte.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R06",
+      "group": "external_forum",
+      "category": "occasion",
+      "turns": [
+        {
+          "question": "65 000 km pour une CB500F de 2018, est-ce convenable ?",
+          "expected": "Pas de garantie de fiabilité ni seuil kilométrique inventé. Expliquer le besoin d’entretien et inspection ; pas une fiche complète hors sujet.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/Motardie/comments/1i2tojg/65_000_km_pour_une_cb500f_de_2018_estce_convenable/",
+        "post_date": "2025 (date exacte non vérifiée)",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Titre exact ; question d’état individuel hors preuves du catalogue.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R07",
+      "group": "external_forum",
+      "category": "ressenti",
+      "turns": [
+        {
+          "question": "How does the V85 handle 80 on the highway ? Vibration wise. I love the look but I live where there’s open highway stretches to get to the nearest town and I keep being told it’s too busy hold that for long periods. But I really like the look .",
+          "expected": "Ressenti non déductible des fiches. Clarifier année/version ; ne pas certifier confort/vibrations ni supposer une unité.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/MotoGuzzi/comments/1wufy80/conflicted/",
+        "post_date": "2026-10-01",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Commentaire-question original, apostrophe normalisée, sans données de profil.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R08",
+      "group": "external_forum",
+      "category": "ergonomie",
+      "turns": [
+        {
+          "question": "Vos conseils de 1ere moto pour les petits gabarits ? (1m61)",
+          "expected": "Expliquer ce que hauteur/poids du catalogue permettent de comparer, demander contraintes ; ne pas garantir les pieds au sol depuis la seule taille.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/Motardie/comments/1tq84ny/vos_conseils_de_1ere_moto_pour_les_petits/",
+        "post_date": "2026-05-28",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Titre exact ; aucune année ou contrainte A2 ajoutée.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R09",
+      "group": "external_forum",
+      "category": "reparation_prix",
+      "turns": [
+        {
+          "question": "Bonjour, j’ai plusieurs renfoncement sur le réservoir de ma moto que je viens d’acheter (CB500 PC39) il faut que j’aille voir un carrosier spécialisé pour ça ? Et vous pensez que ça coûte combien à refaire ?",
+          "expected": "Prix de réparation hors catalogue ; pas de tarif inventé ni substitution au prix neuf ; signaler si identité PC39 ambiguë.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/Motardie/comments/123ga68",
+        "post_date": "2023 (date exacte non vérifiée)",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Question originale ; pas de correction silencieuse CB500/CBF500.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "R10",
+      "group": "external_forum",
+      "category": "effet_bridage",
+      "turns": [
+        {
+          "question": "Je ne sais pas si le bridage change les caractéristiques réelles de la moto (poids, consommation, comportement) ou si ça se limite à une simple limitation de puissance électronique/mécanique.",
+          "expected": "Demander modèle/année/type de bridage pour une comparaison ; ne pas attribuer un poids/consommation/effet mécanique sans preuve. Réponse utile, pas simple refus légal.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/Motardie/comments/1vakypf/premi%C3%A8re_moto_questions/",
+        "post_date": "2026-07-30",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Phrase-question originale ; initiale capitalisée, pas de modèle ajouté.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    },
+    {
+      "id": "X01",
+      "group": "targeted",
+      "category": "xj6_followup",
+      "turns": [
+        {
+          "question": "Quelle type de bridage pour un XJ6 A2 2011",
+          "expected": "Proposer Naked / Diversion / Diversion F ; conserver 2011 ; ne pas certifier un kit.",
+          "object_ids": []
+        },
+        {
+          "question": "La Naked",
+          "expected": "Lire Yamaha XJ6 600 Naked 2011 ; conserver demande de bridage ; distinguer mention de puissance/permis de preuve du kit.",
+          "object_ids": []
+        }
+      ]
+    }
+  ]
+}

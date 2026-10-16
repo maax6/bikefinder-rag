@@ -1,0 +1,47 @@
+{
+  "id": "58a87e6b4fd24f1eb7f10866163916dc",
+  "question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+  "started_at": "2026-10-16T01:05:33.641820+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Calcul sur **20 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 18/20 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Minimum : 785 mm** — 4 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSX-R 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9081/GSX-R-125-2022/contact.html) |\n| Suzuki GSX-S 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9082/GSX-S-125-2022/contact.html) |\n| Suzuki SV 650 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n| Suzuki SV 650 X (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9200/SV-650-X-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "seat_height_mm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "min",
+        "fields": [
+          "seat_height_mm"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.07906595803797245,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.07928283396176994
+}

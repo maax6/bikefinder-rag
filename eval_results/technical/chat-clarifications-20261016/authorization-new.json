@@ -1,0 +1,12 @@
+{
+  "authorized_at_recorded": "2026-10-15T23:33:07.515626+00:00",
+  "source": "User reply in current chat",
+  "answer": "Oui, autoriser ces 12 tours",
+  "scope": "Ten frozen public rider questions and two XJ6 turns; questions and necessary technical excerpts to Jev/OpenRouter; Mistral remains local.",
+  "pack": "questions-new.json",
+  "questions_sha256": "0fafcaf62b961c384a33b4d040448d23395d1743758f4710089dc71728aaeaf6",
+  "turns": 12,
+  "prior_cumulative_debit_usd": 0.01896594,
+  "overall_ceiling_usd": 0.5,
+  "new_server_ceiling_usd": 0.478919592
+}

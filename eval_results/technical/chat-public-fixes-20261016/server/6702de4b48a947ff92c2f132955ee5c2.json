@@ -1,0 +1,220 @@
+{
+  "id": "6702de4b48a947ff92c2f132955ee5c2",
+  "question": "Quelle est la puissance de la Honda CB 500 F de 2020 ?",
+  "started_at": "2026-10-16T01:08:30.857390+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La Honda CB 500 F de 2020 a une puissance de 48 ch à 8 600 tr/min. [Honda CB 500 F (2020)](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2020
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F"
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle est la puissance de la Honda CB 500 F de 2020 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral",
+    "_catalog_seconds": 21.79661070788279,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "555a2d677db34a14",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020,
+          "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+          "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "555a2d677db34a14:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "555a2d677db34a14:section:4",
+              "object_id": "555a2d677db34a14",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+              "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+              "text": "Honda CB 500 F 2020\nMoteur\nBicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+              "score": 0.7861425876617432,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "555a2d677db34a14:section:7",
+              "object_id": "555a2d677db34a14",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+              "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Honda CB 500 F 2020\nPerformances\nVitesse max : environ 180 km/h; Consommation moyenne : 3,40 l/100km; Autonomie estimée : 503 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.7385789155960083,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "555a2d677db34a14:section:0",
+              "object_id": "555a2d677db34a14",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+              "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+              "section": "Châssis",
+              "original_text": "Cadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+              "text": "Honda CB 500 F 2020\nChâssis\nCadre : en acier de type Diamant; Réservoir : 17,10 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids tous pleins faits : 189 kg",
+              "score": 0.7030540108680725,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "555a2d677db34a14:section:1",
+              "object_id": "555a2d677db34a14",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+              "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "text": "Honda CB 500 F 2020\nTrain avant\nFourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "score": 0.6722339391708374,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "555a2d677db34a14:section:3",
+              "object_id": "555a2d677db34a14",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2020,
+              "source_url": "https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html",
+              "source_sha256": "85a2a9388d95feda9c4122751f415bebf895eeefd5a75a7cf2a0f9f58caa36b7",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "text": "Honda CB 500 F 2020\nTrain arrière\nMono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "score": 0.6692809462547302,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.498272806406021e-07,
+          "query_encoding_seconds": 1.042269874829799,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "555a2d677db34a14",
+          "proof_check": {
+            "fields": {
+              "power_ch": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0035031249281018972
+          }
+        }
+      ],
+      "seconds": 1.0498222089372575,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "a4b116d3e8e5b04058a1f677344ab74e6b0ae3a25c720ef20f4c77c09bde74be",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1494,
+      "eval_count": 52,
+      "total_duration": 20660336666,
+      "load_duration": 15221083,
+      "prompt_eval_duration": 11183307000,
+      "eval_duration": 9336376000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Honda CB 500 F de 2020 a une puissance de 48 ch à 8 600 tr/min.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.96,
+              "unsupported": 0.04
+            },
+            "confidence": 0.92
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 20.686026124982163
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 21.79681225004606
+}

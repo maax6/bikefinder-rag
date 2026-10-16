@@ -1,0 +1,38 @@
+{
+  "id": "07985f13b5804673bc8650788818ede8",
+  "question": "CX 650 E : quelle est la contenance du réservoir d’essence ?",
+  "started_at": "2026-10-15T23:32:21.172756+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4012,
+        "output_tokens": 1139,
+        "cost": 0.000168504
+      },
+      "seconds": 0.6076940831262618,
+      "reserved_usd": 0.0028538160000000003,
+      "debit_usd": 0.000168504
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": {
+      "question": "CX 650 E : quelle est la contenance du réservoir d’essence ?",
+      "blocked": "source_identity",
+      "updates": []
+    },
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6481208330951631,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": false,
+  "server_seconds": 0.6490910421125591
+}

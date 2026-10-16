@@ -1,0 +1,171 @@
+{
+  "first/Q01/1": {
+    "verdict": "correct",
+    "note": "La source conserve environ 62 ch pour CRF 450 R 2022. Mistral expire et un tableau exact prend le relais : contenu correct, utilité réduite par l’échec de rédaction.",
+    "draft_note": "ReadTimeout : aucune proposition complète disponible, réponse déterministe de secours.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/Q05/1": {
+    "verdict": "correct",
+    "note": "Fourche inversée de 41 mm, mono-amortisseur et débattements de 150 mm conservés pour Tiger Sport 660 2022. Le tableau est fidèle ; nouvelle expiration du rédacteur.",
+    "draft_note": "ReadTimeout : aucune proposition complète disponible, réponse déterministe de secours.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/Q08/1": {
+    "verdict": "correct",
+    "note": "Couple 4,60 mkg à 6 000 tr/min, bonne source Benelli 2022. La rédaction expire ; le tableau restitue la valeur sans ajouter le régime de puissance 8 500 tr/min.",
+    "draft_note": "ReadTimeout : aucune proposition complète ; faits conservés par le rendu des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/Q09/1": {
+    "verdict": "correct",
+    "note": "NT 1100 2022 : poignées chauffantes de série, régulateur inconnu. Les statuts restent distincts et aucune absence n’est inventée. Le tableau prend le relais de Mistral sans répétition de la lacune.",
+    "draft_note": "ReadTimeout : aucune proposition complète ; faits conservés par le rendu des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/Q11/1": {
+    "verdict": "justified_limit",
+    "note": "Les 191 kg restent un poids à sec pour chacun des deux millésimes. Le poids tous pleins est explicitement inconnu ; les deux réserves répétées ont disparu. Mistral expire et le tableau conserve la limite.",
+    "draft_note": "ReadTimeout ; aucune proposition complète de Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/Q21/1": {
+    "verdict": "correct",
+    "note": "La fiche Classic 350 2022 conserve permis A et 20,20 ch à 6 100 tr/min. Mention A2 absente, sans conclusion sur l’éligibilité individuelle. Le secours sourcé reste verbeux mais exact ; le doublon A2 est absent.",
+    "draft_note": "ReadTimeout ; rendu direct des sources, pas une rédaction réussie.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/D01/2": {
+    "verdict": "correct",
+    "note": "Le suivi conserve la Leoncino 2022 : couple maximal 4,60 mkg à 6 000 tr/min. Plus de fausse annonce de phrase non vérifiée ; le complément répète toutefois la valeur, ce qui pénalise la concision.",
+    "draft_note": "Affirmation fidèle ; mode mixte parce que la couverture globale reste non validée, pas parce que le fait serait faux.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/D05/1": {
+    "verdict": "correct",
+    "note": "Le poids tous pleins de W 800 2022 reste 221 kg. La correction précédente est conservée : pas de réserve sur le poids sec non demandé.",
+    "draft_note": "Affirmation fidèle, avec source du bon modèle et millésime."
+  },
+  "first/H07/2": {
+    "verdict": "correct",
+    "note": "Le contexte conserve Leoncino 2022 et passe correctement au réservoir : 12,70 L, bonne source. Le complément répète la valeur sans annoncer à tort une phrase non vérifiée.",
+    "draft_note": "Affirmation fidèle ; couverture globale non validée, donc complément direct des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/R01/1": {
+    "verdict": "justified_limit",
+    "note": "La famille XJ6 est reconnue sans exiger le mot A2. Les trois variantes réellement présentes en 2012 sont proposées ; l’année et la demande de bridage restent conservées, sans certification de kit.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    }
+  },
+  "first/R06/1": {
+    "verdict": "justified_limit",
+    "note": "La demande sur un exemplaire de 65 000 km n’est plus transformée en liste de freins et suspensions. La limite entretien/inspection est explicite, avec une démarche concrète et aucun seuil kilométrique inventé. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    }
+  },
+  "first/R07/1": {
+    "verdict": "justified_limit",
+    "note": "La famille V85 est reconnue avec ses cinq variantes du corpus. Le chat distingue ressenti de vibration et caractéristiques, demande année/variante et unité de vitesse, sans certifier le confort. Réponse utile mais un peu longue et demande de millésime répétée. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    }
+  },
+  "first/R08/1": {
+    "verdict": "justified_limit",
+    "note": "La réponse explique les critères comparables (hauteur de selle, poids sec et tous pleins), demande budget/permis/usage et ne garantit pas les pieds au sol depuis 1m61. La limite des prix de lancement est claire. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    }
+  },
+  "first/R09/1": {
+    "verdict": "justified_limit",
+    "note": "La réparation est reconnue comme extérieure au catalogue. Inspection et devis sont proposés ; aucun prix neuf ni tarif de réparation n’est substitué à la demande. L’identification exacte est demandée sans affirmer une variante PC39. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    }
+  },
+  "first/R10/1": {
+    "verdict": "justified_limit",
+    "note": "Le chat demande modèle, variante, millésime et type de bridage. Il précise que poids, consommation, mécanisme et comportement ne sont pas déduits sans données avant/après ; une comparaison documentaire reste possible si les preuves existent. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    }
+  },
+  "first/R04/1": {
+    "verdict": "correct",
+    "note": "La CB 500 F 2019 est bien identifiée. Le tableau cite ABS de série et la fiche exacte, en indiquant que le marché UK n’est pas établi. La proposition Mistral est fidèle mais le contrôleur la rejette faute de confiance suffisante : sortie finale correcte, réserve de validation peu utile.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "draft_note": "La phrase ABS de série est fidèle à Équipement de série / Assistance au freinage : ABS de série. Jev choisit supported mais sa confiance vaut 0,72, sous le seuil conservé ; la couverture vaut 0,44. Le secours est donc un rejet conservateur observé, pas une hallucination de Mistral."
+  },
+  "first/X01/2": {
+    "verdict": "justified_limit",
+    "note": "Le suivi La Naked conserve XJ6 600 Naked 2011 et le contexte de bridage. Permis A documenté, mention A2 absente sans déduire l’incompatibilité, limite de preuve maintenue et pas de doublon du manque A2.",
+    "draft_note": "Affirmation fidèle au passage permis A ; mode mixte avec complément de source."
+  }
+}

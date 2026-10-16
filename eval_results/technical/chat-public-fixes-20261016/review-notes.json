@@ -1,0 +1,18 @@
+{
+  "changes": [
+    "Le mot anglais Can n’est plus une abréviation de Can-Am. Le nom complet Can-Am continue d’être reconnu ; la CB500F n’est plus éliminée de la demande anglaise.",
+    "Les demandes de bridage déclenchent la clarification de famille même sans le mot A2. Les familles écrites avec une lettre et un nombre séparés, comme V 85, proposent leurs variantes réelles sans choisir une version ou une année à la place de l’utilisateur.",
+    "État d’une occasion, réparation, gabarit, sensations et effets du bridage reçoivent une limite précise et une prochaine étape. Ces textes sont des règles locales de périmètre : aucun fait mécanique particulier, devis, seuil kilométrique ou confort n’est inventé. Ils ne constituent pas un progrès de rédaction de Mistral.",
+    "Une fiche peut documenter un équipement sans prouver la version vendue au Royaume-Uni. La réserve de marché reste attachée aux faits et survit à la rédaction ; ce parcours ne doit pas effacer une autre contrainte non prise en charge.",
+    "BGE-M3, ses poids, la recherche, le modèle Mistral, ses seuils de validation et sa limite de rédaction restent inchangés. Les corrections portent sur le routage, les identités et les réponses de périmètre."
+  ],
+  "limitations": [
+    "Les dix questions publiques sont désormais des cas connus utilisés pour corriger le code. Leur score après correction n’est pas une mesure de généralisation ; un nouveau lot indépendant reste nécessaire.",
+    "La relecture utilise la même grille que la première passe, sur 20 réponses de régression et 10 publiques. Les notes des textes strictement identiques sont reconduites et identifiées comme telles ; les sorties différentes sont relues. Le correcteur et le relecteur sont le même assistant, sans aveugle ni adjudication humaine.",
+    "Les réponses hors catalogue sont des explications déterministes de périmètre. Elles proposent des précisions ou une démarche ; elles ne remplacent ni une expertise de l’exemplaire, ni des données de réparation, ni un essai routier.",
+    "R02 : l’attendu d’origine supposait une Honda CX 650 E disponible. Sa véritable absence du corpus a été vérifiée ; l’attendu initial reste affiché. R05 : la demande d’année est acceptable, mais le plan assimile encore couple conique au couple moteur. La réponse mécanique après précision d’année n’est pas validée.",
+    "Les 57 tours anciens couvrent notamment les valeurs, maximums, moyennes, prix moyens, variantes et suivis. Ils restent un lot de régression. Les essais passent par le vrai endpoint Gradio et les services réels, sur une instance isolée ; les anciens chats ouverts ne sont pas redémarrés.",
+    "Les temps incluent la réponse complète, pas le premier token. Une seule machine, une passe principale, six répétitions et des caches partagés : la comparaison n’est pas un essai de vitesse contrôlé. Les échecs et délais longs sont conservés.",
+    "Un dernier resserrement d’une condition sur le marché UK est contrôlé par les tests logiciels et un rejeu séparé de R04. Les empreintes des sources de chaque phase sont conservées ; les autres questions ne déclenchent pas cette branche."
+  ]
+}

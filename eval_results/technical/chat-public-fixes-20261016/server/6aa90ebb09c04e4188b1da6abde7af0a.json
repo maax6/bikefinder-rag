@@ -1,0 +1,22 @@
+{
+  "id": "6aa90ebb09c04e4188b1da6abde7af0a",
+  "question": "Comment se calcule une puissance fiscale en cv",
+  "started_at": "2026-10-16T01:09:25.635240+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Les fiches documentent la puissance du moteur, pas la méthode de calcul de la puissance fiscale. Je ne traite donc pas les CV fiscaux comme une puissance moteur à convertir. Pour expliquer ou calculer la puissance fiscale, précise le pays et la catégorie de véhicule ; il faut une source officielle adaptée, absente de ce catalogue.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.00027254200540483
+}

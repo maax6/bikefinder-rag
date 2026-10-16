@@ -1,0 +1,33 @@
+{
+  "id": "19cb4363a1004f11934ed8815d753057",
+  "question": "Quelle marque fabrique l’Interceptor 650 ?",
+  "started_at": "2026-10-15T23:17:11.731608+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Le constructeur indiqué dans le catalogue est **Royal-Enfield**. Sources d’identité : [Royal-Enfield Interceptor 650 (2026)](https://www.motoplanete.com/royal-enfield/12136/Interceptor-650-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "identity",
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Interceptor 650"
+        }
+      ],
+      "identity": {},
+      "fields": [],
+      "conditions": []
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "identity",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.07828970812261105
+}

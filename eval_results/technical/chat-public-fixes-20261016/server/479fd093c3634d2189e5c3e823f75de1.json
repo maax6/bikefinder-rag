@@ -1,0 +1,42 @@
+{
+  "id": "479fd093c3634d2189e5c3e823f75de1",
+  "question": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+  "started_at": "2026-10-16T01:11:15.576092+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Kawasaki",
+          "model": "W 800"
+        }
+      ],
+      "fields": [
+        "torque_nm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.06704558292403817,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.06821499997749925
+}

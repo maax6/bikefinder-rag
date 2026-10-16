@@ -1,0 +1,27 @@
+{
+  "id": "e93c20d704a74221aeb05f54f056b505",
+  "question": "Je ne sais pas si le bridage change les caractéristiques réelles de la moto (poids, consommation, comportement) ou si ça se limite à une simple limitation de puissance électronique/mécanique.",
+  "started_at": "2026-10-16T01:11:21.072805+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Les effets du bridage dépendent de la configuration à comparer ; ces fiches ne décrivent pas systématiquement la moto avant et après modification. Précise le modèle, la variante, le millésime et le type de bridage (ou la référence du kit). Je pourrai comparer les caractéristiques explicitement documentées et signaler les manques. Sans ces preuves, je ne conclus ni sur le poids, ni sur la consommation, ni sur le comportement ou le mécanisme employé.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "catalog_boundary",
+    "_catalog_seconds": 0.0001911658328026533,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "retrieval_executed": false,
+      "scope_topic": "restriction_effects",
+      "response_kind": "deterministic_scope_explanation"
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0002697089221328497
+}

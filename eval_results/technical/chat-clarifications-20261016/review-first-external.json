@@ -1,0 +1,670 @@
+{
+  "conclusion": "Les corrections préservent le contenu sur les 57 tours comparables, et le dialogue XJ6 garde l’année et la variante. Les dix questions publiques exposent cependant cinq échecs, deux réponses partielles et trois limites justifiées : les formulations libres restent un point faible, avant même la rédaction Mistral.",
+  "findings": [
+    {
+      "title": "XJ6 A2 : demander la variante, pas recommencer la question.",
+      "detail": "Dans le vrai chat, XJ6 A2 2011 propose Naked, Diversion et Diversion F. Le suivi La Naked conserve 2011 et lit la bonne fiche, sans certifier de kit. Une répétition du manque A2 subsiste dans ce suivi. La formulation publique XJ6 de 2012 bridable à 35 ou 47 ch échoue à reconnaître la famille : cette généralisation n’est pas acquise."
+    },
+    {
+      "title": "Distinguer manque de donnée et incertitude du contrôleur.",
+      "detail": "Les doutes du contrôleur restent dans les traces. Ils ne deviennent plus automatiquement une liste de preuves manquantes répétée sous une réponse finalement validée. Une lacune réelle reste visible, de même que les limites A2."
+    },
+    {
+      "title": "Retouches finales issues de la première passe.",
+      "detail": "La présentation n’annonce plus qu’une phrase est non vérifiée quand toutes les phrases ont passé le contrôle. Un manque déjà indiqué dans la bonne cellule du tableau n’est pas répété. Le poids sec inconnu n’ajoute plus une réserve quand seul le poids tous pleins est demandé. Huit tours réels ciblés sont présentés séparément ; les premières sorties sont conservées."
+    },
+    {
+      "title": "Les calculs et le contexte restent couverts.",
+      "detail": "Maximums avec ex æquo, moyennes, poids distincts, pagination et changements d’année restent corrects. Les prix moyens documentés restent 12 446,929 € pour Yamaha 2020 (42/43 fiches) et 6 565,667 € pour les CB 500 F 2020–2022 (3/3). Aucun prix actuel d’occasion n’est inventé."
+    },
+    {
+      "title": "Contenu correct ne veut pas dire expérience parfaite.",
+      "detail": "Le tableau de secours préserve des réponses malgré quatre expirations de Mistral. Certaines réponses restent trop longues, et une réserve sur les variantes est encore superflue dans une comparaison explicite. La grille d’utilité pénalise ces défauts ; ils ne sont pas masqués par le score de contenu."
+    },
+    {
+      "title": "Des questions authentiques révèlent d’autres limites.",
+      "detail": "XJ6 2012, CB500F 2019 et V85 sont bloqués sur leur identité ; occasion et réparation reçoivent des réponses hors sujet. La distribution par couple conique est confondue avec le couple moteur dans le plan. CX 650 E est réellement absent du corpus : son refus n’est pas une erreur de reconnaissance."
+    }
+  ],
+  "generation_note": "Sur les 20 réponses relues en détail, 17 sollicitent Mistral : 14 propositions aboutissent et 3 expirent. Les 3 autres réponses sont des calculs déterministes. Chaque proposition disponible est inspectable avant contrôle. Sur la Leoncino, une deuxième phrase ajoute 8 500 tr/min alors que le couple demandé est à 6 000 tr/min : cette phrase est écartée. Sur l’ensemble des 57 tours, Mistral est sollicité 22 fois : 14 rédactions publiées, 4 sorties mixtes et 4 expirations avec tableau de secours. Aucun de ces tableaux n’est compté comme une bonne rédaction du modèle. Sur les huit contrôles finaux, le cas Meteor 350 produit des identifiants P2/P8 dans la prose : le contrôle numérique le rejette et le tableau assure la réponse. Il s’agit d’un défaut de format, distinct d’une valeur technique inventée. Sur les dix questions publiques, une seule sollicite Mistral, puis expire ; les neuf autres s’arrêtent avant rédaction. Ces résultats évaluent surtout le routage et les limites du chat, pas sa capacité de rédaction libre. Le suivi XJ6 sollicite aussi Mistral et produit une proposition sourcée, complétée en mode mixte.",
+  "external_note": "Première exécution des dix formulations publiques figées : trois limites justifiées (CX 650 E absent, années manquantes pour CB500F/CB500X et W800), deux réponses partielles et cinq échecs. Aucune réponse technique directe satisfaisante sur ce lot ; trois clarifications/limites acceptables ne valent pas trois réponses complètes. Aucun fait technique inventé observé, mais plusieurs blocages et réponses hors sujet. La question R02 comportait un attendu erroné : CX 650 E est absent du corpus, vérification conservée dans l’audit. Aucun résultat de forum n’a servi de vérité technique.",
+  "timing_note": "Mesure de l’envoi au résultat complet par l’entrée Gradio, pas du premier token. Les caches de décisions Jev et de passages sont réutilisés ; le rédacteur Mistral est réellement invoqué, sans cache de réponse. La première réponse comprend le chargement de BGE et 8,84 s de chargement de Mistral. La médiane globale très basse reflète la majorité de réponses SQL ou de clarification avec cache : elle ne représente pas le délai d’une rédaction. Les 22 tours avec Mistral prennent 19,50 s en médiane, P95 30,85 s. Les deux répétitions de rédaction prennent 13,80 s et 10,07 s. Une seule machine, ordre séquentiel, pas de charge contrôlée : aucun gain causal de vitesse n’est attribué à ces corrections. Sur les 18 rédactions abouties, la préparation du contexte prend 6,77 s en médiane et la génération 8,30 s, à environ 7,42 tokens/s ; ces médianes de composantes ne s’additionnent pas en une médiane totale. Cela désigne la rédaction locale comme prochain poste à optimiser, sans prouver encore l’effet d’une optimisation. Les dix questions publiques prennent 0,74 s en médiane, car neuf ne sollicitent pas Mistral. La seule tentative de rédaction prend 38,70 s au total et expire après 30,24 s ; le chargement et l’encodage BGE ajoutent 7,11 s. Le suivi XJ6 prend 17,76 s. Une clarification rapide mais ratée n’est pas un progrès de performance.",
+  "limitations": [
+    "57 tours comparables et 6 répétitions, puis 8 tours ciblés après retouches ; enfin 10 questions publiques et 2 tours XJ6 autorisés et exécutés. Les phases et leurs traces sont séparées.",
+    "La grille de quatre critères porte sur 30 réponses finales : 20 du lot de régression et 10 publiques. Relecture par le même assistant que le correcteur, sans aveugle ni validation humaine ; les deux populations sont présentées séparément.",
+    "Le lot ancien reste un lot de régression. Les dix formulations publiques sont inédites pour cette campagne, sélectionnées par l’assistant et non représentatives de tous les motards. Une seule passe, sans ajustement du routage sur ces dix résultats. Une question a un attendu rectifié après vérification de l’absence du modèle ; son attendu d’origine reste visible.",
+    "Les valeurs attendues et la fidélité sont jugées contre le corpus technique figé, pas contre une expertise mécanique ou des documents officiels de chaque exemplaire.",
+    "BGE-M3 original, révision 5617a9f61b028005a4858fdac845db406aefb181. Aucun adaptateur LoRA ni fusion expérimentale. Mistral Small 3.2 local 24B Q4_K_M, empreinte vérifiée dans ollama-runtime.json.",
+    "Le serveur de test isolé emprunte la vraie entrée Gradio /chat, le routeur et les sources. Un observateur sauvegarde les traces et bloque les dépassements du budget ; il ne produit ni ne réécrit les réponses.",
+    "Le service commun SQL + RAG n’est toujours pas raccordé à ce chat ; ses benchmarks restent distincts.",
+    "Les seuils de vérification des affirmations, la limite de rédaction et le modèle n’ont pas été abaissés ou changés pour améliorer le score."
+  ],
+  "software_validation": "1 249 tests logiciels réussis, 11 tests SQL réussis séparément dans un schéma temporaire. Ces tests ne mesurent pas la précision du chatbot.",
+  "grades": [
+    {
+      "key": "first/Q01/1",
+      "verdict": "correct",
+      "note": "Approximation conservée : environ 62 ch ; bonne fiche 2022, réponse directe.",
+      "draft_note": "Proposition fidèle, aucun qualificatif perdu.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/Q02/1",
+      "verdict": "correct",
+      "note": "Les deux valeurs sont présentes : selle 805 mm et réservoir 13 L, avec la bonne source.",
+      "draft_note": "Deux affirmations exactes et complètes.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/Q03/1",
+      "verdict": "correct",
+      "note": "Cardan et refroidissement liquide présents. Les anciennes réserves répétées ont disparu.",
+      "draft_note": "Deux affirmations fidèles ; contrôle final de couverture positif.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/Q04/1",
+      "verdict": "correct",
+      "note": "Dimensions avant 100/90-19 et arrière 130/80-18 distinctes et correctement citées.",
+      "draft_note": "Les deux dimensions sont conservées.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/Q05/1",
+      "verdict": "correct",
+      "note": "Fourche inversée 41 mm, mono-amortisseur et deux débattements de 150 mm : réponse complète sans réglages inventés.",
+      "draft_note": "Aucun détail demandé perdu ni ajout non sourcé.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/Q06/1",
+      "verdict": "correct",
+      "note": "197 kg tous pleins faits correctement sourcés ; poids sec explicitement inconnu. La réserve de couverture reste générique après une lacune déjà identifiée : lisibilité perfectible.",
+      "draft_note": "La proposition ne donne que le poids humide documenté ; le moteur de présentation ajoute le manque du poids sec. Ne pas attribuer cette complétude au seul rédacteur.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q07/1",
+      "verdict": "correct",
+      "note": "Freins avant 330 mm / 4 pistons et arrière 230 mm / 1 piston correctement séparés et cités.",
+      "draft_note": "Proposition exacte pour les quatre détails demandés.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/Q08/1",
+      "verdict": "correct",
+      "note": "La réponse finale conserve 4,60 mkg à 6 000 tr/min. Le contrôle retire un ajout ambigu sur 8 500 tr/min ; le tableau répète le fait correct.",
+      "draft_note": "Deuxième affirmation problématique : « Le régime annoncé ... 8 500 tr/min » alors que la question porte sur le régime du couple (6 000). Le contrôle ne publie que la première affirmation.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q09/1",
+      "verdict": "correct",
+      "note": "Poignées chauffantes de série et régulateur inconnu correctement distingués. La réponse finale reste trop longue : tableau et réserve générique répètent le manque.",
+      "draft_note": "Le rédacteur fournit le bon équipement et tente une absence de mention. Le contrôle conserve la première affirmation ; le tableau précise le régulateur inconnu.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q10/1",
+      "verdict": "correct",
+      "note": "Le tableau conserve les deux variantes, diamètres, réglages et suspensions électroniques de la S. Échec du rédacteur après 30 s : contenu sauvé par le rendu direct des sources.",
+      "draft_note": "Aucune proposition complète disponible : ReadTimeout. Ce succès de contenu final ne mesure pas une bonne rédaction de Mistral.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q11/1",
+      "verdict": "justified_limit",
+      "note": "Les 191 kg restent un poids à sec ; les deux poids tous pleins sont inconnus. Réponse correcte sur la limite, mais rédaction expirée et deux réserves répétées.",
+      "draft_note": "Aucune proposition complète : ReadTimeout.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q12/1",
+      "verdict": "correct",
+      "note": "125 ch et 111 ch, différence 14 ch, avec les bonnes fiches. La réserve sur les variantes est superflue pour cette comparaison explicite.",
+      "draft_note": "Calcul déterministe sourcé ; Mistral non appelé.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q21/1",
+      "verdict": "correct",
+      "note": "Permis A et 20,20 ch à 6 100 tr/min fidèles ; mention A2 absente et certification individuelle non établie. La réserve générale de couverture alourdit la fin.",
+      "draft_note": "Deux affirmations exactes ; les limites A2 sont ajoutées par le présentateur.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/Q13/1",
+      "verdict": "correct",
+      "note": "Maximum 1043 cc, six ex æquo et couverture 42/42 correctement calculés."
+    },
+    {
+      "key": "first/Q14/1",
+      "verdict": "correct",
+      "note": "Minimum 785 mm, quatre ex æquo ; couverture 18/20 et exclusion des inconnus visibles."
+    },
+    {
+      "key": "first/Q15/1",
+      "verdict": "correct",
+      "note": "Moyenne 48 ch sur trois années, détail 144/3 et sources conservés."
+    },
+    {
+      "key": "first/Q16/1",
+      "verdict": "correct",
+      "note": "Compte exact : 47 fiches Triumph 2022."
+    },
+    {
+      "key": "first/Q17/1",
+      "verdict": "correct",
+      "note": "Compte exact : 34 Yamaha 2022 avec ABS documenté de série ; inconnus exclus."
+    },
+    {
+      "key": "first/Q18/1",
+      "verdict": "correct",
+      "note": "Les dix fiches attendues respectent les deux bornes inclusives ; poids sec et humide restent distincts."
+    },
+    {
+      "key": "first/Q19/1",
+      "verdict": "correct",
+      "note": "Royal-Enfield trouvé sans exiger une année ; la source datée est explicitement une preuve d’identité."
+    },
+    {
+      "key": "first/Q20/1",
+      "verdict": "justified_limit",
+      "note": "Distingue la puissance fiscale de la puissance moteur et demande pays/catégorie pour une source officielle ; aucune conversion arbitraire."
+    },
+    {
+      "key": "first/Q22/1",
+      "verdict": "justified_limit",
+      "note": "Édition fictive refusée sans substitution à la W 800 standard."
+    },
+    {
+      "key": "first/Q23/1",
+      "verdict": "justified_limit",
+      "note": "Absence de fiche NT 1100 2007 explicite ; pas de valeur de 2022 substituée."
+    },
+    {
+      "key": "first/Q24/1",
+      "verdict": "justified_limit",
+      "note": "Aucune garantie de sécurité déduite de la mention ABS."
+    },
+    {
+      "key": "first/D01/1",
+      "verdict": "correct",
+      "note": "Puissance 48 ch à 8 500 tr/min et cylindrée 499,60 cc correctement citées."
+    },
+    {
+      "key": "first/D01/2",
+      "verdict": "correct",
+      "note": "Contexte Leoncino 2022 conservé et 4,60 mkg à 6 000 tr/min exacts. Le message de rédaction partielle est trompeur : toute la proposition est vérifiée ; correction de présentation préparée.",
+      "draft_note": "Une seule affirmation, fidèle ; toutes les phrases validées. Le désaccord concerne la couverture globale, pas un ajout retiré.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/D02/2",
+      "verdict": "correct",
+      "note": "La précision 2022 est correctement résolue ; réservoir 17,20 L et bonne fiche. La rédaction expire, remplacée par le tableau.",
+      "draft_note": "ReadTimeout, aucune proposition complète disponible.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/D05/2",
+      "verdict": "justified_limit",
+      "note": "Poids sec explicitement non documenté ; 221 kg reste un poids tous pleins. La réponse commence par la valeur non demandée et reste verbeuse.",
+      "draft_note": "La proposition décrit seulement le poids humide. La limite sur le poids sec vient du présentateur.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/D02/1",
+      "verdict": "justified_limit",
+      "note": "Demande le millésime manquant sans inventer de valeur."
+    },
+    {
+      "key": "first/D03/1",
+      "verdict": "correct",
+      "note": "Cinq premières fiches sur dix, bonnes identité et année, pagination explicite."
+    },
+    {
+      "key": "first/D03/2",
+      "verdict": "correct",
+      "note": "Positions 6 à 10 sans doublons avec la première page."
+    },
+    {
+      "key": "first/D04/1",
+      "verdict": "correct",
+      "note": "Dix Suzuki 2022 strictement au-dessus de 100 ch ; bonnes sources et valeurs."
+    },
+    {
+      "key": "first/D04/2",
+      "verdict": "correct",
+      "note": "Compte de la sélection précédente conservé : dix fiches."
+    },
+    {
+      "key": "first/D05/1",
+      "verdict": "correct",
+      "note": "221 kg tous pleins corrects ; réserve sur le poids sec non demandé. Ce bruit est corrigé dans la dernière retouche de présentation."
+    },
+    {
+      "key": "first/D06/1",
+      "verdict": "correct",
+      "note": "48 ch à 8 600 tr/min avec la fiche 2020."
+    },
+    {
+      "key": "first/D06/2",
+      "verdict": "correct",
+      "note": "Passe à 2022 sur le même modèle, 48 ch ; le tableau reprend le relais après expiration du rédacteur."
+    },
+    {
+      "key": "first/K01/1",
+      "verdict": "correct",
+      "note": "Yamaha sans clarification d’année inutile."
+    },
+    {
+      "key": "first/K02/1",
+      "verdict": "justified_limit",
+      "note": "Distingue la puissance fiscale et demande pays/catégorie pour une source officielle adaptée."
+    },
+    {
+      "key": "first/K03/1",
+      "verdict": "justified_limit",
+      "note": "Propose les trois variantes réelles XJ6 de 2011, conserve l’année et distingue les mentions du catalogue d’un kit homologué."
+    },
+    {
+      "key": "first/K04/1",
+      "verdict": "correct",
+      "note": "Maximum Yamaha 2020 de 1298 cc, deux FJR ex æquo ; couverture 43/43."
+    },
+    {
+      "key": "first/K05/1",
+      "verdict": "correct",
+      "note": "214 kg sec et 244 kg tous pleins, source Bandit 2000 exacte."
+    },
+    {
+      "key": "first/K05/2",
+      "verdict": "justified_limit",
+      "note": "Demande les années ou fiches à moyenner tout en conservant le contexte Bandit 2000."
+    },
+    {
+      "key": "first/H01/1",
+      "verdict": "correct",
+      "note": "1833 cc, trois Goldwing ex æquo et couverture 28/28."
+    },
+    {
+      "key": "first/H02/1",
+      "verdict": "correct",
+      "note": "Selle minimale 705 mm, trois Vulcan et couverture 49/49."
+    },
+    {
+      "key": "first/H03/1",
+      "verdict": "correct",
+      "note": "Moyennes séparées : 214 kg sec et 244 kg tous pleins sur deux années."
+    },
+    {
+      "key": "first/H04/1",
+      "verdict": "correct",
+      "note": "Aucune moyenne à sec inventée ; moyenne humide 189 kg sur trois fiches."
+    },
+    {
+      "key": "first/H05/1",
+      "verdict": "justified_limit",
+      "note": "Année 1990 manquante explicitée, moyenne 48 ch limitée à la seule fiche 2022."
+    },
+    {
+      "key": "first/H06/1",
+      "verdict": "correct",
+      "note": "≈ 62 ch conservés pour 2021, source exacte.",
+      "draft_note": "Approximation conservée par le rédacteur.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/H07/2",
+      "verdict": "correct",
+      "note": "Année 2022 et modèle Leoncino conservés, réservoir 12,70 L correct. La réserve de rédaction partielle est trompeuse alors que la seule phrase est validée ; retouche finale sur ce mécanisme.",
+      "draft_note": "Une seule affirmation fidèle et validée ; désaccord de couverture globale.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/P01/1",
+      "verdict": "correct",
+      "note": "Prix moyen France de base 12446,929 €, somme 522771 et 42 prix connus sur 43 fiches. Les inconnus ne deviennent pas zéro.",
+      "draft_note": "Calcul déterministe ; Mistral non appelé. Présentation longue mais chaque terme du calcul reste auditable.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/P02/1",
+      "verdict": "correct",
+      "note": "Moyenne 6565,667 €, trois prix 6399 / 6499 / 6799 et somme 19697, sources annuelles correctes.",
+      "draft_note": "Calcul déterministe ; Mistral non appelé.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 2
+      }
+    },
+    {
+      "key": "first/H07/1",
+      "verdict": "justified_limit",
+      "note": "Demande le millésime en conservant le modèle."
+    },
+    {
+      "key": "first/H08/1",
+      "verdict": "correct",
+      "note": "Trois premières Triumph sur 47, ordre et sources visibles."
+    },
+    {
+      "key": "first/H08/2",
+      "verdict": "correct",
+      "note": "Trois suivantes, positions 4 à 6, aucun doublon."
+    },
+    {
+      "key": "first/H09/1",
+      "verdict": "justified_limit",
+      "note": "Demande la population à moyenner plutôt qu’une seule année arbitraire."
+    },
+    {
+      "key": "first/H09/2",
+      "verdict": "correct",
+      "note": "Moyenne 214 kg à sec sur 2000 et 2001, 2/2 fiches et bonnes sources."
+    },
+    {
+      "key": "first/P03/1",
+      "verdict": "justified_limit",
+      "note": "Explique que les prix actuels d’occasion ne figurent pas dans le catalogue ; pas de remplacement silencieux par des prix neufs."
+    },
+    {
+      "key": "warm_repeat/Q01/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation."
+    },
+    {
+      "key": "warm_repeat/Q03/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation."
+    },
+    {
+      "key": "warm_repeat/Q12/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation."
+    },
+    {
+      "key": "warm_repeat/Q16/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation."
+    },
+    {
+      "key": "warm_repeat/Q19/1",
+      "verdict": "correct",
+      "note": "Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation."
+    },
+    {
+      "key": "warm_repeat/Q22/1",
+      "verdict": "justified_limit",
+      "note": "Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation."
+    },
+    {
+      "key": "polish/Q06/1",
+      "verdict": "correct",
+      "note": "197 kg humides conservés, poids sec demandé toujours inconnu : la vraie lacune n’a pas été masquée.",
+      "draft_note": "Même proposition fidèle ; la réserve globale de couverture reste visible."
+    },
+    {
+      "key": "polish/Q08/1",
+      "verdict": "correct",
+      "note": "Le mauvais ajout sur 8 500 tr/min reste écarté. La réserve de rédaction partielle demeure ici à juste titre.",
+      "draft_note": "Une affirmation vérifiée conservée, une affirmation non validée retirée."
+    },
+    {
+      "key": "polish/Q09/1",
+      "verdict": "correct",
+      "note": "Poignées de série et régulateur inconnu restent dans le tableau ; le bloc générique répétant ce manque est supprimé.",
+      "draft_note": "Même proposition partiellement retenue ; modification limitée au rendu du manque."
+    },
+    {
+      "key": "polish/Q11/1",
+      "verdict": "justified_limit",
+      "note": "Les deux inconnus humides restent dans leurs cellules ; les deux réserves redondantes ont disparu. Le rédacteur aboutit cette fois mais sa sortie est rejetée pour format/citations.",
+      "draft_note": "La prose contient (P2) et (P8). Ces identifiants ajoutent des chiffres à la prose, rejetés par le contrôle numérique ; aucun 191 kg sec n’est rebaptisé en humide."
+    },
+    {
+      "key": "polish/D01/1",
+      "verdict": "correct",
+      "note": "Puissance 48 ch et cylindrée 499,60 cc inchangées.",
+      "draft_note": "Proposition fidèle."
+    },
+    {
+      "key": "polish/D01/2",
+      "verdict": "correct",
+      "note": "4,60 mkg à 6 000 tr/min inchangés ; la fausse réserve sur une proposition non vérifiée a disparu. Le complément sourcé reste disponible.",
+      "draft_note": "Une affirmation validée, zéro affirmation retirée ; le texte de présentation correspond désormais au contrôle."
+    },
+    {
+      "key": "polish/D05/1",
+      "verdict": "correct",
+      "note": "221 kg tous pleins, source exacte et aucune réserve sur le poids sec non demandé.",
+      "draft_note": "Proposition inchangée ; suppression du seul manque hors question."
+    },
+    {
+      "key": "polish/D05/2",
+      "verdict": "justified_limit",
+      "note": "Lorsque le poids sec est réellement demandé, le manque reste explicite. Aucune valeur de poids humide n’est présentée comme un poids sec.",
+      "draft_note": "Le rédacteur donne le poids humide ; le présentateur conserve la réponse négative sur la documentation du poids sec."
+    },
+    {
+      "key": "first/R01/1",
+      "verdict": "failure",
+      "note": "XJ6 2012 existe en trois variantes dans le corpus, mais le chat ne propose aucun choix et dit ne pas retrouver le modèle. Aucun bridage n’est inventé ; la demande n’est pas traitée. La correction XJ6 avec le mot A2 ne généralise pas à cette formulation publique.",
+      "rubric": {
+        "accuracy": 1,
+        "completeness": 0,
+        "sources": 2,
+        "usefulness": 0
+      }
+    },
+    {
+      "key": "first/R02/1",
+      "verdict": "justified_limit",
+      "note": "Absence vérifiée dans le corpus : Honda CX 650 E n’y figure pas, contrairement à CX 650 Turbo. Le refus de substituer une variante est donc justifié, malgré une formulation générique. L’attendu figé supposait trop vite une fiche disponible : cette erreur d’attendu est conservée et signalée, pas imputée au chat.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/R03/1",
+      "verdict": "justified_limit",
+      "note": "La demande de millésime est justifiée et le plan reconnaît bien CB 500 F et CB 500 X. Le texte ne rappelle pas ces deux modèles et demande une seule année de façon sèche ; la comparaison n’est pas encore produite.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/R04/1",
+      "verdict": "failure",
+      "note": "Honda CB 500 F 2019 existe dans le corpus. Le blocage sur l’identité empêche de lire la mention ABS et de préciser la limite du marché UK. Aucun équipement n’est inventé, mais la question exacte reste sans réponse.",
+      "rubric": {
+        "accuracy": 1,
+        "completeness": 0,
+        "sources": 2,
+        "usefulness": 0
+      }
+    },
+    {
+      "key": "first/R05/1",
+      "verdict": "justified_limit",
+      "note": "Demander l’année sans inventer de distribution répond à l’attendu minimal de ce premier tour. La trace révèle toutefois une erreur latente : couple conique est dirigé vers le couple moteur (torque_nm). Ce tour ne valide donc pas la future réponse sur la distribution.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 2,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/R06/1",
+      "verdict": "failure",
+      "note": "Après 38,70 s, Mistral expire et le secours affiche suspensions, freins et puissance. Ces valeurs correspondent aux passages de CB 500 F 2018, mais ne répondent pas à l’état d’un exemplaire de 65 000 km. Il manque une limite utile sur l’entretien et l’inspection. Des faits exacts peuvent constituer une réponse hors sujet.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 0,
+        "sources": 2,
+        "usefulness": 0
+      },
+      "draft_note": "Appel réel à Mistral ; ReadTimeout après 30,24 s, aucune proposition disponible. Le texte affiché est un secours déterministe, pas une bonne rédaction du modèle."
+    },
+    {
+      "key": "first/R07/1",
+      "verdict": "failure",
+      "note": "Le corpus contient les familles Moto-Guzzi V 85 TT et Strada. Le chat ne propose pas ces variantes et n’explique pas que le ressenti de vibration dépasse les fiches. Aucun confort ni unité ne sont inventés ; la clarification reste insuffisante.",
+      "rubric": {
+        "accuracy": 1,
+        "completeness": 0,
+        "sources": 2,
+        "usefulness": 0
+      }
+    },
+    {
+      "key": "first/R08/1",
+      "verdict": "partial",
+      "note": "Demander modèles et année donne une prochaine étape minimale, mais n’aide pas une personne qui cherche justement sa première moto. Le chat devrait proposer de comparer hauteur de selle et poids, puis demander ses contraintes ; aucune garantie ergonomique n’est inventée.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 1,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/R09/1",
+      "verdict": "failure",
+      "note": "Demander l’année ne traite ni la réparation ni le devis, qui ne sont pas documentés par les fiches techniques. Pas de tarif inventé, mais aucune limite utile ni orientation adaptée ; le risque de confondre cette demande avec le prix neuf reste non traité.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 0,
+        "sources": 2,
+        "usefulness": 0
+      }
+    },
+    {
+      "key": "first/R10/1",
+      "verdict": "partial",
+      "note": "Modèle et millésime sont demandés, sans inventer les effets du bridage. La réponse reste générique : elle ne demande pas le type de bridage et n’explique pas quelles caractéristiques pourraient être documentées.",
+      "rubric": {
+        "accuracy": 2,
+        "completeness": 1,
+        "sources": 2,
+        "usefulness": 1
+      }
+    },
+    {
+      "key": "first/X01/1",
+      "verdict": "justified_limit",
+      "note": "Les trois variantes réelles sont proposées, avec 2011 conservé et une limite explicite sur les documents A2. La réponse prépare correctement la sélection suivante."
+    },
+    {
+      "key": "first/X01/2",
+      "verdict": "justified_limit",
+      "note": "La réponse courte La Naked sélectionne exactement XJ6 600 Naked 2011 et conserve la demande de bridage. La fiche indique permis A ; aucune mention A2 ni mécanisme de kit n’est inventé. La limite A2 est correcte, mais l’absence de mention est répétée en fin de réponse : défaut de présentation encore à retoucher.",
+      "draft_note": "Une affirmation produite, fidèle au passage Infos pratiques et acceptée individuellement par le contrôleur. Couverture non validée : mode mixte, complété par la lecture directe. Le résultat ne prouve pas le type de kit de bridage."
+    }
+  ]
+}

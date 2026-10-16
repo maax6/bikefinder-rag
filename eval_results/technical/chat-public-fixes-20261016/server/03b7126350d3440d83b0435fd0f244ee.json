@@ -1,0 +1,42 @@
+{
+  "id": "03b7126350d3440d83b0435fd0f244ee",
+  "question": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+  "started_at": "2026-10-16T01:10:42.917834+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 0,
+      "limit": 3
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.06851224997080863,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.06884545902721584
+}

@@ -1,0 +1,33 @@
+{
+  "id": "81685272021a4e12bc08953866c2350a",
+  "question": "constructeur de la TENERE 700",
+  "started_at": "2026-10-16T01:09:24.482793+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Le constructeur indiqué dans le catalogue est **Yamaha**. Sources d’identité : [Yamaha 700 Ténéré (2026)](https://www.motoplanete.com/yamaha/11863/700-Tenere-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "identity",
+      "models": [
+        {
+          "brand": "Yamaha",
+          "model": "700 Ténéré"
+        }
+      ],
+      "identity": {},
+      "fields": [],
+      "conditions": []
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "identity",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.07468429184518754
+}

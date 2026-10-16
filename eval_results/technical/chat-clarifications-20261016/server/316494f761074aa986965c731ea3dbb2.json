@@ -1,0 +1,47 @@
+{
+  "id": "316494f761074aa986965c731ea3dbb2",
+  "question": "Quelle est la plus grosse cylindrée documentée chez Kawasaki pour 2021 ? Donne toutes les fiches ex æquo, dans ce catalogue seulement.",
+  "started_at": "2026-10-15T23:17:04.976122+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Calcul sur **42 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 42/42 valeurs numériques univoques documentées.\n**Maximum : 1043 cc** — 6 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki Ninja 1000 SX (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8489/Ninja-1000-SX-2021/contact.html) |\n| Kawasaki Ninja 1000 SX Performance Tourer (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9500/Ninja-1000-SX-Performance-Tourer-2021/contact.html) |\n| Kawasaki VERSYS 1000 S (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8507/VERSYS-1000-S-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8508/VERSYS-1000-SE-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE Tourer (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8888/VERSYS-1000-SE-Tourer-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE Tourer + (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8889/VERSYS-1000-SE-Tourer--2021/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Kawasaki",
+        "year": 2021
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "displacement_ccm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle est la plus grosse cylindrée documentée chez Kawasaki pour 2021 ? Donne toutes les fiches ex æquo, dans ce catalogue seulement.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "max",
+        "fields": [
+          "displacement_ccm"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.07994733285158873,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.08018191694281995
+}

@@ -1,0 +1,336 @@
+{
+  "id": "101e035528c6485296699d9af751bebf",
+  "question": "Le poids tous pleins faits de la Royal Enfield Meteor 350 change-t-il entre 2021 et 2022 ? Donne les deux valeurs.",
+  "started_at": "2026-10-16T01:04:57.744399+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Royal-Enfield Meteor 350 (2021) | Royal-Enfield Meteor 350 (2022) |\n|---|---|---|\n| Poids à sec (kg) | Châssis — Poids à sec : 191 kg | Châssis — Poids à sec : 191 kg |\n| Poids en ordre de marche / pleins faits (kg) | Non documenté dans cette fiche | Non documenté dans cette fiche |\n| Source | [Fiche](https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html) | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Meteor 350",
+          "year": 2021
+        },
+        {
+          "brand": "Royal-Enfield",
+          "model": "Meteor 350",
+          "year": 2022
+        }
+      ],
+      "fields": [
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Le poids tous pleins faits de la Royal Enfield Meteor 350 change-t-il entre 2021 et 2022 ? Donne les deux valeurs.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "comparison"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 31.281163207953796,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "1a6ca74ef37f5de7",
+          "brand": "Royal-Enfield",
+          "model": "Meteor 350",
+          "year": 2021,
+          "source_url": "https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html",
+          "source_sha256": "35d1ddaeca73e233f8a4cc11663848c3b14a6e76ac1c1f4d6ad64d9b85e919cb",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "weight_dry_kg": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "1a6ca74ef37f5de7:section:0"
+              ]
+            },
+            "weight_wet_kg": {
+              "covered": false,
+              "source_passages_available": false,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": []
+            }
+          },
+          "passages": [
+            {
+              "id": "1a6ca74ef37f5de7:section:4",
+              "object_id": "1a6ca74ef37f5de7",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html",
+              "source_sha256": "35d1ddaeca73e233f8a4cc11663848c3b14a6e76ac1c1f4d6ad64d9b85e919cb",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1",
+              "text": "Royal-Enfield Meteor 350 2021\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1",
+              "score": 0.7178651690483093,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1a6ca74ef37f5de7:section:0",
+              "object_id": "1a6ca74ef37f5de7",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html",
+              "source_sha256": "35d1ddaeca73e233f8a4cc11663848c3b14a6e76ac1c1f4d6ad64d9b85e919cb",
+              "section": "Châssis",
+              "original_text": "Cadre : double berceau tubulaire en acier; Réservoir : 15 litres; Hauteur de selle : 765 mm; Longueur : 2 140 mm; Hauteur min : 1 140 mm; Empattement : 1 400 mm; Poids à sec : 191 kg",
+              "text": "Royal-Enfield Meteor 350 2021\nChâssis\nCadre : double berceau tubulaire en acier; Réservoir : 15 litres; Hauteur de selle : 765 mm; Longueur : 2 140 mm; Hauteur min : 1 140 mm; Empattement : 1 400 mm; Poids à sec : 191 kg",
+              "score": 0.6729250550270081,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1a6ca74ef37f5de7:section:3",
+              "object_id": "1a6ca74ef37f5de7",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html",
+              "source_sha256": "35d1ddaeca73e233f8a4cc11663848c3b14a6e76ac1c1f4d6ad64d9b85e919cb",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux, déb : 80 mm; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 140 / 70 - 17; Pression : 2.2 bars",
+              "text": "Royal-Enfield Meteor 350 2021\nTrain arrière\n2 amortisseurs latéraux, déb : 80 mm; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 140 / 70 - 17; Pression : 2.2 bars",
+              "score": 0.6722844839096069,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1a6ca74ef37f5de7:section:2",
+              "object_id": "1a6ca74ef37f5de7",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html",
+              "source_sha256": "35d1ddaeca73e233f8a4cc11663848c3b14a6e76ac1c1f4d6ad64d9b85e919cb",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Royal-Enfield Meteor 350 2021\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.6442293524742126,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "1a6ca74ef37f5de7:section:8",
+              "object_id": "1a6ca74ef37f5de7",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2021,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html",
+              "source_sha256": "35d1ddaeca73e233f8a4cc11663848c3b14a6e76ac1c1f4d6ad64d9b85e919cb",
+              "section": "Tarifs",
+              "original_text": "France — Version de base : 4 099 € *",
+              "text": "Royal-Enfield Meteor 350 2021\nTarifs\nFrance — Version de base : 4 099 € *",
+              "score": 0.6394463777542114,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        },
+        {
+          "object_id": "0b6905c88de4fd57",
+          "brand": "Royal-Enfield",
+          "model": "Meteor 350",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html",
+          "source_sha256": "108968da088cf679bdcdcd7712fdcc92ddbc344e02f667c8d0f65081a294f821",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "weight_dry_kg": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "0b6905c88de4fd57:section:0"
+              ]
+            },
+            "weight_wet_kg": {
+              "covered": false,
+              "source_passages_available": false,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": []
+            }
+          },
+          "passages": [
+            {
+              "id": "0b6905c88de4fd57:section:4",
+              "object_id": "0b6905c88de4fd57",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html",
+              "source_sha256": "108968da088cf679bdcdcd7712fdcc92ddbc344e02f667c8d0f65081a294f821",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km",
+              "text": "Royal-Enfield Meteor 350 2022\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.55 kg/ch; Rapport poids / couple : 65.86 kg/mkg; Compression : 9.5 : 1; Emission CO² : 67 g/km",
+              "score": 0.7152272462844849,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "0b6905c88de4fd57:section:3",
+              "object_id": "0b6905c88de4fd57",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html",
+              "source_sha256": "108968da088cf679bdcdcd7712fdcc92ddbc344e02f667c8d0f65081a294f821",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux, déb : 80 mm; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 140 / 70 - 17; Pression : 2.2 bars",
+              "text": "Royal-Enfield Meteor 350 2022\nTrain arrière\n2 amortisseurs latéraux, déb : 80 mm; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 140 / 70 - 17; Pression : 2.2 bars",
+              "score": 0.6659033298492432,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "0b6905c88de4fd57:section:0",
+              "object_id": "0b6905c88de4fd57",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html",
+              "source_sha256": "108968da088cf679bdcdcd7712fdcc92ddbc344e02f667c8d0f65081a294f821",
+              "section": "Châssis",
+              "original_text": "Cadre : double berceau tubulaire en acier; Réservoir : 15 litres; Hauteur de selle : 765 mm; Longueur : 2 140 mm; Largeur : 845 mm; Hauteur min : 1 140 mm; Empattement : 1 400 mm; Poids à sec : 191 kg",
+              "text": "Royal-Enfield Meteor 350 2022\nChâssis\nCadre : double berceau tubulaire en acier; Réservoir : 15 litres; Hauteur de selle : 765 mm; Longueur : 2 140 mm; Largeur : 845 mm; Hauteur min : 1 140 mm; Empattement : 1 400 mm; Poids à sec : 191 kg",
+              "score": 0.6643365621566772,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "0b6905c88de4fd57:section:2",
+              "object_id": "0b6905c88de4fd57",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html",
+              "source_sha256": "108968da088cf679bdcdcd7712fdcc92ddbc344e02f667c8d0f65081a294f821",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Royal-Enfield Meteor 350 2022\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.6380981206893921,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "0b6905c88de4fd57:section:8",
+              "object_id": "0b6905c88de4fd57",
+              "brand": "Royal-Enfield",
+              "model": "Meteor 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html",
+              "source_sha256": "108968da088cf679bdcdcd7712fdcc92ddbc344e02f667c8d0f65081a294f821",
+              "section": "Tarifs",
+              "original_text": "France — Version de base : 4 390 € *",
+              "text": "Royal-Enfield Meteor 350 2022\nTarifs\nFrance — Version de base : 4 390 € *",
+              "score": 0.6302546858787537,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "verification",
+          "object_id": "1a6ca74ef37f5de7",
+          "field": "weight_dry_kg",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "1a6ca74ef37f5de7",
+          "field": "weight_wet_kg",
+          "message": "Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids tous pleins ».",
+          "requested_terms": [
+            "poids tous pleins"
+          ]
+        },
+        {
+          "kind": "verification",
+          "object_id": "0b6905c88de4fd57",
+          "field": "weight_dry_kg",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "0b6905c88de4fd57",
+          "field": "weight_wet_kg",
+          "message": "Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids tous pleins ».",
+          "requested_terms": [
+            "poids tous pleins"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.50060111284256e-07,
+          "query_encoding_seconds": 1.0805963329039514,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "1a6ca74ef37f5de7",
+          "proof_check": {
+            "fields": {
+              "weight_dry_kg": "unverified",
+              "weight_wet_kg": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.005521375220268965
+          }
+        },
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.0908191800117493e-07,
+          "query_encoding_seconds": 0.06898479186929762,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "0b6905c88de4fd57",
+          "proof_check": {
+            "fields": {
+              "weight_dry_kg": "unverified",
+              "weight_wet_kg": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0007833340205252171
+          }
+        }
+      ],
+      "seconds": 1.17078529112041,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "6c7b80b7b888bb22401384172d6455104cb008057a8fb2952ce6850092fcd0ed",
+      "error": "ReadTimeout",
+      "seconds": 30.021074833115563
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 31.28234470798634
+}

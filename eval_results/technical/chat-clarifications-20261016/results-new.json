@@ -1,0 +1,501 @@
+{
+  "created_at": "2026-10-15T23:32:16.571066+00:00",
+  "questions_sha256": "0fafcaf62b961c384a33b4d040448d23395d1743758f4710089dc71728aaeaf6",
+  "url": "http://127.0.0.1:7862/",
+  "results": [
+    {
+      "id": "R01",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "xj6_bridage",
+      "pass": "first",
+      "question": "xj6 de 2012 bridable à 35 ou 47 ch?",
+      "expected": "Demander la variante sans perdre 2012 ; ne pas certifier le bridage avec une fiche. Proposer la lecture des mentions et une vérification constructeur.",
+      "object_ids": [],
+      "client_setup_seconds": 0.034379584016278386,
+      "started_at": "2026-10-15T23:32:16.605712+00:00",
+      "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "xj6 de 2012 bridable à 35 ou 47 ch?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 3.50773762492463
+    },
+    {
+      "id": "R02",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "reservoir",
+      "pass": "first",
+      "question": "CX 650 E : quelle est la contenance du réservoir d’essence ?",
+      "expected": "Modèle et E conservés ; demander le millésime pour une valeur sourcée ; aucune année inventée.",
+      "object_ids": [],
+      "client_setup_seconds": 0.02309237513691187,
+      "started_at": "2026-10-15T23:32:21.142139+00:00",
+      "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "CX 650 E : quelle est la contenance du réservoir d’essence ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.6996678749565035
+    },
+    {
+      "id": "R03",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "comparaison",
+      "pass": "first",
+      "question": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+      "expected": "Reconnaître les deux modèles ; demander les années pour comparer leurs fiches. Pas de caractéristiques inventées.",
+      "object_ids": [],
+      "client_setup_seconds": 0.034029042115435004,
+      "started_at": "2026-10-15T23:32:22.881250+00:00",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.693573874887079
+    },
+    {
+      "id": "R04",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "equipement_marche",
+      "pass": "first",
+      "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+      "expected": "Lire la fiche exacte 2019 ; distinguer ABS documenté et marché UK non certifié. Ne pas confondre option et série.",
+      "object_ids": [],
+      "client_setup_seconds": 0.020625042030587792,
+      "started_at": "2026-10-15T23:32:24.601037+00:00",
+      "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.7459761248901486
+    },
+    {
+      "id": "R05",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "distribution",
+      "pass": "first",
+      "question": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+      "expected": "Ne pas confondre distribution et transmission finale ; demander le millésime si nécessaire pour la fiche, pas de cardan inventé.",
+      "object_ids": [],
+      "client_setup_seconds": 0.02539275004528463,
+      "started_at": "2026-10-15T23:32:26.375325+00:00",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.7417920420411974
+    },
+    {
+      "id": "R06",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "occasion",
+      "pass": "first",
+      "question": "65 000 km pour une CB500F de 2018, est-ce convenable ?",
+      "expected": "Pas de garantie de fiabilité ni seuil kilométrique inventé. Expliquer le besoin d’entretien et inspection ; pas une fiche complète hors sujet.",
+      "object_ids": [],
+      "client_setup_seconds": 0.02278866688720882,
+      "started_at": "2026-10-15T23:32:28.141528+00:00",
+      "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n### Honda CB 500 F (2018)\n\n- **Suspensions et réglages avant/arrière — la fiche indique :** Train avant — Fourche téléhydraulique Ø 41 mm, déb : 120 mm ; Train arrière — Mono-amortisseur, déb : 109 mm\n- **Freins avant/arrière — la fiche indique :** Train avant — Freinage : 1 disque Ø 320 mm, étrier 2 pistons ; Train arrière — Freinage : 1 disque Ø 240 mm, étrier simple piston\n- **Puissance documentée (unités source) — la fiche indique :** Moteur — 48 ch à 8 500 tr/min\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html)\nPreuves retenues : Performances, Moteur, Tarifs, Coloris, Châssis, Train avant, Train arrière.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "65 000 km pour une CB500F de 2018, est-ce convenable ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n### Honda CB 500 F (2018)\n\n- **Suspensions et réglages avant/arrière — la fiche indique :** Train avant — Fourche téléhydraulique Ø 41 mm, déb : 120 mm ; Train arrière — Mono-amortisseur, déb : 109 mm\n- **Freins avant/arrière — la fiche indique :** Train avant — Freinage : 1 disque Ø 320 mm, étrier 2 pistons ; Train arrière — Freinage : 1 disque Ø 240 mm, étrier simple piston\n- **Puissance documentée (unités source) — la fiche indique :** Moteur — 48 ch à 8 500 tr/min\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html)\nPreuves retenues : Performances, Moteur, Tarifs, Coloris, Châssis, Train avant, Train arrière.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 38.69872300000861
+    },
+    {
+      "id": "R07",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "ressenti",
+      "pass": "first",
+      "question": "How does the V85 handle 80 on the highway ? Vibration wise. I love the look but I live where there’s open highway stretches to get to the nearest town and I keep being told it’s too busy hold that for long periods. But I really like the look .",
+      "expected": "Ressenti non déductible des fiches. Clarifier année/version ; ne pas certifier confort/vibrations ni supposer une unité.",
+      "object_ids": [],
+      "client_setup_seconds": 0.017058582976460457,
+      "started_at": "2026-10-15T23:33:07.861028+00:00",
+      "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "How does the V85 handle 80 on the highway ? Vibration wise. I love the look but I live where there’s open highway stretches to get to the nearest town and I keep being told it’s too busy hold that for long periods. But I really like the look .",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.7513837087899446
+    },
+    {
+      "id": "R08",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "ergonomie",
+      "pass": "first",
+      "question": "Vos conseils de 1ere moto pour les petits gabarits ? (1m61)",
+      "expected": "Expliquer ce que hauteur/poids du catalogue permettent de comparer, demander contraintes ; ne pas garantir les pieds au sol depuis la seule taille.",
+      "object_ids": [],
+      "client_setup_seconds": 0.011850625043734908,
+      "started_at": "2026-10-15T23:33:09.626781+00:00",
+      "answer": "Précise les modèles et un millésime explicite pour une explication fondée sur les fiches.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Vos conseils de 1ere moto pour les petits gabarits ? (1m61)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Précise les modèles et un millésime explicite pour une explication fondée sur les fiches.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.740250833099708
+    },
+    {
+      "id": "R09",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "reparation_prix",
+      "pass": "first",
+      "question": "Bonjour, j’ai plusieurs renfoncement sur le réservoir de ma moto que je viens d’acheter (CB500 PC39) il faut que j’aille voir un carrosier spécialisé pour ça ? Et vous pensez que ça coûte combien à refaire ?",
+      "expected": "Prix de réparation hors catalogue ; pas de tarif inventé ni substitution au prix neuf ; signaler si identité PC39 ambiguë.",
+      "object_ids": [],
+      "client_setup_seconds": 0.02903391607105732,
+      "started_at": "2026-10-15T23:33:11.403099+00:00",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Bonjour, j’ai plusieurs renfoncement sur le réservoir de ma moto que je viens d’acheter (CB500 PC39) il faut que j’aille voir un carrosier spécialisé pour ça ? Et vous pensez que ça coûte combien à refaire ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.7526829161215574
+    },
+    {
+      "id": "R10",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "effet_bridage",
+      "pass": "first",
+      "question": "Je ne sais pas si le bridage change les caractéristiques réelles de la moto (poids, consommation, comportement) ou si ça se limite à une simple limitation de puissance électronique/mécanique.",
+      "expected": "Demander modèle/année/type de bridage pour une comparaison ; ne pas attribuer un poids/consommation/effet mécanique sans preuve. Réponse utile, pas simple refus légal.",
+      "object_ids": [],
+      "client_setup_seconds": 0.019098666962236166,
+      "started_at": "2026-10-15T23:33:13.180617+00:00",
+      "answer": "Précise les modèles et un millésime explicite pour une explication fondée sur les fiches.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne sais pas si le bridage change les caractéristiques réelles de la moto (poids, consommation, comportement) ou si ça se limite à une simple limitation de puissance électronique/mécanique.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Précise les modèles et un millésime explicite pour une explication fondée sur les fiches.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.6894939159974456
+    },
+    {
+      "id": "X01",
+      "turn": 1,
+      "group": "targeted",
+      "category": "xj6_followup",
+      "pass": "first",
+      "question": "Quelle type de bridage pour un XJ6 A2 2011",
+      "expected": "Proposer Naked / Diversion / Diversion F ; conserver 2011 ; ne pas certifier un kit.",
+      "object_ids": [],
+      "client_setup_seconds": 0.015022458042949438,
+      "started_at": "2026-10-15T23:33:14.888834+00:00",
+      "answer": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle type de bridage pour un XJ6 A2 2011",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06309995776973665
+    },
+    {
+      "id": "X01",
+      "turn": 2,
+      "group": "targeted",
+      "category": "xj6_followup",
+      "pass": "first",
+      "question": "La Naked",
+      "expected": "Lire Yamaha XJ6 600 Naked 2011 ; conserver demande de bridage ; distinguer mention de puissance/permis de preuve du kit.",
+      "object_ids": [],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:33:14.952946+00:00",
+      "answer": "La fiche mentionne que la Yamaha XJ6 600 Naked 2011 est accessible aux permis A. [Yamaha XJ6 600 Naked (2011)](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\n\nComplément en lecture directe des sources :\n\n### Yamaha XJ6 600 Naked (2011)\n\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\nPreuves retenues : Équipement de série, Infos pratiques, Transmission, Moteur, Coloris.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Informations non documentées :**\n- Yamaha XJ6 600 Naked (2011) — Mention A2 — Mention A2 non retrouvée",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle type de bridage pour un XJ6 A2 2011",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Naked",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche mentionne que la Yamaha XJ6 600 Naked 2011 est accessible aux permis A. [Yamaha XJ6 600 Naked (2011)](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\n\nComplément en lecture directe des sources :\n\n### Yamaha XJ6 600 Naked (2011)\n\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\nPreuves retenues : Équipement de série, Infos pratiques, Transmission, Moteur, Coloris.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Informations non documentées :**\n- Yamaha XJ6 600 Naked (2011) — Mention A2 — Mention A2 non retrouvée",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 17.75834250007756
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-15T23:33:33.717334+00:00"
+}

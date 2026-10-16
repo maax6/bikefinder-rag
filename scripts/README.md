@@ -44,6 +44,7 @@ Voir les [règles et limites de collecte](../docs/technical-data-collection.md).
 | [`eval_technical_demo.py`](eval_technical_demo.py) | Actuel : essais séquentiels via la vraie API Gradio |
 | [`evaluate_jev_routing.py`](evaluate_jev_routing.py) | Actuel : routage, contraintes, preuves SQL et temps ; marque la synthèse sans la lancer en lot |
 | [`evaluate_free_chat.py`](evaluate_free_chat.py) | Actuel : dialogues libres via Gradio, puis inspection distincte du routage |
+| [`render_chat_public_fixes.py`](render_chat_public_fixes.py) | Bilan HTML du rejeu après corrections des questions libres ; conserve la première passe |
 | [`evaluate_enriched_chat.py`](evaluate_enriched_chat.py) | Validation de l'intégration : conservation des fiches, SQL, chat et recherche BGE séparée |
 | [`render_brag_video.py`](render_brag_video.py) | Présentation : montage local à partir de captures réelles ; les attentes raccourcies ne mesurent pas la vitesse |
 

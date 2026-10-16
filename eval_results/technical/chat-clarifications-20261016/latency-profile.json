@@ -1,0 +1,10 @@
+{
+  "n_completed_writers": 18,
+  "median_writer_seconds": 16.52602522948291,
+  "median_prompt_seconds": 6.765795499999999,
+  "median_generation_seconds": 8.2951975,
+  "median_tokens_per_second": 7.4163104609245325,
+  "model_digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+  "first_load_seconds": 8.844243541,
+  "notes": "Completed writers only. Medians of components do not sum to median total; warm caches, no controlled load. Local Ollama reports GPU residence. No speed optimization claimed."
+}

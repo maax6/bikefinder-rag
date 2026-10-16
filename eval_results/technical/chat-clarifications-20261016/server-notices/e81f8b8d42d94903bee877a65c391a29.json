@@ -1,0 +1,57 @@
+{
+  "id": "e81f8b8d42d94903bee877a65c391a29",
+  "question": "Quelle type de bridage pour un XJ6 A2 2011",
+  "started_at": "2026-10-15T23:35:47.037106+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "clarify",
+      "models": [],
+      "candidate_variants": [
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Diversion"
+        },
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Naked"
+        },
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Diversion F"
+        }
+      ],
+      "identity": {
+        "year": 2011
+      },
+      "fields": [
+        "license"
+      ],
+      "conditions": [],
+      "source_question": "Quelle type de bridage pour un XJ6 A2 2011",
+      "a2_context": true,
+      "variant_pending": true,
+      "clarification": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire."
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "missing": [
+        {
+          "kind": "identity",
+          "message": "Variante à préciser"
+        }
+      ],
+      "retrieval_executed": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": false,
+  "server_seconds": 2.367702665971592
+}

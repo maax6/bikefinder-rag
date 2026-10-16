@@ -1,0 +1,239 @@
+{
+  "id": "79db860179bf4de78ea61da649ac00d3",
+  "question": "La Naked",
+  "started_at": "2026-10-15T23:35:49.441719+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "La fiche mentionne que la Yamaha XJ6 600 Naked 2011 est accessible aux permis A. [Yamaha XJ6 600 Naked (2011)](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\n\nComplément en lecture directe des sources :\n\n### Yamaha XJ6 600 Naked (2011)\n\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\nPreuves retenues : Équipement de série, Infos pratiques, Transmission, Moteur, Coloris.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "details",
+      "models": [
+        {
+          "brand": "Yamaha",
+          "model": "XJ6 600 Naked",
+          "year": 2011
+        }
+      ],
+      "identity": {},
+      "conditions": [],
+      "fields": [
+        "license"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "source_question": "Quelle type de bridage pour un XJ6 A2 2011\nVariante précisée : Yamaha XJ6 600 Naked",
+      "a2_context": true,
+      "legal_proof_required": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 13.381436959141865,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "cb564a08b1524487",
+          "brand": "Yamaha",
+          "model": "XJ6 600 Naked",
+          "year": 2011,
+          "source_url": "https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html",
+          "source_sha256": "459a09c0e5e299cf2e14e7dccf6ca1144cff017da2d9fd39560f2418d98961b8",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "license": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "cb564a08b1524487:section:6"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "cb564a08b1524487:section:5",
+              "object_id": "cb564a08b1524487",
+              "brand": "Yamaha",
+              "model": "XJ6 600 Naked",
+              "year": 2011,
+              "source_url": "https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html",
+              "source_sha256": "459a09c0e5e299cf2e14e7dccf6ca1144cff017da2d9fd39560f2418d98961b8",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS en option",
+              "text": "Yamaha XJ6 600 Naked 2011\nÉquipement de série\nAssistance au freinage : ABS en option",
+              "score": 0.741719126701355,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "cb564a08b1524487:section:6",
+              "object_id": "cb564a08b1524487",
+              "brand": "Yamaha",
+              "model": "XJ6 600 Naked",
+              "year": 2011,
+              "source_url": "https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html",
+              "source_sha256": "459a09c0e5e299cf2e14e7dccf6ca1144cff017da2d9fd39560f2418d98961b8",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A",
+              "text": "Yamaha XJ6 600 Naked 2011\nInfos pratiques\nLa moto est accessible aux permis : A",
+              "score": 0.6923794746398926,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "cb564a08b1524487:section:2",
+              "object_id": "cb564a08b1524487",
+              "brand": "Yamaha",
+              "model": "XJ6 600 Naked",
+              "year": 2011,
+              "source_url": "https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html",
+              "source_sha256": "459a09c0e5e299cf2e14e7dccf6ca1144cff017da2d9fd39560f2418d98961b8",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports; Secondaire par chaîne",
+              "text": "Yamaha XJ6 600 Naked 2011\nTransmission\nboîte à 6 rapports; Secondaire par chaîne",
+              "score": 0.6923682689666748,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "cb564a08b1524487:section:4",
+              "object_id": "cb564a08b1524487",
+              "brand": "Yamaha",
+              "model": "XJ6 600 Naked",
+              "year": 2011,
+              "source_url": "https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html",
+              "source_sha256": "459a09c0e5e299cf2e14e7dccf6ca1144cff017da2d9fd39560f2418d98961b8",
+              "section": "Moteur",
+              "original_text": "4 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 600 cc (Alésage * course: 65.5 x 44.5 mm); 78 ch à 10 000 tr/min; 6,10 mkg à 8 500 tr/min; Rapport poids / puissance : environ 2.44 kg/ch; Rapport poids / couple : environ 31.14 kg/mkg; Compression : 12.2 : 1",
+              "text": "Yamaha XJ6 600 Naked 2011\nMoteur\n4 cylindres en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 600 cc (Alésage * course: 65.5 x 44.5 mm); 78 ch à 10 000 tr/min; 6,10 mkg à 8 500 tr/min; Rapport poids / puissance : environ 2.44 kg/ch; Rapport poids / couple : environ 31.14 kg/mkg; Compression : 12.2 : 1",
+              "score": 0.685580849647522,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "cb564a08b1524487:section:9",
+              "object_id": "cb564a08b1524487",
+              "brand": "Yamaha",
+              "model": "XJ6 600 Naked",
+              "year": 2011,
+              "source_url": "https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html",
+              "source_sha256": "459a09c0e5e299cf2e14e7dccf6ca1144cff017da2d9fd39560f2418d98961b8",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Yamaha XJ6 600 Naked 2011\nColoris\nColoris : non défini",
+              "score": 0.6729267239570618,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "verification",
+          "object_id": "cb564a08b1524487",
+          "field": "license",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "cb564a08b1524487",
+          "field": "a2_mention",
+          "message": "Mention A2 non retrouvée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.0791776478290558e-07,
+          "query_encoding_seconds": 6.32231270801276,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "cb564a08b1524487",
+          "proof_check": {
+            "fields": {
+              "license": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0017139578703790903
+          }
+        }
+      ],
+      "seconds": 6.329340124968439,
+      "source_kind": "technical_fiche",
+      "legal_certification": false,
+      "identity_interpretation": {
+        "type": "choice",
+        "choice": "recognized",
+        "probabilities": {
+          "recognized": 0.84,
+          "unresolved": 0.16
+        },
+        "confidence": 0.68
+      }
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "cd7564a3f2c5c4a288b91f6a7230e25f90aa54707fab21fcee32cf94d286e405",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1413,
+      "eval_count": 48,
+      "total_duration": 6770190125,
+      "load_duration": 22551042,
+      "prompt_eval_duration": 159763000,
+      "eval_duration": 6543001000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La fiche mentionne que la Yamaha XJ6 600 Naked 2011 est accessible aux permis A.",
+            "sources": [
+              "P2"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": false,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": false,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.97,
+              "unsupported": 0.03
+            },
+            "confidence": 0.94
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "unsupported",
+            "probabilities": {
+              "supported": 0.35,
+              "unsupported": 0.65
+            },
+            "confidence": 0.3
+          }
+        }
+      },
+      "removed_claims": 0,
+      "mode": "mixed",
+      "seconds": 7.025947249960154
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 13.38159470888786
+}

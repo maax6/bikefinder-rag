@@ -1,0 +1,12 @@
+{
+  "baseline": "../chat-clarifications-20261016/reviewed-results.json",
+  "initial_red": "7 failed in tests/test_chat_public_requests.py; 1 failed in UK market test",
+  "hypotheses": [
+    "Can interpreted as Can-Am; exact Honda identity removed",
+    "Family clarification tied to literal A2 and split-letter numeric names missed",
+    "Out-of-catalogue topics fell into model-year or source-details fallback",
+    "UK source equipment facts and market validity not separated"
+  ],
+  "bge_model": "BAAI/bge-m3",
+  "bge_revision": "5617a9f61b028005a4858fdac845db406aefb181"
+}

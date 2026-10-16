@@ -6,16 +6,17 @@ localement sur un Mac M5 / 32 Go, avec SQL, BGE-M3, Jev et Mistral.
 
 ## Voir les résultats
 
+- **[Bilan du chat du 16 octobre](https://maax6.github.io/bikefinder-rag/benchmark-chat-20261016.html)** — sept cas corrigés, avant/après et grille sur 30 réponses.
 - **[Bilan du vrai chat : avant / après](https://maax6.github.io/bikefinder-rag/benchmark-chat-20261015.html)** — réponses, erreurs, temps et prix moyen, avec BGE-M3 d’origine.
 - **[Benchmark interactif SQL + RAG](https://maax6.github.io/bikefinder-rag/benchmark.html)** — huit modèles, deux passes, réponses, sources, temps et coûts.
 - **[Annexe : fine-tuning de BGE-M3](https://maax6.github.io/bikefinder-rag/benchmark-finetuning.html)** — comparaison avant/après, 156 questions inspectables et erreurs détaillées.
 
 Ces pages se consultent sans compte ni installation.
 
-## Où on en est — 15 octobre 2026
+## Où on en est — 16 octobre 2026
 
 - **11 478 fiches et 105 687 passages techniques** ; corpus complet, index et modèles locaux.
-- Le chat corrige les valeurs perdues, maximums, moyennes — dont les prix de catalogue France — et suivis de conversation. **25/36 → 36/36 réponses satisfaisantes** sur le lot de régression ; **15/15 tours supplémentaires**, sans régression de contenu observée sur les 42 tours comparables. Relecture par le même agent, sans validation humaine indépendante.
+- Valeurs, maximums, moyennes (prix compris) et contexte restent couverts. Les **sept cas de questions libres sont corrigés**, sans régression de contenu sur 69 tours rejoués. Ce lot est désormais connu ; la rédaction locale reste lente (médiane 28,2 s).
 - **BGE-M3 d’origine est conservé.** Fusion ajustée et LoRA restent isolés à cause de pertes de preuves. Le service commun SQL + RAG a été évalué séparément ; son raccordement au chat reste à faire.
 
 ## Lancer le chat local
@@ -33,15 +34,15 @@ Ouvrir <http://127.0.0.1:7860>. Un clone seul ne contient pas le corpus complet.
 
 ## Prochaine étape
 
-Faire relire un nouveau lot indépendant, améliorer les avertissements, la
-clarification XJ6 A2 et les délais de rédaction. Le **[plan de validation](docs/phase-test-20261015.md)**
+Tester un nouveau lot indépendant de questions libres,
+faire relire les réponses indépendamment et réduire les délais de rédaction. Le **[plan de validation](docs/phase-test-20261015.md)**
 détaille la suite ; le [bilan des expérimentations](https://github.com/maax6/bikefinder-rag/issues/4)
 reste dans l’issue #4.
 
 [Documentation](docs/README.md) · [Architecture](docs/reference/architecture.md) ·
 [Scripts](scripts/README.md) · [Évaluations et tests](docs/guides/evaluation.md)
 
-Validation : **1 232 tests réussis + 11 tests SQL réussis séparément**.
+Validation : **1 273 tests réussis + 11 tests SQL réussis séparément**.
 Les tests logiciels ne constituent pas un score de précision du chatbot.
 
 Code sous [licence MIT](LICENSE). Les données tierces conservent les conditions

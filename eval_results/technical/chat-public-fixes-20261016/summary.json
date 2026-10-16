@@ -1,0 +1,97 @@
+{
+  "submissions": 76,
+  "first_turns": 69,
+  "regression_turns": 57,
+  "regressions": [],
+  "rubric_decreases": [
+    {
+      "key": "first/Q01/1",
+      "criteria": [
+        "usefulness"
+      ]
+    },
+    {
+      "key": "first/Q05/1",
+      "criteria": [
+        "usefulness"
+      ]
+    }
+  ],
+  "targeted_n": 7,
+  "targeted_fixed": 7,
+  "public_before": {
+    "failure": 5,
+    "justified_limit": 3,
+    "partial": 2
+  },
+  "public_after": {
+    "justified_limit": 9,
+    "correct": 1
+  },
+  "grid_n": 30,
+  "grid": {
+    "regression": {
+      "accuracy": 40,
+      "completeness": 40,
+      "sources": 40,
+      "usefulness": 27
+    },
+    "public": {
+      "accuracy": 20,
+      "completeness": 20,
+      "sources": 20,
+      "usefulness": 15
+    }
+  },
+  "mistral_attempts": 24,
+  "generation_errors": {
+    "ReadTimeout": 9,
+    "unverified_claims": 1
+  },
+  "mistral_modes": {
+    "fallback": 10,
+    "written": 11,
+    "mixed": 3
+  },
+  "api_errors": 0,
+  "cost_usd": 0.000276192,
+  "cumulative_cost_usd": 0.021248430000000002,
+  "latency": {
+    "regression_before": {
+      "n": 57,
+      "median": 0.12215529195964336,
+      "p95": 30.713063000002876,
+      "maximum": 32.616068166913465
+    },
+    "regression_after": {
+      "n": 57,
+      "median": 0.17195095913484693,
+      "p95": 31.35194116597995,
+      "maximum": 42.824033790966496
+    },
+    "public_before": {
+      "n": 10,
+      "median": 0.743884083465673,
+      "p95": 38.69872300000861,
+      "maximum": 38.69872300000861
+    },
+    "public_after": {
+      "n": 10,
+      "median": 0.09357354149688035,
+      "p95": 22.122987458016723,
+      "maximum": 22.122987458016723
+    },
+    "mistral": {
+      "n": 24,
+      "median": 28.22322897904087,
+      "p95": 31.40185604081489,
+      "maximum": 42.824033790966496
+    },
+    "warm_repeat": {
+      "n": 6,
+      "median": 0.6320255005266517,
+      "p95": 20.022702374961227,
+      "maximum": 20.022702374961227
+    }
+  }
+}

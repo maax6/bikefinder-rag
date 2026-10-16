@@ -1,0 +1,42 @@
+{
+  "id": "cc68d07edfc34242842d5e1d63a6e6e5",
+  "question": "Et les trois suivantes.",
+  "started_at": "2026-10-15T23:21:00.134845+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville T 120 \"1959 Legends Custom Edition\" | 2022 | [Fiche](https://www.motoplanete.com/triumph/9348/1200-Bonneville-T-120-1959-Legends-Custom-Edition-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black | 2022 | [Fiche](https://www.motoplanete.com/triumph/9139/1200-Bonneville-T-120-Black-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8992/1200-Bonneville-T-120-Black-Gold-Line-2022/contact.html) |\n\nFiches 4 à 6 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "full"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Et les trois suivantes.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 3,
+      "limit": 3
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.06228583282791078,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.062407208140939474
+}

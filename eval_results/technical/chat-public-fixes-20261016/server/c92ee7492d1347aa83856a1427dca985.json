@@ -1,0 +1,208 @@
+{
+  "id": "c92ee7492d1347aa83856a1427dca985",
+  "question": "Je regarde une Royal Enfield Classic 350 de 2022 pour le permis A2 : quelles mentions de permis et de puissance figurent réellement dans sa fiche ?",
+  "started_at": "2026-10-16T01:05:41.655347+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n### Royal-Enfield Classic 350 (2022)\n\n- **Puissance documentée (unités source) — la fiche indique :** Moteur — 20,20 ch à 6 100 tr/min\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\nPreuves retenues : Moteur, Performances, Train arrière, Infos pratiques, Transmission.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "details",
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Classic 350",
+          "year": 2022
+        }
+      ],
+      "identity": {},
+      "conditions": [],
+      "fields": [
+        "power_ch",
+        "license"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "source_question": "Je regarde une Royal Enfield Classic 350 de 2022 pour le permis A2 : quelles mentions de permis et de puissance figurent réellement dans sa fiche ?",
+      "a2_context": true,
+      "legal_proof_required": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 30.750013208948076,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "b733b6ae57d72686",
+          "brand": "Royal-Enfield",
+          "model": "Classic 350",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+          "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "b733b6ae57d72686:section:4"
+              ]
+            },
+            "license": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "b733b6ae57d72686:section:6"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "b733b6ae57d72686:section:4",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.65 kg/ch; Rapport poids / couple : 67.24 kg/mkg; Compression : 9.5 : 1; Emission CO² : 63 g/km",
+              "text": "Royal-Enfield Classic 350 2022\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.65 kg/ch; Rapport poids / couple : 67.24 kg/mkg; Compression : 9.5 : 1; Emission CO² : 63 g/km",
+              "score": 0.7141899466514587,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:7",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 110 km/h; Consommation moyenne : 2,63 l/100km; Autonomie estimée : 494 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Royal-Enfield Classic 350 2022\nPerformances\nVitesse max : environ 110 km/h; Consommation moyenne : 2,63 l/100km; Autonomie estimée : 494 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.692040205001831,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:3",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 120 / 80 - 18",
+              "text": "Royal-Enfield Classic 350 2022\nTrain arrière\n2 amortisseurs latéraux; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 120 / 80 - 18",
+              "score": 0.6645233631134033,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:6",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Infos pratiques",
+              "original_text": "La moto est accessible aux permis : A",
+              "text": "Royal-Enfield Classic 350 2022\nInfos pratiques\nLa moto est accessible aux permis : A",
+              "score": 0.649341344833374,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:2",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Royal-Enfield Classic 350 2022\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.633824348449707,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "verification",
+          "object_id": "b733b6ae57d72686",
+          "field": "power_ch",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "verification",
+          "object_id": "b733b6ae57d72686",
+          "field": "license",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "field",
+          "object_id": "b733b6ae57d72686",
+          "field": "a2_mention",
+          "message": "Mention A2 non retrouvée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6693957149982452e-07,
+          "query_encoding_seconds": 0.6573033749591559,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "b733b6ae57d72686",
+          "proof_check": {
+            "fields": {
+              "power_ch": "unverified",
+              "license": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0016940829809755087
+          }
+        }
+      ],
+      "seconds": 0.6639533329289407,
+      "source_kind": "technical_fiche",
+      "legal_certification": false,
+      "identity_interpretation": {
+        "type": "choice",
+        "choice": "recognized",
+        "probabilities": {
+          "recognized": 1,
+          "unresolved": 0
+        },
+        "confidence": 1
+      }
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "93522457c07e7d4e584a3c530c84f09d880c91507b7045a2fd9a9cbab5012cfe",
+      "error": "ReadTimeout",
+      "seconds": 30.019669208908454
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 30.750926250126213
+}

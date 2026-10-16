@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-10-16T01:15:58.004459+00:00",
+  "software_tests": 1273,
+  "software_skipped_sql": 11,
+  "sql_integration_passed": 11,
+  "real_chat_submissions": 76,
+  "paired_first_turns": 69,
+  "known_public_questions": 10,
+  "targeted_fixed": 7,
+  "content_regressions": 0,
+  "rubric_decreases": [
+    {
+      "key": "first/Q01/1",
+      "criteria": [
+        "usefulness"
+      ]
+    },
+    {
+      "key": "first/Q05/1",
+      "criteria": [
+        "usefulness"
+      ]
+    }
+  ],
+  "bge_original_pin_verified": true,
+  "mistral_digest_verified": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+  "current_sources_match_final_observer": true,
+  "all_rows_have_unique_observer_traces": true,
+  "original_corpus_sha_unchanged": true,
+  "html_sha256": "ef4bd682597c8a7c79fd0e7047353eb642d7faf83ea72f351ae7c888b65de997",
+  "html_reproducible": true,
+  "first_pass_preserved_and_reproducible": true,
+  "html_links_ok": true,
+  "html_visual_check": true,
+  "public_filter_count": 10,
+  "all_filter_count": 76,
+  "readme_lines": 49,
+  "cumulative_cost_usd": 0.021248430000000002,
+  "committed": false,
+  "published": false
+}

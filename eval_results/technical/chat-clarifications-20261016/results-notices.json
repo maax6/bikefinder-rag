@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-10-15T23:35:46.957865+00:00",
+  "questions_sha256": "1d3a860e9f55c0987264435f32e1608b89d0f2b8b1d6bffff272943f3b9a0868",
+  "url": "http://127.0.0.1:7862/",
+  "results": [
+    {
+      "id": "X01",
+      "turn": 1,
+      "group": "targeted",
+      "category": "xj6_followup",
+      "pass": "first",
+      "question": "Quelle type de bridage pour un XJ6 A2 2011",
+      "expected": "Proposer Naked / Diversion / Diversion F ; conserver 2011 ; ne pas certifier un kit.",
+      "object_ids": [],
+      "client_setup_seconds": 0.029239957919344306,
+      "started_at": "2026-10-15T23:35:46.987499+00:00",
+      "answer": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle type de bridage pour un XJ6 A2 2011",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 2.4363649589940906
+    },
+    {
+      "id": "X01",
+      "turn": 2,
+      "group": "targeted",
+      "category": "xj6_followup",
+      "pass": "first",
+      "question": "La Naked",
+      "expected": "Lire Yamaha XJ6 600 Naked 2011 ; conserver demande de bridage ; distinguer mention de puissance/permis de preuve du kit.",
+      "object_ids": [],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:35:49.424151+00:00",
+      "answer": "La fiche mentionne que la Yamaha XJ6 600 Naked 2011 est accessible aux permis A. [Yamaha XJ6 600 Naked (2011)](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\n\nComplément en lecture directe des sources :\n\n### Yamaha XJ6 600 Naked (2011)\n\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\nPreuves retenues : Équipement de série, Infos pratiques, Transmission, Moteur, Coloris.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle type de bridage pour un XJ6 A2 2011",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Naked",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche mentionne que la Yamaha XJ6 600 Naked 2011 est accessible aux permis A. [Yamaha XJ6 600 Naked (2011)](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\n\nComplément en lecture directe des sources :\n\n### Yamaha XJ6 600 Naked (2011)\n\n- **Permis / bridage mentionnés — la fiche indique :** La moto est accessible aux permis : A\n- **Mention A2 :** non retrouvée dans cette fiche. Ce manque ne prouve pas une incompatibilité réelle.\n\n[Source — fiche exacte](https://www.motoplanete.com/yamaha/2829/XJ6-600-Naked-2011/contact.html)\nPreuves retenues : Équipement de série, Infos pratiques, Transmission, Moteur, Coloris.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 13.434517499990761
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-15T23:36:03.864654+00:00"
+}

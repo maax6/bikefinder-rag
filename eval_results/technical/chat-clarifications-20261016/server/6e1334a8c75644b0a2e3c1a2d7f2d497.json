@@ -1,0 +1,64 @@
+{
+  "id": "6e1334a8c75644b0a2e3c1a2d7f2d497",
+  "question": "Sur les Honda CB 500 F de 2020, 2021 et 2022, donne le poids moyen sec puis le poids moyen en ordre de marche.",
+  "started_at": "2026-10-15T23:20:27.670447+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 0/3 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\nCalcul non établi : aucune valeur exploitable pour cette mesure.\n\n**Poids tous pleins / en ordre de marche** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 189 kg** (567 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2021
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2022
+        }
+      ],
+      "fields": [
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Sur les Honda CB 500 F de 2020, 2021 et 2022, donne le poids moyen sec puis le poids moyen en ordre de marche.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "weight_dry_kg",
+          "weight_wet_kg"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.04392754100263119,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.04406674997881055
+}

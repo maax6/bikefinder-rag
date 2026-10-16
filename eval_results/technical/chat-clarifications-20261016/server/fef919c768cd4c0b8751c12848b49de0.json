@@ -1,0 +1,48 @@
+{
+  "id": "fef919c768cd4c0b8751c12848b49de0",
+  "question": "Quel volume de réservoir pour la Triumph Tiger Sport 660 ?",
+  "started_at": "2026-10-15T23:18:11.805957+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Triumph"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Triumph",
+          "model": "Tiger Sport 660"
+        },
+        {
+          "brand": "Triumph",
+          "model": "Nouvelle Tiger Sport 660"
+        }
+      ],
+      "fields": [
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quel volume de réservoir pour la Triumph Tiger Sport 660 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.04868633416481316,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.04890520800836384
+}

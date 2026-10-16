@@ -1,0 +1,227 @@
+{
+  "id": "ebc64e4bf4004a98917e72d9905b73d1",
+  "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+  "started_at": "2026-10-16T01:13:50.602185+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n| Caractéristique | Honda CB 500 F (2019) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | ABS : présence documentée, de série selon la mention ou la section source. Preuve source : « Équipement de série · Assistance au freinage : ABS de série ». |\n| Source | [Fiche](https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html) |\n\nCes équipements sont ceux de la fiche source. Son rattachement au marché technique Royaume-Uni (UK) n’est pas établi ; je ne l’atteste pas à partir d’un tarif français.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "year": 2019
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F"
+        }
+      ],
+      "fields": [
+        "equipment"
+      ],
+      "equipment": "ABS",
+      "status": "unknown",
+      "market_unknown": true,
+      "market_requested": "Royaume-Uni (UK)",
+      "unresolved_variant": false,
+      "variant_unknown": false,
+      "source_question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details",
+      "requested_equipment": [
+        "ABS"
+      ]
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 23.323889707913622,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "f938f51077e8484e",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2019,
+          "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+          "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "equipment": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "f938f51077e8484e:section:5"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "f938f51077e8484e:section:5",
+              "object_id": "f938f51077e8484e",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2019,
+              "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+              "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS de série",
+              "text": "Honda CB 500 F 2019\nÉquipement de série\nAssistance au freinage : ABS de série",
+              "score": 0.6392507553100586,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f938f51077e8484e:section:4",
+              "object_id": "f938f51077e8484e",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2019,
+              "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+              "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+              "text": "Honda CB 500 F 2019\nMoteur\nBicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1",
+              "score": 0.6301165819168091,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f938f51077e8484e:section:3",
+              "object_id": "f938f51077e8484e",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2019,
+              "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+              "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "text": "Honda CB 500 F 2019\nTrain arrière\nMono-amortisseur; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "score": 0.6068471670150757,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f938f51077e8484e:section:2",
+              "object_id": "f938f51077e8484e",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2019,
+              "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+              "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports; Secondaire par chaîne",
+              "text": "Honda CB 500 F 2019\nTransmission\nboîte à 6 rapports; Secondaire par chaîne",
+              "score": 0.603131890296936,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f938f51077e8484e:section:1",
+              "object_id": "f938f51077e8484e",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2019,
+              "source_url": "https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html",
+              "source_sha256": "4ba3b599970d1690ca8426afc0e5c44d273291d124a364323788053f8e9d53f4",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "text": "Honda CB 500 F 2019\nTrain avant\nFourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "score": 0.5948854088783264,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "authority",
+          "message": "Ces équipements sont ceux de la fiche source. Son rattachement au marché technique Royaume-Uni (UK) n’est pas établi ; je ne l’atteste pas à partir d’un tarif français."
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.498272806406021e-07,
+          "query_encoding_seconds": 10.836619374807924,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "f938f51077e8484e",
+          "proof_check": {
+            "fields": {
+              "equipment": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0012807080056518316
+          }
+        }
+      ],
+      "seconds": 10.8416817500256,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "3561b66ba9a14e36a3d4b400739203d502100f4167d1c793192c2726a033cb84",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1455,
+      "eval_count": 41,
+      "total_duration": 7605790334,
+      "load_duration": 12554875,
+      "prompt_eval_duration": 170223000,
+      "eval_duration": 7255713000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Honda CB 500 F 2019 dispose de l'ABS de série.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": false,
+        "verified_claim_indices": [],
+        "coverage_verified": false,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.86,
+              "unsupported": 0.14
+            },
+            "confidence": 0.72
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.72,
+              "unsupported": 0.28
+            },
+            "confidence": 0.44
+          }
+        }
+      },
+      "error": "unverified_claims",
+      "seconds": 7.946057167137042
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 23.325728750089183
+}

@@ -1,0 +1,392 @@
+{
+  "created_at": "2026-10-15T23:22:46.026143+00:00",
+  "questions_sha256": "3daba36363764276c44a6eda144e825a2c4da1ecbd7cb74b63693bc46c3e86c8",
+  "url": "http://127.0.0.1:7862/",
+  "results": [
+    {
+      "id": "Q06",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Pour la Suzuki SV 650 de 2022, donne séparément le poids sec et le poids tous pleins faits ; marque inconnu ce que la fiche ne donne pas.",
+      "expected": "Conserver chaque type ; sec non documenté, wet sourcé.",
+      "object_ids": [
+        "64166fc5f0c0f09f"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.038403875194489956,
+      "started_at": "2026-10-15T23:22:46.065935+00:00",
+      "answer": "Le poids tous pleins faits de la Suzuki SV 650 de 2022 est de 197 kg. [Suzuki SV 650 (2022)](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html)\n\n**Informations non documentées :**\n- Suzuki SV 650 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Suzuki SV 650 de 2022, donne séparément le poids sec et le poids tous pleins faits ; marque inconnu ce que la fiche ne donne pas.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Suzuki SV 650 de 2022 est de 197 kg. [Suzuki SV 650 (2022)](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html)\n\n**Informations non documentées :**\n- Suzuki SV 650 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 24.14439249993302
+    },
+    {
+      "id": "Q08",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Quel couple et quel régime sont annoncés pour la Benelli 500 Leoncino de 2022 ?",
+      "expected": "Conserver mkg/Nm et régime source sans conversion implicite.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.026258249999955297,
+      "started_at": "2026-10-15T23:23:11.240527+00:00",
+      "answer": "Le couple annoncé pour la Benelli 500 Leoncino de 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel couple et quel régime sont annoncés pour la Benelli 500 Leoncino de 2022 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le couple annoncé pour la Benelli 500 Leoncino de 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 14.476925458060578
+    },
+    {
+      "id": "Q09",
+      "turn": 1,
+      "group": "unseen",
+      "category": "equipement",
+      "pass": "first",
+      "question": "La Honda NT 1100 de 2022 mentionne-t-elle des poignées chauffantes et un régulateur de vitesse ? Distingue série, option et inconnu.",
+      "expected": "Lire les mentions exactes des équipements, statut uniquement si explicite.",
+      "object_ids": [
+        "13fd3b866069e1ee"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.018350458005443215,
+      "started_at": "2026-10-15T23:23:26.271268+00:00",
+      "answer": "La Honda NT 1100 de 2022 mentionne des poignées chauffantes de série. [Honda NT 1100 (2022)](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Honda NT 1100 (2022) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | poignées chauffantes : de série — Poignées chauffantes ; régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda NT 1100 de 2022 mentionne-t-elle des poignées chauffantes et un régulateur de vitesse ? Distingue série, option et inconnu.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda NT 1100 de 2022 mentionne des poignées chauffantes de série. [Honda NT 1100 (2022)](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Honda NT 1100 (2022) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | poignées chauffantes : de série — Poignées chauffantes ; régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 23.672444958938286
+    },
+    {
+      "id": "Q11",
+      "turn": 1,
+      "group": "unseen",
+      "category": "comparaison",
+      "pass": "first",
+      "question": "Le poids tous pleins faits de la Royal Enfield Meteor 350 change-t-il entre 2021 et 2022 ? Donne les deux valeurs.",
+      "expected": "Les deux fiches donnent 191 kg à sec. Aucun poids tous pleins documenté : dire que la comparaison wet ne peut pas être établie ; ne pas rebaptiser 191 kg en poids wet.",
+      "object_ids": [
+        "1a6ca74ef37f5de7",
+        "0b6905c88de4fd57"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.020907125202938914,
+      "started_at": "2026-10-15T23:23:50.965696+00:00",
+      "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Royal-Enfield Meteor 350 (2021) | Royal-Enfield Meteor 350 (2022) |\n|---|---|---|\n| Poids à sec (kg) | Châssis — Poids à sec : 191 kg | Châssis — Poids à sec : 191 kg |\n| Poids en ordre de marche / pleins faits (kg) | Non documenté dans cette fiche | Non documenté dans cette fiche |\n| Source | [Fiche](https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html) | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Royal Enfield Meteor 350 change-t-il entre 2021 et 2022 ? Donne les deux valeurs.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Royal-Enfield Meteor 350 (2021) | Royal-Enfield Meteor 350 (2022) |\n|---|---|---|\n| Poids à sec (kg) | Châssis — Poids à sec : 191 kg | Châssis — Poids à sec : 191 kg |\n| Poids en ordre de marche / pleins faits (kg) | Non documenté dans cette fiche | Non documenté dans cette fiche |\n| Source | [Fiche](https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html) | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 20.12257354101166
+    },
+    {
+      "id": "D01",
+      "turn": 1,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+      "expected": "Bonne fiche, valeurs et unités.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.033943708054721355,
+      "started_at": "2026-10-15T23:24:12.129180+00:00",
+      "answer": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 20.0820072919596
+    },
+    {
+      "id": "D01",
+      "turn": 2,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Et son couple, au régime annoncé ?",
+      "expected": "Reprendre Benelli 500 Leoncino 2022 ; couple et régime source.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:24:32.213226+00:00",
+      "answer": "Le couple maximal de la Benelli 500 Leoncino 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\nComplément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et son couple, au régime annoncé ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le couple maximal de la Benelli 500 Leoncino 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\nComplément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 19.539830917026848
+    },
+    {
+      "id": "D05",
+      "turn": 1,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Pour la Kawasaki W 800 de 2022, donne le poids tous pleins faits.",
+      "expected": "Valeur wet exacte, source.",
+      "object_ids": [
+        "f4f007bdd40a1b6c"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.03254754119552672,
+      "started_at": "2026-10-15T23:24:52.793035+00:00",
+      "answer": "Le poids tous pleins faits de la Kawasaki W 800 de 2022 est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Kawasaki W 800 de 2022, donne le poids tous pleins faits.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Kawasaki W 800 de 2022 est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 10.724562957882881
+    },
+    {
+      "id": "D05",
+      "turn": 2,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Et le poids sec, est-il aussi documenté dans cette fiche ?",
+      "expected": "Pas de confusion entre wet/sec ; absence explicite si inconnu.",
+      "object_ids": [
+        "f4f007bdd40a1b6c"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:25:03.518778+00:00",
+      "answer": "La fiche mentionne le poids tous pleins faits de la Kawasaki W 800 2022, qui est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Kawasaki W 800 de 2022, donne le poids tous pleins faits.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Kawasaki W 800 de 2022 est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et le poids sec, est-il aussi documenté dans cette fiche ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche mentionne le poids tous pleins faits de la Kawasaki W 800 2022, qui est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 9.95102637517266
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-15T23:25:14.472872+00:00"
+}

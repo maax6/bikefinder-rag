@@ -1,0 +1,54 @@
+{
+  "id": "20549af721d24930a439924e2979fe21",
+  "question": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+  "started_at": "2026-10-15T23:32:26.399476+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3605,
+        "output_tokens": 967,
+        "cost": 0.00015141
+      },
+      "seconds": 0.6269970831926912,
+      "reserved_usd": 0.0026659920000000003,
+      "debit_usd": 0.00015141
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Kawasaki",
+          "model": "W 800"
+        }
+      ],
+      "fields": [
+        "torque_nm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "La distribution de cette W800 ne serait-elle pas actionnée par couple conique? Ou serai-ce du factice?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6692865828517824,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": false,
+  "server_seconds": 0.6693976249080151
+}

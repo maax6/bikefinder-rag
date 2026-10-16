@@ -1,0 +1,44 @@
+{
+  "id": "00f91a2cd20c465d8639dfefcaf24abf",
+  "question": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+  "started_at": "2026-10-16T01:10:44.250024+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+  "metadata": {
+    "_catalog_plan": {
+      "models": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 BANDIT"
+        }
+      ],
+      "identity": {},
+      "conditions": [],
+      "fields": [
+        "weight_dry_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "weight_dry_kg"
+        ]
+      },
+      "mean_population_pending": true
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.04895574995316565
+}

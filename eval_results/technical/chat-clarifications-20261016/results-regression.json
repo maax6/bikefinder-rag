@@ -1,0 +1,3337 @@
+{
+  "created_at": "2026-10-15T23:12:38.475528+00:00",
+  "questions_sha256": "05e3f05f9aab420591a64793aa7a5483070baf2bc96b8be97b265f45050e67d0",
+  "url": "http://127.0.0.1:7862/",
+  "results": [
+    {
+      "id": "Q01",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Pour la Honda CRF 450 R de 2022, quelle puissance annonce la fiche ? Garde son éventuel caractère approximatif.",
+      "expected": "Reprendre ≈ 62 ch, avec approximation et source.",
+      "object_ids": [
+        "61a09748fc4b4aa3"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.025350708980113268,
+      "started_at": "2026-10-15T23:12:38.502188+00:00",
+      "answer": "La Honda CRF 450 R de 2022 annonce une puissance approximative de 62 ch. [Honda CRF 450 R (2022)](https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Honda CRF 450 R de 2022, quelle puissance annonce la fiche ? Garde son éventuel caractère approximatif.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda CRF 450 R de 2022 annonce une puissance approximative de 62 ch. [Honda CRF 450 R (2022)](https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 32.616068166913465
+    },
+    {
+      "id": "Q02",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Sur la Royal Enfield Classic 350 de 2022, indique la hauteur de selle et le volume du réservoir.",
+      "expected": "Deux valeurs, unités et lien exact ; vérifier les lignes sources.",
+      "object_ids": [
+        "b733b6ae57d72686"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.039278542157262564,
+      "started_at": "2026-10-15T23:13:12.162468+00:00",
+      "answer": "La Royal Enfield Classic 350 de 2022 a une hauteur de selle de 805 mm. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\nLe volume du réservoir de la Royal Enfield Classic 350 de 2022 est de 13 litres. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur la Royal Enfield Classic 350 de 2022, indique la hauteur de selle et le volume du réservoir.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Royal Enfield Classic 350 de 2022 a une hauteur de selle de 805 mm. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\nLe volume du réservoir de la Royal Enfield Classic 350 de 2022 est de 13 litres. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 18.973900167038664
+    },
+    {
+      "id": "Q03",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "La Moto Guzzi V 100 Mandello de 2022 transmet-elle par chaîne ou par cardan ? Et comment est refroidi son moteur ?",
+      "expected": "Transmission secondaire et refroidissement, sans déduction.",
+      "object_ids": [
+        "d5ebaf0240c24e05"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.03565029101446271,
+      "started_at": "2026-10-15T23:13:32.174219+00:00",
+      "answer": "La Moto Guzzi V 100 Mandello de 2022 transmet par cardan. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)\n\nSon moteur est refroidi par liquide. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Moto Guzzi V 100 Mandello de 2022 transmet-elle par chaîne ou par cardan ? Et comment est refroidi son moteur ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Moto Guzzi V 100 Mandello de 2022 transmet par cardan. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)\n\nSon moteur est refroidi par liquide. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 18.07506804098375
+    },
+    {
+      "id": "Q04",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Quelles dimensions de pneus avant et arrière sont indiquées pour la Kawasaki W 800 de 2022 ?",
+      "expected": "Les deux dimensions distinctes et la bonne fiche.",
+      "object_ids": [
+        "f4f007bdd40a1b6c"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.01860220800153911,
+      "started_at": "2026-10-15T23:13:51.277739+00:00",
+      "answer": "La Kawasaki W 800 de 2022 a une dimension de pneu avant de 100 / 90 - 19 et une dimension de pneu arrière de 130 / 80 - 18. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelles dimensions de pneus avant et arrière sont indiquées pour la Kawasaki W 800 de 2022 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Kawasaki W 800 de 2022 a une dimension de pneu avant de 100 / 90 - 19 et une dimension de pneu arrière de 130 / 80 - 18. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 20.391597375040874
+    },
+    {
+      "id": "Q05",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Décris les suspensions avant et arrière de la Triumph Tiger Sport 660 de 2022, avec les débattements documentés.",
+      "expected": "Fourche, amortisseur et deux débattements ; ne pas inventer les réglages.",
+      "object_ids": [
+        "4c62cff120b3f382"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.025518625043332577,
+      "started_at": "2026-10-15T23:14:12.699509+00:00",
+      "answer": "La suspension avant de la Triumph Tiger Sport 660 de 2022 est une fourche téléhydraulique inversée de 41 mm de diamètre avec un débattement de 150 mm. [Triumph Tiger Sport 660 (2022)](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html)\n\nLa suspension arrière est un mono-amortisseur avec un débattement de 150 mm. [Triumph Tiger Sport 660 (2022)](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Décris les suspensions avant et arrière de la Triumph Tiger Sport 660 de 2022, avec les débattements documentés.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La suspension avant de la Triumph Tiger Sport 660 de 2022 est une fourche téléhydraulique inversée de 41 mm de diamètre avec un débattement de 150 mm. [Triumph Tiger Sport 660 (2022)](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html)\n\nLa suspension arrière est un mono-amortisseur avec un débattement de 150 mm. [Triumph Tiger Sport 660 (2022)](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 22.291161792119965
+    },
+    {
+      "id": "Q06",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Pour la Suzuki SV 650 de 2022, donne séparément le poids sec et le poids tous pleins faits ; marque inconnu ce que la fiche ne donne pas.",
+      "expected": "Conserver chaque type ; sec non documenté, wet sourcé.",
+      "object_ids": [
+        "64166fc5f0c0f09f"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.03034125012345612,
+      "started_at": "2026-10-15T23:14:36.033540+00:00",
+      "answer": "Le poids tous pleins faits de la Suzuki SV 650 de 2022 est de 197 kg. [Suzuki SV 650 (2022)](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html)\n\n**Informations non documentées :**\n- Suzuki SV 650 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Suzuki SV 650 de 2022, donne séparément le poids sec et le poids tous pleins faits ; marque inconnu ce que la fiche ne donne pas.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Suzuki SV 650 de 2022 est de 197 kg. [Suzuki SV 650 (2022)](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html)\n\n**Informations non documentées :**\n- Suzuki SV 650 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 16.452480415813625
+    },
+    {
+      "id": "Q07",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Pour la KTM 390 Adventure de 2022, compare le frein avant et le frein arrière : diamètre et étriers.",
+      "expected": "Diamètres et pistons de chaque essieu, liens.",
+      "object_ids": [
+        "5fffee575224f842"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.03456283290870488,
+      "started_at": "2026-10-15T23:14:53.528394+00:00",
+      "answer": "Le frein avant de la KTM 390 Adventure de 2022 dispose d'un disque de Ø 330 mm avec un étrier à 4 pistons. Le frein arrière, quant à lui, a un disque de Ø 230 mm et un étrier à simple piston. [KTM 390 Adventure (2022)](https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la KTM 390 Adventure de 2022, compare le frein avant et le frein arrière : diamètre et étriers.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le frein avant de la KTM 390 Adventure de 2022 dispose d'un disque de Ø 330 mm avec un étrier à 4 pistons. Le frein arrière, quant à lui, a un disque de Ø 230 mm et un étrier à simple piston. [KTM 390 Adventure (2022)](https://www.motoplanete.com/ktm/9080/390-Adventure-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 20.03192966710776
+    },
+    {
+      "id": "Q08",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "first",
+      "question": "Quel couple et quel régime sont annoncés pour la Benelli 500 Leoncino de 2022 ?",
+      "expected": "Conserver mkg/Nm et régime source sans conversion implicite.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.02765087503939867,
+      "started_at": "2026-10-15T23:15:14.616137+00:00",
+      "answer": "Le couple annoncé pour la Benelli 500 Leoncino de 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel couple et quel régime sont annoncés pour la Benelli 500 Leoncino de 2022 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le couple annoncé pour la Benelli 500 Leoncino de 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 21.975380290998146
+    },
+    {
+      "id": "Q09",
+      "turn": 1,
+      "group": "unseen",
+      "category": "equipement",
+      "pass": "first",
+      "question": "La Honda NT 1100 de 2022 mentionne-t-elle des poignées chauffantes et un régulateur de vitesse ? Distingue série, option et inconnu.",
+      "expected": "Lire les mentions exactes des équipements, statut uniquement si explicite.",
+      "object_ids": [
+        "13fd3b866069e1ee"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.023316374979913235,
+      "started_at": "2026-10-15T23:15:37.622990+00:00",
+      "answer": "La Honda NT 1100 de 2022 mentionne des poignées chauffantes de série. [Honda NT 1100 (2022)](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Honda NT 1100 (2022) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | poignées chauffantes : de série — Poignées chauffantes ; régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html) |\n\n**Informations non documentées :**\n- Honda NT 1100 (2022) — Équipements : ABS, options et statuts documentés — Un détail demandé reste non documenté dans ces preuves ; les mentions ci-dessus ne le confirment pas Couverture non établie de l’ensemble des détails demandés : « poignees chauffantes; regulateur de vitesse ».",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda NT 1100 de 2022 mentionne-t-elle des poignées chauffantes et un régulateur de vitesse ? Distingue série, option et inconnu.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda NT 1100 de 2022 mentionne des poignées chauffantes de série. [Honda NT 1100 (2022)](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Honda NT 1100 (2022) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | poignées chauffantes : de série — Poignées chauffantes ; régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html) |\n\n**Informations non documentées :**\n- Honda NT 1100 (2022) — Équipements : ABS, options et statuts documentés — Un détail demandé reste non documenté dans ces preuves ; les mentions ci-dessus ne le confirment pas Couverture non établie de l’ensemble des détails demandés : « poignees chauffantes; regulateur de vitesse ».",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 20.902489375090227
+    },
+    {
+      "id": "Q10",
+      "turn": 1,
+      "group": "unseen",
+      "category": "comparaison",
+      "pass": "first",
+      "question": "Compare les suspensions de la Moto Guzzi V 100 Mandello de 2022 et de la Moto Guzzi V 100 Mandello S de 2022.",
+      "expected": "Deux fiches exactes, différences de suspensions documentées, sans mélanger les variantes.",
+      "object_ids": [
+        "d5ebaf0240c24e05",
+        "03a2612c51f05f1e"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.021113417111337185,
+      "started_at": "2026-10-15T23:15:59.556684+00:00",
+      "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\nPlusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.\n\n| Caractéristique | Moto-Guzzi V 100 Mandello (2022) | Moto-Guzzi V 100 Mandello S (2022) |\n|---|---|---|\n| Suspensions et réglages avant/arrière | Train avant — Fourche téléhydraulique inversée Ø 41 mm ; Train avant — Réglage de la précharge et de la détente ; Train arrière — Mono-amortisseur déporté + monobras ; Train arrière — Réglage de la précharge et de la détente | Train avant — Fourche téléhydraulique inversée Öhlins Ø 43 mm / Öhlins , déb : 130 mm ; Train arrière — Mono-amortisseur Öhlins déporté + monobras / Öhlins , déb : 130 mm ; Équipement de série — Suspensions réglables électroniquement |\n| Source | [Fiche](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html) | [Fiche](https://www.motoplanete.com/moto-guzzi/9454/V-100-Mandello-S-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Compare les suspensions de la Moto Guzzi V 100 Mandello de 2022 et de la Moto Guzzi V 100 Mandello S de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\nPlusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.\n\n| Caractéristique | Moto-Guzzi V 100 Mandello (2022) | Moto-Guzzi V 100 Mandello S (2022) |\n|---|---|---|\n| Suspensions et réglages avant/arrière | Train avant — Fourche téléhydraulique inversée Ø 41 mm ; Train avant — Réglage de la précharge et de la détente ; Train arrière — Mono-amortisseur déporté + monobras ; Train arrière — Réglage de la précharge et de la détente | Train avant — Fourche téléhydraulique inversée Öhlins Ø 43 mm / Öhlins , déb : 130 mm ; Train arrière — Mono-amortisseur Öhlins déporté + monobras / Öhlins , déb : 130 mm ; Équipement de série — Suspensions réglables électroniquement |\n| Source | [Fiche](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html) | [Fiche](https://www.motoplanete.com/moto-guzzi/9454/V-100-Mandello-S-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 30.853489374974743
+    },
+    {
+      "id": "Q11",
+      "turn": 1,
+      "group": "unseen",
+      "category": "comparaison",
+      "pass": "first",
+      "question": "Le poids tous pleins faits de la Royal Enfield Meteor 350 change-t-il entre 2021 et 2022 ? Donne les deux valeurs.",
+      "expected": "Les deux fiches donnent 191 kg à sec. Aucun poids tous pleins documenté : dire que la comparaison wet ne peut pas être établie ; ne pas rebaptiser 191 kg en poids wet.",
+      "object_ids": [
+        "1a6ca74ef37f5de7",
+        "0b6905c88de4fd57"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.026032707886770368,
+      "started_at": "2026-10-15T23:16:31.438278+00:00",
+      "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Royal-Enfield Meteor 350 (2021) | Royal-Enfield Meteor 350 (2022) |\n|---|---|---|\n| Poids à sec (kg) | Châssis — Poids à sec : 191 kg | Châssis — Poids à sec : 191 kg |\n| Poids en ordre de marche / pleins faits (kg) | Non documenté dans cette fiche | Non documenté dans cette fiche |\n| Source | [Fiche](https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html) | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |\n\n**Informations non documentées :**\n- Royal-Enfield Meteor 350 (2021) — Poids en ordre de marche / pleins faits (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids tous pleins ».\n- Royal-Enfield Meteor 350 (2022) — Poids en ordre de marche / pleins faits (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids tous pleins ».",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Royal Enfield Meteor 350 change-t-il entre 2021 et 2022 ? Donne les deux valeurs.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Royal-Enfield Meteor 350 (2021) | Royal-Enfield Meteor 350 (2022) |\n|---|---|---|\n| Poids à sec (kg) | Châssis — Poids à sec : 191 kg | Châssis — Poids à sec : 191 kg |\n| Poids en ordre de marche / pleins faits (kg) | Non documenté dans cette fiche | Non documenté dans cette fiche |\n| Source | [Fiche](https://www.motoplanete.com/royal-enfield/8583/Meteor-350-2021/contact.html) | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |\n\n**Informations non documentées :**\n- Royal-Enfield Meteor 350 (2021) — Poids en ordre de marche / pleins faits (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids tous pleins ».\n- Royal-Enfield Meteor 350 (2022) — Poids en ordre de marche / pleins faits (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids tous pleins ».",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 30.70646045799367
+    },
+    {
+      "id": "Q12",
+      "turn": 1,
+      "group": "unseen",
+      "category": "calcul",
+      "pass": "first",
+      "question": "Combien de chevaux séparent la Kawasaki Z 900 de 2022 et la Kawasaki Z 900 RS de 2022 ? Affiche les valeurs puis la différence.",
+      "expected": "Calculer la différence absolue : 14.0 ch.",
+      "object_ids": [
+        "4a89df62737a1a4f",
+        "5ce5ff61c1c32167"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.025400957791134715,
+      "started_at": "2026-10-15T23:17:03.182260+00:00",
+      "answer": "Plusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.\n\n| Caractéristique | Kawasaki Z 900 (2022) | Kawasaki Z 900 RS (2022) |\n|---|---|---|\n| Puissance documentée (unités source) | Moteur — 125 ch à 9 500 tr/min | Moteur — 111 ch à 8 500 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) | [Fiche](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Écart — Puissance | \\|125 − 111\\| = 14 ch. Ordre : Kawasaki Z 900 (2022) ; Kawasaki Z 900 RS (2022). |\n| Sources des valeurs de catalogue | [Kawasaki Z 900 (2022)](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) ; [Kawasaki Z 900 RS (2022)](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Combien de chevaux séparent la Kawasaki Z 900 de 2022 et la Kawasaki Z 900 RS de 2022 ? Affiche les valeurs puis la différence.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Plusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.\n\n| Caractéristique | Kawasaki Z 900 (2022) | Kawasaki Z 900 RS (2022) |\n|---|---|---|\n| Puissance documentée (unités source) | Moteur — 125 ch à 9 500 tr/min | Moteur — 111 ch à 8 500 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) | [Fiche](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Écart — Puissance | \\|125 − 111\\| = 14 ch. Ordre : Kawasaki Z 900 (2022) ; Kawasaki Z 900 RS (2022). |\n| Sources des valeurs de catalogue | [Kawasaki Z 900 (2022)](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) ; [Kawasaki Z 900 RS (2022)](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.7160201671067625
+    },
+    {
+      "id": "Q13",
+      "turn": 1,
+      "group": "unseen",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Quelle est la plus grosse cylindrée documentée chez Kawasaki pour 2021 ? Donne toutes les fiches ex æquo, dans ce catalogue seulement.",
+      "expected": "{\"value\": 1043.0, \"unit\": \"cc\", \"winners\": [\"Kawasaki Ninja 1000 SX 2021\", \"Kawasaki VERSYS 1000 S 2021\", \"Kawasaki VERSYS 1000 SE 2021\", \"Kawasaki VERSYS 1000 SE Tourer 2021\", \"Kawasaki VERSYS 1000 SE Tourer + 2021\", \"Kawasaki Ninja 1000 SX Performance Tourer 2021\"], \"documented\": 42, \"total\": 42}",
+      "object_ids": [
+        "bb11ce8848521c67",
+        "063dab396a62a3cc",
+        "0c4352e26263f2ae",
+        "8b51383e9fef7cbc",
+        "185f3d6371f19c39",
+        "093a2c447c40fdfe",
+        "d707d96f22e103a0",
+        "cd9c291389d27e27",
+        "0b30b561329acbab",
+        "a226de377bbe55cf",
+        "d1b4142d66e0cd23",
+        "2d1ada3dbee5f7d4",
+        "fdaa18292d9b6804",
+        "ab15585fcf2cd681",
+        "a87b4c806add69be",
+        "03682a164ce41cb8",
+        "0338dcb9d49beeac",
+        "e3f35d1d15639237",
+        "50a7e1fa3288d283",
+        "a5b3516c7f80b298",
+        "58f62a49f6cc636f",
+        "e2c0fbb17e7e64fa",
+        "b1bc4f2db788bd7e",
+        "6fd07fb779cb600f",
+        "ee6ccfad6347b6f3",
+        "a279f1082e86364d",
+        "61e74729343fa81c",
+        "f4f6efdcb20fc869",
+        "d7cec1c23fd5a26a",
+        "cca0ea4fcae2053a",
+        "e29bcee5047e79b4",
+        "7c9c817468cfce5d",
+        "9259e5120303c40a",
+        "707e6df993732089",
+        "8303fcb7b57d7430",
+        "ddd9e38a00453b28",
+        "3c77e99bc6376b52",
+        "1a3741d92cace6ea",
+        "f651bfc029631731",
+        "193ea7c51543fffb",
+        "7d50ea76345d68e2",
+        "5f9ce53f0f9cbd28"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.03360700001940131,
+      "started_at": "2026-10-15T23:17:04.934785+00:00",
+      "answer": "Calcul sur **42 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 42/42 valeurs numériques univoques documentées.\n**Maximum : 1043 cc** — 6 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki Ninja 1000 SX (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8489/Ninja-1000-SX-2021/contact.html) |\n| Kawasaki Ninja 1000 SX Performance Tourer (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9500/Ninja-1000-SX-Performance-Tourer-2021/contact.html) |\n| Kawasaki VERSYS 1000 S (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8507/VERSYS-1000-S-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8508/VERSYS-1000-SE-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE Tourer (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8888/VERSYS-1000-SE-Tourer-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE Tourer + (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8889/VERSYS-1000-SE-Tourer--2021/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la plus grosse cylindrée documentée chez Kawasaki pour 2021 ? Donne toutes les fiches ex æquo, dans ce catalogue seulement.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **42 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 42/42 valeurs numériques univoques documentées.\n**Maximum : 1043 cc** — 6 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki Ninja 1000 SX (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8489/Ninja-1000-SX-2021/contact.html) |\n| Kawasaki Ninja 1000 SX Performance Tourer (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/9500/Ninja-1000-SX-Performance-Tourer-2021/contact.html) |\n| Kawasaki VERSYS 1000 S (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8507/VERSYS-1000-S-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8508/VERSYS-1000-SE-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE Tourer (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8888/VERSYS-1000-SE-Tourer-2021/contact.html) |\n| Kawasaki VERSYS 1000 SE Tourer + (2021) | Moteur —  1 043 cc (Alésage * course: 77 x 56 mm) | [Fiche](https://www.motoplanete.com/kawasaki/8889/VERSYS-1000-SE-Tourer--2021/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.13255433412268758
+    },
+    {
+      "id": "Q14",
+      "turn": 1,
+      "group": "unseen",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+      "expected": "{\"value\": 785.0, \"unit\": \"mm\", \"winners\": [\"Suzuki GSX-R 125 2022\", \"Suzuki GSX-S 125 2022\", \"Suzuki SV 650 2022\", \"Suzuki SV 650 X 2022\"], \"documented\": 18, \"total\": 20}",
+      "object_ids": [
+        "e6caa88971e9f3e6",
+        "fd5863d7313f61d3",
+        "f62945f6a2f99fe5",
+        "775bcaff0592e097",
+        "fd6eee8cae819c28",
+        "c96079e49dda89ee",
+        "64166fc5f0c0f09f",
+        "d4c7986cbe300539",
+        "c48c9708470cd32a",
+        "c1e781a8e58d2b77",
+        "2e97f64d02ad9ecb",
+        "18b45b31fa34f274",
+        "a629b4630ee6f602",
+        "5e184eb9f17d187a",
+        "43630b565b86e0b6",
+        "0663b0cec967d443",
+        "a22af948d231a56e",
+        "4a4582ea3fa31b27",
+        "8a9b7e4a450024ed",
+        "501714c881b90f45"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.01574404095299542,
+      "started_at": "2026-10-15T23:17:06.091595+00:00",
+      "answer": "Calcul sur **20 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 18/20 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Minimum : 785 mm** — 4 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSX-R 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9081/GSX-R-125-2022/contact.html) |\n| Suzuki GSX-S 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9082/GSX-S-125-2022/contact.html) |\n| Suzuki SV 650 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n| Suzuki SV 650 X (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9200/SV-650-X-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Chez Suzuki en 2022, quelle est la selle la plus basse du catalogue ? Donne les éventuels ex æquo.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **20 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 18/20 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Minimum : 785 mm** — 4 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSX-R 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9081/GSX-R-125-2022/contact.html) |\n| Suzuki GSX-S 125 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9082/GSX-S-125-2022/contact.html) |\n| Suzuki SV 650 (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9195/SV-650-2022/contact.html) |\n| Suzuki SV 650 X (2022) | Châssis — Hauteur de selle 785 mm | [Fiche](https://www.motoplanete.com/suzuki/9200/SV-650-X-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.1259045829065144
+    },
+    {
+      "id": "Q15",
+      "turn": 1,
+      "group": "unseen",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Calcule la puissance moyenne de la Honda CB 500 F sur les trois millésimes 2020, 2021 et 2022, une fiche standard par année.",
+      "expected": "Valeurs [48.0, 48.0, 48.0] ; moyenne arithmétique 48.0 ch. Ne pas demander un seul millésime.",
+      "object_ids": [
+        "555a2d677db34a14",
+        "496a038abc9da8b7",
+        "aaac27c37592b9cc"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.02271583303809166,
+      "started_at": "2026-10-15T23:17:07.245228+00:00",
+      "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Puissance** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (144 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcule la puissance moyenne de la Honda CB 500 F sur les trois millésimes 2020, 2021 et 2022, une fiche standard par année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Puissance** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (144 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11772395786829293
+    },
+    {
+      "id": "Q16",
+      "turn": 1,
+      "group": "unseen",
+      "category": "compte",
+      "pass": "first",
+      "question": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+      "expected": "Compte exact : 47 ; périmètre catalogue.",
+      "object_ids": [
+        "b5bd374c2664b0bf",
+        "36284b2fa2f285fc",
+        "4c62cff120b3f382",
+        "f2de3b90d65b8480",
+        "6808049e8b1d55ad",
+        "d9bba6fc5859d8fe",
+        "7f49cfbef8008365",
+        "6245ed4b345dfdd7",
+        "b33413df9954fdf1",
+        "58daaf9554f763b7",
+        "8c5f02800030a13d",
+        "40e47024ba87bd44",
+        "cceafe4f838d387f",
+        "6ffe5a6e4ebeb75d",
+        "f3a10b06230392f9",
+        "a9f37935126e79fb",
+        "b558db6d5b68b344",
+        "1187a2ba797b4541",
+        "ce6693aac0c729d8",
+        "55ce354cb4b4b28d",
+        "c5b45c9575db1a62",
+        "d667a72ef19069a8",
+        "0b27f48bd538f5f5",
+        "fb99ca4c7eb01f27",
+        "c28516902dad7523",
+        "658209ee58099d4e",
+        "07c4797d1e41486e",
+        "7780244c2319511b",
+        "7d52416bf5219602",
+        "764f985b8dfcbb77",
+        "157e666e3b848619",
+        "85d86e852da7c654",
+        "b16a4f511dcdf9d2",
+        "1986484d8cd17bf5",
+        "1516ed4e2ad15fec",
+        "03915c659646f7fc",
+        "056c81e218d8cf22",
+        "85503cbb6e0eae54",
+        "89352852a40f6ab0",
+        "6df098b65275a7a3",
+        "8e10e2d81a8687d3",
+        "eb64a9b9e00ad095",
+        "49353e6068a0763e",
+        "747825ee12549552",
+        "23782339693e0f41",
+        "95c853ec2d0c290b",
+        "0757ad363b2955af"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.017234249971807003,
+      "started_at": "2026-10-15T23:17:08.387990+00:00",
+      "answer": "**47 fiches correspondent dans le catalogue.**",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06660916679538786
+    },
+    {
+      "id": "Q17",
+      "turn": 1,
+      "group": "unseen",
+      "category": "compte",
+      "pass": "first",
+      "question": "Combien de fiches Yamaha de 2022 documentent un ABS de série ?",
+      "expected": "Compte exact : 34 ; absence de mention pas absence réelle.",
+      "object_ids": [
+        "f48d6173fd2dac36",
+        "385776b84fbbc01a",
+        "61908febaab75bcb",
+        "84f0bf715de17f1a",
+        "be659909a4cf2e16",
+        "6ceba037bbe2ef0a",
+        "c278847622565f8b",
+        "d029e7cdc4944d04",
+        "f12083fba77965b7",
+        "cfbe212479eed3e8",
+        "49c70a953efeee45",
+        "9fda9570d65e4dde",
+        "4c42fc4fe418f0c2",
+        "1e51e395fafcda72",
+        "c5a8711b59cce650",
+        "b597c3ffa1000d1f",
+        "dfc7958b538cd6d3",
+        "f5bf50e0a67930e8",
+        "3dc8bcde6dac71ad",
+        "e9fea09ac1e5a81a",
+        "b90a78a2a0f587ea",
+        "e0ae8b6f0411f021",
+        "79843bbfaf1577f2",
+        "36efb03b8e07074b",
+        "770d28e62dccdc82",
+        "fb4a71151c06aa9c",
+        "28868d4a77978cd6",
+        "105da9f7b4b12557",
+        "04518889e95958bd",
+        "d0ec544cae9516bd",
+        "300e6bb296515c15",
+        "7a7ee4a2cdfd45b0",
+        "cc32b7068c249405",
+        "71746dfef8f049fe"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.017249499913305044,
+      "started_at": "2026-10-15T23:17:09.481508+00:00",
+      "answer": "**34 fiches correspondent dans le catalogue.** Équipements : ABS — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Combien de fiches Yamaha de 2022 documentent un ABS de série ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**34 fiches correspondent dans le catalogue.** Équipements : ABS — de série. Les mentions inconnues ne sont pas comptées comme des présences.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11982475011609495
+    },
+    {
+      "id": "Q18",
+      "turn": 1,
+      "group": "unseen",
+      "category": "filtre",
+      "pass": "first",
+      "question": "Liste les Honda de 2022 avec une selle au plus à 800 mm et un poids tous pleins faits au plus de 200 kg.",
+      "expected": "Liste exacte : Honda CRF 50 F 2022, Honda CRF 110 F 2022, Honda CRF 125 F 2022, Honda CBR 500 R 2022, Honda CB 500 F 2022, Honda CMX 500 Rebel 2022, Honda CMX 500 Rebel S 2022, Honda CB 125 F 2022, Honda Dax 125 ST 2022, Honda Monkey 125 2022 ; garder les deux bornes inclusives.",
+      "object_ids": [
+        "0908a04db89a132b",
+        "beba6a9d54e33849",
+        "4468188cdddf4688",
+        "28dbbb62dfe1bb2a",
+        "aaac27c37592b9cc",
+        "60a3aee84db14c29",
+        "6bf37d93b889ff21",
+        "2c6fa0c501f7727e",
+        "c38b1c7ad9e16a60",
+        "41b52d3b81cda63f"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.013298125006258488,
+      "started_at": "2026-10-15T23:17:10.620194+00:00",
+      "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Hauteur de selle (mm) | Poids en ordre de marche / pleins faits (kg) | Poids à sec (kg) | Source |\n|---|---:|---|---|---|---|\n| Honda CB 125 F | 2022 | Châssis — Hauteur de selle : 790 mm | Châssis — Poids tous pleins faits : 117 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9062/CB-125-F-2022/contact.html) |\n| Honda CB 500 F | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 189 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n| Honda CBR 500 R | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 192 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8899/CBR-500-R-2022/contact.html) |\n| Honda CMX 500 Rebel | 2022 | Châssis — Hauteur de selle : 690 mm | Châssis — Poids tous pleins faits : 191 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9031/CMX-500-Rebel-2022/contact.html) |\n| Honda CMX 500 Rebel S | 2022 | Châssis — Hauteur de selle : 690 mm | Châssis — Poids tous pleins faits : 191 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9034/CMX-500-Rebel-S-2022/contact.html) |\n| Honda CRF 110 F | 2022 | Châssis — Hauteur de selle : 657 mm | Châssis — Poids tous pleins faits : 76,60 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8845/CRF-110-F-2022/contact.html) |\n| Honda CRF 125 F | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 90,20 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8849/CRF-125-F-2022/contact.html) |\n| Honda CRF 50 F | 2022 | Châssis — Hauteur de selle : 548 mm | Châssis — Poids tous pleins faits : 50,30 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8844/CRF-50-F-2022/contact.html) |\n| Honda Dax 125 ST | 2022 | Châssis — Hauteur de selle : 775 mm | Châssis — Poids tous pleins faits : 107 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9343/Dax-125-ST-2022/contact.html) |\n| Honda Monkey 125 | 2022 | Châssis — Hauteur de selle : 775 mm | Châssis — Poids tous pleins faits : 104 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9573/Monkey-125-2022/contact.html) |\n\nFiches 1 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Liste les Honda de 2022 avec une selle au plus à 800 mm et un poids tous pleins faits au plus de 200 kg.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Hauteur de selle (mm) | Poids en ordre de marche / pleins faits (kg) | Poids à sec (kg) | Source |\n|---|---:|---|---|---|---|\n| Honda CB 125 F | 2022 | Châssis — Hauteur de selle : 790 mm | Châssis — Poids tous pleins faits : 117 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9062/CB-125-F-2022/contact.html) |\n| Honda CB 500 F | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 189 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n| Honda CBR 500 R | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 192 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8899/CBR-500-R-2022/contact.html) |\n| Honda CMX 500 Rebel | 2022 | Châssis — Hauteur de selle : 690 mm | Châssis — Poids tous pleins faits : 191 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9031/CMX-500-Rebel-2022/contact.html) |\n| Honda CMX 500 Rebel S | 2022 | Châssis — Hauteur de selle : 690 mm | Châssis — Poids tous pleins faits : 191 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9034/CMX-500-Rebel-S-2022/contact.html) |\n| Honda CRF 110 F | 2022 | Châssis — Hauteur de selle : 657 mm | Châssis — Poids tous pleins faits : 76,60 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8845/CRF-110-F-2022/contact.html) |\n| Honda CRF 125 F | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 90,20 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8849/CRF-125-F-2022/contact.html) |\n| Honda CRF 50 F | 2022 | Châssis — Hauteur de selle : 548 mm | Châssis — Poids tous pleins faits : 50,30 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8844/CRF-50-F-2022/contact.html) |\n| Honda Dax 125 ST | 2022 | Châssis — Hauteur de selle : 775 mm | Châssis — Poids tous pleins faits : 107 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9343/Dax-125-ST-2022/contact.html) |\n| Honda Monkey 125 | 2022 | Châssis — Hauteur de selle : 775 mm | Châssis — Poids tous pleins faits : 104 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9573/Monkey-125-2022/contact.html) |\n\nFiches 1 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06776716699823737
+    },
+    {
+      "id": "Q19",
+      "turn": 1,
+      "group": "unseen",
+      "category": "identite",
+      "pass": "first",
+      "question": "Quelle marque fabrique l’Interceptor 650 ?",
+      "expected": "Royal-Enfield. Pas de millésime nécessaire pour cette identité stable dans le catalogue.",
+      "object_ids": [
+        "10da52d4f95a7c7d"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.015786249889060855,
+      "started_at": "2026-10-15T23:17:11.706628+00:00",
+      "answer": "Le constructeur indiqué dans le catalogue est **Royal-Enfield**. Sources d’identité : [Royal-Enfield Interceptor 650 (2026)](https://www.motoplanete.com/royal-enfield/12136/Interceptor-650-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle marque fabrique l’Interceptor 650 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le constructeur indiqué dans le catalogue est **Royal-Enfield**. Sources d’identité : [Royal-Enfield Interceptor 650 (2026)](https://www.motoplanete.com/royal-enfield/12136/Interceptor-650-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12090570782311261
+    },
+    {
+      "id": "Q20",
+      "turn": 1,
+      "group": "unseen",
+      "category": "hors_catalogue",
+      "pass": "first",
+      "question": "Les chevaux fiscaux et les chevaux du moteur, est-ce la même mesure ?",
+      "expected": "Question pédagogique adjacente. Répondre distinction sourcée si possible ou limite pertinente ; ne pas demander une valeur à convertir.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.011476624989882112,
+      "started_at": "2026-10-15T23:17:12.844670+00:00",
+      "answer": "Les fiches documentent la puissance du moteur, pas la méthode de calcul de la puissance fiscale. Je ne traite donc pas les CV fiscaux comme une puissance moteur à convertir. Pour expliquer ou calculer la puissance fiscale, précise le pays et la catégorie de véhicule ; il faut une source officielle adaptée, absente de ce catalogue.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les chevaux fiscaux et les chevaux du moteur, est-ce la même mesure ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les fiches documentent la puissance du moteur, pas la méthode de calcul de la puissance fiscale. Je ne traite donc pas les CV fiscaux comme une puissance moteur à convertir. Pour expliquer ou calculer la puissance fiscale, précise le pays et la catégorie de véhicule ; il faut une source officielle adaptée, absente de ce catalogue.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.05776708293706179
+    },
+    {
+      "id": "Q21",
+      "turn": 1,
+      "group": "unseen",
+      "category": "limite_sources",
+      "pass": "first",
+      "question": "Je regarde une Royal Enfield Classic 350 de 2022 pour le permis A2 : quelles mentions de permis et de puissance figurent réellement dans sa fiche ?",
+      "expected": "Lire puissance et permis mentionnés ; absence mention A2 si telle ; aucune certification individuelle.",
+      "object_ids": [
+        "b733b6ae57d72686"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.01709270803257823,
+      "started_at": "2026-10-15T23:17:13.921525+00:00",
+      "answer": "La fiche mentionne que la Royal Enfield Classic 350 de 2022 est accessible avec le permis A. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\nLa puissance de la Royal Enfield Classic 350 de 2022 est de 20,20 ch à 6 100 tr/min. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\n**Informations non documentées :**\n- Royal-Enfield Classic 350 (2022) — Mention A2 — Mention A2 non retrouvée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je regarde une Royal Enfield Classic 350 de 2022 pour le permis A2 : quelles mentions de permis et de puissance figurent réellement dans sa fiche ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche mentionne que la Royal Enfield Classic 350 de 2022 est accessible avec le permis A. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\nLa puissance de la Royal Enfield Classic 350 de 2022 est de 20,20 ch à 6 100 tr/min. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\n**Informations non documentées :**\n- Royal-Enfield Classic 350 (2022) — Mention A2 — Mention A2 non retrouvée\n\n**Limite des preuves :** Les passages cités sont des fiches techniques, pas des documents officiels A2. Le certificat de bridage/homologation et la configuration de votre exemplaire ne sont pas établis par ces preuves ; je ne certifie pas son éligibilité A2.\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 21.2954964581877
+    },
+    {
+      "id": "Q22",
+      "turn": 1,
+      "group": "unseen",
+      "category": "absence",
+      "pass": "first",
+      "question": "Donne le couple de la Kawasaki W 800 édition Nebula de 2022.",
+      "expected": "Édition fictive : pas de substitution silencieuse de la W 800 standard.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.02925387490540743,
+      "started_at": "2026-10-15T23:17:36.256247+00:00",
+      "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne le couple de la Kawasaki W 800 édition Nebula de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12128308298997581
+    },
+    {
+      "id": "Q23",
+      "turn": 1,
+      "group": "unseen",
+      "category": "absence",
+      "pass": "first",
+      "question": "Quelle est la capacité du réservoir de la Honda NT 1100 de 2007 ?",
+      "expected": "Aucune fiche exacte dans corpus ; pas de valeur empruntée à 2022.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.014296416891738772,
+      "started_at": "2026-10-15T23:17:37.394018+00:00",
+      "answer": "Fiche exacte non identifiée : Honda NT 1100 (2007). Aucune autre année ou variante substituée.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la capacité du réservoir de la Honda NT 1100 de 2007 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Fiche exacte non identifiée : Honda NT 1100 (2007). Aucune autre année ou variante substituée.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12215529195964336
+    },
+    {
+      "id": "Q24",
+      "turn": 1,
+      "group": "unseen",
+      "category": "limite_sources",
+      "pass": "first",
+      "question": "La présence de l’ABS sur la Honda NT 1100 de 2022 garantit-elle que je ne peux pas tomber ?",
+      "expected": "Pas de garantie de sécurité déduite de présence ABS ; la fiche ne démontre pas cette affirmation.",
+      "object_ids": [
+        "13fd3b866069e1ee"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.01608745800331235,
+      "started_at": "2026-10-15T23:17:38.536554+00:00",
+      "answer": "La fiche ne permet pas de garantir l’absence de chute ou d’accident. Une mention d’ABS ou d’un autre équipement ne constitue pas une preuve de cette garantie. Je peux seulement rapporter les équipements effectivement documentés pour le modèle et le millésime.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La présence de l’ABS sur la Honda NT 1100 de 2022 garantit-elle que je ne peux pas tomber ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche ne permet pas de garantir l’absence de chute ou d’accident. Une mention d’ABS ou d’un autre équipement ne constitue pas une preuve de cette garantie. Je peux seulement rapporter les équipements effectivement documentés pour le modèle et le millésime.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06086087506264448
+    },
+    {
+      "id": "D01",
+      "turn": 1,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+      "expected": "Bonne fiche, valeurs et unités.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.017848083982244134,
+      "started_at": "2026-10-15T23:17:39.617174+00:00",
+      "answer": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 15.754312250064686
+    },
+    {
+      "id": "D01",
+      "turn": 2,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Et son couple, au régime annoncé ?",
+      "expected": "Reprendre Benelli 500 Leoncino 2022 ; couple et régime source.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:17:55.373588+00:00",
+      "answer": "Le couple maximal de la Benelli 500 Leoncino 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne la puissance et la cylindrée de la Benelli 500 Leoncino de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Benelli 500 Leoncino de 2022 a une puissance de 48 ch à 8 500 tr/min et une cylindrée de 499,60 cc. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et son couple, au régime annoncé ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le couple maximal de la Benelli 500 Leoncino 2022 est de 4,60 mkg à 6 000 tr/min. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Couple documenté (unités source) | Moteur — 4,60 mkg à 6 000 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 15.363250249996781
+    },
+    {
+      "id": "D02",
+      "turn": 1,
+      "group": "unseen",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Quel volume de réservoir pour la Triumph Tiger Sport 660 ?",
+      "expected": "Demander année sans inventer.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.030603582970798016,
+      "started_at": "2026-10-15T23:18:11.779790+00:00",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel volume de réservoir pour la Triumph Tiger Sport 660 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11292637512087822
+    },
+    {
+      "id": "D02",
+      "turn": 2,
+      "group": "unseen",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Celle de 2022.",
+      "expected": "Résoudre clarification : même modèle, réservoir de 2022.",
+      "object_ids": [
+        "4c62cff120b3f382"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:18:11.893789+00:00",
+      "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Triumph Tiger Sport 660 (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 17,20 litres |\n| Source | [Fiche](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel volume de réservoir pour la Triumph Tiger Sport 660 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Celle de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Triumph Tiger Sport 660 (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 17,20 litres |\n| Source | [Fiche](https://www.motoplanete.com/triumph/8956/Tiger-Sport-660-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 30.713063000002876
+    },
+    {
+      "id": "D03",
+      "turn": 1,
+      "group": "unseen",
+      "category": "pagination",
+      "pass": "first",
+      "question": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+      "expected": "Cinq fiches, ordre explicite/stable, annoncer pagination.",
+      "object_ids": [
+        "b733b6ae57d72686",
+        "440ceadd327a3167",
+        "492bf4f046ab5b94",
+        "5204a791f15dd58b",
+        "10da52d4f95a7c7d",
+        "113f4e8610de43ba",
+        "0b6905c88de4fd57",
+        "5639dfff062ecdf1",
+        "65fbd4b12430f0af",
+        "ece182aaa5e63623"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.0296382918022573,
+      "started_at": "2026-10-15T23:18:43.644756+00:00",
+      "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield 410 Himalayan | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9287/410-Himalayan-2022/contact.html) |\n| Royal-Enfield 411 Scram | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9345/411-Scram-2022/contact.html) |\n| Royal-Enfield Classic 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html) |\n| Royal-Enfield Continental GT 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9284/Continental-GT-650-2022/contact.html) |\n| Royal-Enfield Continental GT 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9116/Continental-GT-650-120th-Anniversary-2022/contact.html) |\n\nFiches 1 à 5 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 5 fiches sur 10. Demande les suivantes pour continuer avec les mêmes critères.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield 410 Himalayan | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9287/410-Himalayan-2022/contact.html) |\n| Royal-Enfield 411 Scram | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9345/411-Scram-2022/contact.html) |\n| Royal-Enfield Classic 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html) |\n| Royal-Enfield Continental GT 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9284/Continental-GT-650-2022/contact.html) |\n| Royal-Enfield Continental GT 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9116/Continental-GT-650-120th-Anniversary-2022/contact.html) |\n\nFiches 1 à 5 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 5 fiches sur 10. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12508791615255177
+    },
+    {
+      "id": "D03",
+      "turn": 2,
+      "group": "unseen",
+      "category": "pagination",
+      "pass": "first",
+      "question": "Les cinq suivantes, avec les mêmes critères.",
+      "expected": "Suite sans doublons ni hors-marque/année.",
+      "object_ids": [
+        "b733b6ae57d72686",
+        "440ceadd327a3167",
+        "492bf4f046ab5b94",
+        "5204a791f15dd58b",
+        "10da52d4f95a7c7d",
+        "113f4e8610de43ba",
+        "0b6905c88de4fd57",
+        "5639dfff062ecdf1",
+        "65fbd4b12430f0af",
+        "ece182aaa5e63623"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:18:43.770862+00:00",
+      "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield Interceptor 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9286/Interceptor-650-2022/contact.html) |\n| Royal-Enfield Interceptor 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9115/Interceptor-650-120th-Anniversary-2022/contact.html) |\n| Royal-Enfield Meteor 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |\n| Royal-Enfield Meteor 350 Stellar | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9949/Meteor-350-Stellar-2022/contact.html) |\n| Royal-Enfield Meteor 350 Supernova | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9947/Meteor-350-Supernova-2022/contact.html) |\n\nFiches 6 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nFin de la sélection avec ces critères.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Montre les cinq premières fiches Royal Enfield de 2022 du catalogue, puis je demanderai la suite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield 410 Himalayan | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9287/410-Himalayan-2022/contact.html) |\n| Royal-Enfield 411 Scram | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9345/411-Scram-2022/contact.html) |\n| Royal-Enfield Classic 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html) |\n| Royal-Enfield Continental GT 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9284/Continental-GT-650-2022/contact.html) |\n| Royal-Enfield Continental GT 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9116/Continental-GT-650-120th-Anniversary-2022/contact.html) |\n\nFiches 1 à 5 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 5 fiches sur 10. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les cinq suivantes, avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Royal-Enfield Interceptor 650 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9286/Interceptor-650-2022/contact.html) |\n| Royal-Enfield Interceptor 650 120th Anniversary | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9115/Interceptor-650-120th-Anniversary-2022/contact.html) |\n| Royal-Enfield Meteor 350 | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9288/Meteor-350-2022/contact.html) |\n| Royal-Enfield Meteor 350 Stellar | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9949/Meteor-350-Stellar-2022/contact.html) |\n| Royal-Enfield Meteor 350 Supernova | 2022 | [Fiche](https://www.motoplanete.com/royal-enfield/9947/Meteor-350-Supernova-2022/contact.html) |\n\nFiches 6 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nFin de la sélection avec ces critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.10863612499088049
+    },
+    {
+      "id": "D04",
+      "turn": 1,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Liste les Suzuki de 2022 de plus de 100 ch.",
+      "expected": "Conserver >100ch, Suzuki,2022.",
+      "object_ids": [
+        "e6caa88971e9f3e6",
+        "c96079e49dda89ee",
+        "c48c9708470cd32a",
+        "c1e781a8e58d2b77",
+        "2e97f64d02ad9ecb",
+        "a629b4630ee6f602",
+        "43630b565b86e0b6",
+        "0663b0cec967d443",
+        "a22af948d231a56e",
+        "4a4582ea3fa31b27"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.03692145901732147,
+      "started_at": "2026-10-15T23:18:44.926573+00:00",
+      "answer": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.\n\n| Moto | Millésime | Puissance (ch) | Source |\n|---|---:|---|---|\n| Suzuki 1000 Katana | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9273/1000-Katana-2022/contact.html) |\n| Suzuki 1050 V-Strom | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9198/1050-V-Strom-2022/contact.html) |\n| Suzuki 1050 V-Strom XT | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9197/1050-V-Strom-XT-2022/contact.html) |\n| Suzuki 1050 V-Strom XT World Adventure | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9511/1050-V-Strom-XT-World-Adventure-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9084/GSX-1300-R-Hayabusa-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Bol d’Or | 2022 | Moteur — 192 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9616/GSX-1300-R-Hayabusa-Bol-dOr-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Yoshimura SERT Motul Replica | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9508/GSX-1300-R-Hayabusa-Yoshimura-SERT-Motul-Replica-2022/contact.html) |\n| Suzuki GSX-S 1000 | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9199/GSX-S-1000-2022/contact.html) |\n| Suzuki GSX-S 1000 GT | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8932/GSX-S-1000-GT-2022/contact.html) |\n| Suzuki GSX-S 1000 Power Edition | 2022 | Moteur — 158,80 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9509/GSX-S-1000-Power-Edition-2022/contact.html) |\n\nFiches 1 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Liste les Suzuki de 2022 de plus de 100 ch.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.\n\n| Moto | Millésime | Puissance (ch) | Source |\n|---|---:|---|---|\n| Suzuki 1000 Katana | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9273/1000-Katana-2022/contact.html) |\n| Suzuki 1050 V-Strom | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9198/1050-V-Strom-2022/contact.html) |\n| Suzuki 1050 V-Strom XT | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9197/1050-V-Strom-XT-2022/contact.html) |\n| Suzuki 1050 V-Strom XT World Adventure | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9511/1050-V-Strom-XT-World-Adventure-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9084/GSX-1300-R-Hayabusa-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Bol d’Or | 2022 | Moteur — 192 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9616/GSX-1300-R-Hayabusa-Bol-dOr-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Yoshimura SERT Motul Replica | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9508/GSX-1300-R-Hayabusa-Yoshimura-SERT-Motul-Replica-2022/contact.html) |\n| Suzuki GSX-S 1000 | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9199/GSX-S-1000-2022/contact.html) |\n| Suzuki GSX-S 1000 GT | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8932/GSX-S-1000-GT-2022/contact.html) |\n| Suzuki GSX-S 1000 Power Edition | 2022 | Moteur — 158,80 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9509/GSX-S-1000-Power-Edition-2022/contact.html) |\n\nFiches 1 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06510433298535645
+    },
+    {
+      "id": "D04",
+      "turn": 2,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Et combien de fiches cela représente-t-il ?",
+      "expected": "Compter exactement la sélection précédente, pas toutes les Suzuki.",
+      "object_ids": [
+        "e6caa88971e9f3e6",
+        "c96079e49dda89ee",
+        "c48c9708470cd32a",
+        "c1e781a8e58d2b77",
+        "2e97f64d02ad9ecb",
+        "a629b4630ee6f602",
+        "43630b565b86e0b6",
+        "0663b0cec967d443",
+        "a22af948d231a56e",
+        "4a4582ea3fa31b27"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:18:44.992663+00:00",
+      "answer": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Liste les Suzuki de 2022 de plus de 100 ch.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.\n\n| Moto | Millésime | Puissance (ch) | Source |\n|---|---:|---|---|\n| Suzuki 1000 Katana | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9273/1000-Katana-2022/contact.html) |\n| Suzuki 1050 V-Strom | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9198/1050-V-Strom-2022/contact.html) |\n| Suzuki 1050 V-Strom XT | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9197/1050-V-Strom-XT-2022/contact.html) |\n| Suzuki 1050 V-Strom XT World Adventure | 2022 | Moteur — 107 ch à 8 500 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9511/1050-V-Strom-XT-World-Adventure-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9084/GSX-1300-R-Hayabusa-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Bol d’Or | 2022 | Moteur — 192 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9616/GSX-1300-R-Hayabusa-Bol-dOr-2022/contact.html) |\n| Suzuki GSX 1300 R Hayabusa Yoshimura SERT Motul Replica | 2022 | Moteur — 190 ch à 9 700 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9508/GSX-1300-R-Hayabusa-Yoshimura-SERT-Motul-Replica-2022/contact.html) |\n| Suzuki GSX-S 1000 | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9199/GSX-S-1000-2022/contact.html) |\n| Suzuki GSX-S 1000 GT | 2022 | Moteur — 152 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/8932/GSX-S-1000-GT-2022/contact.html) |\n| Suzuki GSX-S 1000 Power Edition | 2022 | Moteur — 158,80 ch à 11 000 tr/min | [Fiche](https://www.motoplanete.com/suzuki/9509/GSX-S-1000-Power-Edition-2022/contact.html) |\n\nFiches 1 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et combien de fiches cela représente-t-il ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**10 fiches correspondent dans le catalogue.** Puissance documentée en ch.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11121287499554455
+    },
+    {
+      "id": "D05",
+      "turn": 1,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Pour la Kawasaki W 800 de 2022, donne le poids tous pleins faits.",
+      "expected": "Valeur wet exacte, source.",
+      "object_ids": [
+        "f4f007bdd40a1b6c"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.025374749908223748,
+      "started_at": "2026-10-15T23:18:46.132026+00:00",
+      "answer": "Le poids tous pleins faits de la Kawasaki W 800 de 2022 est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Kawasaki W 800 de 2022, donne le poids tous pleins faits.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Kawasaki W 800 de 2022 est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 15.58399379090406
+    },
+    {
+      "id": "D05",
+      "turn": 2,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Et le poids sec, est-il aussi documenté dans cette fiche ?",
+      "expected": "Pas de confusion entre wet/sec ; absence explicite si inconnu.",
+      "object_ids": [
+        "f4f007bdd40a1b6c"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:19:01.719268+00:00",
+      "answer": "La fiche mentionne le poids tous pleins faits de la Kawasaki W 800 2022, qui est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Kawasaki W 800 de 2022, donne le poids tous pleins faits.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le poids tous pleins faits de la Kawasaki W 800 de 2022 est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et le poids sec, est-il aussi documenté dans cette fiche ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche mentionne le poids tous pleins faits de la Kawasaki W 800 2022, qui est de 221 kg. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)\n\n**Informations non documentées :**\n- Kawasaki W 800 (2022) — Poids à sec (kg) — Non documenté dans les passages de cette fiche Couverture non établie de l’ensemble des détails demandés : « poids sec ».\n\n**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 15.61008062493056
+    },
+    {
+      "id": "D06",
+      "turn": 1,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Quelle est la puissance de la Honda CB 500 F de 2020 ?",
+      "expected": "Puissance source 2020.",
+      "object_ids": [
+        "555a2d677db34a14"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.024184874957427382,
+      "started_at": "2026-10-15T23:19:18.362155+00:00",
+      "answer": "La Honda CB 500 F de 2020 a une puissance de 48 ch à 8 600 tr/min. [Honda CB 500 F (2020)](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la puissance de la Honda CB 500 F de 2020 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda CB 500 F de 2020 a une puissance de 48 ch à 8 600 tr/min. [Honda CB 500 F (2020)](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 14.36970041692257
+    },
+    {
+      "id": "D06",
+      "turn": 2,
+      "group": "unseen",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Et en 2022, sur le même modèle ?",
+      "expected": "Changer année en conservant Honda CB500F.",
+      "object_ids": [
+        "aaac27c37592b9cc"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:19:32.735249+00:00",
+      "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Honda CB 500 F (2022) |\n|---|---|\n| Puissance documentée (unités source) | Moteur — 48 ch à 8 600 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle est la puissance de la Honda CB 500 F de 2020 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda CB 500 F de 2020 a une puissance de 48 ch à 8 600 tr/min. [Honda CB 500 F (2020)](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et en 2022, sur le même modèle ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Honda CB 500 F (2022) |\n|---|---|\n| Puissance documentée (unités source) | Moteur — 48 ch à 8 600 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 30.62510916707106
+    },
+    {
+      "id": "K01",
+      "turn": 1,
+      "group": "known",
+      "category": "identite",
+      "pass": "first",
+      "question": "constructeur de la TENERE 700",
+      "expected": "Yamaha ; demander un millésime est inutile.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.020673040999099612,
+      "started_at": "2026-10-15T23:20:03.389577+00:00",
+      "answer": "Le constructeur indiqué dans le catalogue est **Yamaha**. Sources d’identité : [Yamaha 700 Ténéré (2026)](https://www.motoplanete.com/yamaha/11863/700-Tenere-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "constructeur de la TENERE 700",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le constructeur indiqué dans le catalogue est **Yamaha**. Sources d’identité : [Yamaha 700 Ténéré (2026)](https://www.motoplanete.com/yamaha/11863/700-Tenere-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12977283308282495
+    },
+    {
+      "id": "K02",
+      "turn": 1,
+      "group": "known",
+      "category": "hors_catalogue",
+      "pass": "first",
+      "question": "Comment se calcule une puissance fiscale en cv",
+      "expected": "Question adjacente hors données catalogue ; clarification catégorie/pays/source, pas conversion moteur.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.020462875021621585,
+      "started_at": "2026-10-15T23:20:04.546407+00:00",
+      "answer": "Les fiches documentent la puissance du moteur, pas la méthode de calcul de la puissance fiscale. Je ne traite donc pas les CV fiscaux comme une puissance moteur à convertir. Pour expliquer ou calculer la puissance fiscale, précise le pays et la catégorie de véhicule ; il faut une source officielle adaptée, absente de ce catalogue.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Comment se calcule une puissance fiscale en cv",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les fiches documentent la puissance du moteur, pas la méthode de calcul de la puissance fiscale. Je ne traite donc pas les CV fiscaux comme une puissance moteur à convertir. Pour expliquer ou calculer la puissance fiscale, précise le pays et la catégorie de véhicule ; il faut une source officielle adaptée, absente de ce catalogue.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06420662486925721
+    },
+    {
+      "id": "K03",
+      "turn": 1,
+      "group": "known",
+      "category": "limite_sources",
+      "pass": "first",
+      "question": "Quelle type de bridage pour un XJ6 A2 2011",
+      "expected": "Clarifier la variante (Naked, Diversion ou Diversion F) ; distinguer mention de fiche, type de kit et homologation individuelle. Ne pas certifier le bridage.",
+      "object_ids": [
+        "cb564a08b1524487",
+        "937dc3ad85d6f08d",
+        "522b9f3f815b8a5a"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.01659779087640345,
+      "started_at": "2026-10-15T23:20:05.629205+00:00",
+      "answer": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle type de bridage pour un XJ6 A2 2011",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle variante souhaites-tu consulter pour 2011 : Yamaha XJ6 600 Diversion; Yamaha XJ6 600 Naked; Yamaha XJ6 600 Diversion F ? La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06682516681030393
+    },
+    {
+      "id": "K04",
+      "turn": 1,
+      "group": "known",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Quelle cylindrée maximale sur la marque yamaha en 2020",
+      "expected": "Maximum 1298.0 cc ; gagnants Yamaha FJR 1300 Ultimate Edition 2020, Yamaha FJR 1300 A 2020",
+      "object_ids": [
+        "c0ab5e8dd6cab495",
+        "67071ba01e4bc6c7",
+        "1474198cc3d01169",
+        "a87405a2e3c058bf",
+        "023b5a2a938bda74",
+        "53d9f42481551ce6",
+        "7563348d531528c1",
+        "0e7f5b6e5ec6b048",
+        "d4f89f69096690e2",
+        "df2bd273efac0d45",
+        "b3917611804afe9b",
+        "abadd05b9757ffc7",
+        "8911e6ec6d70185e",
+        "bda4d5b42c14a31c",
+        "9491c3d0e0a0e2a1",
+        "2f17d3b321d68294",
+        "029727cbed724ce7",
+        "e4a2f42d4eca3ce7",
+        "fa0f56ef15318e50",
+        "8fd31e197b0e0734",
+        "9a62a4f7e47cf67d",
+        "4fbfc9bd85ffa460",
+        "d51c2336299ebb74",
+        "386981a9ef9dc16e",
+        "4a0becebc6f3922e",
+        "09a848ed15ef7b87",
+        "2dd9c39da84e1c0f",
+        "b0a9b897bd2dea03",
+        "45c3f8f2ce7ca0de",
+        "33bd0e4ca9b05126",
+        "eb5bda28dd039c4c",
+        "b78bacbdfe07d783",
+        "26383bb3a070fa62",
+        "8ff283e632ee3535",
+        "a76537fa5f3d8910",
+        "c57adfe25518b91f",
+        "4d78b10704a03217",
+        "92fb8f77c977a6ed",
+        "d7ec399c5cc7e9d1",
+        "21e1b2941ea62445",
+        "3a6d86e6676ced34",
+        "594342907274fbd7",
+        "d859cb4119f77a81"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.029227915918454528,
+      "started_at": "2026-10-15T23:20:06.727948+00:00",
+      "answer": "Calcul sur **43 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 43/43 valeurs numériques univoques documentées.\n**Maximum : 1298 cc** — 2 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Yamaha FJR 1300 A (2020) | Moteur —  1 298 cc (Alésage * course: 79 x 66.2 mm) | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition (2020) | Moteur —  1 298 cc (Alésage * course: 79 x 66.2 mm) | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle cylindrée maximale sur la marque yamaha en 2020",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **43 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 43/43 valeurs numériques univoques documentées.\n**Maximum : 1298 cc** — 2 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Yamaha FJR 1300 A (2020) | Moteur —  1 298 cc (Alésage * course: 79 x 66.2 mm) | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition (2020) | Moteur —  1 298 cc (Alésage * course: 79 x 66.2 mm) | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11762662511318922
+    },
+    {
+      "id": "K05",
+      "turn": 1,
+      "group": "known",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Donne les poids à sec et tous pleins faits de la Suzuki GSF 1200 Bandit de 2000.",
+      "expected": "214kg sec ;244kg tous pleins.",
+      "object_ids": [
+        "269c34c7d6325a60"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.010280667105689645,
+      "started_at": "2026-10-15T23:20:07.863627+00:00",
+      "answer": "La Suzuki GSF 1200 Bandit de 2000 pèse 214 kg à sec et 244 kg tous pleins faits. [Suzuki GSF 1200 BANDIT (2000)](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne les poids à sec et tous pleins faits de la Suzuki GSF 1200 Bandit de 2000.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Suzuki GSF 1200 Bandit de 2000 pèse 214 kg à sec et 244 kg tous pleins faits. [Suzuki GSF 1200 BANDIT (2000)](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 15.20499866711907
+    },
+    {
+      "id": "K05",
+      "turn": 2,
+      "group": "known",
+      "category": "contexte",
+      "pass": "first",
+      "question": "Donne le poids MOYEN à sec et le poids tous pleins faits de la Suzuki GSF 1200 Bandit . Garde bien les deux catégories distinctes.",
+      "expected": "Clarifier la population à moyenner tout en conservant le contexte 2000 ; pas uniquement exiger un millésime.",
+      "object_ids": [
+        "269c34c7d6325a60"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:20:23.071162+00:00",
+      "answer": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Contexte conservé : Suzuki GSF 1200 BANDIT — 2000. Je garde les poids à sec et tous pleins séparés.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne les poids à sec et tous pleins faits de la Suzuki GSF 1200 Bandit de 2000.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Suzuki GSF 1200 Bandit de 2000 pèse 214 kg à sec et 244 kg tous pleins faits. [Suzuki GSF 1200 BANDIT (2000)](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne le poids MOYEN à sec et le poids tous pleins faits de la Suzuki GSF 1200 Bandit . Garde bien les deux catégories distinctes.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Contexte conservé : Suzuki GSF 1200 BANDIT — 2000. Je garde les poids à sec et tous pleins séparés.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12378445779904723
+    },
+    {
+      "id": "H01",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Dans les fiches Honda du millésime 2020, trouve la cylindrée maximale et toutes les versions à égalité.",
+      "expected": "{\"value\": 1833.0, \"unit\": \"cc\", \"winners\": [\"Honda GL 1800 GOLDWING Tour DCT/Airbag 2020\", \"Honda GL 1800 GOLDWING Tour 2020\", \"Honda GL 1800 GOLDWING DCT 2020\"], \"documented\": 28, \"total\": 28}",
+      "object_ids": [
+        "519f3f23c2bad64b",
+        "118e13ebc382e2c0",
+        "357985e319da3616",
+        "891251fea8a27888",
+        "2549b6041bc86282",
+        "0269b85ebd6d6fef",
+        "bfcc31412074c54e",
+        "ff2053e022370ce9",
+        "8eeba8997eb852b3",
+        "cbdf061dfc73ab66",
+        "535fb0f53c04a14f",
+        "555a2d677db34a14",
+        "e4a1838a062bbdf9",
+        "e5fd3a17e06875a7",
+        "bbfae363c2577cc1",
+        "c2fe3f8743b122dc",
+        "f23391949af6ded3",
+        "7170530f4abf091f",
+        "3265a3dea595af8b",
+        "bffe5fecc7a30dc5",
+        "8fec20236f7ef723",
+        "01a7b405b476253a",
+        "e3bfc1696be9183a",
+        "3052ea2f4b017fb2",
+        "c55d6c7242c35d38",
+        "874aef4cbf33ad6f",
+        "9d8ed5d4e259e8ef",
+        "8d50c82d067a081c"
+      ],
+      "client_setup_seconds": 0.01875729183666408,
+      "started_at": "2026-10-15T23:20:24.222573+00:00",
+      "answer": "Calcul sur **28 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 28/28 valeurs numériques univoques documentées.\n**Maximum : 1833 cc** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda GL 1800 GOLDWING DCT (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8648/GL-1800-GOLDWING-DCT-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8647/GL-1800-GOLDWING-Tour-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour DCT/Airbag (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8286/GL-1800-GOLDWING-Tour-DCTAirbag-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Dans les fiches Honda du millésime 2020, trouve la cylindrée maximale et toutes les versions à égalité.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **28 fiches du catalogue**, dans la population demandée.\n\n**Cylindrée** — 28/28 valeurs numériques univoques documentées.\n**Maximum : 1833 cc** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda GL 1800 GOLDWING DCT (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8648/GL-1800-GOLDWING-DCT-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8647/GL-1800-GOLDWING-Tour-2020/contact.html) |\n| Honda GL 1800 GOLDWING Tour DCT/Airbag (2020) | Moteur —  1 833 cc (Alésage * course: 73 x 73 mm) | [Fiche](https://www.motoplanete.com/honda/8286/GL-1800-GOLDWING-Tour-DCTAirbag-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11856650002300739
+    },
+    {
+      "id": "H02",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+      "expected": "{\"value\": 705.0, \"unit\": \"mm\", \"winners\": [\"Kawasaki 650 VULCAN S 2022\", \"Kawasaki 650 VULCAN S Tourer 2022\", \"Kawasaki 650 VULCAN S Performance 2022\"], \"documented\": 49, \"total\": 49}",
+      "object_ids": [
+        "5ce5ff61c1c32167",
+        "f4f007bdd40a1b6c",
+        "9c80f70dcf6a74a9",
+        "b4f4091ff9b501b4",
+        "06193fc7f0faba8e",
+        "9284806b10203c67",
+        "fd9ee5555c689a01",
+        "25b0ba1331a04e56",
+        "0257fb7a0bfade4a",
+        "831db45d08190250",
+        "4a89df62737a1a4f",
+        "e8a540c817756064",
+        "57b3af5c8a732bf8",
+        "590503a0336347eb",
+        "f038cc4c9f9ddc86",
+        "04309227806e6887",
+        "67ccd0b104047573",
+        "f7c504073cbd3ef2",
+        "d3c4a0f3c19d0e64",
+        "095336d2e362ed8c",
+        "28f802f5f8b78f0e",
+        "05aa6086fc0e5e13",
+        "fdfea482bab60899",
+        "9379ac8dde02c308",
+        "246291787337e179",
+        "b4553c5c1d14d946",
+        "8f20fabcf17be8d2",
+        "0f549ddd33cb7d3f",
+        "7247882c7d387198",
+        "3fe78677f1a7ed7a",
+        "15d0fcf7ab8fae2e",
+        "50ab97fd29539dcb",
+        "096e960815dd7bec",
+        "ce0a006ac9052892",
+        "3473eafbed2984cc",
+        "b5b4c81be87ed90a",
+        "c14f7fd709893f32",
+        "72d839e418e44cd9",
+        "96454e817c2f01b9",
+        "d3c3c3ee756ceb38",
+        "d82fa05e0049d5fb",
+        "d5aec2df287c6159",
+        "276da201327480f0",
+        "d24345fab4642111",
+        "5432543708b361b0",
+        "90e3f25ea30c3101",
+        "4bef39fd8fea80f8",
+        "8078c67311a22d24",
+        "61b8f0f1124f6d01"
+      ],
+      "client_setup_seconds": 0.017991541884839535,
+      "started_at": "2026-10-15T23:20:25.367780+00:00",
+      "answer": "Calcul sur **49 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 49/49 valeurs numériques univoques documentées.\n**Minimum : 705 mm** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki 650 VULCAN S (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/8896/650-VULCAN-S-2022/contact.html) |\n| Kawasaki 650 VULCAN S Performance (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9194/650-VULCAN-S-Performance-2022/contact.html) |\n| Kawasaki 650 VULCAN S Tourer (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9193/650-VULCAN-S-Tourer-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **49 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 49/49 valeurs numériques univoques documentées.\n**Minimum : 705 mm** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki 650 VULCAN S (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/8896/650-VULCAN-S-2022/contact.html) |\n| Kawasaki 650 VULCAN S Performance (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9194/650-VULCAN-S-Performance-2022/contact.html) |\n| Kawasaki 650 VULCAN S Tourer (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9193/650-VULCAN-S-Tourer-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12201229180209339
+    },
+    {
+      "id": "H03",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Pour la Suzuki GSF 1200 Bandit, calcule séparément le poids moyen à sec et tous pleins sur 2000 et 2001, une fiche par millésime.",
+      "expected": "Deux moyennes distinctes : 214 kg à sec et 244 kg tous pleins, chacune 2/2 fiches, deux sources exactes.",
+      "object_ids": [
+        "269c34c7d6325a60",
+        "9223cdadb1e9ea0b"
+      ],
+      "client_setup_seconds": 0.01708129094913602,
+      "started_at": "2026-10-15T23:20:26.513262+00:00",
+      "answer": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\n**Poids tous pleins / en ordre de marche** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 244 kg** (488 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Suzuki GSF 1200 Bandit, calcule séparément le poids moyen à sec et tous pleins sur 2000 et 2001, une fiche par millésime.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\n**Poids tous pleins / en ordre de marche** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 244 kg** (488 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids tous pleins faits 244 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11433387501165271
+    },
+    {
+      "id": "H04",
+      "turn": 1,
+      "group": "holdout",
+      "category": "agregation",
+      "pass": "first",
+      "question": "Sur les Honda CB 500 F de 2020, 2021 et 2022, donne le poids moyen sec puis le poids moyen en ordre de marche.",
+      "expected": "Sec : aucune valeur, ne pas calculer zéro. Wet : 189 kg sur 3/3 fiches. Sources et dénominateurs distincts.",
+      "object_ids": [
+        "555a2d677db34a14",
+        "496a038abc9da8b7",
+        "aaac27c37592b9cc"
+      ],
+      "client_setup_seconds": 0.017493082908913493,
+      "started_at": "2026-10-15T23:20:27.649749+00:00",
+      "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 0/3 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\nCalcul non établi : aucune valeur exploitable pour cette mesure.\n\n**Poids tous pleins / en ordre de marche** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 189 kg** (567 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur les Honda CB 500 F de 2020, 2021 et 2022, donne le poids moyen sec puis le poids moyen en ordre de marche.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 0/3 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\nCalcul non établi : aucune valeur exploitable pour cette mesure.\n\n**Poids tous pleins / en ordre de marche** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 189 kg** (567 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Châssis — Poids tous pleins faits 189 kg | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11207112506963313
+    },
+    {
+      "id": "H05",
+      "turn": 1,
+      "group": "holdout",
+      "category": "absence",
+      "pass": "first",
+      "question": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+      "expected": "1990 absent : population incomplète signalée. 2022 = 48 ch ; moyenne sur la seule fiche disponible explicitement partielle, ou clarification sans substitution.",
+      "object_ids": [
+        "aaac27c37592b9cc"
+      ],
+      "client_setup_seconds": 0.01621341612190008,
+      "started_at": "2026-10-15T23:20:28.785260+00:00",
+      "answer": "Calcul sur **1 fiches du catalogue**, dans la population demandée.\nPopulation incomplète : fiche(s) absente(s) — Honda CB 500 F (1990).\n\n**Puissance** — 1/1 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (48 / 1 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **1 fiches du catalogue**, dans la population demandée.\nPopulation incomplète : fiche(s) absente(s) — Honda CB 500 F (1990).\n\n**Puissance** — 1/1 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (48 / 1 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06784362508915365
+    },
+    {
+      "id": "H06",
+      "turn": 1,
+      "group": "holdout",
+      "category": "lecture",
+      "pass": "first",
+      "question": "La fiche de la Honda CRF 450 R 2021 donne-t-elle une puissance précise ou approximative ? Cite la valeur telle quelle.",
+      "expected": "Reprendre la ligne source avec son approximation, sans la rendre exacte.",
+      "object_ids": [
+        "1290657f06d4de12"
+      ],
+      "client_setup_seconds": 0.028485708171501756,
+      "started_at": "2026-10-15T23:20:29.884670+00:00",
+      "answer": "La fiche de la Honda CRF 450 R 2021 indique une puissance approximative de ≈ 62 ch. [Honda CRF 450 R (2021)](https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche de la Honda CRF 450 R 2021 donne-t-elle une puissance précise ou approximative ? Cite la valeur telle quelle.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La fiche de la Honda CRF 450 R 2021 indique une puissance approximative de ≈ 62 ch. [Honda CRF 450 R (2021)](https://www.motoplanete.com/honda/8416/CRF-450-R-2021/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 15.92758391587995
+    },
+    {
+      "id": "H07",
+      "turn": 1,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Quel réservoir possède la Benelli 500 Leoncino ?",
+      "expected": "Demander le millésime et conserver le modèle, sans choisir une année.",
+      "object_ids": [],
+      "client_setup_seconds": 0.01584162493236363,
+      "started_at": "2026-10-15T23:20:46.833614+00:00",
+      "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel réservoir possède la Benelli 500 Leoncino ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06828891602344811
+    },
+    {
+      "id": "H07",
+      "turn": 2,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "2022.",
+      "expected": "Même Benelli 500 Leoncino 2022, réservoir 12,70 litres, source exacte.",
+      "object_ids": [
+        "14267bc1c68d0fc7"
+      ],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:20:46.903275+00:00",
+      "answer": "La Benelli 500 Leoncino 2022 a un réservoir de 12,70 litres. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 12,70 litres |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel réservoir possède la Benelli 500 Leoncino ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Benelli 500 Leoncino 2022 a un réservoir de 12,70 litres. [Benelli 500 Leoncino (2022)](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html)\n\n**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. Complément en lecture directe des sources :\n\n| Caractéristique | Benelli 500 Leoncino (2022) |\n|---|---|\n| Réservoir | Châssis — Réservoir : 12,70 litres |\n| Source | [Fiche](https://www.motoplanete.com/benelli/9238/500-Leoncino-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 12.045104125048965
+    },
+    {
+      "id": "H08",
+      "turn": 1,
+      "group": "holdout",
+      "category": "pagination",
+      "pass": "first",
+      "question": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+      "expected": "Trois fiches Triumph 2022, ordre stable et total visible.",
+      "object_ids": [
+        "b5bd374c2664b0bf",
+        "36284b2fa2f285fc",
+        "4c62cff120b3f382",
+        "f2de3b90d65b8480",
+        "6808049e8b1d55ad",
+        "d9bba6fc5859d8fe",
+        "7f49cfbef8008365",
+        "6245ed4b345dfdd7",
+        "b33413df9954fdf1",
+        "58daaf9554f763b7",
+        "8c5f02800030a13d",
+        "40e47024ba87bd44",
+        "cceafe4f838d387f",
+        "6ffe5a6e4ebeb75d",
+        "f3a10b06230392f9",
+        "a9f37935126e79fb",
+        "b558db6d5b68b344",
+        "1187a2ba797b4541",
+        "ce6693aac0c729d8",
+        "55ce354cb4b4b28d",
+        "c5b45c9575db1a62",
+        "d667a72ef19069a8",
+        "0b27f48bd538f5f5",
+        "fb99ca4c7eb01f27",
+        "c28516902dad7523",
+        "658209ee58099d4e",
+        "07c4797d1e41486e",
+        "7780244c2319511b",
+        "7d52416bf5219602",
+        "764f985b8dfcbb77",
+        "157e666e3b848619",
+        "85d86e852da7c654",
+        "b16a4f511dcdf9d2",
+        "1986484d8cd17bf5",
+        "1516ed4e2ad15fec",
+        "03915c659646f7fc",
+        "056c81e218d8cf22",
+        "85503cbb6e0eae54",
+        "89352852a40f6ab0",
+        "6df098b65275a7a3",
+        "8e10e2d81a8687d3",
+        "eb64a9b9e00ad095",
+        "49353e6068a0763e",
+        "747825ee12549552",
+        "23782339693e0f41",
+        "95c853ec2d0c290b",
+        "0757ad363b2955af"
+      ],
+      "client_setup_seconds": 0.03807829087600112,
+      "started_at": "2026-10-15T23:20:59.990817+00:00",
+      "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11591625004075468
+    },
+    {
+      "id": "H08",
+      "turn": 2,
+      "group": "holdout",
+      "category": "pagination",
+      "pass": "first",
+      "question": "Et les trois suivantes.",
+      "expected": "Trois nouvelles fiches de la même sélection, sans doublon ; positions 4 à 6.",
+      "object_ids": [
+        "b5bd374c2664b0bf",
+        "36284b2fa2f285fc",
+        "4c62cff120b3f382",
+        "f2de3b90d65b8480",
+        "6808049e8b1d55ad",
+        "d9bba6fc5859d8fe",
+        "7f49cfbef8008365",
+        "6245ed4b345dfdd7",
+        "b33413df9954fdf1",
+        "58daaf9554f763b7",
+        "8c5f02800030a13d",
+        "40e47024ba87bd44",
+        "cceafe4f838d387f",
+        "6ffe5a6e4ebeb75d",
+        "f3a10b06230392f9",
+        "a9f37935126e79fb",
+        "b558db6d5b68b344",
+        "1187a2ba797b4541",
+        "ce6693aac0c729d8",
+        "55ce354cb4b4b28d",
+        "c5b45c9575db1a62",
+        "d667a72ef19069a8",
+        "0b27f48bd538f5f5",
+        "fb99ca4c7eb01f27",
+        "c28516902dad7523",
+        "658209ee58099d4e",
+        "07c4797d1e41486e",
+        "7780244c2319511b",
+        "7d52416bf5219602",
+        "764f985b8dfcbb77",
+        "157e666e3b848619",
+        "85d86e852da7c654",
+        "b16a4f511dcdf9d2",
+        "1986484d8cd17bf5",
+        "1516ed4e2ad15fec",
+        "03915c659646f7fc",
+        "056c81e218d8cf22",
+        "85503cbb6e0eae54",
+        "89352852a40f6ab0",
+        "6df098b65275a7a3",
+        "8e10e2d81a8687d3",
+        "eb64a9b9e00ad095",
+        "49353e6068a0763e",
+        "747825ee12549552",
+        "23782339693e0f41",
+        "95c853ec2d0c290b",
+        "0757ad363b2955af"
+      ],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:21:00.108947+00:00",
+      "answer": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville T 120 \"1959 Legends Custom Edition\" | 2022 | [Fiche](https://www.motoplanete.com/triumph/9348/1200-Bonneville-T-120-1959-Legends-Custom-Edition-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black | 2022 | [Fiche](https://www.motoplanete.com/triumph/9139/1200-Bonneville-T-120-Black-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8992/1200-Bonneville-T-120-Black-Gold-Line-2022/contact.html) |\n\nFiches 4 à 6 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Affiche les trois premières fiches Triumph 2022, dans un ordre stable.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville Bobber | 2022 | [Fiche](https://www.motoplanete.com/triumph/9144/1200-Bonneville-Bobber-2022/contact.html) |\n| Triumph 1200 Bonneville Bobber Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8984/1200-Bonneville-Bobber-Gold-Line-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 | 2022 | [Fiche](https://www.motoplanete.com/triumph/9138/1200-Bonneville-T-120-2022/contact.html) |\n\nFiches 1 à 3 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Et les trois suivantes.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Source |\n|---|---:|---|\n| Triumph 1200 Bonneville T 120 \"1959 Legends Custom Edition\" | 2022 | [Fiche](https://www.motoplanete.com/triumph/9348/1200-Bonneville-T-120-1959-Legends-Custom-Edition-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black | 2022 | [Fiche](https://www.motoplanete.com/triumph/9139/1200-Bonneville-T-120-Black-2022/contact.html) |\n| Triumph 1200 Bonneville T 120 Black Gold Line | 2022 | [Fiche](https://www.motoplanete.com/triumph/8992/1200-Bonneville-T-120-Black-Gold-Line-2022/contact.html) |\n\nFiches 4 à 6 sur 47. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.\n\nSélection de 3 fiches sur 47. Demande les suivantes pour continuer avec les mêmes critères.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11839512502774596
+    },
+    {
+      "id": "H09",
+      "turn": 1,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+      "expected": "Clarifier la population de la moyenne, conserver modèle et type de poids.",
+      "object_ids": [],
+      "client_setup_seconds": 0.024127708049491048,
+      "started_at": "2026-10-15T23:21:01.257858+00:00",
+      "answer": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06517479219473898
+    },
+    {
+      "id": "H09",
+      "turn": 2,
+      "group": "holdout",
+      "category": "clarification",
+      "pass": "first",
+      "question": "Les millésimes 2000 et 2001.",
+      "expected": "Moyenne 214 kg à sec, 2/2 fiches, aucune confusion avec 244 kg tous pleins.",
+      "object_ids": [
+        "269c34c7d6325a60",
+        "9223cdadb1e9ea0b"
+      ],
+      "client_setup_seconds": 0,
+      "started_at": "2026-10-15T23:21:01.324752+00:00",
+      "answer": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je voudrais le poids moyen à sec de la Suzuki GSF 1200 Bandit.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Je garde les poids à sec et tous pleins séparés.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les millésimes 2000 et 2001.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **2 fiches du catalogue**, dans la population demandée.\n\n**Poids à sec** — 2/2 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 214 kg** (428 / 2 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Suzuki GSF 1200 BANDIT (2000) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3015/GSF-1200-BANDIT-2000/contact.html) |\n| Suzuki GSF 1200 BANDIT (2001) | Châssis — Poids à sec 214 kg | [Fiche](https://www.motoplanete.com/suzuki/3016/GSF-1200-BANDIT-2001/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11916145915165544
+    },
+    {
+      "id": "P01",
+      "turn": 1,
+      "group": "holdout",
+      "category": "prix_moyen",
+      "pass": "first",
+      "question": "Quel est le prix moyen de catalogue des Yamaha de 2020 ? Utilise les tarifs France de base et indique combien de prix sont connus.",
+      "expected": "{\"total_fiches\": 43, \"known_prices\": 42, \"sum_eur\": \"522771\", \"mean_eur\": \"12446.92857142857142857142857\", \"scope\": \"France, version de base, prix documentés du catalogue ; ni prix actuels ni annonces d’occasion ; inconnus exclus, pas zéro.\"}",
+      "object_ids": [
+        "c0ab5e8dd6cab495",
+        "67071ba01e4bc6c7",
+        "1474198cc3d01169",
+        "a87405a2e3c058bf",
+        "023b5a2a938bda74",
+        "53d9f42481551ce6",
+        "7563348d531528c1",
+        "0e7f5b6e5ec6b048",
+        "d4f89f69096690e2",
+        "df2bd273efac0d45",
+        "b3917611804afe9b",
+        "abadd05b9757ffc7",
+        "8911e6ec6d70185e",
+        "bda4d5b42c14a31c",
+        "9491c3d0e0a0e2a1",
+        "2f17d3b321d68294",
+        "029727cbed724ce7",
+        "e4a2f42d4eca3ce7",
+        "fa0f56ef15318e50",
+        "8fd31e197b0e0734",
+        "9a62a4f7e47cf67d",
+        "4fbfc9bd85ffa460",
+        "d51c2336299ebb74",
+        "386981a9ef9dc16e",
+        "4a0becebc6f3922e",
+        "09a848ed15ef7b87",
+        "2dd9c39da84e1c0f",
+        "b0a9b897bd2dea03",
+        "45c3f8f2ce7ca0de",
+        "33bd0e4ca9b05126",
+        "eb5bda28dd039c4c",
+        "b78bacbdfe07d783",
+        "26383bb3a070fa62",
+        "8ff283e632ee3535",
+        "a76537fa5f3d8910",
+        "c57adfe25518b91f",
+        "4d78b10704a03217",
+        "92fb8f77c977a6ed",
+        "d7ec399c5cc7e9d1",
+        "21e1b2941ea62445",
+        "3a6d86e6676ced34",
+        "594342907274fbd7",
+        "d859cb4119f77a81"
+      ],
+      "client_setup_seconds": 0.025864083087071776,
+      "started_at": "2026-10-15T23:21:02.484876+00:00",
+      "answer": "Calcul sur **43 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 42/43 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Moyenne arithmétique : 12446,929 €** (522771 / 42 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Yamaha 1000 MT-10 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 700 MT-07 (2020) | Tarifs — France — Version de base 7 099 € * | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n| Yamaha 700 Ténéré (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8197/700-Tenere-2020/contact.html) |\n| Yamaha 700 Ténéré Rally (2020) | Tarifs — France — Version de base 11 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8408/700-Tenere-Rally-2020/contact.html) |\n| Yamaha 700 Tracer (2020) | Tarifs — France — Version de base 8 799 € * | [Fiche](https://www.motoplanete.com/yamaha/8159/700-Tracer-2020/contact.html) |\n| Yamaha 850 MT-09 (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/8173/850-MT-09-2020/contact.html) |\n| Yamaha 850 MT-09 SP (2020) | Tarifs — France — Version de base 10 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer (2020) | Tarifs — France — Version de base 10 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8192/900-Tracer-2020/contact.html) |\n| Yamaha 900 Tracer GT (2020) | Tarifs — France — Version de base 12 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha FJR 1300 A (2020) | Tarifs — France — Version de base 17 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition (2020) | Tarifs — France — Version de base 19 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n| Yamaha MT-03 320 (2020) | Tarifs — France — Version de base 5 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8100/MT-03-320-2020/contact.html) |\n| Yamaha MT-10 SP (2020) | Tarifs — France — Version de base 15 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha MT-125 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8111/MT-125-2020/contact.html) |\n| Yamaha Niken 900 (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8300/Niken-900-2020/contact.html) |\n| Yamaha Niken 900 GT (2020) | Tarifs — France — Version de base 16 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8301/Niken-900-GT-2020/contact.html) |\n| Yamaha SCR 950 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8298/SCR-950-2020/contact.html) |\n| Yamaha WR 250 F (2020) | Tarifs — France — Version de base 8 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8072/WR-250-F-2020/contact.html) |\n| Yamaha WR 450 F (2020) | Tarifs — France — Version de base 9 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8071/WR-450-F-2020/contact.html) |\n| Yamaha XSR 700 (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8171/XSR-700-2020/contact.html) |\n| Yamaha XSR 700 XTribute (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8212/XSR-700-XTribute-2020/contact.html) |\n| Yamaha XSR 900 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |\n| Yamaha XSR 900 Yard Built - XR9 Carbona par Bottpower - (2020) | Tarifs — France — Version de base 14 974 € * | [Fiche](https://www.motoplanete.com/yamaha/8629/XSR-900-Yard-Built---XR9-Carbona-par-Bottpower---2020/contact.html) |\n| Yamaha XTZ 1200 Super Ténéré (2020) | Tarifs — France — Version de base 12 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8293/XTZ-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8294/XTZE-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré Raid Edition (2020) | Tarifs — France — Version de base 16 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8295/XTZE-1200-Super-Tenere-Raid-Edition-2020/contact.html) |\n| Yamaha XV 950 R (Bolt) (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8299/XV-950-R--Bolt-2020/contact.html) |\n| Yamaha YART YZF-R6 600 20th Anniversary (2020) | Tarifs — France — Version de base 19 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8386/YART-YZF-R6-600-20th-Anniversary-2020/contact.html) |\n| Yamaha YS 125 (2020) | Tarifs — France — Version de base 2 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8302/YS-125-2020/contact.html) |\n| Yamaha YZ 125 (2020) | Tarifs — France — Version de base 7 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7914/YZ-125-2020/contact.html) |\n| Yamaha YZ 250 (2020) | Tarifs — France — Version de base 8 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7913/YZ-250-2020/contact.html) |\n| Yamaha YZ 250 F (2020) | Tarifs — France — Version de base 8 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7912/YZ-250-F-2020/contact.html) |\n| Yamaha YZ 450 F (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/7911/YZ-450-F-2020/contact.html) |\n| Yamaha YZ 65 (2020) | Tarifs — France — Version de base 4 599 € * | [Fiche](https://www.motoplanete.com/yamaha/7916/YZ-65-2020/contact.html) |\n| Yamaha YZ 85 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7915/YZ-85-2020/contact.html) |\n| Yamaha YZF-R1 1000 (2020) | Tarifs — France — Version de base 19 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7975/YZF-R1-1000-2020/contact.html) |\n| Yamaha YZF-R1 1000 Petronas Replica (2020) | Tarifs — France — Version de base 46 000 € * | [Fiche](https://www.motoplanete.com/yamaha/8456/YZF-R1-1000-Petronas-Replica-2020/contact.html) |\n| Yamaha YZF-R1 1000 Pirovano Replica (2020) | Tarifs — France — Version de base 27 836 € * | [Fiche](https://www.motoplanete.com/yamaha/8512/YZF-R1-1000-Pirovano-Replica-2020/contact.html) |\n| Yamaha YZF-R 125 (2020) | Tarifs — France — Version de base 5 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8070/YZF-R-125-2020/contact.html) |\n| Yamaha YZF-R1M 1000 (2020) | Tarifs — France — Version de base 25 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7976/YZF-R1M-1000-2020/contact.html) |\n| Yamaha YZF-R3 300 (2020) | Tarifs — France — Version de base 5 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8069/YZF-R3-300-2020/contact.html) |\n| Yamaha YZF-R6 600 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8068/YZF-R6-600-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel est le prix moyen de catalogue des Yamaha de 2020 ? Utilise les tarifs France de base et indique combien de prix sont connus.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **43 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 42/43 valeurs numériques univoques documentées.\nLes valeurs manquantes, approximatives, sous forme d’intervalle ou contradictoires sont exclues du calcul ; elles ne valent pas zéro. Le résultat porte seulement sur les valeurs documentées.\n**Moyenne arithmétique : 12446,929 €** (522771 / 42 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Yamaha 1000 MT-10 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8196/1000-MT-10-2020/contact.html) |\n| Yamaha 700 MT-07 (2020) | Tarifs — France — Version de base 7 099 € * | [Fiche](https://www.motoplanete.com/yamaha/8194/700-MT-07-2020/contact.html) |\n| Yamaha 700 Ténéré (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8197/700-Tenere-2020/contact.html) |\n| Yamaha 700 Ténéré Rally (2020) | Tarifs — France — Version de base 11 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8408/700-Tenere-Rally-2020/contact.html) |\n| Yamaha 700 Tracer (2020) | Tarifs — France — Version de base 8 799 € * | [Fiche](https://www.motoplanete.com/yamaha/8159/700-Tracer-2020/contact.html) |\n| Yamaha 850 MT-09 (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/8173/850-MT-09-2020/contact.html) |\n| Yamaha 850 MT-09 SP (2020) | Tarifs — France — Version de base 10 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8213/850-MT-09-SP-2020/contact.html) |\n| Yamaha 900 Tracer (2020) | Tarifs — France — Version de base 10 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8192/900-Tracer-2020/contact.html) |\n| Yamaha 900 Tracer GT (2020) | Tarifs — France — Version de base 12 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8193/900-Tracer-GT-2020/contact.html) |\n| Yamaha FJR 1300 A (2020) | Tarifs — France — Version de base 17 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8894/FJR-1300-A-2020/contact.html) |\n| Yamaha FJR 1300 Ultimate Edition (2020) | Tarifs — France — Version de base 19 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8893/FJR-1300-Ultimate-Edition-2020/contact.html) |\n| Yamaha MT-03 320 (2020) | Tarifs — France — Version de base 5 499 € * | [Fiche](https://www.motoplanete.com/yamaha/8100/MT-03-320-2020/contact.html) |\n| Yamaha MT-10 SP (2020) | Tarifs — France — Version de base 15 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8211/MT-10-SP-2020/contact.html) |\n| Yamaha MT-125 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8111/MT-125-2020/contact.html) |\n| Yamaha Niken 900 (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8300/Niken-900-2020/contact.html) |\n| Yamaha Niken 900 GT (2020) | Tarifs — France — Version de base 16 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8301/Niken-900-GT-2020/contact.html) |\n| Yamaha SCR 950 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8298/SCR-950-2020/contact.html) |\n| Yamaha WR 250 F (2020) | Tarifs — France — Version de base 8 599 € * | [Fiche](https://www.motoplanete.com/yamaha/8072/WR-250-F-2020/contact.html) |\n| Yamaha WR 450 F (2020) | Tarifs — France — Version de base 9 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8071/WR-450-F-2020/contact.html) |\n| Yamaha XSR 700 (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8171/XSR-700-2020/contact.html) |\n| Yamaha XSR 700 XTribute (2020) | Tarifs — France — Version de base 7 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8212/XSR-700-XTribute-2020/contact.html) |\n| Yamaha XSR 900 (2020) | Tarifs — France — Version de base 9 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8172/XSR-900-2020/contact.html) |\n| Yamaha XSR 900 Yard Built - XR9 Carbona par Bottpower - (2020) | Tarifs — France — Version de base 14 974 € * | [Fiche](https://www.motoplanete.com/yamaha/8629/XSR-900-Yard-Built---XR9-Carbona-par-Bottpower---2020/contact.html) |\n| Yamaha XTZ 1200 Super Ténéré (2020) | Tarifs — France — Version de base 12 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8293/XTZ-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré (2020) | Tarifs — France — Version de base 14 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8294/XTZE-1200-Super-Tenere-2020/contact.html) |\n| Yamaha XTZE 1200 Super Ténéré Raid Edition (2020) | Tarifs — France — Version de base 16 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8295/XTZE-1200-Super-Tenere-Raid-Edition-2020/contact.html) |\n| Yamaha XV 950 R (Bolt) (2020) | Tarifs — France — Version de base 9 699 € * | [Fiche](https://www.motoplanete.com/yamaha/8299/XV-950-R--Bolt-2020/contact.html) |\n| Yamaha YART YZF-R6 600 20th Anniversary (2020) | Tarifs — France — Version de base 19 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8386/YART-YZF-R6-600-20th-Anniversary-2020/contact.html) |\n| Yamaha YS 125 (2020) | Tarifs — France — Version de base 2 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8302/YS-125-2020/contact.html) |\n| Yamaha YZ 125 (2020) | Tarifs — France — Version de base 7 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7914/YZ-125-2020/contact.html) |\n| Yamaha YZ 250 (2020) | Tarifs — France — Version de base 8 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7913/YZ-250-2020/contact.html) |\n| Yamaha YZ 250 F (2020) | Tarifs — France — Version de base 8 499 € * | [Fiche](https://www.motoplanete.com/yamaha/7912/YZ-250-F-2020/contact.html) |\n| Yamaha YZ 450 F (2020) | Tarifs — France — Version de base 9 199 € * | [Fiche](https://www.motoplanete.com/yamaha/7911/YZ-450-F-2020/contact.html) |\n| Yamaha YZ 65 (2020) | Tarifs — France — Version de base 4 599 € * | [Fiche](https://www.motoplanete.com/yamaha/7916/YZ-65-2020/contact.html) |\n| Yamaha YZ 85 (2020) | Tarifs — France — Version de base 4 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7915/YZ-85-2020/contact.html) |\n| Yamaha YZF-R1 1000 (2020) | Tarifs — France — Version de base 19 299 € * | [Fiche](https://www.motoplanete.com/yamaha/7975/YZF-R1-1000-2020/contact.html) |\n| Yamaha YZF-R1 1000 Petronas Replica (2020) | Tarifs — France — Version de base 46 000 € * | [Fiche](https://www.motoplanete.com/yamaha/8456/YZF-R1-1000-Petronas-Replica-2020/contact.html) |\n| Yamaha YZF-R1 1000 Pirovano Replica (2020) | Tarifs — France — Version de base 27 836 € * | [Fiche](https://www.motoplanete.com/yamaha/8512/YZF-R1-1000-Pirovano-Replica-2020/contact.html) |\n| Yamaha YZF-R 125 (2020) | Tarifs — France — Version de base 5 299 € * | [Fiche](https://www.motoplanete.com/yamaha/8070/YZF-R-125-2020/contact.html) |\n| Yamaha YZF-R1M 1000 (2020) | Tarifs — France — Version de base 25 999 € * | [Fiche](https://www.motoplanete.com/yamaha/7976/YZF-R1M-1000-2020/contact.html) |\n| Yamaha YZF-R3 300 (2020) | Tarifs — France — Version de base 5 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8069/YZF-R3-300-2020/contact.html) |\n| Yamaha YZF-R6 600 (2020) | Tarifs — France — Version de base 13 999 € * | [Fiche](https://www.motoplanete.com/yamaha/8068/YZF-R6-600-2020/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11273420788347721
+    },
+    {
+      "id": "P02",
+      "turn": 1,
+      "group": "holdout",
+      "category": "prix_moyen",
+      "pass": "first",
+      "question": "Calcule le prix moyen de catalogue de la Honda CB 500 F sur 2020, 2021 et 2022, un tarif France de base par année.",
+      "expected": "{\"total_fiches\": 3, \"known_prices\": 3, \"sum_eur\": \"19697\", \"mean_eur\": \"6565.666666666666666666666667\", \"scope\": \"France, version de base, prix documentés du catalogue ; ni prix actuels ni annonces d’occasion ; inconnus exclus, pas zéro.\"}",
+      "object_ids": [
+        "555a2d677db34a14",
+        "496a038abc9da8b7",
+        "aaac27c37592b9cc"
+      ],
+      "client_setup_seconds": 0.02425416582264006,
+      "started_at": "2026-10-15T23:21:03.625696+00:00",
+      "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 6565,667 €** (19697 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Tarifs — France — Version de base 6 399 € * | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Tarifs — France — Version de base 6 499 € * | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Tarifs — France — Version de base 6 799 € * | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcule le prix moyen de catalogue de la Honda CB 500 F sur 2020, 2021 et 2022, un tarif France de base par année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 6565,667 €** (19697 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Tarifs — France — Version de base 6 399 € * | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Tarifs — France — Version de base 6 499 € * | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Tarifs — France — Version de base 6 799 € * | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11339141614735126
+    },
+    {
+      "id": "P03",
+      "turn": 1,
+      "group": "holdout",
+      "category": "limite_prix",
+      "pass": "first",
+      "question": "Quel est le prix moyen actuel en occasion des Yamaha de 2020 ?",
+      "expected": "Signaler l’absence de prix d’annonces actuels ; ne pas leur substituer les prix de catalogue.",
+      "object_ids": [],
+      "client_setup_seconds": 0.022387957898899913,
+      "started_at": "2026-10-15T23:21:04.773127+00:00",
+      "answer": "Les fiches donnent des prix de catalogue documentés, pas des prix neufs actuels ni des annonces. Veux-tu utiliser ces prix de catalogue ?",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quel est le prix moyen actuel en occasion des Yamaha de 2020 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Les fiches donnent des prix de catalogue documentés, pas des prix neufs actuels ni des annonces. Veux-tu utiliser ces prix de catalogue ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.06795083405449986
+    },
+    {
+      "id": "Q01",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "warm_repeat",
+      "question": "Pour la Honda CRF 450 R de 2022, quelle puissance annonce la fiche ? Garde son éventuel caractère approximatif.",
+      "expected": "Reprendre ≈ 62 ch, avec approximation et source.",
+      "object_ids": [
+        "61a09748fc4b4aa3"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.01994116697460413,
+      "started_at": "2026-10-15T23:21:05.873490+00:00",
+      "answer": "La Honda CRF 450 R de 2022 annonce une puissance approximative de 62 ch. [Honda CRF 450 R (2022)](https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Pour la Honda CRF 450 R de 2022, quelle puissance annonce la fiche ? Garde son éventuel caractère approximatif.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Honda CRF 450 R de 2022 annonce une puissance approximative de 62 ch. [Honda CRF 450 R (2022)](https://www.motoplanete.com/honda/8798/CRF-450-R-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 13.795001042075455
+    },
+    {
+      "id": "Q03",
+      "turn": 1,
+      "group": "unseen",
+      "category": "lecture",
+      "pass": "warm_repeat",
+      "question": "La Moto Guzzi V 100 Mandello de 2022 transmet-elle par chaîne ou par cardan ? Et comment est refroidi son moteur ?",
+      "expected": "Transmission secondaire et refroidissement, sans déduction.",
+      "object_ids": [
+        "d5ebaf0240c24e05"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.023870917037129402,
+      "started_at": "2026-10-15T23:21:20.696468+00:00",
+      "answer": "La Moto Guzzi V 100 Mandello de 2022 transmet par cardan. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)\n\nSon moteur est refroidi par liquide. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Moto Guzzi V 100 Mandello de 2022 transmet-elle par chaîne ou par cardan ? Et comment est refroidi son moteur ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La Moto Guzzi V 100 Mandello de 2022 transmet par cardan. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)\n\nSon moteur est refroidi par liquide. [Moto-Guzzi V 100 Mandello (2022)](https://www.motoplanete.com/moto-guzzi/8918/V-100-Mandello-2022/contact.html)",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 10.069891666993499
+    },
+    {
+      "id": "Q12",
+      "turn": 1,
+      "group": "unseen",
+      "category": "calcul",
+      "pass": "warm_repeat",
+      "question": "Combien de chevaux séparent la Kawasaki Z 900 de 2022 et la Kawasaki Z 900 RS de 2022 ? Affiche les valeurs puis la différence.",
+      "expected": "Calculer la différence absolue : 14.0 ch.",
+      "object_ids": [
+        "4a89df62737a1a4f",
+        "5ce5ff61c1c32167"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.02194550004787743,
+      "started_at": "2026-10-15T23:21:31.796654+00:00",
+      "answer": "Plusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.\n\n| Caractéristique | Kawasaki Z 900 (2022) | Kawasaki Z 900 RS (2022) |\n|---|---|---|\n| Puissance documentée (unités source) | Moteur — 125 ch à 9 500 tr/min | Moteur — 111 ch à 8 500 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) | [Fiche](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Écart — Puissance | \\|125 − 111\\| = 14 ch. Ordre : Kawasaki Z 900 (2022) ; Kawasaki Z 900 RS (2022). |\n| Sources des valeurs de catalogue | [Kawasaki Z 900 (2022)](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) ; [Kawasaki Z 900 RS (2022)](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Combien de chevaux séparent la Kawasaki Z 900 de 2022 et la Kawasaki Z 900 RS de 2022 ? Affiche les valeurs puis la différence.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Plusieurs fiches ou générations correspondent : elles sont présentées séparément ci-dessous. Aucune version n’est choisie à ta place.\n\n| Caractéristique | Kawasaki Z 900 (2022) | Kawasaki Z 900 RS (2022) |\n|---|---|---|\n| Puissance documentée (unités source) | Moteur — 125 ch à 9 500 tr/min | Moteur — 111 ch à 8 500 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) | [Fiche](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |\n\n| Calcul demandé | Résultat |\n|---|---|\n| Écart — Puissance | \\|125 − 111\\| = 14 ch. Ordre : Kawasaki Z 900 (2022) ; Kawasaki Z 900 RS (2022). |\n| Sources des valeurs de catalogue | [Kawasaki Z 900 (2022)](https://www.motoplanete.com/kawasaki/8919/Z-900-2022/contact.html) ; [Kawasaki Z 900 RS (2022)](https://www.motoplanete.com/kawasaki/8847/Z-900-RS-2022/contact.html) |",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.48448437498882413
+    },
+    {
+      "id": "Q16",
+      "turn": 1,
+      "group": "unseen",
+      "category": "compte",
+      "pass": "warm_repeat",
+      "question": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+      "expected": "Compte exact : 47 ; périmètre catalogue.",
+      "object_ids": [
+        "b5bd374c2664b0bf",
+        "36284b2fa2f285fc",
+        "4c62cff120b3f382",
+        "f2de3b90d65b8480",
+        "6808049e8b1d55ad",
+        "d9bba6fc5859d8fe",
+        "7f49cfbef8008365",
+        "6245ed4b345dfdd7",
+        "b33413df9954fdf1",
+        "58daaf9554f763b7",
+        "8c5f02800030a13d",
+        "40e47024ba87bd44",
+        "cceafe4f838d387f",
+        "6ffe5a6e4ebeb75d",
+        "f3a10b06230392f9",
+        "a9f37935126e79fb",
+        "b558db6d5b68b344",
+        "1187a2ba797b4541",
+        "ce6693aac0c729d8",
+        "55ce354cb4b4b28d",
+        "c5b45c9575db1a62",
+        "d667a72ef19069a8",
+        "0b27f48bd538f5f5",
+        "fb99ca4c7eb01f27",
+        "c28516902dad7523",
+        "658209ee58099d4e",
+        "07c4797d1e41486e",
+        "7780244c2319511b",
+        "7d52416bf5219602",
+        "764f985b8dfcbb77",
+        "157e666e3b848619",
+        "85d86e852da7c654",
+        "b16a4f511dcdf9d2",
+        "1986484d8cd17bf5",
+        "1516ed4e2ad15fec",
+        "03915c659646f7fc",
+        "056c81e218d8cf22",
+        "85503cbb6e0eae54",
+        "89352852a40f6ab0",
+        "6df098b65275a7a3",
+        "8e10e2d81a8687d3",
+        "eb64a9b9e00ad095",
+        "49353e6068a0763e",
+        "747825ee12549552",
+        "23782339693e0f41",
+        "95c853ec2d0c290b",
+        "0757ad363b2955af"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.02575962501578033,
+      "started_at": "2026-10-15T23:21:33.320655+00:00",
+      "answer": "**47 fiches correspondent dans le catalogue.**",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Combien de fiches Triumph portent le millésime 2022 dans notre catalogue ? Je compte les fiches, pas les familles.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "**47 fiches correspondent dans le catalogue.**",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.12210166710428894
+    },
+    {
+      "id": "Q19",
+      "turn": 1,
+      "group": "unseen",
+      "category": "identite",
+      "pass": "warm_repeat",
+      "question": "Quelle marque fabrique l’Interceptor 650 ?",
+      "expected": "Royal-Enfield. Pas de millésime nécessaire pour cette identité stable dans le catalogue.",
+      "object_ids": [
+        "10da52d4f95a7c7d"
+      ],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.012294833082705736,
+      "started_at": "2026-10-15T23:21:34.462455+00:00",
+      "answer": "Le constructeur indiqué dans le catalogue est **Royal-Enfield**. Sources d’identité : [Royal-Enfield Interceptor 650 (2026)](https://www.motoplanete.com/royal-enfield/12136/Interceptor-650-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Quelle marque fabrique l’Interceptor 650 ?",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Le constructeur indiqué dans le catalogue est **Royal-Enfield**. Sources d’identité : [Royal-Enfield Interceptor 650 (2026)](https://www.motoplanete.com/royal-enfield/12136/Interceptor-650-2026/contact.html). Le millésime de ces sources ne limite pas ta question à cette année.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11987779196351767
+    },
+    {
+      "id": "Q22",
+      "turn": 1,
+      "group": "unseen",
+      "category": "absence",
+      "pass": "warm_repeat",
+      "question": "Donne le couple de la Kawasaki W 800 édition Nebula de 2022.",
+      "expected": "Édition fictive : pas de substitution silencieuse de la W 800 standard.",
+      "object_ids": [],
+      "exact_historical_duplicate": false,
+      "client_setup_seconds": 0.02126291603781283,
+      "started_at": "2026-10-15T23:21:35.608731+00:00",
+      "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Donne le couple de la Kawasaki W 800 édition Nebula de 2022.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 0.11368433409370482
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-15T23:21:36.734237+00:00"
+}

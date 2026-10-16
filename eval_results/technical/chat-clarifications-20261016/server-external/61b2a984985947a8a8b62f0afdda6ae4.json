@@ -1,0 +1,38 @@
+{
+  "id": "61b2a984985947a8a8b62f0afdda6ae4",
+  "question": "xj6 de 2012 bridable à 35 ou 47 ch?",
+  "started_at": "2026-10-15T23:32:16.684488+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4598,
+        "output_tokens": 1310,
+        "cost": 0.000193116
+      },
+      "seconds": 0.8062473330646753,
+      "reserved_usd": 0.003108504,
+      "debit_usd": 0.000193116
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": {
+      "question": "xj6 de 2012 bridable à 35 ou 47 ch?",
+      "blocked": "source_identity",
+      "updates": []
+    },
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 3.394543790956959,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": false,
+  "server_seconds": 3.396700165932998
+}

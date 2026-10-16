@@ -1,0 +1,57 @@
+{
+  "id": "0813eb835987485c8c704ae20c4aa7b1",
+  "question": "Bonjour, j’ai plusieurs renfoncement sur le réservoir de ma moto que je viens d’acheter (CB500 PC39) il faut que j’aille voir un carrosier spécialisé pour ça ? Et vous pensez que ça coûte combien à refaire ?",
+  "started_at": "2026-10-15T23:33:11.428457+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 3633,
+        "output_tokens": 967,
+        "cost": 0.000152586
+      },
+      "seconds": 0.6316660000011325,
+      "reserved_usd": 0.0026851440000000004,
+      "debit_usd": 0.000152586
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500"
+        }
+      ],
+      "fields": [
+        "price_eur",
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Bonjour, j’ai plusieurs renfoncement sur le réservoir de ma moto que je viens d’acheter (CB500 PC39) il faut que j’aille voir un carrosier spécialisé pour ça ? Et vous pensez que ça coûte combien à refaire ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6825502091087401,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.6827523750253022
+}

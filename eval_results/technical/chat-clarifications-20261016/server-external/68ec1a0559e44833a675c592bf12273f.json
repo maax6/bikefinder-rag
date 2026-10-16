@@ -1,0 +1,38 @@
+{
+  "id": "68ec1a0559e44833a675c592bf12273f",
+  "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+  "started_at": "2026-10-15T23:32:24.622399+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4041,
+        "output_tokens": 1139,
+        "cost": 0.000169722
+      },
+      "seconds": 0.638790583005175,
+      "reserved_usd": 0.0028726320000000004,
+      "debit_usd": 0.000169722
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": {
+      "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+      "blocked": "source_identity",
+      "updates": []
+    },
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6735430001281202,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": false,
+  "server_seconds": 0.6736579581629485
+}

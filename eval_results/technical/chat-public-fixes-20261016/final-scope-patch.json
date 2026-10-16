@@ -1,0 +1,6 @@
+{
+  "reason": "UK source-fact path must not override an unrelated unsupported constraint",
+  "red": "1 failed in test_uk_equipment_cannot_drop_an_unsupported_extra_constraint",
+  "expected_effect_on_frozen_pack": "R04 scope remains supported/market; no expected change. Other original questions do not activate the UK branch.",
+  "applied_at": "2026-10-16T01:03:27.688047+00:00"
+}

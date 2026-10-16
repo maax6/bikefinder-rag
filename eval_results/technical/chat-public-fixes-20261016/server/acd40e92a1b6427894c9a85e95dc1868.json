@@ -1,0 +1,54 @@
+{
+  "id": "acd40e92a1b6427894c9a85e95dc1868",
+  "question": "Liste les Honda de 2022 avec une selle au plus à 800 mm et un poids tous pleins faits au plus de 200 kg.",
+  "started_at": "2026-10-16T01:05:38.246391+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "**10 fiches correspondent dans le catalogue.**\n\n| Moto | Millésime | Hauteur de selle (mm) | Poids en ordre de marche / pleins faits (kg) | Poids à sec (kg) | Source |\n|---|---:|---|---|---|---|\n| Honda CB 125 F | 2022 | Châssis — Hauteur de selle : 790 mm | Châssis — Poids tous pleins faits : 117 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9062/CB-125-F-2022/contact.html) |\n| Honda CB 500 F | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 189 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n| Honda CBR 500 R | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 192 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8899/CBR-500-R-2022/contact.html) |\n| Honda CMX 500 Rebel | 2022 | Châssis — Hauteur de selle : 690 mm | Châssis — Poids tous pleins faits : 191 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9031/CMX-500-Rebel-2022/contact.html) |\n| Honda CMX 500 Rebel S | 2022 | Châssis — Hauteur de selle : 690 mm | Châssis — Poids tous pleins faits : 191 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9034/CMX-500-Rebel-S-2022/contact.html) |\n| Honda CRF 110 F | 2022 | Châssis — Hauteur de selle : 657 mm | Châssis — Poids tous pleins faits : 76,60 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8845/CRF-110-F-2022/contact.html) |\n| Honda CRF 125 F | 2022 | Châssis — Hauteur de selle : 785 mm | Châssis — Poids tous pleins faits : 90,20 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8849/CRF-125-F-2022/contact.html) |\n| Honda CRF 50 F | 2022 | Châssis — Hauteur de selle : 548 mm | Châssis — Poids tous pleins faits : 50,30 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/8844/CRF-50-F-2022/contact.html) |\n| Honda Dax 125 ST | 2022 | Châssis — Hauteur de selle : 775 mm | Châssis — Poids tous pleins faits : 107 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9343/Dax-125-ST-2022/contact.html) |\n| Honda Monkey 125 | 2022 | Châssis — Hauteur de selle : 775 mm | Châssis — Poids tous pleins faits : 104 kg | Non documenté dans cette fiche | [Fiche](https://www.motoplanete.com/honda/9573/Monkey-125-2022/contact.html) |\n\nFiches 1 à 10 sur 10. Ordre stable : millésime décroissant, puis marque, modèle et identifiant.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2022
+      },
+      "conditions": [
+        {
+          "field": "seat_height_mm",
+          "op": "<=",
+          "value": 800.0
+        },
+        {
+          "field": "weight_wet_kg",
+          "op": "<=",
+          "value": 200.0
+        }
+      ],
+      "models": [],
+      "fields": [
+        "seat_height_mm",
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Liste les Honda de 2022 avec une selle au plus à 800 mm et un poids tous pleins faits au plus de 200 kg.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "filter",
+      "offset": 0
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "filter",
+    "_catalog_seconds": 0.06972770788706839,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.06993129081092775
+}

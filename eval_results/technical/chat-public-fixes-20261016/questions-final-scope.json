@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-10-16T00:59:06.103467+00:00",
+  "protocol": {
+    "purpose": "Final UK-scope guard: the UK caveat must not drop another unsupported constraint. Replay the same authorized R04 after the one-line guard tightening. Main campaign runs with source hashes in server/runtime.json; no question or grading change."
+  },
+  "cases": [
+    {
+      "id": "R04",
+      "group": "external_forum",
+      "category": "equipement_marche",
+      "turns": [
+        {
+          "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+          "expected": "Lire la fiche exacte 2019 ; distinguer ABS documenté et marché UK non certifié. Ne pas confondre option et série.",
+          "object_ids": []
+        }
+      ],
+      "provenance": {
+        "url": "https://www.reddit.com/r/HondaCB/comments/jchcso",
+        "post_date": "2020-10-16",
+        "retrieved_at": "2026-10-16",
+        "adaptation": "Question originale en anglais, marché UK conservé.",
+        "evidence": "Original forum page or its indexed text retrieved with web search; forum replies are not an answer key."
+      }
+    }
+  ]
+}

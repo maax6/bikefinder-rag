@@ -1,0 +1,40 @@
+{
+  "id": "d6d4ce8897b0406dbce9a902e7bf4b70",
+  "question": "How does the V85 handle 80 on the highway ? Vibration wise. I love the look but I live where there’s open highway stretches to get to the nearest town and I keep being told it’s too busy hold that for long periods. But I really like the look .",
+  "started_at": "2026-10-15T23:33:07.896456+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4043,
+        "output_tokens": 1139,
+        "cost": 0.000169806
+      },
+      "seconds": 0.6065747500397265,
+      "reserved_usd": 0.0028840560000000003,
+      "debit_usd": 0.000169806
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Je ne retrouve pas le modèle sous ce nom dans les fiches. Précise son nom de catalogue et sa variante ; je ne remplace pas ce modèle par toutes les motos de sa marque.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": {
+      "question": "How does the V85 handle 80 on the highway ? Vibration wise. I love the look but I live where there’s open highway stretches to get to the nearest town and I keep being told it’s too busy hold that for long periods. But I really like the look .",
+      "blocked": "source_identity",
+      "updates": []
+    },
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6679915830027312,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.6686278749257326
+}

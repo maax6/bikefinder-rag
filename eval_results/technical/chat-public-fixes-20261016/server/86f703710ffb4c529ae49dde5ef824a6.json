@@ -1,0 +1,190 @@
+{
+  "id": "86f703710ffb4c529ae49dde5ef824a6",
+  "question": "La Honda NT 1100 de 2022 mentionne-t-elle des poignées chauffantes et un régulateur de vitesse ? Distingue série, option et inconnu.",
+  "started_at": "2026-10-16T01:03:53.099059+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Honda NT 1100 (2022) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | poignées chauffantes : de série — Poignées chauffantes ; régulateur de vitesse : inconnu / non documenté |\n| Source | [Fiche](https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html) |",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "NT 1100"
+        }
+      ],
+      "fields": [
+        "equipment"
+      ],
+      "equipment": "poignées chauffantes",
+      "status": "unknown",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "La Honda NT 1100 de 2022 mentionne-t-elle des poignées chauffantes et un régulateur de vitesse ? Distingue série, option et inconnu.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details",
+      "requested_equipment": [
+        "régulateur de vitesse",
+        "poignées chauffantes"
+      ]
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 31.25003487500362,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "13fd3b866069e1ee",
+          "brand": "Honda",
+          "model": "NT 1100",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+          "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "equipment": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "partial",
+              "required_passage_ids": [
+                "13fd3b866069e1ee:section:2",
+                "13fd3b866069e1ee:section:5"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "13fd3b866069e1ee:section:5",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Équipement de série",
+              "original_text": "Assistance au freinage : ABS de série; Bluetooth; Poignées chauffantes",
+              "text": "Honda NT 1100 2022\nÉquipement de série\nAssistance au freinage : ABS de série; Bluetooth; Poignées chauffantes",
+              "score": 0.7503459453582764,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:2",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle ou automatique DCT - Shifter en option; Secondaire par chaîne",
+              "text": "Honda NT 1100 2022\nTransmission\nboîte à 6 rapports , manuelle ou automatique DCT - Shifter en option; Secondaire par chaîne",
+              "score": 0.7031509876251221,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:4",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 1 084 cc (Alésage * course: 92 x 81.5 mm); 102 ch à 7 500 tr/min; 10,70 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.16 kg/ch; Rapport poids / couple : environ 20.62 kg/mkg; Compression : 10.1 : 1; Emission CO² : 112 g/km",
+              "text": "Honda NT 1100 2022\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 46 mm; Refroidissement : liquide; 1 ACT; 4 soupapes par cylindre; 1 084 cc (Alésage * course: 92 x 81.5 mm); 102 ch à 7 500 tr/min; 10,70 mkg à 6 250 tr/min; Rapport poids / puissance : environ 2.16 kg/ch; Rapport poids / couple : environ 20.62 kg/mkg; Compression : 10.1 : 1; Emission CO² : 112 g/km",
+              "score": 0.6904265284538269,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:7",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Performances",
+              "original_text": "Vitesse max : supérieur à 200 km/h; Consommation moyenne : 5 l/100km; Autonomie estimée : 408 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Honda NT 1100 2022\nPerformances\nVitesse max : supérieur à 200 km/h; Consommation moyenne : 5 l/100km; Autonomie estimée : 408 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.6626436710357666,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "13fd3b866069e1ee:section:9",
+              "object_id": "13fd3b866069e1ee",
+              "brand": "Honda",
+              "model": "NT 1100",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8982/NT-1100-2022/contact.html",
+              "source_sha256": "912d39b45ac12dc6c8ea28e6390dec6b1244fa6a5a7bb82628bcbd27f83f4895",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Honda NT 1100 2022\nColoris\nColoris : non défini",
+              "score": 0.6495304107666016,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "subfact",
+          "object_id": "13fd3b866069e1ee",
+          "field": "equipment",
+          "message": "Un détail demandé reste non documenté dans ces preuves ; les mentions ci-dessus ne le confirment pas Couverture non établie de l’ensemble des détails demandés : « poignees chauffantes; regulateur de vitesse ».",
+          "requested_terms": [
+            "poignees chauffantes",
+            "regulateur de vitesse"
+          ]
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6600824892520905e-07,
+          "query_encoding_seconds": 1.0101494998671114,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "13fd3b866069e1ee",
+          "proof_check": {
+            "fields": {
+              "equipment": "partial"
+            },
+            "jev_calls": 0,
+            "seconds": 0.004993458045646548
+          }
+        }
+      ],
+      "seconds": 1.019560500048101,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "0b6edc1e06df24da54e52a5ef226177c04cbd21539de8780791be3fba8fc5a5f",
+      "error": "ReadTimeout",
+      "seconds": 30.025354041950777
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 31.251147124916315
+}

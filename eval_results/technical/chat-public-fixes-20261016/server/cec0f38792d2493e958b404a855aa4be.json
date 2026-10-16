@@ -1,0 +1,245 @@
+{
+  "id": "cec0f38792d2493e958b404a855aa4be",
+  "question": "Quelles dimensions de pneus avant et arrière sont indiquées pour la Kawasaki W 800 de 2022 ?",
+  "started_at": "2026-10-16T01:01:19.413415+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La Kawasaki W 800 de 2022 a une dimension de pneu avant de 100 / 90 - 19 et une dimension de pneu arrière de 130 / 80 - 18. [Kawasaki W 800 (2022)](https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Kawasaki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Kawasaki",
+          "model": "W 800"
+        }
+      ],
+      "fields": [
+        "dimensions",
+        "wheels"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelles dimensions de pneus avant et arrière sont indiquées pour la Kawasaki W 800 de 2022 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_partial",
+    "_catalog_seconds": 30.295684542041272,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "f4f007bdd40a1b6c",
+          "brand": "Kawasaki",
+          "model": "W 800",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+          "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "dimensions": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "f4f007bdd40a1b6c:section:0"
+              ]
+            },
+            "wheels": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "f4f007bdd40a1b6c:section:1",
+                "f4f007bdd40a1b6c:section:3"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "f4f007bdd40a1b6c:section:3",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux, déb : 107 mm; Freinage : 1 disque Ø 270 mm, étrier 2 pistons; Roue arrière : 130 / 80 - 18; Pression : 2.25 bars",
+              "text": "Kawasaki W 800 2022\nTrain arrière\n2 amortisseurs latéraux, déb : 107 mm; Freinage : 1 disque Ø 270 mm, étrier 2 pistons; Roue arrière : 130 / 80 - 18; Pression : 2.25 bars",
+              "score": 0.7437586784362793,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:1",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø 41 mm, déb : 130 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 100 / 90 - 19; Pression : 2 bars",
+              "text": "Kawasaki W 800 2022\nTrain avant\nFourche téléhydraulique Ø 41 mm, déb : 130 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 100 / 90 - 19; Pression : 2 bars",
+              "score": 0.7315514087677002,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:4",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Moteur",
+              "original_text": "Bicylindre Vertical , 4 temps; Injection Ø 34 mm; Refroidissement : par air; 1 ACT; 4 soupapes par cylindre; 773 cc (Alésage * course: 77 x 83 mm); 48 ch à 6 000 tr/min; 6,40 mkg à 4 800 tr/min; Rapport poids / puissance : environ 4.33 kg/ch; Rapport poids / couple : environ 32.45 kg/mkg; Compression : 8.4 : 1",
+              "text": "Kawasaki W 800 2022\nMoteur\nBicylindre Vertical , 4 temps; Injection Ø 34 mm; Refroidissement : par air; 1 ACT; 4 soupapes par cylindre; 773 cc (Alésage * course: 77 x 83 mm); 48 ch à 6 000 tr/min; 6,40 mkg à 4 800 tr/min; Rapport poids / puissance : environ 4.33 kg/ch; Rapport poids / couple : environ 32.45 kg/mkg; Compression : 8.4 : 1",
+              "score": 0.7090118527412415,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:0",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Châssis",
+              "original_text": "Cadre : Double berceau acier; Réservoir : 15 litres; Hauteur de selle : 790 mm; Longueur : 2 190 mm; Largeur : 790 mm; Hauteur min : 1 075 mm; Empattement : 1 465 mm; Poids tous pleins faits : 221 kg",
+              "text": "Kawasaki W 800 2022\nChâssis\nCadre : Double berceau acier; Réservoir : 15 litres; Hauteur de selle : 790 mm; Longueur : 2 190 mm; Largeur : 790 mm; Hauteur min : 1 075 mm; Empattement : 1 465 mm; Poids tous pleins faits : 221 kg",
+              "score": 0.7026827335357666,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "f4f007bdd40a1b6c:section:2",
+              "object_id": "f4f007bdd40a1b6c",
+              "brand": "Kawasaki",
+              "model": "W 800",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/kawasaki/8848/W-800-2022/contact.html",
+              "source_sha256": "6ccd0ce9e93057d40a0da251dfcfdc6af6e58ec0025286cae5936ff9f35b0ed7",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Kawasaki W 800 2022\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.6423351764678955,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "verification",
+          "object_id": "f4f007bdd40a1b6c",
+          "field": "dimensions",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "verification",
+          "object_id": "f4f007bdd40a1b6c",
+          "field": "wheels",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 2.0908191800117493e-07,
+          "query_encoding_seconds": 1.0152932500932366,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "f4f007bdd40a1b6c",
+          "proof_check": {
+            "fields": {
+              "dimensions": "unverified",
+              "wheels": "unverified"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0010238338727504015
+          }
+        }
+      ],
+      "seconds": 1.0212999579962343,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "e772b30f04e5472ccb2a35bbfab6e8d2c0fc871f25800247f4a5dec4ec1fc965",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1666,
+      "eval_count": 78,
+      "total_duration": 29172007708,
+      "load_duration": 4072917,
+      "prompt_eval_duration": 14068854000,
+      "eval_duration": 14960072000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Kawasaki W 800 de 2022 a une dimension de pneu avant de 100 / 90 - 19 et une dimension de pneu arrière de 130 / 80 - 18.",
+            "sources": [
+              "P1",
+              "P2"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0
+        ],
+        "coverage_verified": true,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.98,
+              "unsupported": 0.02
+            },
+            "confidence": 0.96
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.98,
+              "unsupported": 0.02
+            },
+            "confidence": 0.96
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 29.199899500003085
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 30.296998207923025
+}

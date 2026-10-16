@@ -1,0 +1,266 @@
+{
+  "id": "2eab5bdfe4f94808aa03dafc84dbcc4c",
+  "question": "65 000 km pour une CB500F de 2018, est-ce convenable ?",
+  "started_at": "2026-10-15T23:32:28.166548+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4213,
+        "output_tokens": 1139,
+        "cost": 0.000176946
+      },
+      "seconds": 0.6519330411683768,
+      "reserved_usd": 0.002929248,
+      "debit_usd": 0.000176946
+    },
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 1783,
+        "output_tokens": 113,
+        "cost": 7.4886e-05
+      },
+      "seconds": 0.5277592088095844,
+      "reserved_usd": 0.0011659200000000002,
+      "debit_usd": 7.4886e-05
+    }
+  ],
+  "history_messages": 0,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n### Honda CB 500 F (2018)\n\n- **Suspensions et réglages avant/arrière — la fiche indique :** Train avant — Fourche téléhydraulique Ø 41 mm, déb : 120 mm ; Train arrière — Mono-amortisseur, déb : 109 mm\n- **Freins avant/arrière — la fiche indique :** Train avant — Freinage : 1 disque Ø 320 mm, étrier 2 pistons ; Train arrière — Freinage : 1 disque Ø 240 mm, étrier simple piston\n- **Puissance documentée (unités source) — la fiche indique :** Moteur — 48 ch à 8 500 tr/min\n\n[Source — fiche exacte](https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html)\nPreuves retenues : Performances, Moteur, Tarifs, Coloris, Châssis, Train avant, Train arrière.\n\nLa couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles.",
+  "metadata": {
+    "_catalog_plan": {
+      "operation": "complex",
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F"
+        }
+      ],
+      "identity": {
+        "year": 2018
+      },
+      "conditions": [],
+      "equipment": null,
+      "status": "standard",
+      "fields": [
+        "suspension",
+        "braking",
+        "power_ch"
+      ]
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 38.6128268330358,
+    "_catalog_jev_calls": 2,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "4fe35839d6fd4c7b",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2018,
+          "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+          "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "suspension": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "4fe35839d6fd4c7b:section:1",
+                "4fe35839d6fd4c7b:section:3"
+              ]
+            },
+            "braking": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "4fe35839d6fd4c7b:section:1",
+                "4fe35839d6fd4c7b:section:3"
+              ]
+            },
+            "power_ch": {
+              "covered": false,
+              "source_passages_available": true,
+              "requested_facts_status": "unverified",
+              "required_passage_ids": [
+                "4fe35839d6fd4c7b:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "4fe35839d6fd4c7b:section:7",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 180 km/h; Consommation moyenne : 3,39 l/100km; Autonomie estimée : 493 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Honda CB 500 F 2018\nPerformances\nVitesse max : environ 180 km/h; Consommation moyenne : 3,39 l/100km; Autonomie estimée : 493 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.6240361332893372,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4fe35839d6fd4c7b:section:4",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 500 tr/min; 4,50 mkg à 7 000 tr/min; Rapport poids / puissance : 3.6 kg/ch; Rapport poids / couple : 38.44 kg/mkg; Compression : 10.7 : 1",
+              "text": "Honda CB 500 F 2018\nMoteur\nBicylindre en ligne , 4 temps; Injection; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 500 tr/min; 4,50 mkg à 7 000 tr/min; Rapport poids / puissance : 3.6 kg/ch; Rapport poids / couple : 38.44 kg/mkg; Compression : 10.7 : 1",
+              "score": 0.6149330139160156,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4fe35839d6fd4c7b:section:8",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Tarifs",
+              "original_text": "France — Version de base : 6 099 € *",
+              "text": "Honda CB 500 F 2018\nTarifs\nFrance — Version de base : 6 099 € *",
+              "score": 0.5860342979431152,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4fe35839d6fd4c7b:section:9",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Honda CB 500 F 2018\nColoris\nColoris : non défini",
+              "score": 0.5829148292541504,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4fe35839d6fd4c7b:section:0",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Châssis",
+              "original_text": "Cadre : en acier de type Diamant; Réservoir : 16,70 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids à sec : 173 kg; Poids tous pleins faits : 192 kg",
+              "text": "Honda CB 500 F 2018\nChâssis\nCadre : en acier de type Diamant; Réservoir : 16,70 litres; Hauteur de selle : 785 mm; Longueur : 2 080 mm; Largeur : 790 mm; Hauteur min : 1 060 mm; Empattement : 1 410 mm; Poids à sec : 173 kg; Poids tous pleins faits : 192 kg",
+              "score": 0.5521233081817627,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "4fe35839d6fd4c7b:section:1",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Train avant",
+              "original_text": "Fourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "text": "Honda CB 500 F 2018\nTrain avant\nFourche téléhydraulique Ø 41 mm, déb : 120 mm; Freinage : 1 disque Ø 320 mm, étrier 2 pistons; Roue avant : 120 / 70 - 17; Pression : 2.5 bars",
+              "score": 0.5291109085083008,
+              "rank": 7,
+              "selection_reason": "required_field"
+            },
+            {
+              "id": "4fe35839d6fd4c7b:section:3",
+              "object_id": "4fe35839d6fd4c7b",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2018,
+              "source_url": "https://www.motoplanete.com/honda/6997/CB-500-F-2018/contact.html",
+              "source_sha256": "3e0f1560f3d943c5002eac9cb880ff639cd90e59d23c87b4579dd8520a149ca7",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur, déb : 109 mm; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "text": "Honda CB 500 F 2018\nTrain arrière\nMono-amortisseur, déb : 109 mm; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "score": 0.5264649391174316,
+              "rank": 8,
+              "selection_reason": "required_field"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "kind": "verification",
+          "object_id": "4fe35839d6fd4c7b",
+          "field": "suspension",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "verification",
+          "object_id": "4fe35839d6fd4c7b",
+          "field": "braking",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        },
+        {
+          "kind": "verification",
+          "object_id": "4fe35839d6fd4c7b",
+          "field": "power_ch",
+          "message": "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
+        }
+      ],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": false,
+          "document_encoding_seconds": 7.108447750099003,
+          "query_encoding_seconds": 0.03265916695818305,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "4fe35839d6fd4c7b",
+          "proof_check": {
+            "fields": {
+              "suspension": "unverified",
+              "braking": "unverified",
+              "power_ch": "unverified"
+            },
+            "jev_calls": 1,
+            "seconds": 0.5296555832028389
+          }
+        }
+      ],
+      "seconds": 7.679368708981201,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "f09909ec79653f6c12d65b1de69cb6e51f6d21f72f098a5936a849582d7b6da7",
+      "error": "ReadTimeout",
+      "seconds": 30.239878583000973
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 38.613410874968395
+}

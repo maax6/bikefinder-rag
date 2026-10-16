@@ -1,0 +1,246 @@
+{
+  "id": "f62f1275d59a48ddade3b2040188c5a8",
+  "question": "Sur la Royal Enfield Classic 350 de 2022, indique la hauteur de selle et le volume du réservoir.",
+  "started_at": "2026-10-15T23:13:12.229837+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La Royal Enfield Classic 350 de 2022 a une hauteur de selle de 805 mm. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)\n\nLe volume du réservoir de la Royal Enfield Classic 350 de 2022 est de 13 litres. [Royal-Enfield Classic 350 (2022)](https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html)",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Royal-Enfield",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Royal-Enfield",
+          "model": "Classic 350"
+        }
+      ],
+      "fields": [
+        "seat_height_mm",
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Sur la Royal Enfield Classic 350 de 2022, indique la hauteur de selle et le volume du réservoir.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral",
+    "_catalog_seconds": 18.83532837498933,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "b733b6ae57d72686",
+          "brand": "Royal-Enfield",
+          "model": "Classic 350",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+          "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "seat_height_mm": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "b733b6ae57d72686:section:0"
+              ]
+            },
+            "reservoir": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "b733b6ae57d72686:section:0"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "b733b6ae57d72686:section:0",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Châssis",
+              "original_text": "Cadre : double berceau tubulaire en acier; Réservoir : 13 litres; Hauteur de selle : 805 mm; Longueur : 2 145 mm; Largeur : 785 mm; Hauteur min : 1 090 mm; Empattement : 1 390 mm; Poids à sec : 195 kg",
+              "text": "Royal-Enfield Classic 350 2022\nChâssis\nCadre : double berceau tubulaire en acier; Réservoir : 13 litres; Hauteur de selle : 805 mm; Longueur : 2 145 mm; Largeur : 785 mm; Hauteur min : 1 090 mm; Empattement : 1 390 mm; Poids à sec : 195 kg",
+              "score": 0.7469934821128845,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:3",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Train arrière",
+              "original_text": "2 amortisseurs latéraux; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 120 / 80 - 18",
+              "text": "Royal-Enfield Classic 350 2022\nTrain arrière\n2 amortisseurs latéraux; Freinage : 1 disque Ø 270 mm, étrier simple piston; Roue arrière : 120 / 80 - 18",
+              "score": 0.6978012323379517,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:4",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Moteur",
+              "original_text": "Monocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.65 kg/ch; Rapport poids / couple : 67.24 kg/mkg; Compression : 9.5 : 1; Emission CO² : 63 g/km",
+              "text": "Royal-Enfield Classic 350 2022\nMoteur\nMonocylindre , 4 temps; Injection; Refroidissement : par air; 1 ACT; 2 soupapes; 349 cc (Alésage * course: 70 x 90 mm); 20,20 ch à 6 100 tr/min; 2,90 mkg à 4 000 tr/min; Rapport poids / puissance : 9.65 kg/ch; Rapport poids / couple : 67.24 kg/mkg; Compression : 9.5 : 1; Emission CO² : 63 g/km",
+              "score": 0.6974689364433289,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:7",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Performances",
+              "original_text": "Vitesse max : environ 110 km/h; Consommation moyenne : 2,63 l/100km; Autonomie estimée : 494 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "text": "Royal-Enfield Classic 350 2022\nPerformances\nVitesse max : environ 110 km/h; Consommation moyenne : 2,63 l/100km; Autonomie estimée : 494 km Autonomie jusqu'à la panne sèche, calculée mais non vérifiée.",
+              "score": 0.6789249181747437,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "b733b6ae57d72686:section:2",
+              "object_id": "b733b6ae57d72686",
+              "brand": "Royal-Enfield",
+              "model": "Classic 350",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/royal-enfield/8901/Classic-350-2022/contact.html",
+              "source_sha256": "c950eee23aeb1dc28619463cb195c7e5acca2a52e7c69793462115e789c5b800",
+              "section": "Transmission",
+              "original_text": "boîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "text": "Royal-Enfield Classic 350 2022\nTransmission\nboîte à 5 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.6780605912208557,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 4.21423465013504e-08,
+          "query_encoding_seconds": 0.7609947500750422,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "b733b6ae57d72686",
+          "proof_check": {
+            "fields": {
+              "seat_height_mm": "complete",
+              "reservoir": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.0007034579757601023
+          }
+        }
+      ],
+      "seconds": 0.7662646661046892,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": true,
+      "call_attempted": true,
+      "context_sha256": "e8cad929aafc3a15dc646754c239b868f1cd36567c45085dea7f7cad6b9f1d29",
+      "model": "mistral-small3.2",
+      "done_reason": "stop",
+      "prompt_eval_count": 1504,
+      "eval_count": 88,
+      "total_duration": 17986111125,
+      "load_duration": 5645834,
+      "prompt_eval_duration": 5957353000,
+      "eval_duration": 11944198000,
+      "candidate": {
+        "claims": [
+          {
+            "text": "La Royal Enfield Classic 350 de 2022 a une hauteur de selle de 805 mm.",
+            "sources": [
+              "P1"
+            ]
+          },
+          {
+            "text": "Le volume du réservoir de la Royal Enfield Classic 350 de 2022 est de 13 litres.",
+            "sources": [
+              "P1"
+            ]
+          }
+        ]
+      },
+      "proof_check": {
+        "accepted": true,
+        "verified_claim_indices": [
+          0,
+          1
+        ],
+        "coverage_verified": true,
+        "jev_calls": 0,
+        "verdicts": {
+          "claim_0": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "claim_1": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 1,
+              "unsupported": 0
+            },
+            "confidence": 1
+          },
+          "answer_coverage": {
+            "type": "choice",
+            "choice": "supported",
+            "probabilities": {
+              "supported": 0.96,
+              "unsupported": 0.04
+            },
+            "confidence": 0.92
+          }
+        }
+      },
+      "mode": "written",
+      "seconds": 18.00432995893061
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 18.83639408298768
+}

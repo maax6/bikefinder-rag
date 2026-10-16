@@ -1,0 +1,27 @@
+{
+  "id": "fcf7b9bd8cdb415bb7da16d597fee356",
+  "question": "Bonjour, j’ai plusieurs renfoncement sur le réservoir de ma moto que je viens d’acheter (CB500 PC39) il faut que j’aille voir un carrosier spécialisé pour ça ? Et vous pensez que ça coûte combien à refaire ?",
+  "started_at": "2026-10-16T01:11:19.990712+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Le catalogue ne décrit ni les dégâts de ton exemplaire ni les tarifs de réparation. Il ne permet pas de chiffrer ce travail ou de choisir la bonne intervention. Demande une inspection et un devis à un professionnel de la réparation ou de la carrosserie moto, avec des photos et l’identification exacte de la moto. Un prix neuf de catalogue ne serait pas un devis de réparation.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "catalog_boundary",
+    "_catalog_seconds": 0.0002007919829338789,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "retrieval_executed": false,
+      "scope_topic": "repair",
+      "response_kind": "deterministic_scope_explanation"
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0004545829724520445
+}

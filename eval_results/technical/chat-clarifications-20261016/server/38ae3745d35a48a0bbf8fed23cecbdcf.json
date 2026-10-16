@@ -1,0 +1,62 @@
+{
+  "id": "38ae3745d35a48a0bbf8fed23cecbdcf",
+  "question": "Calcule le prix moyen de catalogue de la Honda CB 500 F sur 2020, 2021 et 2022, un tarif France de base par année.",
+  "started_at": "2026-10-15T23:21:03.652155+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Calcul sur **3 fiches du catalogue**, dans la population demandée.\n\n**Prix France de base** — 3/3 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 6565,667 €** (19697 / 3 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2020) | Tarifs — France — Version de base 6 399 € * | [Fiche](https://www.motoplanete.com/honda/8260/CB-500-F-2020/contact.html) |\n| Honda CB 500 F (2021) | Tarifs — France — Version de base 6 499 € * | [Fiche](https://www.motoplanete.com/honda/8461/CB-500-F-2021/contact.html) |\n| Honda CB 500 F (2022) | Tarifs — France — Version de base 6 799 € * | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2020
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2021
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2022
+        }
+      ],
+      "fields": [
+        "price_eur"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Calcule le prix moyen de catalogue de la Honda CB 500 F sur 2020, 2021 et 2022, un tarif France de base par année.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "price_eur"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.044068667106330395,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.04420304112136364
+}

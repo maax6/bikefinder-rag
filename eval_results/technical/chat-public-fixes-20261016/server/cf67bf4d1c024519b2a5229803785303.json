@@ -1,0 +1,44 @@
+{
+  "id": "cf67bf4d1c024519b2a5229803785303",
+  "question": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+  "started_at": "2026-10-16T01:10:51.256469+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {},
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F"
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 X"
+        }
+      ],
+      "fields": [],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Différence cb500f et cb500x ? Globalement quels sont les différence entre ces deux moto ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "comparison"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.06036037486046553,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.060547915985807776
+}

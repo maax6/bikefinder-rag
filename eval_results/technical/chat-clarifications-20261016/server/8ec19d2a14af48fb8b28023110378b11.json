@@ -1,0 +1,54 @@
+{
+  "id": "8ec19d2a14af48fb8b28023110378b11",
+  "question": "Donne le poids MOYEN à sec et le poids tous pleins faits de la Suzuki GSF 1200 Bandit . Garde bien les deux catégories distinctes.",
+  "started_at": "2026-10-15T23:20:23.105004+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "Sur quelle population veux-tu calculer la moyenne : quels millésimes ou quelles fiches ? Contexte conservé : Suzuki GSF 1200 BANDIT — 2000. Je garde les poids à sec et tous pleins séparés.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Suzuki",
+        "year": 2000
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Suzuki",
+          "model": "GSF 1200 BANDIT"
+        }
+      ],
+      "fields": [
+        "weight_dry_kg",
+        "weight_wet_kg"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Donne les poids à sec et tous pleins faits de la Suzuki GSF 1200 Bandit de 2000.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "weight_dry_kg",
+          "weight_wet_kg"
+        ]
+      },
+      "mean_population_pending": true
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.037253249902278185
+}

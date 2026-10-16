@@ -1,0 +1,54 @@
+{
+  "id": "f1354d0d54144356bf55c94a973efbd3",
+  "question": "Quelle est la capacité du réservoir de la Honda NT 1100 de 2007 ?",
+  "started_at": "2026-10-15T23:17:37.417201+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Fiche exacte non identifiée : Honda NT 1100 (2007). Aucune autre année ou variante substituée.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2007
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "NT 1100"
+        }
+      ],
+      "fields": [
+        "reservoir"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle est la capacité du réservoir de la Honda NT 1100 de 2007 ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.06771637499332428,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [],
+      "missing": [
+        {
+          "kind": "identity",
+          "message": "Fiche exacte non identifiée : Honda NT 1100 (2007). Aucune autre année ou variante substituée."
+        }
+      ],
+      "retrieval_executed": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0678392918780446
+}

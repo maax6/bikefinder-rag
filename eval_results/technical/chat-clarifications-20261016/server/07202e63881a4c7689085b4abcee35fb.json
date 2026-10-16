@@ -1,0 +1,22 @@
+{
+  "id": "07202e63881a4c7689085b4abcee35fb",
+  "question": "La présence de l’ABS sur la Honda NT 1100 de 2022 garantit-elle que je ne peux pas tomber ?",
+  "started_at": "2026-10-15T23:17:38.557396+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "La fiche ne permet pas de garantir l’absence de chute ou d’accident. Une mention d’ABS ou d’un autre équipement ne constitue pas une preuve de cette garantie. Je peux seulement rapporter les équipements effectivement documentés pour le modèle et le millésime.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": null,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.0011083339340984821
+}

@@ -1,0 +1,47 @@
+{
+  "id": "fd4ad263e79940129be30cc54b17acf0",
+  "question": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+  "started_at": "2026-10-15T23:20:25.390822+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Calcul sur **49 fiches du catalogue**, dans la population demandée.\n\n**Hauteur de selle** — 49/49 valeurs numériques univoques documentées.\n**Minimum : 705 mm** — 3 fiche(s) ex æquo.\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Kawasaki 650 VULCAN S (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/8896/650-VULCAN-S-2022/contact.html) |\n| Kawasaki 650 VULCAN S Performance (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9194/650-VULCAN-S-Performance-2022/contact.html) |\n| Kawasaki 650 VULCAN S Tourer (2022) | Châssis — Hauteur de selle 705 mm | [Fiche](https://www.motoplanete.com/kawasaki/9193/650-VULCAN-S-Tourer-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Kawasaki",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [],
+      "fields": [
+        "seat_height_mm"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Quelle hauteur de selle minimale est documentée chez Kawasaki en 2022 ? Cite tous les ex æquo et la couverture des données.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "min",
+        "fields": [
+          "seat_height_mm"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.06469429098069668,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.06485145795159042
+}

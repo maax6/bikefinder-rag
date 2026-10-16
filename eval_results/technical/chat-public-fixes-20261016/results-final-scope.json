@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-10-16T01:13:50.511149+00:00",
+  "questions_sha256": "342284ef17e41e11ef2e6a457b7b70ae8bcbbca08e4d8dd8b4d655ef3ab79416",
+  "url": "http://127.0.0.1:7862/",
+  "results": [
+    {
+      "id": "R04",
+      "turn": 1,
+      "group": "external_forum",
+      "category": "equipement_marche",
+      "pass": "first",
+      "question": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+      "expected": "Lire la fiche exacte 2019 ; distinguer ABS documenté et marché UK non certifié. Ne pas confondre option et série.",
+      "object_ids": [],
+      "client_setup_seconds": 0.04678066703490913,
+      "started_at": "2026-10-16T01:13:50.558542+00:00",
+      "answer": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n| Caractéristique | Honda CB 500 F (2019) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | ABS : présence documentée, de série selon la mention ou la section source. Preuve source : « Équipement de série · Assistance au freinage : ABS de série ». |\n| Source | [Fiche](https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html) |\n\nCes équipements sont ceux de la fiche source. Son rattachement au marché technique Royaume-Uni (UK) n’est pas établi ; je ne l’atteste pas à partir d’un tarif français.",
+      "visible_history": [
+        {
+          "role": "user",
+          "metadata": null,
+          "content": [
+            {
+              "text": "Can I check that the CB500F 2019 has ABS as standard? A few reviews were giving me conflicting information, I’m based in the UK if that makes a difference.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        },
+        {
+          "role": "assistant",
+          "metadata": null,
+          "content": [
+            {
+              "text": "La rédaction locale n’a pas passé la vérification des preuves. Voici les données sources :\n\n| Caractéristique | Honda CB 500 F (2019) |\n|---|---|\n| Équipements : ABS, options et statuts documentés | ABS : présence documentée, de série selon la mention ou la section source. Preuve source : « Équipement de série · Assistance au freinage : ABS de série ». |\n| Source | [Fiche](https://www.motoplanete.com/honda/7610/CB-500-F-2019/contact.html) |\n\nCes équipements sont ceux de la fiche source. Son rattachement au marché technique Royaume-Uni (UK) n’est pas établi ; je ne l’atteste pas à partir d’un tarif français.",
+              "type": "text"
+            }
+          ],
+          "options": null
+        }
+      ],
+      "error": null,
+      "elapsed_seconds": 23.386870374903083
+    }
+  ],
+  "completed": true,
+  "timeout_seconds": 150,
+  "timing_definition": "submit to complete result; Client setup separate; not time to first token",
+  "finished_at": "2026-10-16T01:14:14.949107+00:00"
+}

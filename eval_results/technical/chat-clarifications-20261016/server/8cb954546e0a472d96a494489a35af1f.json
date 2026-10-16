@@ -1,0 +1,57 @@
+{
+  "id": "8cb954546e0a472d96a494489a35af1f",
+  "question": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+  "started_at": "2026-10-15T23:20:28.809204+00:00",
+  "http_calls": [],
+  "history_messages": 0,
+  "answer": "Calcul sur **1 fiches du catalogue**, dans la population demandée.\nPopulation incomplète : fiche(s) absente(s) — Honda CB 500 F (1990).\n\n**Puissance** — 1/1 valeurs numériques univoques documentées.\n**Moyenne arithmétique : 48 ch** (48 / 1 ; une fiche compte une fois).\n\n| Fiche | Valeur source | Source |\n|---|---|---|\n| Honda CB 500 F (2022) | Moteur —  48 ch à 8 600 tr/min | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |\n\nPérimètre : fiches collectées du catalogue, sans exhaustivité du marché. Les types de poids et les unités restent séparés ; aucune conversion implicite.",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda"
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 1990
+        },
+        {
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2022
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Calcule la puissance moyenne de la Honda CB 500 F entre les millésimes 1990 et 2022 uniquement, pas les années intermédiaires.",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "aggregate",
+      "aggregate": {
+        "operation": "mean",
+        "fields": [
+          "power_ch"
+        ]
+      },
+      "all_years": false
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "aggregate",
+    "_catalog_seconds": 0.04042783402837813,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.040555375162512064
+}

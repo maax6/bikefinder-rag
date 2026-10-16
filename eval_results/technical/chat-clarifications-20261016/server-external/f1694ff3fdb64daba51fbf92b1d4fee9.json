@@ -1,0 +1,36 @@
+{
+  "id": "f1694ff3fdb64daba51fbf92b1d4fee9",
+  "question": "Vos conseils de 1ere moto pour les petits gabarits ? (1m61)",
+  "started_at": "2026-10-15T23:33:09.647923+00:00",
+  "http_calls": [
+    {
+      "url": "https://openrouter.ai/api/alpha/decisions",
+      "model": "typesafe/jev-1.13",
+      "status": 200,
+      "usage": {
+        "input_tokens": 4502,
+        "output_tokens": 1305,
+        "cost": 0.000189084
+      },
+      "seconds": 0.6468047499656677,
+      "reserved_usd": 0.0030922080000000004,
+      "debit_usd": 0.000189084
+    }
+  ],
+  "history_messages": 0,
+  "answer": "Précise les modèles et un millésime explicite pour une explication fondée sur les fiches.",
+  "metadata": {
+    "_catalog_plan": null,
+    "_catalog_pending": null,
+    "_catalog_route": "clarification",
+    "_catalog_seconds": 0.6814676250796765,
+    "_catalog_jev_calls": 1,
+    "_catalog_evidence": null,
+    "_catalog_research": null,
+    "_catalog_generation": null
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 0.6816219999454916
+}

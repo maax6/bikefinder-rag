@@ -1,0 +1,643 @@
+[
+  {
+    "key": "first/Q01/1",
+    "verdict": "correct",
+    "note": "La source conserve environ 62 ch pour CRF 450 R 2022. Mistral expire et un tableau exact prend le relais : contenu correct, utilité réduite par l’échec de rédaction.",
+    "draft_note": "ReadTimeout : aucune proposition complète disponible, réponse déterministe de secours.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Les deux valeurs sont présentes : selle 805 mm et réservoir 13 L, avec la bonne source.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/Q02/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Cardan et refroidissement liquide présents. Les anciennes réserves répétées ont disparu.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/Q03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Dimensions avant 100/90-19 et arrière 130/80-18 distinctes et correctement citées.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/Q04/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/Q05/1",
+    "verdict": "correct",
+    "note": "Fourche inversée de 41 mm, mono-amortisseur et débattements de 150 mm conservés pour Tiger Sport 660 2022. Le tableau est fidèle ; nouvelle expiration du rédacteur.",
+    "draft_note": "ReadTimeout : aucune proposition complète disponible, réponse déterministe de secours.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. 197 kg tous pleins faits correctement sourcés ; poids sec explicitement inconnu. La réserve de couverture reste générique après une lacune déjà identifiée : lisibilité perfectible.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/Q06/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Freins avant 330 mm / 4 pistons et arrière 230 mm / 1 piston correctement séparés et cités.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/Q07/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/Q08/1",
+    "verdict": "correct",
+    "note": "Couple 4,60 mkg à 6 000 tr/min, bonne source Benelli 2022. La rédaction expire ; le tableau restitue la valeur sans ajouter le régime de puissance 8 500 tr/min.",
+    "draft_note": "ReadTimeout : aucune proposition complète ; faits conservés par le rendu des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "key": "first/Q09/1",
+    "verdict": "correct",
+    "note": "NT 1100 2022 : poignées chauffantes de série, régulateur inconnu. Les statuts restent distincts et aucune absence n’est inventée. Le tableau prend le relais de Mistral sans répétition de la lacune.",
+    "draft_note": "ReadTimeout : aucune proposition complète ; faits conservés par le rendu des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Le tableau conserve les deux variantes, diamètres, réglages et suspensions électroniques de la S. Échec du rédacteur après 30 s : contenu sauvé par le rendu direct des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/Q10/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/Q11/1",
+    "verdict": "justified_limit",
+    "note": "Les 191 kg restent un poids à sec pour chacun des deux millésimes. Le poids tous pleins est explicitement inconnu ; les deux réserves répétées ont disparu. Mistral expire et le tableau conserve la limite.",
+    "draft_note": "ReadTimeout ; aucune proposition complète de Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. 125 ch et 111 ch, différence 14 ch, avec les bonnes fiches. La réserve sur les variantes est superflue pour cette comparaison explicite.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/Q12/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Maximum 1043 cc, six ex æquo et couverture 42/42 correctement calculés.",
+    "key": "first/Q13/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Minimum 785 mm, quatre ex æquo ; couverture 18/20 et exclusion des inconnus visibles.",
+    "key": "first/Q14/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Moyenne 48 ch sur trois années, détail 144/3 et sources conservés.",
+    "key": "first/Q15/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Compte exact : 47 fiches Triumph 2022.",
+    "key": "first/Q16/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Compte exact : 34 Yamaha 2022 avec ABS documenté de série ; inconnus exclus.",
+    "key": "first/Q17/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Les dix fiches attendues respectent les deux bornes inclusives ; poids sec et humide restent distincts.",
+    "key": "first/Q18/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Royal-Enfield trouvé sans exiger une année ; la source datée est explicitement une preuve d’identité.",
+    "key": "first/Q19/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Distingue la puissance fiscale de la puissance moteur et demande pays/catégorie pour une source officielle ; aucune conversion arbitraire.",
+    "key": "first/Q20/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/Q21/1",
+    "verdict": "correct",
+    "note": "La fiche Classic 350 2022 conserve permis A et 20,20 ch à 6 100 tr/min. Mention A2 absente, sans conclusion sur l’éligibilité individuelle. Le secours sourcé reste verbeux mais exact ; le doublon A2 est absent.",
+    "draft_note": "ReadTimeout ; rendu direct des sources, pas une rédaction réussie.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Édition fictive refusée sans substitution à la W 800 standard.",
+    "key": "first/Q22/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Absence de fiche NT 1100 2007 explicite ; pas de valeur de 2022 substituée.",
+    "key": "first/Q23/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Aucune garantie de sécurité déduite de la mention ABS.",
+    "key": "first/Q24/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Puissance 48 ch à 8 500 tr/min et cylindrée 499,60 cc correctement citées.",
+    "key": "first/D01/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/D01/2",
+    "verdict": "correct",
+    "note": "Le suivi conserve la Leoncino 2022 : couple maximal 4,60 mkg à 6 000 tr/min. Plus de fausse annonce de phrase non vérifiée ; le complément répète toutefois la valeur, ce qui pénalise la concision.",
+    "draft_note": "Affirmation fidèle ; mode mixte parce que la couverture globale reste non validée, pas parce que le fait serait faux.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Demande le millésime manquant sans inventer de valeur.",
+    "key": "first/D02/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. La précision 2022 est correctement résolue ; réservoir 17,20 L et bonne fiche. La rédaction expire, remplacée par le tableau.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/D02/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Cinq premières fiches sur dix, bonnes identité et année, pagination explicite.",
+    "key": "first/D03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Positions 6 à 10 sans doublons avec la première page.",
+    "key": "first/D03/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Dix Suzuki 2022 strictement au-dessus de 100 ch ; bonnes sources et valeurs.",
+    "key": "first/D04/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Compte de la sélection précédente conservé : dix fiches.",
+    "key": "first/D04/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/D05/1",
+    "verdict": "correct",
+    "note": "Le poids tous pleins de W 800 2022 reste 221 kg. La correction précédente est conservée : pas de réserve sur le poids sec non demandé.",
+    "draft_note": "Affirmation fidèle, avec source du bon modèle et millésime.",
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Poids sec explicitement non documenté ; 221 kg reste un poids tous pleins. La réponse commence par la valeur non demandée et reste verbeuse.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/D05/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. 48 ch à 8 600 tr/min avec la fiche 2020.",
+    "key": "first/D06/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Passe à 2022 sur le même modèle, 48 ch ; le tableau reprend le relais après expiration du rédacteur.",
+    "key": "first/D06/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Yamaha sans clarification d’année inutile.",
+    "key": "first/K01/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Distingue la puissance fiscale et demande pays/catégorie pour une source officielle adaptée.",
+    "key": "first/K02/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Propose les trois variantes réelles XJ6 de 2011, conserve l’année et distingue les mentions du catalogue d’un kit homologué.",
+    "key": "first/K03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Maximum Yamaha 2020 de 1298 cc, deux FJR ex æquo ; couverture 43/43.",
+    "key": "first/K04/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. 214 kg sec et 244 kg tous pleins, source Bandit 2000 exacte.",
+    "key": "first/K05/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Demande les années ou fiches à moyenner tout en conservant le contexte Bandit 2000.",
+    "key": "first/K05/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. 1833 cc, trois Goldwing ex æquo et couverture 28/28.",
+    "key": "first/H01/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Selle minimale 705 mm, trois Vulcan et couverture 49/49.",
+    "key": "first/H02/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Moyennes séparées : 214 kg sec et 244 kg tous pleins sur deux années.",
+    "key": "first/H03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Aucune moyenne à sec inventée ; moyenne humide 189 kg sur trois fiches.",
+    "key": "first/H04/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Année 1990 manquante explicitée, moyenne 48 ch limitée à la seule fiche 2022.",
+    "key": "first/H05/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. ≈ 62 ch conservés pour 2021, source exacte.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/H06/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Demande le millésime en conservant le modèle.",
+    "key": "first/H07/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/H07/2",
+    "verdict": "correct",
+    "note": "Le contexte conserve Leoncino 2022 et passe correctement au réservoir : 12,70 L, bonne source. Le complément répète la valeur sans annoncer à tort une phrase non vérifiée.",
+    "draft_note": "Affirmation fidèle ; couverture globale non validée, donc complément direct des sources.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Trois premières Triumph sur 47, ordre et sources visibles.",
+    "key": "first/H08/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Trois suivantes, positions 4 à 6, aucun doublon.",
+    "key": "first/H08/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Demande la population à moyenner plutôt qu’une seule année arbitraire.",
+    "key": "first/H09/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Moyenne 214 kg à sec sur 2000 et 2001, 2/2 fiches et bonnes sources.",
+    "key": "first/H09/2",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Prix moyen France de base 12446,929 €, somme 522771 et 42 prix connus sur 43 fiches. Les inconnus ne deviennent pas zéro.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/P01/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Moyenne 6565,667 €, trois prix 6399 / 6499 / 6799 et somme 19697, sources annuelles correctes.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "key": "first/P02/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Explique que les prix actuels d’occasion ne figurent pas dans le catalogue ; pas de remplacement silencieux par des prix neufs.",
+    "key": "first/P03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/R01/1",
+    "verdict": "justified_limit",
+    "note": "La famille XJ6 est reconnue sans exiger le mot A2. Les trois variantes réellement présentes en 2012 sont proposées ; l’année et la demande de bridage restent conservées, sans certification de kit.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Absence vérifiée dans le corpus : Honda CX 650 E n’y figure pas, contrairement à CX 650 Turbo. Le refus de substituer une variante est donc justifié, malgré une formulation générique. L’attendu figé supposait trop vite une fiche disponible : cette erreur d’attendu est conservée et signalée, pas imputée au chat.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/R02/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. La demande de millésime est justifiée et le plan reconnaît bien CB 500 F et CB 500 X. Le texte ne rappelle pas ces deux modèles et demande une seule année de façon sèche ; la comparaison n’est pas encore produite.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/R03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/R04/1",
+    "verdict": "correct",
+    "note": "La CB 500 F 2019 est bien identifiée. Le tableau cite ABS de série et la fiche exacte, en indiquant que le marché UK n’est pas établi. La proposition Mistral est fidèle mais le contrôleur la rejette faute de confiance suffisante : sortie finale correcte, réserve de validation peu utile.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "draft_note": "La phrase ABS de série est fidèle à Équipement de série / Assistance au freinage : ABS de série. Jev choisit supported mais sa confiance vaut 0,72, sous le seuil conservé ; la couverture vaut 0,44. Le secours est donc un rejet conservateur observé, pas une hallucination de Mistral.",
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Demander l’année sans inventer de distribution répond à l’attendu minimal de ce premier tour. La trace révèle toutefois une erreur latente : couple conique est dirigé vers le couple moteur (torque_nm). Ce tour ne valide donc pas la future réponse sur la distribution.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "key": "first/R05/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/R06/1",
+    "verdict": "justified_limit",
+    "note": "La demande sur un exemplaire de 65 000 km n’est plus transformée en liste de freins et suspensions. La limite entretien/inspection est explicite, avec une démarche concrète et aucun seuil kilométrique inventé. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "key": "first/R07/1",
+    "verdict": "justified_limit",
+    "note": "La famille V85 est reconnue avec ses cinq variantes du corpus. Le chat distingue ressenti de vibration et caractéristiques, demande année/variante et unité de vitesse, sans certifier le confort. Réponse utile mais un peu longue et demande de millésime répétée. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 1
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "key": "first/R08/1",
+    "verdict": "justified_limit",
+    "note": "La réponse explique les critères comparables (hauteur de selle, poids sec et tous pleins), demande budget/permis/usage et ne garantit pas les pieds au sol depuis 1m61. La limite des prix de lancement est claire. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "key": "first/R09/1",
+    "verdict": "justified_limit",
+    "note": "La réparation est reconnue comme extérieure au catalogue. Inspection et devis sont proposés ; aucun prix neuf ni tarif de réparation n’est substitué à la demande. L’identification exacte est demandée sans affirmer une variante PC39. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "key": "first/R10/1",
+    "verdict": "justified_limit",
+    "note": "Le chat demande modèle, variante, millésime et type de bridage. Il précise que poids, consommation, mécanisme et comportement ne sont pas déduits sans données avant/après ; une comparaison documentaire reste possible si les preuves existent. Réponse déterministe de périmètre, sans Mistral.",
+    "rubric": {
+      "accuracy": 2,
+      "completeness": 2,
+      "sources": 2,
+      "usefulness": 2
+    },
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Les trois variantes réelles sont proposées, avec 2011 conservé et une limite explicite sur les documents A2. La réponse prépare correctement la sélection suivante.",
+    "key": "first/X01/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "key": "first/X01/2",
+    "verdict": "justified_limit",
+    "note": "Le suivi La Naked conserve XJ6 600 Naked 2011 et le contexte de bridage. Permis A documenté, mention A2 absente sans déduire l’incompatibilité, limite de preuve maintenue et pas de doublon du manque A2.",
+    "draft_note": "Affirmation fidèle au passage permis A ; mode mixte avec complément de source.",
+    "review_basis": "fresh_review"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation.",
+    "key": "warm_repeat/Q01/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation.",
+    "key": "warm_repeat/Q03/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation.",
+    "key": "warm_repeat/Q12/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation.",
+    "key": "warm_repeat/Q16/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "correct",
+    "note": "Texte final identique à la réponse déjà relue. Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation.",
+    "key": "warm_repeat/Q19/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  },
+  {
+    "verdict": "justified_limit",
+    "note": "Texte final identique à la réponse déjà relue. Répétition à chaud relue : contenu identique à la première passe ; mêmes limites de présentation.",
+    "key": "warm_repeat/Q22/1",
+    "review_basis": "same_answer_as_previously_reviewed"
+  }
+]

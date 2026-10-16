@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-10-15T23:12:13.253209+00:00",
+  "protocol": {
+    "purpose": "Targeted replay of the already-authorized XJ6 dialogue after removing the repeated A2 gap only. The ten public questions retain their first-pass outputs and no routing changes are made from them.",
+    "parent_pack_sha256": "0fafcaf62b961c384a33b4d040448d23395d1743758f4710089dc71728aaeaf6",
+    "authorization": "Same two XJ6 turns and excerpts approved by the user; same cumulative ceiling."
+  },
+  "cases": [
+    {
+      "id": "X01",
+      "group": "targeted",
+      "category": "xj6_followup",
+      "turns": [
+        {
+          "question": "Quelle type de bridage pour un XJ6 A2 2011",
+          "expected": "Proposer Naked / Diversion / Diversion F ; conserver 2011 ; ne pas certifier un kit.",
+          "object_ids": []
+        },
+        {
+          "question": "La Naked",
+          "expected": "Lire Yamaha XJ6 600 Naked 2011 ; conserver demande de bridage ; distinguer mention de puissance/permis de preuve du kit.",
+          "object_ids": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "3dedc091ee5b42d0a48ac0bc8d64c0b3",
+  "question": "Et en 2022, sur le même modèle ?",
+  "started_at": "2026-10-15T23:19:32.762897+00:00",
+  "http_calls": [],
+  "history_messages": 2,
+  "answer": "La rédaction locale n’a pas abouti. Voici les données sources disponibles :\n\n| Caractéristique | Honda CB 500 F (2022) |\n|---|---|\n| Puissance documentée (unités source) | Moteur — 48 ch à 8 600 tr/min |\n| Source | [Fiche](https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html) |",
+  "metadata": {
+    "_catalog_plan": {
+      "identity": {
+        "brand": "Honda",
+        "year": 2022
+      },
+      "conditions": [],
+      "models": [
+        {
+          "brand": "Honda",
+          "model": "CB 500 F"
+        }
+      ],
+      "fields": [
+        "power_ch"
+      ],
+      "equipment": null,
+      "status": "standard",
+      "market_unknown": false,
+      "variant_unknown": false,
+      "source_question": "Et en 2022, sur le même modèle ?",
+      "candidate_variants": [],
+      "calculation_question": "",
+      "operation": "details"
+    },
+    "_catalog_pending": null,
+    "_catalog_route": "rag_mistral_fallback",
+    "_catalog_seconds": 30.536179000046104,
+    "_catalog_jev_calls": 0,
+    "_catalog_evidence": {
+      "sources": [
+        {
+          "object_id": "aaac27c37592b9cc",
+          "brand": "Honda",
+          "model": "CB 500 F",
+          "year": 2022,
+          "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+          "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1",
+          "identity_validation": "unique SQL row, full name (case-insensitive), exact year",
+          "coverage": {
+            "power_ch": {
+              "covered": true,
+              "source_passages_available": true,
+              "requested_facts_status": "complete",
+              "required_passage_ids": [
+                "aaac27c37592b9cc:section:4"
+              ]
+            }
+          },
+          "passages": [
+            {
+              "id": "aaac27c37592b9cc:section:9",
+              "object_id": "aaac27c37592b9cc",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+              "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1",
+              "section": "Coloris",
+              "original_text": "Coloris : non défini",
+              "text": "Honda CB 500 F 2022\nColoris\nColoris : non défini",
+              "score": 0.419269323348999,
+              "rank": 1,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "aaac27c37592b9cc:section:8",
+              "object_id": "aaac27c37592b9cc",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+              "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1",
+              "section": "Tarifs",
+              "original_text": "France — Version de base : 6 799 € *; Etats-Unis — Version de base : $ 6 799; Espagne — Version de base : 6 790 €; Italie — Version de base : 6 590 €; Allemagne — Version de base : 6 490 €; Royaume-uni — Version de base : £ 6 099",
+              "text": "Honda CB 500 F 2022\nTarifs\nFrance — Version de base : 6 799 € *; Etats-Unis — Version de base : $ 6 799; Espagne — Version de base : 6 790 €; Italie — Version de base : 6 590 €; Allemagne — Version de base : 6 490 €; Royaume-uni — Version de base : £ 6 099",
+              "score": 0.41742390394210815,
+              "rank": 2,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "aaac27c37592b9cc:section:4",
+              "object_id": "aaac27c37592b9cc",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+              "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1",
+              "section": "Moteur",
+              "original_text": "Bicylindre en ligne , 4 temps; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km",
+              "text": "Honda CB 500 F 2022\nMoteur\nBicylindre en ligne , 4 temps; Injection Ø 34 mm; Refroidissement : liquide; 2 ACT; 4 soupapes par cylindre; 471 cc (Alésage * course: 67 x 66.8 mm); 48 ch à 8 600 tr/min; 4,50 mkg à 6 500 tr/min; Rapport poids / puissance : environ 3.63 kg/ch; Rapport poids / couple : environ 38.69 kg/mkg; Compression : 10.7 : 1; Emission CO² : 80 g/km",
+              "score": 0.400367796421051,
+              "rank": 3,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "aaac27c37592b9cc:section:2",
+              "object_id": "aaac27c37592b9cc",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+              "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1",
+              "section": "Transmission",
+              "original_text": "boîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "text": "Honda CB 500 F 2022\nTransmission\nboîte à 6 rapports , manuelle; Secondaire par chaîne",
+              "score": 0.3984159231185913,
+              "rank": 4,
+              "selection_reason": "bge_top5"
+            },
+            {
+              "id": "aaac27c37592b9cc:section:3",
+              "object_id": "aaac27c37592b9cc",
+              "brand": "Honda",
+              "model": "CB 500 F",
+              "year": 2022,
+              "source_url": "https://www.motoplanete.com/honda/8900/CB-500-F-2022/contact.html",
+              "source_sha256": "f7820a31c5973e7464303e9ae7576562655b47e61936c7d1ed3354fde269d8e1",
+              "section": "Train arrière",
+              "original_text": "Mono-amortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "text": "Honda CB 500 F 2022\nTrain arrière\nMono-amortisseur; Réglage de la précharge; Freinage : 1 disque Ø 240 mm, étrier simple piston; Roue arrière : 160 / 60 - 17; Pression : 2.9 bars",
+              "score": 0.38187283277511597,
+              "rank": 5,
+              "selection_reason": "bge_top5"
+            }
+          ]
+        }
+      ],
+      "missing": [],
+      "retrieval_executed": true,
+      "retrievals": [
+        {
+          "document_cache_hit": true,
+          "document_encoding_seconds": 1.6693957149982452e-07,
+          "query_encoding_seconds": 0.4382014579605311,
+          "model": "BAAI/bge-m3",
+          "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+          "object_id": "aaac27c37592b9cc",
+          "proof_check": {
+            "fields": {
+              "power_ch": "complete"
+            },
+            "jev_calls": 0,
+            "seconds": 0.001714874990284443
+          }
+        }
+      ],
+      "seconds": 0.44399291602894664,
+      "source_kind": "technical_fiche",
+      "legal_certification": false
+    },
+    "_catalog_research": null,
+    "_catalog_generation": {
+      "backend": "ollama",
+      "orchestrator": "langchain_ollama",
+      "published": false,
+      "call_attempted": true,
+      "context_sha256": "8ef9808240314e1ef2516d77494531872a9ac96783c87589d0d6582cc2dbc9fa",
+      "error": "ReadTimeout",
+      "seconds": 30.022789041977376
+    }
+  },
+  "embedder_loaded": true,
+  "embedder_device": "mps:0",
+  "embedder_class": "SentenceTransformer",
+  "server_seconds": 30.53674799995497
+}
