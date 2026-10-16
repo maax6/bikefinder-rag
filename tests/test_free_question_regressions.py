@@ -215,3 +215,24 @@ def test_variant_resolution_preserves_previously_pending_characteristics(stub,mo
     r=router.route_question(None,"Je parle de l'Africa Twin standard 2024 à boîte manuelle, pas de l'Adventure Sports ni de la DCT. Pour cette version, que sait-on sur l'autonomie ?",[{'role':'assistant','_catalog_plan':previous}])
     assert set(previous['fields'])<set(r['plan']['fields']) and 'autonomy_km' in r['plan']['fields']
     assert not r['plan']['unresolved_variant']
+
+
+def test_uk_equipment_question_keeps_facts_and_market_boundary(stub, monkeypatch):
+    monkeypatch.setattr(router, 'entities', lambda *args: ([{'brand':'Honda','model':'CB 500 F'}], ['Honda']))
+    raw=decisions(operation='details', equipment='ABS');raw['answers']['scope']['choice']='market'
+    monkeypatch.setattr(router,'classify',lambda *args:(raw,1,False))
+    render=Mock(return_value='ABS source facts');monkeypatch.setattr(router,'render_details',render)
+    result=router.route_question(None,'Can I check that the CB500F 2019 has ABS as standard? I am based in the UK.')
+    assert result['answer']=='ABS source facts'
+    assert result['plan']['identity']['year']==2019
+    assert result['plan']['market_unknown'] and result['plan']['market_requested']=='Royaume-Uni (UK)'
+
+
+def test_uk_equipment_cannot_drop_an_unsupported_extra_constraint(stub, monkeypatch):
+    monkeypatch.setattr(router, 'entities', lambda *args: ([{'brand':'Honda','model':'CB 500 F'}], ['Honda']))
+    raw=decisions(operation='details', equipment='ABS');raw['answers']['scope']['choice']='unsupported'
+    monkeypatch.setattr(router,'classify',lambda *args:(raw,1,False))
+    render=Mock(return_value='unsafe loss of reliability constraint');monkeypatch.setattr(router,'render_details',render)
+    result=router.route_question(None,'CB500F 2019 UK with ABS and guaranteed reliability?')
+    assert result['route']=='clarification'
+    render.assert_not_called()

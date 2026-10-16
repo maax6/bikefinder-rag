@@ -13,6 +13,7 @@ import requests
 from bikefinder_rag.agent import jev_router as legacy
 from bikefinder_rag.catalog.technical_rag import answer_from_sources, LICENSE_LIMIT
 from bikefinder_rag.agent.rag_synthesis import compose
+from bikefinder_rag.agent.catalog_scope import scope_response
 
 PROTOCOL = "jev-scoped-source-reading-v7"
 FIELDS = {**legacy.TOPICS, "license": "Permis et mention de bridage dans la fiche, sans certification"}
@@ -130,6 +131,59 @@ def confident(answer):
     return type(value) in [int, float] and math.isfinite(value) and .8 <= value <= 1
 
 
+def family_clarification(conn, question):
+    """A short alphanumeric family is a clarification candidate, never an identity."""
+    text = legacy.folded(question)
+    years = {int(y) for y in re.findall(r'\b(?:18|19|20|21)\d{2}\b', text)}
+    catalog = legacy.identities(conn)
+    mentioned_brands = [b for b in catalog['brands'] if legacy.spans(text, legacy.compact(b))]
+    candidates = []
+    for item in catalog['groups']:
+        # V 85 and V85 describe the same short family; keep its variants as
+        # candidates, never bind one of them to a source automatically.
+        tokens = item['model'].split()
+        token = tokens[0]
+        if len(tokens) > 1 and token.isalpha() and tokens[1].isdigit():
+            token += tokens[1]
+        if not (len(token) >= 3 and re.search(r'[a-z]', token, re.I) and re.search(r'\d', token)):
+            continue
+        spans = legacy.spans(text, legacy.compact(token))
+        if not any(not legacy.negated_mention(text, start) for start, _end in spans):
+            continue
+        if mentioned_brands and item['brand'] not in mentioned_brands:
+            continue
+        if years and not years.intersection(item['years']):
+            continue
+        candidates.append({'brand': item['brand'], 'model': item['model']})
+    if not candidates or len(candidates) > 8:
+        return None
+    identity = {'year': next(iter(years))} if len(years) == 1 else {}
+    names = '; '.join(m['brand'] + ' ' + m['model'] for m in candidates)
+    date = f" pour {identity['year']}" if identity else ''
+    a2 = bool(re.search(r'\ba2\b|bridage|bridable|brider', text))
+    return {'operation': 'clarify', 'models': [], 'candidate_variants': candidates,
+            'identity': identity, 'fields': ['license'] if a2 else [], 'conditions': [],
+            'source_question': question, 'a2_context': a2, 'variant_pending': True,
+            'clarification': f"Quelle variante souhaites-tu consulter{date} : {names} ? "
+                             + ('' if identity else 'Précise aussi le millésime. ')
+                             + ("La fiche peut documenter des mentions de bridage ; elle ne certifie pas le kit ni l’homologation de ton exemplaire." if a2 else '')}
+
+
+def pending_variant(question, previous):
+    """Accept only a complete candidate name or distinctive suffix in a short reply."""
+    if not previous or not previous.get('variant_pending'):
+        return None
+    text = legacy.folded(question).strip(' .!?')
+    text = re.sub(r"^(?:la|le|une?|version|c'est la|c est la)\s+", '', text)
+    matches = []
+    for model in previous['candidate_variants']:
+        name = legacy.folded(model['model'])
+        suffix = re.sub(r'^\S+\s+(?:\d+\s+)?', '', name)
+        if text in {name, legacy.folded(model['brand']) + ' ' + name, suffix}:
+            matches.append(model)
+    return dict(matches[0]) if len(matches) == 1 else None
+
+
 def unresolved_mentions(question, models):
     """Reject overlapping aliases and an unnamed suffix before the year.
 
@@ -151,7 +205,7 @@ def unresolved_mentions(question, models):
         date = re.search(r"\b(?:18|19|20|21)\d{2}\b", suffix)
         if date and date.start() < 50:
             between = suffix[:date.start()].replace(legacy.folded(model["brand"]), "")
-            between = re.sub(r"\b(?:de|en|annee|millesime|modele)\b", "", between)
+            between = re.sub(r"\b(?:de|en|annee|millesime|modele|a2)\b", "", between)
             if re.search(r"[a-z0-9]", between):
                 return True
     # An edition may be before the model or after its year. Only a literal
@@ -206,6 +260,8 @@ def annotate_missing_scope(question, result):
     """
     text = legacy.language(question)
     for missing in (result.get("evidence") or {}).get("missing", []):
+        if missing.get('kind') == 'verification':
+            continue
         pattern = LITERAL_FIELDS.get(missing.get("field"))
         if pattern:
             terms = list(dict.fromkeys(m.group() for m in re.finditer(pattern, text)))
@@ -241,11 +297,27 @@ def route_question(conn, question, history=None):
             from bikefinder_rag.agent.catalog_research import answer_question
             return answer_question(conn, question, history)
     started = time.perf_counter()
+    scoped = scope_response(question)
+    if scoped:
+        topic, answer = scoped
+        # A subjective request may still contain a useful catalog family.
+        # Naming its alternatives is a clarification, not a factual answer
+        # about the ride or an automatic model selection.
+        family = family_clarification(conn, question) if topic == 'riding_feel' else None
+        if family:
+            answer += '\n\n' + family['clarification']
+        return {'answer': answer, 'route': 'catalog_boundary', 'plan': None,
+                'jev_calls': 0, 'seconds': time.perf_counter() - started,
+                'evidence': {'sources': [], 'retrieval_executed': False,
+                             'scope_topic': topic, 'response_kind': 'deterministic_scope_explanation'}}
     previous = next((m.get("_catalog_plan") for m in reversed(history or []) if m.get("role") == "assistant"), None)
+    chosen_variant = pending_variant(question, previous)
     text = legacy.folded(question)
-    followup = legacy.is_followup(question)
+    followup = legacy.is_followup(question) or chosen_variant is not None
     previous = previous if followup and previous else {}
-    a2 = bool(re.search(r"\ba2\b", text) or previous.get("a2_context"))
+    a2 = bool(re.search(r"\ba2\b|bridage|bridable|brider", text) or previous.get("a2_context"))
+    if chosen_variant and not a2:
+        question = previous['source_question'] + '\nVariante précisée : ' + chosen_variant['brand'] + ' ' + chosen_variant['model']
     if not a2:
         result = legacy.route_question(conn, question, history)
         # Structured filters/counts keep SQL. Named source-reading plans use RAG.
@@ -256,12 +328,11 @@ def route_question(conn, question, history=None):
                     # Preserve the established renderer's precise subfact,
                     # conversion, variant and market qualifications.
                     rag["answer"] = result["answer"]
-                    gaps = [m for m in rag["evidence"]["missing"] if m["kind"] in ["field", "subfact"]]
-                    if gaps:
-                        rag["answer"] += "\n\n**Preuves manquantes :** " + "; ".join(
-                            FIELDS.get(m["field"], m["field"]) + " — " + m["message"] for m in gaps)
                 checks = rag["evidence"].get("retrievals", [])
                 rag["jev_calls"] = result.get("jev_calls", 0) + sum(r.get("proof_check", {}).get("jev_calls", 0) for r in checks)
+                if result['plan'].get('market_unknown'):
+                    rag['evidence'].setdefault('missing', []).append({'kind': 'authority',
+                        'message': legacy.market_notice(result['plan'])})
                 rag = annotate_missing_scope(question, rag)
                 # Explicit arithmetic and unit conversions retain their
                 # sourced Python renderer; the writer must not erase a result
@@ -277,11 +348,20 @@ def route_question(conn, question, history=None):
         return result
     models, _brands = legacy.entities(conn, question)
     base = {"answer": None, "plan": None, "route": "clarification", "jev_calls": 0}
-    if models and unresolved_mentions(question, models):
+    if chosen_variant:
+        models = [chosen_variant]
+        # The short reply selects an identity; retain the question it answers.
+        question = previous['source_question'] + '\nVariante précisée : ' + chosen_variant['brand'] + ' ' + chosen_variant['model']
+    if models and not chosen_variant and unresolved_mentions(question, models):
         return {**base, "answer": "Le nom laisse une variante ou une édition ambiguë. Précise son intitulé de catalogue et son millésime ; aucune fiche de base ne sera substituée.",
                 "evidence": {"sources": [], "missing": [{"kind": "identity"}], "retrieval_executed": False}}
     models = models or previous.get("models", [])
     if not models:
+        pending = family_clarification(conn, question)
+        if pending:
+            return {**base, 'answer': pending['clarification'], 'plan': pending,
+                    'evidence': {'sources': [], 'missing': [{'kind': 'identity', 'message': 'Variante à préciser'}],
+                                 'retrieval_executed': False}}
         return {**base, "answer": LICENSE_LIMIT + " Précise un modèle et son millésime pour lire les mentions de sa fiche.",
                 "evidence": {"sources": [], "missing": [{"kind": "authority", "message": LICENSE_LIMIT}], "retrieval_executed": False}}
     bound, problem = bind_years(question, models, previous)

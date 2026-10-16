@@ -191,8 +191,7 @@ def answer_from_sources(conn, question, plan, check_coverage=None):
                     missing.append({"kind": "subfact", "object_id": row["id"], "field": field, "message": message})
                 if status == "unverified":
                     message = "La fiche fournit ces mentions, mais leur couverture du détail demandé n'a pas pu être vérifiée"
-                    output.append("  " + message + ".")
-                    missing.append({"kind": "field", "object_id": row["id"], "field": field, "message": message})
+                    missing.append({"kind": "verification", "object_id": row["id"], "field": field, "message": message})
             else:
                 message = ("Non documenté dans les passages de cette fiche" if not required or status == "missing"
                            else "La couverture des faits demandés n'a pas pu être vérifiée" if status == "unverified"
@@ -210,6 +209,8 @@ def answer_from_sources(conn, question, plan, check_coverage=None):
                         "coverage": coverage, "passages": list(selected.values())})
     if identity_missing:
         output += ["", "**Identités manquantes :** " + " ".join(identity_missing)]
+    if any(m['kind'] == 'verification' for m in missing):
+        output += ['', "La couverture de tous les détails demandés n'a pas pu être vérifiée ; les mentions citées restent disponibles."]
     if plan.get("a2_context"):
         output += ["", "**Limite des preuves :** " + LICENSE_LIMIT]
     if plan.get("legal_proof_required"):

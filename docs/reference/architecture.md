@@ -90,6 +90,15 @@ flowchart TD
     V <-->|Affirmations vérifiables| J
 ```
 
+Avant la lecture d’une fiche, des règles locales distinguent certaines demandes
+sur l’état d’un exemplaire, les réparations, l’ergonomie, le ressenti et les effets
+du bridage. Elles expliquent les limites du catalogue et demandent les précisions
+utiles. Ce sont des réponses déterministes de périmètre, sans appel Mistral ;
+elles ne démontrent pas une compréhension générale. Les noms de famille courts
+peuvent fournir une liste de variantes à préciser, jamais une identité choisie
+automatiquement. Les équipements d’une fiche et leur validité pour un marché
+particulier restent deux choses distinctes.
+
 Les comptes, listes, conversions explicites et calculs pris en charge ont leurs
 contrôles propres. Les ambiguïtés restent
 visibles ; le code ne remplace pas une variante ou une année absente par une
@@ -151,6 +160,7 @@ restent disponibles. Une décision Jev probable ne constitue pas une preuve.
 | Chemin dans `src/bikefinder_rag/` | Rôle |
 |---|---|
 | `app.py`, `ui.py` | Chat Gradio, état de conversation et présentation |
+| `agent/catalog_scope.py` | Limites utiles pour les demandes hors catalogue, règles locales sans génération |
 | `agent/jev_router.py`, `query_language.py` | Plan borné, traitement du langage et rendu du catalogue |
 | `agent/rag_router.py`, `catalog/technical_rag.py` | Raccordement Jev, identité SQL exacte, BGE local, couverture et citations |
 | `agent/rag_synthesis.py` | Rédaction Mistral locale, validation des affirmations et replis sourcés |

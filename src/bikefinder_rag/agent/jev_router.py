@@ -86,7 +86,7 @@ def entities(conn,question):
         pattern=r'[\s-]*'.join(re.escape(w) for w in words)
         prefix=words[0]
         unique_prefix=len({compact(other) for other in catalog['brands'] if folded(other).startswith(prefix)})==1
-        if re.search(r'(?<!\w)'+pattern+r'(?!\w)',folded(question)) or (len(prefix)>=2 and prefix not in {'les','le','la','the','de','des','du'} and unique_prefix and re.search(r'(?<!\w)'+re.escape(prefix)+r'(?!\w)',folded(question))):
+        if re.search(r'(?<!\w)'+pattern+r'(?!\w)',folded(question)) or (len(prefix)>=2 and prefix not in {'les','le','la','the','de','des','du','can','new'} and unique_prefix and re.search(r'(?<!\w)'+re.escape(prefix)+r'(?!\w)',folded(question))):
             if compact(b) not in {compact(previous) for previous in brands}:brands.append(b)
     brands=[brand for brand in brands if not re.search(r'(?:laisse tomber|sans|sauf|pas)\s+(?:les?\s+)?'+re.escape(folded(brand))+r'\b',text)]
     if re.search(r'\bla yam\b',text) and 'Yamaha' not in brands:brands.append('Yamaha')
@@ -281,6 +281,11 @@ def render_list(conn,plan):
         output+=['','Les valeurs manquantes ne sont pas supposées respecter une borne. Les valeurs connues et les autres critères restent filtrés :','',render_list(conn,extra)]
     return '\n'.join(output)
 
+def market_notice(plan):
+    market=plan.get('market_requested') or 'France'
+    return ('Ces équipements sont ceux de la fiche source. Son rattachement au marché technique '+market+
+            ' n’est pas établi ; je ne l’atteste pas à partir d’un tarif français.')
+
 def render_details(conn,plan):
     models=plan['models'];identity=plan['identity'];year=identity.get('year')
     if year is None and not all('year' in m for m in models):return 'Quel millésime souhaites-tu consulter ? Je ne choisis pas une année à ta place.'
@@ -375,7 +380,7 @@ def render_details(conn,plan):
                         proof=[row for row in r['record']['spec_rows'] if row['section']==part and re.search(folded(item),folded(row['label']+' '+row['value']))]
                         output+=['',r['brand']+' '+r['model']+f" ({r['year']}) — {part}, {item} : "+(quote(proof) if proof else 'inconnu / non documenté')]
     if 'seat_height_mm' in fields and re.search(r'selles?.*(?:propose|option|serie)',query):output+=['','Les hauteurs de selle citées ne prouvent pas que des selles accessoires soient comprises. Si aucune selle optionnelle ou de série n’est explicitement documentée dans les preuves d’équipement, sa disponibilité et son statut restent inconnus.']
-    if plan.get('market_unknown'):output+=['','Ces équipements sont ceux de la fiche source. Son rattachement au marché technique France n’est pas établi ; je ne l’atteste pas à partir d’un tarif français.']
+    if plan.get('market_unknown'):output+=['',market_notice(plan)]
     if plan.get('variant_unknown'):output+=['','La fiche peut regrouper boîte manuelle et DCT : les valeurs citées ne garantissent pas une autonomie propre à la seule variante manuelle.']
     if 'autonomy_km' in fields and re.search(r'peut.*faire|sans ravitailler',query):output+=['','Une autonomie estimée ou calculée dans une fiche ne permet pas de garantir la distance réelle demandée sans ravitailler. Les qualifications de la source restent déterminantes.']
     notes=plan.get('source_notes',[])
@@ -459,6 +464,10 @@ def route_question(conn,question,history=None,_category_context=None):
     if re.search(r'\boccasion\b',text) and re.search(r'prix|tarif|budget|€|euros|moins|sous',text):
         result.update(answer='Je dispose des prix de catalogue documentés, pas de prix d’annonces d’occasion. Souhaites-tu filtrer ces prix de catalogue ?',route='clarification');return result
     market_context=False
+    market_requested=None
+    if re.search(r'\buk\b|united kingdom|royaume.uni|grande.bretagne',text):
+        market_requested='Royaume-Uni (UK)'
+        market_context=bool(entities(conn,question)[0] and re.search(r'\babs\b|traction|shifter|equipement|equipment|heated grips|cruise control',text))
     if re.search(r'\ba2\b|bridage.*homologue|homologation|homologue',text):
         result.update(answer='Je ne peux pas établir l’homologation, le bridage A2 ou la disponibilité technique en France à partir de ces filtres. Une puissance ou un prix français ne suffit pas.',route='clarification');return result
     if re.search(r'commercialise.*france|vendu.*france',text):
@@ -616,7 +625,7 @@ def route_question(conn,question,history=None,_category_context=None):
         if scope_kind=='unsupported' and not re.search(r'conversion|\bkw\b|\bhp\b',text):scope_kind='supported'
     if models and scope_kind=='weight_type' and not any(n['role']=='unspecified_weight' for n in numbers):scope_kind='supported'
     if not models and len(brands)==1 and operation in ['comparison','details'] and re.search(r'les |prends|montre|liste|chez ',text):operation='filter'
-    if market_context:
+    if market_context and (not market_requested or scope_kind in {'supported','market'}):
         scope_kind='supported';operation='comparison' if len(models)>1 else 'details'
     if negative_dct and models and re.search(r'autonomie',text):scope_kind='supported';operation='details'
     factual_topics=r'fourche|suspension|frein|pneu|roue|reservoir|empattement|longueur|largeur|cylindree|couple|poids|hauteur|selle|transmission|boite|coloris|couleurs?|moteur'
@@ -643,6 +652,7 @@ def route_question(conn,question,history=None,_category_context=None):
         plan=deepcopy(previous) if followup and previous else {'identity':{},'conditions':[],'models':[],'fields':[],'equipment':None,'status':'standard'}
         for key,default in {'identity':{},'conditions':[],'models':[],'fields':[],'equipment':None,'status':'standard'}.items():plan.setdefault(key,default)
         plan['market_unknown']=market_context
+        if market_requested:plan['market_requested']=market_requested
         if models and re.search(r'\bstandard\b',text):plan['unresolved_variant']=False
         plan['variant_unknown']=bool(negative_dct or (re.search(r'boite manuelle',text) and re.search(r'africa twin',text)))
         plan['source_question']=question

@@ -217,21 +217,72 @@ def check_claims(question, claims, context, notices=""):
         return {"accepted": False, "jev_calls": 0, "error": "jev_gate_unavailable"}
 
 
-def missing_notices(result, include_limit=True):
+def verification_only(missing, evidence):
+    if missing.get('kind') == 'verification':
+        return True
+    source = next((s for s in evidence.get('sources', []) if s['object_id'] == missing.get('object_id')), {})
+    coverage = source.get('coverage', {}).get(missing.get('field'), {})
+    return (missing.get('kind') == 'field' and coverage.get('requested_facts_status') == 'unverified'
+            and coverage.get('source_passages_available') is True)
+
+
+def table_shows_gap(answer, identity, label, missing):
+    """Deduplicate only a gap in the same deterministic table cell.
+
+    A missing value on another model, year or field cannot discharge a notice.
+    An unfamiliar table format simply keeps the notice.
+    """
+    rows = [[cell.strip() for cell in line.strip().strip('|').split('|')]
+            for line in answer.splitlines() if line.startswith('|')]
+    header = next((row for row in rows if row and row[0] == 'Caractéristique'), [])
+    if not identity or identity not in header:
+        return False
+    column = header.index(identity)
+    cell = next((row[column] for row in rows if len(row) > column and row[0] == label), '')
+    if missing.get('kind') == 'field':
+        return cell.rstrip('.') == 'Non documenté dans cette fiche'
+    if missing.get('kind') == 'subfact' and 'inconnu / non documenté' in cell:
+        from bikefinder_rag.agent.jev_router import language
+        terms = missing.get('requested_terms', [])
+        return bool(terms) and all(term in language(cell) for term in terms)
+    return False
+
+
+def missing_notices(result, include_limit=True, already_rendered=''):
     evidence = result["evidence"]
     sources = {s["object_id"]: f"{s['brand']} {s['model']} ({s['year']})" for s in evidence["sources"]}
-    from bikefinder_rag.agent.rag_router import FIELDS
+    from bikefinder_rag.agent.rag_router import FIELDS, LITERAL_FIELDS, legacy
+    question = legacy.language((result.get('plan') or {}).get('source_question', ''))
+    weight_fields = {'weight_dry_kg', 'weight_wet_kg'}
+    requested_weights = {f for f in weight_fields if re.search(LITERAL_FIELDS[f], question)}
     notices = []
     for missing in evidence.get("missing", []):
+        if verification_only(missing, evidence):
+            continue
+        if missing.get('kind') == 'authority' and (result.get('plan') or {}).get('a2_context'):
+            continue  # The A2 boundary is already rendered once below/by the source answer.
         prefix = sources.get(missing.get("object_id"), "")
         field = missing.get("field", "")
+        if len(requested_weights) == 1 and field in weight_fields - requested_weights:
+            continue  # The generic weight route also fetches the unasked category.
         label = {"a2_mention": "Mention A2", "a2_certification": "Certificat de bridage / homologation A2"}.get(field, FIELDS.get(field, field))
         message = missing.get("message", "Preuve non disponible")
+        core = message.split(' Couverture non établie')[0]
+        # The deterministic source list spells this gap differently from its
+        # trace. Only the exact model/year section can discharge the notice.
+        if field == 'a2_mention' and prefix:
+            sections = re.split(r'^### ', already_rendered, flags=re.M)
+            section = next((s.partition('\n')[2] for s in sections[1:]
+                            if s.partition('\n')[0].strip() == prefix), '')
+            if '- **Mention A2 :** non retrouvée dans cette fiche.' in section:
+                continue
+        if core in already_rendered or table_shows_gap(already_rendered, prefix, label, missing):
+            continue
         notices.append(" — ".join(part for part in [prefix, label, message] if part))
     parts = []
     if notices:
-        parts.append("**Preuves manquantes ou non vérifiées :**\n" + "\n".join("- " + n for n in dict.fromkeys(notices)))
-    if include_limit and (result.get("plan") or {}).get("a2_context"):
+        parts.append("**Informations non documentées :**\n" + "\n".join("- " + n for n in dict.fromkeys(notices)))
+    if include_limit and (result.get("plan") or {}).get("a2_context") and LICENSE_LIMIT not in already_rendered:
         parts.append("**Limite des preuves :** " + LICENSE_LIMIT)
     return "\n\n".join(parts)
 
@@ -246,7 +297,7 @@ def compose(question, result):
     output = {**result, "generation": generation}
     def fallback(reason, error):
         generation.update(error=error, seconds=time.perf_counter() - started)
-        notices = missing_notices(result, include_limit=False)
+        notices = missing_notices(result, already_rendered=result['answer'])
         return {**output, "answer": reason + "\n\n" + result["answer"] + ("\n\n" + notices if notices else ""), "route": "rag_mistral_fallback"}
     if not SLOT.acquire(blocking=False):
         return fallback("Une rédaction locale est déjà en cours. Voici les données sourcées disponibles :", "busy")
@@ -282,12 +333,14 @@ def compose(question, result):
             links = [f"[{s['brand']} {s['model']} ({s['year']})]({s['source_url']})" for s in cited.values()]
             paragraphs.append(claim["text"].strip() + " " + "; ".join(links))
         if mixed:
-            paragraphs.append("**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. "
-                              "Complément en lecture directe des sources :\n\n" + result["answer"])
+            explanation = ("**Rédaction partielle :** une partie de la proposition n’a pas pu être vérifiée. "
+                           if generation['removed_claims'] else '')
+            paragraphs.append(explanation + "Complément en lecture directe des sources :\n\n" + result["answer"])
+            notices = missing_notices(result, already_rendered=result['answer'])
         if notices:
             paragraphs.append(notices)
-        if gate.get("coverage_verified") is False:
-            paragraphs.append("**Couverture non vérifiée :** les affirmations ci-dessus sont sourcées, mais la couverture de tous les détails demandés n’a pas pu être vérifiée.")
+        if gate.get("coverage_verified") is False and not mixed:
+            paragraphs.append("**Couverture non vérifiée :** les affirmations sont sourcées, mais certains détails demandés peuvent manquer.")
         generation.update(published=True, mode="mixed" if mixed else "written", seconds=time.perf_counter() - started)
         return {**output, "answer": "\n\n".join(paragraphs),
                 "route": "rag_mistral_partial" if mixed or evidence.get("missing") or gate.get("coverage_verified") is False else "rag_mistral"}
